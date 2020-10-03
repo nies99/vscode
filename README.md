@@ -4,13 +4,13 @@ This is a self-compiled portable version of Code - OSS for Windows system under 
 You can compile Code - OSS by yourself! See the [official document](https://github.com/microsoft/vscode/wiki/How-to-Contribute) for details.
 
 ## Licenses
-For this self-compiled portable version, see [LICENSE.txt](https://github.com/qtxh/vscode/blob/master/LICENSE.txt).
+For license of this self-compiled portable version, see [LICENSE.txt](https://github.com/qtxh/vscode/blob/master/LICENSE.txt).
 
-For its source code, see [LICENSE-source.txt](https://github.com/qtxh/vscode/blob/master/LICENSE-source.txt).
+For license of its source code, see [LICENSE-source.txt](https://github.com/qtxh/vscode/blob/master/LICENSE-source.txt).
 
-For FFmpeg, see [LICENSE-FFmpeg.txt](https://github.com/qtxh/vscode/blob/master/LICENSE-FFmpeg.txt).
+For license of FFmpeg, see [LICENSE-FFmpeg.txt](https://github.com/qtxh/vscode/blob/master/LICENSE-FFmpeg.txt).
 
-For other third-party software, see [ThirdPartyNotices.txt](https://github.com/qtxh/vscode/blob/master/ThirdPartyNotices.txt).
+For license information of other third-party software, see [ThirdPartyNotices.txt](https://github.com/qtxh/vscode/blob/master/ThirdPartyNotices.txt).
 
 ## Instructions
 0. Make sure that Node.js is installed on your computer.
