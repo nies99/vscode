@@ -24,7 +24,7 @@ var __M = function(deps) {
  *---------------------------------------------------------------------------------------------
  *---------------------------------------------------------------------------------------------
  *---------------------------------------------------------------------------------------------
- * Please make sure to make edits in the .ts file at https://github.com/Microsoft/vscode-loader/
+ * Please make sure to make edits in the .ts file at https://github.com/microsoft/vscode-loader/
  *---------------------------------------------------------------------------------------------
  *---------------------------------------------------------------------------------------------
  *---------------------------------------------------------------------------------------------
@@ -630,8 +630,37 @@ var AMDLoader;
         };
         return OnlyOnceScriptLoader;
     }());
+    var trustedTypesPolyfill = new /** @class */(function () {
+        function class_1() {
+        }
+        class_1.prototype.installIfNeeded = function () {
+            if (typeof globalThis.trustedTypes !== 'undefined') {
+                return; // already defined
+            }
+            var _defaultRules = {
+                createHTML: function () { throw new Error('Policy\'s TrustedTypePolicyOptions did not specify a \'createHTML\' member'); },
+                createScript: function () { throw new Error('Policy\'s TrustedTypePolicyOptions did not specify a \'createScript\' member'); },
+                createScriptURL: function () { throw new Error('Policy\'s TrustedTypePolicyOptions did not specify a \'createScriptURL\' member'); },
+            };
+            globalThis.trustedTypes = {
+                createPolicy: function (name, rules) {
+                    var _a, _b, _c;
+                    return {
+                        name: name,
+                        createHTML: (_a = rules.createHTML) !== null && _a !== void 0 ? _a : _defaultRules.createHTML,
+                        createScript: (_b = rules.createScript) !== null && _b !== void 0 ? _b : _defaultRules.createScript,
+                        createScriptURL: (_c = rules.createScriptURL) !== null && _c !== void 0 ? _c : _defaultRules.createScriptURL,
+                    };
+                }
+            };
+        };
+        return class_1;
+    }());
+    //#endregion
     var BrowserScriptLoader = /** @class */ (function () {
         function BrowserScriptLoader() {
+            // polyfill trustedTypes-support if missing
+            trustedTypesPolyfill.installIfNeeded();
         }
         /**
          * Attach load / error listeners to a script element and remove them when either one has fired.
@@ -674,6 +703,13 @@ var AMDLoader;
                 script.setAttribute('async', 'async');
                 script.setAttribute('type', 'text/javascript');
                 this.attachListeners(script, callback, errorback);
+                var createTrustedScriptURL = moduleManager.getConfig().getOptionsLiteral().createTrustedScriptURL;
+                if (createTrustedScriptURL) {
+                    if (!this.scriptSourceURLPolicy) {
+                        this.scriptSourceURLPolicy = trustedTypes.createPolicy('amdLoader', { createScriptURL: createTrustedScriptURL });
+                    }
+                    scriptSrc = this.scriptSourceURLPolicy.createScriptURL(scriptSrc);
+                }
                 script.setAttribute('src', scriptSrc);
                 // Propagate CSP nonce to dynamically created script tag.
                 var cspNonce = moduleManager.getConfig().getOptionsLiteral().cspNonce;
@@ -687,8 +723,17 @@ var AMDLoader;
     }());
     var WorkerScriptLoader = /** @class */ (function () {
         function WorkerScriptLoader() {
+            // polyfill trustedTypes-support if missing
+            trustedTypesPolyfill.installIfNeeded();
         }
         WorkerScriptLoader.prototype.load = function (moduleManager, scriptSrc, callback, errorback) {
+            var createTrustedScriptURL = moduleManager.getConfig().getOptionsLiteral().createTrustedScriptURL;
+            if (createTrustedScriptURL) {
+                if (!this.scriptSourceURLPolicy) {
+                    this.scriptSourceURLPolicy = trustedTypes.createPolicy('amdLoader', { createScriptURL: createTrustedScriptURL });
+                }
+                scriptSrc = this.scriptSourceURLPolicy.createScriptURL(scriptSrc);
+            }
             try {
                 importScripts(scriptSrc);
                 callback();
@@ -2079,7 +2124,7 @@ define(__m[3/*vs/base/common/errors*/], __M([0/*require*/,1/*exports*/]), functi
 define(__m[15/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/errors*/]), function (require, exports, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.getRandomElement = exports.asArray = exports.mapArrayOrNot = exports.find = exports.pushToEnd = exports.pushToStart = exports.shuffle = exports.arrayInsert = exports.remove = exports.insert = exports.index = exports.range = exports.flatten = exports.commonPrefixLength = exports.firstOrDefault = exports.first = exports.firstIndex = exports.lastIndex = exports.uniqueFilter = exports.distinctES6 = exports.distinct = exports.isNonEmptyArray = exports.isFalsyOrEmpty = exports.move = exports.coalesceInPlace = exports.coalesce = exports.topAsync = exports.top = exports.delta = exports.sortedDiff = exports.groupBy = exports.mergeSort = exports.findFirstInSorted = exports.binarySearch = exports.equals = exports.tail2 = exports.tail = void 0;
+    exports.getRandomElement = exports.asArray = exports.mapArrayOrNot = exports.pushToEnd = exports.pushToStart = exports.shuffle = exports.arrayInsert = exports.remove = exports.insert = exports.index = exports.range = exports.flatten = exports.commonPrefixLength = exports.firstOrDefault = exports.lastIndex = exports.uniqueFilter = exports.distinctES6 = exports.distinct = exports.isNonEmptyArray = exports.isFalsyOrEmpty = exports.move = exports.coalesceInPlace = exports.coalesce = exports.topAsync = exports.top = exports.delta = exports.sortedDiff = exports.groupBy = exports.mergeSort = exports.findFirstInSorted = exports.binarySearch = exports.equals = exports.tail2 = exports.tail = void 0;
     /**
      * Returns the last element of an array.
      * @param array The array.
@@ -2441,24 +2486,6 @@ define(__m[15/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,3/*vs/ba
         return -1;
     }
     exports.lastIndex = lastIndex;
-    /**
-     * @deprecated ES6: use `Array.findIndex`
-     */
-    function firstIndex(array, fn) {
-        for (let i = 0; i < array.length; i++) {
-            const element = array[i];
-            if (fn(element)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-    exports.firstIndex = firstIndex;
-    function first(array, fn, notFoundValue = undefined) {
-        const index = firstIndex(array, fn);
-        return index < 0 ? notFoundValue : array[index];
-    }
-    exports.first = first;
     function firstOrDefault(array, notFoundValue) {
         return array.length > 0 ? array[0] : notFoundValue;
     }
@@ -2583,19 +2610,6 @@ define(__m[15/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,3/*vs/ba
         }
     }
     exports.pushToEnd = pushToEnd;
-    /**
-     * @deprecated ES6: use `Array.find`
-     */
-    function find(arr, predicate) {
-        for (let i = 0; i < arr.length; i++) {
-            const element = arr[i];
-            if (predicate(element, i, arr)) {
-                return element;
-            }
-        }
-        return undefined;
-    }
-    exports.find = find;
     function mapArrayOrNot(items, fn) {
         return Array.isArray(items) ?
             items.map(fn) :
@@ -4411,6 +4425,7 @@ define(__m[19/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,8/
  *--------------------------------------------------------------------------------------------*/
 define(__m[4/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
+    var _a;
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isLittleEndian = exports.OS = exports.OperatingSystem = exports.setImmediate = exports.globals = exports.translationsConfigFile = exports.locale = exports.Language = exports.language = exports.isRootUser = exports.userAgent = exports.platform = exports.isIOS = exports.isWeb = exports.isNative = exports.isLinux = exports.isMacintosh = exports.isWindows = exports.PlatformToString = exports.Platform = void 0;
     const LANGUAGE_DEFAULT = 'en';
@@ -4424,8 +4439,18 @@ define(__m[4/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
     let _language = LANGUAGE_DEFAULT;
     let _translationsConfigFile = undefined;
     let _userAgent = undefined;
-    const isElectronRenderer = (typeof process !== 'undefined' && typeof process.versions !== 'undefined' && typeof process.versions.electron !== 'undefined' && process.type === 'renderer');
-    // OS detection
+    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
+    let nodeProcess = undefined;
+    if (typeof process !== 'undefined') {
+        // Native environment (non-sandboxed)
+        nodeProcess = process;
+    }
+    else if (typeof _globals.vscode !== 'undefined') {
+        // Native envionment (sandboxed)
+        nodeProcess = _globals.vscode.process;
+    }
+    const isElectronRenderer = typeof ((_a = nodeProcess === null || nodeProcess === void 0 ? void 0 : nodeProcess.versions) === null || _a === void 0 ? void 0 : _a.electron) === 'string' && nodeProcess.type === 'renderer';
+    // Web environment
     if (typeof navigator === 'object' && !isElectronRenderer) {
         _userAgent = navigator.userAgent;
         _isWindows = _userAgent.indexOf('Windows') >= 0;
@@ -4436,13 +4461,14 @@ define(__m[4/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
         _locale = navigator.language;
         _language = _locale;
     }
-    else if (typeof process === 'object') {
-        _isWindows = (process.platform === 'win32');
-        _isMacintosh = (process.platform === 'darwin');
-        _isLinux = (process.platform === 'linux');
+    // Native environment
+    else if (typeof nodeProcess === 'object') {
+        _isWindows = (nodeProcess.platform === 'win32');
+        _isMacintosh = (nodeProcess.platform === 'darwin');
+        _isLinux = (nodeProcess.platform === 'linux');
         _locale = LANGUAGE_DEFAULT;
         _language = LANGUAGE_DEFAULT;
-        const rawNlsConfig = process.env['VSCODE_NLS_CONFIG'];
+        const rawNlsConfig = nodeProcess.env['VSCODE_NLS_CONFIG'];
         if (rawNlsConfig) {
             try {
                 const nlsConfig = JSON.parse(rawNlsConfig);
@@ -4456,6 +4482,10 @@ define(__m[4/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
             }
         }
         _isNative = true;
+    }
+    // Unknown environment
+    else {
+        console.error('Unable to resolve platform.');
     }
     var Platform;
     (function (Platform) {
@@ -4492,7 +4522,7 @@ define(__m[4/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
     exports.platform = _platform;
     exports.userAgent = _userAgent;
     function isRootUser() {
-        return _isNative && !_isWindows && (process.getuid() === 0);
+        return !!nodeProcess && !_isWindows && (nodeProcess.getuid() === 0);
     }
     exports.isRootUser = isRootUser;
     /**
@@ -4534,7 +4564,6 @@ define(__m[4/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
      * The translatios that are available through language packs.
      */
     exports.translationsConfigFile = _translationsConfigFile;
-    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
     exports.globals = _globals;
     exports.setImmediate = (function defineSetImmediate() {
         if (exports.globals.setImmediate) {
@@ -4564,8 +4593,8 @@ define(__m[4/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
                 exports.globals.postMessage({ vscodeSetImmediateId: myId }, '*');
             };
         }
-        if (typeof process !== 'undefined' && typeof process.nextTick === 'function') {
-            return process.nextTick.bind(process);
+        if (nodeProcess) {
+            return nodeProcess.nextTick.bind(nodeProcess);
         }
         const _promise = Promise.resolve();
         return (callback) => _promise.then(callback);
@@ -4601,12 +4630,27 @@ define(__m[20/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,4/*vs/b
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.nextTick = exports.platform = exports.env = exports.cwd = void 0;
-    const safeProcess = (typeof process === 'undefined') ? {
-        cwd() { return '/'; },
-        env: Object.create(null),
-        get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
-        nextTick(callback) { return platform_1.setImmediate(callback); }
-    } : process;
+    let safeProcess;
+    // Native node.js environment
+    if (typeof process !== 'undefined') {
+        safeProcess = process;
+    }
+    // Native sandbox environment
+    else if (typeof platform_1.globals.vscode !== 'undefined') {
+        safeProcess = platform_1.globals.vscode.process;
+    }
+    // Web environment
+    else {
+        safeProcess = {
+            // Supported
+            get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
+            nextTick(callback) { return platform_1.setImmediate(callback); },
+            // Unsupported
+            get env() { return Object.create(null); },
+            cwd() { return '/'; },
+            getuid() { return -1; }
+        };
+    }
     exports.cwd = safeProcess.cwd;
     exports.env = safeProcess.env;
     exports.platform = safeProcess.platform;
@@ -5986,7 +6030,7 @@ define(__m[21/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,20/*vs/bas
 define(__m[9/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.repeat = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.endsWith = exports.startsWith = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
+    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
     function isFalsyOrWhitespace(str) {
         if (!str || typeof str !== 'string') {
             return true;
@@ -6112,40 +6156,6 @@ define(__m[9/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
         return pattern.replace(/\*/g, '');
     }
     exports.stripWildcards = stripWildcards;
-    /**
-     * @deprecated ES6: use `String.startsWith`
-     */
-    function startsWith(haystack, needle) {
-        if (haystack.length < needle.length) {
-            return false;
-        }
-        if (haystack === needle) {
-            return true;
-        }
-        for (let i = 0; i < needle.length; i++) {
-            if (haystack[i] !== needle[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
-    exports.startsWith = startsWith;
-    /**
-     * @deprecated ES6: use `String.endsWith`
-     */
-    function endsWith(haystack, needle) {
-        const diff = haystack.length - needle.length;
-        if (diff > 0) {
-            return haystack.indexOf(needle, diff) === diff;
-        }
-        else if (diff === 0) {
-            return haystack === needle;
-        }
-        else {
-            return false;
-        }
-    }
-    exports.endsWith = endsWith;
     function createRegExp(searchString, isRegex, options = {}) {
         if (!searchString) {
             throw new Error('Cannot create regex from empty string');
@@ -6765,17 +6775,6 @@ define(__m[9/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
         return startsWithUTF8BOM(str) ? str.substr(1) : str;
     }
     exports.stripUTF8BOM = stripUTF8BOM;
-    /**
-     * @deprecated ES6
-     */
-    function repeat(s, count) {
-        let result = '';
-        for (let i = 0; i < count; i++) {
-            result += s;
-        }
-        return result;
-    }
-    exports.repeat = repeat;
     /**
      * Checks if the characters of the provided query string are included in the
      * target string. The characters do not have to be contiguous within the string.
@@ -9010,7 +9009,7 @@ define(__m[34/*vs/base/common/worker/simpleWorker*/], __M([0/*require*/,1/*expor
         }
         if (!webWorkerWarningLogged) {
             webWorkerWarningLogged = true;
-            console.warn('Could not create web worker(s). Falling back to loading web worker code in main thread, which might cause UI freezes. Please see https://github.com/Microsoft/monaco-editor#faq');
+            console.warn('Could not create web worker(s). Falling back to loading web worker code in main thread, which might cause UI freezes. Please see https://github.com/microsoft/monaco-editor#faq');
         }
         console.warn(err.message);
     }
@@ -11204,22 +11203,23 @@ define(__m[30/*vs/editor/common/standalone/standaloneEnums*/], __M([0/*require*/
         EditorOption[EditorOption["suggestOnTriggerCharacters"] = 99] = "suggestOnTriggerCharacters";
         EditorOption[EditorOption["suggestSelection"] = 100] = "suggestSelection";
         EditorOption[EditorOption["tabCompletion"] = 101] = "tabCompletion";
-        EditorOption[EditorOption["unusualLineTerminators"] = 102] = "unusualLineTerminators";
-        EditorOption[EditorOption["useTabStops"] = 103] = "useTabStops";
-        EditorOption[EditorOption["wordSeparators"] = 104] = "wordSeparators";
-        EditorOption[EditorOption["wordWrap"] = 105] = "wordWrap";
-        EditorOption[EditorOption["wordWrapBreakAfterCharacters"] = 106] = "wordWrapBreakAfterCharacters";
-        EditorOption[EditorOption["wordWrapBreakBeforeCharacters"] = 107] = "wordWrapBreakBeforeCharacters";
-        EditorOption[EditorOption["wordWrapColumn"] = 108] = "wordWrapColumn";
-        EditorOption[EditorOption["wordWrapMinified"] = 109] = "wordWrapMinified";
-        EditorOption[EditorOption["wrappingIndent"] = 110] = "wrappingIndent";
-        EditorOption[EditorOption["wrappingStrategy"] = 111] = "wrappingStrategy";
-        EditorOption[EditorOption["showDeprecated"] = 112] = "showDeprecated";
-        EditorOption[EditorOption["editorClassName"] = 113] = "editorClassName";
-        EditorOption[EditorOption["pixelRatio"] = 114] = "pixelRatio";
-        EditorOption[EditorOption["tabFocusMode"] = 115] = "tabFocusMode";
-        EditorOption[EditorOption["layoutInfo"] = 116] = "layoutInfo";
-        EditorOption[EditorOption["wrappingInfo"] = 117] = "wrappingInfo";
+        EditorOption[EditorOption["tabIndex"] = 102] = "tabIndex";
+        EditorOption[EditorOption["unusualLineTerminators"] = 103] = "unusualLineTerminators";
+        EditorOption[EditorOption["useTabStops"] = 104] = "useTabStops";
+        EditorOption[EditorOption["wordSeparators"] = 105] = "wordSeparators";
+        EditorOption[EditorOption["wordWrap"] = 106] = "wordWrap";
+        EditorOption[EditorOption["wordWrapBreakAfterCharacters"] = 107] = "wordWrapBreakAfterCharacters";
+        EditorOption[EditorOption["wordWrapBreakBeforeCharacters"] = 108] = "wordWrapBreakBeforeCharacters";
+        EditorOption[EditorOption["wordWrapColumn"] = 109] = "wordWrapColumn";
+        EditorOption[EditorOption["wordWrapMinified"] = 110] = "wordWrapMinified";
+        EditorOption[EditorOption["wrappingIndent"] = 111] = "wrappingIndent";
+        EditorOption[EditorOption["wrappingStrategy"] = 112] = "wrappingStrategy";
+        EditorOption[EditorOption["showDeprecated"] = 113] = "showDeprecated";
+        EditorOption[EditorOption["editorClassName"] = 114] = "editorClassName";
+        EditorOption[EditorOption["pixelRatio"] = 115] = "pixelRatio";
+        EditorOption[EditorOption["tabFocusMode"] = 116] = "tabFocusMode";
+        EditorOption[EditorOption["layoutInfo"] = 117] = "layoutInfo";
+        EditorOption[EditorOption["wrappingInfo"] = 118] = "wrappingInfo";
     })(EditorOption = exports.EditorOption || (exports.EditorOption = {}));
     /**
      * End of line character preference.
@@ -12553,7 +12553,8 @@ define(__m[35/*vs/editor/common/services/editorSimpleWorker*/], __M([0/*require*
     }
     require.config({
         baseUrl: monacoBaseUrl,
-        catchError: true
+        catchError: true,
+        createTrustedScriptURL: (value) => value,
     });
     let loadCode = function (moduleId) {
         require([moduleId], function (ws) {

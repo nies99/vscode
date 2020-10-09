@@ -1354,6 +1354,15 @@ const stream_1 = __webpack_require__(2);
 const vscode_1 = __webpack_require__(9);
 const ws_1 = __importDefault(__webpack_require__(52));
 const getWsEndpoint_1 = __webpack_require__(59);
+const waitForExit = (process) => __awaiter(void 0, void 0, void 0, function* () {
+    if (process.exitCode) {
+        return;
+    }
+    yield Promise.race([
+        new Promise(r => process.on('exit', r)),
+        new Promise(r => setTimeout(r, 1000)),
+    ]);
+});
 /**
  * A debug target that sends data through the target's stdio streams.
  */
@@ -1377,8 +1386,10 @@ class PipedTarget {
         return this.process.stdio[4];
     }
     dispose() {
-        this.process.kill();
-        return Promise.resolve();
+        return __awaiter(this, void 0, void 0, function* () {
+            yield waitForExit(this.process);
+            this.process.kill();
+        });
     }
 }
 exports.PipedTarget = PipedTarget;
@@ -1476,8 +1487,11 @@ class ServerTarget {
         return this.attach.output;
     }
     dispose() {
-        this.process.kill();
-        return this.attach.dispose();
+        return __awaiter(this, void 0, void 0, function* () {
+            this.attach.dispose();
+            yield waitForExit(this.process);
+            this.process.kill();
+        });
     }
 }
 exports.ServerTarget = ServerTarget;
@@ -6471,10 +6485,10 @@ class Session {
      * @inheritdoc
      */
     dispose() {
-        var _a, _b;
+        var _a;
         if (!this.disposed) {
             (_a = this.browserProcess) === null || _a === void 0 ? void 0 : _a.dispose();
-            (_b = this.socket) === null || _b === void 0 ? void 0 : _b.destroy();
+            // the browser process closing will cause the connection to drain and close
             this.disposed = true;
         }
     }

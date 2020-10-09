@@ -2,7 +2,7 @@
  * Copyright (C) Microsoft Corporation. All rights reserved.
  *--------------------------------------------------------*/
 (function() {
-var __m = ["require","exports","vs/base/common/platform","vs/base/common/strings","vs/base/common/extpath","vs/base/common/network","vs/base/common/uri","vs/base/common/path","vs/base/common/map","vs/base/common/async","vs/base/common/glob","vs/base/common/arrays","vs/base/common/resources","vs/base/common/cancellation","vs/base/common/errors","vs/base/common/event","vs/base/common/lifecycle","vs/base/common/types","vs/workbench/contrib/output/common/outputLinkComputer","vs/editor/common/core/range"];
+var __m = ["require","exports","vs/base/common/platform","vs/base/common/strings","vs/base/common/extpath","vs/base/common/network","vs/base/common/uri","vs/base/common/path","vs/base/common/map","vs/base/common/async","vs/base/common/glob","vs/base/common/resources","vs/base/common/cancellation","vs/base/common/errors","vs/base/common/event","vs/base/common/lifecycle","vs/base/common/types","vs/workbench/contrib/output/common/outputLinkComputer","vs/editor/common/core/range"];
 var __M = function(deps) {
   var result = [];
   for (var i = 0, len = deps.length; i < len; i++) {
@@ -14,10 +14,10 @@ var __M = function(deps) {
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[9/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,13/*vs/base/common/cancellation*/,14/*vs/base/common/errors*/,15/*vs/base/common/event*/,16/*vs/base/common/lifecycle*/]), function (require, exports, cancellation_1, errors, event_1, lifecycle_1) {
+define(__m[9/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,12/*vs/base/common/cancellation*/,13/*vs/base/common/errors*/,14/*vs/base/common/event*/,15/*vs/base/common/lifecycle*/]), function (require, exports, cancellation_1, errors, event_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
+    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellablePromises = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
     function isThenable(obj) {
         return obj && typeof obj.then === 'function';
     }
@@ -57,10 +57,25 @@ define(__m[9/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,13/*vs/bas
         return Promise.race([promise, new Promise(resolve => token.onCancellationRequested(() => resolve(defaultValue)))]);
     }
     exports.raceCancellation = raceCancellation;
+    /**
+     * Returns as soon as one of the promises is resolved and cancels remaining promises
+     */
+    async function raceCancellablePromises(cancellablePromises) {
+        let resolvedPromiseIndex = -1;
+        const promises = cancellablePromises.map((promise, index) => promise.then(result => { resolvedPromiseIndex = index; return result; }));
+        const result = await Promise.race(promises);
+        cancellablePromises.forEach((cancellablePromise, index) => {
+            if (index !== resolvedPromiseIndex) {
+                cancellablePromise.cancel();
+            }
+        });
+        return result;
+    }
+    exports.raceCancellablePromises = raceCancellablePromises;
     function raceTimeout(promise, timeout, onTimeout) {
         let promiseResolve = undefined;
         const timer = setTimeout(() => {
-            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve();
+            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve(undefined);
             onTimeout === null || onTimeout === void 0 ? void 0 : onTimeout();
         }, timeout);
         return Promise.race([
@@ -511,10 +526,10 @@ define(__m[9/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,13/*vs/bas
     }
     exports.IntervalTimer = IntervalTimer;
     class RunOnceScheduler {
-        constructor(runner, timeout) {
+        constructor(runner, delay) {
             this.timeoutToken = -1;
             this.runner = runner;
-            this.timeout = timeout;
+            this.timeout = delay;
             this.timeoutHandler = this.onTimeout.bind(this);
         }
         /**
@@ -539,6 +554,12 @@ define(__m[9/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,13/*vs/bas
         schedule(delay = this.timeout) {
             this.cancel();
             this.timeoutToken = setTimeout(this.timeoutHandler, delay);
+        }
+        get delay() {
+            return this.timeout;
+        }
+        set delay(value) {
+            this.timeout = value;
         }
         /**
          * Returns true if scheduled.
@@ -740,7 +761,7 @@ define(__m[9/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,13/*vs/bas
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[4/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/,3/*vs/base/common/strings*/,7/*vs/base/common/path*/,17/*vs/base/common/types*/]), function (require, exports, platform_1, strings_1, path_1, types_1) {
+define(__m[4/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/,3/*vs/base/common/strings*/,7/*vs/base/common/path*/,16/*vs/base/common/types*/]), function (require, exports, platform_1, strings_1, path_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.parseLineAndColumnAware = exports.indexOfPath = exports.isRootOrDriveLetter = exports.sanitizeFilePath = exports.isWindowsDriveLetter = exports.isEqualOrParent = exports.isEqual = exports.isValidBasename = exports.isUNC = exports.getRoot = exports.toSlashes = exports.isPathSeparator = void 0;
@@ -909,34 +930,34 @@ define(__m[4/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,2/*vs/ba
         return strings_1.equalsIgnoreCase(pathA, pathB);
     }
     exports.isEqual = isEqual;
-    function isEqualOrParent(path, candidate, ignoreCase, separator = path_1.sep) {
-        if (path === candidate) {
+    function isEqualOrParent(base, parentCandidate, ignoreCase, separator = path_1.sep) {
+        if (base === parentCandidate) {
             return true;
         }
-        if (!path || !candidate) {
+        if (!base || !parentCandidate) {
             return false;
         }
-        if (candidate.length > path.length) {
+        if (parentCandidate.length > base.length) {
             return false;
         }
         if (ignoreCase) {
-            const beginsWith = strings_1.startsWithIgnoreCase(path, candidate);
+            const beginsWith = strings_1.startsWithIgnoreCase(base, parentCandidate);
             if (!beginsWith) {
                 return false;
             }
-            if (candidate.length === path.length) {
+            if (parentCandidate.length === base.length) {
                 return true; // same path, different casing
             }
-            let sepOffset = candidate.length;
-            if (candidate.charAt(candidate.length - 1) === separator) {
+            let sepOffset = parentCandidate.length;
+            if (parentCandidate.charAt(parentCandidate.length - 1) === separator) {
                 sepOffset--; // adjust the expected sep offset in case our candidate already ends in separator character
             }
-            return path.charAt(sepOffset) === separator;
+            return base.charAt(sepOffset) === separator;
         }
-        if (candidate.charAt(candidate.length - 1) !== separator) {
-            candidate += separator;
+        if (parentCandidate.charAt(parentCandidate.length - 1) !== separator) {
+            parentCandidate += separator;
         }
-        return path.indexOf(candidate) === 0;
+        return base.indexOf(parentCandidate) === 0;
     }
     exports.isEqualOrParent = isEqualOrParent;
     function isWindowsDriveLetter(char0) {
@@ -1035,7 +1056,7 @@ define(__m[4/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,2/*vs/ba
 define(__m[5/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,2/*vs/base/common/platform*/]), function (require, exports, uri_1, platform) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.RemoteAuthorities = exports.Schemas = void 0;
+    exports.FileAccess = exports.RemoteAuthorities = exports.Schemas = void 0;
     var Schemas;
     (function (Schemas) {
         /**
@@ -1132,6 +1153,26 @@ define(__m[5/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,6/*vs/ba
         }
     }
     exports.RemoteAuthorities = new RemoteAuthoritiesImpl();
+    class FileAccessImpl {
+        asBrowserUri(uriOrModule, moduleIdToUrl) {
+            const uri = this.toUri(uriOrModule, moduleIdToUrl);
+            if (uri.scheme === Schemas.vscodeRemote) {
+                return exports.RemoteAuthorities.rewrite(uri);
+            }
+            return uri;
+        }
+        asFileUri(uriOrModule, moduleIdToUrl) {
+            const uri = this.toUri(uriOrModule, moduleIdToUrl);
+            return uri;
+        }
+        toUri(uriOrModule, moduleIdToUrl) {
+            if (uri_1.URI.isUri(uriOrModule)) {
+                return uriOrModule;
+            }
+            return uri_1.URI.parse(moduleIdToUrl.toUrl(uriOrModule));
+        }
+    }
+    exports.FileAccess = new FileAccessImpl();
 });
 
 /*---------------------------------------------------------------------------------------------
@@ -1261,7 +1302,7 @@ define(__m[8/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,6/*vs/base/c
                 this._states.push(2 /* Authority */);
             }
             if (this._value.path) {
-                //todo@jrieken the case-sensitive logic is copied form `resources.ts#hasToIgnoreCase`
+                //todo@jrieken #107886 the case-sensitive logic is copied form `resources.ts#hasToIgnoreCase`
                 // which cannot be used because it depends on this
                 const caseSensitive = key.scheme === network_1.Schemas.file && platform_1.isLinux;
                 this._pathIterator = new PathIterator(false, caseSensitive);
@@ -2024,7 +2065,7 @@ define(__m[8/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,6/*vs/base/c
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[10/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,11/*vs/base/common/arrays*/,3/*vs/base/common/strings*/,4/*vs/base/common/extpath*/,7/*vs/base/common/path*/,8/*vs/base/common/map*/,9/*vs/base/common/async*/]), function (require, exports, arrays, strings, extpath, paths, map_1, async_1) {
+define(__m[10/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/strings*/,4/*vs/base/common/extpath*/,7/*vs/base/common/path*/,8/*vs/base/common/map*/,9/*vs/base/common/async*/]), function (require, exports, strings, extpath, paths, map_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getPathTerms = exports.getBasenameTerms = exports.isRelativePattern = exports.hasSiblingFn = exports.hasSiblingPromiseFn = exports.parse = exports.match = exports.splitGlobAware = exports.getEmptyExpression = void 0;
@@ -2306,7 +2347,7 @@ define(__m[10/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,11/*vs/bas
             }
             return null;
         };
-        const withBasenames = arrays.first(parsedPatterns, pattern => !!pattern.allBasenames);
+        const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
         if (withBasenames) {
             parsedPattern.allBasenames = withBasenames.allBasenames;
         }
@@ -2442,7 +2483,7 @@ define(__m[10/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,11/*vs/bas
                 }
                 return null;
             };
-            const withBasenames = arrays.first(parsedPatterns, pattern => !!pattern.allBasenames);
+            const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
             if (withBasenames) {
                 resultExpression.allBasenames = withBasenames.allBasenames;
             }
@@ -2472,7 +2513,7 @@ define(__m[10/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,11/*vs/bas
             }
             return null;
         };
-        const withBasenames = arrays.first(parsedPatterns, pattern => !!pattern.allBasenames);
+        const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
         if (withBasenames) {
             resultExpression.allBasenames = withBasenames.allBasenames;
         }
@@ -2567,7 +2608,7 @@ define(__m[10/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,11/*vs/bas
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[12/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/extpath*/,7/*vs/base/common/path*/,6/*vs/base/common/uri*/,3/*vs/base/common/strings*/,5/*vs/base/common/network*/,2/*vs/base/common/platform*/,10/*vs/base/common/glob*/,8/*vs/base/common/map*/]), function (require, exports, extpath, paths, uri_1, strings_1, network_1, platform_1, glob_1, map_1) {
+define(__m[11/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/extpath*/,7/*vs/base/common/path*/,6/*vs/base/common/uri*/,3/*vs/base/common/strings*/,5/*vs/base/common/network*/,2/*vs/base/common/platform*/,10/*vs/base/common/glob*/,8/*vs/base/common/map*/]), function (require, exports, extpath, paths, uri_1, strings_1, network_1, platform_1, glob_1, map_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toLocalResource = exports.ResourceGlobMatcher = exports.DataUri = exports.distinctParents = exports.addTrailingPathSeparator = exports.removeTrailingPathSeparator = exports.hasTrailingPathSeparator = exports.isEqualAuthority = exports.isAbsolutePath = exports.resolvePath = exports.relativePath = exports.normalizePath = exports.joinPath = exports.dirname = exports.extname = exports.basename = exports.basenameOrAuthority = exports.getComparisonKey = exports.isEqualOrParent = exports.isEqual = exports.extUriIgnorePathCase = exports.extUriBiasedIgnorePathCase = exports.extUri = exports.ExtUri = exports.originalFSPath = void 0;
@@ -2861,15 +2902,15 @@ define(__m[12/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,4/*vs
         }
     }
     exports.ResourceGlobMatcher = ResourceGlobMatcher;
-    function toLocalResource(resource, authority) {
+    function toLocalResource(resource, authority, localScheme) {
         if (authority) {
             let path = resource.path;
             if (path && path[0] !== paths.posix.sep) {
                 path = paths.posix.sep + path;
             }
-            return resource.with({ scheme: network_1.Schemas.vscodeRemote, authority, path });
+            return resource.with({ scheme: localScheme, authority, path });
         }
-        return resource.with({ scheme: network_1.Schemas.file });
+        return resource.with({ scheme: localScheme });
     }
     exports.toLocalResource = toLocalResource;
 });
@@ -2878,7 +2919,7 @@ define(__m[12/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,4/*vs
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[18/*vs/workbench/contrib/output/common/outputLinkComputer*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,4/*vs/base/common/extpath*/,12/*vs/base/common/resources*/,3/*vs/base/common/strings*/,19/*vs/editor/common/core/range*/,2/*vs/base/common/platform*/,5/*vs/base/common/network*/,11/*vs/base/common/arrays*/]), function (require, exports, uri_1, extpath, resources, strings, range_1, platform_1, network_1, arrays_1) {
+define(__m[17/*vs/workbench/contrib/output/common/outputLinkComputer*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,4/*vs/base/common/extpath*/,11/*vs/base/common/resources*/,3/*vs/base/common/strings*/,18/*vs/editor/common/core/range*/,2/*vs/base/common/platform*/,5/*vs/base/common/network*/]), function (require, exports, uri_1, extpath, resources, strings, range_1, platform_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.create = exports.OutputLinkComputer = void 0;
@@ -2902,7 +2943,7 @@ define(__m[18/*vs/workbench/contrib/output/common/outputLinkComputer*/], __M([0/
         }
         getModel(uri) {
             const models = this.ctx.getMirrorModels();
-            return arrays_1.find(models, model => model.uri.toString() === uri);
+            return models.find(model => model.uri.toString() === uri);
         }
         computeLinks(uri) {
             const model = this.getModel(uri);
@@ -2991,7 +3032,7 @@ define(__m[18/*vs/workbench/contrib/output/common/outputLinkComputer*/], __M([0/
                     }
                     const fullMatch = strings.rtrim(match[0], '.'); // remove trailing "." that likely indicate end of sentence
                     const index = line.indexOf(fullMatch, offset);
-                    offset += index + fullMatch.length;
+                    offset = index + fullMatch.length;
                     const linkRange = {
                         startColumn: index + 1,
                         startLineNumber: lineIndex,

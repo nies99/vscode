@@ -184,7 +184,7 @@ define(__m[3/*vs/base/common/errors*/], __M([0/*require*/,1/*exports*/]), functi
 define(__m[13/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/errors*/]), function (require, exports, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.getRandomElement = exports.asArray = exports.mapArrayOrNot = exports.find = exports.pushToEnd = exports.pushToStart = exports.shuffle = exports.arrayInsert = exports.remove = exports.insert = exports.index = exports.range = exports.flatten = exports.commonPrefixLength = exports.firstOrDefault = exports.first = exports.firstIndex = exports.lastIndex = exports.uniqueFilter = exports.distinctES6 = exports.distinct = exports.isNonEmptyArray = exports.isFalsyOrEmpty = exports.move = exports.coalesceInPlace = exports.coalesce = exports.topAsync = exports.top = exports.delta = exports.sortedDiff = exports.groupBy = exports.mergeSort = exports.findFirstInSorted = exports.binarySearch = exports.equals = exports.tail2 = exports.tail = void 0;
+    exports.getRandomElement = exports.asArray = exports.mapArrayOrNot = exports.pushToEnd = exports.pushToStart = exports.shuffle = exports.arrayInsert = exports.remove = exports.insert = exports.index = exports.range = exports.flatten = exports.commonPrefixLength = exports.firstOrDefault = exports.lastIndex = exports.uniqueFilter = exports.distinctES6 = exports.distinct = exports.isNonEmptyArray = exports.isFalsyOrEmpty = exports.move = exports.coalesceInPlace = exports.coalesce = exports.topAsync = exports.top = exports.delta = exports.sortedDiff = exports.groupBy = exports.mergeSort = exports.findFirstInSorted = exports.binarySearch = exports.equals = exports.tail2 = exports.tail = void 0;
     /**
      * Returns the last element of an array.
      * @param array The array.
@@ -546,24 +546,6 @@ define(__m[13/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,3/*vs/ba
         return -1;
     }
     exports.lastIndex = lastIndex;
-    /**
-     * @deprecated ES6: use `Array.findIndex`
-     */
-    function firstIndex(array, fn) {
-        for (let i = 0; i < array.length; i++) {
-            const element = array[i];
-            if (fn(element)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-    exports.firstIndex = firstIndex;
-    function first(array, fn, notFoundValue = undefined) {
-        const index = firstIndex(array, fn);
-        return index < 0 ? notFoundValue : array[index];
-    }
-    exports.first = first;
     function firstOrDefault(array, notFoundValue) {
         return array.length > 0 ? array[0] : notFoundValue;
     }
@@ -688,19 +670,6 @@ define(__m[13/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,3/*vs/ba
         }
     }
     exports.pushToEnd = pushToEnd;
-    /**
-     * @deprecated ES6: use `Array.find`
-     */
-    function find(arr, predicate) {
-        for (let i = 0; i < arr.length; i++) {
-            const element = arr[i];
-            if (predicate(element, i, arr)) {
-                return element;
-            }
-        }
-        return undefined;
-    }
-    exports.find = find;
     function mapArrayOrNot(items, fn) {
         return Array.isArray(items) ?
             items.map(fn) :
@@ -2014,7 +1983,7 @@ define(__m[9/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,4/*
 define(__m[16/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/cancellation*/,3/*vs/base/common/errors*/,4/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/]), function (require, exports, cancellation_1, errors, event_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
+    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellablePromises = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
     function isThenable(obj) {
         return obj && typeof obj.then === 'function';
     }
@@ -2054,10 +2023,25 @@ define(__m[16/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,9/*vs/bas
         return Promise.race([promise, new Promise(resolve => token.onCancellationRequested(() => resolve(defaultValue)))]);
     }
     exports.raceCancellation = raceCancellation;
+    /**
+     * Returns as soon as one of the promises is resolved and cancels remaining promises
+     */
+    async function raceCancellablePromises(cancellablePromises) {
+        let resolvedPromiseIndex = -1;
+        const promises = cancellablePromises.map((promise, index) => promise.then(result => { resolvedPromiseIndex = index; return result; }));
+        const result = await Promise.race(promises);
+        cancellablePromises.forEach((cancellablePromise, index) => {
+            if (index !== resolvedPromiseIndex) {
+                cancellablePromise.cancel();
+            }
+        });
+        return result;
+    }
+    exports.raceCancellablePromises = raceCancellablePromises;
     function raceTimeout(promise, timeout, onTimeout) {
         let promiseResolve = undefined;
         const timer = setTimeout(() => {
-            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve();
+            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve(undefined);
             onTimeout === null || onTimeout === void 0 ? void 0 : onTimeout();
         }, timeout);
         return Promise.race([
@@ -2508,10 +2492,10 @@ define(__m[16/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,9/*vs/bas
     }
     exports.IntervalTimer = IntervalTimer;
     class RunOnceScheduler {
-        constructor(runner, timeout) {
+        constructor(runner, delay) {
             this.timeoutToken = -1;
             this.runner = runner;
-            this.timeout = timeout;
+            this.timeout = delay;
             this.timeoutHandler = this.onTimeout.bind(this);
         }
         /**
@@ -2536,6 +2520,12 @@ define(__m[16/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,9/*vs/bas
         schedule(delay = this.timeout) {
             this.cancel();
             this.timeoutToken = setTimeout(this.timeoutHandler, delay);
+        }
+        get delay() {
+            return this.timeout;
+        }
+        set delay(value) {
+            this.timeout = value;
         }
         /**
          * Returns true if scheduled.
@@ -2739,6 +2729,7 @@ define(__m[16/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,9/*vs/bas
  *--------------------------------------------------------------------------------------------*/
 define(__m[6/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
+    var _a;
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isLittleEndian = exports.OS = exports.OperatingSystem = exports.setImmediate = exports.globals = exports.translationsConfigFile = exports.locale = exports.Language = exports.language = exports.isRootUser = exports.userAgent = exports.platform = exports.isIOS = exports.isWeb = exports.isNative = exports.isLinux = exports.isMacintosh = exports.isWindows = exports.PlatformToString = exports.Platform = void 0;
     const LANGUAGE_DEFAULT = 'en';
@@ -2752,8 +2743,18 @@ define(__m[6/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
     let _language = LANGUAGE_DEFAULT;
     let _translationsConfigFile = undefined;
     let _userAgent = undefined;
-    const isElectronRenderer = (typeof process !== 'undefined' && typeof process.versions !== 'undefined' && typeof process.versions.electron !== 'undefined' && process.type === 'renderer');
-    // OS detection
+    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
+    let nodeProcess = undefined;
+    if (typeof process !== 'undefined') {
+        // Native environment (non-sandboxed)
+        nodeProcess = process;
+    }
+    else if (typeof _globals.vscode !== 'undefined') {
+        // Native envionment (sandboxed)
+        nodeProcess = _globals.vscode.process;
+    }
+    const isElectronRenderer = typeof ((_a = nodeProcess === null || nodeProcess === void 0 ? void 0 : nodeProcess.versions) === null || _a === void 0 ? void 0 : _a.electron) === 'string' && nodeProcess.type === 'renderer';
+    // Web environment
     if (typeof navigator === 'object' && !isElectronRenderer) {
         _userAgent = navigator.userAgent;
         _isWindows = _userAgent.indexOf('Windows') >= 0;
@@ -2764,13 +2765,14 @@ define(__m[6/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
         _locale = navigator.language;
         _language = _locale;
     }
-    else if (typeof process === 'object') {
-        _isWindows = (process.platform === 'win32');
-        _isMacintosh = (process.platform === 'darwin');
-        _isLinux = (process.platform === 'linux');
+    // Native environment
+    else if (typeof nodeProcess === 'object') {
+        _isWindows = (nodeProcess.platform === 'win32');
+        _isMacintosh = (nodeProcess.platform === 'darwin');
+        _isLinux = (nodeProcess.platform === 'linux');
         _locale = LANGUAGE_DEFAULT;
         _language = LANGUAGE_DEFAULT;
-        const rawNlsConfig = process.env['VSCODE_NLS_CONFIG'];
+        const rawNlsConfig = nodeProcess.env['VSCODE_NLS_CONFIG'];
         if (rawNlsConfig) {
             try {
                 const nlsConfig = JSON.parse(rawNlsConfig);
@@ -2784,6 +2786,10 @@ define(__m[6/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
             }
         }
         _isNative = true;
+    }
+    // Unknown environment
+    else {
+        console.error('Unable to resolve platform.');
     }
     var Platform;
     (function (Platform) {
@@ -2820,7 +2826,7 @@ define(__m[6/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
     exports.platform = _platform;
     exports.userAgent = _userAgent;
     function isRootUser() {
-        return _isNative && !_isWindows && (process.getuid() === 0);
+        return !!nodeProcess && !_isWindows && (nodeProcess.getuid() === 0);
     }
     exports.isRootUser = isRootUser;
     /**
@@ -2862,7 +2868,6 @@ define(__m[6/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
      * The translatios that are available through language packs.
      */
     exports.translationsConfigFile = _translationsConfigFile;
-    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
     exports.globals = _globals;
     exports.setImmediate = (function defineSetImmediate() {
         if (exports.globals.setImmediate) {
@@ -2892,8 +2897,8 @@ define(__m[6/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
                 exports.globals.postMessage({ vscodeSetImmediateId: myId }, '*');
             };
         }
-        if (typeof process !== 'undefined' && typeof process.nextTick === 'function') {
-            return process.nextTick.bind(process);
+        if (nodeProcess) {
+            return nodeProcess.nextTick.bind(nodeProcess);
         }
         const _promise = Promise.resolve();
         return (callback) => _promise.then(callback);
@@ -2929,12 +2934,27 @@ define(__m[10/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,6/*vs/b
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.nextTick = exports.platform = exports.env = exports.cwd = void 0;
-    const safeProcess = (typeof process === 'undefined') ? {
-        cwd() { return '/'; },
-        env: Object.create(null),
-        get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
-        nextTick(callback) { return platform_1.setImmediate(callback); }
-    } : process;
+    let safeProcess;
+    // Native node.js environment
+    if (typeof process !== 'undefined') {
+        safeProcess = process;
+    }
+    // Native sandbox environment
+    else if (typeof platform_1.globals.vscode !== 'undefined') {
+        safeProcess = platform_1.globals.vscode.process;
+    }
+    // Web environment
+    else {
+        safeProcess = {
+            // Supported
+            get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
+            nextTick(callback) { return platform_1.setImmediate(callback); },
+            // Unsupported
+            get env() { return Object.create(null); },
+            cwd() { return '/'; },
+            getuid() { return -1; }
+        };
+    }
     exports.cwd = safeProcess.cwd;
     exports.env = safeProcess.env;
     exports.platform = safeProcess.platform;
@@ -4659,7 +4679,7 @@ define(__m[17/*vs/base/common/stream*/], __M([0/*require*/,1/*exports*/,2/*vs/ba
 define(__m[7/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.repeat = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.endsWith = exports.startsWith = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
+    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
     function isFalsyOrWhitespace(str) {
         if (!str || typeof str !== 'string') {
             return true;
@@ -4785,40 +4805,6 @@ define(__m[7/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
         return pattern.replace(/\*/g, '');
     }
     exports.stripWildcards = stripWildcards;
-    /**
-     * @deprecated ES6: use `String.startsWith`
-     */
-    function startsWith(haystack, needle) {
-        if (haystack.length < needle.length) {
-            return false;
-        }
-        if (haystack === needle) {
-            return true;
-        }
-        for (let i = 0; i < needle.length; i++) {
-            if (haystack[i] !== needle[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
-    exports.startsWith = startsWith;
-    /**
-     * @deprecated ES6: use `String.endsWith`
-     */
-    function endsWith(haystack, needle) {
-        const diff = haystack.length - needle.length;
-        if (diff > 0) {
-            return haystack.indexOf(needle, diff) === diff;
-        }
-        else if (diff === 0) {
-            return haystack === needle;
-        }
-        else {
-            return false;
-        }
-    }
-    exports.endsWith = endsWith;
     function createRegExp(searchString, isRegex, options = {}) {
         if (!searchString) {
             throw new Error('Cannot create regex from empty string');
@@ -5438,17 +5424,6 @@ define(__m[7/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
         return startsWithUTF8BOM(str) ? str.substr(1) : str;
     }
     exports.stripUTF8BOM = stripUTF8BOM;
-    /**
-     * @deprecated ES6
-     */
-    function repeat(s, count) {
-        let result = '';
-        for (let i = 0; i < count; i++) {
-            result += s;
-        }
-        return result;
-    }
-    exports.repeat = repeat;
     /**
      * Checks if the characters of the provided query string are included in the
      * target string. The characters do not have to be contiguous within the string.
@@ -7682,7 +7657,7 @@ define(__m[12/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,4
         data = pretty(data);
         const colorTable = colorTables[initiator];
         const color = colorTable[req % colorTable.length];
-        let args = [`%c[${direction}]%c[${strings.pad(totalLength, 7, ' ')}]%c[len: ${strings.pad(msgLength, 5, ' ')}]%c${strings.pad(req, 5, ' ')} - ${str}`, 'color: darkgreen', 'color: grey', 'color: grey', `color: ${color}`];
+        let args = [`%c[${direction}]%c[${String(totalLength).padStart(7, ' ')}]%c[len: ${String(msgLength).padStart(5, ' ')}]%c${String(req).padStart(5, ' ')} - ${str}`, 'color: darkgreen', 'color: grey', 'color: grey', `color: ${color}`];
         if (/\($/.test(str)) {
             args = args.concat(data);
             args.push(')');
@@ -8695,15 +8670,18 @@ define(__m[23/*vs/base/parts/ipc/node/ipc.net*/], __M([0/*require*/,1/*exports*/
             buffer.writeUInt8(buffer.readUInt8(offset + 2) ^ m1, offset + 2);
         }
     }
+    // Read this before there's any chance it is overwritten
+    const xdgRuntimeDir = process.env['XDG_RUNTIME_DIR'];
     function generateRandomPipeName() {
         const randomSuffix = uuid_1.generateUuid();
         if (process.platform === 'win32') {
             return `\\\\.\\pipe\\vscode-ipc-${randomSuffix}-sock`;
         }
-        else {
-            // Mac/Unix: use socket file
-            return path_1.join(os_1.tmpdir(), `vscode-ipc-${randomSuffix}.sock`);
+        // Mac/Unix: use socket file
+        if (xdgRuntimeDir) {
+            return path_1.join(xdgRuntimeDir, `vscode-ipc-${randomSuffix}.sock`);
         }
+        return path_1.join(os_1.tmpdir(), `vscode-ipc-${randomSuffix}.sock`);
     }
     exports.generateRandomPipeName = generateRandomPipeName;
     class Server extends ipc_1.IPCServer {

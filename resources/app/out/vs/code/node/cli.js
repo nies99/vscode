@@ -2,7 +2,7 @@
  * Copyright (C) Microsoft Corporation. All rights reserved.
  *--------------------------------------------------------*/
 (function() {
-var __m = ["require","exports","vs/base/common/platform","vs/base/common/path","vs/base/common/uri","vs/base/common/errors","vs/base/common/event","vs/base/common/strings","vs/base/common/types","fs","os","vs/base/common/functional","vs/base/common/lifecycle","vs/base/common/process","vs/nls","vs/nls!vs/code/node/cli","vs/platform/environment/node/argv","vs/base/common/arrays","vs/base/common/iterator","vs/base/common/linkedList","vs/base/common/cancellation","vs/base/common/async","vs/base/common/extpath","vs/base/common/amd","vs/base/common/network","vs/base/common/map","vs/base/common/normalization","vs/base/common/uuid","vs/base/node/pfs","vs/base/node/ports","vs/base/node/terminalEncoding","child_process","vs/nls!vs/platform/environment/node/argv","vs/nls!vs/platform/environment/node/argvHelper","vs/nls!vs/platform/files/common/files","vs/platform/environment/node/stdin","vs/platform/environment/node/waitMarkerFile","vs/platform/instantiation/common/instantiation","vs/platform/files/common/files","vs/platform/environment/node/argvHelper","vs/platform/product/common/product","util","net","minimist","assert","vs/code/node/cli"];
+var __m = ["require","exports","vs/base/common/platform","vs/base/common/path","vs/base/common/strings","vs/base/common/uri","vs/base/common/event","vs/base/common/types","vs/base/common/extpath","vs/base/common/network","vs/base/common/map","fs","os","vs/base/common/errors","vs/base/common/functional","vs/base/common/lifecycle","vs/base/common/async","vs/base/common/process","vs/nls","vs/nls!vs/code/node/cli","vs/platform/environment/node/argv","vs/base/common/iterator","vs/base/common/linkedList","vs/base/common/cancellation","vs/base/common/glob","vs/base/common/normalization","vs/base/common/resources","vs/base/common/uuid","vs/base/node/pfs","vs/base/node/ports","vs/base/node/terminalEncoding","child_process","vs/nls!vs/platform/environment/node/argv","vs/nls!vs/platform/environment/node/argvHelper","vs/nls!vs/platform/files/common/files","vs/platform/environment/node/stdin","vs/platform/environment/node/waitMarkerFile","vs/platform/instantiation/common/instantiation","vs/platform/files/common/files","vs/platform/environment/node/argvHelper","vs/platform/product/common/product","util","net","minimist","assert","vs/code/node/cli"];
 var __M = function(deps) {
   var result = [];
   for (var i = 0, len = deps.length; i < len; i++) {
@@ -14,7 +14,7 @@ var __M = function(deps) {
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[5/*vs/base/common/errors*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[13/*vs/base/common/errors*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NotSupportedError = exports.NotImplementedError = exports.getErrorMessage = exports.disposed = exports.readonly = exports.illegalState = exports.illegalArgument = exports.canceled = exports.isPromiseCanceledError = exports.transformErrorForSerialization = exports.onUnexpectedExternalError = exports.onUnexpectedError = exports.setUnexpectedErrorHandler = exports.errorHandler = exports.ErrorHandler = void 0;
@@ -181,547 +181,7 @@ define(__m[5/*vs/base/common/errors*/], __M([0/*require*/,1/*exports*/]), functi
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[17/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/errors*/]), function (require, exports, errors_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.getRandomElement = exports.asArray = exports.mapArrayOrNot = exports.find = exports.pushToEnd = exports.pushToStart = exports.shuffle = exports.arrayInsert = exports.remove = exports.insert = exports.index = exports.range = exports.flatten = exports.commonPrefixLength = exports.firstOrDefault = exports.first = exports.firstIndex = exports.lastIndex = exports.uniqueFilter = exports.distinctES6 = exports.distinct = exports.isNonEmptyArray = exports.isFalsyOrEmpty = exports.move = exports.coalesceInPlace = exports.coalesce = exports.topAsync = exports.top = exports.delta = exports.sortedDiff = exports.groupBy = exports.mergeSort = exports.findFirstInSorted = exports.binarySearch = exports.equals = exports.tail2 = exports.tail = void 0;
-    /**
-     * Returns the last element of an array.
-     * @param array The array.
-     * @param n Which element from the end (default is zero).
-     */
-    function tail(array, n = 0) {
-        return array[array.length - (1 + n)];
-    }
-    exports.tail = tail;
-    function tail2(arr) {
-        if (arr.length === 0) {
-            throw new Error('Invalid tail call');
-        }
-        return [arr.slice(0, arr.length - 1), arr[arr.length - 1]];
-    }
-    exports.tail2 = tail2;
-    function equals(one, other, itemEquals = (a, b) => a === b) {
-        if (one === other) {
-            return true;
-        }
-        if (!one || !other) {
-            return false;
-        }
-        if (one.length !== other.length) {
-            return false;
-        }
-        for (let i = 0, len = one.length; i < len; i++) {
-            if (!itemEquals(one[i], other[i])) {
-                return false;
-            }
-        }
-        return true;
-    }
-    exports.equals = equals;
-    function binarySearch(array, key, comparator) {
-        let low = 0, high = array.length - 1;
-        while (low <= high) {
-            const mid = ((low + high) / 2) | 0;
-            const comp = comparator(array[mid], key);
-            if (comp < 0) {
-                low = mid + 1;
-            }
-            else if (comp > 0) {
-                high = mid - 1;
-            }
-            else {
-                return mid;
-            }
-        }
-        return -(low + 1);
-    }
-    exports.binarySearch = binarySearch;
-    /**
-     * Takes a sorted array and a function p. The array is sorted in such a way that all elements where p(x) is false
-     * are located before all elements where p(x) is true.
-     * @returns the least x for which p(x) is true or array.length if no element fullfills the given function.
-     */
-    function findFirstInSorted(array, p) {
-        let low = 0, high = array.length;
-        if (high === 0) {
-            return 0; // no children
-        }
-        while (low < high) {
-            const mid = Math.floor((low + high) / 2);
-            if (p(array[mid])) {
-                high = mid;
-            }
-            else {
-                low = mid + 1;
-            }
-        }
-        return low;
-    }
-    exports.findFirstInSorted = findFirstInSorted;
-    /**
-     * Like `Array#sort` but always stable. Usually runs a little slower `than Array#sort`
-     * so only use this when actually needing stable sort.
-     */
-    function mergeSort(data, compare) {
-        _sort(data, compare, 0, data.length - 1, []);
-        return data;
-    }
-    exports.mergeSort = mergeSort;
-    function _merge(a, compare, lo, mid, hi, aux) {
-        let leftIdx = lo, rightIdx = mid + 1;
-        for (let i = lo; i <= hi; i++) {
-            aux[i] = a[i];
-        }
-        for (let i = lo; i <= hi; i++) {
-            if (leftIdx > mid) {
-                // left side consumed
-                a[i] = aux[rightIdx++];
-            }
-            else if (rightIdx > hi) {
-                // right side consumed
-                a[i] = aux[leftIdx++];
-            }
-            else if (compare(aux[rightIdx], aux[leftIdx]) < 0) {
-                // right element is less -> comes first
-                a[i] = aux[rightIdx++];
-            }
-            else {
-                // left element comes first (less or equal)
-                a[i] = aux[leftIdx++];
-            }
-        }
-    }
-    function _sort(a, compare, lo, hi, aux) {
-        if (hi <= lo) {
-            return;
-        }
-        const mid = lo + ((hi - lo) / 2) | 0;
-        _sort(a, compare, lo, mid, aux);
-        _sort(a, compare, mid + 1, hi, aux);
-        if (compare(a[mid], a[mid + 1]) <= 0) {
-            // left and right are sorted and if the last-left element is less
-            // or equals than the first-right element there is nothing else
-            // to do
-            return;
-        }
-        _merge(a, compare, lo, mid, hi, aux);
-    }
-    function groupBy(data, compare) {
-        const result = [];
-        let currentGroup = undefined;
-        for (const element of mergeSort(data.slice(0), compare)) {
-            if (!currentGroup || compare(currentGroup[0], element) !== 0) {
-                currentGroup = [element];
-                result.push(currentGroup);
-            }
-            else {
-                currentGroup.push(element);
-            }
-        }
-        return result;
-    }
-    exports.groupBy = groupBy;
-    /**
-     * Diffs two *sorted* arrays and computes the splices which apply the diff.
-     */
-    function sortedDiff(before, after, compare) {
-        const result = [];
-        function pushSplice(start, deleteCount, toInsert) {
-            if (deleteCount === 0 && toInsert.length === 0) {
-                return;
-            }
-            const latest = result[result.length - 1];
-            if (latest && latest.start + latest.deleteCount === start) {
-                latest.deleteCount += deleteCount;
-                latest.toInsert.push(...toInsert);
-            }
-            else {
-                result.push({ start, deleteCount, toInsert });
-            }
-        }
-        let beforeIdx = 0;
-        let afterIdx = 0;
-        while (true) {
-            if (beforeIdx === before.length) {
-                pushSplice(beforeIdx, 0, after.slice(afterIdx));
-                break;
-            }
-            if (afterIdx === after.length) {
-                pushSplice(beforeIdx, before.length - beforeIdx, []);
-                break;
-            }
-            const beforeElement = before[beforeIdx];
-            const afterElement = after[afterIdx];
-            const n = compare(beforeElement, afterElement);
-            if (n === 0) {
-                // equal
-                beforeIdx += 1;
-                afterIdx += 1;
-            }
-            else if (n < 0) {
-                // beforeElement is smaller -> before element removed
-                pushSplice(beforeIdx, 1, []);
-                beforeIdx += 1;
-            }
-            else if (n > 0) {
-                // beforeElement is greater -> after element added
-                pushSplice(beforeIdx, 0, [afterElement]);
-                afterIdx += 1;
-            }
-        }
-        return result;
-    }
-    exports.sortedDiff = sortedDiff;
-    /**
-     * Takes two *sorted* arrays and computes their delta (removed, added elements).
-     * Finishes in `Math.min(before.length, after.length)` steps.
-     */
-    function delta(before, after, compare) {
-        const splices = sortedDiff(before, after, compare);
-        const removed = [];
-        const added = [];
-        for (const splice of splices) {
-            removed.push(...before.slice(splice.start, splice.start + splice.deleteCount));
-            added.push(...splice.toInsert);
-        }
-        return { removed, added };
-    }
-    exports.delta = delta;
-    /**
-     * Returns the top N elements from the array.
-     *
-     * Faster than sorting the entire array when the array is a lot larger than N.
-     *
-     * @param array The unsorted array.
-     * @param compare A sort function for the elements.
-     * @param n The number of elements to return.
-     * @return The first n elemnts from array when sorted with compare.
-     */
-    function top(array, compare, n) {
-        if (n === 0) {
-            return [];
-        }
-        const result = array.slice(0, n).sort(compare);
-        topStep(array, compare, result, n, array.length);
-        return result;
-    }
-    exports.top = top;
-    /**
-     * Asynchronous variant of `top()` allowing for splitting up work in batches between which the event loop can run.
-     *
-     * Returns the top N elements from the array.
-     *
-     * Faster than sorting the entire array when the array is a lot larger than N.
-     *
-     * @param array The unsorted array.
-     * @param compare A sort function for the elements.
-     * @param n The number of elements to return.
-     * @param batch The number of elements to examine before yielding to the event loop.
-     * @return The first n elemnts from array when sorted with compare.
-     */
-    function topAsync(array, compare, n, batch, token) {
-        if (n === 0) {
-            return Promise.resolve([]);
-        }
-        return new Promise((resolve, reject) => {
-            (async () => {
-                const o = array.length;
-                const result = array.slice(0, n).sort(compare);
-                for (let i = n, m = Math.min(n + batch, o); i < o; i = m, m = Math.min(m + batch, o)) {
-                    if (i > n) {
-                        await new Promise(resolve => setTimeout(resolve)); // nextTick() would starve I/O.
-                    }
-                    if (token && token.isCancellationRequested) {
-                        throw errors_1.canceled();
-                    }
-                    topStep(array, compare, result, i, m);
-                }
-                return result;
-            })()
-                .then(resolve, reject);
-        });
-    }
-    exports.topAsync = topAsync;
-    function topStep(array, compare, result, i, m) {
-        for (const n = result.length; i < m; i++) {
-            const element = array[i];
-            if (compare(element, result[n - 1]) < 0) {
-                result.pop();
-                const j = findFirstInSorted(result, e => compare(element, e) < 0);
-                result.splice(j, 0, element);
-            }
-        }
-    }
-    /**
-     * @returns New array with all falsy values removed. The original array IS NOT modified.
-     */
-    function coalesce(array) {
-        return array.filter(e => !!e);
-    }
-    exports.coalesce = coalesce;
-    /**
-     * Remove all falsey values from `array`. The original array IS modified.
-     */
-    function coalesceInPlace(array) {
-        let to = 0;
-        for (let i = 0; i < array.length; i++) {
-            if (!!array[i]) {
-                array[to] = array[i];
-                to += 1;
-            }
-        }
-        array.length = to;
-    }
-    exports.coalesceInPlace = coalesceInPlace;
-    /**
-     * Moves the element in the array for the provided positions.
-     */
-    function move(array, from, to) {
-        array.splice(to, 0, array.splice(from, 1)[0]);
-    }
-    exports.move = move;
-    /**
-     * @returns false if the provided object is an array and not empty.
-     */
-    function isFalsyOrEmpty(obj) {
-        return !Array.isArray(obj) || obj.length === 0;
-    }
-    exports.isFalsyOrEmpty = isFalsyOrEmpty;
-    function isNonEmptyArray(obj) {
-        return Array.isArray(obj) && obj.length > 0;
-    }
-    exports.isNonEmptyArray = isNonEmptyArray;
-    /**
-     * Removes duplicates from the given array. The optional keyFn allows to specify
-     * how elements are checked for equalness by returning a unique string for each.
-     */
-    function distinct(array, keyFn) {
-        if (!keyFn) {
-            return array.filter((element, position) => {
-                return array.indexOf(element) === position;
-            });
-        }
-        const seen = Object.create(null);
-        return array.filter((elem) => {
-            const key = keyFn(elem);
-            if (seen[key]) {
-                return false;
-            }
-            seen[key] = true;
-            return true;
-        });
-    }
-    exports.distinct = distinct;
-    function distinctES6(array) {
-        const seen = new Set();
-        return array.filter(element => {
-            if (seen.has(element)) {
-                return false;
-            }
-            seen.add(element);
-            return true;
-        });
-    }
-    exports.distinctES6 = distinctES6;
-    function uniqueFilter(keyFn) {
-        const seen = Object.create(null);
-        return element => {
-            const key = keyFn(element);
-            if (seen[key]) {
-                return false;
-            }
-            seen[key] = true;
-            return true;
-        };
-    }
-    exports.uniqueFilter = uniqueFilter;
-    function lastIndex(array, fn) {
-        for (let i = array.length - 1; i >= 0; i--) {
-            const element = array[i];
-            if (fn(element)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-    exports.lastIndex = lastIndex;
-    /**
-     * @deprecated ES6: use `Array.findIndex`
-     */
-    function firstIndex(array, fn) {
-        for (let i = 0; i < array.length; i++) {
-            const element = array[i];
-            if (fn(element)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-    exports.firstIndex = firstIndex;
-    function first(array, fn, notFoundValue = undefined) {
-        const index = firstIndex(array, fn);
-        return index < 0 ? notFoundValue : array[index];
-    }
-    exports.first = first;
-    function firstOrDefault(array, notFoundValue) {
-        return array.length > 0 ? array[0] : notFoundValue;
-    }
-    exports.firstOrDefault = firstOrDefault;
-    function commonPrefixLength(one, other, equals = (a, b) => a === b) {
-        let result = 0;
-        for (let i = 0, len = Math.min(one.length, other.length); i < len && equals(one[i], other[i]); i++) {
-            result++;
-        }
-        return result;
-    }
-    exports.commonPrefixLength = commonPrefixLength;
-    function flatten(arr) {
-        return [].concat(...arr);
-    }
-    exports.flatten = flatten;
-    function range(arg, to) {
-        let from = typeof to === 'number' ? arg : 0;
-        if (typeof to === 'number') {
-            from = arg;
-        }
-        else {
-            from = 0;
-            to = arg;
-        }
-        const result = [];
-        if (from <= to) {
-            for (let i = from; i < to; i++) {
-                result.push(i);
-            }
-        }
-        else {
-            for (let i = from; i > to; i--) {
-                result.push(i);
-            }
-        }
-        return result;
-    }
-    exports.range = range;
-    function index(array, indexer, mapper) {
-        return array.reduce((r, t) => {
-            r[indexer(t)] = mapper ? mapper(t) : t;
-            return r;
-        }, Object.create(null));
-    }
-    exports.index = index;
-    /**
-     * Inserts an element into an array. Returns a function which, when
-     * called, will remove that element from the array.
-     */
-    function insert(array, element) {
-        array.push(element);
-        return () => remove(array, element);
-    }
-    exports.insert = insert;
-    /**
-     * Removes an element from an array if it can be found.
-     */
-    function remove(array, element) {
-        const index = array.indexOf(element);
-        if (index > -1) {
-            array.splice(index, 1);
-            return element;
-        }
-        return undefined;
-    }
-    exports.remove = remove;
-    /**
-     * Insert `insertArr` inside `target` at `insertIndex`.
-     * Please don't touch unless you understand https://jsperf.com/inserting-an-array-within-an-array
-     */
-    function arrayInsert(target, insertIndex, insertArr) {
-        const before = target.slice(0, insertIndex);
-        const after = target.slice(insertIndex);
-        return before.concat(insertArr, after);
-    }
-    exports.arrayInsert = arrayInsert;
-    /**
-     * Uses Fisher-Yates shuffle to shuffle the given array
-     */
-    function shuffle(array, _seed) {
-        let rand;
-        if (typeof _seed === 'number') {
-            let seed = _seed;
-            // Seeded random number generator in JS. Modified from:
-            // https://stackoverflow.com/questions/521295/seeding-the-random-number-generator-in-javascript
-            rand = () => {
-                const x = Math.sin(seed++) * 179426549; // throw away most significant digits and reduce any potential bias
-                return x - Math.floor(x);
-            };
-        }
-        else {
-            rand = Math.random;
-        }
-        for (let i = array.length - 1; i > 0; i -= 1) {
-            const j = Math.floor(rand() * (i + 1));
-            const temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
-        }
-    }
-    exports.shuffle = shuffle;
-    /**
-     * Pushes an element to the start of the array, if found.
-     */
-    function pushToStart(arr, value) {
-        const index = arr.indexOf(value);
-        if (index > -1) {
-            arr.splice(index, 1);
-            arr.unshift(value);
-        }
-    }
-    exports.pushToStart = pushToStart;
-    /**
-     * Pushes an element to the end of the array, if found.
-     */
-    function pushToEnd(arr, value) {
-        const index = arr.indexOf(value);
-        if (index > -1) {
-            arr.splice(index, 1);
-            arr.push(value);
-        }
-    }
-    exports.pushToEnd = pushToEnd;
-    /**
-     * @deprecated ES6: use `Array.find`
-     */
-    function find(arr, predicate) {
-        for (let i = 0; i < arr.length; i++) {
-            const element = arr[i];
-            if (predicate(element, i, arr)) {
-                return element;
-            }
-        }
-        return undefined;
-    }
-    exports.find = find;
-    function mapArrayOrNot(items, fn) {
-        return Array.isArray(items) ?
-            items.map(fn) :
-            fn(items);
-    }
-    exports.mapArrayOrNot = mapArrayOrNot;
-    function asArray(x) {
-        return Array.isArray(x) ? x : [x];
-    }
-    exports.asArray = asArray;
-    function getRandomElement(arr) {
-        return arr[Math.floor(Math.random() * arr.length)];
-    }
-    exports.getRandomElement = getRandomElement;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[11/*vs/base/common/functional*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[14/*vs/base/common/functional*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.once = void 0;
@@ -745,7 +205,7 @@ define(__m[11/*vs/base/common/functional*/], __M([0/*require*/,1/*exports*/]), f
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[18/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[21/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Iterable = void 0;
@@ -830,7 +290,7 @@ define(__m[18/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), fun
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[12/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,11/*vs/base/common/functional*/,18/*vs/base/common/iterator*/]), function (require, exports, functional_1, iterator_1) {
+define(__m[15/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,14/*vs/base/common/functional*/,21/*vs/base/common/iterator*/]), function (require, exports, functional_1, iterator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ImmortalReference = exports.ReferenceCollection = exports.MutableDisposable = exports.Disposable = exports.DisposableStore = exports.toDisposable = exports.combinedDisposable = exports.dispose = exports.isDisposable = exports.MultiDisposeError = void 0;
@@ -1065,7 +525,7 @@ define(__m[12/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,11/*v
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[19/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[22/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LinkedList = void 0;
@@ -1196,7 +656,7 @@ define(__m[19/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), f
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[6/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/errors*/,11/*vs/base/common/functional*/,12/*vs/base/common/lifecycle*/,19/*vs/base/common/linkedList*/]), function (require, exports, errors_1, functional_1, lifecycle_1, linkedList_1) {
+define(__m[6/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,13/*vs/base/common/errors*/,14/*vs/base/common/functional*/,15/*vs/base/common/lifecycle*/,22/*vs/base/common/linkedList*/]), function (require, exports, errors_1, functional_1, lifecycle_1, linkedList_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Relay = exports.EventBufferer = exports.EventMultiplexer = exports.AsyncEmitter = exports.PauseableEmitter = exports.Emitter = exports.setGlobalLeakWarningThreshold = exports.Event = void 0;
@@ -1895,7 +1355,7 @@ define(__m[6/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,5/*vs/base
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[20/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/event*/]), function (require, exports, event_1) {
+define(__m[23/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/event*/]), function (require, exports, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CancellationTokenSource = exports.CancellationToken = void 0;
@@ -2011,10 +1471,10 @@ define(__m[20/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,6/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[21/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/cancellation*/,5/*vs/base/common/errors*/,6/*vs/base/common/event*/,12/*vs/base/common/lifecycle*/]), function (require, exports, cancellation_1, errors, event_1, lifecycle_1) {
+define(__m[16/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,23/*vs/base/common/cancellation*/,13/*vs/base/common/errors*/,6/*vs/base/common/event*/,15/*vs/base/common/lifecycle*/]), function (require, exports, cancellation_1, errors, event_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
+    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellablePromises = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
     function isThenable(obj) {
         return obj && typeof obj.then === 'function';
     }
@@ -2054,10 +1514,25 @@ define(__m[21/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,20/*vs/ba
         return Promise.race([promise, new Promise(resolve => token.onCancellationRequested(() => resolve(defaultValue)))]);
     }
     exports.raceCancellation = raceCancellation;
+    /**
+     * Returns as soon as one of the promises is resolved and cancels remaining promises
+     */
+    async function raceCancellablePromises(cancellablePromises) {
+        let resolvedPromiseIndex = -1;
+        const promises = cancellablePromises.map((promise, index) => promise.then(result => { resolvedPromiseIndex = index; return result; }));
+        const result = await Promise.race(promises);
+        cancellablePromises.forEach((cancellablePromise, index) => {
+            if (index !== resolvedPromiseIndex) {
+                cancellablePromise.cancel();
+            }
+        });
+        return result;
+    }
+    exports.raceCancellablePromises = raceCancellablePromises;
     function raceTimeout(promise, timeout, onTimeout) {
         let promiseResolve = undefined;
         const timer = setTimeout(() => {
-            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve();
+            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve(undefined);
             onTimeout === null || onTimeout === void 0 ? void 0 : onTimeout();
         }, timeout);
         return Promise.race([
@@ -2508,10 +1983,10 @@ define(__m[21/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,20/*vs/ba
     }
     exports.IntervalTimer = IntervalTimer;
     class RunOnceScheduler {
-        constructor(runner, timeout) {
+        constructor(runner, delay) {
             this.timeoutToken = -1;
             this.runner = runner;
-            this.timeout = timeout;
+            this.timeout = delay;
             this.timeoutHandler = this.onTimeout.bind(this);
         }
         /**
@@ -2536,6 +2011,12 @@ define(__m[21/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,20/*vs/ba
         schedule(delay = this.timeout) {
             this.cancel();
             this.timeoutToken = setTimeout(this.timeoutHandler, delay);
+        }
+        get delay() {
+            return this.timeout;
+        }
+        set delay(value) {
+            this.timeout = value;
         }
         /**
          * Returns true if scheduled.
@@ -2739,6 +2220,7 @@ define(__m[21/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,20/*vs/ba
  *--------------------------------------------------------------------------------------------*/
 define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
+    var _a;
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isLittleEndian = exports.OS = exports.OperatingSystem = exports.setImmediate = exports.globals = exports.translationsConfigFile = exports.locale = exports.Language = exports.language = exports.isRootUser = exports.userAgent = exports.platform = exports.isIOS = exports.isWeb = exports.isNative = exports.isLinux = exports.isMacintosh = exports.isWindows = exports.PlatformToString = exports.Platform = void 0;
     const LANGUAGE_DEFAULT = 'en';
@@ -2752,8 +2234,18 @@ define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
     let _language = LANGUAGE_DEFAULT;
     let _translationsConfigFile = undefined;
     let _userAgent = undefined;
-    const isElectronRenderer = (typeof process !== 'undefined' && typeof process.versions !== 'undefined' && typeof process.versions.electron !== 'undefined' && process.type === 'renderer');
-    // OS detection
+    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
+    let nodeProcess = undefined;
+    if (typeof process !== 'undefined') {
+        // Native environment (non-sandboxed)
+        nodeProcess = process;
+    }
+    else if (typeof _globals.vscode !== 'undefined') {
+        // Native envionment (sandboxed)
+        nodeProcess = _globals.vscode.process;
+    }
+    const isElectronRenderer = typeof ((_a = nodeProcess === null || nodeProcess === void 0 ? void 0 : nodeProcess.versions) === null || _a === void 0 ? void 0 : _a.electron) === 'string' && nodeProcess.type === 'renderer';
+    // Web environment
     if (typeof navigator === 'object' && !isElectronRenderer) {
         _userAgent = navigator.userAgent;
         _isWindows = _userAgent.indexOf('Windows') >= 0;
@@ -2764,13 +2256,14 @@ define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
         _locale = navigator.language;
         _language = _locale;
     }
-    else if (typeof process === 'object') {
-        _isWindows = (process.platform === 'win32');
-        _isMacintosh = (process.platform === 'darwin');
-        _isLinux = (process.platform === 'linux');
+    // Native environment
+    else if (typeof nodeProcess === 'object') {
+        _isWindows = (nodeProcess.platform === 'win32');
+        _isMacintosh = (nodeProcess.platform === 'darwin');
+        _isLinux = (nodeProcess.platform === 'linux');
         _locale = LANGUAGE_DEFAULT;
         _language = LANGUAGE_DEFAULT;
-        const rawNlsConfig = process.env['VSCODE_NLS_CONFIG'];
+        const rawNlsConfig = nodeProcess.env['VSCODE_NLS_CONFIG'];
         if (rawNlsConfig) {
             try {
                 const nlsConfig = JSON.parse(rawNlsConfig);
@@ -2784,6 +2277,10 @@ define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
             }
         }
         _isNative = true;
+    }
+    // Unknown environment
+    else {
+        console.error('Unable to resolve platform.');
     }
     var Platform;
     (function (Platform) {
@@ -2820,7 +2317,7 @@ define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
     exports.platform = _platform;
     exports.userAgent = _userAgent;
     function isRootUser() {
-        return _isNative && !_isWindows && (process.getuid() === 0);
+        return !!nodeProcess && !_isWindows && (nodeProcess.getuid() === 0);
     }
     exports.isRootUser = isRootUser;
     /**
@@ -2862,7 +2359,6 @@ define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
      * The translatios that are available through language packs.
      */
     exports.translationsConfigFile = _translationsConfigFile;
-    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
     exports.globals = _globals;
     exports.setImmediate = (function defineSetImmediate() {
         if (exports.globals.setImmediate) {
@@ -2892,8 +2388,8 @@ define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
                 exports.globals.postMessage({ vscodeSetImmediateId: myId }, '*');
             };
         }
-        if (typeof process !== 'undefined' && typeof process.nextTick === 'function') {
-            return process.nextTick.bind(process);
+        if (nodeProcess) {
+            return nodeProcess.nextTick.bind(nodeProcess);
         }
         const _promise = Promise.resolve();
         return (callback) => _promise.then(callback);
@@ -2925,16 +2421,31 @@ define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[13/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/]), function (require, exports, platform_1) {
+define(__m[17/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/]), function (require, exports, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.nextTick = exports.platform = exports.env = exports.cwd = void 0;
-    const safeProcess = (typeof process === 'undefined') ? {
-        cwd() { return '/'; },
-        env: Object.create(null),
-        get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
-        nextTick(callback) { return platform_1.setImmediate(callback); }
-    } : process;
+    let safeProcess;
+    // Native node.js environment
+    if (typeof process !== 'undefined') {
+        safeProcess = process;
+    }
+    // Native sandbox environment
+    else if (typeof platform_1.globals.vscode !== 'undefined') {
+        safeProcess = platform_1.globals.vscode.process;
+    }
+    // Web environment
+    else {
+        safeProcess = {
+            // Supported
+            get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
+            nextTick(callback) { return platform_1.setImmediate(callback); },
+            // Unsupported
+            get env() { return Object.create(null); },
+            cwd() { return '/'; },
+            getuid() { return -1; }
+        };
+    }
     exports.cwd = safeProcess.cwd;
     exports.env = safeProcess.env;
     exports.platform = safeProcess.platform;
@@ -2945,7 +2456,7 @@ define(__m[13/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,2/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[3/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,13/*vs/base/common/process*/]), function (require, exports, process) {
+define(__m[3/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/process*/]), function (require, exports, process) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.delimiter = exports.sep = exports.toNamespacedPath = exports.parse = exports.format = exports.extname = exports.basename = exports.dirname = exports.relative = exports.resolve = exports.join = exports.isAbsolute = exports.normalize = exports.posix = exports.win32 = void 0;
@@ -4311,10 +3822,10 @@ define(__m[3/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,13/*vs/base
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[7/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[4/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.repeat = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.endsWith = exports.startsWith = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
+    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
     function isFalsyOrWhitespace(str) {
         if (!str || typeof str !== 'string') {
             return true;
@@ -4440,40 +3951,6 @@ define(__m[7/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
         return pattern.replace(/\*/g, '');
     }
     exports.stripWildcards = stripWildcards;
-    /**
-     * @deprecated ES6: use `String.startsWith`
-     */
-    function startsWith(haystack, needle) {
-        if (haystack.length < needle.length) {
-            return false;
-        }
-        if (haystack === needle) {
-            return true;
-        }
-        for (let i = 0; i < needle.length; i++) {
-            if (haystack[i] !== needle[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
-    exports.startsWith = startsWith;
-    /**
-     * @deprecated ES6: use `String.endsWith`
-     */
-    function endsWith(haystack, needle) {
-        const diff = haystack.length - needle.length;
-        if (diff > 0) {
-            return haystack.indexOf(needle, diff) === diff;
-        }
-        else if (diff === 0) {
-            return haystack === needle;
-        }
-        else {
-            return false;
-        }
-    }
-    exports.endsWith = endsWith;
     function createRegExp(searchString, isRegex, options = {}) {
         if (!searchString) {
             throw new Error('Cannot create regex from empty string');
@@ -5094,17 +4571,6 @@ define(__m[7/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
     }
     exports.stripUTF8BOM = stripUTF8BOM;
     /**
-     * @deprecated ES6
-     */
-    function repeat(s, count) {
-        let result = '';
-        for (let i = 0; i < count; i++) {
-            result += s;
-        }
-        return result;
-    }
-    exports.repeat = repeat;
-    /**
      * Checks if the characters of the provided query string are included in the
      * target string. The characters do not have to be contiguous within the string.
      */
@@ -5323,7 +4789,7 @@ define(__m[7/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[8/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[7/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NotImplementedProxy = exports.withUndefinedAsNull = exports.withNullAsUndefined = exports.createProxyObject = exports.getAllMethodNames = exports.getAllPropertyNames = exports.validateConstraint = exports.validateConstraints = exports.areFunctions = exports.isFunction = exports.isEmptyObject = exports.assertAllDefined = exports.assertIsDefined = exports.assertType = exports.isUndefinedOrNull = exports.isDefined = exports.isUndefined = exports.isBoolean = exports.isNumber = exports.isObject = exports.isStringArray = exports.isString = exports.isArray = void 0;
@@ -5559,7 +5025,7 @@ define(__m[8/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), functio
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[22/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/,7/*vs/base/common/strings*/,3/*vs/base/common/path*/,8/*vs/base/common/types*/]), function (require, exports, platform_1, strings_1, path_1, types_1) {
+define(__m[8/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/,4/*vs/base/common/strings*/,3/*vs/base/common/path*/,7/*vs/base/common/types*/]), function (require, exports, platform_1, strings_1, path_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.parseLineAndColumnAware = exports.indexOfPath = exports.isRootOrDriveLetter = exports.sanitizeFilePath = exports.isWindowsDriveLetter = exports.isEqualOrParent = exports.isEqual = exports.isValidBasename = exports.isUNC = exports.getRoot = exports.toSlashes = exports.isPathSeparator = void 0;
@@ -5728,34 +5194,34 @@ define(__m[22/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,2/*vs/b
         return strings_1.equalsIgnoreCase(pathA, pathB);
     }
     exports.isEqual = isEqual;
-    function isEqualOrParent(path, candidate, ignoreCase, separator = path_1.sep) {
-        if (path === candidate) {
+    function isEqualOrParent(base, parentCandidate, ignoreCase, separator = path_1.sep) {
+        if (base === parentCandidate) {
             return true;
         }
-        if (!path || !candidate) {
+        if (!base || !parentCandidate) {
             return false;
         }
-        if (candidate.length > path.length) {
+        if (parentCandidate.length > base.length) {
             return false;
         }
         if (ignoreCase) {
-            const beginsWith = strings_1.startsWithIgnoreCase(path, candidate);
+            const beginsWith = strings_1.startsWithIgnoreCase(base, parentCandidate);
             if (!beginsWith) {
                 return false;
             }
-            if (candidate.length === path.length) {
+            if (parentCandidate.length === base.length) {
                 return true; // same path, different casing
             }
-            let sepOffset = candidate.length;
-            if (candidate.charAt(candidate.length - 1) === separator) {
+            let sepOffset = parentCandidate.length;
+            if (parentCandidate.charAt(parentCandidate.length - 1) === separator) {
                 sepOffset--; // adjust the expected sep offset in case our candidate already ends in separator character
             }
-            return path.charAt(sepOffset) === separator;
+            return base.charAt(sepOffset) === separator;
         }
-        if (candidate.charAt(candidate.length - 1) !== separator) {
-            candidate += separator;
+        if (parentCandidate.charAt(parentCandidate.length - 1) !== separator) {
+            parentCandidate += separator;
         }
-        return path.indexOf(candidate) === 0;
+        return base.indexOf(parentCandidate) === 0;
     }
     exports.isEqualOrParent = isEqualOrParent;
     function isWindowsDriveLetter(char0) {
@@ -5851,7 +5317,7 @@ define(__m[22/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,2/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[4/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/,3/*vs/base/common/path*/]), function (require, exports, platform_1, paths) {
+define(__m[5/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/,3/*vs/base/common/path*/]), function (require, exports, platform_1, paths) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.uriToFsPath = exports.URI = void 0;
@@ -6444,28 +5910,10 @@ define(__m[4/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,2/*vs/base/c
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[23/*vs/base/common/amd*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/uri*/]), function (require, exports, uri_1) {
+define(__m[9/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/uri*/,2/*vs/base/common/platform*/]), function (require, exports, uri_1, platform) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.getUriFromAmdModule = exports.getPathFromAmdModule = void 0;
-    function getPathFromAmdModule(requirefn, relativePath) {
-        return getUriFromAmdModule(requirefn, relativePath).fsPath;
-    }
-    exports.getPathFromAmdModule = getPathFromAmdModule;
-    function getUriFromAmdModule(requirefn, relativePath) {
-        return uri_1.URI.parse(requirefn.toUrl(relativePath));
-    }
-    exports.getUriFromAmdModule = getUriFromAmdModule;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[24/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/uri*/,2/*vs/base/common/platform*/]), function (require, exports, uri_1, platform) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.RemoteAuthorities = exports.Schemas = void 0;
+    exports.FileAccess = exports.RemoteAuthorities = exports.Schemas = void 0;
     var Schemas;
     (function (Schemas) {
         /**
@@ -6562,13 +6010,33 @@ define(__m[24/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,4/*vs/b
         }
     }
     exports.RemoteAuthorities = new RemoteAuthoritiesImpl();
+    class FileAccessImpl {
+        asBrowserUri(uriOrModule, moduleIdToUrl) {
+            const uri = this.toUri(uriOrModule, moduleIdToUrl);
+            if (uri.scheme === Schemas.vscodeRemote) {
+                return exports.RemoteAuthorities.rewrite(uri);
+            }
+            return uri;
+        }
+        asFileUri(uriOrModule, moduleIdToUrl) {
+            const uri = this.toUri(uriOrModule, moduleIdToUrl);
+            return uri;
+        }
+        toUri(uriOrModule, moduleIdToUrl) {
+            if (uri_1.URI.isUri(uriOrModule)) {
+                return uriOrModule;
+            }
+            return uri_1.URI.parse(moduleIdToUrl.toUrl(uriOrModule));
+        }
+    }
+    exports.FileAccess = new FileAccessImpl();
 });
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[25/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/uri*/,7/*vs/base/common/strings*/,24/*vs/base/common/network*/,2/*vs/base/common/platform*/]), function (require, exports, uri_1, strings_1, network_1, platform_1) {
+define(__m[10/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/uri*/,4/*vs/base/common/strings*/,9/*vs/base/common/network*/,2/*vs/base/common/platform*/]), function (require, exports, uri_1, strings_1, network_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LRUCache = exports.LinkedMap = exports.Touch = exports.ResourceMap = exports.TernarySearchTree = exports.UriIterator = exports.PathIterator = exports.StringIterator = exports.setToString = exports.mapToString = exports.getOrSet = void 0;
@@ -6691,7 +6159,7 @@ define(__m[25/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,4/*vs/base/
                 this._states.push(2 /* Authority */);
             }
             if (this._value.path) {
-                //todo@jrieken the case-sensitive logic is copied form `resources.ts#hasToIgnoreCase`
+                //todo@jrieken #107886 the case-sensitive logic is copied form `resources.ts#hasToIgnoreCase`
                 // which cannot be used because it depends on this
                 const caseSensitive = key.scheme === network_1.Schemas.file && platform_1.isLinux;
                 this._pathIterator = new PathIterator(false, caseSensitive);
@@ -7454,7 +6922,550 @@ define(__m[25/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,4/*vs/base/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[26/*vs/base/common/normalization*/], __M([0/*require*/,1/*exports*/,25/*vs/base/common/map*/]), function (require, exports, map_1) {
+define(__m[24/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/strings*/,8/*vs/base/common/extpath*/,3/*vs/base/common/path*/,10/*vs/base/common/map*/,16/*vs/base/common/async*/]), function (require, exports, strings, extpath, paths, map_1, async_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.getPathTerms = exports.getBasenameTerms = exports.isRelativePattern = exports.hasSiblingFn = exports.hasSiblingPromiseFn = exports.parse = exports.match = exports.splitGlobAware = exports.getEmptyExpression = void 0;
+    function getEmptyExpression() {
+        return Object.create(null);
+    }
+    exports.getEmptyExpression = getEmptyExpression;
+    const GLOBSTAR = '**';
+    const GLOB_SPLIT = '/';
+    const PATH_REGEX = '[/\\\\]'; // any slash or backslash
+    const NO_PATH_REGEX = '[^/\\\\]'; // any non-slash and non-backslash
+    const ALL_FORWARD_SLASHES = /\//g;
+    function starsToRegExp(starCount) {
+        switch (starCount) {
+            case 0:
+                return '';
+            case 1:
+                return `${NO_PATH_REGEX}*?`; // 1 star matches any number of characters except path separator (/ and \) - non greedy (?)
+            default:
+                // Matches:  (Path Sep OR Path Val followed by Path Sep OR Path Sep followed by Path Val) 0-many times
+                // Group is non capturing because we don't need to capture at all (?:...)
+                // Overall we use non-greedy matching because it could be that we match too much
+                return `(?:${PATH_REGEX}|${NO_PATH_REGEX}+${PATH_REGEX}|${PATH_REGEX}${NO_PATH_REGEX}+)*?`;
+        }
+    }
+    function splitGlobAware(pattern, splitChar) {
+        if (!pattern) {
+            return [];
+        }
+        const segments = [];
+        let inBraces = false;
+        let inBrackets = false;
+        let curVal = '';
+        for (const char of pattern) {
+            switch (char) {
+                case splitChar:
+                    if (!inBraces && !inBrackets) {
+                        segments.push(curVal);
+                        curVal = '';
+                        continue;
+                    }
+                    break;
+                case '{':
+                    inBraces = true;
+                    break;
+                case '}':
+                    inBraces = false;
+                    break;
+                case '[':
+                    inBrackets = true;
+                    break;
+                case ']':
+                    inBrackets = false;
+                    break;
+            }
+            curVal += char;
+        }
+        // Tail
+        if (curVal) {
+            segments.push(curVal);
+        }
+        return segments;
+    }
+    exports.splitGlobAware = splitGlobAware;
+    function parseRegExp(pattern) {
+        if (!pattern) {
+            return '';
+        }
+        let regEx = '';
+        // Split up into segments for each slash found
+        const segments = splitGlobAware(pattern, GLOB_SPLIT);
+        // Special case where we only have globstars
+        if (segments.every(s => s === GLOBSTAR)) {
+            regEx = '.*';
+        }
+        // Build regex over segments
+        else {
+            let previousSegmentWasGlobStar = false;
+            segments.forEach((segment, index) => {
+                // Globstar is special
+                if (segment === GLOBSTAR) {
+                    // if we have more than one globstar after another, just ignore it
+                    if (!previousSegmentWasGlobStar) {
+                        regEx += starsToRegExp(2);
+                        previousSegmentWasGlobStar = true;
+                    }
+                    return;
+                }
+                // States
+                let inBraces = false;
+                let braceVal = '';
+                let inBrackets = false;
+                let bracketVal = '';
+                for (const char of segment) {
+                    // Support brace expansion
+                    if (char !== '}' && inBraces) {
+                        braceVal += char;
+                        continue;
+                    }
+                    // Support brackets
+                    if (inBrackets && (char !== ']' || !bracketVal) /* ] is literally only allowed as first character in brackets to match it */) {
+                        let res;
+                        // range operator
+                        if (char === '-') {
+                            res = char;
+                        }
+                        // negation operator (only valid on first index in bracket)
+                        else if ((char === '^' || char === '!') && !bracketVal) {
+                            res = '^';
+                        }
+                        // glob split matching is not allowed within character ranges
+                        // see http://man7.org/linux/man-pages/man7/glob.7.html
+                        else if (char === GLOB_SPLIT) {
+                            res = '';
+                        }
+                        // anything else gets escaped
+                        else {
+                            res = strings.escapeRegExpCharacters(char);
+                        }
+                        bracketVal += res;
+                        continue;
+                    }
+                    switch (char) {
+                        case '{':
+                            inBraces = true;
+                            continue;
+                        case '[':
+                            inBrackets = true;
+                            continue;
+                        case '}':
+                            const choices = splitGlobAware(braceVal, ',');
+                            // Converts {foo,bar} => [foo|bar]
+                            const braceRegExp = `(?:${choices.map(c => parseRegExp(c)).join('|')})`;
+                            regEx += braceRegExp;
+                            inBraces = false;
+                            braceVal = '';
+                            break;
+                        case ']':
+                            regEx += ('[' + bracketVal + ']');
+                            inBrackets = false;
+                            bracketVal = '';
+                            break;
+                        case '?':
+                            regEx += NO_PATH_REGEX; // 1 ? matches any single character except path separator (/ and \)
+                            continue;
+                        case '*':
+                            regEx += starsToRegExp(1);
+                            continue;
+                        default:
+                            regEx += strings.escapeRegExpCharacters(char);
+                    }
+                }
+                // Tail: Add the slash we had split on if there is more to come and the remaining pattern is not a globstar
+                // For example if pattern: some/**/*.js we want the "/" after some to be included in the RegEx to prevent
+                // a folder called "something" to match as well.
+                // However, if pattern: some/**, we tolerate that we also match on "something" because our globstar behaviour
+                // is to match 0-N segments.
+                if (index < segments.length - 1 && (segments[index + 1] !== GLOBSTAR || index + 2 < segments.length)) {
+                    regEx += PATH_REGEX;
+                }
+                // reset state
+                previousSegmentWasGlobStar = false;
+            });
+        }
+        return regEx;
+    }
+    // regexes to check for trival glob patterns that just check for String#endsWith
+    const T1 = /^\*\*\/\*\.[\w\.-]+$/; // **/*.something
+    const T2 = /^\*\*\/([\w\.-]+)\/?$/; // **/something
+    const T3 = /^{\*\*\/[\*\.]?[\w\.-]+\/?(,\*\*\/[\*\.]?[\w\.-]+\/?)*}$/; // {**/*.something,**/*.else} or {**/package.json,**/project.json}
+    const T3_2 = /^{\*\*\/[\*\.]?[\w\.-]+(\/(\*\*)?)?(,\*\*\/[\*\.]?[\w\.-]+(\/(\*\*)?)?)*}$/; // Like T3, with optional trailing /**
+    const T4 = /^\*\*((\/[\w\.-]+)+)\/?$/; // **/something/else
+    const T5 = /^([\w\.-]+(\/[\w\.-]+)*)\/?$/; // something/else
+    const CACHE = new map_1.LRUCache(10000); // bounded to 10000 elements
+    const FALSE = function () {
+        return false;
+    };
+    const NULL = function () {
+        return null;
+    };
+    function parsePattern(arg1, options) {
+        if (!arg1) {
+            return NULL;
+        }
+        // Handle IRelativePattern
+        let pattern;
+        if (typeof arg1 !== 'string') {
+            pattern = arg1.pattern;
+        }
+        else {
+            pattern = arg1;
+        }
+        // Whitespace trimming
+        pattern = pattern.trim();
+        // Check cache
+        const patternKey = `${pattern}_${!!options.trimForExclusions}`;
+        let parsedPattern = CACHE.get(patternKey);
+        if (parsedPattern) {
+            return wrapRelativePattern(parsedPattern, arg1);
+        }
+        // Check for Trivias
+        let match;
+        if (T1.test(pattern)) { // common pattern: **/*.txt just need endsWith check
+            const base = pattern.substr(4); // '**/*'.length === 4
+            parsedPattern = function (path, basename) {
+                return typeof path === 'string' && path.endsWith(base) ? pattern : null;
+            };
+        }
+        else if (match = T2.exec(trimForExclusions(pattern, options))) { // common pattern: **/some.txt just need basename check
+            parsedPattern = trivia2(match[1], pattern);
+        }
+        else if ((options.trimForExclusions ? T3_2 : T3).test(pattern)) { // repetition of common patterns (see above) {**/*.txt,**/*.png}
+            parsedPattern = trivia3(pattern, options);
+        }
+        else if (match = T4.exec(trimForExclusions(pattern, options))) { // common pattern: **/something/else just need endsWith check
+            parsedPattern = trivia4and5(match[1].substr(1), pattern, true);
+        }
+        else if (match = T5.exec(trimForExclusions(pattern, options))) { // common pattern: something/else just need equals check
+            parsedPattern = trivia4and5(match[1], pattern, false);
+        }
+        // Otherwise convert to pattern
+        else {
+            parsedPattern = toRegExp(pattern);
+        }
+        // Cache
+        CACHE.set(patternKey, parsedPattern);
+        return wrapRelativePattern(parsedPattern, arg1);
+    }
+    function wrapRelativePattern(parsedPattern, arg2) {
+        if (typeof arg2 === 'string') {
+            return parsedPattern;
+        }
+        return function (path, basename) {
+            if (!extpath.isEqualOrParent(path, arg2.base)) {
+                return null;
+            }
+            return parsedPattern(paths.relative(arg2.base, path), basename);
+        };
+    }
+    function trimForExclusions(pattern, options) {
+        return options.trimForExclusions && pattern.endsWith('/**') ? pattern.substr(0, pattern.length - 2) : pattern; // dropping **, tailing / is dropped later
+    }
+    // common pattern: **/some.txt just need basename check
+    function trivia2(base, originalPattern) {
+        const slashBase = `/${base}`;
+        const backslashBase = `\\${base}`;
+        const parsedPattern = function (path, basename) {
+            if (typeof path !== 'string') {
+                return null;
+            }
+            if (basename) {
+                return basename === base ? originalPattern : null;
+            }
+            return path === base || path.endsWith(slashBase) || path.endsWith(backslashBase) ? originalPattern : null;
+        };
+        const basenames = [base];
+        parsedPattern.basenames = basenames;
+        parsedPattern.patterns = [originalPattern];
+        parsedPattern.allBasenames = basenames;
+        return parsedPattern;
+    }
+    // repetition of common patterns (see above) {**/*.txt,**/*.png}
+    function trivia3(pattern, options) {
+        const parsedPatterns = aggregateBasenameMatches(pattern.slice(1, -1).split(',')
+            .map(pattern => parsePattern(pattern, options))
+            .filter(pattern => pattern !== NULL), pattern);
+        const n = parsedPatterns.length;
+        if (!n) {
+            return NULL;
+        }
+        if (n === 1) {
+            return parsedPatterns[0];
+        }
+        const parsedPattern = function (path, basename) {
+            for (let i = 0, n = parsedPatterns.length; i < n; i++) {
+                if (parsedPatterns[i](path, basename)) {
+                    return pattern;
+                }
+            }
+            return null;
+        };
+        const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
+        if (withBasenames) {
+            parsedPattern.allBasenames = withBasenames.allBasenames;
+        }
+        const allPaths = parsedPatterns.reduce((all, current) => current.allPaths ? all.concat(current.allPaths) : all, []);
+        if (allPaths.length) {
+            parsedPattern.allPaths = allPaths;
+        }
+        return parsedPattern;
+    }
+    // common patterns: **/something/else just need endsWith check, something/else just needs and equals check
+    function trivia4and5(path, pattern, matchPathEnds) {
+        const nativePath = paths.sep !== paths.posix.sep ? path.replace(ALL_FORWARD_SLASHES, paths.sep) : path;
+        const nativePathEnd = paths.sep + nativePath;
+        const parsedPattern = matchPathEnds ? function (path, basename) {
+            return typeof path === 'string' && (path === nativePath || path.endsWith(nativePathEnd)) ? pattern : null;
+        } : function (path, basename) {
+            return typeof path === 'string' && path === nativePath ? pattern : null;
+        };
+        parsedPattern.allPaths = [(matchPathEnds ? '*/' : './') + path];
+        return parsedPattern;
+    }
+    function toRegExp(pattern) {
+        try {
+            const regExp = new RegExp(`^${parseRegExp(pattern)}$`);
+            return function (path) {
+                regExp.lastIndex = 0; // reset RegExp to its initial state to reuse it!
+                return typeof path === 'string' && regExp.test(path) ? pattern : null;
+            };
+        }
+        catch (error) {
+            return NULL;
+        }
+    }
+    function match(arg1, path, hasSibling) {
+        if (!arg1 || typeof path !== 'string') {
+            return false;
+        }
+        return parse(arg1)(path, undefined, hasSibling);
+    }
+    exports.match = match;
+    function parse(arg1, options = {}) {
+        if (!arg1) {
+            return FALSE;
+        }
+        // Glob with String
+        if (typeof arg1 === 'string' || isRelativePattern(arg1)) {
+            const parsedPattern = parsePattern(arg1, options);
+            if (parsedPattern === NULL) {
+                return FALSE;
+            }
+            const resultPattern = function (path, basename) {
+                return !!parsedPattern(path, basename);
+            };
+            if (parsedPattern.allBasenames) {
+                resultPattern.allBasenames = parsedPattern.allBasenames;
+            }
+            if (parsedPattern.allPaths) {
+                resultPattern.allPaths = parsedPattern.allPaths;
+            }
+            return resultPattern;
+        }
+        // Glob with Expression
+        return parsedExpression(arg1, options);
+    }
+    exports.parse = parse;
+    function hasSiblingPromiseFn(siblingsFn) {
+        if (!siblingsFn) {
+            return undefined;
+        }
+        let siblings;
+        return (name) => {
+            if (!siblings) {
+                siblings = (siblingsFn() || Promise.resolve([]))
+                    .then(list => list ? listToMap(list) : {});
+            }
+            return siblings.then(map => !!map[name]);
+        };
+    }
+    exports.hasSiblingPromiseFn = hasSiblingPromiseFn;
+    function hasSiblingFn(siblingsFn) {
+        if (!siblingsFn) {
+            return undefined;
+        }
+        let siblings;
+        return (name) => {
+            if (!siblings) {
+                const list = siblingsFn();
+                siblings = list ? listToMap(list) : {};
+            }
+            return !!siblings[name];
+        };
+    }
+    exports.hasSiblingFn = hasSiblingFn;
+    function listToMap(list) {
+        const map = {};
+        for (const key of list) {
+            map[key] = true;
+        }
+        return map;
+    }
+    function isRelativePattern(obj) {
+        const rp = obj;
+        return rp && typeof rp.base === 'string' && typeof rp.pattern === 'string';
+    }
+    exports.isRelativePattern = isRelativePattern;
+    function getBasenameTerms(patternOrExpression) {
+        return patternOrExpression.allBasenames || [];
+    }
+    exports.getBasenameTerms = getBasenameTerms;
+    function getPathTerms(patternOrExpression) {
+        return patternOrExpression.allPaths || [];
+    }
+    exports.getPathTerms = getPathTerms;
+    function parsedExpression(expression, options) {
+        const parsedPatterns = aggregateBasenameMatches(Object.getOwnPropertyNames(expression)
+            .map(pattern => parseExpressionPattern(pattern, expression[pattern], options))
+            .filter(pattern => pattern !== NULL));
+        const n = parsedPatterns.length;
+        if (!n) {
+            return NULL;
+        }
+        if (!parsedPatterns.some(parsedPattern => !!parsedPattern.requiresSiblings)) {
+            if (n === 1) {
+                return parsedPatterns[0];
+            }
+            const resultExpression = function (path, basename) {
+                for (let i = 0, n = parsedPatterns.length; i < n; i++) {
+                    // Pattern matches path
+                    const result = parsedPatterns[i](path, basename);
+                    if (result) {
+                        return result;
+                    }
+                }
+                return null;
+            };
+            const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
+            if (withBasenames) {
+                resultExpression.allBasenames = withBasenames.allBasenames;
+            }
+            const allPaths = parsedPatterns.reduce((all, current) => current.allPaths ? all.concat(current.allPaths) : all, []);
+            if (allPaths.length) {
+                resultExpression.allPaths = allPaths;
+            }
+            return resultExpression;
+        }
+        const resultExpression = function (path, basename, hasSibling) {
+            let name = undefined;
+            for (let i = 0, n = parsedPatterns.length; i < n; i++) {
+                // Pattern matches path
+                const parsedPattern = parsedPatterns[i];
+                if (parsedPattern.requiresSiblings && hasSibling) {
+                    if (!basename) {
+                        basename = paths.basename(path);
+                    }
+                    if (!name) {
+                        name = basename.substr(0, basename.length - paths.extname(path).length);
+                    }
+                }
+                const result = parsedPattern(path, basename, name, hasSibling);
+                if (result) {
+                    return result;
+                }
+            }
+            return null;
+        };
+        const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
+        if (withBasenames) {
+            resultExpression.allBasenames = withBasenames.allBasenames;
+        }
+        const allPaths = parsedPatterns.reduce((all, current) => current.allPaths ? all.concat(current.allPaths) : all, []);
+        if (allPaths.length) {
+            resultExpression.allPaths = allPaths;
+        }
+        return resultExpression;
+    }
+    function parseExpressionPattern(pattern, value, options) {
+        if (value === false) {
+            return NULL; // pattern is disabled
+        }
+        const parsedPattern = parsePattern(pattern, options);
+        if (parsedPattern === NULL) {
+            return NULL;
+        }
+        // Expression Pattern is <boolean>
+        if (typeof value === 'boolean') {
+            return parsedPattern;
+        }
+        // Expression Pattern is <SiblingClause>
+        if (value) {
+            const when = value.when;
+            if (typeof when === 'string') {
+                const result = (path, basename, name, hasSibling) => {
+                    if (!hasSibling || !parsedPattern(path, basename)) {
+                        return null;
+                    }
+                    const clausePattern = when.replace('$(basename)', name);
+                    const matched = hasSibling(clausePattern);
+                    return async_1.isThenable(matched) ?
+                        matched.then(m => m ? pattern : null) :
+                        matched ? pattern : null;
+                };
+                result.requiresSiblings = true;
+                return result;
+            }
+        }
+        // Expression is Anything
+        return parsedPattern;
+    }
+    function aggregateBasenameMatches(parsedPatterns, result) {
+        const basenamePatterns = parsedPatterns.filter(parsedPattern => !!parsedPattern.basenames);
+        if (basenamePatterns.length < 2) {
+            return parsedPatterns;
+        }
+        const basenames = basenamePatterns.reduce((all, current) => {
+            const basenames = current.basenames;
+            return basenames ? all.concat(basenames) : all;
+        }, []);
+        let patterns;
+        if (result) {
+            patterns = [];
+            for (let i = 0, n = basenames.length; i < n; i++) {
+                patterns.push(result);
+            }
+        }
+        else {
+            patterns = basenamePatterns.reduce((all, current) => {
+                const patterns = current.patterns;
+                return patterns ? all.concat(patterns) : all;
+            }, []);
+        }
+        const aggregate = function (path, basename) {
+            if (typeof path !== 'string') {
+                return null;
+            }
+            if (!basename) {
+                let i;
+                for (i = path.length; i > 0; i--) {
+                    const ch = path.charCodeAt(i - 1);
+                    if (ch === 47 /* Slash */ || ch === 92 /* Backslash */) {
+                        break;
+                    }
+                }
+                basename = path.substr(i);
+            }
+            const index = basenames.indexOf(basename);
+            return index !== -1 ? patterns[index] : null;
+        };
+        aggregate.basenames = basenames;
+        aggregate.patterns = patterns;
+        aggregate.allBasenames = basenames;
+        const aggregatedPatterns = parsedPatterns.filter(parsedPattern => !parsedPattern.basenames);
+        aggregatedPatterns.push(aggregate);
+        return aggregatedPatterns;
+    }
+});
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+define(__m[25/*vs/base/common/normalization*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/map*/]), function (require, exports, map_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.removeAccents = exports.normalizeNFD = exports.normalizeNFC = exports.canNormalize = void 0;
@@ -7509,6 +7520,317 @@ define(__m[26/*vs/base/common/normalization*/], __M([0/*require*/,1/*exports*/,2
             };
         }
     })();
+});
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+define(__m[26/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/extpath*/,3/*vs/base/common/path*/,5/*vs/base/common/uri*/,4/*vs/base/common/strings*/,9/*vs/base/common/network*/,2/*vs/base/common/platform*/,24/*vs/base/common/glob*/,10/*vs/base/common/map*/]), function (require, exports, extpath, paths, uri_1, strings_1, network_1, platform_1, glob_1, map_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.toLocalResource = exports.ResourceGlobMatcher = exports.DataUri = exports.distinctParents = exports.addTrailingPathSeparator = exports.removeTrailingPathSeparator = exports.hasTrailingPathSeparator = exports.isEqualAuthority = exports.isAbsolutePath = exports.resolvePath = exports.relativePath = exports.normalizePath = exports.joinPath = exports.dirname = exports.extname = exports.basename = exports.basenameOrAuthority = exports.getComparisonKey = exports.isEqualOrParent = exports.isEqual = exports.extUriIgnorePathCase = exports.extUriBiasedIgnorePathCase = exports.extUri = exports.ExtUri = exports.originalFSPath = void 0;
+    function originalFSPath(uri) {
+        return uri_1.uriToFsPath(uri, true);
+    }
+    exports.originalFSPath = originalFSPath;
+    class ExtUri {
+        constructor(_ignorePathCasing) {
+            this._ignorePathCasing = _ignorePathCasing;
+        }
+        compare(uri1, uri2, ignoreFragment = false) {
+            if (uri1 === uri2) {
+                return 0;
+            }
+            return strings_1.compare(this.getComparisonKey(uri1, ignoreFragment), this.getComparisonKey(uri2, ignoreFragment));
+        }
+        isEqual(uri1, uri2, ignoreFragment = false) {
+            if (uri1 === uri2) {
+                return true;
+            }
+            if (!uri1 || !uri2) {
+                return false;
+            }
+            return this.getComparisonKey(uri1, ignoreFragment) === this.getComparisonKey(uri2, ignoreFragment);
+        }
+        getComparisonKey(uri, ignoreFragment = false) {
+            return uri.with({
+                path: this._ignorePathCasing(uri) ? uri.path.toLowerCase() : undefined,
+                fragment: ignoreFragment ? null : undefined
+            }).toString();
+        }
+        isEqualOrParent(base, parentCandidate, ignoreFragment = false) {
+            if (base.scheme === parentCandidate.scheme) {
+                if (base.scheme === network_1.Schemas.file) {
+                    return extpath.isEqualOrParent(originalFSPath(base), originalFSPath(parentCandidate), this._ignorePathCasing(base)) && base.query === parentCandidate.query && (ignoreFragment || base.fragment === parentCandidate.fragment);
+                }
+                if (exports.isEqualAuthority(base.authority, parentCandidate.authority)) {
+                    return extpath.isEqualOrParent(base.path, parentCandidate.path, this._ignorePathCasing(base), '/') && base.query === parentCandidate.query && (ignoreFragment || base.fragment === parentCandidate.fragment);
+                }
+            }
+            return false;
+        }
+        // --- path math
+        joinPath(resource, ...pathFragment) {
+            return uri_1.URI.joinPath(resource, ...pathFragment);
+        }
+        basenameOrAuthority(resource) {
+            return exports.basename(resource) || resource.authority;
+        }
+        basename(resource) {
+            return paths.posix.basename(resource.path);
+        }
+        extname(resource) {
+            return paths.posix.extname(resource.path);
+        }
+        dirname(resource) {
+            if (resource.path.length === 0) {
+                return resource;
+            }
+            let dirname;
+            if (resource.scheme === network_1.Schemas.file) {
+                dirname = uri_1.URI.file(paths.dirname(originalFSPath(resource))).path;
+            }
+            else {
+                dirname = paths.posix.dirname(resource.path);
+                if (resource.authority && dirname.length && dirname.charCodeAt(0) !== 47 /* Slash */) {
+                    console.error(`dirname("${resource.toString})) resulted in a relative path`);
+                    dirname = '/'; // If a URI contains an authority component, then the path component must either be empty or begin with a CharCode.Slash ("/") character
+                }
+            }
+            return resource.with({
+                path: dirname
+            });
+        }
+        normalizePath(resource) {
+            if (!resource.path.length) {
+                return resource;
+            }
+            let normalizedPath;
+            if (resource.scheme === network_1.Schemas.file) {
+                normalizedPath = uri_1.URI.file(paths.normalize(originalFSPath(resource))).path;
+            }
+            else {
+                normalizedPath = paths.posix.normalize(resource.path);
+            }
+            return resource.with({
+                path: normalizedPath
+            });
+        }
+        relativePath(from, to) {
+            if (from.scheme !== to.scheme || !exports.isEqualAuthority(from.authority, to.authority)) {
+                return undefined;
+            }
+            if (from.scheme === network_1.Schemas.file) {
+                const relativePath = paths.relative(originalFSPath(from), originalFSPath(to));
+                return platform_1.isWindows ? extpath.toSlashes(relativePath) : relativePath;
+            }
+            let fromPath = from.path || '/', toPath = to.path || '/';
+            if (this._ignorePathCasing(from)) {
+                // make casing of fromPath match toPath
+                let i = 0;
+                for (const len = Math.min(fromPath.length, toPath.length); i < len; i++) {
+                    if (fromPath.charCodeAt(i) !== toPath.charCodeAt(i)) {
+                        if (fromPath.charAt(i).toLowerCase() !== toPath.charAt(i).toLowerCase()) {
+                            break;
+                        }
+                    }
+                }
+                fromPath = toPath.substr(0, i) + fromPath.substr(i);
+            }
+            return paths.posix.relative(fromPath, toPath);
+        }
+        resolvePath(base, path) {
+            if (base.scheme === network_1.Schemas.file) {
+                const newURI = uri_1.URI.file(paths.resolve(originalFSPath(base), path));
+                return base.with({
+                    authority: newURI.authority,
+                    path: newURI.path
+                });
+            }
+            if (path.indexOf('/') === -1) { // no slashes? it's likely a Windows path
+                path = extpath.toSlashes(path);
+                if (/^[a-zA-Z]:(\/|$)/.test(path)) { // starts with a drive letter
+                    path = '/' + path;
+                }
+            }
+            return base.with({
+                path: paths.posix.resolve(base.path, path)
+            });
+        }
+        // --- misc
+        isAbsolutePath(resource) {
+            return !!resource.path && resource.path[0] === '/';
+        }
+        isEqualAuthority(a1, a2) {
+            return a1 === a2 || strings_1.equalsIgnoreCase(a1, a2);
+        }
+        hasTrailingPathSeparator(resource, sep = paths.sep) {
+            if (resource.scheme === network_1.Schemas.file) {
+                const fsp = originalFSPath(resource);
+                return fsp.length > extpath.getRoot(fsp).length && fsp[fsp.length - 1] === sep;
+            }
+            else {
+                const p = resource.path;
+                return (p.length > 1 && p.charCodeAt(p.length - 1) === 47 /* Slash */) && !(/^[a-zA-Z]:(\/$|\\$)/.test(resource.fsPath)); // ignore the slash at offset 0
+            }
+        }
+        removeTrailingPathSeparator(resource, sep = paths.sep) {
+            // Make sure that the path isn't a drive letter. A trailing separator there is not removable.
+            if (exports.hasTrailingPathSeparator(resource, sep)) {
+                return resource.with({ path: resource.path.substr(0, resource.path.length - 1) });
+            }
+            return resource;
+        }
+        addTrailingPathSeparator(resource, sep = paths.sep) {
+            let isRootSep = false;
+            if (resource.scheme === network_1.Schemas.file) {
+                const fsp = originalFSPath(resource);
+                isRootSep = ((fsp !== undefined) && (fsp.length === extpath.getRoot(fsp).length) && (fsp[fsp.length - 1] === sep));
+            }
+            else {
+                sep = '/';
+                const p = resource.path;
+                isRootSep = p.length === 1 && p.charCodeAt(p.length - 1) === 47 /* Slash */;
+            }
+            if (!isRootSep && !exports.hasTrailingPathSeparator(resource, sep)) {
+                return resource.with({ path: resource.path + '/' });
+            }
+            return resource;
+        }
+    }
+    exports.ExtUri = ExtUri;
+    /**
+     * Unbiased utility that takes uris "as they are". This means it can be interchanged with
+     * uri#toString() usages. The following is true
+     * ```
+     * assertEqual(aUri.toString() === bUri.toString(), exturi.isEqual(aUri, bUri))
+     * ```
+     */
+    exports.extUri = new ExtUri(() => false);
+    /**
+     * BIASED utility that _mostly_ ignored the case of urs paths. ONLY use this util if you
+     * understand what you are doing.
+     *
+     * This utility is INCOMPATIBLE with `uri.toString()`-usages and both CANNOT be used interchanged.
+     *
+     * When dealing with uris from files or documents, `extUri` (the unbiased friend)is sufficient
+     * because those uris come from a "trustworthy source". When creating unknown uris it's always
+     * better to use `IUriIdentityService` which exposes an `IExtUri`-instance which knows when path
+     * casing matters.
+     */
+    exports.extUriBiasedIgnorePathCase = new ExtUri(uri => {
+        // A file scheme resource is in the same platform as code, so ignore case for non linux platforms
+        // Resource can be from another platform. Lowering the case as an hack. Should come from File system provider
+        return uri.scheme === network_1.Schemas.file ? !platform_1.isLinux : true;
+    });
+    /**
+     * BIASED utility that always ignores the casing of uris paths. ONLY use this util if you
+     * understand what you are doing.
+     *
+     * This utility is INCOMPATIBLE with `uri.toString()`-usages and both CANNOT be used interchanged.
+     *
+     * When dealing with uris from files or documents, `extUri` (the unbiased friend)is sufficient
+     * because those uris come from a "trustworthy source". When creating unknown uris it's always
+     * better to use `IUriIdentityService` which exposes an `IExtUri`-instance which knows when path
+     * casing matters.
+     */
+    exports.extUriIgnorePathCase = new ExtUri(_ => true);
+    exports.isEqual = exports.extUri.isEqual.bind(exports.extUri);
+    exports.isEqualOrParent = exports.extUri.isEqualOrParent.bind(exports.extUri);
+    exports.getComparisonKey = exports.extUri.getComparisonKey.bind(exports.extUri);
+    exports.basenameOrAuthority = exports.extUri.basenameOrAuthority.bind(exports.extUri);
+    exports.basename = exports.extUri.basename.bind(exports.extUri);
+    exports.extname = exports.extUri.extname.bind(exports.extUri);
+    exports.dirname = exports.extUri.dirname.bind(exports.extUri);
+    exports.joinPath = exports.extUri.joinPath.bind(exports.extUri);
+    exports.normalizePath = exports.extUri.normalizePath.bind(exports.extUri);
+    exports.relativePath = exports.extUri.relativePath.bind(exports.extUri);
+    exports.resolvePath = exports.extUri.resolvePath.bind(exports.extUri);
+    exports.isAbsolutePath = exports.extUri.isAbsolutePath.bind(exports.extUri);
+    exports.isEqualAuthority = exports.extUri.isEqualAuthority.bind(exports.extUri);
+    exports.hasTrailingPathSeparator = exports.extUri.hasTrailingPathSeparator.bind(exports.extUri);
+    exports.removeTrailingPathSeparator = exports.extUri.removeTrailingPathSeparator.bind(exports.extUri);
+    exports.addTrailingPathSeparator = exports.extUri.addTrailingPathSeparator.bind(exports.extUri);
+    //#endregion
+    function distinctParents(items, resourceAccessor) {
+        const distinctParents = [];
+        for (let i = 0; i < items.length; i++) {
+            const candidateResource = resourceAccessor(items[i]);
+            if (items.some((otherItem, index) => {
+                if (index === i) {
+                    return false;
+                }
+                return exports.isEqualOrParent(candidateResource, resourceAccessor(otherItem));
+            })) {
+                continue;
+            }
+            distinctParents.push(items[i]);
+        }
+        return distinctParents;
+    }
+    exports.distinctParents = distinctParents;
+    /**
+     * Data URI related helpers.
+     */
+    var DataUri;
+    (function (DataUri) {
+        DataUri.META_DATA_LABEL = 'label';
+        DataUri.META_DATA_DESCRIPTION = 'description';
+        DataUri.META_DATA_SIZE = 'size';
+        DataUri.META_DATA_MIME = 'mime';
+        function parseMetaData(dataUri) {
+            const metadata = new Map();
+            // Given a URI of:  data:image/png;size:2313;label:SomeLabel;description:SomeDescription;base64,77+9UE5...
+            // the metadata is: size:2313;label:SomeLabel;description:SomeDescription
+            const meta = dataUri.path.substring(dataUri.path.indexOf(';') + 1, dataUri.path.lastIndexOf(';'));
+            meta.split(';').forEach(property => {
+                const [key, value] = property.split(':');
+                if (key && value) {
+                    metadata.set(key, value);
+                }
+            });
+            // Given a URI of:  data:image/png;size:2313;label:SomeLabel;description:SomeDescription;base64,77+9UE5...
+            // the mime is: image/png
+            const mime = dataUri.path.substring(0, dataUri.path.indexOf(';'));
+            if (mime) {
+                metadata.set(DataUri.META_DATA_MIME, mime);
+            }
+            return metadata;
+        }
+        DataUri.parseMetaData = parseMetaData;
+    })(DataUri = exports.DataUri || (exports.DataUri = {}));
+    class ResourceGlobMatcher {
+        constructor(globalExpression, rootExpressions) {
+            this.expressionsByRoot = map_1.TernarySearchTree.forUris();
+            this.globalExpression = glob_1.parse(globalExpression);
+            for (const expression of rootExpressions) {
+                this.expressionsByRoot.set(expression.root, { root: expression.root, expression: glob_1.parse(expression.expression) });
+            }
+        }
+        matches(resource) {
+            const rootExpression = this.expressionsByRoot.findSubstr(resource);
+            if (rootExpression) {
+                const path = exports.relativePath(rootExpression.root, resource);
+                if (path && !!rootExpression.expression(path)) {
+                    return true;
+                }
+            }
+            return !!this.globalExpression(resource.path);
+        }
+    }
+    exports.ResourceGlobMatcher = ResourceGlobMatcher;
+    function toLocalResource(resource, authority, localScheme) {
+        if (authority) {
+            let path = resource.path;
+            if (path && path[0] !== paths.posix.sep) {
+                path = paths.posix.sep + path;
+            }
+            return resource.with({ scheme: localScheme, authority, path });
+        }
+        return resource.with({ scheme: localScheme });
+    }
+    exports.toLocalResource = toLocalResource;
 });
 
 /*---------------------------------------------------------------------------------------------
@@ -7576,11 +7898,11 @@ define(__m[27/*vs/base/common/uuid*/], __M([0/*require*/,1/*exports*/]), functio
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[28/*vs/base/node/pfs*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/path*/,21/*vs/base/common/async*/,9/*fs*/,10/*os*/,2/*vs/base/common/platform*/,6/*vs/base/common/event*/,41/*util*/,22/*vs/base/common/extpath*/,27/*vs/base/common/uuid*/,26/*vs/base/common/normalization*/]), function (require, exports, path_1, async_1, fs, os, platform, event_1, util_1, extpath_1, uuid_1, normalization_1) {
+define(__m[28/*vs/base/node/pfs*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/path*/,16/*vs/base/common/async*/,11/*fs*/,12/*os*/,2/*vs/base/common/platform*/,6/*vs/base/common/event*/,41/*util*/,8/*vs/base/common/extpath*/,27/*vs/base/common/uuid*/,25/*vs/base/common/normalization*/]), function (require, exports, path_1, async_1, fs, os, platform, event_1, util_1, extpath_1, uuid_1, normalization_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.copy = exports.move = exports.whenDeleted = exports.fileExists = exports.dirExists = exports.readDirsInDir = exports.writeFileSync = exports.writeFile = exports.mkdirp = exports.readFile = exports.truncate = exports.symlink = exports.unlink = exports.renameIgnoreError = exports.rename = exports.lstat = exports.statLink = exports.stat = exports.chmod = exports.exists = exports.readdirSync = exports.readdirWithFileTypes = exports.readdir = exports.rimrafSync = exports.rimraf = exports.RimRafMode = exports.MAX_HEAP_SIZE = exports.MAX_FILE_SIZE = void 0;
-    // See https://github.com/Microsoft/vscode/issues/30180
+    // See https://github.com/microsoft/vscode/issues/30180
     const WIN32_MAX_FILE_SIZE = 300 * 1024 * 1024; // 300 MB
     const GENERAL_MAX_FILE_SIZE = 16 * 1024 * 1024 * 1024; // 16 GB
     // See https://github.com/v8/v8/blob/5918a23a3d571b9625e5cce246bdd5b46ff7cd8b/src/heap/heap.cc#L149
@@ -8235,14 +8557,14 @@ define(__m[30/*vs/base/node/terminalEncoding*/], __M([0/*require*/,1/*exports*/,
     exports.resolveTerminalEncoding = resolveTerminalEncoding;
 });
 
-define(__m[32/*vs/nls!vs/platform/environment/node/argv*/], __M([14/*vs/nls*/,15/*vs/nls!vs/code/node/cli*/]), function(nls, data) { return nls.create("vs/platform/environment/node/argv", data); });
-define(__m[33/*vs/nls!vs/platform/environment/node/argvHelper*/], __M([14/*vs/nls*/,15/*vs/nls!vs/code/node/cli*/]), function(nls, data) { return nls.create("vs/platform/environment/node/argvHelper", data); });
-define(__m[34/*vs/nls!vs/platform/files/common/files*/], __M([14/*vs/nls*/,15/*vs/nls!vs/code/node/cli*/]), function(nls, data) { return nls.create("vs/platform/files/common/files", data); });
+define(__m[32/*vs/nls!vs/platform/environment/node/argv*/], __M([18/*vs/nls*/,19/*vs/nls!vs/code/node/cli*/]), function(nls, data) { return nls.create("vs/platform/environment/node/argv", data); });
+define(__m[33/*vs/nls!vs/platform/environment/node/argvHelper*/], __M([18/*vs/nls*/,19/*vs/nls!vs/code/node/cli*/]), function(nls, data) { return nls.create("vs/platform/environment/node/argvHelper", data); });
+define(__m[34/*vs/nls!vs/platform/files/common/files*/], __M([18/*vs/nls*/,19/*vs/nls!vs/code/node/cli*/]), function(nls, data) { return nls.create("vs/platform/files/common/files", data); });
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[16/*vs/platform/environment/node/argv*/], __M([0/*require*/,1/*exports*/,43/*minimist*/,32/*vs/nls!vs/platform/environment/node/argv*/,2/*vs/base/common/platform*/]), function (require, exports, minimist, nls_1, platform_1) {
+define(__m[20/*vs/platform/environment/node/argv*/], __M([0/*require*/,1/*exports*/,43/*minimist*/,32/*vs/nls!vs/platform/environment/node/argv*/,2/*vs/base/common/platform*/]), function (require, exports, minimist, nls_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.buildVersionMessage = exports.buildHelpMessage = exports.formatOptions = exports.parseArgs = exports.OPTIONS = void 0;
@@ -8303,7 +8625,6 @@ define(__m[16/*vs/platform/environment/node/argv*/], __M([0/*require*/,1/*export
         'driver': { type: 'string' },
         'logExtensionHostCommunication': { type: 'boolean' },
         'skip-release-notes': { type: 'boolean' },
-        'disable-restore-windows': { type: 'boolean' },
         'disable-telemetry': { type: 'boolean' },
         'disable-updates': { type: 'boolean' },
         'disable-crash-reporter': { type: 'boolean' },
@@ -8374,8 +8695,8 @@ define(__m[16/*vs/platform/environment/node/argv*/], __M([0/*require*/,1/*export
         const parsedArgs = minimist(args, { string, boolean, alias });
         const cleanedArgs = {};
         const remainingArgs = parsedArgs;
-        // https://github.com/microsoft/vscode/issues/58177
-        cleanedArgs._ = parsedArgs._.filter(arg => String(arg).length > 0);
+        // https://github.com/microsoft/vscode/issues/58177, https://github.com/microsoft/vscode/issues/106617
+        cleanedArgs._ = parsedArgs._.map(arg => String(arg)).filter(arg => arg.length > 0);
         delete remainingArgs._;
         for (let optionId in options) {
             const o = options[optionId];
@@ -8512,7 +8833,7 @@ define(__m[16/*vs/platform/environment/node/argv*/], __M([0/*require*/,1/*export
     exports.buildVersionMessage = buildVersionMessage;
 });
 
-define(__m[35/*vs/platform/environment/node/stdin*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/path*/,9/*fs*/,10/*os*/,30/*vs/base/node/terminalEncoding*/]), function (require, exports, paths, fs, os, terminalEncoding_1) {
+define(__m[35/*vs/platform/environment/node/stdin*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/path*/,11/*fs*/,12/*os*/,30/*vs/base/node/terminalEncoding*/]), function (require, exports, paths, fs, os, terminalEncoding_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.readFromStdin = exports.getStdinFilePath = exports.stdinDataListener = exports.hasStdinWithoutTty = void 0;
@@ -8572,7 +8893,7 @@ define(__m[35/*vs/platform/environment/node/stdin*/], __M([0/*require*/,1/*expor
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[36/*vs/platform/environment/node/waitMarkerFile*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/path*/,10/*os*/,9/*fs*/]), function (require, exports, path, os, fs) {
+define(__m[36/*vs/platform/environment/node/waitMarkerFile*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/path*/,12/*os*/,11/*fs*/]), function (require, exports, path, os, fs) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.createWaitMarkerFile = void 0;
@@ -8660,7 +8981,7 @@ define(__m[37/*vs/platform/instantiation/common/instantiation*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[38/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/,34/*vs/nls!vs/platform/files/common/files*/,3/*vs/base/common/path*/,4/*vs/base/common/uri*/,37/*vs/platform/instantiation/common/instantiation*/,7/*vs/base/common/strings*/,8/*vs/base/common/types*/]), function (require, exports, nls_1, path_1, uri_1, instantiation_1, strings_1, types_1) {
+define(__m[38/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/,34/*vs/nls!vs/platform/files/common/files*/,3/*vs/base/common/path*/,5/*vs/base/common/uri*/,37/*vs/platform/instantiation/common/instantiation*/,4/*vs/base/common/strings*/,7/*vs/base/common/types*/]), function (require, exports, nls_1, path_1, uri_1, instantiation_1, strings_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.BinarySize = exports.FALLBACK_MAX_MEMORY_SIZE_MB = exports.MIN_MAX_MEMORY_SIZE_MB = exports.whenProviderRegistered = exports.etag = exports.ETAG_DISABLED = exports.FileKind = exports.FILES_EXCLUDE_CONFIG = exports.FILES_ASSOCIATIONS_CONFIG = exports.HotExitConfiguration = exports.AutoSaveConfiguration = exports.FileOperationResult = exports.FileOperationError = exports.isParent = exports.FileChangesEvent = exports.FileChangeType = exports.FileOperationEvent = exports.FileOperation = exports.toFileOperationResult = exports.toFileSystemProviderErrorCode = exports.markAsFileSystemProviderError = exports.ensureFileSystemProviderError = exports.createFileSystemProviderError = exports.FileSystemProviderError = exports.FileSystemProviderErrorCode = exports.hasFileReadStreamCapability = exports.hasOpenReadWriteCloseCapability = exports.hasFileFolderCopyCapability = exports.hasReadWriteCapability = exports.FileSystemProviderCapabilities = exports.FileType = exports.IFileService = void 0;
@@ -8725,7 +9046,7 @@ define(__m[38/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/
     exports.createFileSystemProviderError = createFileSystemProviderError;
     function ensureFileSystemProviderError(error) {
         if (!error) {
-            return createFileSystemProviderError(nls_1.localize(0, null), FileSystemProviderErrorCode.Unknown); // https://github.com/Microsoft/vscode/issues/72798
+            return createFileSystemProviderError(nls_1.localize(0, null), FileSystemProviderErrorCode.Unknown); // https://github.com/microsoft/vscode/issues/72798
         }
         return error;
     }
@@ -9013,7 +9334,7 @@ define(__m[38/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[39/*vs/platform/environment/node/argvHelper*/], __M([0/*require*/,1/*exports*/,44/*assert*/,17/*vs/base/common/arrays*/,33/*vs/nls!vs/platform/environment/node/argvHelper*/,38/*vs/platform/files/common/files*/,16/*vs/platform/environment/node/argv*/]), function (require, exports, assert, arrays_1, nls_1, files_1, argv_1) {
+define(__m[39/*vs/platform/environment/node/argvHelper*/], __M([0/*require*/,1/*exports*/,44/*assert*/,33/*vs/nls!vs/platform/environment/node/argvHelper*/,38/*vs/platform/files/common/files*/,20/*vs/platform/environment/node/argv*/]), function (require, exports, assert, nls_1, files_1, argv_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.addArg = exports.parseCLIProcessArgv = exports.parseMainProcessArgv = void 0;
@@ -9036,7 +9357,7 @@ define(__m[39/*vs/platform/environment/node/argvHelper*/], __M([0/*require*/,1/*
         return args;
     }
     function stripAppPath(argv) {
-        const index = arrays_1.firstIndex(argv, a => !/^-/.test(a));
+        const index = argv.findIndex(a => !/^-/.test(a));
         if (index > -1) {
             return [...argv.slice(0, index), ...argv.slice(index + 1)];
         }
@@ -9060,10 +9381,7 @@ define(__m[39/*vs/platform/environment/node/argvHelper*/], __M([0/*require*/,1/*
      * Use this to parse raw code CLI process.argv such as: `Electron cli.js . --verbose --wait`
      */
     function parseCLIProcessArgv(processArgv) {
-        let [, , ...args] = processArgv;
-        if (process.env['VSCODE_DEV']) {
-            args = stripAppPath(args) || [];
-        }
+        let [, , ...args] = processArgv; // remove the first non-option argument: it's always the app location
         return parseAndValidate(args, true);
     }
     exports.parseCLIProcessArgv = parseCLIProcessArgv;
@@ -9087,34 +9405,41 @@ define(__m[39/*vs/platform/environment/node/argvHelper*/], __M([0/*require*/,1/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[40/*vs/platform/product/common/product*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/,3/*vs/base/common/path*/,23/*vs/base/common/amd*/,13/*vs/base/common/process*/]), function (require, exports, platform_1, path, amd_1, process_1) {
+define(__m[40/*vs/platform/product/common/product*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/,17/*vs/base/common/process*/,9/*vs/base/common/network*/,26/*vs/base/common/resources*/]), function (require, exports, platform_1, process_1, network_1, resources_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     let product;
-    // Web
-    if (platform_1.isWeb) {
+    // Web or Native (sandbox TODO@sandbox need to add all properties of product.json)
+    if (platform_1.isWeb || typeof require === 'undefined' || typeof require.__$__nodeRequire !== 'function') {
         // Built time configuration (do NOT modify)
         product = { /*BUILD->INSERT_PRODUCT_CONFIGURATION*/};
         // Running out of sources
         if (Object.keys(product).length === 0) {
             Object.assign(product, {
-                version: '1.49.0-dev',
-                nameLong: 'Visual Studio Code Web Dev',
-                nameShort: 'VSCode Web Dev',
+                version: '1.50.0-dev',
+                nameShort: platform_1.isWeb ? 'Code Web - OSS Dev' : 'Code - OSS Dev',
+                nameLong: platform_1.isWeb ? 'Code Web - OSS Dev' : 'Code - OSS Dev',
+                applicationName: 'code-oss',
+                dataFolderName: '.vscode-oss',
                 urlProtocol: 'code-oss',
+                reportIssueUrl: 'https://github.com/microsoft/vscode/issues/new',
+                licenseName: 'MIT',
+                licenseUrl: 'https://github.com/microsoft/vscode/blob/master/LICENSE.txt',
                 extensionAllowedProposedApi: [
+                    'ms-vscode.vscode-js-profile-flame',
+                    'ms-vscode.vscode-js-profile-table',
                     'ms-vscode.references-view',
                     'ms-vscode.github-browser'
                 ],
             });
         }
     }
-    // Node: AMD loader
-    else if (typeof require !== 'undefined' && typeof require.__$__nodeRequire === 'function') {
+    // Native (non-sandboxed)
+    else {
         // Obtain values from product.json and package.json
-        const rootPath = path.dirname(amd_1.getPathFromAmdModule(require, ''));
-        product = require.__$__nodeRequire(path.join(rootPath, 'product.json'));
-        const pkg = require.__$__nodeRequire(path.join(rootPath, 'package.json'));
+        const rootPath = resources_1.dirname(network_1.FileAccess.asFileUri('', require));
+        product = require.__$__nodeRequire(resources_1.joinPath(rootPath, 'product.json').fsPath);
+        const pkg = require.__$__nodeRequire(resources_1.joinPath(rootPath, 'package.json').fsPath);
         // Running out of sources
         if (process_1.env['VSCODE_DEV']) {
             Object.assign(product, {
@@ -9127,10 +9452,6 @@ define(__m[40/*vs/platform/product/common/product*/], __M([0/*require*/,1/*expor
             version: pkg.version
         });
     }
-    // Unknown
-    else {
-        throw new Error('Unable to resolve product configuration');
-    }
     exports.default = product;
 });
 
@@ -9138,7 +9459,7 @@ define(__m[40/*vs/platform/product/common/product*/], __M([0/*require*/,1/*expor
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[45/*vs/code/node/cli*/], __M([0/*require*/,1/*exports*/,10/*os*/,9/*fs*/,31/*child_process*/,16/*vs/platform/environment/node/argv*/,39/*vs/platform/environment/node/argvHelper*/,36/*vs/platform/environment/node/waitMarkerFile*/,40/*vs/platform/product/common/product*/,3/*vs/base/common/path*/,28/*vs/base/node/pfs*/,29/*vs/base/node/ports*/,2/*vs/base/common/platform*/,8/*vs/base/common/types*/,35/*vs/platform/environment/node/stdin*/]), function (require, exports, os, fs, child_process_1, argv_1, argvHelper_1, waitMarkerFile_1, product_1, paths, pfs_1, ports_1, platform_1, types_1, stdin_1) {
+define(__m[45/*vs/code/node/cli*/], __M([0/*require*/,1/*exports*/,12/*os*/,11/*fs*/,31/*child_process*/,20/*vs/platform/environment/node/argv*/,39/*vs/platform/environment/node/argvHelper*/,36/*vs/platform/environment/node/waitMarkerFile*/,40/*vs/platform/product/common/product*/,3/*vs/base/common/path*/,28/*vs/base/node/pfs*/,29/*vs/base/node/ports*/,2/*vs/base/common/platform*/,7/*vs/base/common/types*/,35/*vs/platform/environment/node/stdin*/]), function (require, exports, os, fs, child_process_1, argv_1, argvHelper_1, waitMarkerFile_1, product_1, paths, pfs_1, ports_1, platform_1, types_1, stdin_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.main = void 0;
@@ -9203,9 +9524,9 @@ define(__m[45/*vs/code/node/cli*/], __M([0/*require*/,1/*exports*/,10/*os*/,9/*f
                     // On Windows we use a different strategy of saving the file
                     // by first truncating the file and then writing with r+ mode.
                     // This helps to save hidden files on Windows
-                    // (see https://github.com/Microsoft/vscode/issues/931) and
+                    // (see https://github.com/microsoft/vscode/issues/931) and
                     // prevent removing alternate data streams
-                    // (see https://github.com/Microsoft/vscode/issues/6363)
+                    // (see https://github.com/microsoft/vscode/issues/6363)
                     fs.truncateSync(target, 0);
                     pfs_1.writeFileSync(target, data, { flag: 'r+' });
                 }
@@ -9249,7 +9570,7 @@ define(__m[45/*vs/code/node/cli*/], __M([0/*require*/,1/*exports*/,10/*os*/,9/*f
             if (stdin_1.hasStdinWithoutTty()) {
                 // Read from stdin: we require a single "-" argument to be passed in order to start reading from
                 // stdin. We do this because there is no reliable way to find out if data is piped to stdin. Just
-                // checking for stdin being connected to a TTY is not enough (https://github.com/Microsoft/vscode/issues/40351)
+                // checking for stdin being connected to a TTY is not enough (https://github.com/microsoft/vscode/issues/40351)
                 if (args._.length === 0) {
                     if (hasReadStdinArg) {
                         stdinFilePath = stdin_1.getStdinFilePath();

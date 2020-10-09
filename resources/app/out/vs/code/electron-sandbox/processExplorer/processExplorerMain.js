@@ -2,7 +2,7 @@
  * Copyright (C) Microsoft Corporation. All rights reserved.
  *--------------------------------------------------------*/
 (function() {
-var __m = ["require","exports","vs/base/common/platform","vs/base/common/event","vs/base/common/lifecycle","vs/base/common/errors","vs/base/common/strings","vs/base/browser/browser","vs/base/common/uri","vs/base/browser/dom","vs/base/parts/sandbox/electron-sandbox/globals","vs/base/common/async","vs/base/common/buffer","vs/css!vs/code/electron-sandbox/processExplorer/processExplorerMain","vs/base/common/arrays","vs/base/common/functional","vs/base/common/cancellation","vs/base/common/network","vs/base/common/codicons","vs/base/parts/ipc/common/ipc","vs/platform/instantiation/common/instantiation","vs/platform/ipc/electron-sandbox/mainProcessService","vs/base/browser/iframe","vs/base/common/iterator","vs/base/common/keyCodes","vs/base/common/linkedList","vs/base/browser/event","vs/base/browser/canIUse","vs/base/browser/keyboardEvent","vs/base/browser/mouseEvent","vs/base/common/process","vs/base/common/path","vs/base/common/stream","vs/base/common/types","vs/base/common/marshalling","vs/base/common/map","vs/base/common/filters","vs/base/common/codicon","vs/base/browser/codicons","vs/base/browser/ui/codicons/codiconLabel","vs/base/parts/contextmenu/common/contextmenu","vs/base/parts/ipc/common/ipc.electron","vs/base/parts/contextmenu/electron-sandbox/contextmenu","vs/base/parts/ipc/electron-sandbox/ipc.electron-sandbox","vs/css!vs/base/browser/ui/codicons/codicon/codicon","vs/css!vs/base/browser/ui/codicons/codicon/codicon-animations","vs/css!vs/base/browser/ui/codicons/codicon/codicon-modifications","vs/base/browser/ui/codicons/codiconStyles","vs/css!vs/code/electron-sandbox/processExplorer/media/processExplorer","vs/platform/diagnostics/common/diagnostics","vs/platform/electron/electron-sandbox/electron","vs/platform/windows/common/windows","vs/platform/windows/electron-sandbox/window","vs/code/electron-sandbox/processExplorer/processExplorerMain","vs/nls!vs/code/electron-sandbox/processExplorer/processExplorerMain"];
+var __m = ["require","exports","vs/base/common/platform","vs/base/common/event","vs/base/common/lifecycle","vs/base/common/errors","vs/base/common/strings","vs/base/browser/browser","vs/base/common/uri","vs/base/parts/sandbox/electron-sandbox/globals","vs/base/common/buffer","vs/base/browser/dom","vs/css!vs/code/electron-sandbox/processExplorer/processExplorerMain","vs/base/common/functional","vs/base/common/cancellation","vs/base/common/async","vs/base/common/network","vs/base/parts/ipc/common/ipc","vs/platform/ipc/electron-sandbox/mainProcessService","vs/base/browser/iframe","vs/base/common/arrays","vs/base/common/iterator","vs/base/common/keyCodes","vs/base/common/linkedList","vs/base/browser/event","vs/base/browser/canIUse","vs/base/browser/keyboardEvent","vs/base/browser/mouseEvent","vs/base/common/process","vs/base/common/path","vs/base/common/stream","vs/base/common/types","vs/base/common/marshalling","vs/base/browser/codicons","vs/base/browser/ui/codicons/codiconLabel","vs/base/common/map","vs/base/common/filters","vs/base/common/codicon","vs/base/common/codicons","vs/base/parts/contextmenu/common/contextmenu","vs/base/parts/ipc/common/ipc.electron","vs/base/parts/contextmenu/electron-sandbox/contextmenu","vs/base/parts/ipc/electron-sandbox/ipc.electron-sandbox","vs/css!vs/base/browser/ui/codicons/codicon/codicon","vs/css!vs/base/browser/ui/codicons/codicon/codicon-animations","vs/css!vs/base/browser/ui/codicons/codicon/codicon-modifications","vs/base/browser/ui/codicons/codiconStyles","vs/css!vs/code/electron-sandbox/processExplorer/media/processExplorer","vs/platform/diagnostics/common/diagnostics","vs/platform/instantiation/common/instantiation","vs/platform/native/electron-sandbox/nativeHostService","vs/platform/windows/common/windows","vs/platform/windows/electron-sandbox/window","vs/code/electron-sandbox/processExplorer/processExplorerMain","vs/nls!vs/code/electron-sandbox/processExplorer/processExplorerMain"];
 var __M = function(deps) {
   var result = [];
   for (var i = 0, len = deps.length; i < len; i++) {
@@ -14,7 +14,7 @@ var __M = function(deps) {
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[22/*vs/base/browser/iframe*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[19/*vs/base/browser/iframe*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IframeUtils = void 0;
@@ -28,9 +28,11 @@ define(__m[22/*vs/base/browser/iframe*/], __M([0/*require*/,1/*exports*/]), func
         try {
             let location = w.location;
             let parentLocation = w.parent.location;
-            if (location.protocol !== parentLocation.protocol || location.hostname !== parentLocation.hostname || location.port !== parentLocation.port) {
-                hasDifferentOriginAncestorFlag = true;
-                return null;
+            if (location.origin !== 'null' && parentLocation.origin !== 'null') {
+                if (location.protocol !== parentLocation.protocol || location.hostname !== parentLocation.hostname || location.port !== parentLocation.port) {
+                    hasDifferentOriginAncestorFlag = true;
+                    return null;
+                }
             }
         }
         catch (e) {
@@ -38,17 +40,6 @@ define(__m[22/*vs/base/browser/iframe*/], __M([0/*require*/,1/*exports*/]), func
             return null;
         }
         return w.parent;
-    }
-    function findIframeElementInParentWindow(parentWindow, childWindow) {
-        let parentWindowIframes = parentWindow.document.getElementsByTagName('iframe');
-        let iframe;
-        for (let i = 0, len = parentWindowIframes.length; i < len; i++) {
-            iframe = parentWindowIframes[i];
-            if (iframe.contentWindow === childWindow) {
-                return iframe;
-            }
-        }
-        return null;
     }
     class IframeUtils {
         /**
@@ -66,7 +57,7 @@ define(__m[22/*vs/base/browser/iframe*/], __M([0/*require*/,1/*exports*/]), func
                     if (parent) {
                         sameOriginWindowChainCache.push({
                             window: w,
-                            iframeElement: findIframeElementInParentWindow(parent, w)
+                            iframeElement: w.frameElement || null
                         });
                     }
                     else {
@@ -103,6 +94,8 @@ define(__m[22/*vs/base/browser/iframe*/], __M([0/*require*/,1/*exports*/]), func
             let top = 0, left = 0;
             let windowChain = this.getSameOriginWindowChain();
             for (const windowChainEl of windowChain) {
+                top += windowChainEl.window.scrollY;
+                left += windowChainEl.window.scrollX;
                 if (windowChainEl.window === ancestorWindow) {
                     break;
                 }
@@ -293,10 +286,10 @@ define(__m[5/*vs/base/common/errors*/], __M([0/*require*/,1/*exports*/]), functi
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[14/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/errors*/]), function (require, exports, errors_1) {
+define(__m[20/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/errors*/]), function (require, exports, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.getRandomElement = exports.asArray = exports.mapArrayOrNot = exports.find = exports.pushToEnd = exports.pushToStart = exports.shuffle = exports.arrayInsert = exports.remove = exports.insert = exports.index = exports.range = exports.flatten = exports.commonPrefixLength = exports.firstOrDefault = exports.first = exports.firstIndex = exports.lastIndex = exports.uniqueFilter = exports.distinctES6 = exports.distinct = exports.isNonEmptyArray = exports.isFalsyOrEmpty = exports.move = exports.coalesceInPlace = exports.coalesce = exports.topAsync = exports.top = exports.delta = exports.sortedDiff = exports.groupBy = exports.mergeSort = exports.findFirstInSorted = exports.binarySearch = exports.equals = exports.tail2 = exports.tail = void 0;
+    exports.getRandomElement = exports.asArray = exports.mapArrayOrNot = exports.pushToEnd = exports.pushToStart = exports.shuffle = exports.arrayInsert = exports.remove = exports.insert = exports.index = exports.range = exports.flatten = exports.commonPrefixLength = exports.firstOrDefault = exports.lastIndex = exports.uniqueFilter = exports.distinctES6 = exports.distinct = exports.isNonEmptyArray = exports.isFalsyOrEmpty = exports.move = exports.coalesceInPlace = exports.coalesce = exports.topAsync = exports.top = exports.delta = exports.sortedDiff = exports.groupBy = exports.mergeSort = exports.findFirstInSorted = exports.binarySearch = exports.equals = exports.tail2 = exports.tail = void 0;
     /**
      * Returns the last element of an array.
      * @param array The array.
@@ -658,24 +651,6 @@ define(__m[14/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,5/*vs/ba
         return -1;
     }
     exports.lastIndex = lastIndex;
-    /**
-     * @deprecated ES6: use `Array.findIndex`
-     */
-    function firstIndex(array, fn) {
-        for (let i = 0; i < array.length; i++) {
-            const element = array[i];
-            if (fn(element)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-    exports.firstIndex = firstIndex;
-    function first(array, fn, notFoundValue = undefined) {
-        const index = firstIndex(array, fn);
-        return index < 0 ? notFoundValue : array[index];
-    }
-    exports.first = first;
     function firstOrDefault(array, notFoundValue) {
         return array.length > 0 ? array[0] : notFoundValue;
     }
@@ -800,19 +775,6 @@ define(__m[14/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,5/*vs/ba
         }
     }
     exports.pushToEnd = pushToEnd;
-    /**
-     * @deprecated ES6: use `Array.find`
-     */
-    function find(arr, predicate) {
-        for (let i = 0; i < arr.length; i++) {
-            const element = arr[i];
-            if (predicate(element, i, arr)) {
-                return element;
-            }
-        }
-        return undefined;
-    }
-    exports.find = find;
     function mapArrayOrNot(items, fn) {
         return Array.isArray(items) ?
             items.map(fn) :
@@ -833,7 +795,7 @@ define(__m[14/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,5/*vs/ba
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[15/*vs/base/common/functional*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[13/*vs/base/common/functional*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.once = void 0;
@@ -857,7 +819,7 @@ define(__m[15/*vs/base/common/functional*/], __M([0/*require*/,1/*exports*/]), f
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[23/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[21/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Iterable = void 0;
@@ -942,7 +904,7 @@ define(__m[23/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), fun
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[24/*vs/base/common/keyCodes*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/errors*/]), function (require, exports, errors_1) {
+define(__m[22/*vs/base/common/keyCodes*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/errors*/]), function (require, exports, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ResolvedKeybinding = exports.ResolvedKeybindingPart = exports.ChordKeybinding = exports.SimpleKeybinding = exports.createSimpleKeybinding = exports.createKeybinding = exports.KeyChord = exports.KeyMod = exports.KeyCodeUtils = exports.KeyCode = void 0;
@@ -1445,7 +1407,7 @@ define(__m[24/*vs/base/common/keyCodes*/], __M([0/*require*/,1/*exports*/,5/*vs/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[4/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,15/*vs/base/common/functional*/,23/*vs/base/common/iterator*/]), function (require, exports, functional_1, iterator_1) {
+define(__m[4/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,13/*vs/base/common/functional*/,21/*vs/base/common/iterator*/]), function (require, exports, functional_1, iterator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ImmortalReference = exports.ReferenceCollection = exports.MutableDisposable = exports.Disposable = exports.DisposableStore = exports.toDisposable = exports.combinedDisposable = exports.dispose = exports.isDisposable = exports.MultiDisposeError = void 0;
@@ -1680,7 +1642,7 @@ define(__m[4/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,15/*vs
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[25/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[23/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LinkedList = void 0;
@@ -1811,7 +1773,7 @@ define(__m[25/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), f
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[3/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/errors*/,15/*vs/base/common/functional*/,4/*vs/base/common/lifecycle*/,25/*vs/base/common/linkedList*/]), function (require, exports, errors_1, functional_1, lifecycle_1, linkedList_1) {
+define(__m[3/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/errors*/,13/*vs/base/common/functional*/,4/*vs/base/common/lifecycle*/,23/*vs/base/common/linkedList*/]), function (require, exports, errors_1, functional_1, lifecycle_1, linkedList_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Relay = exports.EventBufferer = exports.EventMultiplexer = exports.AsyncEmitter = exports.PauseableEmitter = exports.Emitter = exports.setGlobalLeakWarningThreshold = exports.Event = void 0;
@@ -2539,7 +2501,7 @@ define(__m[7/*vs/base/browser/browser*/], __M([0/*require*/,1/*exports*/,3/*vs/b
                 return;
             }
             this._zoomLevel = zoomLevel;
-            // See https://github.com/Microsoft/vscode/issues/26151
+            // See https://github.com/microsoft/vscode/issues/26151
             this._lastZoomLevelChangeTime = isTrusted ? 0 : Date.now();
             this._onDidChangeZoomLevel.fire(this._zoomLevel);
         }
@@ -2629,7 +2591,7 @@ define(__m[7/*vs/base/browser/browser*/], __M([0/*require*/,1/*exports*/,3/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[26/*vs/base/browser/event*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/]), function (require, exports, event_1) {
+define(__m[24/*vs/base/browser/event*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/]), function (require, exports, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.stop = exports.domEvent = void 0;
@@ -2660,7 +2622,7 @@ define(__m[26/*vs/base/browser/event*/], __M([0/*require*/,1/*exports*/,3/*vs/ba
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[16/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/]), function (require, exports, event_1) {
+define(__m[14/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/]), function (require, exports, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CancellationTokenSource = exports.CancellationToken = void 0;
@@ -2776,10 +2738,10 @@ define(__m[16/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,3/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[11/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/cancellation*/,5/*vs/base/common/errors*/,3/*vs/base/common/event*/,4/*vs/base/common/lifecycle*/]), function (require, exports, cancellation_1, errors, event_1, lifecycle_1) {
+define(__m[15/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,14/*vs/base/common/cancellation*/,5/*vs/base/common/errors*/,3/*vs/base/common/event*/,4/*vs/base/common/lifecycle*/]), function (require, exports, cancellation_1, errors, event_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
+    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellablePromises = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
     function isThenable(obj) {
         return obj && typeof obj.then === 'function';
     }
@@ -2819,10 +2781,25 @@ define(__m[11/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,16/*vs/ba
         return Promise.race([promise, new Promise(resolve => token.onCancellationRequested(() => resolve(defaultValue)))]);
     }
     exports.raceCancellation = raceCancellation;
+    /**
+     * Returns as soon as one of the promises is resolved and cancels remaining promises
+     */
+    async function raceCancellablePromises(cancellablePromises) {
+        let resolvedPromiseIndex = -1;
+        const promises = cancellablePromises.map((promise, index) => promise.then(result => { resolvedPromiseIndex = index; return result; }));
+        const result = await Promise.race(promises);
+        cancellablePromises.forEach((cancellablePromise, index) => {
+            if (index !== resolvedPromiseIndex) {
+                cancellablePromise.cancel();
+            }
+        });
+        return result;
+    }
+    exports.raceCancellablePromises = raceCancellablePromises;
     function raceTimeout(promise, timeout, onTimeout) {
         let promiseResolve = undefined;
         const timer = setTimeout(() => {
-            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve();
+            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve(undefined);
             onTimeout === null || onTimeout === void 0 ? void 0 : onTimeout();
         }, timeout);
         return Promise.race([
@@ -3273,10 +3250,10 @@ define(__m[11/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,16/*vs/ba
     }
     exports.IntervalTimer = IntervalTimer;
     class RunOnceScheduler {
-        constructor(runner, timeout) {
+        constructor(runner, delay) {
             this.timeoutToken = -1;
             this.runner = runner;
-            this.timeout = timeout;
+            this.timeout = delay;
             this.timeoutHandler = this.onTimeout.bind(this);
         }
         /**
@@ -3301,6 +3278,12 @@ define(__m[11/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,16/*vs/ba
         schedule(delay = this.timeout) {
             this.cancel();
             this.timeoutToken = setTimeout(this.timeoutHandler, delay);
+        }
+        get delay() {
+            return this.timeout;
+        }
+        set delay(value) {
+            this.timeout = value;
         }
         /**
          * Returns true if scheduled.
@@ -3504,6 +3487,7 @@ define(__m[11/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,16/*vs/ba
  *--------------------------------------------------------------------------------------------*/
 define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
+    var _a;
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isLittleEndian = exports.OS = exports.OperatingSystem = exports.setImmediate = exports.globals = exports.translationsConfigFile = exports.locale = exports.Language = exports.language = exports.isRootUser = exports.userAgent = exports.platform = exports.isIOS = exports.isWeb = exports.isNative = exports.isLinux = exports.isMacintosh = exports.isWindows = exports.PlatformToString = exports.Platform = void 0;
     const LANGUAGE_DEFAULT = 'en';
@@ -3517,8 +3501,18 @@ define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
     let _language = LANGUAGE_DEFAULT;
     let _translationsConfigFile = undefined;
     let _userAgent = undefined;
-    const isElectronRenderer = (typeof process !== 'undefined' && typeof process.versions !== 'undefined' && typeof process.versions.electron !== 'undefined' && process.type === 'renderer');
-    // OS detection
+    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
+    let nodeProcess = undefined;
+    if (typeof process !== 'undefined') {
+        // Native environment (non-sandboxed)
+        nodeProcess = process;
+    }
+    else if (typeof _globals.vscode !== 'undefined') {
+        // Native envionment (sandboxed)
+        nodeProcess = _globals.vscode.process;
+    }
+    const isElectronRenderer = typeof ((_a = nodeProcess === null || nodeProcess === void 0 ? void 0 : nodeProcess.versions) === null || _a === void 0 ? void 0 : _a.electron) === 'string' && nodeProcess.type === 'renderer';
+    // Web environment
     if (typeof navigator === 'object' && !isElectronRenderer) {
         _userAgent = navigator.userAgent;
         _isWindows = _userAgent.indexOf('Windows') >= 0;
@@ -3529,13 +3523,14 @@ define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
         _locale = navigator.language;
         _language = _locale;
     }
-    else if (typeof process === 'object') {
-        _isWindows = (process.platform === 'win32');
-        _isMacintosh = (process.platform === 'darwin');
-        _isLinux = (process.platform === 'linux');
+    // Native environment
+    else if (typeof nodeProcess === 'object') {
+        _isWindows = (nodeProcess.platform === 'win32');
+        _isMacintosh = (nodeProcess.platform === 'darwin');
+        _isLinux = (nodeProcess.platform === 'linux');
         _locale = LANGUAGE_DEFAULT;
         _language = LANGUAGE_DEFAULT;
-        const rawNlsConfig = process.env['VSCODE_NLS_CONFIG'];
+        const rawNlsConfig = nodeProcess.env['VSCODE_NLS_CONFIG'];
         if (rawNlsConfig) {
             try {
                 const nlsConfig = JSON.parse(rawNlsConfig);
@@ -3549,6 +3544,10 @@ define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
             }
         }
         _isNative = true;
+    }
+    // Unknown environment
+    else {
+        console.error('Unable to resolve platform.');
     }
     var Platform;
     (function (Platform) {
@@ -3585,7 +3584,7 @@ define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
     exports.platform = _platform;
     exports.userAgent = _userAgent;
     function isRootUser() {
-        return _isNative && !_isWindows && (process.getuid() === 0);
+        return !!nodeProcess && !_isWindows && (nodeProcess.getuid() === 0);
     }
     exports.isRootUser = isRootUser;
     /**
@@ -3627,7 +3626,6 @@ define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
      * The translatios that are available through language packs.
      */
     exports.translationsConfigFile = _translationsConfigFile;
-    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
     exports.globals = _globals;
     exports.setImmediate = (function defineSetImmediate() {
         if (exports.globals.setImmediate) {
@@ -3657,8 +3655,8 @@ define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
                 exports.globals.postMessage({ vscodeSetImmediateId: myId }, '*');
             };
         }
-        if (typeof process !== 'undefined' && typeof process.nextTick === 'function') {
-            return process.nextTick.bind(process);
+        if (nodeProcess) {
+            return nodeProcess.nextTick.bind(nodeProcess);
         }
         const _promise = Promise.resolve();
         return (callback) => _promise.then(callback);
@@ -3690,7 +3688,7 @@ define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[27/*vs/base/browser/canIUse*/], __M([0/*require*/,1/*exports*/,7/*vs/base/browser/browser*/,2/*vs/base/common/platform*/]), function (require, exports, browser, platform) {
+define(__m[25/*vs/base/browser/canIUse*/], __M([0/*require*/,1/*exports*/,7/*vs/base/browser/browser*/,2/*vs/base/common/platform*/]), function (require, exports, browser, platform) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.BrowserFeatures = exports.KeyboardSupport = void 0;
@@ -3741,7 +3739,7 @@ define(__m[27/*vs/base/browser/canIUse*/], __M([0/*require*/,1/*exports*/,7/*vs/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[28/*vs/base/browser/keyboardEvent*/], __M([0/*require*/,1/*exports*/,7/*vs/base/browser/browser*/,24/*vs/base/common/keyCodes*/,2/*vs/base/common/platform*/]), function (require, exports, browser, keyCodes_1, platform) {
+define(__m[26/*vs/base/browser/keyboardEvent*/], __M([0/*require*/,1/*exports*/,7/*vs/base/browser/browser*/,22/*vs/base/common/keyCodes*/,2/*vs/base/common/platform*/]), function (require, exports, browser, keyCodes_1, platform) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.StandardKeyboardEvent = exports.printStandardKeyboardEvent = exports.printKeyboardEvent = exports.getCodeForKeyCode = void 0;
@@ -4012,7 +4010,7 @@ define(__m[28/*vs/base/browser/keyboardEvent*/], __M([0/*require*/,1/*exports*/,
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[29/*vs/base/browser/mouseEvent*/], __M([0/*require*/,1/*exports*/,7/*vs/base/browser/browser*/,22/*vs/base/browser/iframe*/,2/*vs/base/common/platform*/]), function (require, exports, browser, iframe_1, platform) {
+define(__m[27/*vs/base/browser/mouseEvent*/], __M([0/*require*/,1/*exports*/,7/*vs/base/browser/browser*/,19/*vs/base/browser/iframe*/,2/*vs/base/common/platform*/]), function (require, exports, browser, iframe_1, platform) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.StandardWheelEvent = exports.DragMouseEvent = exports.StandardMouseEvent = void 0;
@@ -4085,7 +4083,12 @@ define(__m[29/*vs/base/browser/mouseEvent*/], __M([0/*require*/,1/*exports*/,7/*
                     const ev = e;
                     if (ev.deltaMode === ev.DOM_DELTA_LINE) {
                         // the deltas are expressed in lines
-                        this.deltaY = -e.deltaY;
+                        if (browser.isFirefox && !platform.isMacintosh) {
+                            this.deltaY = -e.deltaY / 3;
+                        }
+                        else {
+                            this.deltaY = -e.deltaY;
+                        }
                     }
                     else {
                         this.deltaY = -e.deltaY / 40;
@@ -4109,7 +4112,12 @@ define(__m[29/*vs/base/browser/mouseEvent*/], __M([0/*require*/,1/*exports*/,7/*
                     const ev = e;
                     if (ev.deltaMode === ev.DOM_DELTA_LINE) {
                         // the deltas are expressed in lines
-                        this.deltaX = -e.deltaX;
+                        if (browser.isFirefox && !platform.isMacintosh) {
+                            this.deltaX = -e.deltaX / 3;
+                        }
+                        else {
+                            this.deltaX = -e.deltaX;
+                        }
                     }
                     else {
                         this.deltaX = -e.deltaX / 40;
@@ -4139,16 +4147,31 @@ define(__m[29/*vs/base/browser/mouseEvent*/], __M([0/*require*/,1/*exports*/,7/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[30/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/]), function (require, exports, platform_1) {
+define(__m[28/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/]), function (require, exports, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.nextTick = exports.platform = exports.env = exports.cwd = void 0;
-    const safeProcess = (typeof process === 'undefined') ? {
-        cwd() { return '/'; },
-        env: Object.create(null),
-        get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
-        nextTick(callback) { return platform_1.setImmediate(callback); }
-    } : process;
+    let safeProcess;
+    // Native node.js environment
+    if (typeof process !== 'undefined') {
+        safeProcess = process;
+    }
+    // Native sandbox environment
+    else if (typeof platform_1.globals.vscode !== 'undefined') {
+        safeProcess = platform_1.globals.vscode.process;
+    }
+    // Web environment
+    else {
+        safeProcess = {
+            // Supported
+            get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
+            nextTick(callback) { return platform_1.setImmediate(callback); },
+            // Unsupported
+            get env() { return Object.create(null); },
+            cwd() { return '/'; },
+            getuid() { return -1; }
+        };
+    }
     exports.cwd = safeProcess.cwd;
     exports.env = safeProcess.env;
     exports.platform = safeProcess.platform;
@@ -4159,7 +4182,7 @@ define(__m[30/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,2/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[31/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,30/*vs/base/common/process*/]), function (require, exports, process) {
+define(__m[29/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,28/*vs/base/common/process*/]), function (require, exports, process) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.delimiter = exports.sep = exports.toNamespacedPath = exports.parse = exports.format = exports.extname = exports.basename = exports.dirname = exports.relative = exports.resolve = exports.join = exports.isAbsolute = exports.normalize = exports.posix = exports.win32 = void 0;
@@ -5525,7 +5548,7 @@ define(__m[31/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,30/*vs/bas
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[32/*vs/base/common/stream*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/lifecycle*/]), function (require, exports, lifecycle_1) {
+define(__m[30/*vs/base/common/stream*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/lifecycle*/]), function (require, exports, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.transform = exports.toReadable = exports.toStream = exports.peekStream = exports.consumeStream = exports.peekReadable = exports.consumeReadable = exports.newWriteableStream = exports.isReadableBufferedStream = exports.isReadableStream = void 0;
@@ -5873,7 +5896,7 @@ define(__m[32/*vs/base/common/stream*/], __M([0/*require*/,1/*exports*/,4/*vs/ba
 define(__m[6/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.repeat = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.endsWith = exports.startsWith = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
+    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
     function isFalsyOrWhitespace(str) {
         if (!str || typeof str !== 'string') {
             return true;
@@ -5999,40 +6022,6 @@ define(__m[6/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
         return pattern.replace(/\*/g, '');
     }
     exports.stripWildcards = stripWildcards;
-    /**
-     * @deprecated ES6: use `String.startsWith`
-     */
-    function startsWith(haystack, needle) {
-        if (haystack.length < needle.length) {
-            return false;
-        }
-        if (haystack === needle) {
-            return true;
-        }
-        for (let i = 0; i < needle.length; i++) {
-            if (haystack[i] !== needle[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
-    exports.startsWith = startsWith;
-    /**
-     * @deprecated ES6: use `String.endsWith`
-     */
-    function endsWith(haystack, needle) {
-        const diff = haystack.length - needle.length;
-        if (diff > 0) {
-            return haystack.indexOf(needle, diff) === diff;
-        }
-        else if (diff === 0) {
-            return haystack === needle;
-        }
-        else {
-            return false;
-        }
-    }
-    exports.endsWith = endsWith;
     function createRegExp(searchString, isRegex, options = {}) {
         if (!searchString) {
             throw new Error('Cannot create regex from empty string');
@@ -6653,17 +6642,6 @@ define(__m[6/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
     }
     exports.stripUTF8BOM = stripUTF8BOM;
     /**
-     * @deprecated ES6
-     */
-    function repeat(s, count) {
-        let result = '';
-        for (let i = 0; i < count; i++) {
-            result += s;
-        }
-        return result;
-    }
-    exports.repeat = repeat;
-    /**
      * Checks if the characters of the provided query string are included in the
      * target string. The characters do not have to be contiguous within the string.
      */
@@ -6882,7 +6860,7 @@ define(__m[6/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[12/*vs/base/common/buffer*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/strings*/,32/*vs/base/common/stream*/]), function (require, exports, strings, streams) {
+define(__m[10/*vs/base/common/buffer*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/strings*/,30/*vs/base/common/stream*/]), function (require, exports, strings, streams) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.newWriteableBufferStream = exports.streamToBufferReadableStream = exports.bufferToStream = exports.bufferedStreamToBuffer = exports.streamToBuffer = exports.bufferToReadable = exports.readableToBuffer = exports.writeUInt8 = exports.readUInt8 = exports.writeUInt32LE = exports.readUInt32LE = exports.writeUInt32BE = exports.readUInt32BE = exports.writeUInt16LE = exports.readUInt16LE = exports.VSBuffer = void 0;
@@ -7085,7 +7063,7 @@ define(__m[12/*vs/base/common/buffer*/], __M([0/*require*/,1/*exports*/,6/*vs/ba
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[33/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[31/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NotImplementedProxy = exports.withUndefinedAsNull = exports.withNullAsUndefined = exports.createProxyObject = exports.getAllMethodNames = exports.getAllPropertyNames = exports.validateConstraint = exports.validateConstraints = exports.areFunctions = exports.isFunction = exports.isEmptyObject = exports.assertAllDefined = exports.assertIsDefined = exports.assertType = exports.isUndefinedOrNull = exports.isDefined = exports.isUndefined = exports.isBoolean = exports.isNumber = exports.isObject = exports.isStringArray = exports.isString = exports.isArray = void 0;
@@ -7321,7 +7299,7 @@ define(__m[33/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), functi
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[8/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/,31/*vs/base/common/path*/]), function (require, exports, platform_1, paths) {
+define(__m[8/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/,29/*vs/base/common/path*/]), function (require, exports, platform_1, paths) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.uriToFsPath = exports.URI = void 0;
@@ -7914,7 +7892,7 @@ define(__m[8/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,2/*vs/base/c
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[34/*vs/base/common/marshalling*/], __M([0/*require*/,1/*exports*/,12/*vs/base/common/buffer*/,6/*vs/base/common/strings*/,8/*vs/base/common/uri*/]), function (require, exports, buffer_1, strings_1, uri_1) {
+define(__m[32/*vs/base/common/marshalling*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/buffer*/,6/*vs/base/common/strings*/,8/*vs/base/common/uri*/]), function (require, exports, buffer_1, strings_1, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.revive = exports.parse = exports.stringify = void 0;
@@ -7975,10 +7953,10 @@ define(__m[34/*vs/base/common/marshalling*/], __M([0/*require*/,1/*exports*/,12/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[17/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/uri*/,2/*vs/base/common/platform*/]), function (require, exports, uri_1, platform) {
+define(__m[16/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/uri*/,2/*vs/base/common/platform*/]), function (require, exports, uri_1, platform) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.RemoteAuthorities = exports.Schemas = void 0;
+    exports.FileAccess = exports.RemoteAuthorities = exports.Schemas = void 0;
     var Schemas;
     (function (Schemas) {
         /**
@@ -8075,31 +8053,42 @@ define(__m[17/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,8/*vs/b
         }
     }
     exports.RemoteAuthorities = new RemoteAuthoritiesImpl();
+    class FileAccessImpl {
+        asBrowserUri(uriOrModule, moduleIdToUrl) {
+            const uri = this.toUri(uriOrModule, moduleIdToUrl);
+            if (uri.scheme === Schemas.vscodeRemote) {
+                return exports.RemoteAuthorities.rewrite(uri);
+            }
+            return uri;
+        }
+        asFileUri(uriOrModule, moduleIdToUrl) {
+            const uri = this.toUri(uriOrModule, moduleIdToUrl);
+            return uri;
+        }
+        toUri(uriOrModule, moduleIdToUrl) {
+            if (uri_1.URI.isUri(uriOrModule)) {
+                return uriOrModule;
+            }
+            return uri_1.URI.parse(moduleIdToUrl.toUrl(uriOrModule));
+        }
+    }
+    exports.FileAccess = new FileAccessImpl();
 });
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[9/*vs/base/browser/dom*/], __M([0/*require*/,1/*exports*/,7/*vs/base/browser/browser*/,26/*vs/base/browser/event*/,28/*vs/base/browser/keyboardEvent*/,29/*vs/base/browser/mouseEvent*/,11/*vs/base/common/async*/,5/*vs/base/common/errors*/,3/*vs/base/common/event*/,4/*vs/base/common/lifecycle*/,2/*vs/base/common/platform*/,14/*vs/base/common/arrays*/,8/*vs/base/common/uri*/,17/*vs/base/common/network*/,27/*vs/base/browser/canIUse*/]), function (require, exports, browser, event_1, keyboardEvent_1, mouseEvent_1, async_1, errors_1, event_2, lifecycle_1, platform, arrays_1, uri_1, network_1, canIUse_1) {
+define(__m[11/*vs/base/browser/dom*/], __M([0/*require*/,1/*exports*/,7/*vs/base/browser/browser*/,24/*vs/base/browser/event*/,26/*vs/base/browser/keyboardEvent*/,27/*vs/base/browser/mouseEvent*/,15/*vs/base/common/async*/,5/*vs/base/common/errors*/,3/*vs/base/common/event*/,4/*vs/base/common/lifecycle*/,2/*vs/base/common/platform*/,8/*vs/base/common/uri*/,16/*vs/base/common/network*/,25/*vs/base/browser/canIUse*/]), function (require, exports, browser, event_1, keyboardEvent_1, mouseEvent_1, async_1, errors_1, event_2, lifecycle_1, platform, uri_1, network_1, canIUse_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.triggerDownload = exports.asCSSUrl = exports.asDomUri = exports.animate = exports.windowOpenNoOpener = exports.computeScreenAwareSize = exports.domContentLoaded = exports.finalHandler = exports.getElementsByTagName = exports.removeTabIndexAndUpdateFocus = exports.hide = exports.show = exports.join = exports.$ = exports.Namespace = exports.reset = exports.prepend = exports.append = exports.after = exports.trackFocus = exports.restoreParentsScrollTop = exports.saveParentsScrollTop = exports.EventHelper = exports.EventType = exports.isHTMLElement = exports.removeCSSRulesContainingSelector = exports.createCSSRule = exports.createMetaElement = exports.createStyleSheet = exports.getActiveElement = exports.getShadowRoot = exports.isInShadowDOM = exports.isShadowRoot = exports.hasParentWithClass = exports.findParentWithClass = exports.isAncestor = exports.getLargestChildWidth = exports.getTotalHeight = exports.getContentHeight = exports.getTotalScrollWidth = exports.getContentWidth = exports.getTotalWidth = exports.StandardWindow = exports.getDomNodePagePosition = exports.position = exports.size = exports.getTopLeftOffset = exports.Dimension = exports.getClientArea = exports.getComputedStyle = exports.addDisposableThrottledListener = exports.modify = exports.measure = exports.scheduleAtNextAnimationFrame = exports.runAtThisOrScheduleAtNextAnimationFrame = exports.addDisposableNonBubblingPointerOutListener = exports.addDisposableNonBubblingMouseOutListener = exports.addDisposableGenericMouseUpListner = exports.addDisposableGenericMouseMoveListner = exports.addDisposableGenericMouseDownListner = exports.addStandardDisposableGenericMouseUpListner = exports.addStandardDisposableGenericMouseDownListner = exports.addStandardDisposableListener = exports.addDisposableListener = exports.toggleClass = exports.removeClasses = exports.removeClass = exports.addClasses = exports.addClass = exports.hasClass = exports.isInDOM = exports.removeNode = exports.clearNode = void 0;
+    exports.detectFullscreen = exports.DetectedFullscreenMode = exports.triggerDownload = exports.asCSSUrl = exports.animate = exports.windowOpenNoOpener = exports.computeScreenAwareSize = exports.domContentLoaded = exports.finalHandler = exports.getElementsByTagName = exports.removeTabIndexAndUpdateFocus = exports.hide = exports.show = exports.join = exports.$ = exports.Namespace = exports.reset = exports.prepend = exports.append = exports.after = exports.trackFocus = exports.restoreParentsScrollTop = exports.saveParentsScrollTop = exports.EventHelper = exports.EventType = exports.isHTMLElement = exports.removeCSSRulesContainingSelector = exports.createCSSRule = exports.createMetaElement = exports.createStyleSheet = exports.getActiveElement = exports.getShadowRoot = exports.isInShadowDOM = exports.isShadowRoot = exports.hasParentWithClass = exports.findParentWithClass = exports.isAncestor = exports.getLargestChildWidth = exports.getTotalHeight = exports.getContentHeight = exports.getTotalScrollWidth = exports.getContentWidth = exports.getTotalWidth = exports.StandardWindow = exports.getDomNodePagePosition = exports.position = exports.size = exports.getTopLeftOffset = exports.Dimension = exports.getClientArea = exports.getComputedStyle = exports.addDisposableThrottledListener = exports.modify = exports.measure = exports.scheduleAtNextAnimationFrame = exports.runAtThisOrScheduleAtNextAnimationFrame = exports.addDisposableNonBubblingPointerOutListener = exports.addDisposableNonBubblingMouseOutListener = exports.addDisposableGenericMouseUpListner = exports.addDisposableGenericMouseMoveListner = exports.addDisposableGenericMouseDownListner = exports.addStandardDisposableGenericMouseUpListner = exports.addStandardDisposableGenericMouseDownListner = exports.addStandardDisposableListener = exports.addDisposableListener = exports.toggleClass = exports.removeClasses = exports.removeClass = exports.addClasses = exports.addClass = exports.hasClass = exports.isInDOM = exports.clearNode = void 0;
     function clearNode(node) {
         while (node.firstChild) {
             node.removeChild(node.firstChild);
         }
     }
     exports.clearNode = clearNode;
-    /**
-     * @deprecated use `node.remove()` instead
-     */
-    function removeNode(node) {
-        if (node.parentNode) {
-            node.parentNode.removeChild(node);
-        }
-    }
-    exports.removeNode = removeNode;
     function isInDOM(node) {
         while (node) {
             if (node === document.body) {
@@ -8137,17 +8126,23 @@ define(__m[9/*vs/base/browser/dom*/], __M([0/*require*/,1/*exports*/,7/*vs/base/
         }
     };
     /** @deprecated ES6 - use classList*/
-    exports.hasClass = _classList.hasClass.bind(_classList);
+    function hasClass(node, className) { return _classList.hasClass(node, className); }
+    exports.hasClass = hasClass;
     /** @deprecated ES6 - use classList*/
-    exports.addClass = _classList.addClass.bind(_classList);
+    function addClass(node, className) { return _classList.addClass(node, className); }
+    exports.addClass = addClass;
     /** @deprecated ES6 - use classList*/
-    exports.addClasses = _classList.addClasses.bind(_classList);
+    function addClasses(node, ...classNames) { return _classList.addClasses(node, ...classNames); }
+    exports.addClasses = addClasses;
     /** @deprecated ES6 - use classList*/
-    exports.removeClass = _classList.removeClass.bind(_classList);
+    function removeClass(node, className) { return _classList.removeClass(node, className); }
+    exports.removeClass = removeClass;
     /** @deprecated ES6 - use classList*/
-    exports.removeClasses = _classList.removeClasses.bind(_classList);
+    function removeClasses(node, ...classNames) { return _classList.removeClasses(node, ...classNames); }
+    exports.removeClasses = removeClasses;
     /** @deprecated ES6 - use classList*/
-    exports.toggleClass = _classList.toggleClass.bind(_classList);
+    function toggleClass(node, className, shouldHaveIt) { return _classList.toggleClass(node, className, shouldHaveIt); }
+    exports.toggleClass = toggleClass;
     class DomListener {
         constructor(node, type, handler, options) {
             this._node = node;
@@ -8628,12 +8623,12 @@ define(__m[9/*vs/base/browser/dom*/], __M([0/*require*/,1/*exports*/,7/*vs/base/
     exports.isAncestor = isAncestor;
     function findParentWithClass(node, clazz, stopAtClazzOrNode) {
         while (node && node.nodeType === node.ELEMENT_NODE) {
-            if (exports.hasClass(node, clazz)) {
+            if (node.classList.contains(clazz)) {
                 return node;
             }
             if (stopAtClazzOrNode) {
                 if (typeof stopAtClazzOrNode === 'string') {
-                    if (exports.hasClass(node, stopAtClazzOrNode)) {
+                    if (node.classList.contains(stopAtClazzOrNode)) {
                         return null;
                     }
                 }
@@ -8701,11 +8696,12 @@ define(__m[9/*vs/base/browser/dom*/], __M([0/*require*/,1/*exports*/,7/*vs/base/
         return _sharedStyleSheet;
     }
     function getDynamicStyleSheetRules(style) {
-        if (style && style.sheet && style.sheet.rules) {
+        var _a, _b;
+        if ((_a = style === null || style === void 0 ? void 0 : style.sheet) === null || _a === void 0 ? void 0 : _a.rules) {
             // Chrome, IE
             return style.sheet.rules;
         }
-        if (style && style.sheet && style.sheet.cssRules) {
+        if ((_b = style === null || style === void 0 ? void 0 : style.sheet) === null || _b === void 0 ? void 0 : _b.cssRules) {
             // FF
             return style.sheet.cssRules;
         }
@@ -8902,20 +8898,22 @@ define(__m[9/*vs/base/browser/dom*/], __M([0/*require*/,1/*exports*/,7/*vs/base/
         return child;
     }
     exports.prepend = prepend;
-    const SELECTOR_REGEX = /([\w\-]+)?(#([\w\-]+))?((\.([\w\-]+))*)/;
+    /**
+     * Removes all children from `parent` and appends `children`
+     */
     function reset(parent, ...children) {
         parent.innerText = '';
-        arrays_1.coalesce(children)
-            .forEach(child => {
+        for (const child of children) {
             if (child instanceof Node) {
                 parent.appendChild(child);
             }
-            else {
+            else if (typeof child === 'string') {
                 parent.appendChild(document.createTextNode(child));
             }
-        });
+        }
     }
     exports.reset = reset;
+    const SELECTOR_REGEX = /([\w\-]+)?(#([\w\-]+))?((\.([\w\-]+))*)/;
     var Namespace;
     (function (Namespace) {
         Namespace["HTML"] = "http://www.w3.org/1999/xhtml";
@@ -8958,15 +8956,14 @@ define(__m[9/*vs/base/browser/dom*/], __M([0/*require*/,1/*exports*/,7/*vs/base/
                 result.setAttribute(name, value);
             }
         });
-        arrays_1.coalesce(children)
-            .forEach(child => {
+        for (const child of children) {
             if (child instanceof Node) {
                 result.appendChild(child);
             }
-            else {
+            else if (typeof child === 'string') {
                 result.appendChild(document.createTextNode(child));
             }
-        });
+        }
         return result;
     }
     function $(description, attrs, ...children) {
@@ -9070,7 +9067,7 @@ define(__m[9/*vs/base/browser/dom*/], __M([0/*require*/,1/*exports*/,7/*vs/base/
     }
     exports.computeScreenAwareSize = computeScreenAwareSize;
     /**
-     * See https://github.com/Microsoft/monaco-editor/issues/601
+     * See https://github.com/microsoft/monaco-editor/issues/601
      * To protect against malicious code in the linked site, particularly phishing attempts,
      * the window.opener should be set to null to prevent the linked site from having access
      * to change the location of the current page.
@@ -9079,7 +9076,7 @@ define(__m[9/*vs/base/browser/dom*/], __M([0/*require*/,1/*exports*/,7/*vs/base/
     function windowOpenNoOpener(url) {
         if (platform.isNative || browser.isEdgeWebView) {
             // In VSCode, window.open() always returns null...
-            // The same is true for a WebView (see https://github.com/Microsoft/monaco-editor/issues/628)
+            // The same is true for a WebView (see https://github.com/microsoft/monaco-editor/issues/628)
             window.open(url);
         }
         else {
@@ -9101,16 +9098,6 @@ define(__m[9/*vs/base/browser/dom*/], __M([0/*require*/,1/*exports*/,7/*vs/base/
     }
     exports.animate = animate;
     network_1.RemoteAuthorities.setPreferredWebSchema(/^https:/.test(window.location.href) ? 'https' : 'http');
-    function asDomUri(uri) {
-        if (!uri) {
-            return uri;
-        }
-        if (network_1.Schemas.vscodeRemote === uri.scheme) {
-            return network_1.RemoteAuthorities.rewrite(uri);
-        }
-        return uri;
-    }
-    exports.asDomUri = asDomUri;
     /**
      * returns url('...')
      */
@@ -9118,7 +9105,7 @@ define(__m[9/*vs/base/browser/dom*/], __M([0/*require*/,1/*exports*/,7/*vs/base/
         if (!uri) {
             return `url('')`;
         }
-        return `url('${asDomUri(uri).toString(true).replace(/'/g, '%27')}')`;
+        return `url('${network_1.FileAccess.asBrowserUri(uri).toString(true).replace(/'/g, '%27')}')`;
     }
     exports.asCSSUrl = asCSSUrl;
     function triggerDownload(dataOrUri, name) {
@@ -9147,13 +9134,105 @@ define(__m[9/*vs/base/browser/dom*/], __M([0/*require*/,1/*exports*/,7/*vs/base/
         setTimeout(() => document.body.removeChild(anchor));
     }
     exports.triggerDownload = triggerDownload;
+    var DetectedFullscreenMode;
+    (function (DetectedFullscreenMode) {
+        /**
+         * The document is fullscreen, e.g. because an element
+         * in the document requested to be fullscreen.
+         */
+        DetectedFullscreenMode[DetectedFullscreenMode["DOCUMENT"] = 1] = "DOCUMENT";
+        /**
+         * The browser is fullsreen, e.g. because the user enabled
+         * native window fullscreen for it.
+         */
+        DetectedFullscreenMode[DetectedFullscreenMode["BROWSER"] = 2] = "BROWSER";
+    })(DetectedFullscreenMode = exports.DetectedFullscreenMode || (exports.DetectedFullscreenMode = {}));
+    function detectFullscreen() {
+        // Browser fullscreen: use DOM APIs to detect
+        if (document.fullscreenElement || document.webkitFullscreenElement || document.webkitIsFullScreen) {
+            return { mode: DetectedFullscreenMode.DOCUMENT, guess: false };
+        }
+        // There is no standard way to figure out if the browser
+        // is using native fullscreen. Via checking on screen
+        // height and comparing that to window height, we can guess
+        // it though.
+        if (window.innerHeight === screen.height) {
+            // if the height of the window matches the screen height, we can
+            // safely assume that the browser is fullscreen because no browser
+            // chrome is taking height away (e.g. like toolbars).
+            return { mode: DetectedFullscreenMode.BROWSER, guess: false };
+        }
+        if (platform.isMacintosh || platform.isLinux) {
+            // macOS and Linux do not properly report `innerHeight`, only Windows does
+            if (window.outerHeight === screen.height && window.outerWidth === screen.width) {
+                // if the height of the browser matches the screen height, we can
+                // only guess that we are in fullscreen. It is also possible that
+                // the user has turned off taskbars in the OS and the browser is
+                // simply able to span the entire size of the screen.
+                return { mode: DetectedFullscreenMode.BROWSER, guess: true };
+            }
+        }
+        // Not in fullscreen
+        return null;
+    }
+    exports.detectFullscreen = detectFullscreen;
 });
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[35/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/uri*/,6/*vs/base/common/strings*/,17/*vs/base/common/network*/,2/*vs/base/common/platform*/]), function (require, exports, uri_1, strings_1, network_1, platform_1) {
+define(__m[33/*vs/base/browser/codicons*/], __M([0/*require*/,1/*exports*/,11/*vs/base/browser/dom*/]), function (require, exports, dom) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.renderCodicons = void 0;
+    const renderCodiconsRegex = /(\\)?\$\((([a-z0-9\-]+?)(?:~([a-z0-9\-]*?))?)\)/gi;
+    function renderCodicons(text) {
+        const elements = new Array();
+        let match;
+        let textStart = 0, textStop = 0;
+        while ((match = renderCodiconsRegex.exec(text)) !== null) {
+            textStop = match.index || 0;
+            elements.push(text.substring(textStart, textStop));
+            textStart = (match.index || 0) + match[0].length;
+            const [, escaped, codicon, name, animation] = match;
+            elements.push(escaped ? `$(${codicon})` : dom.$(`span.codicon.codicon-${name}${animation ? `.codicon-animation-${animation}` : ''}`));
+        }
+        if (textStart < text.length) {
+            elements.push(text.substring(textStart));
+        }
+        return elements;
+    }
+    exports.renderCodicons = renderCodicons;
+});
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+define(__m[34/*vs/base/browser/ui/codicons/codiconLabel*/], __M([0/*require*/,1/*exports*/,11/*vs/base/browser/dom*/,33/*vs/base/browser/codicons*/]), function (require, exports, dom_1, codicons_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.CodiconLabel = void 0;
+    class CodiconLabel {
+        constructor(_container) {
+            this._container = _container;
+        }
+        set text(text) {
+            dom_1.reset(this._container, ...codicons_1.renderCodicons(text !== null && text !== void 0 ? text : ''));
+        }
+        set title(title) {
+            this._container.title = title;
+        }
+    }
+    exports.CodiconLabel = CodiconLabel;
+});
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+define(__m[35/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/uri*/,6/*vs/base/common/strings*/,16/*vs/base/common/network*/,2/*vs/base/common/platform*/]), function (require, exports, uri_1, strings_1, network_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LRUCache = exports.LinkedMap = exports.Touch = exports.ResourceMap = exports.TernarySearchTree = exports.UriIterator = exports.PathIterator = exports.StringIterator = exports.setToString = exports.mapToString = exports.getOrSet = void 0;
@@ -9276,7 +9355,7 @@ define(__m[35/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,8/*vs/base/
                 this._states.push(2 /* Authority */);
             }
             if (this._value.path) {
-                //todo@jrieken the case-sensitive logic is copied form `resources.ts#hasToIgnoreCase`
+                //todo@jrieken #107886 the case-sensitive logic is copied form `resources.ts#hasToIgnoreCase`
                 // which cannot be used because it depends on this
                 const caseSensitive = key.scheme === network_1.Schemas.file && platform_1.isLinux;
                 this._pathIterator = new PathIterator(false, caseSensitive);
@@ -10861,10 +10940,10 @@ define(__m[37/*vs/base/common/codicon*/], __M([0/*require*/,1/*exports*/,36/*vs/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[18/*vs/base/common/codicons*/], __M([0/*require*/,1/*exports*/,37/*vs/base/common/codicon*/,3/*vs/base/common/event*/]), function (require, exports, codicon_1, event_1) {
+define(__m[38/*vs/base/common/codicons*/], __M([0/*require*/,1/*exports*/,37/*vs/base/common/codicon*/,3/*vs/base/common/event*/]), function (require, exports, codicon_1, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.stripCodicons = exports.renderCodicons = exports.renderCodiconsRegex = exports.markdownUnescapeCodicons = exports.markdownEscapeEscapedCodicons = exports.escapeCodicons = exports.Codicon = exports.registerIcon = exports.iconRegistry = void 0;
+    exports.stripCodicons = exports.markdownUnescapeCodicons = exports.markdownEscapeEscapedCodicons = exports.escapeCodicons = exports.Codicon = exports.registerIcon = exports.iconRegistry = void 0;
     class Registry {
         constructor() {
             this._icons = new Map();
@@ -11323,6 +11402,12 @@ define(__m[18/*vs/base/common/codicons*/], __M([0/*require*/,1/*exports*/,37/*vs
         Codicon.vmConnect = new Codicon('vm-connect', { character: '\\eba9' });
         Codicon.cloud = new Codicon('cloud', { character: '\\ebaa' });
         Codicon.merge = new Codicon('merge', { character: '\\ebab' });
+        Codicon.exportIcon = new Codicon('export', { character: '\\ebac' });
+        Codicon.graphLeft = new Codicon('graph-left', { character: '\\ebad' });
+        Codicon.magnet = new Codicon('magnet', { character: '\\ebae' });
+        Codicon.notebook = new Codicon('notebook', { character: '\\ebaf' });
+        Codicon.redo = new Codicon('redo', { character: '\\ebb0' });
+        Codicon.checkAll = new Codicon('check-all', { character: '\\ebb1' });
     })(Codicon = exports.Codicon || (exports.Codicon = {}));
     const escapeCodiconsRegex = /(\\)?\$\([a-z0-9\-]+?(?:~[a-z0-9\-]*?)?\)/gi;
     function escapeCodicons(text) {
@@ -11340,19 +11425,6 @@ define(__m[18/*vs/base/common/codicons*/], __M([0/*require*/,1/*exports*/,37/*vs
         return text.replace(markdownUnescapeCodiconsRegex, (match, escaped, codicon) => escaped ? match : `$(${codicon})`);
     }
     exports.markdownUnescapeCodicons = markdownUnescapeCodicons;
-    exports.renderCodiconsRegex = /(\\)?\$\((([a-z0-9\-]+?)(?:~([a-z0-9\-]*?))?)\)/gi;
-    /**
-     * @deprecated Use `renderCodiconsAsElement` instead
-     */
-    function renderCodicons(text) {
-        return text.replace(exports.renderCodiconsRegex, (_, escaped, codicon, name, animation) => {
-            // If the class for codicons is changed, it should also be updated in src\vs\base\browser\markdownRenderer.ts
-            return escaped
-                ? `$(${codicon})`
-                : `<span class="codicon codicon-${name}${animation ? ` codicon-animation-${animation}` : ''}"></span>`;
-        });
-    }
-    exports.renderCodicons = renderCodicons;
     const stripCodiconsRegex = /(\s)?(\\)?\$\([a-z0-9\-]+?(?:~[a-z0-9\-]*?)?\)(\s)?/gi;
     function stripCodicons(text) {
         if (text.indexOf(codicon_1.codiconStartMarker) === -1) {
@@ -11367,56 +11439,7 @@ define(__m[18/*vs/base/common/codicons*/], __M([0/*require*/,1/*exports*/,37/*vs
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[38/*vs/base/browser/codicons*/], __M([0/*require*/,1/*exports*/,9/*vs/base/browser/dom*/,18/*vs/base/common/codicons*/]), function (require, exports, dom, codicons_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.renderCodiconsAsElement = void 0;
-    function renderCodiconsAsElement(text) {
-        const elements = new Array();
-        let match;
-        let textStart = 0, textStop = 0;
-        while ((match = codicons_1.renderCodiconsRegex.exec(text)) !== null) {
-            textStop = match.index || 0;
-            elements.push(text.substring(textStart, textStop));
-            textStart = (match.index || 0) + match[0].length;
-            const [, escaped, codicon, name, animation] = match;
-            elements.push(escaped ? `$(${codicon})` : dom.$(`span.codicon.codicon-${name}${animation ? `.codicon-animation-${animation}` : ''}`));
-        }
-        if (textStart < text.length) {
-            elements.push(text.substring(textStart));
-        }
-        return elements;
-    }
-    exports.renderCodiconsAsElement = renderCodiconsAsElement;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[39/*vs/base/browser/ui/codicons/codiconLabel*/], __M([0/*require*/,1/*exports*/,9/*vs/base/browser/dom*/,38/*vs/base/browser/codicons*/]), function (require, exports, dom_1, codicons_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.CodiconLabel = void 0;
-    class CodiconLabel {
-        constructor(_container) {
-            this._container = _container;
-        }
-        set text(text) {
-            dom_1.reset(this._container, ...codicons_1.renderCodiconsAsElement(text !== null && text !== void 0 ? text : ''));
-        }
-        set title(title) {
-            this._container.title = title;
-        }
-    }
-    exports.CodiconLabel = CodiconLabel;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[40/*vs/base/parts/contextmenu/common/contextmenu*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[39/*vs/base/parts/contextmenu/common/contextmenu*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CONTEXT_MENU_CLOSE_CHANNEL = exports.CONTEXT_MENU_CHANNEL = void 0;
@@ -11428,7 +11451,7 @@ define(__m[40/*vs/base/parts/contextmenu/common/contextmenu*/], __M([0/*require*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[19/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,4/*vs/base/common/lifecycle*/,11/*vs/base/common/async*/,16/*vs/base/common/cancellation*/,5/*vs/base/common/errors*/,12/*vs/base/common/buffer*/,14/*vs/base/common/arrays*/,33/*vs/base/common/types*/,34/*vs/base/common/marshalling*/,6/*vs/base/common/strings*/]), function (require, exports, event_1, lifecycle_1, async_1, cancellation_1, errors, buffer_1, arrays_1, types_1, marshalling_1, strings) {
+define(__m[17/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,4/*vs/base/common/lifecycle*/,15/*vs/base/common/async*/,14/*vs/base/common/cancellation*/,5/*vs/base/common/errors*/,10/*vs/base/common/buffer*/,20/*vs/base/common/arrays*/,31/*vs/base/common/types*/,32/*vs/base/common/marshalling*/,6/*vs/base/common/strings*/]), function (require, exports, event_1, lifecycle_1, async_1, cancellation_1, errors, buffer_1, arrays_1, types_1, marshalling_1, strings) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IPCLogger = exports.logWithColors = exports.createChannelSender = exports.createChannelReceiver = exports.StaticRouter = exports.getNextTickChannel = exports.getDelayedChannel = exports.IPCClient = exports.IPCServer = exports.ChannelClient = exports.RequestInitiator = exports.ChannelServer = exports.ResponseType = exports.RequestType = void 0;
@@ -12288,7 +12311,7 @@ define(__m[19/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,3
         data = pretty(data);
         const colorTable = colorTables[initiator];
         const color = colorTable[req % colorTable.length];
-        let args = [`%c[${direction}]%c[${strings.pad(totalLength, 7, ' ')}]%c[len: ${strings.pad(msgLength, 5, ' ')}]%c${strings.pad(req, 5, ' ')} - ${str}`, 'color: darkgreen', 'color: grey', 'color: grey', `color: ${color}`];
+        let args = [`%c[${direction}]%c[${String(totalLength).padStart(7, ' ')}]%c[len: ${String(msgLength).padStart(5, ' ')}]%c${String(req).padStart(5, ' ')} - ${str}`, 'color: darkgreen', 'color: grey', 'color: grey', `color: ${color}`];
         if (/\($/.test(str)) {
             args = args.concat(data);
             args.push(')');
@@ -12322,7 +12345,7 @@ define(__m[19/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,3
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[41/*vs/base/parts/ipc/common/ipc.electron*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[40/*vs/base/parts/ipc/common/ipc.electron*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Protocol = void 0;
@@ -12350,22 +12373,22 @@ define(__m[41/*vs/base/parts/ipc/common/ipc.electron*/], __M([0/*require*/,1/*ex
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[10/*vs/base/parts/sandbox/electron-sandbox/globals*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[9/*vs/base/parts/sandbox/electron-sandbox/globals*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/]), function (require, exports, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.context = exports.process = exports.crashReporter = exports.webFrame = exports.ipcRenderer = void 0;
-    exports.ipcRenderer = window.vscode.ipcRenderer;
-    exports.webFrame = window.vscode.webFrame;
-    exports.crashReporter = window.vscode.crashReporter;
-    exports.process = window.vscode.process;
-    exports.context = window.vscode.context;
+    exports.ipcRenderer = platform_1.globals.vscode.ipcRenderer;
+    exports.webFrame = platform_1.globals.vscode.webFrame;
+    exports.crashReporter = platform_1.globals.vscode.crashReporter;
+    exports.process = platform_1.globals.vscode.process;
+    exports.context = platform_1.globals.vscode.context;
 });
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[42/*vs/base/parts/contextmenu/electron-sandbox/contextmenu*/], __M([0/*require*/,1/*exports*/,10/*vs/base/parts/sandbox/electron-sandbox/globals*/,40/*vs/base/parts/contextmenu/common/contextmenu*/]), function (require, exports, globals_1, contextmenu_1) {
+define(__m[41/*vs/base/parts/contextmenu/electron-sandbox/contextmenu*/], __M([0/*require*/,1/*exports*/,9/*vs/base/parts/sandbox/electron-sandbox/globals*/,39/*vs/base/parts/contextmenu/common/contextmenu*/]), function (require, exports, globals_1, contextmenu_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.popup = void 0;
@@ -12416,7 +12439,7 @@ define(__m[42/*vs/base/parts/contextmenu/electron-sandbox/contextmenu*/], __M([0
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[43/*vs/base/parts/ipc/electron-sandbox/ipc.electron-sandbox*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,19/*vs/base/parts/ipc/common/ipc*/,41/*vs/base/parts/ipc/common/ipc.electron*/,12/*vs/base/common/buffer*/,10/*vs/base/parts/sandbox/electron-sandbox/globals*/]), function (require, exports, event_1, ipc_1, ipc_electron_1, buffer_1, globals_1) {
+define(__m[42/*vs/base/parts/ipc/electron-sandbox/ipc.electron-sandbox*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,17/*vs/base/parts/ipc/common/ipc*/,40/*vs/base/parts/ipc/common/ipc.electron*/,10/*vs/base/common/buffer*/,9/*vs/base/parts/sandbox/electron-sandbox/globals*/]), function (require, exports, event_1, ipc_1, ipc_electron_1, buffer_1, globals_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Client = void 0;
@@ -12438,31 +12461,29 @@ define(__m[43/*vs/base/parts/ipc/electron-sandbox/ipc.electron-sandbox*/], __M([
     exports.Client = Client;
 });
 
-define(__m[44/*vs/css!vs/base/browser/ui/codicons/codicon/codicon*/], __M([13/*vs/css!vs/code/electron-sandbox/processExplorer/processExplorerMain*/]), {});
-define(__m[45/*vs/css!vs/base/browser/ui/codicons/codicon/codicon-animations*/], __M([13/*vs/css!vs/code/electron-sandbox/processExplorer/processExplorerMain*/]), {});
-define(__m[46/*vs/css!vs/base/browser/ui/codicons/codicon/codicon-modifications*/], __M([13/*vs/css!vs/code/electron-sandbox/processExplorer/processExplorerMain*/]), {});
+define(__m[43/*vs/css!vs/base/browser/ui/codicons/codicon/codicon*/], __M([12/*vs/css!vs/code/electron-sandbox/processExplorer/processExplorerMain*/]), {});
+define(__m[44/*vs/css!vs/base/browser/ui/codicons/codicon/codicon-animations*/], __M([12/*vs/css!vs/code/electron-sandbox/processExplorer/processExplorerMain*/]), {});
+define(__m[45/*vs/css!vs/base/browser/ui/codicons/codicon/codicon-modifications*/], __M([12/*vs/css!vs/code/electron-sandbox/processExplorer/processExplorerMain*/]), {});
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[47/*vs/base/browser/ui/codicons/codiconStyles*/], __M([0/*require*/,1/*exports*/,18/*vs/base/common/codicons*/,9/*vs/base/browser/dom*/,11/*vs/base/common/async*/,44/*vs/css!vs/base/browser/ui/codicons/codicon/codicon*/,46/*vs/css!vs/base/browser/ui/codicons/codicon/codicon-modifications*/,45/*vs/css!vs/base/browser/ui/codicons/codicon/codicon-animations*/]), function (require, exports, codicons_1, dom_1, async_1) {
+define(__m[46/*vs/base/browser/ui/codicons/codiconStyles*/], __M([0/*require*/,1/*exports*/,38/*vs/base/common/codicons*/,43/*vs/css!vs/base/browser/ui/codicons/codicon/codicon*/,45/*vs/css!vs/base/browser/ui/codicons/codicon/codicon-modifications*/,44/*vs/css!vs/base/browser/ui/codicons/codicon/codicon-animations*/]), function (require, exports, codicons_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.formatRule = void 0;
-    function initialize() {
-        let codiconStyleSheet = dom_1.createStyleSheet();
-        codiconStyleSheet.id = 'codiconStyles';
-        function updateAll() {
+    exports.formatRule = exports.CodiconStyles = void 0;
+    exports.CodiconStyles = new class {
+        constructor() {
+            this.onDidChange = codicons_1.iconRegistry.onDidRegister;
+        }
+        getCSS() {
             const rules = [];
             for (let c of codicons_1.iconRegistry.all) {
                 rules.push(formatRule(c));
             }
-            codiconStyleSheet.innerHTML = rules.join('\n');
+            return rules.join('\n');
         }
-        const delayer = new async_1.RunOnceScheduler(updateAll, 0);
-        codicons_1.iconRegistry.onDidRegister(() => delayer.schedule());
-        delayer.schedule();
-    }
+    };
     function formatRule(c) {
         let def = c.definition;
         while (def instanceof codicons_1.Codicon) {
@@ -12471,16 +12492,15 @@ define(__m[47/*vs/base/browser/ui/codicons/codiconStyles*/], __M([0/*require*/,1
         return `.codicon-${c.id}:before { content: '${def.character}'; }`;
     }
     exports.formatRule = formatRule;
-    initialize();
 });
 
-define(__m[48/*vs/css!vs/code/electron-sandbox/processExplorer/media/processExplorer*/], __M([13/*vs/css!vs/code/electron-sandbox/processExplorer/processExplorerMain*/]), {});
+define(__m[47/*vs/css!vs/code/electron-sandbox/processExplorer/media/processExplorer*/], __M([12/*vs/css!vs/code/electron-sandbox/processExplorer/processExplorerMain*/]), {});
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[49/*vs/platform/diagnostics/common/diagnostics*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[48/*vs/platform/diagnostics/common/diagnostics*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isRemoteDiagnosticError = void 0;
@@ -12494,7 +12514,7 @@ define(__m[49/*vs/platform/diagnostics/common/diagnostics*/], __M([0/*require*/,
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[20/*vs/platform/instantiation/common/instantiation*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[49/*vs/platform/instantiation/common/instantiation*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.optional = exports.createDecorator = exports.IInstantiationService = exports._util = void 0;
@@ -12555,7 +12575,7 @@ define(__m[20/*vs/platform/instantiation/common/instantiation*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[21/*vs/platform/ipc/electron-sandbox/mainProcessService*/], __M([0/*require*/,1/*exports*/,43/*vs/base/parts/ipc/electron-sandbox/ipc.electron-sandbox*/,4/*vs/base/common/lifecycle*/,20/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, ipc_electron_sandbox_1, lifecycle_1, instantiation_1) {
+define(__m[18/*vs/platform/ipc/electron-sandbox/mainProcessService*/], __M([0/*require*/,1/*exports*/,42/*vs/base/parts/ipc/electron-sandbox/ipc.electron-sandbox*/,4/*vs/base/common/lifecycle*/,49/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, ipc_electron_sandbox_1, lifecycle_1, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.MainProcessService = exports.IMainProcessService = void 0;
@@ -12588,15 +12608,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-define(__m[50/*vs/platform/electron/electron-sandbox/electron*/], __M([0/*require*/,1/*exports*/,20/*vs/platform/instantiation/common/instantiation*/,21/*vs/platform/ipc/electron-sandbox/mainProcessService*/,19/*vs/base/parts/ipc/common/ipc*/]), function (require, exports, instantiation_1, mainProcessService_1, ipc_1) {
+define(__m[50/*vs/platform/native/electron-sandbox/nativeHostService*/], __M([0/*require*/,1/*exports*/,18/*vs/platform/ipc/electron-sandbox/mainProcessService*/,17/*vs/base/parts/ipc/common/ipc*/]), function (require, exports, mainProcessService_1, ipc_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.ElectronService = exports.IElectronService = void 0;
-    exports.IElectronService = instantiation_1.createDecorator('electronService');
-    let ElectronService = class ElectronService {
+    exports.NativeHostService = void 0;
+    // @ts-ignore: interface is implemented via proxy
+    let NativeHostService = class NativeHostService {
         constructor(windowId, mainProcessService) {
             this.windowId = windowId;
-            return ipc_1.createChannelSender(mainProcessService.getChannel('electron'), {
+            return ipc_1.createChannelSender(mainProcessService.getChannel('nativeHost'), {
                 context: windowId,
                 properties: (() => {
                     const properties = new Map();
@@ -12606,10 +12626,10 @@ define(__m[50/*vs/platform/electron/electron-sandbox/electron*/], __M([0/*requir
             });
         }
     };
-    ElectronService = __decorate([
+    NativeHostService = __decorate([
         __param(1, mainProcessService_1.IMainProcessService)
-    ], ElectronService);
-    exports.ElectronService = ElectronService;
+    ], NativeHostService);
+    exports.NativeHostService = NativeHostService;
 });
 
 /*---------------------------------------------------------------------------------------------
@@ -12619,7 +12639,12 @@ define(__m[50/*vs/platform/electron/electron-sandbox/electron*/], __M([0/*requir
 define(__m[51/*vs/platform/windows/common/windows*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/]), function (require, exports, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.zoomLevelToZoomFactor = exports.getTitleBarStyle = exports.getMenuBarVisibility = exports.isFileToOpen = exports.isFolderToOpen = exports.isWorkspaceToOpen = void 0;
+    exports.zoomLevelToZoomFactor = exports.getTitleBarStyle = exports.getMenuBarVisibility = exports.isFileToOpen = exports.isFolderToOpen = exports.isWorkspaceToOpen = exports.WindowMinimumSize = void 0;
+    exports.WindowMinimumSize = {
+        WIDTH: 400,
+        WIDTH_WITH_VERTICAL_PANEL: 600,
+        HEIGHT: 270
+    };
     function isWorkspaceToOpen(uriToOpen) {
         return !!uriToOpen.workspaceUri;
     }
@@ -12659,7 +12684,7 @@ define(__m[51/*vs/platform/windows/common/windows*/], __M([0/*require*/,1/*expor
             }
             const useSimpleFullScreen = platform_1.isMacintosh && configuration.nativeFullScreen === false;
             if (useSimpleFullScreen) {
-                return 'native'; // simple fullscreen does not work well with custom title style (https://github.com/Microsoft/vscode/issues/63291)
+                return 'native'; // simple fullscreen does not work well with custom title style (https://github.com/microsoft/vscode/issues/63291)
             }
             const style = configuration.titleBarStyle;
             if (style === 'native' || style === 'custom') {
@@ -12683,7 +12708,7 @@ define(__m[51/*vs/platform/windows/common/windows*/], __M([0/*require*/,1/*expor
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[52/*vs/platform/windows/electron-sandbox/window*/], __M([0/*require*/,1/*exports*/,10/*vs/base/parts/sandbox/electron-sandbox/globals*/,51/*vs/platform/windows/common/windows*/,7/*vs/base/browser/browser*/]), function (require, exports, globals_1, windows_1, browser_1) {
+define(__m[52/*vs/platform/windows/electron-sandbox/window*/], __M([0/*require*/,1/*exports*/,9/*vs/base/parts/sandbox/electron-sandbox/globals*/,51/*vs/platform/windows/common/windows*/,7/*vs/base/browser/browser*/]), function (require, exports, globals_1, windows_1, browser_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.zoomOut = exports.zoomIn = exports.applyZoom = void 0;
@@ -12696,7 +12721,7 @@ define(__m[52/*vs/platform/windows/electron-sandbox/window*/], __M([0/*require*/
         browser_1.setZoomFactor(windows_1.zoomLevelToZoomFactor(zoomLevel));
         // Cannot be trusted because the webFrame might take some time
         // until it really applies the new zoom level
-        // See https://github.com/Microsoft/vscode/issues/26151
+        // See https://github.com/microsoft/vscode/issues/26151
         browser_1.setZoomLevel(zoomLevel, false /* isTrusted */);
     }
     exports.applyZoom = applyZoom;
@@ -12714,7 +12739,7 @@ define(__m[52/*vs/platform/windows/electron-sandbox/window*/], __M([0/*require*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[53/*vs/code/electron-sandbox/processExplorer/processExplorerMain*/], __M([0/*require*/,1/*exports*/,50/*vs/platform/electron/electron-sandbox/electron*/,10/*vs/base/parts/sandbox/electron-sandbox/globals*/,54/*vs/nls!vs/code/electron-sandbox/processExplorer/processExplorerMain*/,52/*vs/platform/windows/electron-sandbox/window*/,42/*vs/base/parts/contextmenu/electron-sandbox/contextmenu*/,9/*vs/base/browser/dom*/,4/*vs/base/common/lifecycle*/,49/*vs/platform/diagnostics/common/diagnostics*/,21/*vs/platform/ipc/electron-sandbox/mainProcessService*/,39/*vs/base/browser/ui/codicons/codiconLabel*/,48/*vs/css!vs/code/electron-sandbox/processExplorer/media/processExplorer*/,47/*vs/base/browser/ui/codicons/codiconStyles*/]), function (require, exports, electron_1, globals_1, nls_1, window_1, contextmenu_1, dom_1, lifecycle_1, diagnostics_1, mainProcessService_1, codiconLabel_1) {
+define(__m[53/*vs/code/electron-sandbox/processExplorer/processExplorerMain*/], __M([0/*require*/,1/*exports*/,50/*vs/platform/native/electron-sandbox/nativeHostService*/,9/*vs/base/parts/sandbox/electron-sandbox/globals*/,54/*vs/nls!vs/code/electron-sandbox/processExplorer/processExplorerMain*/,52/*vs/platform/windows/electron-sandbox/window*/,41/*vs/base/parts/contextmenu/electron-sandbox/contextmenu*/,11/*vs/base/browser/dom*/,4/*vs/base/common/lifecycle*/,48/*vs/platform/diagnostics/common/diagnostics*/,18/*vs/platform/ipc/electron-sandbox/mainProcessService*/,34/*vs/base/browser/ui/codicons/codiconLabel*/,47/*vs/css!vs/code/electron-sandbox/processExplorer/media/processExplorer*/,46/*vs/base/browser/ui/codicons/codiconStyles*/]), function (require, exports, nativeHostService_1, globals_1, nls_1, window_1, contextmenu_1, dom_1, lifecycle_1, diagnostics_1, mainProcessService_1, codiconLabel_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.startup = void 0;
@@ -12727,7 +12752,7 @@ define(__m[53/*vs/code/electron-sandbox/processExplorer/processExplorerMain*/], 
             this.mapPidToWindowTitle = new Map();
             this.listeners = new lifecycle_1.DisposableStore();
             const mainProcessService = new mainProcessService_1.MainProcessService(windowId);
-            this.electronService = new electron_1.ElectronService(windowId, mainProcessService);
+            this.nativeHostService = new nativeHostService_1.NativeHostService(windowId, mainProcessService);
             this.applyStyles(data.styles);
             // Map window process pids to titles, annotate process names with this when rendering to distinguish between them
             globals_1.ipcRenderer.on('vscode:windowsInfoResponse', (event, windows) => {
@@ -12917,23 +12942,23 @@ define(__m[53/*vs/code/electron-sandbox/processExplorer/processExplorerMain*/], 
             }
             container.innerText = '';
             this.listeners.clear();
-            const tableHead = document.createElement('thead');
-            tableHead.innerHTML = `<tr>
-			<th scope="col" class="cpu">${nls_1.localize(0, null)}</th>
-			<th scope="col" class="memory">${nls_1.localize(1, null)}</th>
-			<th scope="col" class="pid">${nls_1.localize(2, null)}</th>
-			<th scope="col" class="nameLabel">${nls_1.localize(3, null)}</th>
-		</tr>`;
+            const tableHead = dom_1.$('thead', undefined);
+            const row = dom_1.$('tr');
+            tableHead.append(row);
+            row.append(dom_1.$('th.cpu', { scope: 'col' }, nls_1.localize(0, null)));
+            row.append(dom_1.$('th.memory', { scope: 'col' }, nls_1.localize(1, null)));
+            row.append(dom_1.$('th.pid', { scope: 'col' }, nls_1.localize(2, null)));
+            row.append(dom_1.$('th.nameLabel', { scope: 'col' }, nls_1.localize(3, null)));
             container.append(tableHead);
             const hasMultipleMachines = Object.keys(processLists).length > 1;
-            const totalMem = await this.electronService.getTotalMem();
+            const { totalmem } = await this.nativeHostService.getOSStatistics();
             processLists.forEach((remote, i) => {
                 const isLocal = i === 0;
                 if (diagnostics_1.isRemoteDiagnosticError(remote.rootProcess)) {
                     this.renderProcessFetchError(remote.name, remote.rootProcess.errorMessage);
                 }
                 else {
-                    this.renderTableSection(remote.name, this.getProcessList(remote.rootProcess, isLocal, totalMem), hasMultipleMachines, isLocal);
+                    this.renderTableSection(remote.name, this.getProcessList(remote.rootProcess, isLocal, totalmem), hasMultipleMachines, isLocal);
                 }
             });
         }
@@ -12965,13 +12990,13 @@ define(__m[53/*vs/code/electron-sandbox/processExplorer/processExplorerMain*/], 
                 items.push({
                     label: nls_1.localize(4, null),
                     click: () => {
-                        this.electronService.killProcess(pid, 'SIGTERM');
+                        this.nativeHostService.killProcess(pid, 'SIGTERM');
                     }
                 });
                 items.push({
                     label: nls_1.localize(5, null),
                     click: () => {
-                        this.electronService.killProcess(pid, 'SIGKILL');
+                        this.nativeHostService.killProcess(pid, 'SIGKILL');
                     }
                 });
                 items.push({
@@ -12983,7 +13008,7 @@ define(__m[53/*vs/code/electron-sandbox/processExplorer/processExplorerMain*/], 
                 click: () => {
                     const row = document.getElementById(pid.toString());
                     if (row) {
-                        this.electronService.writeClipboardText(row.innerText);
+                        this.nativeHostService.writeClipboardText(row.innerText);
                     }
                 }
             });
@@ -12992,7 +13017,7 @@ define(__m[53/*vs/code/electron-sandbox/processExplorer/processExplorerMain*/], 
                 click: () => {
                     const processList = document.getElementById('process-list');
                     if (processList) {
-                        this.electronService.writeClipboardText(processList.innerText);
+                        this.nativeHostService.writeClipboardText(processList.innerText);
                     }
                 }
             });
@@ -13030,11 +13055,18 @@ define(__m[53/*vs/code/electron-sandbox/processExplorer/processExplorerMain*/], 
     }
     function startup(windowId, data) {
         const platformClass = data.platform === 'win32' ? 'windows' : data.platform === 'linux' ? 'linux' : 'mac';
-        dom_1.addClass(document.body, platformClass); // used by our fonts
+        document.body.classList.add(platformClass); // used by our fonts
         window_1.applyZoom(data.zoomLevel);
         const processExplorer = new ProcessExplorer(windowId, data);
         document.onkeydown = (e) => {
             const cmdOrCtrlKey = data.platform === 'darwin' ? e.metaKey : e.ctrlKey;
+            // Cmd/Ctrl + w closes issue window
+            if (cmdOrCtrlKey && e.keyCode === 87) {
+                e.stopPropagation();
+                e.preventDefault();
+                processExplorer.dispose();
+                globals_1.ipcRenderer.send('vscode:closeProcessExplorer');
+            }
             // Cmd/Ctrl + zooms in
             if (cmdOrCtrlKey && e.keyCode === 187) {
                 window_1.zoomIn();
@@ -13044,14 +13076,6 @@ define(__m[53/*vs/code/electron-sandbox/processExplorer/processExplorerMain*/], 
                 window_1.zoomOut();
             }
         };
-        // Cmd/Ctrl + w closes process explorer
-        window.addEventListener('keydown', e => {
-            const cmdOrCtrlKey = data.platform === 'darwin' ? e.metaKey : e.ctrlKey;
-            if (cmdOrCtrlKey && e.keyCode === 87) {
-                processExplorer.dispose();
-                globals_1.ipcRenderer.send('vscode:closeProcessExplorer');
-            }
-        });
     }
     exports.startup = startup;
 });

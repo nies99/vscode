@@ -697,6 +697,12 @@
 	text-underline-position: under;
 }
 
+/** Spans in markdown hovers need a margin-bottom to avoid looking cramped: https://github.com/microsoft/vscode/issues/101496 **/
+.monaco-hover .markdown-hover .hover-contents:not(.code-hover-contents) span {
+	margin-bottom: 4px;
+	display: inline-block;
+}
+
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
@@ -727,7 +733,7 @@
 	-moz-osx-font-smoothing: grayscale;
 	vertical-align: top;
 
-	flex-shrink: 0; /* fix for https://github.com/Microsoft/vscode/issues/13787 */
+	flex-shrink: 0; /* fix for https://github.com/microsoft/vscode/issues/13787 */
 }
 
 .monaco-icon-label > .monaco-icon-label-container {
@@ -1449,15 +1455,20 @@
 
 /** Actions */
 
-.monaco-workbench .monaco-action-bar .action-item.select-container {
+.monaco-action-bar .action-item.select-container {
 	cursor: default;
 }
 
-.monaco-workbench .monaco-action-bar .action-item .monaco-select-box {
+.monaco-action-bar .action-item .monaco-select-box {
 	cursor: pointer;
 	min-width: 110px;
 	min-height: 18px;
 	padding: 2px 23px 2px 8px;
+}
+
+.mac .monaco-action-bar .action-item .monaco-select-box {
+	font-size: 11px;
+	border-radius: 5px;
 }
 
 /*---------------------------------------------------------------------------------------------
@@ -1712,7 +1723,7 @@
 	transition-property: width;
 }
 
-#monaco-workbench-pane-drop-overlay {
+#monaco-pane-drop-overlay {
 	position: absolute;
 	z-index: 10000;
 	width: 100%;
@@ -1721,7 +1732,7 @@
 	box-sizing: border-box;
 }
 
-#monaco-workbench-pane-drop-overlay > .pane-overlay-indicator {
+#monaco-pane-drop-overlay > .pane-overlay-indicator {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -1732,7 +1743,7 @@
 	transition: opacity 150ms ease-out;
 }
 
-#monaco-workbench-pane-drop-overlay > .pane-overlay-indicator.overlay-move-transition {
+#monaco-pane-drop-overlay > .pane-overlay-indicator.overlay-move-transition {
 	transition: top 70ms ease-out, left 70ms ease-out, width 70ms ease-out, height 70ms ease-out, opacity 150ms ease-out;
 }
 
@@ -1928,6 +1939,10 @@
 
 .quick-input-description {
 	margin: 6px;
+}
+
+.quick-input-header .quick-input-description {
+	margin: 4px 2px;
 }
 
 .quick-input-header {
@@ -2753,6 +2768,7 @@
 	overflow: hidden;
 	display: inline-block;
 	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .monaco-editor .codelens-decoration > span,
@@ -4028,6 +4044,7 @@
 	box-sizing: border-box;
 	height: 100%;
 	width: 100%;
+	padding-right: 22px;
 }
 
 .monaco-editor .suggest-widget .details > .monaco-scrollable-element > .body > .header > .type {
@@ -4544,7 +4561,7 @@ body.web {
 }
 
 .monaco-workbench.mac select:focus {
-	border-color: transparent; /* outline is a square, but border has a radius, so we avoid this glitch when focused (https://github.com/Microsoft/vscode/issues/26045) */
+	border-color: transparent; /* outline is a square, but border has a radius, so we avoid this glitch when focused (https://github.com/microsoft/vscode/issues/26045) */
 }
 
 .monaco-workbench .monaco-list:not(.element-focused):focus:before {
@@ -5311,9 +5328,9 @@ body.web {
 	padding-left: 10px;
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.has-icon.close-button-right,
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.has-icon.close-button-off:not(.sticky) {
-	padding-left: 5px; /* reduce padding when we show icons and are in shrinking mode and tab close button is not left (unless sticky) */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.has-icon.tab-actions-right,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.has-icon.tab-actions-off:not(.sticky-compact) {
+	padding-left: 5px; /* reduce padding when we show icons and are in shrinking mode and tab actions is not left (unless sticky-compact) */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-fit {
@@ -5324,63 +5341,80 @@ body.web {
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink {
-	min-width: 60px;
+	min-width: 80px;
 	flex-basis: 0; /* all tabs are even */
 	flex-grow: 1; /* all tabs grow even */
 	max-width: fit-content;
 	max-width: -moz-fit-content;
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-fit.sticky,
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.sticky {
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-fit.sticky-compact,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.sticky-compact,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-fit.sticky-shrink,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.sticky-shrink {
 
-	/** Sticky tabs do not scroll in case of overflow and are always above unsticky tabs which scroll under */
+	/** Sticky compact/shrink tabs do not scroll in case of overflow and are always above unsticky tabs which scroll under */
 	position: sticky;
 	z-index: 1;
 
-	/** Sticky tabs are even and never grow */
+	/** Sticky compact/shrink tabs are even and never grow */
 	flex-basis: 0;
 	flex-grow: 0;
+}
 
-	/** Sticky tabs have a fixed width of 38px */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-fit.sticky-compact,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.sticky-compact {
+
+	/** Sticky compact tabs have a fixed width of 38px */
 	width: 38px;
 	min-width: 38px;
 	max-width: 38px;
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container.disable-sticky-tabs > .tab.sizing-fit.sticky,
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container.disable-sticky-tabs > .tab.sizing-shrink.sticky {
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-fit.sticky-shrink,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.sticky-shrink {
 
-	/** Disable sticky positions for sticky tabs if the available space is too little */
+	/** Sticky shrink tabs have a fixed width of 80px */
+	width: 80px;
+	min-width: 80px;
+	max-width: 80px;
+}
+
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container.disable-sticky-tabs > .tab.sizing-fit.sticky-compact,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container.disable-sticky-tabs > .tab.sizing-shrink.sticky-compact,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container.disable-sticky-tabs > .tab.sizing-fit.sticky-shrink,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container.disable-sticky-tabs > .tab.sizing-shrink.sticky-shrink {
+
+	/** Disable sticky positions for sticky compact/shrink tabs if the available space is too little */
 	position: static;
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.close-button-left .action-label {
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.tab-actions-left .action-label {
 	margin-right: 4px !important;
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.close-button-left::after,
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.close-button-off::after {
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.tab-actions-left::after,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.tab-actions-off::after {
 	content: '';
 	display: flex;
 	flex: 0;
-	width: 5px; /* Reserve space to hide tab fade when close button is left or off (fixes https://github.com/Microsoft/vscode/issues/45728) */
+	width: 5px; /* Reserve space to hide tab fade when close button is left or off (fixes https://github.com/microsoft/vscode/issues/45728) */
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.close-button-left {
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.tab-actions-left {
 	min-width: 80px; /* make more room for close button when it shows to the left */
 	padding-right: 5px; /* we need less room when sizing is shrink */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.dragged {
-	transform: translate3d(0px, 0px, 0px); /* forces tab to be drawn on a separate layer (fixes https://github.com/Microsoft/vscode/issues/18733) */
+	transform: translate3d(0px, 0px, 0px); /* forces tab to be drawn on a separate layer (fixes https://github.com/microsoft/vscode/issues/18733) */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.dragged-over div {
-	pointer-events: none; /* prevents cursor flickering (fixes https://github.com/Microsoft/vscode/issues/38753) */
+	pointer-events: none; /* prevents cursor flickering (fixes https://github.com/microsoft/vscode/issues/38753) */
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.close-button-left {
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.tab-actions-left {
 	flex-direction: row-reverse;
 	padding-left: 0;
 	padding-right: 10px;
@@ -5427,6 +5461,7 @@ body.web {
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab .tab-label {
 	margin-top: auto;
 	margin-bottom: auto;
+	line-height: 35px; /* aligns icon and label vertically centered in the tab */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink .tab-label {
@@ -5444,16 +5479,16 @@ body.web {
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container >  .tab.sizing-shrink:focus > .tab-label::after {
-	opacity: 0; /* when tab has the focus this shade breaks the tab border (fixes https://github.com/Microsoft/vscode/issues/57819) */
+	opacity: 0; /* when tab has the focus this shade breaks the tab border (fixes https://github.com/microsoft/vscode/issues/57819) */
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sticky:not(.has-icon) .monaco-icon-label {
-	text-align: center; /* ensure that sticky tabs without icon have label centered */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sticky-compact:not(.has-icon) .monaco-icon-label {
+	text-align: center; /* ensure that sticky-compact tabs without icon have label centered */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-fit .monaco-icon-label,
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-fit .monaco-icon-label > .monaco-icon-label-container {
-	overflow: visible; /* fixes https://github.com/Microsoft/vscode/issues/20182 */
+	overflow: visible; /* fixes https://github.com/microsoft/vscode/issues/20182 */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink > .monaco-icon-label > .monaco-icon-label-container {
@@ -5464,61 +5499,57 @@ body.web {
 	text-overflow: ellipsis;
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab .monaco-icon-label::before {
-	height: 16px; /* tweak the icon size of the editor labels when icons are enabled */
-}
+/* Tab Actions */
 
-/* Tab Close */
-
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-close {
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-actions {
 	margin-top: auto;
 	margin-bottom: auto;
 	width: 28px;
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.close-button-right.sizing-shrink > .tab-close {
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.tab-actions-right.sizing-shrink > .tab-actions {
 	flex: 0;
-	overflow: hidden; /* let the close button be pushed out of view when sizing is set to shrink to make more room... */
+	overflow: hidden; /* let the tab actions be pushed out of view when sizing is set to shrink to make more room... */
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.dirty.close-button-right.sizing-shrink > .tab-close,
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.close-button-right.sizing-shrink:hover > .tab-close,
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.close-button-right.sizing-shrink > .tab-close:focus-within {
-	overflow: visible; /* ...but still show the close button on hover, focus and when dirty */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.dirty.tab-actions-right.sizing-shrink > .tab-actions,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.tab-actions-right.sizing-shrink:hover > .tab-actions,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.tab-actions-right.sizing-shrink > .tab-actions:focus-within {
+	overflow: visible; /* ...but still show the tab actions on hover, focus and when dirty */
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.close-button-off:not(.dirty) > .tab-close,
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.close-button-off.sticky > .tab-close {
-	display: none; /* hide the close action bar when we are configured to hide it (unless dirty, but always when sticky) */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.tab-actions-off:not(.dirty) > .tab-actions,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.tab-actions-off.sticky-compact > .tab-actions {
+	display: none; /* hide the tab actions when we are configured to hide it (unless dirty, but always when sticky-compact) */
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab.active > .tab-close .action-label,			/* always show it for active tab */
-.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab > .tab-close .action-label:focus,			/* always show it on focus */
-.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab:hover > .tab-close .action-label,			/* always show it on hover */
-.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab.active:hover > .tab-close .action-label,	/* always show it on hover */
-.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab.dirty > .tab-close .action-label {			/* always show it for dirty tabs */
+.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab.active > .tab-actions .action-label,		/* always show tab actions for active tab */
+.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab > .tab-actions .action-label:focus,		/* always show tab actions on focus */
+.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab:hover > .tab-actions .action-label,		/* always show tab actions on hover */
+.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab.active:hover > .tab-actions .action-label,	/* always show tab actions on hover */
+.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab.dirty > .tab-actions .action-label {		/* always show tab actions for dirty tabs */
 	opacity: 1;
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab > .tab-close .action-label.codicon {
+.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab > .tab-actions .action-label.codicon {
 	color: inherit;
 	font-size: 16px;
 }
 
-/* change close icon to dirty state icon */
-.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab.dirty > .tab-close .action-label:not(:hover)::before,
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.dirty > .tab-close .action-label:not(:hover)::before {
+/* change tab actions icon to dirty state icon if tab dirty */
+.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab.dirty > .tab-actions .action-label:not(:hover)::before,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.dirty > .tab-actions .action-label:not(:hover)::before {
 	content: "\ea71"; /* use `circle-filled` icon unicode */
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.active > .tab-close .action-label,				/* show dimmed for inactive group */
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.active:hover > .tab-close .action-label,			/* show dimmed for inactive group */
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.dirty > .tab-close .action-label,					/* show dimmed for inactive group */
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover > .tab-close .action-label {				/* show dimmed for inactive group */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.active > .tab-actions .action-label,			/* show tab actions dimmed for inactive group */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.active:hover > .tab-actions .action-label,	/* show tab actions dimmed for inactive group */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.dirty > .tab-actions .action-label,			/* show tab actions dimmed for inactive group */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover > .tab-actions .action-label {			/* show tab actions dimmed for inactive group */
 	opacity: 0.5;
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-close .action-label {
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-actions .action-label {
 	opacity: 0;
 	display: block;
 	height: 16px;
@@ -5529,26 +5560,26 @@ body.web {
 	margin-right: 0.5em;
 }
 
-/* No Tab Close Button */
+/* No Tab Actions */
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.close-button-off {
-	padding-right: 10px; /* give a little bit more room if close button is off */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.tab-actions-off {
+	padding-right: 10px; /* give a little bit more room if tab actions is off */
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.close-button-off:not(.sticky) {
-	padding-right: 5px; /* we need less room when sizing is shrink (unless tab is sticky) */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.tab-actions-off:not(.sticky-compact) {
+	padding-right: 5px; /* we need less room when sizing is shrink (unless tab is sticky-compact) */
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.close-button-off.dirty-border-top > .tab-close {
-	display: none; /* hide dirty state when highlightModifiedTabs is enabled and when running without close button */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.tab-actions-off.dirty-border-top > .tab-actions {
+	display: none; /* hide dirty state when highlightModifiedTabs is enabled and when running without tab actions */
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.close-button-off.dirty:not(.dirty-border-top):not(.sticky) {
-	padding-right: 0; /* remove extra padding when we are running without close button (unless tab is sticky) */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.tab-actions-off.dirty:not(.dirty-border-top):not(.sticky-compact) {
+	padding-right: 0; /* remove extra padding when we are running without tab actions (unless tab is sticky-compact) */
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.close-button-off > .tab-close {
-	pointer-events: none; /* don't allow dirty state/close button to be clicked when running without close button */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.tab-actions-off > .tab-actions {
+	pointer-events: none; /* don't allow tab actions to be clicked when running without tab actions */
 }
 
 /* Editor Actions */
@@ -6478,6 +6509,7 @@ body.web {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	font-size: 11px;
+	min-width: 3ch;
 	-webkit-margin-before: 0;
 	-webkit-margin-after: 0;
 }
@@ -6491,6 +6523,7 @@ body.web {
 	text-overflow: ellipsis;
 	text-transform: none;
 	white-space: nowrap;
+	flex-shrink: 100000;
 }
 
 .monaco-pane-view .pane > .pane-header .description .codicon {
@@ -7576,7 +7609,7 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 }
 
 .monaco-editor .debug-hover-widget .complex-value {
-	width: 324px;
+	max-width: 700px;
 }
 
 .monaco-editor .debug-hover-widget .complex-value .title {
@@ -7617,12 +7650,13 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 	background-color: rgba(173, 214, 255, 0.15);
 }
 
-.monaco-editor .debug-hover-widget .value {
+.monaco-editor .debug-hover-widget > .monaco-scrollable-element > .value {
 	color: rgba(108, 108, 108, 0.8);
 	overflow: auto;
 	font-family: var(--monaco-monospace-font);
 	max-height: 500px;
 	padding: 4px 5px;
+	white-space: pre-wrap;
 }
 
 .monaco-editor.vs-dark .debugHoverHighlight,
@@ -8170,8 +8204,27 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 }
 
 .panel > .title .monaco-action-bar .action-item.repl-panel-filter-container {
-	min-width: 200px;
+	min-width: 300px;
 	margin-right: 10px;
+}
+
+.repl-panel-filter-container .repl-panel-filter-controls {
+	position: absolute;
+	top: 0px;
+	bottom: 0;
+	right: 0px;
+	display: flex;
+	align-items: center;
+}
+
+.repl-panel-filter-container .repl-panel-filter-controls > .repl-panel-filter-badge {
+	margin: 4px;
+	padding: 0px 8px;
+	border-radius: 2px;
+}
+
+.repl-panel-filter-container .repl-panel-filter-controls > .repl-panel-filter-badge.hidden {
+	display: none;
 }
 
 /*---------------------------------------------------------------------------------------------
@@ -8372,7 +8425,6 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 
 .monaco-action-bar .action-item .action-label.extension-action.icon {
 	padding: 0 2px;
-	height: 18px;
 	width: 16px;
 }
 
@@ -9546,7 +9598,8 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 	color: inherit;
 }
 
-.open-editors .monaco-list .monaco-list-row > .monaco-action-bar .codicon-close {
+.open-editors .monaco-list .monaco-list-row > .monaco-action-bar .codicon-close,
+.open-editors .monaco-list .monaco-list-row > .monaco-action-bar .codicon-pinned {
 	width: 8px;
 	height: 22px;
 	display: flex;
@@ -9554,8 +9607,9 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 	justify-content: center;
 }
 
-.open-editors .monaco-list .monaco-list-row.dirty:not(:hover) > .monaco-action-bar .codicon-close::before {
-	content: "\ea71"; /* Close icon flips between black dot and "X" for dirty open editors */
+.open-editors .monaco-list .monaco-list-row.dirty:not(:hover) > .monaco-action-bar .codicon-close::before,
+.open-editors .monaco-list .monaco-list-row.dirty:not(:hover) > .monaco-action-bar .codicon-pinned::before {
+	content: "\ea71"; /* Close/Unpin icon flips between black dot and normal for dirty open editors */
 }
 
 .open-editors .monaco-list .monaco-list-row > .monaco-action-bar .action-close-all-files,
@@ -10808,6 +10862,12 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 	cursor: none;
 }
 
+.monaco-workbench .notebookOverlay .monaco-list .monaco-list-row .cell-decoration {
+	top: -6px;
+	position: absolute;
+	display: flex;
+}
+
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
@@ -10841,6 +10901,9 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 	display: none;
 	padding: 10px 22px 0 22px;
 	opacity: 0.5;
+	position: absolute;
+	pointer-events: none;
+	z-index: 1;
 }
 
 .monaco-workbench .outline-pane.message .outline-message {
@@ -10848,10 +10911,6 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 }
 
 .monaco-workbench .outline-pane.message .outline-progress {
-	display: none;
-}
-
-.monaco-workbench .outline-pane.message .outline-tree {
 	display: none;
 }
 
@@ -11531,14 +11590,14 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 
 .settings-editor > .settings-body .settings-tree-container .setting-toolbar-container {
 	position: absolute;
-	left: -32px;
+	left: -22px;
 	top: 11px;
 	bottom: 0px;
 	width: 26px;
 }
 
 .settings-editor > .settings-body .settings-tree-container .monaco-list-row .mouseover .setting-toolbar-container > .monaco-toolbar .codicon,
-.settings-editor > .settings-body .settings-tree-container .monaco-list-row .setting-item-contents.focused .setting-toolbar-container > .monaco-toolbar .codicon,
+.settings-editor > .settings-body .settings-tree-container .monaco-list-row.focused .setting-item-contents .setting-toolbar-container > .monaco-toolbar .codicon,
 .settings-editor > .settings-body .settings-tree-container .monaco-list-row .setting-toolbar-container:hover > .monaco-toolbar .codicon,
 .settings-editor > .settings-body .settings-tree-container .monaco-list-row .setting-toolbar-container > .monaco-toolbar .active .codicon {
 	opacity: 1;
@@ -11559,6 +11618,7 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 	pointer-events: none;
 	z-index: 10;
 	position: absolute;
+	top: 1px; /* Leave room for the settings list focus outline above */
 }
 
 .settings-editor > .settings-body .settings-toc-container .monaco-list {
@@ -11639,15 +11699,34 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 	max-width: 1000px;
 	margin: auto;
 	box-sizing: border-box;
-	padding-left: 219px;
-	padding-right: 20px;
+	padding-left: 211px;
+	padding-right: 24px;
 	overflow: visible;
+}
+
+.settings-editor > .settings-body > .settings-tree-container .settings-group-title-label::before,
+.settings-editor > .settings-body > .settings-tree-container .settings-group-title-label::after,
+.settings-editor > .settings-body > .settings-tree-container .setting-item-contents::before,
+.settings-editor > .settings-body > .settings-tree-container .setting-item-contents::after {
+	content: ' ';
+	position: absolute;
+	left: 0px;
+	right: 0px;
+}
+
+.settings-editor > .settings-body > .settings-tree-container .settings-group-title-label::before,
+.settings-editor > .settings-body > .settings-tree-container .setting-item-contents::before {
+	top: 0px;
+}
+
+.settings-editor > .settings-body > .settings-tree-container .settings-group-title-label::after,
+.settings-editor > .settings-body > .settings-tree-container .setting-item-contents::after {
+	bottom: 0px;
 }
 
 .settings-editor > .settings-body > .settings-tree-container .setting-item-contents {
 	position: relative;
-	padding-top: 12px;
-	padding-bottom: 18px;
+	padding: 12px 14px 18px;
 	white-space: normal;
 }
 
@@ -11655,10 +11734,8 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	display: inline-block;
-	/* size to contents for hover to show context button */
+	display: inline-block; /* size to contents for hover to show context button */
 }
-
 
 .settings-editor > .settings-body > .settings-tree-container .setting-item-contents .setting-item-modified-indicator {
 	display: none;
@@ -11671,9 +11748,9 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 	width: 6px;
 	border-left-width: 2px;
 	border-left-style: solid;
-	left: -9px;
+	left: 5px;
 	top: 15px;
-	bottom: 16px;
+	bottom: 18px;
 }
 
 .settings-editor > .settings-body > .settings-tree-container .setting-item-bool .setting-item-contents.is-configured .setting-item-modified-indicator,
@@ -11884,22 +11961,24 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 }
 
 .settings-editor > .settings-body > .settings-tree-container .settings-group-title-label {
+	display: inline-block;
 	margin: 0px;
 	font-weight: 600;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 10px;
+	padding-left: 15px;
+	width: 100%;
+	position: relative;
 }
 
 .settings-editor > .settings-body > .settings-tree-container .settings-group-level-1 {
-	padding-top: 23px;
 	font-size: 24px;
 }
 
 .settings-editor > .settings-body > .settings-tree-container .settings-group-level-2 {
 	padding-top: 32px;
 	font-size: 20px;
-}
-
-.settings-editor > .settings-body > .settings-tree-container .settings-group-level-1.settings-group-first {
-	padding-top: 7px;
 }
 
 .settings-editor.search-mode > .settings-body .settings-toc-container .monaco-list-row .settings-toc-count {
@@ -12218,6 +12297,16 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 	position: relative;
 }
 
+.scm-overflow-widgets-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	overflow: visible;
+	z-index: 5000;
+}
+
 .scm-view .monaco-tl-contents > div {
 	margin-right: 12px;
 	overflow: hidden;
@@ -12249,6 +12338,7 @@ div.preview.inline .monaco-editor .comment-range-glyph {
 	flex: 1;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	min-width: 50px;
 }
 
 .scm-view .scm-provider > .label > .name {

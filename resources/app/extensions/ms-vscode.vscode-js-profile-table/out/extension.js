@@ -1899,15 +1899,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const vscode = __webpack_require__(/*! vscode */ "vscode");
 const bundlePage_1 = __webpack_require__(/*! ../bundlePage */ "../vscode-js-profile-core/out/bundlePage.js");
-const model_1 = __webpack_require__(/*! ./model */ "../vscode-js-profile-core/out/cpu/model.js");
-const reopenWithEditor_1 = __webpack_require__(/*! ../reopenWithEditor */ "../vscode-js-profile-core/out/reopenWithEditor.js");
 const open_location_1 = __webpack_require__(/*! ../open-location */ "../vscode-js-profile-core/out/open-location.js");
-const readonly_custom_document_1 = __webpack_require__(/*! ../readonly-custom-document */ "../vscode-js-profile-core/out/readonly-custom-document.js");
 const profileAnnotations_1 = __webpack_require__(/*! ../profileAnnotations */ "../vscode-js-profile-core/out/profileAnnotations.js");
+const readonly_custom_document_1 = __webpack_require__(/*! ../readonly-custom-document */ "../vscode-js-profile-core/out/readonly-custom-document.js");
+const reopenWithEditor_1 = __webpack_require__(/*! ../reopenWithEditor */ "../vscode-js-profile-core/out/reopenWithEditor.js");
+const model_1 = __webpack_require__(/*! ./model */ "../vscode-js-profile-core/out/cpu/model.js");
 class CpuProfileEditorProvider {
-    constructor(lens, bundle) {
+    constructor(lens, bundle, extraConsts = {}) {
         this.lens = lens;
         this.bundle = bundle;
+        this.extraConsts = extraConsts;
         this.onDidChangeCustomDocument = new vscode.EventEmitter().event;
     }
     /**
@@ -1951,9 +1952,7 @@ class CpuProfileEditorProvider {
                 }
             });
             webviewPanel.webview.options = { enableScripts: true };
-            webviewPanel.webview.html = yield bundlePage_1.bundlePage(this.bundle, {
-                MODEL: document.userData,
-            });
+            webviewPanel.webview.html = yield bundlePage_1.bundlePage(this.bundle, Object.assign({ MODEL: document.userData }, this.extraConsts));
         });
     }
     /**

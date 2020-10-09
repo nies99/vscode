@@ -2,7 +2,7 @@
  * Copyright (C) Microsoft Corporation. All rights reserved.
  *--------------------------------------------------------*/
 (function() {
-var __m = ["require","exports","vs/base/common/lifecycle","vs/base/common/event","vs/base/common/path","vs/platform/instantiation/common/instantiation","vs/base/common/platform","vs/base/common/uri","vs/platform/environment/common/environment","vs/base/common/async","vs/base/common/resources","vs/nls","vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain","vs/platform/log/common/log","vs/base/common/strings","vs/base/common/arrays","vs/platform/files/common/files","vs/base/common/buffer","vs/base/common/types","vs/base/common/objects","vs/base/common/errors","vs/base/node/pfs","vs/platform/storage/common/storage","vs/platform/userDataSync/common/userDataSync","vs/platform/telemetry/common/telemetry","vs/platform/configuration/common/configuration","vs/base/common/network","vs/base/common/cancellation","vs/base/common/json","vs/base/common/uuid","vs/platform/extensionManagement/common/extensionManagement","vs/base/common/amd","vs/base/parts/ipc/common/ipc","vs/platform/registry/common/platform","vs/base/common/map","fs","vs/platform/extensionManagement/common/extensionManagementUtil","vs/platform/product/common/productService","vs/base/common/jsonEdit","vs/base/common/extpath","os","vs/platform/product/common/product","vs/platform/configuration/common/configurationRegistry","vs/platform/request/common/request","child_process","vs/platform/userDataSync/common/abstractSynchronizer","vs/base/common/jsonFormatter","vs/base/common/process","vs/base/common/errorMessage","vs/platform/serviceMachineId/common/serviceMachineId","vs/platform/userDataSync/common/content","vs/base/common/stream","util","vs/base/common/date","vs/platform/userDataSync/common/userDataSyncAccount","vs/platform/userDataSync/common/userDataSyncMachines","vs/base/node/zip","vs/base/common/collections","vs/base/common/functional","vs/base/common/iterator","vs/base/common/glob","vs/base/common/normalization","vs/base/common/labels","vs/base/node/decoder","vs/base/parts/sandbox/electron-sandbox/globals","vs/base/parts/ipc/node/ipc.cp","vs/platform/extensions/common/extensionValidator","vs/platform/instantiation/common/descriptors","vs/platform/download/common/download","vs/platform/extensions/common/extensions","vs/platform/files/common/io","vs/platform/files/node/watcher/watcher","vs/platform/instantiation/common/serviceCollection","vs/platform/ipc/electron-sandbox/mainProcessService","vs/platform/electron/electron-sandbox/electron","vs/platform/localizations/common/localizations","semver-umd","vs/platform/log/node/spdlogService","vs/platform/jsonschemas/common/jsonContributionRegistry","vs/platform/telemetry/common/telemetryUtils","vs/platform/userDataSync/common/storageKeys","vs/base/common/assert","vs/base/common/decorators","vs/base/common/linkedList","vs/base/common/console","vs/base/common/marshalling","vs/base/common/uriIpc","vs/base/node/macAddress","vs/base/node/id","vs/base/node/paths","vs/base/node/extpath","vs/base/node/ps","vs/base/node/watcher","vs/base/parts/ipc/common/ipc.electron","vs/base/parts/ipc/common/ipc.net","vs/base/parts/ipc/node/ipc.net","vs/base/parts/request/browser/request","vs/base/parts/ipc/electron-sandbox/ipc.electron-sandbox","vs/base/parts/storage/common/storage","vs/base/parts/storage/node/storage","vs/nls!vs/base/common/date","vs/nls!vs/base/common/errorMessage","vs/nls!vs/base/node/processes","vs/base/node/processes","vs/nls!vs/base/node/zip","vs/nls!vs/platform/configuration/common/configurationRegistry","vs/nls!vs/platform/extensionManagement/common/extensionManagement","vs/nls!vs/platform/extensionManagement/node/extensionManagementService","vs/nls!vs/platform/extensionManagement/node/extensionManagementUtil","vs/nls!vs/platform/extensionManagement/node/extensionsScanner","vs/nls!vs/platform/extensions/common/extensionValidator","vs/nls!vs/platform/files/common/fileService","vs/nls!vs/platform/files/common/files","vs/nls!vs/platform/files/common/io","vs/nls!vs/platform/files/node/diskFileSystemProvider","vs/nls!vs/platform/request/common/request","vs/nls!vs/platform/telemetry/common/telemetryService","vs/nls!vs/platform/userDataSync/common/abstractSynchronizer","vs/nls!vs/platform/userDataSync/common/keybindingsSync","vs/nls!vs/platform/userDataSync/common/settingsSync","vs/nls!vs/platform/userDataSync/common/userDataAutoSyncService","vs/nls!vs/platform/userDataSync/common/userDataSync","vs/nls!vs/platform/userDataSync/common/userDataSyncMachines","vs/nls!vs/platform/workspaces/common/workspaces","vs/platform/credentials/node/credentialsService","vs/platform/diagnostics/common/diagnostics","vs/platform/diagnostics/node/diagnosticsIpc","vs/platform/extensionManagement/common/configRemotes","vs/platform/extensionManagement/common/extensionManagementIpc","vs/platform/extensionManagement/common/extensionNls","vs/platform/files/node/watcher/nsfw/watcherIpc","vs/platform/files/node/watcher/nsfw/watcherService","vs/platform/files/node/watcher/unix/watcherIpc","vs/platform/files/node/watcher/unix/watcherService","vs/platform/files/node/watcher/win32/csharpWatcherService","vs/platform/files/node/watcher/win32/watcherService","vs/platform/instantiation/common/graph","vs/platform/contextkey/common/contextkey","vs/platform/credentials/common/credentials","vs/code/electron-browser/sharedProcess/contrib/logsDataCleaner","vs/code/electron-browser/sharedProcess/contrib/storageDataCleaner","vs/platform/extensionManagement/node/extensionsManifestCache","vs/platform/files/node/watcher/nodejs/watcherService","vs/platform/instantiation/common/instantiationService","vs/platform/extensionManagement/node/extensionDownloader","vs/platform/extensionManagement/node/extensionLifecycle","vs/platform/files/common/fileService","vs/platform/files/node/diskFileSystemProvider","vs/platform/localizations/node/localizations","crypto","vs/platform/log/common/bufferLog","vs/platform/log/common/fileLogService","vs/platform/log/common/logIpc","vs/platform/log/node/loggerService","vs/code/electron-browser/sharedProcess/contrib/languagePackCachedDataCleaner","vs/code/electron-browser/sharedProcess/contrib/nodeCachedDataCleaner","vs/platform/environment/node/environmentService","vs/platform/configuration/common/configurationModels","vs/platform/configuration/common/configurationService","vs/platform/remote/common/remoteHosts","vs/platform/request/browser/requestService","vs/platform/download/common/downloadService","vs/platform/extensionManagement/common/extensionTipsService","vs/platform/extensionManagement/node/extensionTipsService","vs/platform/extensionManagement/common/extensionEnablementService","vs/platform/diagnostics/node/diagnosticsService","vs/platform/extensionManagement/common/extensionGalleryService","vs/platform/storage/node/storageIpc","vs/platform/telemetry/common/telemetryService","vs/platform/telemetry/node/appInsightsAppender","vs/platform/telemetry/node/commonProperties","vs/platform/telemetry/node/telemetryIpc","vs/platform/userDataSync/common/extensionsMerge","vs/platform/userDataSync/common/globalStateMerge","vs/platform/userDataSync/common/keybindingsMerge","vs/platform/userDataSync/common/snippetsMerge","vs/platform/userDataSync/common/extensionsSync","vs/platform/userDataSync/common/globalStateSync","vs/platform/userDataSync/common/keybindingsSync","vs/platform/userDataSync/common/settingsMerge","vs/platform/userDataSync/common/settingsSync","vs/platform/userDataSync/common/snippetsSync","vs/platform/userDataSync/common/userDataSyncBackupStoreService","vs/platform/userDataSync/common/userDataSyncIpc","vs/platform/userDataSync/common/userDataSyncLog","vs/platform/userDataSync/common/userDataAutoSyncService","vs/platform/userDataSync/common/userDataSyncResourceEnablementService","vs/platform/userDataSync/common/userDataSyncService","vs/platform/userDataSync/common/userDataSyncStoreService","vs/platform/userDataSync/electron-browser/userDataAutoSyncService","vs/platform/workspaces/common/workspaces","vs/platform/storage/node/storageService","vs/platform/extensionManagement/node/extensionManagementUtil","vs/platform/extensionManagement/node/extensionsScanner","vs/platform/extensionManagement/node/extensionManagementService","string_decoder","net","applicationinsights","vs/base/common/performance","yauzl","yazl","vs/code/electron-browser/sharedProcess/sharedProcessMain"];
+var __m = ["require","exports","vs/base/common/lifecycle","vs/base/common/event","vs/base/common/path","vs/base/common/platform","vs/platform/instantiation/common/instantiation","vs/base/common/uri","vs/platform/environment/common/environment","vs/base/common/async","vs/base/common/network","vs/nls","vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain","vs/platform/log/common/log","vs/base/common/types","vs/platform/files/common/files","vs/base/common/arrays","vs/base/common/strings","vs/base/common/buffer","vs/base/common/resources","vs/base/common/errors","vs/base/node/pfs","vs/platform/storage/common/storage","vs/platform/telemetry/common/telemetry","vs/platform/userDataSync/common/userDataSync","vs/base/common/objects","vs/platform/configuration/common/configuration","vs/base/common/cancellation","vs/platform/extensionManagement/common/extensionManagement","vs/base/common/json","vs/base/common/uuid","vs/platform/registry/common/platform","vs/base/common/map","fs","vs/base/parts/ipc/common/ipc","vs/platform/extensionManagement/common/extensionManagementUtil","vs/platform/product/common/productService","vs/base/common/jsonEdit","vs/base/common/extpath","os","vs/platform/product/common/product","vs/platform/configuration/common/configurationRegistry","vs/platform/request/common/request","vs/platform/userDataSync/common/abstractSynchronizer","vs/base/common/jsonFormatter","child_process","vs/base/common/errorMessage","vs/platform/serviceMachineId/common/serviceMachineId","vs/platform/userDataSync/common/content","vs/base/common/iterator","vs/base/common/process","vs/base/common/stream","util","vs/base/parts/sandbox/electron-sandbox/globals","vs/base/common/date","vs/platform/native/electron-sandbox/native","vs/platform/userDataSync/common/userDataSyncAccount","vs/platform/userDataSync/common/userDataSyncMachines","vs/base/node/zip","vs/base/common/collections","vs/base/common/functional","vs/base/common/glob","vs/base/common/normalization","vs/base/common/labels","vs/base/node/decoder","vs/base/parts/ipc/node/ipc.cp","vs/platform/extensions/common/extensionValidator","vs/platform/instantiation/common/descriptors","vs/platform/download/common/download","vs/platform/extensionRecommendations/common/extensionRecommendations","vs/platform/extensions/common/extensions","vs/platform/files/common/io","vs/platform/files/node/watcher/watcher","vs/platform/instantiation/common/serviceCollection","vs/platform/localizations/common/localizations","semver-umd","vs/platform/log/node/spdlogService","vs/platform/jsonschemas/common/jsonContributionRegistry","vs/platform/telemetry/common/telemetryUtils","vs/platform/userDataSync/common/storageKeys","vs/base/common/assert","vs/base/common/decorators","vs/base/common/linkedList","vs/base/common/console","vs/base/common/marshalling","vs/base/common/uriIpc","vs/base/node/macAddress","vs/base/node/id","vs/base/node/paths","vs/base/node/extpath","vs/base/node/ps","vs/base/node/watcher","vs/base/parts/ipc/common/ipc.electron","vs/base/parts/ipc/common/ipc.net","vs/base/parts/ipc/node/ipc.net","vs/base/parts/request/browser/request","vs/base/parts/ipc/electron-sandbox/ipc.electron-sandbox","vs/base/parts/storage/common/storage","vs/base/parts/storage/node/storage","vs/nls!vs/base/common/date","vs/nls!vs/base/common/errorMessage","vs/nls!vs/base/node/processes","vs/base/node/processes","vs/nls!vs/base/node/zip","vs/nls!vs/platform/configuration/common/configurationRegistry","vs/nls!vs/platform/extensionManagement/common/extensionManagement","vs/nls!vs/platform/extensionManagement/electron-sandbox/extensionTipsService","vs/nls!vs/platform/extensionManagement/node/extensionManagementService","vs/nls!vs/platform/extensionManagement/node/extensionManagementUtil","vs/nls!vs/platform/extensionManagement/node/extensionsScanner","vs/nls!vs/platform/extensions/common/extensionValidator","vs/nls!vs/platform/files/common/fileService","vs/nls!vs/platform/files/common/files","vs/nls!vs/platform/files/common/io","vs/nls!vs/platform/files/node/diskFileSystemProvider","vs/nls!vs/platform/request/common/request","vs/nls!vs/platform/telemetry/common/telemetryService","vs/nls!vs/platform/userDataSync/common/abstractSynchronizer","vs/nls!vs/platform/userDataSync/common/keybindingsSync","vs/nls!vs/platform/userDataSync/common/settingsSync","vs/nls!vs/platform/userDataSync/common/userDataAutoSyncService","vs/nls!vs/platform/userDataSync/common/userDataSync","vs/nls!vs/platform/userDataSync/common/userDataSyncMachines","vs/nls!vs/platform/workspaces/common/workspaces","vs/platform/diagnostics/common/diagnostics","vs/platform/extensionManagement/common/configRemotes","vs/platform/extensionManagement/common/extensionManagementIpc","vs/platform/extensionManagement/common/extensionNls","vs/platform/extensionRecommendations/electron-sandbox/extensionRecommendationsIpc","vs/platform/files/node/watcher/nsfw/watcherService","vs/platform/files/node/watcher/unix/watcherService","vs/platform/files/node/watcher/win32/csharpWatcherService","vs/platform/files/node/watcher/win32/watcherService","vs/platform/instantiation/common/graph","vs/platform/contextkey/common/contextkey","vs/code/electron-browser/sharedProcess/contrib/logsDataCleaner","vs/code/electron-browser/sharedProcess/contrib/storageDataCleaner","vs/platform/extensionManagement/node/extensionsManifestCache","vs/platform/files/node/watcher/nodejs/watcherService","vs/platform/instantiation/common/instantiationService","vs/platform/ipc/electron-sandbox/mainProcessService","vs/platform/extensionManagement/node/extensionDownloader","vs/platform/extensionManagement/node/extensionLifecycle","vs/platform/files/common/fileService","vs/platform/files/node/diskFileSystemProvider","vs/platform/localizations/node/localizations","crypto","vs/platform/log/common/bufferLog","vs/platform/log/common/fileLogService","vs/platform/log/common/logIpc","vs/platform/log/node/loggerService","vs/code/electron-browser/sharedProcess/contrib/languagePackCachedDataCleaner","vs/code/electron-browser/sharedProcess/contrib/nodeCachedDataCleaner","vs/platform/environment/node/environmentService","vs/platform/configuration/common/configurationModels","vs/platform/configuration/common/configurationService","vs/platform/remote/common/remoteHosts","vs/platform/request/browser/requestService","vs/platform/download/common/downloadService","vs/platform/extensionManagement/common/extensionTipsService","vs/platform/extensionManagement/common/extensionEnablementService","vs/platform/diagnostics/node/diagnosticsService","vs/platform/extensionManagement/common/extensionGalleryService","vs/platform/extensionManagement/electron-sandbox/extensionTipsService","vs/platform/storage/node/storageIpc","vs/platform/telemetry/common/telemetryService","vs/platform/telemetry/node/appInsightsAppender","vs/platform/telemetry/node/commonProperties","vs/platform/telemetry/node/telemetryIpc","vs/platform/userDataSync/common/extensionsMerge","vs/platform/userDataSync/common/globalStateMerge","vs/platform/userDataSync/common/keybindingsMerge","vs/platform/userDataSync/common/snippetsMerge","vs/platform/userDataSync/common/extensionsSync","vs/platform/userDataSync/common/globalStateSync","vs/platform/userDataSync/common/keybindingsSync","vs/platform/userDataSync/common/settingsMerge","vs/platform/userDataSync/common/settingsSync","vs/platform/userDataSync/common/snippetsSync","vs/platform/userDataSync/common/userDataSyncBackupStoreService","vs/platform/userDataSync/common/userDataSyncIpc","vs/platform/userDataSync/common/userDataSyncLog","vs/platform/userDataSync/common/userDataAutoSyncService","vs/platform/userDataSync/common/userDataSyncResourceEnablementService","vs/platform/userDataSync/common/userDataSyncService","vs/platform/userDataSync/common/userDataSyncStoreService","vs/platform/userDataSync/electron-sandbox/userDataAutoSyncService","vs/platform/windows/electron-sandbox/windowTracker","vs/platform/workspaces/common/workspaces","vs/platform/storage/node/storageService","vs/platform/extensionManagement/node/extensionManagementUtil","vs/platform/extensionManagement/node/extensionsScanner","vs/platform/extensionManagement/node/extensionManagementService","string_decoder","net","applicationinsights","vs/base/common/performance","yauzl","yazl","vs/code/electron-browser/sharedProcess/sharedProcessMain"];
 var __M = function(deps) {
   var result = [];
   for (var i = 0, len = deps.length; i < len; i++) {
@@ -14,7 +14,7 @@ var __M = function(deps) {
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[81/*vs/base/common/assert*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[80/*vs/base/common/assert*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ok = void 0;
@@ -33,7 +33,7 @@ define(__m[81/*vs/base/common/assert*/], __M([0/*require*/,1/*exports*/]), funct
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[57/*vs/base/common/collections*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[59/*vs/base/common/collections*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SetMap = exports.fromMap = exports.groupBy = exports.forEach = exports.values = void 0;
@@ -133,7 +133,7 @@ define(__m[57/*vs/base/common/collections*/], __M([0/*require*/,1/*exports*/]), 
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[82/*vs/base/common/decorators*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[81/*vs/base/common/decorators*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.throttle = exports.debounce = exports.memoize = exports.createMemoizer = exports.createDecorator = void 0;
@@ -440,10 +440,10 @@ define(__m[20/*vs/base/common/errors*/], __M([0/*require*/,1/*exports*/]), funct
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[15/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/errors*/]), function (require, exports, errors_1) {
+define(__m[16/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/errors*/]), function (require, exports, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.getRandomElement = exports.asArray = exports.mapArrayOrNot = exports.find = exports.pushToEnd = exports.pushToStart = exports.shuffle = exports.arrayInsert = exports.remove = exports.insert = exports.index = exports.range = exports.flatten = exports.commonPrefixLength = exports.firstOrDefault = exports.first = exports.firstIndex = exports.lastIndex = exports.uniqueFilter = exports.distinctES6 = exports.distinct = exports.isNonEmptyArray = exports.isFalsyOrEmpty = exports.move = exports.coalesceInPlace = exports.coalesce = exports.topAsync = exports.top = exports.delta = exports.sortedDiff = exports.groupBy = exports.mergeSort = exports.findFirstInSorted = exports.binarySearch = exports.equals = exports.tail2 = exports.tail = void 0;
+    exports.getRandomElement = exports.asArray = exports.mapArrayOrNot = exports.pushToEnd = exports.pushToStart = exports.shuffle = exports.arrayInsert = exports.remove = exports.insert = exports.index = exports.range = exports.flatten = exports.commonPrefixLength = exports.firstOrDefault = exports.lastIndex = exports.uniqueFilter = exports.distinctES6 = exports.distinct = exports.isNonEmptyArray = exports.isFalsyOrEmpty = exports.move = exports.coalesceInPlace = exports.coalesce = exports.topAsync = exports.top = exports.delta = exports.sortedDiff = exports.groupBy = exports.mergeSort = exports.findFirstInSorted = exports.binarySearch = exports.equals = exports.tail2 = exports.tail = void 0;
     /**
      * Returns the last element of an array.
      * @param array The array.
@@ -805,24 +805,6 @@ define(__m[15/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,20/*vs/b
         return -1;
     }
     exports.lastIndex = lastIndex;
-    /**
-     * @deprecated ES6: use `Array.findIndex`
-     */
-    function firstIndex(array, fn) {
-        for (let i = 0; i < array.length; i++) {
-            const element = array[i];
-            if (fn(element)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-    exports.firstIndex = firstIndex;
-    function first(array, fn, notFoundValue = undefined) {
-        const index = firstIndex(array, fn);
-        return index < 0 ? notFoundValue : array[index];
-    }
-    exports.first = first;
     function firstOrDefault(array, notFoundValue) {
         return array.length > 0 ? array[0] : notFoundValue;
     }
@@ -947,19 +929,6 @@ define(__m[15/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,20/*vs/b
         }
     }
     exports.pushToEnd = pushToEnd;
-    /**
-     * @deprecated ES6: use `Array.find`
-     */
-    function find(arr, predicate) {
-        for (let i = 0; i < arr.length; i++) {
-            const element = arr[i];
-            if (predicate(element, i, arr)) {
-                return element;
-            }
-        }
-        return undefined;
-    }
-    exports.find = find;
     function mapArrayOrNot(items, fn) {
         return Array.isArray(items) ?
             items.map(fn) :
@@ -980,7 +949,7 @@ define(__m[15/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,20/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[58/*vs/base/common/functional*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[60/*vs/base/common/functional*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.once = void 0;
@@ -1004,7 +973,7 @@ define(__m[58/*vs/base/common/functional*/], __M([0/*require*/,1/*exports*/]), f
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[59/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[49/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Iterable = void 0;
@@ -1089,7 +1058,7 @@ define(__m[59/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), fun
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[28/*vs/base/common/json*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[29/*vs/base/common/json*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getNodeType = exports.stripComments = exports.visit = exports.findNodeAtOffset = exports.contains = exports.getNodeValue = exports.getNodePath = exports.findNodeAtLocation = exports.parseTree = exports.parse = exports.getLocation = exports.createScanner = exports.ParseOptions = exports.ParseErrorCode = exports.SyntaxKind = exports.ScanError = void 0;
@@ -2238,7 +2207,7 @@ define(__m[28/*vs/base/common/json*/], __M([0/*require*/,1/*exports*/]), functio
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[46/*vs/base/common/jsonFormatter*/], __M([0/*require*/,1/*exports*/,28/*vs/base/common/json*/]), function (require, exports, json_1) {
+define(__m[44/*vs/base/common/jsonFormatter*/], __M([0/*require*/,1/*exports*/,29/*vs/base/common/json*/]), function (require, exports, json_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isEOL = exports.getEOL = exports.format = void 0;
@@ -2439,7 +2408,7 @@ define(__m[46/*vs/base/common/jsonFormatter*/], __M([0/*require*/,1/*exports*/,2
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[38/*vs/base/common/jsonEdit*/], __M([0/*require*/,1/*exports*/,28/*vs/base/common/json*/,46/*vs/base/common/jsonFormatter*/,15/*vs/base/common/arrays*/]), function (require, exports, json_1, jsonFormatter_1, arrays_1) {
+define(__m[37/*vs/base/common/jsonEdit*/], __M([0/*require*/,1/*exports*/,29/*vs/base/common/json*/,44/*vs/base/common/jsonFormatter*/,16/*vs/base/common/arrays*/]), function (require, exports, json_1, jsonFormatter_1, arrays_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.applyEdits = exports.applyEdit = exports.withFormatting = exports.setProperty = exports.removeProperty = void 0;
@@ -2627,7 +2596,7 @@ define(__m[38/*vs/base/common/jsonEdit*/], __M([0/*require*/,1/*exports*/,28/*vs
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[2/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,58/*vs/base/common/functional*/,59/*vs/base/common/iterator*/]), function (require, exports, functional_1, iterator_1) {
+define(__m[2/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,60/*vs/base/common/functional*/,49/*vs/base/common/iterator*/]), function (require, exports, functional_1, iterator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ImmortalReference = exports.ReferenceCollection = exports.MutableDisposable = exports.Disposable = exports.DisposableStore = exports.toDisposable = exports.combinedDisposable = exports.dispose = exports.isDisposable = exports.MultiDisposeError = void 0;
@@ -2862,7 +2831,7 @@ define(__m[2/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,58/*vs
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[83/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[82/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LinkedList = void 0;
@@ -2993,7 +2962,7 @@ define(__m[83/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), f
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[3/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/errors*/,58/*vs/base/common/functional*/,2/*vs/base/common/lifecycle*/,83/*vs/base/common/linkedList*/]), function (require, exports, errors_1, functional_1, lifecycle_1, linkedList_1) {
+define(__m[3/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/errors*/,60/*vs/base/common/functional*/,2/*vs/base/common/lifecycle*/,82/*vs/base/common/linkedList*/]), function (require, exports, errors_1, functional_1, lifecycle_1, linkedList_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Relay = exports.EventBufferer = exports.EventMultiplexer = exports.AsyncEmitter = exports.PauseableEmitter = exports.Emitter = exports.setGlobalLeakWarningThreshold = exports.Event = void 0;
@@ -3811,7 +3780,7 @@ define(__m[27/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,3/
 define(__m[9/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,27/*vs/base/common/cancellation*/,20/*vs/base/common/errors*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/]), function (require, exports, cancellation_1, errors, event_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
+    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellablePromises = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
     function isThenable(obj) {
         return obj && typeof obj.then === 'function';
     }
@@ -3851,10 +3820,25 @@ define(__m[9/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,27/*vs/bas
         return Promise.race([promise, new Promise(resolve => token.onCancellationRequested(() => resolve(defaultValue)))]);
     }
     exports.raceCancellation = raceCancellation;
+    /**
+     * Returns as soon as one of the promises is resolved and cancels remaining promises
+     */
+    async function raceCancellablePromises(cancellablePromises) {
+        let resolvedPromiseIndex = -1;
+        const promises = cancellablePromises.map((promise, index) => promise.then(result => { resolvedPromiseIndex = index; return result; }));
+        const result = await Promise.race(promises);
+        cancellablePromises.forEach((cancellablePromise, index) => {
+            if (index !== resolvedPromiseIndex) {
+                cancellablePromise.cancel();
+            }
+        });
+        return result;
+    }
+    exports.raceCancellablePromises = raceCancellablePromises;
     function raceTimeout(promise, timeout, onTimeout) {
         let promiseResolve = undefined;
         const timer = setTimeout(() => {
-            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve();
+            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve(undefined);
             onTimeout === null || onTimeout === void 0 ? void 0 : onTimeout();
         }, timeout);
         return Promise.race([
@@ -4305,10 +4289,10 @@ define(__m[9/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,27/*vs/bas
     }
     exports.IntervalTimer = IntervalTimer;
     class RunOnceScheduler {
-        constructor(runner, timeout) {
+        constructor(runner, delay) {
             this.timeoutToken = -1;
             this.runner = runner;
-            this.timeout = timeout;
+            this.timeout = delay;
             this.timeoutHandler = this.onTimeout.bind(this);
         }
         /**
@@ -4333,6 +4317,12 @@ define(__m[9/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,27/*vs/bas
         schedule(delay = this.timeout) {
             this.cancel();
             this.timeoutToken = setTimeout(this.timeoutHandler, delay);
+        }
+        get delay() {
+            return this.timeout;
+        }
+        set delay(value) {
+            this.timeout = value;
         }
         /**
          * Returns true if scheduled.
@@ -4631,8 +4621,9 @@ if (typeof define === 'function') {
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[6/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[5/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
+    var _a;
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isLittleEndian = exports.OS = exports.OperatingSystem = exports.setImmediate = exports.globals = exports.translationsConfigFile = exports.locale = exports.Language = exports.language = exports.isRootUser = exports.userAgent = exports.platform = exports.isIOS = exports.isWeb = exports.isNative = exports.isLinux = exports.isMacintosh = exports.isWindows = exports.PlatformToString = exports.Platform = void 0;
     const LANGUAGE_DEFAULT = 'en';
@@ -4646,8 +4637,18 @@ define(__m[6/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
     let _language = LANGUAGE_DEFAULT;
     let _translationsConfigFile = undefined;
     let _userAgent = undefined;
-    const isElectronRenderer = (typeof process !== 'undefined' && typeof process.versions !== 'undefined' && typeof process.versions.electron !== 'undefined' && process.type === 'renderer');
-    // OS detection
+    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
+    let nodeProcess = undefined;
+    if (typeof process !== 'undefined') {
+        // Native environment (non-sandboxed)
+        nodeProcess = process;
+    }
+    else if (typeof _globals.vscode !== 'undefined') {
+        // Native envionment (sandboxed)
+        nodeProcess = _globals.vscode.process;
+    }
+    const isElectronRenderer = typeof ((_a = nodeProcess === null || nodeProcess === void 0 ? void 0 : nodeProcess.versions) === null || _a === void 0 ? void 0 : _a.electron) === 'string' && nodeProcess.type === 'renderer';
+    // Web environment
     if (typeof navigator === 'object' && !isElectronRenderer) {
         _userAgent = navigator.userAgent;
         _isWindows = _userAgent.indexOf('Windows') >= 0;
@@ -4658,13 +4659,14 @@ define(__m[6/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
         _locale = navigator.language;
         _language = _locale;
     }
-    else if (typeof process === 'object') {
-        _isWindows = (process.platform === 'win32');
-        _isMacintosh = (process.platform === 'darwin');
-        _isLinux = (process.platform === 'linux');
+    // Native environment
+    else if (typeof nodeProcess === 'object') {
+        _isWindows = (nodeProcess.platform === 'win32');
+        _isMacintosh = (nodeProcess.platform === 'darwin');
+        _isLinux = (nodeProcess.platform === 'linux');
         _locale = LANGUAGE_DEFAULT;
         _language = LANGUAGE_DEFAULT;
-        const rawNlsConfig = process.env['VSCODE_NLS_CONFIG'];
+        const rawNlsConfig = nodeProcess.env['VSCODE_NLS_CONFIG'];
         if (rawNlsConfig) {
             try {
                 const nlsConfig = JSON.parse(rawNlsConfig);
@@ -4678,6 +4680,10 @@ define(__m[6/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
             }
         }
         _isNative = true;
+    }
+    // Unknown environment
+    else {
+        console.error('Unable to resolve platform.');
     }
     var Platform;
     (function (Platform) {
@@ -4714,7 +4720,7 @@ define(__m[6/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
     exports.platform = _platform;
     exports.userAgent = _userAgent;
     function isRootUser() {
-        return _isNative && !_isWindows && (process.getuid() === 0);
+        return !!nodeProcess && !_isWindows && (nodeProcess.getuid() === 0);
     }
     exports.isRootUser = isRootUser;
     /**
@@ -4756,7 +4762,6 @@ define(__m[6/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
      * The translatios that are available through language packs.
      */
     exports.translationsConfigFile = _translationsConfigFile;
-    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
     exports.globals = _globals;
     exports.setImmediate = (function defineSetImmediate() {
         if (exports.globals.setImmediate) {
@@ -4786,8 +4791,8 @@ define(__m[6/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
                 exports.globals.postMessage({ vscodeSetImmediateId: myId }, '*');
             };
         }
-        if (typeof process !== 'undefined' && typeof process.nextTick === 'function') {
-            return process.nextTick.bind(process);
+        if (nodeProcess) {
+            return nodeProcess.nextTick.bind(nodeProcess);
         }
         const _promise = Promise.resolve();
         return (callback) => _promise.then(callback);
@@ -4819,16 +4824,31 @@ define(__m[6/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[47/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/platform*/]), function (require, exports, platform_1) {
+define(__m[50/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/platform*/]), function (require, exports, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.nextTick = exports.platform = exports.env = exports.cwd = void 0;
-    const safeProcess = (typeof process === 'undefined') ? {
-        cwd() { return '/'; },
-        env: Object.create(null),
-        get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
-        nextTick(callback) { return platform_1.setImmediate(callback); }
-    } : process;
+    let safeProcess;
+    // Native node.js environment
+    if (typeof process !== 'undefined') {
+        safeProcess = process;
+    }
+    // Native sandbox environment
+    else if (typeof platform_1.globals.vscode !== 'undefined') {
+        safeProcess = platform_1.globals.vscode.process;
+    }
+    // Web environment
+    else {
+        safeProcess = {
+            // Supported
+            get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
+            nextTick(callback) { return platform_1.setImmediate(callback); },
+            // Unsupported
+            get env() { return Object.create(null); },
+            cwd() { return '/'; },
+            getuid() { return -1; }
+        };
+    }
     exports.cwd = safeProcess.cwd;
     exports.env = safeProcess.env;
     exports.platform = safeProcess.platform;
@@ -4839,7 +4859,7 @@ define(__m[47/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,6/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[4/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,47/*vs/base/common/process*/]), function (require, exports, process) {
+define(__m[4/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,50/*vs/base/common/process*/]), function (require, exports, process) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.delimiter = exports.sep = exports.toNamespacedPath = exports.parse = exports.format = exports.extname = exports.basename = exports.dirname = exports.relative = exports.resolve = exports.join = exports.isAbsolute = exports.normalize = exports.posix = exports.win32 = void 0;
@@ -6550,10 +6570,10 @@ define(__m[51/*vs/base/common/stream*/], __M([0/*require*/,1/*exports*/,2/*vs/ba
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[14/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[17/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.repeat = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.endsWith = exports.startsWith = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
+    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
     function isFalsyOrWhitespace(str) {
         if (!str || typeof str !== 'string') {
             return true;
@@ -6679,40 +6699,6 @@ define(__m[14/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), func
         return pattern.replace(/\*/g, '');
     }
     exports.stripWildcards = stripWildcards;
-    /**
-     * @deprecated ES6: use `String.startsWith`
-     */
-    function startsWith(haystack, needle) {
-        if (haystack.length < needle.length) {
-            return false;
-        }
-        if (haystack === needle) {
-            return true;
-        }
-        for (let i = 0; i < needle.length; i++) {
-            if (haystack[i] !== needle[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
-    exports.startsWith = startsWith;
-    /**
-     * @deprecated ES6: use `String.endsWith`
-     */
-    function endsWith(haystack, needle) {
-        const diff = haystack.length - needle.length;
-        if (diff > 0) {
-            return haystack.indexOf(needle, diff) === diff;
-        }
-        else if (diff === 0) {
-            return haystack === needle;
-        }
-        else {
-            return false;
-        }
-    }
-    exports.endsWith = endsWith;
     function createRegExp(searchString, isRegex, options = {}) {
         if (!searchString) {
             throw new Error('Cannot create regex from empty string');
@@ -7333,17 +7319,6 @@ define(__m[14/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), func
     }
     exports.stripUTF8BOM = stripUTF8BOM;
     /**
-     * @deprecated ES6
-     */
-    function repeat(s, count) {
-        let result = '';
-        for (let i = 0; i < count; i++) {
-            result += s;
-        }
-        return result;
-    }
-    exports.repeat = repeat;
-    /**
      * Checks if the characters of the provided query string are included in the
      * target string. The characters do not have to be contiguous within the string.
      */
@@ -7562,7 +7537,7 @@ define(__m[14/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), func
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[17/*vs/base/common/buffer*/], __M([0/*require*/,1/*exports*/,14/*vs/base/common/strings*/,51/*vs/base/common/stream*/]), function (require, exports, strings, streams) {
+define(__m[18/*vs/base/common/buffer*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/strings*/,51/*vs/base/common/stream*/]), function (require, exports, strings, streams) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.newWriteableBufferStream = exports.streamToBufferReadableStream = exports.bufferToStream = exports.bufferedStreamToBuffer = exports.streamToBuffer = exports.bufferToReadable = exports.readableToBuffer = exports.writeUInt8 = exports.readUInt8 = exports.writeUInt32LE = exports.readUInt32LE = exports.writeUInt32BE = exports.readUInt32BE = exports.writeUInt16LE = exports.readUInt16LE = exports.VSBuffer = void 0;
@@ -7765,7 +7740,7 @@ define(__m[17/*vs/base/common/buffer*/], __M([0/*require*/,1/*exports*/,14/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[18/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[14/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NotImplementedProxy = exports.withUndefinedAsNull = exports.withNullAsUndefined = exports.createProxyObject = exports.getAllMethodNames = exports.getAllPropertyNames = exports.validateConstraint = exports.validateConstraints = exports.areFunctions = exports.isFunction = exports.isEmptyObject = exports.assertAllDefined = exports.assertIsDefined = exports.assertType = exports.isUndefinedOrNull = exports.isDefined = exports.isUndefined = exports.isBoolean = exports.isNumber = exports.isObject = exports.isStringArray = exports.isString = exports.isArray = void 0;
@@ -8001,7 +7976,7 @@ define(__m[18/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), functi
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[39/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/platform*/,14/*vs/base/common/strings*/,4/*vs/base/common/path*/,18/*vs/base/common/types*/]), function (require, exports, platform_1, strings_1, path_1, types_1) {
+define(__m[38/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/platform*/,17/*vs/base/common/strings*/,4/*vs/base/common/path*/,14/*vs/base/common/types*/]), function (require, exports, platform_1, strings_1, path_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.parseLineAndColumnAware = exports.indexOfPath = exports.isRootOrDriveLetter = exports.sanitizeFilePath = exports.isWindowsDriveLetter = exports.isEqualOrParent = exports.isEqual = exports.isValidBasename = exports.isUNC = exports.getRoot = exports.toSlashes = exports.isPathSeparator = void 0;
@@ -8170,34 +8145,34 @@ define(__m[39/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,6/*vs/b
         return strings_1.equalsIgnoreCase(pathA, pathB);
     }
     exports.isEqual = isEqual;
-    function isEqualOrParent(path, candidate, ignoreCase, separator = path_1.sep) {
-        if (path === candidate) {
+    function isEqualOrParent(base, parentCandidate, ignoreCase, separator = path_1.sep) {
+        if (base === parentCandidate) {
             return true;
         }
-        if (!path || !candidate) {
+        if (!base || !parentCandidate) {
             return false;
         }
-        if (candidate.length > path.length) {
+        if (parentCandidate.length > base.length) {
             return false;
         }
         if (ignoreCase) {
-            const beginsWith = strings_1.startsWithIgnoreCase(path, candidate);
+            const beginsWith = strings_1.startsWithIgnoreCase(base, parentCandidate);
             if (!beginsWith) {
                 return false;
             }
-            if (candidate.length === path.length) {
+            if (parentCandidate.length === base.length) {
                 return true; // same path, different casing
             }
-            let sepOffset = candidate.length;
-            if (candidate.charAt(candidate.length - 1) === separator) {
+            let sepOffset = parentCandidate.length;
+            if (parentCandidate.charAt(parentCandidate.length - 1) === separator) {
                 sepOffset--; // adjust the expected sep offset in case our candidate already ends in separator character
             }
-            return path.charAt(sepOffset) === separator;
+            return base.charAt(sepOffset) === separator;
         }
-        if (candidate.charAt(candidate.length - 1) !== separator) {
-            candidate += separator;
+        if (parentCandidate.charAt(parentCandidate.length - 1) !== separator) {
+            parentCandidate += separator;
         }
-        return path.indexOf(candidate) === 0;
+        return base.indexOf(parentCandidate) === 0;
     }
     exports.isEqualOrParent = isEqualOrParent;
     function isWindowsDriveLetter(char0) {
@@ -8293,16 +8268,16 @@ define(__m[39/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,6/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[19/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,18/*vs/base/common/types*/]), function (require, exports, types_1) {
+define(__m[25/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,14/*vs/base/common/types*/]), function (require, exports, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.distinct = exports.getOrDefault = exports.safeStringify = exports.equals = exports.assign = exports.mixin = exports.cloneAndChange = exports.deepFreeze = exports.deepClone = void 0;
+    exports.distinct = exports.getOrDefault = exports.safeStringify = exports.equals = exports.mixin = exports.cloneAndChange = exports.deepFreeze = exports.deepClone = void 0;
     function deepClone(obj) {
         if (!obj || typeof obj !== 'object') {
             return obj;
         }
         if (obj instanceof RegExp) {
-            // See https://github.com/Microsoft/TypeScript/issues/10990
+            // See https://github.com/microsoft/TypeScript/issues/10990
             return obj;
         }
         const result = Array.isArray(obj) ? [] : {};
@@ -8401,11 +8376,6 @@ define(__m[19/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,18/*vs/
         return destination;
     }
     exports.mixin = mixin;
-    function assign(destination, ...sources) {
-        sources.forEach(source => Object.keys(source).forEach(key => destination[key] = source[key]));
-        return destination;
-    }
-    exports.assign = assign;
     function equals(one, other) {
         if (one === other) {
             return true;
@@ -8458,19 +8428,19 @@ define(__m[19/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,18/*vs/
     }
     exports.equals = equals;
     /**
-     * Calls JSON.Stringify with a replacer to break apart any circular references.
-     * This prevents JSON.stringify from throwing the exception
+     * Calls `JSON.Stringify` with a replacer to break apart any circular references.
+     * This prevents `JSON`.stringify` from throwing the exception
      *  "Uncaught TypeError: Converting circular structure to JSON"
      */
     function safeStringify(obj) {
-        const seen = [];
+        const seen = new Set();
         return JSON.stringify(obj, (key, value) => {
             if (types_1.isObject(value) || Array.isArray(value)) {
-                if (seen.indexOf(value) !== -1) {
+                if (seen.has(value)) {
                     return '[Circular]';
                 }
                 else {
-                    seen.push(value);
+                    seen.add(value);
                 }
             }
             return value;
@@ -8514,7 +8484,7 @@ define(__m[19/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,18/*vs/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[7/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/platform*/,4/*vs/base/common/path*/]), function (require, exports, platform_1, paths) {
+define(__m[7/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/platform*/,4/*vs/base/common/path*/]), function (require, exports, platform_1, paths) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.uriToFsPath = exports.URI = void 0;
@@ -9107,25 +9077,7 @@ define(__m[7/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,6/*vs/base/c
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[31/*vs/base/common/amd*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/]), function (require, exports, uri_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.getUriFromAmdModule = exports.getPathFromAmdModule = void 0;
-    function getPathFromAmdModule(requirefn, relativePath) {
-        return getUriFromAmdModule(requirefn, relativePath).fsPath;
-    }
-    exports.getPathFromAmdModule = getPathFromAmdModule;
-    function getUriFromAmdModule(requirefn, relativePath) {
-        return uri_1.URI.parse(requirefn.toUrl(relativePath));
-    }
-    exports.getUriFromAmdModule = getUriFromAmdModule;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[84/*vs/base/common/console*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/]), function (require, exports, uri_1) {
+define(__m[83/*vs/base/common/console*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/]), function (require, exports, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.log = exports.getFirstFrame = exports.parse = exports.isRemoteConsoleLog = void 0;
@@ -9236,7 +9188,7 @@ define(__m[84/*vs/base/common/console*/], __M([0/*require*/,1/*exports*/,7/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[85/*vs/base/common/marshalling*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/buffer*/,14/*vs/base/common/strings*/,7/*vs/base/common/uri*/]), function (require, exports, buffer_1, strings_1, uri_1) {
+define(__m[84/*vs/base/common/marshalling*/], __M([0/*require*/,1/*exports*/,18/*vs/base/common/buffer*/,17/*vs/base/common/strings*/,7/*vs/base/common/uri*/]), function (require, exports, buffer_1, strings_1, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.revive = exports.parse = exports.stringify = void 0;
@@ -9297,10 +9249,10 @@ define(__m[85/*vs/base/common/marshalling*/], __M([0/*require*/,1/*exports*/,17/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[26/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,6/*vs/base/common/platform*/]), function (require, exports, uri_1, platform) {
+define(__m[10/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,5/*vs/base/common/platform*/]), function (require, exports, uri_1, platform) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.RemoteAuthorities = exports.Schemas = void 0;
+    exports.FileAccess = exports.RemoteAuthorities = exports.Schemas = void 0;
     var Schemas;
     (function (Schemas) {
         /**
@@ -9397,13 +9349,33 @@ define(__m[26/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,7/*vs/b
         }
     }
     exports.RemoteAuthorities = new RemoteAuthoritiesImpl();
+    class FileAccessImpl {
+        asBrowserUri(uriOrModule, moduleIdToUrl) {
+            const uri = this.toUri(uriOrModule, moduleIdToUrl);
+            if (uri.scheme === Schemas.vscodeRemote) {
+                return exports.RemoteAuthorities.rewrite(uri);
+            }
+            return uri;
+        }
+        asFileUri(uriOrModule, moduleIdToUrl) {
+            const uri = this.toUri(uriOrModule, moduleIdToUrl);
+            return uri;
+        }
+        toUri(uriOrModule, moduleIdToUrl) {
+            if (uri_1.URI.isUri(uriOrModule)) {
+                return uriOrModule;
+            }
+            return uri_1.URI.parse(moduleIdToUrl.toUrl(uriOrModule));
+        }
+    }
+    exports.FileAccess = new FileAccessImpl();
 });
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[34/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,14/*vs/base/common/strings*/,26/*vs/base/common/network*/,6/*vs/base/common/platform*/]), function (require, exports, uri_1, strings_1, network_1, platform_1) {
+define(__m[32/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,17/*vs/base/common/strings*/,10/*vs/base/common/network*/,5/*vs/base/common/platform*/]), function (require, exports, uri_1, strings_1, network_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LRUCache = exports.LinkedMap = exports.Touch = exports.ResourceMap = exports.TernarySearchTree = exports.UriIterator = exports.PathIterator = exports.StringIterator = exports.setToString = exports.mapToString = exports.getOrSet = void 0;
@@ -9526,7 +9498,7 @@ define(__m[34/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,7/*vs/base/
                 this._states.push(2 /* Authority */);
             }
             if (this._value.path) {
-                //todo@jrieken the case-sensitive logic is copied form `resources.ts#hasToIgnoreCase`
+                //todo@jrieken #107886 the case-sensitive logic is copied form `resources.ts#hasToIgnoreCase`
                 // which cannot be used because it depends on this
                 const caseSensitive = key.scheme === network_1.Schemas.file && platform_1.isLinux;
                 this._pathIterator = new PathIterator(false, caseSensitive);
@@ -10289,7 +10261,7 @@ define(__m[34/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,7/*vs/base/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[60/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,15/*vs/base/common/arrays*/,14/*vs/base/common/strings*/,39/*vs/base/common/extpath*/,4/*vs/base/common/path*/,34/*vs/base/common/map*/,9/*vs/base/common/async*/]), function (require, exports, arrays, strings, extpath, paths, map_1, async_1) {
+define(__m[61/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/strings*/,38/*vs/base/common/extpath*/,4/*vs/base/common/path*/,32/*vs/base/common/map*/,9/*vs/base/common/async*/]), function (require, exports, strings, extpath, paths, map_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getPathTerms = exports.getBasenameTerms = exports.isRelativePattern = exports.hasSiblingFn = exports.hasSiblingPromiseFn = exports.parse = exports.match = exports.splitGlobAware = exports.getEmptyExpression = void 0;
@@ -10571,7 +10543,7 @@ define(__m[60/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,15/*vs/bas
             }
             return null;
         };
-        const withBasenames = arrays.first(parsedPatterns, pattern => !!pattern.allBasenames);
+        const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
         if (withBasenames) {
             parsedPattern.allBasenames = withBasenames.allBasenames;
         }
@@ -10707,7 +10679,7 @@ define(__m[60/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,15/*vs/bas
                 }
                 return null;
             };
-            const withBasenames = arrays.first(parsedPatterns, pattern => !!pattern.allBasenames);
+            const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
             if (withBasenames) {
                 resultExpression.allBasenames = withBasenames.allBasenames;
             }
@@ -10737,7 +10709,7 @@ define(__m[60/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,15/*vs/bas
             }
             return null;
         };
-        const withBasenames = arrays.first(parsedPatterns, pattern => !!pattern.allBasenames);
+        const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
         if (withBasenames) {
             resultExpression.allBasenames = withBasenames.allBasenames;
         }
@@ -10832,7 +10804,7 @@ define(__m[60/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,15/*vs/bas
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[61/*vs/base/common/normalization*/], __M([0/*require*/,1/*exports*/,34/*vs/base/common/map*/]), function (require, exports, map_1) {
+define(__m[62/*vs/base/common/normalization*/], __M([0/*require*/,1/*exports*/,32/*vs/base/common/map*/]), function (require, exports, map_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.removeAccents = exports.normalizeNFD = exports.normalizeNFC = exports.canNormalize = void 0;
@@ -10893,7 +10865,7 @@ define(__m[61/*vs/base/common/normalization*/], __M([0/*require*/,1/*exports*/,3
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[10/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,39/*vs/base/common/extpath*/,4/*vs/base/common/path*/,7/*vs/base/common/uri*/,14/*vs/base/common/strings*/,26/*vs/base/common/network*/,6/*vs/base/common/platform*/,60/*vs/base/common/glob*/,34/*vs/base/common/map*/]), function (require, exports, extpath, paths, uri_1, strings_1, network_1, platform_1, glob_1, map_1) {
+define(__m[19/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,38/*vs/base/common/extpath*/,4/*vs/base/common/path*/,7/*vs/base/common/uri*/,17/*vs/base/common/strings*/,10/*vs/base/common/network*/,5/*vs/base/common/platform*/,61/*vs/base/common/glob*/,32/*vs/base/common/map*/]), function (require, exports, extpath, paths, uri_1, strings_1, network_1, platform_1, glob_1, map_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toLocalResource = exports.ResourceGlobMatcher = exports.DataUri = exports.distinctParents = exports.addTrailingPathSeparator = exports.removeTrailingPathSeparator = exports.hasTrailingPathSeparator = exports.isEqualAuthority = exports.isAbsolutePath = exports.resolvePath = exports.relativePath = exports.normalizePath = exports.joinPath = exports.dirname = exports.extname = exports.basename = exports.basenameOrAuthority = exports.getComparisonKey = exports.isEqualOrParent = exports.isEqual = exports.extUriIgnorePathCase = exports.extUriBiasedIgnorePathCase = exports.extUri = exports.ExtUri = exports.originalFSPath = void 0;
@@ -11187,15 +11159,15 @@ define(__m[10/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,39/*v
         }
     }
     exports.ResourceGlobMatcher = ResourceGlobMatcher;
-    function toLocalResource(resource, authority) {
+    function toLocalResource(resource, authority, localScheme) {
         if (authority) {
             let path = resource.path;
             if (path && path[0] !== paths.posix.sep) {
                 path = paths.posix.sep + path;
             }
-            return resource.with({ scheme: network_1.Schemas.vscodeRemote, authority, path });
+            return resource.with({ scheme: localScheme, authority, path });
         }
-        return resource.with({ scheme: network_1.Schemas.file });
+        return resource.with({ scheme: localScheme });
     }
     exports.toLocalResource = toLocalResource;
 });
@@ -11204,7 +11176,7 @@ define(__m[10/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,39/*v
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[62/*vs/base/common/labels*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,4/*vs/base/common/path*/,14/*vs/base/common/strings*/,26/*vs/base/common/network*/,6/*vs/base/common/platform*/,10/*vs/base/common/resources*/]), function (require, exports, uri_1, path_1, strings_1, network_1, platform_1, resources_1) {
+define(__m[63/*vs/base/common/labels*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,4/*vs/base/common/path*/,17/*vs/base/common/strings*/,10/*vs/base/common/network*/,5/*vs/base/common/platform*/,19/*vs/base/common/resources*/]), function (require, exports, uri_1, path_1, strings_1, network_1, platform_1, resources_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.splitName = exports.unmnemonicLabel = exports.mnemonicButtonLabel = exports.mnemonicMenuLabel = exports.template = exports.shorten = exports.untildify = exports.tildify = exports.normalizeDriveLetter = exports.getBaseLabel = exports.getPathLabel = void 0;
@@ -11530,7 +11502,7 @@ define(__m[62/*vs/base/common/labels*/], __M([0/*require*/,1/*exports*/,7/*vs/ba
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[86/*vs/base/common/uriIpc*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/]), function (require, exports, uri_1) {
+define(__m[85/*vs/base/common/uriIpc*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/]), function (require, exports, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.transformAndReviveIncomingURIs = exports.transformIncomingURIs = exports.transformOutgoingURIs = exports.DefaultURITransformer = exports.URITransformer = void 0;
@@ -11645,7 +11617,7 @@ define(__m[86/*vs/base/common/uriIpc*/], __M([0/*require*/,1/*exports*/,7/*vs/ba
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[29/*vs/base/common/uuid*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[30/*vs/base/common/uuid*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.generateUuid = exports.isUUID = void 0;
@@ -11706,7 +11678,7 @@ define(__m[29/*vs/base/common/uuid*/], __M([0/*require*/,1/*exports*/]), functio
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[63/*vs/base/node/decoder*/], __M([0/*require*/,1/*exports*/,195/*string_decoder*/]), function (require, exports, sd) {
+define(__m[64/*vs/base/node/decoder*/], __M([0/*require*/,1/*exports*/,193/*string_decoder*/]), function (require, exports, sd) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LineDecoder = void 0;
@@ -11766,14 +11738,10 @@ define(__m[63/*vs/base/node/decoder*/], __M([0/*require*/,1/*exports*/,195/*stri
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[87/*vs/base/node/macAddress*/], __M([0/*require*/,1/*exports*/,44/*child_process*/,6/*vs/base/common/platform*/]), function (require, exports, child_process_1, platform_1) {
+define(__m[86/*vs/base/node/macAddress*/], __M([0/*require*/,1/*exports*/,39/*os*/]), function (require, exports, os_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getMac = void 0;
-    const cmdline = {
-        windows: 'getmac.exe',
-        unix: '/sbin/ifconfig -a || /sbin/ip link'
-    };
     const invalidMacAddresses = new Set([
         '00:00:00:00:00:00',
         'ff:ff:ff:ff:ff:ff',
@@ -11801,22 +11769,15 @@ define(__m[87/*vs/base/node/macAddress*/], __M([0/*require*/,1/*exports*/,44/*ch
     function doGetMac() {
         return new Promise((resolve, reject) => {
             try {
-                child_process_1.exec(platform_1.isWindows ? cmdline.windows : cmdline.unix, { timeout: 10000 }, (err, stdout, stdin) => {
-                    if (err) {
-                        return reject(`Unable to retrieve mac address (${err.toString()})`);
-                    }
-                    else {
-                        const regex = /(?:[a-f\d]{2}[:\-]){5}[a-f\d]{2}/gi;
-                        let match;
-                        while ((match = regex.exec(stdout)) !== null) {
-                            const macAddressCandidate = match[0];
-                            if (validateMacAddress(macAddressCandidate)) {
-                                return resolve(macAddressCandidate);
-                            }
+                const ifaces = os_1.networkInterfaces();
+                for (const [, infos] of Object.entries(ifaces)) {
+                    for (const info of infos) {
+                        if (validateMacAddress(info.mac)) {
+                            return resolve(info.mac);
                         }
-                        return reject('Unable to retrieve mac address (unexpected format)');
                     }
-                });
+                }
+                reject('Unable to retrieve mac address (unexpected format)');
             }
             catch (err) {
                 reject(err);
@@ -11829,7 +11790,7 @@ define(__m[87/*vs/base/node/macAddress*/], __M([0/*require*/,1/*exports*/,44/*ch
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[88/*vs/base/node/id*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/errors*/,29/*vs/base/common/uuid*/,40/*os*/,34/*vs/base/common/map*/,87/*vs/base/node/macAddress*/]), function (require, exports, errors, uuid, os_1, map_1, macAddress_1) {
+define(__m[87/*vs/base/node/id*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/errors*/,30/*vs/base/common/uuid*/,39/*os*/,32/*vs/base/common/map*/,86/*vs/base/node/macAddress*/]), function (require, exports, errors, uuid, os_1, map_1, macAddress_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getMachineId = exports.virtualMachineHint = void 0;
@@ -11918,11 +11879,11 @@ define(__m[88/*vs/base/node/id*/], __M([0/*require*/,1/*exports*/,20/*vs/base/co
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[89/*vs/base/node/paths*/], __M([0/*require*/,1/*exports*/,31/*vs/base/common/amd*/]), function (require, exports, amd_1) {
+define(__m[88/*vs/base/node/paths*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/network*/]), function (require, exports, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getDefaultUserDataPath = exports.getAppDataPath = void 0;
-    const pathsPath = amd_1.getPathFromAmdModule(require, 'paths');
+    const pathsPath = network_1.FileAccess.asFileUri('paths', require).fsPath;
     const paths = require.__$__nodeRequire(pathsPath);
     exports.getAppDataPath = paths.getAppDataPath;
     exports.getDefaultUserDataPath = paths.getDefaultUserDataPath;
@@ -11932,11 +11893,11 @@ define(__m[89/*vs/base/node/paths*/], __M([0/*require*/,1/*exports*/,31/*vs/base
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[21/*vs/base/node/pfs*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/path*/,9/*vs/base/common/async*/,35/*fs*/,40/*os*/,6/*vs/base/common/platform*/,3/*vs/base/common/event*/,52/*util*/,39/*vs/base/common/extpath*/,29/*vs/base/common/uuid*/,61/*vs/base/common/normalization*/]), function (require, exports, path_1, async_1, fs, os, platform, event_1, util_1, extpath_1, uuid_1, normalization_1) {
+define(__m[21/*vs/base/node/pfs*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/path*/,9/*vs/base/common/async*/,33/*fs*/,39/*os*/,5/*vs/base/common/platform*/,3/*vs/base/common/event*/,52/*util*/,38/*vs/base/common/extpath*/,30/*vs/base/common/uuid*/,62/*vs/base/common/normalization*/]), function (require, exports, path_1, async_1, fs, os, platform, event_1, util_1, extpath_1, uuid_1, normalization_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.copy = exports.move = exports.whenDeleted = exports.fileExists = exports.dirExists = exports.readDirsInDir = exports.writeFileSync = exports.writeFile = exports.mkdirp = exports.readFile = exports.truncate = exports.symlink = exports.unlink = exports.renameIgnoreError = exports.rename = exports.lstat = exports.statLink = exports.stat = exports.chmod = exports.exists = exports.readdirSync = exports.readdirWithFileTypes = exports.readdir = exports.rimrafSync = exports.rimraf = exports.RimRafMode = exports.MAX_HEAP_SIZE = exports.MAX_FILE_SIZE = void 0;
-    // See https://github.com/Microsoft/vscode/issues/30180
+    // See https://github.com/microsoft/vscode/issues/30180
     const WIN32_MAX_FILE_SIZE = 300 * 1024 * 1024; // 300 MB
     const GENERAL_MAX_FILE_SIZE = 16 * 1024 * 1024 * 1024; // 16 GB
     // See https://github.com/v8/v8/blob/5918a23a3d571b9625e5cce246bdd5b46ff7cd8b/src/heap/heap.cc#L149
@@ -12388,12 +12349,12 @@ define(__m[21/*vs/base/node/pfs*/], __M([0/*require*/,1/*exports*/,4/*vs/base/co
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[90/*vs/base/node/extpath*/], __M([0/*require*/,1/*exports*/,35/*fs*/,14/*vs/base/common/strings*/,4/*vs/base/common/path*/,21/*vs/base/node/pfs*/,52/*util*/]), function (require, exports, fs, strings_1, path_1, pfs_1, util_1) {
+define(__m[89/*vs/base/node/extpath*/], __M([0/*require*/,1/*exports*/,33/*fs*/,17/*vs/base/common/strings*/,4/*vs/base/common/path*/,21/*vs/base/node/pfs*/,52/*util*/]), function (require, exports, fs, strings_1, path_1, pfs_1, util_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.realpathSync = exports.realpath = exports.realcaseSync = void 0;
     /**
-     * Copied from: https://github.com/Microsoft/vscode-node-debug/blob/master/src/node/pathUtilities.ts#L83
+     * Copied from: https://github.com/microsoft/vscode-node-debug/blob/master/src/node/pathUtilities.ts#L83
      *
      * Given an absolute, normalized, and existing file path 'realcase' returns the exact path that the file has on disk.
      * On a case insensitive file system, the returned path might differ from the original path by character casing.
@@ -12475,7 +12436,7 @@ define(__m[90/*vs/base/node/extpath*/], __M([0/*require*/,1/*exports*/,35/*fs*/,
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[91/*vs/base/node/ps*/], __M([0/*require*/,1/*exports*/,44/*child_process*/,31/*vs/base/common/amd*/]), function (require, exports, child_process_1, amd_1) {
+define(__m[90/*vs/base/node/ps*/], __M([0/*require*/,1/*exports*/,45/*child_process*/,10/*vs/base/common/network*/]), function (require, exports, child_process_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.listProcesses = void 0;
@@ -12634,7 +12595,7 @@ define(__m[91/*vs/base/node/ps*/], __M([0/*require*/,1/*exports*/,44/*child_proc
                     // The cpu usage value reported on Linux is the average over the process lifetime,
                     // recalculate the usage over a one second interval
                     // JSON.stringify is needed to escape spaces, https://github.com/nodejs/node/issues/6803
-                    let cmd = JSON.stringify(amd_1.getPathFromAmdModule(require, 'vs/base/node/cpuUsage.sh'));
+                    let cmd = JSON.stringify(network_1.FileAccess.asFileUri('vs/base/node/cpuUsage.sh', require).fsPath);
                     cmd += ' ' + pids.join(' ');
                     child_process_1.exec(cmd, {}, (err, stdout, stderr) => {
                         if (err || stderr) {
@@ -12646,6 +12607,10 @@ define(__m[91/*vs/base/node/ps*/], __M([0/*require*/,1/*exports*/,44/*child_proc
                                 const processInfo = map.get(pids[i]);
                                 processInfo.load = parseFloat(cpuUsage[i]);
                             }
+                            if (!rootItem) {
+                                reject(new Error(`Root process ${rootPid} not found`));
+                                return;
+                            }
                             resolve(rootItem);
                         }
                     });
@@ -12656,7 +12621,7 @@ define(__m[91/*vs/base/node/ps*/], __M([0/*require*/,1/*exports*/,44/*child_proc
                             reject(err || new Error(stderr.toString()));
                         }
                         else {
-                            const cmd = JSON.stringify(amd_1.getPathFromAmdModule(require, 'vs/base/node/ps.sh'));
+                            const cmd = JSON.stringify(network_1.FileAccess.asFileUri('vs/base/node/ps.sh', require).fsPath);
                             child_process_1.exec(cmd, {}, (err, stdout, stderr) => {
                                 if (err || stderr) {
                                     reject(err || new Error(stderr.toString()));
@@ -12683,7 +12648,12 @@ define(__m[91/*vs/base/node/ps*/], __M([0/*require*/,1/*exports*/,44/*child_proc
                                     calculateLinuxCpuUsage();
                                 }
                                 else {
-                                    resolve(rootItem);
+                                    if (!rootItem) {
+                                        reject(new Error(`Root process ${rootPid} not found`));
+                                    }
+                                    else {
+                                        resolve(rootItem);
+                                    }
                                 }
                             }
                         });
@@ -12709,7 +12679,7 @@ define(__m[91/*vs/base/node/ps*/], __M([0/*require*/,1/*exports*/,44/*child_proc
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[92/*vs/base/node/watcher*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/path*/,35/*fs*/,6/*vs/base/common/platform*/,61/*vs/base/common/normalization*/,2/*vs/base/common/lifecycle*/,21/*vs/base/node/pfs*/]), function (require, exports, path_1, fs_1, platform_1, normalization_1, lifecycle_1, pfs_1) {
+define(__m[91/*vs/base/node/watcher*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/path*/,33/*fs*/,5/*vs/base/common/platform*/,62/*vs/base/common/normalization*/,2/*vs/base/common/lifecycle*/,21/*vs/base/node/pfs*/]), function (require, exports, path_1, fs_1, platform_1, normalization_1, lifecycle_1, pfs_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CHANGE_BUFFER_DELAY = exports.watchFolder = exports.watchFile = void 0;
@@ -12753,7 +12723,7 @@ define(__m[92/*vs/base/node/watcher*/], __M([0/*require*/,1/*exports*/,4/*vs/bas
                 }
                 // Normalize file name
                 let changedFileName = '';
-                if (raw) { // https://github.com/Microsoft/vscode/issues/38191
+                if (raw) { // https://github.com/microsoft/vscode/issues/38191
                     changedFileName = raw.toString();
                     if (platform_1.isMacintosh) {
                         // Mac: uses NFD unicode form on disk, but we want NFC
@@ -12873,7 +12843,7 @@ define(__m[92/*vs/base/node/watcher*/], __M([0/*require*/,1/*exports*/,4/*vs/bas
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[32/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,9/*vs/base/common/async*/,27/*vs/base/common/cancellation*/,20/*vs/base/common/errors*/,17/*vs/base/common/buffer*/,15/*vs/base/common/arrays*/,18/*vs/base/common/types*/,85/*vs/base/common/marshalling*/,14/*vs/base/common/strings*/]), function (require, exports, event_1, lifecycle_1, async_1, cancellation_1, errors, buffer_1, arrays_1, types_1, marshalling_1, strings) {
+define(__m[34/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,9/*vs/base/common/async*/,27/*vs/base/common/cancellation*/,20/*vs/base/common/errors*/,18/*vs/base/common/buffer*/,16/*vs/base/common/arrays*/,14/*vs/base/common/types*/,84/*vs/base/common/marshalling*/,17/*vs/base/common/strings*/]), function (require, exports, event_1, lifecycle_1, async_1, cancellation_1, errors, buffer_1, arrays_1, types_1, marshalling_1, strings) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IPCLogger = exports.logWithColors = exports.createChannelSender = exports.createChannelReceiver = exports.StaticRouter = exports.getNextTickChannel = exports.getDelayedChannel = exports.IPCClient = exports.IPCServer = exports.ChannelClient = exports.RequestInitiator = exports.ChannelServer = exports.ResponseType = exports.RequestType = void 0;
@@ -13733,7 +13703,7 @@ define(__m[32/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,3
         data = pretty(data);
         const colorTable = colorTables[initiator];
         const color = colorTable[req % colorTable.length];
-        let args = [`%c[${direction}]%c[${strings.pad(totalLength, 7, ' ')}]%c[len: ${strings.pad(msgLength, 5, ' ')}]%c${strings.pad(req, 5, ' ')} - ${str}`, 'color: darkgreen', 'color: grey', 'color: grey', `color: ${color}`];
+        let args = [`%c[${direction}]%c[${String(totalLength).padStart(7, ' ')}]%c[len: ${String(msgLength).padStart(5, ' ')}]%c${String(req).padStart(5, ' ')} - ${str}`, 'color: darkgreen', 'color: grey', 'color: grey', `color: ${color}`];
         if (/\($/.test(str)) {
             args = args.concat(data);
             args.push(')');
@@ -13767,7 +13737,7 @@ define(__m[32/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,3
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[93/*vs/base/parts/ipc/common/ipc.electron*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[92/*vs/base/parts/ipc/common/ipc.electron*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Protocol = void 0;
@@ -13795,7 +13765,7 @@ define(__m[93/*vs/base/parts/ipc/common/ipc.electron*/], __M([0/*require*/,1/*ex
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[94/*vs/base/parts/ipc/common/ipc.net*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,32/*vs/base/parts/ipc/common/ipc*/,2/*vs/base/common/lifecycle*/,17/*vs/base/common/buffer*/,6/*vs/base/common/platform*/,47/*vs/base/common/process*/]), function (require, exports, event_1, ipc_1, lifecycle_1, buffer_1, platform, process) {
+define(__m[93/*vs/base/parts/ipc/common/ipc.net*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,34/*vs/base/parts/ipc/common/ipc*/,2/*vs/base/common/lifecycle*/,18/*vs/base/common/buffer*/,5/*vs/base/common/platform*/,50/*vs/base/common/process*/]), function (require, exports, event_1, ipc_1, lifecycle_1, buffer_1, platform, process) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.PersistentProtocol = exports.BufferedEmitter = exports.Client = exports.Protocol = exports.ProtocolConstants = exports.ChunkStream = void 0;
@@ -14524,7 +14494,7 @@ define(__m[94/*vs/base/parts/ipc/common/ipc.net*/], __M([0/*require*/,1/*exports
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[95/*vs/base/parts/ipc/node/ipc.net*/], __M([0/*require*/,1/*exports*/,196/*net*/,3/*vs/base/common/event*/,32/*vs/base/parts/ipc/common/ipc*/,4/*vs/base/common/path*/,40/*os*/,29/*vs/base/common/uuid*/,2/*vs/base/common/lifecycle*/,17/*vs/base/common/buffer*/,94/*vs/base/parts/ipc/common/ipc.net*/,20/*vs/base/common/errors*/]), function (require, exports, net_1, event_1, ipc_1, path_1, os_1, uuid_1, lifecycle_1, buffer_1, ipc_net_1, errors_1) {
+define(__m[94/*vs/base/parts/ipc/node/ipc.net*/], __M([0/*require*/,1/*exports*/,194/*net*/,3/*vs/base/common/event*/,34/*vs/base/parts/ipc/common/ipc*/,4/*vs/base/common/path*/,39/*os*/,30/*vs/base/common/uuid*/,2/*vs/base/common/lifecycle*/,18/*vs/base/common/buffer*/,93/*vs/base/parts/ipc/common/ipc.net*/,20/*vs/base/common/errors*/]), function (require, exports, net_1, event_1, ipc_1, path_1, os_1, uuid_1, lifecycle_1, buffer_1, ipc_net_1, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.connect = exports.serve = exports.Server = exports.generateRandomPipeName = exports.WebSocketNodeSocket = exports.NodeSocket = void 0;
@@ -14774,15 +14744,18 @@ define(__m[95/*vs/base/parts/ipc/node/ipc.net*/], __M([0/*require*/,1/*exports*/
             buffer.writeUInt8(buffer.readUInt8(offset + 2) ^ m1, offset + 2);
         }
     }
+    // Read this before there's any chance it is overwritten
+    const xdgRuntimeDir = process.env['XDG_RUNTIME_DIR'];
     function generateRandomPipeName() {
         const randomSuffix = uuid_1.generateUuid();
         if (process.platform === 'win32') {
             return `\\\\.\\pipe\\vscode-ipc-${randomSuffix}-sock`;
         }
-        else {
-            // Mac/Unix: use socket file
-            return path_1.join(os_1.tmpdir(), `vscode-ipc-${randomSuffix}.sock`);
+        // Mac/Unix: use socket file
+        if (xdgRuntimeDir) {
+            return path_1.join(xdgRuntimeDir, `vscode-ipc-${randomSuffix}.sock`);
         }
+        return path_1.join(os_1.tmpdir(), `vscode-ipc-${randomSuffix}.sock`);
     }
     exports.generateRandomPipeName = generateRandomPipeName;
     class Server extends ipc_1.IPCServer {
@@ -14833,13 +14806,13 @@ define(__m[95/*vs/base/parts/ipc/node/ipc.net*/], __M([0/*require*/,1/*exports*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[96/*vs/base/parts/request/browser/request*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/errors*/,19/*vs/base/common/objects*/,17/*vs/base/common/buffer*/]), function (require, exports, errors_1, objects_1, buffer_1) {
+define(__m[95/*vs/base/parts/request/browser/request*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/errors*/,18/*vs/base/common/buffer*/]), function (require, exports, errors_1, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.request = void 0;
     function request(options, token) {
         if (options.proxyAuthorization) {
-            options.headers = objects_1.assign(options.headers || {}, { 'Proxy-Authorization': options.proxyAuthorization });
+            options.headers = Object.assign(Object.assign({}, (options.headers || {})), { 'Proxy-Authorization': options.proxyAuthorization });
         }
         const xhr = new XMLHttpRequest();
         return new Promise((resolve, reject) => {
@@ -14899,22 +14872,22 @@ define(__m[96/*vs/base/parts/request/browser/request*/], __M([0/*require*/,1/*ex
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[64/*vs/base/parts/sandbox/electron-sandbox/globals*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[53/*vs/base/parts/sandbox/electron-sandbox/globals*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/platform*/]), function (require, exports, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.context = exports.process = exports.crashReporter = exports.webFrame = exports.ipcRenderer = void 0;
-    exports.ipcRenderer = window.vscode.ipcRenderer;
-    exports.webFrame = window.vscode.webFrame;
-    exports.crashReporter = window.vscode.crashReporter;
-    exports.process = window.vscode.process;
-    exports.context = window.vscode.context;
+    exports.ipcRenderer = platform_1.globals.vscode.ipcRenderer;
+    exports.webFrame = platform_1.globals.vscode.webFrame;
+    exports.crashReporter = platform_1.globals.vscode.crashReporter;
+    exports.process = platform_1.globals.vscode.process;
+    exports.context = platform_1.globals.vscode.context;
 });
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[97/*vs/base/parts/ipc/electron-sandbox/ipc.electron-sandbox*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,32/*vs/base/parts/ipc/common/ipc*/,93/*vs/base/parts/ipc/common/ipc.electron*/,17/*vs/base/common/buffer*/,64/*vs/base/parts/sandbox/electron-sandbox/globals*/]), function (require, exports, event_1, ipc_1, ipc_electron_1, buffer_1, globals_1) {
+define(__m[96/*vs/base/parts/ipc/electron-sandbox/ipc.electron-sandbox*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,34/*vs/base/parts/ipc/common/ipc*/,92/*vs/base/parts/ipc/common/ipc.electron*/,18/*vs/base/common/buffer*/,53/*vs/base/parts/sandbox/electron-sandbox/globals*/]), function (require, exports, event_1, ipc_1, ipc_electron_1, buffer_1, globals_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Client = void 0;
@@ -14940,7 +14913,7 @@ define(__m[97/*vs/base/parts/ipc/electron-sandbox/ipc.electron-sandbox*/], __M([
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[98/*vs/base/parts/storage/common/storage*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,9/*vs/base/common/async*/,18/*vs/base/common/types*/]), function (require, exports, lifecycle_1, event_1, async_1, types_1) {
+define(__m[97/*vs/base/parts/storage/common/storage*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,9/*vs/base/common/async*/,14/*vs/base/common/types*/]), function (require, exports, lifecycle_1, event_1, async_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.InMemoryStorageDatabase = exports.Storage = exports.StorageHint = void 0;
@@ -15147,7 +15120,7 @@ define(__m[98/*vs/base/parts/storage/common/storage*/], __M([0/*require*/,1/*exp
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[99/*vs/base/parts/storage/node/storage*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,9/*vs/base/common/async*/,34/*vs/base/common/map*/,4/*vs/base/common/path*/,21/*vs/base/node/pfs*/]), function (require, exports, event_1, async_1, map_1, path_1, pfs_1) {
+define(__m[98/*vs/base/parts/storage/node/storage*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,9/*vs/base/common/async*/,32/*vs/base/common/map*/,4/*vs/base/common/path*/,21/*vs/base/node/pfs*/]), function (require, exports, event_1, async_1, map_1, path_1, pfs_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SQLiteStorageDatabase = void 0;
@@ -15480,12 +15453,12 @@ define(__m[99/*vs/base/parts/storage/node/storage*/], __M([0/*require*/,1/*expor
     }
 });
 
-define(__m[100/*vs/nls!vs/base/common/date*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/base/common/date", data); });
+define(__m[99/*vs/nls!vs/base/common/date*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/base/common/date", data); });
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[53/*vs/base/common/date*/], __M([0/*require*/,1/*exports*/,14/*vs/base/common/strings*/,100/*vs/nls!vs/base/common/date*/]), function (require, exports, strings_1, nls_1) {
+define(__m[54/*vs/base/common/date*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/strings*/,99/*vs/nls!vs/base/common/date*/]), function (require, exports, strings_1, nls_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toLocalISOString = exports.fromNow = void 0;
@@ -15611,12 +15584,12 @@ define(__m[53/*vs/base/common/date*/], __M([0/*require*/,1/*exports*/,14/*vs/bas
     exports.toLocalISOString = toLocalISOString;
 });
 
-define(__m[101/*vs/nls!vs/base/common/errorMessage*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/base/common/errorMessage", data); });
+define(__m[100/*vs/nls!vs/base/common/errorMessage*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/base/common/errorMessage", data); });
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[48/*vs/base/common/errorMessage*/], __M([0/*require*/,1/*exports*/,101/*vs/nls!vs/base/common/errorMessage*/,18/*vs/base/common/types*/,15/*vs/base/common/arrays*/]), function (require, exports, nls, types, arrays) {
+define(__m[46/*vs/base/common/errorMessage*/], __M([0/*require*/,1/*exports*/,100/*vs/nls!vs/base/common/errorMessage*/,14/*vs/base/common/types*/,16/*vs/base/common/arrays*/]), function (require, exports, nls, types, arrays) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toErrorMessage = void 0;
@@ -15680,12 +15653,12 @@ define(__m[48/*vs/base/common/errorMessage*/], __M([0/*require*/,1/*exports*/,10
     exports.toErrorMessage = toErrorMessage;
 });
 
-define(__m[102/*vs/nls!vs/base/node/processes*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/base/node/processes", data); });
+define(__m[101/*vs/nls!vs/base/node/processes*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/base/node/processes", data); });
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[103/*vs/base/node/processes*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/path*/,35/*fs*/,52/*util*/,44/*child_process*/,102/*vs/nls!vs/base/node/processes*/,18/*vs/base/common/types*/,19/*vs/base/common/objects*/,39/*vs/base/common/extpath*/,6/*vs/base/common/platform*/,63/*vs/base/node/decoder*/,31/*vs/base/common/amd*/]), function (require, exports, path, fs, util_1, cp, nls, Types, Objects, extpath, Platform, decoder_1, amd_1) {
+define(__m[102/*vs/base/node/processes*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/path*/,33/*fs*/,52/*util*/,45/*child_process*/,101/*vs/nls!vs/base/node/processes*/,14/*vs/base/common/types*/,25/*vs/base/common/objects*/,38/*vs/base/common/extpath*/,5/*vs/base/common/platform*/,64/*vs/base/node/decoder*/,10/*vs/base/common/network*/]), function (require, exports, path, fs, util_1, cp, nls, Types, Objects, extpath, Platform, decoder_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.win32 = exports.createQueuedSender = exports.LineProcess = exports.AbstractProcess = exports.getWindowsShell = exports.TerminateResponseCode = exports.Source = void 0;
@@ -15731,7 +15704,7 @@ define(__m[103/*vs/base/node/processes*/], __M([0/*require*/,1/*exports*/,4/*vs/
         }
         else if (Platform.isLinux || Platform.isMacintosh) {
             try {
-                const cmd = amd_1.getPathFromAmdModule(require, 'vs/base/node/terminateProcess.sh');
+                const cmd = network_1.FileAccess.asFileUri('vs/base/node/terminateProcess.sh', require).fsPath;
                 return new Promise((resolve, reject) => {
                     cp.execFile(cmd, [process.pid.toString()], { encoding: 'utf8', shell: true }, (err, stdout, stderr) => {
                         if (err) {
@@ -16122,7 +16095,7 @@ define(__m[103/*vs/base/node/processes*/], __M([0/*require*/,1/*exports*/,4/*vs/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[65/*vs/base/parts/ipc/node/ipc.cp*/], __M([0/*require*/,1/*exports*/,44/*child_process*/,2/*vs/base/common/lifecycle*/,9/*vs/base/common/async*/,19/*vs/base/common/objects*/,3/*vs/base/common/event*/,103/*vs/base/node/processes*/,32/*vs/base/parts/ipc/common/ipc*/,84/*vs/base/common/console*/,27/*vs/base/common/cancellation*/,20/*vs/base/common/errors*/,17/*vs/base/common/buffer*/]), function (require, exports, child_process_1, lifecycle_1, async_1, objects_1, event_1, processes_1, ipc_1, console_1, cancellation_1, errors, buffer_1) {
+define(__m[65/*vs/base/parts/ipc/node/ipc.cp*/], __M([0/*require*/,1/*exports*/,45/*child_process*/,2/*vs/base/common/lifecycle*/,9/*vs/base/common/async*/,25/*vs/base/common/objects*/,3/*vs/base/common/event*/,102/*vs/base/node/processes*/,34/*vs/base/parts/ipc/common/ipc*/,83/*vs/base/common/console*/,27/*vs/base/common/cancellation*/,20/*vs/base/common/errors*/,18/*vs/base/common/buffer*/,5/*vs/base/common/platform*/]), function (require, exports, child_process_1, lifecycle_1, async_1, objects_1, event_1, processes_1, ipc_1, console_1, cancellation_1, errors, buffer_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Client = exports.Server = void 0;
@@ -16220,9 +16193,9 @@ define(__m[65/*vs/base/parts/ipc/node/ipc.cp*/], __M([0/*require*/,1/*exports*/,
             if (!this._client) {
                 const args = this.options && this.options.args ? this.options.args : [];
                 const forkOpts = Object.create(null);
-                forkOpts.env = objects_1.assign(objects_1.deepClone(process.env), { 'VSCODE_PARENT_PID': String(process.pid) });
+                forkOpts.env = Object.assign(Object.assign({}, objects_1.deepClone(process.env)), { 'VSCODE_PARENT_PID': String(process.pid) });
                 if (this.options && this.options.env) {
-                    forkOpts.env = objects_1.assign(forkOpts.env, this.options.env);
+                    forkOpts.env = Object.assign(Object.assign({}, forkOpts.env), this.options.env);
                 }
                 if (this.options && this.options.freshExecArgv) {
                     forkOpts.execArgv = [];
@@ -16232,6 +16205,11 @@ define(__m[65/*vs/base/parts/ipc/node/ipc.cp*/], __M([0/*require*/,1/*exports*/,
                 }
                 if (this.options && typeof this.options.debugBrk === 'number') {
                     forkOpts.execArgv = ['--nolazy', '--inspect-brk=' + this.options.debugBrk];
+                }
+                if (platform_1.isMacintosh && forkOpts.env) {
+                    // Unset `DYLD_LIBRARY_PATH`, as it leads to process crashes
+                    // See https://github.com/microsoft/vscode/issues/105848
+                    delete forkOpts.env['DYLD_LIBRARY_PATH'];
                 }
                 this.child = child_process_1.fork(this.modulePath, args, forkOpts);
                 const onMessageEmitter = new event_1.Emitter();
@@ -16300,9 +16278,10 @@ define(__m[65/*vs/base/parts/ipc/node/ipc.cp*/], __M([0/*require*/,1/*exports*/,
     exports.Client = Client;
 });
 
-define(__m[104/*vs/nls!vs/base/node/zip*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/base/node/zip", data); });
-define(__m[105/*vs/nls!vs/platform/configuration/common/configurationRegistry*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/platform/configuration/common/configurationRegistry", data); });
-define(__m[106/*vs/nls!vs/platform/extensionManagement/common/extensionManagement*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/platform/extensionManagement/common/extensionManagement", data); });
+define(__m[103/*vs/nls!vs/base/node/zip*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/base/node/zip", data); });
+define(__m[104/*vs/nls!vs/platform/configuration/common/configurationRegistry*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/platform/configuration/common/configurationRegistry", data); });
+define(__m[105/*vs/nls!vs/platform/extensionManagement/common/extensionManagement*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/platform/extensionManagement/common/extensionManagement", data); });
+define(__m[106/*vs/nls!vs/platform/extensionManagement/electron-sandbox/extensionTipsService*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/platform/extensionManagement/electron-sandbox/extensionTipsService", data); });
 define(__m[107/*vs/nls!vs/platform/extensionManagement/node/extensionManagementService*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/platform/extensionManagement/node/extensionManagementService", data); });
 define(__m[108/*vs/nls!vs/platform/extensionManagement/node/extensionManagementUtil*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/platform/extensionManagement/node/extensionManagementUtil", data); });
 define(__m[109/*vs/nls!vs/platform/extensionManagement/node/extensionsScanner*/], __M([11/*vs/nls*/,12/*vs/nls!vs/code/electron-browser/sharedProcess/sharedProcessMain*/]), function(nls, data) { return nls.create("vs/platform/extensionManagement/node/extensionsScanner", data); });
@@ -16324,43 +16303,7 @@ define(__m[123/*vs/nls!vs/platform/workspaces/common/workspaces*/], __M([11/*vs/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[124/*vs/platform/credentials/node/credentialsService*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/async*/]), function (require, exports, async_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.KeytarCredentialsService = void 0;
-    class KeytarCredentialsService {
-        constructor() {
-            this._keytar = new async_1.IdleValue(() => new Promise((resolve_1, reject_1) => { require(['keytar'], resolve_1, reject_1); }));
-        }
-        async getPassword(service, account) {
-            const keytar = await this._keytar.value;
-            return keytar.getPassword(service, account);
-        }
-        async setPassword(service, account, password) {
-            const keytar = await this._keytar.value;
-            return keytar.setPassword(service, account, password);
-        }
-        async deletePassword(service, account) {
-            const keytar = await this._keytar.value;
-            return keytar.deletePassword(service, account);
-        }
-        async findPassword(service) {
-            const keytar = await this._keytar.value;
-            return keytar.findPassword(service);
-        }
-        async findCredentials(service) {
-            const keytar = await this._keytar.value;
-            return keytar.findCredentials(service);
-        }
-    }
-    exports.KeytarCredentialsService = KeytarCredentialsService;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[125/*vs/platform/diagnostics/common/diagnostics*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[124/*vs/platform/diagnostics/common/diagnostics*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isRemoteDiagnosticError = void 0;
@@ -16374,57 +16317,7 @@ define(__m[125/*vs/platform/diagnostics/common/diagnostics*/], __M([0/*require*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[126/*vs/platform/diagnostics/node/diagnosticsIpc*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.DiagnosticsService = exports.DiagnosticsChannel = void 0;
-    class DiagnosticsChannel {
-        constructor(service) {
-            this.service = service;
-        }
-        listen(context, event) {
-            throw new Error('Invalid listen');
-        }
-        call(context, command, args) {
-            switch (command) {
-                case 'getDiagnostics':
-                    return this.service.getDiagnostics(args[0], args[1]);
-                case 'getSystemInfo':
-                    return this.service.getSystemInfo(args[0], args[1]);
-                case 'getPerformanceInfo':
-                    return this.service.getPerformanceInfo(args[0], args[1]);
-                case 'reportWorkspaceStats':
-                    return this.service.reportWorkspaceStats(args);
-            }
-            throw new Error('Invalid call');
-        }
-    }
-    exports.DiagnosticsChannel = DiagnosticsChannel;
-    class DiagnosticsService {
-        constructor(channel) {
-            this.channel = channel;
-        }
-        getDiagnostics(mainProcessInfo, remoteInfo) {
-            return this.channel.call('getDiagnostics', [mainProcessInfo, remoteInfo]);
-        }
-        getSystemInfo(mainProcessInfo, remoteInfo) {
-            return this.channel.call('getSystemInfo', [mainProcessInfo, remoteInfo]);
-        }
-        getPerformanceInfo(mainProcessInfo, remoteInfo) {
-            return this.channel.call('getPerformanceInfo', [mainProcessInfo, remoteInfo]);
-        }
-        reportWorkspaceStats(workspace) {
-            return this.channel.call('reportWorkspaceStats', workspace);
-        }
-    }
-    exports.DiagnosticsService = DiagnosticsService;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[127/*vs/platform/extensionManagement/common/configRemotes*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,14/*vs/base/common/strings*/]), function (require, exports, uri_1, strings_1) {
+define(__m[125/*vs/platform/extensionManagement/common/configRemotes*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/]), function (require, exports, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getRemotes = exports.getDomainsOfRemotes = exports.AllowedSecondLevelDomains = void 0;
@@ -16494,7 +16387,7 @@ define(__m[127/*vs/platform/extensionManagement/common/configRemotes*/], __M([0/
     }
     function normalizeRemote(host, path, stripEndingDotGit) {
         if (host && path) {
-            if (stripEndingDotGit && strings_1.endsWith(path, '.git')) {
+            if (stripEndingDotGit && path.endsWith('.git')) {
                 path = path.substr(0, path.length - 4);
             }
             return (path.indexOf('/') === 0) ? `${host}${path}` : `${host}/${path}`;
@@ -16537,7 +16430,7 @@ define(__m[127/*vs/platform/extensionManagement/common/configRemotes*/], __M([0/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[128/*vs/platform/extensionManagement/common/extensionManagementIpc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,7/*vs/base/common/uri*/,86/*vs/base/common/uriIpc*/,19/*vs/base/common/objects*/]), function (require, exports, event_1, uri_1, uriIpc_1, objects_1) {
+define(__m[126/*vs/platform/extensionManagement/common/extensionManagementIpc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,7/*vs/base/common/uri*/,85/*vs/base/common/uriIpc*/,25/*vs/base/common/objects*/]), function (require, exports, event_1, uri_1, uriIpc_1, objects_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtensionTipsChannel = exports.ExtensionManagementChannelClient = exports.ExtensionManagementChannel = void 0;
@@ -16663,7 +16556,7 @@ define(__m[128/*vs/platform/extensionManagement/common/extensionManagementIpc*/]
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[129/*vs/platform/extensionManagement/common/extensionNls*/], __M([0/*require*/,1/*exports*/,19/*vs/base/common/objects*/]), function (require, exports, objects_1) {
+define(__m[127/*vs/platform/extensionManagement/common/extensionNls*/], __M([0/*require*/,1/*exports*/,25/*vs/base/common/objects*/]), function (require, exports, objects_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.localizeManifest = void 0;
@@ -16682,6 +16575,47 @@ define(__m[129/*vs/platform/extensionManagement/common/extensionNls*/], __M([0/*
         return objects_1.cloneAndChange(manifest, patcher);
     }
     exports.localizeManifest = localizeManifest;
+});
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+define(__m[128/*vs/platform/extensionRecommendations/electron-sandbox/extensionRecommendationsIpc*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ExtensionRecommendationNotificationServiceChannel = exports.ExtensionRecommendationNotificationServiceChannelClient = void 0;
+    class ExtensionRecommendationNotificationServiceChannelClient {
+        constructor(channel) {
+            this.channel = channel;
+        }
+        get ignoredRecommendations() { throw new Error('not supported'); }
+        promptImportantExtensionsInstallNotification(extensionIds, message, searchValue, priority) {
+            return this.channel.call('promptImportantExtensionsInstallNotification', [extensionIds, message, searchValue, priority]);
+        }
+        promptWorkspaceRecommendations(recommendations) {
+            throw new Error('not supported');
+        }
+        hasToIgnoreRecommendationNotifications() {
+            throw new Error('not supported');
+        }
+    }
+    exports.ExtensionRecommendationNotificationServiceChannelClient = ExtensionRecommendationNotificationServiceChannelClient;
+    class ExtensionRecommendationNotificationServiceChannel {
+        constructor(service) {
+            this.service = service;
+        }
+        listen(_, event) {
+            throw new Error(`Event not found: ${event}`);
+        }
+        call(_, command, args) {
+            switch (command) {
+                case 'promptImportantExtensionsInstallNotification': return this.service.promptImportantExtensionsInstallNotification(args[0], args[1], args[2], args[3]);
+            }
+            throw new Error(`Call not found: ${command}`);
+        }
+    }
+    exports.ExtensionRecommendationNotificationServiceChannel = ExtensionRecommendationNotificationServiceChannel;
 });
 
 /*---------------------------------------------------------------------------------------------
@@ -16888,59 +16822,7 @@ define(__m[66/*vs/platform/extensions/common/extensionValidator*/], __M([0/*requ
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[130/*vs/platform/files/node/watcher/nsfw/watcherIpc*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.WatcherChannelClient = exports.WatcherChannel = void 0;
-    class WatcherChannel {
-        constructor(service) {
-            this.service = service;
-        }
-        listen(_, event, arg) {
-            switch (event) {
-                case 'watch': return this.service.watch(arg);
-                case 'onLogMessage': return this.service.onLogMessage;
-            }
-            throw new Error(`Event not found: ${event}`);
-        }
-        call(_, command, arg) {
-            switch (command) {
-                case 'setRoots': return this.service.setRoots(arg);
-                case 'setVerboseLogging': return this.service.setVerboseLogging(arg);
-                case 'stop': return this.service.stop();
-            }
-            throw new Error(`Call not found: ${command}`);
-        }
-    }
-    exports.WatcherChannel = WatcherChannel;
-    class WatcherChannelClient {
-        constructor(channel) {
-            this.channel = channel;
-        }
-        watch(options) {
-            return this.channel.listen('watch', options);
-        }
-        setVerboseLogging(enable) {
-            return this.channel.call('setVerboseLogging', enable);
-        }
-        setRoots(roots) {
-            return this.channel.call('setRoots', roots);
-        }
-        get onLogMessage() {
-            return this.channel.listen('onLogMessage');
-        }
-        stop() {
-            return this.channel.call('stop');
-        }
-    }
-    exports.WatcherChannelClient = WatcherChannelClient;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[131/*vs/platform/files/node/watcher/nsfw/watcherService*/], __M([0/*require*/,1/*exports*/,32/*vs/base/parts/ipc/common/ipc*/,65/*vs/base/parts/ipc/node/ipc.cp*/,130/*vs/platform/files/node/watcher/nsfw/watcherIpc*/,2/*vs/base/common/lifecycle*/,31/*vs/base/common/amd*/]), function (require, exports, ipc_1, ipc_cp_1, watcherIpc_1, lifecycle_1, amd_1) {
+define(__m[129/*vs/platform/files/node/watcher/nsfw/watcherService*/], __M([0/*require*/,1/*exports*/,34/*vs/base/parts/ipc/common/ipc*/,65/*vs/base/parts/ipc/node/ipc.cp*/,2/*vs/base/common/lifecycle*/,10/*vs/base/common/network*/]), function (require, exports, ipc_1, ipc_cp_1, lifecycle_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.FileWatcher = void 0;
@@ -16956,7 +16838,7 @@ define(__m[131/*vs/platform/files/node/watcher/nsfw/watcherService*/], __M([0/*r
             this.startWatching();
         }
         startWatching() {
-            const client = this._register(new ipc_cp_1.Client(amd_1.getPathFromAmdModule(require, 'bootstrap-fork'), {
+            const client = this._register(new ipc_cp_1.Client(network_1.FileAccess.asFileUri('bootstrap-fork', require).fsPath, {
                 serverName: 'File Watcher (nsfw)',
                 args: ['--type=watcherService'],
                 env: {
@@ -16980,12 +16862,10 @@ define(__m[131/*vs/platform/files/node/watcher/nsfw/watcherService*/], __M([0/*r
                 }
             }));
             // Initialize watcher
-            const channel = ipc_1.getNextTickChannel(client.getChannel('watcher'));
-            this.service = new watcherIpc_1.WatcherChannelClient(channel);
+            this.service = ipc_1.createChannelSender(ipc_1.getNextTickChannel(client.getChannel('watcher')));
             this.service.setVerboseLogging(this.verboseLogging);
-            const options = {};
-            this._register(this.service.watch(options)(e => !this.isDisposed && this.onDidFilesChange(e)));
-            this._register(this.service.onLogMessage(m => this.onLogMessage(m)));
+            this._register(this.service.onDidChangeFile(e => !this.isDisposed && this.onDidFilesChange(e)));
+            this._register(this.service.onDidLogMessage(m => this.onLogMessage(m)));
             // Start watching
             this.setFolders(this.folders);
         }
@@ -17017,59 +16897,7 @@ define(__m[131/*vs/platform/files/node/watcher/nsfw/watcherService*/], __M([0/*r
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[132/*vs/platform/files/node/watcher/unix/watcherIpc*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.WatcherChannelClient = exports.WatcherChannel = void 0;
-    class WatcherChannel {
-        constructor(service) {
-            this.service = service;
-        }
-        listen(_, event, arg) {
-            switch (event) {
-                case 'watch': return this.service.watch(arg);
-                case 'onLogMessage': return this.service.onLogMessage;
-            }
-            throw new Error(`Event not found: ${event}`);
-        }
-        call(_, command, arg) {
-            switch (command) {
-                case 'setRoots': return this.service.setRoots(arg);
-                case 'setVerboseLogging': return this.service.setVerboseLogging(arg);
-                case 'stop': return this.service.stop();
-            }
-            throw new Error(`Call not found: ${command}`);
-        }
-    }
-    exports.WatcherChannel = WatcherChannel;
-    class WatcherChannelClient {
-        constructor(channel) {
-            this.channel = channel;
-        }
-        watch(options) {
-            return this.channel.listen('watch', options);
-        }
-        setVerboseLogging(enable) {
-            return this.channel.call('setVerboseLogging', enable);
-        }
-        get onLogMessage() {
-            return this.channel.listen('onLogMessage');
-        }
-        setRoots(roots) {
-            return this.channel.call('setRoots', roots);
-        }
-        stop() {
-            return this.channel.call('stop');
-        }
-    }
-    exports.WatcherChannelClient = WatcherChannelClient;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[133/*vs/platform/files/node/watcher/unix/watcherService*/], __M([0/*require*/,1/*exports*/,32/*vs/base/parts/ipc/common/ipc*/,65/*vs/base/parts/ipc/node/ipc.cp*/,132/*vs/platform/files/node/watcher/unix/watcherIpc*/,2/*vs/base/common/lifecycle*/,31/*vs/base/common/amd*/]), function (require, exports, ipc_1, ipc_cp_1, watcherIpc_1, lifecycle_1, amd_1) {
+define(__m[130/*vs/platform/files/node/watcher/unix/watcherService*/], __M([0/*require*/,1/*exports*/,34/*vs/base/parts/ipc/common/ipc*/,65/*vs/base/parts/ipc/node/ipc.cp*/,2/*vs/base/common/lifecycle*/,10/*vs/base/common/network*/]), function (require, exports, ipc_1, ipc_cp_1, lifecycle_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.FileWatcher = void 0;
@@ -17086,7 +16914,7 @@ define(__m[133/*vs/platform/files/node/watcher/unix/watcherService*/], __M([0/*r
             this.startWatching();
         }
         startWatching() {
-            const client = this._register(new ipc_cp_1.Client(amd_1.getPathFromAmdModule(require, 'bootstrap-fork'), {
+            const client = this._register(new ipc_cp_1.Client(network_1.FileAccess.asFileUri('bootstrap-fork', require).fsPath, {
                 serverName: 'File Watcher (chokidar)',
                 args: ['--type=watcherService'],
                 env: {
@@ -17110,11 +16938,10 @@ define(__m[133/*vs/platform/files/node/watcher/unix/watcherService*/], __M([0/*r
                 }
             }));
             // Initialize watcher
-            const channel = ipc_1.getNextTickChannel(client.getChannel('watcher'));
-            this.service = new watcherIpc_1.WatcherChannelClient(channel);
-            this.service.setVerboseLogging(this.verboseLogging);
-            this._register(this.service.watch(this.watcherOptions)(e => !this.isDisposed && this.onDidFilesChange(e)));
-            this._register(this.service.onLogMessage(m => this.onLogMessage(m)));
+            this.service = ipc_1.createChannelSender(ipc_1.getNextTickChannel(client.getChannel('watcher')));
+            this.service.init(Object.assign(Object.assign({}, this.watcherOptions), { verboseLogging: this.verboseLogging }));
+            this._register(this.service.onDidChangeFile(e => !this.isDisposed && this.onDidFilesChange(e)));
+            this._register(this.service.onDidLogMessage(m => this.onLogMessage(m)));
             // Start watching
             this.service.setRoots(this.folders);
         }
@@ -17146,7 +16973,7 @@ define(__m[133/*vs/platform/files/node/watcher/unix/watcherService*/], __M([0/*r
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[134/*vs/platform/files/node/watcher/win32/csharpWatcherService*/], __M([0/*require*/,1/*exports*/,44/*child_process*/,63/*vs/base/node/decoder*/,60/*vs/base/common/glob*/,31/*vs/base/common/amd*/]), function (require, exports, cp, decoder, glob, amd_1) {
+define(__m[131/*vs/platform/files/node/watcher/win32/csharpWatcherService*/], __M([0/*require*/,1/*exports*/,45/*child_process*/,64/*vs/base/node/decoder*/,61/*vs/base/common/glob*/,10/*vs/base/common/network*/]), function (require, exports, cp, decoder, glob, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.OutOfProcessWin32FolderWatcher = void 0;
@@ -17174,7 +17001,7 @@ define(__m[134/*vs/platform/files/node/watcher/win32/csharpWatcherService*/], __
             if (this.verboseLogging) {
                 args.push('-verbose');
             }
-            this.handle = cp.spawn(amd_1.getPathFromAmdModule(require, 'vs/platform/files/node/watcher/win32/CodeHelper.exe'), args);
+            this.handle = cp.spawn(network_1.FileAccess.asFileUri('vs/platform/files/node/watcher/win32/CodeHelper.exe', require).fsPath, args);
             const stdoutLineDecoder = new decoder.LineDecoder();
             // Events over stdout
             this.handle.stdout.on('data', (data) => {
@@ -17255,7 +17082,7 @@ define(__m[134/*vs/platform/files/node/watcher/win32/csharpWatcherService*/], __
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[135/*vs/platform/files/node/watcher/win32/watcherService*/], __M([0/*require*/,1/*exports*/,134/*vs/platform/files/node/watcher/win32/csharpWatcherService*/,4/*vs/base/common/path*/,14/*vs/base/common/strings*/]), function (require, exports, csharpWatcherService_1, path_1, strings_1) {
+define(__m[132/*vs/platform/files/node/watcher/win32/watcherService*/], __M([0/*require*/,1/*exports*/,131/*vs/platform/files/node/watcher/win32/csharpWatcherService*/,4/*vs/base/common/path*/,17/*vs/base/common/strings*/]), function (require, exports, csharpWatcherService_1, path_1, strings_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.FileWatcher = void 0;
@@ -17333,7 +17160,7 @@ define(__m[67/*vs/platform/instantiation/common/descriptors*/], __M([0/*require*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[136/*vs/platform/instantiation/common/graph*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[133/*vs/platform/instantiation/common/graph*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Graph = exports.Node = void 0;
@@ -17404,7 +17231,7 @@ define(__m[136/*vs/platform/instantiation/common/graph*/], __M([0/*require*/,1/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[5/*vs/platform/instantiation/common/instantiation*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[6/*vs/platform/instantiation/common/instantiation*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.optional = exports.createDecorator = exports.IInstantiationService = exports._util = void 0;
@@ -17465,7 +17292,7 @@ define(__m[5/*vs/platform/instantiation/common/instantiation*/], __M([0/*require
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[137/*vs/platform/contextkey/common/contextkey*/], __M([0/*require*/,1/*exports*/,14/*vs/base/common/strings*/,5/*vs/platform/instantiation/common/instantiation*/,6/*vs/base/common/platform*/]), function (require, exports, strings_1, instantiation_1, platform_1) {
+define(__m[134/*vs/platform/contextkey/common/contextkey*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/strings*/,6/*vs/platform/instantiation/common/instantiation*/,5/*vs/base/common/platform*/]), function (require, exports, strings_1, instantiation_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SET_CONTEXT_COMMAND_ID = exports.IContextKeyService = exports.RawContextKey = exports.ContextKeyOrExpr = exports.ContextKeyAndExpr = exports.ContextKeyNotRegexExpr = exports.ContextKeyRegexExpr = exports.ContextKeyNotExpr = exports.ContextKeyNotEqualsExpr = exports.ContextKeyNotInExpr = exports.ContextKeyInExpr = exports.ContextKeyEqualsExpr = exports.ContextKeyDefinedExpr = exports.ContextKeyTrueExpr = exports.ContextKeyFalseExpr = exports.ContextKeyExpr = exports.ContextKeyExprType = void 0;
@@ -18180,6 +18007,9 @@ define(__m[137/*vs/platform/contextkey/common/contextkey*/], __M([0/*require*/,1
                     expr.sort(cmp);
                 }
             }
+            if (expr.length === 1) {
+                return expr[0];
+            }
             return new ContextKeyAndExpr(expr);
         }
         serialize() {
@@ -18361,18 +18191,7 @@ define(__m[137/*vs/platform/contextkey/common/contextkey*/], __M([0/*require*/,1
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[138/*vs/platform/credentials/common/credentials*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.ICredentialsService = void 0;
-    exports.ICredentialsService = instantiation_1.createDecorator('ICredentialsService');
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[68/*vs/platform/download/common/download*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[68/*vs/platform/download/common/download*/], __M([0/*require*/,1/*exports*/,6/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IDownloadService = void 0;
@@ -18383,12 +18202,12 @@ define(__m[68/*vs/platform/download/common/download*/], __M([0/*require*/,1/*exp
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[8/*vs/platform/environment/common/environment*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[8/*vs/platform/environment/common/environment*/], __M([0/*require*/,1/*exports*/,6/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.BACKUPS = exports.IEnvironmentService = void 0;
+    exports.INativeEnvironmentService = exports.IEnvironmentService = void 0;
     exports.IEnvironmentService = instantiation_1.createDecorator('environmentService');
-    exports.BACKUPS = 'Backups';
+    exports.INativeEnvironmentService = instantiation_1.createDecorator('nativeEnvironmentService');
 });
 
 /*---------------------------------------------------------------------------------------------
@@ -18404,7 +18223,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-define(__m[139/*vs/code/electron-browser/sharedProcess/contrib/logsDataCleaner*/], __M([0/*require*/,1/*exports*/,8/*vs/platform/environment/common/environment*/,4/*vs/base/common/path*/,21/*vs/base/node/pfs*/,20/*vs/base/common/errors*/,2/*vs/base/common/lifecycle*/]), function (require, exports, environment_1, path_1, pfs_1, errors_1, lifecycle_1) {
+define(__m[135/*vs/code/electron-browser/sharedProcess/contrib/logsDataCleaner*/], __M([0/*require*/,1/*exports*/,8/*vs/platform/environment/common/environment*/,4/*vs/base/common/path*/,21/*vs/base/node/pfs*/,20/*vs/base/common/errors*/,2/*vs/base/common/lifecycle*/]), function (require, exports, environment_1, path_1, pfs_1, errors_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LogsDataCleaner = void 0;
@@ -18453,7 +18272,7 @@ define(__m[139/*vs/code/electron-browser/sharedProcess/contrib/logsDataCleaner*/
 
 
 
-define(__m[140/*vs/code/electron-browser/sharedProcess/contrib/storageDataCleaner*/], __M([0/*require*/,1/*exports*/,8/*vs/platform/environment/common/environment*/,4/*vs/base/common/path*/,21/*vs/base/node/pfs*/,20/*vs/base/common/errors*/,2/*vs/base/common/lifecycle*/]), function (require, exports, environment_1, path_1, pfs_1, errors_1, lifecycle_1) {
+define(__m[136/*vs/code/electron-browser/sharedProcess/contrib/storageDataCleaner*/], __M([0/*require*/,1/*exports*/,8/*vs/platform/environment/common/environment*/,4/*vs/base/common/path*/,21/*vs/base/node/pfs*/,20/*vs/base/common/errors*/,2/*vs/base/common/lifecycle*/]), function (require, exports, environment_1, path_1, pfs_1, errors_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.StorageDataCleaner = void 0;
@@ -18497,7 +18316,7 @@ define(__m[140/*vs/code/electron-browser/sharedProcess/contrib/storageDataCleane
     // Workspace/Folder storage names are MD5 hashes (128bits / 4 due to hex presentation)
     StorageDataCleaner.NON_EMPTY_WORKSPACE_ID_LENGTH = 128 / 4;
     StorageDataCleaner = __decorate([
-        __param(0, environment_1.IEnvironmentService)
+        __param(0, environment_1.INativeEnvironmentService)
     ], StorageDataCleaner);
     exports.StorageDataCleaner = StorageDataCleaner;
 });
@@ -18506,10 +18325,10 @@ define(__m[140/*vs/code/electron-browser/sharedProcess/contrib/storageDataCleane
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[30/*vs/platform/extensionManagement/common/extensionManagement*/], __M([0/*require*/,1/*exports*/,106/*vs/nls!vs/platform/extensionManagement/common/extensionManagement*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, nls_1, instantiation_1) {
+define(__m[28/*vs/platform/extensionManagement/common/extensionManagement*/], __M([0/*require*/,1/*exports*/,105/*vs/nls!vs/platform/extensionManagement/common/extensionManagement*/,6/*vs/platform/instantiation/common/instantiation*/,10/*vs/base/common/network*/]), function (require, exports, nls_1, instantiation_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.PreferencesLabel = exports.ExtensionsChannelId = exports.ExtensionsLabel = exports.DefaultIconPath = exports.IExtensionTipsService = exports.IGlobalExtensionEnablementService = exports.ENABLED_EXTENSIONS_STORAGE_PATH = exports.DISABLED_EXTENSIONS_STORAGE_PATH = exports.IExtensionManagementService = exports.ExtensionManagementError = exports.INSTALL_ERROR_INCOMPATIBLE = exports.INSTALL_ERROR_MALICIOUS = exports.INSTALL_ERROR_NOT_SUPPORTED = exports.IExtensionGalleryService = exports.InstallOperation = exports.StatisticType = exports.SortOrder = exports.SortBy = exports.isIExtensionIdentifier = exports.EXTENSION_IDENTIFIER_REGEX = exports.EXTENSION_IDENTIFIER_PATTERN = void 0;
+    exports.PreferencesLocalizedLabel = exports.PreferencesLabel = exports.ExtensionsChannelId = exports.ExtensionsLocalizedLabel = exports.ExtensionsLabel = exports.DefaultIconPath = exports.IExtensionTipsService = exports.IGlobalExtensionEnablementService = exports.ENABLED_EXTENSIONS_STORAGE_PATH = exports.DISABLED_EXTENSIONS_STORAGE_PATH = exports.IExtensionManagementService = exports.ExtensionManagementError = exports.INSTALL_ERROR_INCOMPATIBLE = exports.INSTALL_ERROR_MALICIOUS = exports.INSTALL_ERROR_NOT_SUPPORTED = exports.IExtensionGalleryService = exports.InstallOperation = exports.StatisticType = exports.SortOrder = exports.SortBy = exports.isIExtensionIdentifier = exports.EXTENSION_IDENTIFIER_REGEX = exports.EXTENSION_IDENTIFIER_PATTERN = void 0;
     exports.EXTENSION_IDENTIFIER_PATTERN = '^([a-z0-9A-Z][a-z0-9-A-Z]*)\\.([a-z0-9A-Z][a-z0-9-A-Z]*)$';
     exports.EXTENSION_IDENTIFIER_REGEX = new RegExp(exports.EXTENSION_IDENTIFIER_PATTERN);
     function isIExtensionIdentifier(thing) {
@@ -18562,17 +18381,43 @@ define(__m[30/*vs/platform/extensionManagement/common/extensionManagement*/], __
     exports.ENABLED_EXTENSIONS_STORAGE_PATH = 'extensionsIdentifiers/enabled';
     exports.IGlobalExtensionEnablementService = instantiation_1.createDecorator('IGlobalExtensionEnablementService');
     exports.IExtensionTipsService = instantiation_1.createDecorator('IExtensionTipsService');
-    exports.DefaultIconPath = require.toUrl('./media/defaultIcon.png');
+    exports.DefaultIconPath = network_1.FileAccess.asBrowserUri('./media/defaultIcon.png', require).toString(true);
     exports.ExtensionsLabel = nls_1.localize(0, null);
+    exports.ExtensionsLocalizedLabel = { value: exports.ExtensionsLabel, original: 'Extensions' };
     exports.ExtensionsChannelId = 'extensions';
     exports.PreferencesLabel = nls_1.localize(1, null);
+    exports.PreferencesLocalizedLabel = { value: exports.PreferencesLabel, original: 'Preferences' };
 });
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[69/*vs/platform/extensions/common/extensions*/], __M([0/*require*/,1/*exports*/,14/*vs/base/common/strings*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, strings, instantiation_1) {
+define(__m[69/*vs/platform/extensionRecommendations/common/extensionRecommendations*/], __M([0/*require*/,1/*exports*/,6/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.IExtensionRecommendationNotificationService = exports.RecommendationsNotificationResult = exports.RecommendationSource = void 0;
+    var RecommendationSource;
+    (function (RecommendationSource) {
+        RecommendationSource[RecommendationSource["FILE"] = 1] = "FILE";
+        RecommendationSource[RecommendationSource["WORKSPACE"] = 2] = "WORKSPACE";
+        RecommendationSource[RecommendationSource["EXE"] = 3] = "EXE";
+    })(RecommendationSource = exports.RecommendationSource || (exports.RecommendationSource = {}));
+    var RecommendationsNotificationResult;
+    (function (RecommendationsNotificationResult) {
+        RecommendationsNotificationResult["Ignored"] = "ignored";
+        RecommendationsNotificationResult["Cancelled"] = "cancelled";
+        RecommendationsNotificationResult["TooMany"] = "toomany";
+        RecommendationsNotificationResult["Accepted"] = "reacted";
+    })(RecommendationsNotificationResult = exports.RecommendationsNotificationResult || (exports.RecommendationsNotificationResult = {}));
+    exports.IExtensionRecommendationNotificationService = instantiation_1.createDecorator('IExtensionRecommendationNotificationService');
+});
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+define(__m[70/*vs/platform/extensions/common/extensions*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/strings*/,6/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, strings, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IBuiltinExtensionsScannerService = exports.isAuthenticaionProviderExtension = exports.isLanguagePackExtension = exports.ExtensionIdentifier = exports.ExtensionType = exports.EXTENSION_CATEGORIES = exports.isIExtensionIdentifier = exports.BUILTIN_MANIFEST_CACHE_FILE = exports.USER_MANIFEST_CACHE_FILE = exports.MANIFEST_CACHE_FOLDER = void 0;
@@ -18674,7 +18519,7 @@ define(__m[69/*vs/platform/extensions/common/extensions*/], __M([0/*require*/,1/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[36/*vs/platform/extensionManagement/common/extensionManagementUtil*/], __M([0/*require*/,1/*exports*/,14/*vs/base/common/strings*/,69/*vs/platform/extensions/common/extensions*/]), function (require, exports, strings_1, extensions_1) {
+define(__m[35/*vs/platform/extensionManagement/common/extensionManagementUtil*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/strings*/,70/*vs/platform/extensions/common/extensions*/]), function (require, exports, strings_1, extensions_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getMaliciousExtensionsSet = exports.BetterMergeId = exports.getGalleryExtensionTelemetryData = exports.getLocalExtensionTelemetryData = exports.groupByExtension = exports.getGalleryExtensionId = exports.adoptToGalleryExtensionId = exports.ExtensionIdentifierWithVersion = exports.areSameExtensions = void 0;
@@ -18781,7 +18626,7 @@ define(__m[36/*vs/platform/extensionManagement/common/extensionManagementUtil*/]
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[141/*vs/platform/extensionManagement/node/extensionsManifestCache*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,4/*vs/base/common/path*/,69/*vs/platform/extensions/common/extensions*/,21/*vs/base/node/pfs*/]), function (require, exports, lifecycle_1, path_1, extensions_1, pfs) {
+define(__m[137/*vs/platform/extensionManagement/node/extensionsManifestCache*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,4/*vs/base/common/path*/,70/*vs/platform/extensions/common/extensions*/,21/*vs/base/node/pfs*/]), function (require, exports, lifecycle_1, path_1, extensions_1, pfs) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtensionsManifestCache = void 0;
@@ -18814,7 +18659,7 @@ define(__m[141/*vs/platform/extensionManagement/node/extensionsManifestCache*/],
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[16/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/,112/*vs/nls!vs/platform/files/common/files*/,4/*vs/base/common/path*/,7/*vs/base/common/uri*/,5/*vs/platform/instantiation/common/instantiation*/,14/*vs/base/common/strings*/,18/*vs/base/common/types*/]), function (require, exports, nls_1, path_1, uri_1, instantiation_1, strings_1, types_1) {
+define(__m[15/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/,112/*vs/nls!vs/platform/files/common/files*/,4/*vs/base/common/path*/,7/*vs/base/common/uri*/,6/*vs/platform/instantiation/common/instantiation*/,17/*vs/base/common/strings*/,14/*vs/base/common/types*/]), function (require, exports, nls_1, path_1, uri_1, instantiation_1, strings_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.BinarySize = exports.FALLBACK_MAX_MEMORY_SIZE_MB = exports.MIN_MAX_MEMORY_SIZE_MB = exports.whenProviderRegistered = exports.etag = exports.ETAG_DISABLED = exports.FileKind = exports.FILES_EXCLUDE_CONFIG = exports.FILES_ASSOCIATIONS_CONFIG = exports.HotExitConfiguration = exports.AutoSaveConfiguration = exports.FileOperationResult = exports.FileOperationError = exports.isParent = exports.FileChangesEvent = exports.FileChangeType = exports.FileOperationEvent = exports.FileOperation = exports.toFileOperationResult = exports.toFileSystemProviderErrorCode = exports.markAsFileSystemProviderError = exports.ensureFileSystemProviderError = exports.createFileSystemProviderError = exports.FileSystemProviderError = exports.FileSystemProviderErrorCode = exports.hasFileReadStreamCapability = exports.hasOpenReadWriteCloseCapability = exports.hasFileFolderCopyCapability = exports.hasReadWriteCapability = exports.FileSystemProviderCapabilities = exports.FileType = exports.IFileService = void 0;
@@ -18879,7 +18724,7 @@ define(__m[16/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/
     exports.createFileSystemProviderError = createFileSystemProviderError;
     function ensureFileSystemProviderError(error) {
         if (!error) {
-            return createFileSystemProviderError(nls_1.localize(0, null), FileSystemProviderErrorCode.Unknown); // https://github.com/Microsoft/vscode/issues/72798
+            return createFileSystemProviderError(nls_1.localize(0, null), FileSystemProviderErrorCode.Unknown); // https://github.com/microsoft/vscode/issues/72798
         }
         return error;
     }
@@ -19167,7 +19012,7 @@ define(__m[16/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[70/*vs/platform/files/common/io*/], __M([0/*require*/,1/*exports*/,113/*vs/nls!vs/platform/files/common/io*/,17/*vs/base/common/buffer*/,16/*vs/platform/files/common/files*/,20/*vs/base/common/errors*/]), function (require, exports, nls_1, buffer_1, files_1, errors_1) {
+define(__m[71/*vs/platform/files/common/io*/], __M([0/*require*/,1/*exports*/,113/*vs/nls!vs/platform/files/common/io*/,18/*vs/base/common/buffer*/,15/*vs/platform/files/common/files*/,20/*vs/base/common/errors*/]), function (require, exports, nls_1, buffer_1, files_1, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.readFileIntoStream = void 0;
@@ -19261,7 +19106,7 @@ define(__m[70/*vs/platform/files/common/io*/], __M([0/*require*/,1/*exports*/,11
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[71/*vs/platform/files/node/watcher/watcher*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,16/*vs/platform/files/common/files*/,6/*vs/base/common/platform*/]), function (require, exports, uri_1, files_1, platform_1) {
+define(__m[72/*vs/platform/files/node/watcher/watcher*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,15/*vs/platform/files/common/files*/,5/*vs/base/common/platform*/]), function (require, exports, uri_1, files_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.normalizeFileChanges = exports.toFileChanges = void 0;
@@ -19348,7 +19193,7 @@ define(__m[71/*vs/platform/files/node/watcher/watcher*/], __M([0/*require*/,1/*e
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[142/*vs/platform/files/node/watcher/nodejs/watcherService*/], __M([0/*require*/,1/*exports*/,71/*vs/platform/files/node/watcher/watcher*/,2/*vs/base/common/lifecycle*/,21/*vs/base/node/pfs*/,90/*vs/base/node/extpath*/,92/*vs/base/node/watcher*/,9/*vs/base/common/async*/,4/*vs/base/common/path*/]), function (require, exports, watcher_1, lifecycle_1, pfs_1, extpath_1, watcher_2, async_1, path_1) {
+define(__m[138/*vs/platform/files/node/watcher/nodejs/watcherService*/], __M([0/*require*/,1/*exports*/,72/*vs/platform/files/node/watcher/watcher*/,2/*vs/base/common/lifecycle*/,21/*vs/base/node/pfs*/,89/*vs/base/node/extpath*/,91/*vs/base/node/watcher*/,9/*vs/base/common/async*/,4/*vs/base/common/path*/]), function (require, exports, watcher_1, lifecycle_1, pfs_1, extpath_1, watcher_2, async_1, path_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.FileWatcher = void 0;
@@ -19412,7 +19257,7 @@ define(__m[142/*vs/platform/files/node/watcher/nodejs/watcherService*/], __M([0/
                 this.onVerbose(`${event.type === 1 /* ADDED */ ? '[ADDED]' : event.type === 2 /* DELETED */ ? '[DELETED]' : '[CHANGED]'} ${event.path}`);
             }
             // Handle emit through delayer to accommodate for bulk changes and thus reduce spam
-            this.fileChangesDelayer.trigger(() => {
+            this.fileChangesDelayer.trigger(async () => {
                 const fileChanges = this.fileChangesBuffer;
                 this.fileChangesBuffer = [];
                 // Event normalization
@@ -19427,7 +19272,6 @@ define(__m[142/*vs/platform/files/node/watcher/nodejs/watcherService*/], __M([0/
                 if (normalizedFileChanges.length > 0) {
                     this.onDidFilesChange(normalizedFileChanges);
                 }
-                return Promise.resolve();
             });
         }
         onError(error) {
@@ -19452,7 +19296,7 @@ define(__m[142/*vs/platform/files/node/watcher/nodejs/watcherService*/], __M([0/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[72/*vs/platform/instantiation/common/serviceCollection*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[73/*vs/platform/instantiation/common/serviceCollection*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ServiceCollection = void 0;
@@ -19482,7 +19326,7 @@ define(__m[72/*vs/platform/instantiation/common/serviceCollection*/], __M([0/*re
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[143/*vs/platform/instantiation/common/instantiationService*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/errors*/,136/*vs/platform/instantiation/common/graph*/,67/*vs/platform/instantiation/common/descriptors*/,5/*vs/platform/instantiation/common/instantiation*/,72/*vs/platform/instantiation/common/serviceCollection*/,9/*vs/base/common/async*/]), function (require, exports, errors_1, graph_1, descriptors_1, instantiation_1, serviceCollection_1, async_1) {
+define(__m[139/*vs/platform/instantiation/common/instantiationService*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/errors*/,133/*vs/platform/instantiation/common/graph*/,67/*vs/platform/instantiation/common/descriptors*/,6/*vs/platform/instantiation/common/instantiation*/,73/*vs/platform/instantiation/common/serviceCollection*/,9/*vs/base/common/async*/]), function (require, exports, errors_1, graph_1, descriptors_1, instantiation_1, serviceCollection_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.InstantiationService = void 0;
@@ -19632,9 +19476,15 @@ define(__m[143/*vs/platform/instantiation/common/instantiationService*/], __M([0
                     break;
                 }
                 for (const { data } of roots) {
-                    // create instance and overwrite the service collections
-                    const instance = this._createServiceInstanceWithOwner(data.id, data.desc.ctor, data.desc.staticArguments, data.desc.supportsDelayedInstantiation, data._trace);
-                    this._setServiceInstance(data.id, instance);
+                    // Repeat the check for this still being a service sync descriptor. That's because
+                    // instantiating a dependency might have side-effect and recursively trigger instantiation
+                    // so that some dependencies are now fullfilled already.
+                    const instanceOrDesc = this._getServiceInstanceOrDescriptor(data.id);
+                    if (instanceOrDesc instanceof descriptors_1.SyncDescriptor) {
+                        // create instance and overwrite the service collections
+                        const instance = this._createServiceInstanceWithOwner(data.id, data.desc.ctor, data.desc.staticArguments, data.desc.supportsDelayedInstantiation, data._trace);
+                        this._setServiceInstance(data.id, instance);
+                    }
                     graph.removeNode(data);
                 }
             }
@@ -19754,7 +19604,7 @@ define(__m[143/*vs/platform/instantiation/common/instantiationService*/], __M([0
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[73/*vs/platform/ipc/electron-sandbox/mainProcessService*/], __M([0/*require*/,1/*exports*/,97/*vs/base/parts/ipc/electron-sandbox/ipc.electron-sandbox*/,2/*vs/base/common/lifecycle*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, ipc_electron_sandbox_1, lifecycle_1, instantiation_1) {
+define(__m[140/*vs/platform/ipc/electron-sandbox/mainProcessService*/], __M([0/*require*/,1/*exports*/,96/*vs/base/parts/ipc/electron-sandbox/ipc.electron-sandbox*/,2/*vs/base/common/lifecycle*/,6/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, ipc_electron_sandbox_1, lifecycle_1, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.MainProcessService = exports.IMainProcessService = void 0;
@@ -19778,44 +19628,7 @@ define(__m[73/*vs/platform/ipc/electron-sandbox/mainProcessService*/], __M([0/*r
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
-define(__m[74/*vs/platform/electron/electron-sandbox/electron*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,73/*vs/platform/ipc/electron-sandbox/mainProcessService*/,32/*vs/base/parts/ipc/common/ipc*/]), function (require, exports, instantiation_1, mainProcessService_1, ipc_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.ElectronService = exports.IElectronService = void 0;
-    exports.IElectronService = instantiation_1.createDecorator('electronService');
-    let ElectronService = class ElectronService {
-        constructor(windowId, mainProcessService) {
-            this.windowId = windowId;
-            return ipc_1.createChannelSender(mainProcessService.getChannel('electron'), {
-                context: windowId,
-                properties: (() => {
-                    const properties = new Map();
-                    properties.set('windowId', windowId);
-                    return properties;
-                })()
-            });
-        }
-    };
-    ElectronService = __decorate([
-        __param(1, mainProcessService_1.IMainProcessService)
-    ], ElectronService);
-    exports.ElectronService = ElectronService;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[75/*vs/platform/localizations/common/localizations*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[74/*vs/platform/localizations/common/localizations*/], __M([0/*require*/,1/*exports*/,6/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isValidLocalization = exports.ILocalizationsService = void 0;
@@ -19850,7 +19663,7 @@ define(__m[75/*vs/platform/localizations/common/localizations*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[13/*vs/platform/log/common/log*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,2/*vs/base/common/lifecycle*/,6/*vs/base/common/platform*/,3/*vs/base/common/event*/,48/*vs/base/common/errorMessage*/]), function (require, exports, instantiation_1, lifecycle_1, platform_1, event_1, errorMessage_1) {
+define(__m[13/*vs/platform/log/common/log*/], __M([0/*require*/,1/*exports*/,6/*vs/platform/instantiation/common/instantiation*/,2/*vs/base/common/lifecycle*/,5/*vs/base/common/platform*/,3/*vs/base/common/event*/,46/*vs/base/common/errorMessage*/]), function (require, exports, instantiation_1, lifecycle_1, platform_1, event_1, errorMessage_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getLogLevel = exports.NullLogService = exports.DelegatedLogService = exports.MultiplexLogService = exports.ConsoleLogInMainService = exports.LogServiceAdapter = exports.ConsoleLogService = exports.ConsoleLogMainService = exports.AbstractLogService = exports.DEFAULT_LOG_LEVEL = exports.LogLevel = exports.ILoggerService = exports.ILogService = void 0;
@@ -20212,7 +20025,7 @@ define(__m[13/*vs/platform/log/common/log*/], __M([0/*require*/,1/*exports*/,5/*
 
 
 
-define(__m[144/*vs/platform/extensionManagement/node/extensionDownloader*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,16/*vs/platform/files/common/files*/,30/*vs/platform/extensionManagement/common/extensionManagement*/,8/*vs/platform/environment/common/environment*/,7/*vs/base/common/uri*/,10/*vs/base/common/resources*/,36/*vs/platform/extensionManagement/common/extensionManagementUtil*/,13/*vs/platform/log/common/log*/,29/*vs/base/common/uuid*/,76/*semver-umd*/]), function (require, exports, lifecycle_1, files_1, extensionManagement_1, environment_1, uri_1, resources_1, extensionManagementUtil_1, log_1, uuid_1, semver) {
+define(__m[141/*vs/platform/extensionManagement/node/extensionDownloader*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,15/*vs/platform/files/common/files*/,28/*vs/platform/extensionManagement/common/extensionManagement*/,8/*vs/platform/environment/common/environment*/,7/*vs/base/common/uri*/,19/*vs/base/common/resources*/,35/*vs/platform/extensionManagement/common/extensionManagementUtil*/,13/*vs/platform/log/common/log*/,30/*vs/base/common/uuid*/,75/*semver-umd*/]), function (require, exports, lifecycle_1, files_1, extensionManagement_1, environment_1, uri_1, resources_1, extensionManagementUtil_1, log_1, uuid_1, semver) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtensionsDownloader = void 0;
@@ -20285,7 +20098,7 @@ define(__m[144/*vs/platform/extensionManagement/node/extensionDownloader*/], __M
         }
     };
     ExtensionsDownloader = __decorate([
-        __param(0, environment_1.IEnvironmentService),
+        __param(0, environment_1.INativeEnvironmentService),
         __param(1, files_1.IFileService),
         __param(2, extensionManagement_1.IExtensionGalleryService),
         __param(3, log_1.ILogService)
@@ -20306,7 +20119,7 @@ define(__m[144/*vs/platform/extensionManagement/node/extensionDownloader*/], __M
 
 
 
-define(__m[145/*vs/platform/extensionManagement/node/extensionLifecycle*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,13/*vs/platform/log/common/log*/,44/*child_process*/,48/*vs/base/common/errorMessage*/,4/*vs/base/common/path*/,9/*vs/base/common/async*/,3/*vs/base/common/event*/,26/*vs/base/common/network*/,21/*vs/base/node/pfs*/,8/*vs/platform/environment/common/environment*/]), function (require, exports, lifecycle_1, log_1, child_process_1, errorMessage_1, path_1, async_1, event_1, network_1, pfs_1, environment_1) {
+define(__m[142/*vs/platform/extensionManagement/node/extensionLifecycle*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,13/*vs/platform/log/common/log*/,45/*child_process*/,46/*vs/base/common/errorMessage*/,4/*vs/base/common/path*/,9/*vs/base/common/async*/,3/*vs/base/common/event*/,10/*vs/base/common/network*/,21/*vs/base/node/pfs*/,8/*vs/platform/environment/common/environment*/]), function (require, exports, lifecycle_1, log_1, child_process_1, errorMessage_1, path_1, async_1, event_1, network_1, pfs_1, environment_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtensionsLifecycle = void 0;
@@ -20424,7 +20237,7 @@ define(__m[145/*vs/platform/extensionManagement/node/extensionLifecycle*/], __M(
 
 
 
-define(__m[146/*vs/platform/files/common/fileService*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,16/*vs/platform/files/common/files*/,3/*vs/base/common/event*/,10/*vs/base/common/resources*/,111/*vs/nls!vs/platform/files/common/fileService*/,34/*vs/base/common/map*/,15/*vs/base/common/arrays*/,62/*vs/base/common/labels*/,13/*vs/platform/log/common/log*/,17/*vs/base/common/buffer*/,51/*vs/base/common/stream*/,9/*vs/base/common/async*/,27/*vs/base/common/cancellation*/,26/*vs/base/common/network*/,70/*vs/platform/files/common/io*/]), function (require, exports, lifecycle_1, files_1, event_1, resources_1, nls_1, map_1, arrays_1, labels_1, log_1, buffer_1, stream_1, async_1, cancellation_1, network_1, io_1) {
+define(__m[143/*vs/platform/files/common/fileService*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,15/*vs/platform/files/common/files*/,3/*vs/base/common/event*/,19/*vs/base/common/resources*/,111/*vs/nls!vs/platform/files/common/fileService*/,32/*vs/base/common/map*/,16/*vs/base/common/arrays*/,63/*vs/base/common/labels*/,13/*vs/platform/log/common/log*/,18/*vs/base/common/buffer*/,51/*vs/base/common/stream*/,9/*vs/base/common/async*/,27/*vs/base/common/cancellation*/,10/*vs/base/common/network*/,71/*vs/platform/files/common/io*/,49/*vs/base/common/iterator*/]), function (require, exports, lifecycle_1, files_1, event_1, resources_1, nls_1, map_1, arrays_1, labels_1, log_1, buffer_1, stream_1, async_1, cancellation_1, network_1, io_1, iterator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.FileService = void 0;
@@ -20500,6 +20313,9 @@ define(__m[146/*vs/platform/files/common/fileService*/], __M([0/*require*/,1/*ex
         hasCapability(resource, capability) {
             const provider = this.provider.get(resource.scheme);
             return !!(provider && (provider.capabilities & capability));
+        }
+        listCapabilities() {
+            return iterator_1.Iterable.map(this.provider, ([scheme, provider]) => ({ scheme, capabilities: provider.capabilities }));
         }
         async withProvider(resource) {
             // Assert path is absolute
@@ -21354,7 +21170,7 @@ define(__m[146/*vs/platform/files/common/fileService*/], __M([0/*require*/,1/*ex
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[147/*vs/platform/files/node/diskFileSystemProvider*/], __M([0/*require*/,1/*exports*/,35/*fs*/,52/*util*/,2/*vs/base/common/lifecycle*/,16/*vs/platform/files/common/files*/,3/*vs/base/common/event*/,6/*vs/base/common/platform*/,21/*vs/base/node/pfs*/,4/*vs/base/common/path*/,10/*vs/base/common/resources*/,39/*vs/base/common/extpath*/,9/*vs/base/common/async*/,13/*vs/platform/log/common/log*/,114/*vs/nls!vs/platform/files/node/diskFileSystemProvider*/,71/*vs/platform/files/node/watcher/watcher*/,133/*vs/platform/files/node/watcher/unix/watcherService*/,135/*vs/platform/files/node/watcher/win32/watcherService*/,131/*vs/platform/files/node/watcher/nsfw/watcherService*/,142/*vs/platform/files/node/watcher/nodejs/watcherService*/,51/*vs/base/common/stream*/,70/*vs/platform/files/common/io*/,15/*vs/base/common/arrays*/,17/*vs/base/common/buffer*/]), function (require, exports, fs_1, util_1, lifecycle_1, files_1, event_1, platform_1, pfs_1, path_1, resources_1, extpath_1, async_1, log_1, nls_1, watcher_1, watcherService_1, watcherService_2, watcherService_3, watcherService_4, stream_1, io_1, arrays_1, buffer_1) {
+define(__m[144/*vs/platform/files/node/diskFileSystemProvider*/], __M([0/*require*/,1/*exports*/,33/*fs*/,52/*util*/,2/*vs/base/common/lifecycle*/,15/*vs/platform/files/common/files*/,3/*vs/base/common/event*/,5/*vs/base/common/platform*/,21/*vs/base/node/pfs*/,4/*vs/base/common/path*/,19/*vs/base/common/resources*/,38/*vs/base/common/extpath*/,9/*vs/base/common/async*/,13/*vs/platform/log/common/log*/,114/*vs/nls!vs/platform/files/node/diskFileSystemProvider*/,72/*vs/platform/files/node/watcher/watcher*/,130/*vs/platform/files/node/watcher/unix/watcherService*/,132/*vs/platform/files/node/watcher/win32/watcherService*/,129/*vs/platform/files/node/watcher/nsfw/watcherService*/,138/*vs/platform/files/node/watcher/nodejs/watcherService*/,51/*vs/base/common/stream*/,71/*vs/platform/files/common/io*/,16/*vs/base/common/arrays*/,18/*vs/base/common/buffer*/]), function (require, exports, fs_1, util_1, lifecycle_1, files_1, event_1, platform_1, pfs_1, path_1, resources_1, extpath_1, async_1, log_1, nls_1, watcher_1, watcherService_1, watcherService_2, watcherService_3, watcherService_4, stream_1, io_1, arrays_1, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.DiskFileSystemProvider = void 0;
@@ -21513,8 +21329,8 @@ define(__m[147/*vs/platform/files/node/diskFileSystemProvider*/], __M([0/*requir
                         try {
                             // On Windows and if the file exists, we use a different strategy of saving the file
                             // by first truncating the file and then writing with r+ flag. This helps to save hidden files on Windows
-                            // (see https://github.com/Microsoft/vscode/issues/931) and prevent removing alternate data streams
-                            // (see https://github.com/Microsoft/vscode/issues/6363)
+                            // (see https://github.com/microsoft/vscode/issues/931) and prevent removing alternate data streams
+                            // (see https://github.com/microsoft/vscode/issues/6363)
                             await pfs_1.truncate(filePath, 0);
                             // After a successful truncate() the flag can be set to 'r+' which will not truncate.
                             flags = 'r+';
@@ -21909,7 +21725,7 @@ define(__m[147/*vs/platform/files/node/diskFileSystemProvider*/], __M([0/*requir
 
 
 
-define(__m[148/*vs/platform/localizations/node/localizations*/], __M([0/*require*/,1/*exports*/,21/*vs/base/node/pfs*/,149/*crypto*/,30/*vs/platform/extensionManagement/common/extensionManagement*/,2/*vs/base/common/lifecycle*/,8/*vs/platform/environment/common/environment*/,9/*vs/base/common/async*/,36/*vs/platform/extensionManagement/common/extensionManagementUtil*/,13/*vs/platform/log/common/log*/,75/*vs/platform/localizations/common/localizations*/,15/*vs/base/common/arrays*/,3/*vs/base/common/event*/,26/*vs/base/common/network*/,4/*vs/base/common/path*/]), function (require, exports, pfs, crypto_1, extensionManagement_1, lifecycle_1, environment_1, async_1, extensionManagementUtil_1, log_1, localizations_1, arrays_1, event_1, network_1, path_1) {
+define(__m[145/*vs/platform/localizations/node/localizations*/], __M([0/*require*/,1/*exports*/,21/*vs/base/node/pfs*/,146/*crypto*/,28/*vs/platform/extensionManagement/common/extensionManagement*/,2/*vs/base/common/lifecycle*/,8/*vs/platform/environment/common/environment*/,9/*vs/base/common/async*/,35/*vs/platform/extensionManagement/common/extensionManagementUtil*/,13/*vs/platform/log/common/log*/,74/*vs/platform/localizations/common/localizations*/,16/*vs/base/common/arrays*/,3/*vs/base/common/event*/,10/*vs/base/common/network*/,4/*vs/base/common/path*/]), function (require, exports, pfs, crypto_1, extensionManagement_1, lifecycle_1, environment_1, async_1, extensionManagementUtil_1, log_1, localizations_1, arrays_1, event_1, network_1, path_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LocalizationsService = void 0;
@@ -21959,7 +21775,7 @@ define(__m[148/*vs/platform/localizations/node/localizations*/], __M([0/*require
     };
     LocalizationsService = __decorate([
         __param(0, extensionManagement_1.IExtensionManagementService),
-        __param(1, environment_1.IEnvironmentService),
+        __param(1, environment_1.INativeEnvironmentService),
         __param(2, log_1.ILogService)
     ], LocalizationsService);
     exports.LocalizationsService = LocalizationsService;
@@ -22054,7 +21870,7 @@ define(__m[148/*vs/platform/localizations/node/localizations*/], __M([0/*require
         }
     };
     LanguagePacksCache = __decorate([
-        __param(0, environment_1.IEnvironmentService),
+        __param(0, environment_1.INativeEnvironmentService),
         __param(1, log_1.ILogService)
     ], LanguagePacksCache);
 });
@@ -22063,7 +21879,7 @@ define(__m[148/*vs/platform/localizations/node/localizations*/], __M([0/*require
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[150/*vs/platform/log/common/bufferLog*/], __M([0/*require*/,1/*exports*/,13/*vs/platform/log/common/log*/]), function (require, exports, log_1) {
+define(__m[147/*vs/platform/log/common/bufferLog*/], __M([0/*require*/,1/*exports*/,13/*vs/platform/log/common/log*/]), function (require, exports, log_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.BufferLogService = void 0;
@@ -22152,7 +21968,7 @@ define(__m[150/*vs/platform/log/common/bufferLog*/], __M([0/*require*/,1/*export
 
 
 
-define(__m[151/*vs/platform/log/common/fileLogService*/], __M([0/*require*/,1/*exports*/,13/*vs/platform/log/common/log*/,16/*vs/platform/files/common/files*/,9/*vs/base/common/async*/,17/*vs/base/common/buffer*/,10/*vs/base/common/resources*/,2/*vs/base/common/lifecycle*/,5/*vs/platform/instantiation/common/instantiation*/,150/*vs/platform/log/common/bufferLog*/]), function (require, exports, log_1, files_1, async_1, buffer_1, resources_1, lifecycle_1, instantiation_1, bufferLog_1) {
+define(__m[148/*vs/platform/log/common/fileLogService*/], __M([0/*require*/,1/*exports*/,13/*vs/platform/log/common/log*/,15/*vs/platform/files/common/files*/,9/*vs/base/common/async*/,18/*vs/base/common/buffer*/,19/*vs/base/common/resources*/,2/*vs/base/common/lifecycle*/,6/*vs/platform/instantiation/common/instantiation*/,147/*vs/platform/log/common/bufferLog*/]), function (require, exports, log_1, files_1, async_1, buffer_1, resources_1, lifecycle_1, instantiation_1, bufferLog_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.FileLoggerService = exports.FileLogService = void 0;
@@ -22311,7 +22127,7 @@ define(__m[151/*vs/platform/log/common/fileLogService*/], __M([0/*require*/,1/*e
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[152/*vs/platform/log/common/logIpc*/], __M([0/*require*/,1/*exports*/,13/*vs/platform/log/common/log*/,3/*vs/base/common/event*/]), function (require, exports, log_1, event_1) {
+define(__m[149/*vs/platform/log/common/logIpc*/], __M([0/*require*/,1/*exports*/,13/*vs/platform/log/common/log*/,3/*vs/base/common/event*/]), function (require, exports, log_1, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.FollowerLogService = exports.LoggerChannelClient = exports.LoggerChannel = void 0;
@@ -22390,7 +22206,7 @@ define(__m[152/*vs/platform/log/common/logIpc*/], __M([0/*require*/,1/*exports*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[77/*vs/platform/log/node/spdlogService*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/path*/,13/*vs/platform/log/common/log*/]), function (require, exports, path, log_1) {
+define(__m[76/*vs/platform/log/node/spdlogService*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/path*/,13/*vs/platform/log/common/log*/]), function (require, exports, path, log_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SpdLogService = exports.createRotatingLogger = void 0;
@@ -22565,7 +22381,7 @@ define(__m[77/*vs/platform/log/node/spdlogService*/], __M([0/*require*/,1/*expor
 
 
 
-define(__m[153/*vs/platform/log/node/loggerService*/], __M([0/*require*/,1/*exports*/,13/*vs/platform/log/common/log*/,2/*vs/base/common/lifecycle*/,10/*vs/base/common/resources*/,26/*vs/base/common/network*/,151/*vs/platform/log/common/fileLogService*/,5/*vs/platform/instantiation/common/instantiation*/,77/*vs/platform/log/node/spdlogService*/]), function (require, exports, log_1, lifecycle_1, resources_1, network_1, fileLogService_1, instantiation_1, spdlogService_1) {
+define(__m[150/*vs/platform/log/node/loggerService*/], __M([0/*require*/,1/*exports*/,13/*vs/platform/log/common/log*/,2/*vs/base/common/lifecycle*/,19/*vs/base/common/resources*/,10/*vs/base/common/network*/,148/*vs/platform/log/common/fileLogService*/,6/*vs/platform/instantiation/common/instantiation*/,76/*vs/platform/log/node/spdlogService*/]), function (require, exports, log_1, lifecycle_1, resources_1, network_1, fileLogService_1, instantiation_1, spdlogService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LoggerService = void 0;
@@ -22609,34 +22425,52 @@ define(__m[153/*vs/platform/log/node/loggerService*/], __M([0/*require*/,1/*expo
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[41/*vs/platform/product/common/product*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/platform*/,4/*vs/base/common/path*/,31/*vs/base/common/amd*/,47/*vs/base/common/process*/]), function (require, exports, platform_1, path, amd_1, process_1) {
+define(__m[55/*vs/platform/native/electron-sandbox/native*/], __M([0/*require*/,1/*exports*/,6/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.INativeHostService = void 0;
+    exports.INativeHostService = instantiation_1.createDecorator('nativeHostService');
+});
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+define(__m[40/*vs/platform/product/common/product*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/platform*/,50/*vs/base/common/process*/,10/*vs/base/common/network*/,19/*vs/base/common/resources*/]), function (require, exports, platform_1, process_1, network_1, resources_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     let product;
-    // Web
-    if (platform_1.isWeb) {
+    // Web or Native (sandbox TODO@sandbox need to add all properties of product.json)
+    if (platform_1.isWeb || typeof require === 'undefined' || typeof require.__$__nodeRequire !== 'function') {
         // Built time configuration (do NOT modify)
         product = { /*BUILD->INSERT_PRODUCT_CONFIGURATION*/};
         // Running out of sources
         if (Object.keys(product).length === 0) {
             Object.assign(product, {
-                version: '1.49.0-dev',
-                nameLong: 'Visual Studio Code Web Dev',
-                nameShort: 'VSCode Web Dev',
+                version: '1.50.0-dev',
+                nameShort: platform_1.isWeb ? 'Code Web - OSS Dev' : 'Code - OSS Dev',
+                nameLong: platform_1.isWeb ? 'Code Web - OSS Dev' : 'Code - OSS Dev',
+                applicationName: 'code-oss',
+                dataFolderName: '.vscode-oss',
                 urlProtocol: 'code-oss',
+                reportIssueUrl: 'https://github.com/microsoft/vscode/issues/new',
+                licenseName: 'MIT',
+                licenseUrl: 'https://github.com/microsoft/vscode/blob/master/LICENSE.txt',
                 extensionAllowedProposedApi: [
+                    'ms-vscode.vscode-js-profile-flame',
+                    'ms-vscode.vscode-js-profile-table',
                     'ms-vscode.references-view',
                     'ms-vscode.github-browser'
                 ],
             });
         }
     }
-    // Node: AMD loader
-    else if (typeof require !== 'undefined' && typeof require.__$__nodeRequire === 'function') {
+    // Native (non-sandboxed)
+    else {
         // Obtain values from product.json and package.json
-        const rootPath = path.dirname(amd_1.getPathFromAmdModule(require, ''));
-        product = require.__$__nodeRequire(path.join(rootPath, 'product.json'));
-        const pkg = require.__$__nodeRequire(path.join(rootPath, 'package.json'));
+        const rootPath = resources_1.dirname(network_1.FileAccess.asFileUri('', require));
+        product = require.__$__nodeRequire(resources_1.joinPath(rootPath, 'product.json').fsPath);
+        const pkg = require.__$__nodeRequire(resources_1.joinPath(rootPath, 'package.json').fsPath);
         // Running out of sources
         if (process_1.env['VSCODE_DEV']) {
             Object.assign(product, {
@@ -22648,10 +22482,6 @@ define(__m[41/*vs/platform/product/common/product*/], __M([0/*require*/,1/*expor
         Object.assign(product, {
             version: pkg.version
         });
-    }
-    // Unknown
-    else {
-        throw new Error('Unable to resolve product configuration');
     }
     exports.default = product;
 });
@@ -22669,7 +22499,7 @@ define(__m[41/*vs/platform/product/common/product*/], __M([0/*require*/,1/*expor
 
 
 
-define(__m[154/*vs/code/electron-browser/sharedProcess/contrib/languagePackCachedDataCleaner*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/path*/,21/*vs/base/node/pfs*/,41/*vs/platform/product/common/product*/,2/*vs/base/common/lifecycle*/,20/*vs/base/common/errors*/,13/*vs/platform/log/common/log*/,8/*vs/platform/environment/common/environment*/]), function (require, exports, path, pfs, product_1, lifecycle_1, errors_1, log_1, environment_1) {
+define(__m[151/*vs/code/electron-browser/sharedProcess/contrib/languagePackCachedDataCleaner*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/path*/,21/*vs/base/node/pfs*/,40/*vs/platform/product/common/product*/,2/*vs/base/common/lifecycle*/,20/*vs/base/common/errors*/,13/*vs/platform/log/common/log*/,8/*vs/platform/environment/common/environment*/]), function (require, exports, path, pfs, product_1, lifecycle_1, errors_1, log_1, environment_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LanguagePackCachedDataCleaner = void 0;
@@ -22743,7 +22573,7 @@ define(__m[154/*vs/code/electron-browser/sharedProcess/contrib/languagePackCache
         }
     };
     LanguagePackCachedDataCleaner = __decorate([
-        __param(0, environment_1.IEnvironmentService),
+        __param(0, environment_1.INativeEnvironmentService),
         __param(1, log_1.ILogService)
     ], LanguagePackCachedDataCleaner);
     exports.LanguagePackCachedDataCleaner = LanguagePackCachedDataCleaner;
@@ -22762,7 +22592,7 @@ define(__m[154/*vs/code/electron-browser/sharedProcess/contrib/languagePackCache
 
 
 
-define(__m[155/*vs/code/electron-browser/sharedProcess/contrib/nodeCachedDataCleaner*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/path*/,20/*vs/base/common/errors*/,2/*vs/base/common/lifecycle*/,21/*vs/base/node/pfs*/,8/*vs/platform/environment/common/environment*/,41/*vs/platform/product/common/product*/]), function (require, exports, path_1, errors_1, lifecycle_1, pfs_1, environment_1, product_1) {
+define(__m[152/*vs/code/electron-browser/sharedProcess/contrib/nodeCachedDataCleaner*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/path*/,20/*vs/base/common/errors*/,2/*vs/base/common/lifecycle*/,21/*vs/base/node/pfs*/,8/*vs/platform/environment/common/environment*/,40/*vs/platform/product/common/product*/]), function (require, exports, path_1, errors_1, lifecycle_1, pfs_1, environment_1, product_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NodeCachedDataCleaner = void 0;
@@ -22825,7 +22655,7 @@ define(__m[155/*vs/code/electron-browser/sharedProcess/contrib/nodeCachedDataCle
         ? 1000 * 60 * 60 * 24 * 7 // roughly 1 week
         : 1000 * 60 * 60 * 24 * 30 * 3; // roughly 3 months
     NodeCachedDataCleaner = __decorate([
-        __param(0, environment_1.IEnvironmentService)
+        __param(0, environment_1.INativeEnvironmentService)
     ], NodeCachedDataCleaner);
     exports.NodeCachedDataCleaner = NodeCachedDataCleaner;
 });
@@ -22840,14 +22670,13 @@ define(__m[155/*vs/code/electron-browser/sharedProcess/contrib/nodeCachedDataCle
 
 
 
-define(__m[156/*vs/platform/environment/node/environmentService*/], __M([0/*require*/,1/*exports*/,8/*vs/platform/environment/common/environment*/,149/*crypto*/,89/*vs/base/node/paths*/,40/*os*/,4/*vs/base/common/path*/,10/*vs/base/common/resources*/,82/*vs/base/common/decorators*/,41/*vs/platform/product/common/product*/,53/*vs/base/common/date*/,6/*vs/base/common/platform*/,31/*vs/base/common/amd*/,7/*vs/base/common/uri*/]), function (require, exports, environment_1, crypto, paths, os, path, resources, decorators_1, product_1, date_1, platform_1, amd_1, uri_1) {
+define(__m[153/*vs/platform/environment/node/environmentService*/], __M([0/*require*/,1/*exports*/,146/*crypto*/,88/*vs/base/node/paths*/,39/*os*/,4/*vs/base/common/path*/,19/*vs/base/common/resources*/,81/*vs/base/common/decorators*/,40/*vs/platform/product/common/product*/,54/*vs/base/common/date*/,5/*vs/base/common/platform*/,10/*vs/base/common/network*/,7/*vs/base/common/uri*/]), function (require, exports, crypto, paths, os, path, resources, decorators_1, product_1, date_1, platform_1, network_1, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.parseUserDataDir = exports.parsePathArg = exports.parseSearchPort = exports.parseExtensionHostPort = exports.xdgRuntimeDir = exports.EnvironmentService = void 0;
-    class EnvironmentService {
-        constructor(_args, _execPath) {
+    exports.parseUserDataDir = exports.parsePathArg = exports.parseSearchPort = exports.parseExtensionHostPort = exports.xdgRuntimeDir = exports.NativeEnvironmentService = void 0;
+    class NativeEnvironmentService {
+        constructor(_args) {
             this._args = _args;
-            this._execPath = _execPath;
             if (!process.env['VSCODE_LOGS']) {
                 const key = date_1.toLocalISOString(new Date()).replace(/-|:|\.\d+Z$/g, '');
                 process.env['VSCODE_LOGS'] = path.join(this.userDataPath, 'logs', key);
@@ -22855,9 +22684,7 @@ define(__m[156/*vs/platform/environment/node/environmentService*/], __M([0/*requ
             this.logsPath = process.env['VSCODE_LOGS'];
         }
         get args() { return this._args; }
-        get appRoot() { return path.dirname(amd_1.getPathFromAmdModule(require, '')); }
-        get execPath() { return this._execPath; }
-        get cliPath() { return getCLIPath(this.execPath, this.appRoot, this.isBuilt); }
+        get appRoot() { return path.dirname(network_1.FileAccess.asFileUri('', require).fsPath); }
         get userHome() { return uri_1.URI.file(os.homedir()); }
         get userDataPath() {
             const vscodePortable = process.env['VSCODE_PORTABLE'];
@@ -22867,12 +22694,12 @@ define(__m[156/*vs/platform/environment/node/environmentService*/], __M([0/*requ
             return parseUserDataDir(this._args, process);
         }
         get appSettingsHome() { return uri_1.URI.file(path.join(this.userDataPath, 'User')); }
+        get tmpDir() { return uri_1.URI.file(os.tmpdir()); }
         get userRoamingDataHome() { return this.appSettingsHome; }
         get settingsResource() { return resources.joinPath(this.userRoamingDataHome, 'settings.json'); }
         get userDataSyncHome() { return resources.joinPath(this.userRoamingDataHome, 'sync'); }
         get userDataSyncLogResource() { return uri_1.URI.file(path.join(this.logsPath, 'userDataSync.log')); }
         get sync() { return this.args.sync; }
-        get enableSyncByDefault() { return false; }
         get machineSettingsResource() { return resources.joinPath(uri_1.URI.file(path.join(this.userDataPath, 'Machine')), 'settings.json'); }
         get globalStorageHome() { return uri_1.URI.joinPath(this.appSettingsHome, 'globalStorage'); }
         get workspaceStorageHome() { return uri_1.URI.joinPath(this.appSettingsHome, 'workspaceStorage'); }
@@ -22887,8 +22714,8 @@ define(__m[156/*vs/platform/environment/node/environmentService*/], __M([0/*requ
         }
         get snippetsHome() { return resources.joinPath(this.userRoamingDataHome, 'snippets'); }
         get isExtensionDevelopment() { return !!this._args.extensionDevelopmentPath; }
-        get backupHome() { return uri_1.URI.file(path.join(this.userDataPath, environment_1.BACKUPS)); }
-        get backupWorkspacesPath() { return path.join(this.backupHome.fsPath, 'workspaces.json'); }
+        get backupHome() { return path.join(this.userDataPath, 'Backups'); }
+        get backupWorkspacesPath() { return path.join(this.backupHome, 'workspaces.json'); }
         get untitledWorkspacesHome() { return uri_1.URI.file(path.join(this.userDataPath, 'Workspaces')); }
         get installSourcePath() { return path.join(this.userDataPath, 'installSource'); }
         get builtinExtensionsPath() {
@@ -22897,7 +22724,7 @@ define(__m[156/*vs/platform/environment/node/environmentService*/], __M([0/*requ
                 return fromArgs;
             }
             else {
-                return path.normalize(path.join(amd_1.getPathFromAmdModule(require, ''), '..', 'extensions'));
+                return path.normalize(path.join(network_1.FileAccess.asFileUri('', require).fsPath, '..', 'extensions'));
             }
         }
         get extensionsDownloadPath() {
@@ -22961,17 +22788,7 @@ define(__m[156/*vs/platform/environment/node/environmentService*/], __M([0/*requ
             }
             return false;
         }
-        get extensionEnabledProposedApi() {
-            if (Array.isArray(this.args['enable-proposed-api'])) {
-                return this.args['enable-proposed-api'];
-            }
-            if ('enable-proposed-api' in this.args) {
-                return [];
-            }
-            return undefined;
-        }
         get debugExtensionHost() { return parseExtensionHostPort(this._args, this.isBuilt); }
-        get logExtensionHostCommunication() { return !!this.args.logExtensionHostCommunication; }
         get isBuilt() { return !process.env['VSCODE_DEV']; }
         get verbose() { return !!this._args.verbose; }
         get logLevel() { return this._args.log; }
@@ -22989,106 +22806,100 @@ define(__m[156/*vs/platform/environment/node/environmentService*/], __M([0/*requ
     }
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "appRoot", null);
+    ], NativeEnvironmentService.prototype, "appRoot", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "cliPath", null);
+    ], NativeEnvironmentService.prototype, "userHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "userHome", null);
+    ], NativeEnvironmentService.prototype, "userDataPath", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "userDataPath", null);
+    ], NativeEnvironmentService.prototype, "appSettingsHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "appSettingsHome", null);
+    ], NativeEnvironmentService.prototype, "tmpDir", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "userRoamingDataHome", null);
+    ], NativeEnvironmentService.prototype, "userRoamingDataHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "settingsResource", null);
+    ], NativeEnvironmentService.prototype, "settingsResource", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "userDataSyncHome", null);
+    ], NativeEnvironmentService.prototype, "userDataSyncHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "userDataSyncLogResource", null);
+    ], NativeEnvironmentService.prototype, "userDataSyncLogResource", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "sync", null);
+    ], NativeEnvironmentService.prototype, "sync", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "enableSyncByDefault", null);
+    ], NativeEnvironmentService.prototype, "machineSettingsResource", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "machineSettingsResource", null);
+    ], NativeEnvironmentService.prototype, "globalStorageHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "globalStorageHome", null);
+    ], NativeEnvironmentService.prototype, "workspaceStorageHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "workspaceStorageHome", null);
+    ], NativeEnvironmentService.prototype, "keybindingsResource", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "keybindingsResource", null);
+    ], NativeEnvironmentService.prototype, "keyboardLayoutResource", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "keyboardLayoutResource", null);
+    ], NativeEnvironmentService.prototype, "argvResource", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "argvResource", null);
+    ], NativeEnvironmentService.prototype, "snippetsHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "snippetsHome", null);
+    ], NativeEnvironmentService.prototype, "isExtensionDevelopment", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "isExtensionDevelopment", null);
+    ], NativeEnvironmentService.prototype, "backupHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "backupHome", null);
+    ], NativeEnvironmentService.prototype, "backupWorkspacesPath", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "backupWorkspacesPath", null);
+    ], NativeEnvironmentService.prototype, "untitledWorkspacesHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "untitledWorkspacesHome", null);
+    ], NativeEnvironmentService.prototype, "installSourcePath", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "installSourcePath", null);
+    ], NativeEnvironmentService.prototype, "builtinExtensionsPath", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "builtinExtensionsPath", null);
+    ], NativeEnvironmentService.prototype, "extensionsPath", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "extensionsPath", null);
+    ], NativeEnvironmentService.prototype, "extensionDevelopmentLocationURI", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "extensionDevelopmentLocationURI", null);
+    ], NativeEnvironmentService.prototype, "extensionTestsLocationURI", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "extensionTestsLocationURI", null);
+    ], NativeEnvironmentService.prototype, "debugExtensionHost", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "debugExtensionHost", null);
+    ], NativeEnvironmentService.prototype, "mainIPCHandle", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "logExtensionHostCommunication", null);
+    ], NativeEnvironmentService.prototype, "sharedIPCHandle", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "mainIPCHandle", null);
+    ], NativeEnvironmentService.prototype, "nodeCachedDataDir", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "sharedIPCHandle", null);
-    __decorate([
-        decorators_1.memoize
-    ], EnvironmentService.prototype, "nodeCachedDataDir", null);
-    __decorate([
-        decorators_1.memoize
-    ], EnvironmentService.prototype, "serviceMachineIdResource", null);
-    exports.EnvironmentService = EnvironmentService;
+    ], NativeEnvironmentService.prototype, "serviceMachineIdResource", null);
+    exports.NativeEnvironmentService = NativeEnvironmentService;
     // Read this before there's any chance it is overwritten
-    // Related to https://github.com/Microsoft/vscode/issues/30624
+    // Related to https://github.com/microsoft/vscode/issues/30624
     exports.xdgRuntimeDir = process.env['XDG_RUNTIME_DIR'];
     const safeIpcPathLengths = {
         [2 /* Linux */]: 107,
@@ -23122,27 +22933,6 @@ define(__m[156/*vs/platform/environment/node/environmentService*/], __M([0/*requ
             return getWin32IPCHandle(userDataPath, type);
         }
         return getNixIPCHandle(userDataPath, type);
-    }
-    function getCLIPath(execPath, appRoot, isBuilt) {
-        // Windows
-        if (platform_1.isWindows) {
-            if (isBuilt) {
-                return path.join(path.dirname(execPath), 'bin', `${product_1.default.applicationName}.cmd`);
-            }
-            return path.join(appRoot, 'scripts', 'code-cli.bat');
-        }
-        // Linux
-        if (platform_1.isLinux) {
-            if (isBuilt) {
-                return path.join(path.dirname(execPath), 'bin', `${product_1.default.applicationName}`);
-            }
-            return path.join(appRoot, 'scripts', 'code-cli.sh');
-        }
-        // macOS
-        if (isBuilt) {
-            return path.join(appRoot, 'bin', 'code');
-        }
-        return path.join(appRoot, 'scripts', 'code-cli.sh');
     }
     function parseExtensionHostPort(args, isBuild) {
         return parseDebugPort(args['inspect-extensions'], args['inspect-brk-extensions'], 5870, isBuild, args.debugId);
@@ -23181,7 +22971,7 @@ define(__m[156/*vs/platform/environment/node/environmentService*/], __M([0/*requ
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[37/*vs/platform/product/common/productService*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[36/*vs/platform/product/common/productService*/], __M([0/*require*/,1/*exports*/,6/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IProductService = void 0;
@@ -23192,7 +22982,7 @@ define(__m[37/*vs/platform/product/common/productService*/], __M([0/*require*/,1
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[33/*vs/platform/registry/common/platform*/], __M([0/*require*/,1/*exports*/,18/*vs/base/common/types*/,81/*vs/base/common/assert*/]), function (require, exports, Types, Assert) {
+define(__m[31/*vs/platform/registry/common/platform*/], __M([0/*require*/,1/*exports*/,14/*vs/base/common/types*/,80/*vs/base/common/assert*/]), function (require, exports, Types, Assert) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Registry = void 0;
@@ -23220,7 +23010,7 @@ define(__m[33/*vs/platform/registry/common/platform*/], __M([0/*require*/,1/*exp
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[78/*vs/platform/jsonschemas/common/jsonContributionRegistry*/], __M([0/*require*/,1/*exports*/,33/*vs/platform/registry/common/platform*/,3/*vs/base/common/event*/]), function (require, exports, platform, event_1) {
+define(__m[77/*vs/platform/jsonschemas/common/jsonContributionRegistry*/], __M([0/*require*/,1/*exports*/,31/*vs/platform/registry/common/platform*/,3/*vs/base/common/event*/]), function (require, exports, platform, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Extensions = void 0;
@@ -23260,7 +23050,7 @@ define(__m[78/*vs/platform/jsonschemas/common/jsonContributionRegistry*/], __M([
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[42/*vs/platform/configuration/common/configurationRegistry*/], __M([0/*require*/,1/*exports*/,105/*vs/nls!vs/platform/configuration/common/configurationRegistry*/,3/*vs/base/common/event*/,33/*vs/platform/registry/common/platform*/,18/*vs/base/common/types*/,78/*vs/platform/jsonschemas/common/jsonContributionRegistry*/]), function (require, exports, nls, event_1, platform_1, types, jsonContributionRegistry_1) {
+define(__m[41/*vs/platform/configuration/common/configurationRegistry*/], __M([0/*require*/,1/*exports*/,104/*vs/nls!vs/platform/configuration/common/configurationRegistry*/,3/*vs/base/common/event*/,31/*vs/platform/registry/common/platform*/,14/*vs/base/common/types*/,77/*vs/platform/jsonschemas/common/jsonContributionRegistry*/]), function (require, exports, nls, event_1, platform_1, types, jsonContributionRegistry_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getScopes = exports.validateProperty = exports.getDefaultValue = exports.overrideIdentifierFromKey = exports.OVERRIDE_PROPERTY_PATTERN = exports.resourceLanguageSettingsSchemaId = exports.resourceSettings = exports.windowSettings = exports.machineOverridableSettings = exports.machineSettings = exports.applicationSettings = exports.allSettings = exports.ConfigurationScope = exports.Extensions = void 0;
@@ -23621,7 +23411,7 @@ define(__m[42/*vs/platform/configuration/common/configurationRegistry*/], __M([0
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[25/*vs/platform/configuration/common/configuration*/], __M([0/*require*/,1/*exports*/,19/*vs/base/common/objects*/,18/*vs/base/common/types*/,7/*vs/base/common/uri*/,33/*vs/platform/registry/common/platform*/,5/*vs/platform/instantiation/common/instantiation*/,42/*vs/platform/configuration/common/configurationRegistry*/]), function (require, exports, objects, types, uri_1, platform_1, instantiation_1, configurationRegistry_1) {
+define(__m[26/*vs/platform/configuration/common/configuration*/], __M([0/*require*/,1/*exports*/,25/*vs/base/common/objects*/,14/*vs/base/common/types*/,7/*vs/base/common/uri*/,31/*vs/platform/registry/common/platform*/,6/*vs/platform/instantiation/common/instantiation*/,41/*vs/platform/configuration/common/configurationRegistry*/]), function (require, exports, objects, types, uri_1, platform_1, instantiation_1, configurationRegistry_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getMigratedSettingValue = exports.keyFromOverrideIdentifier = exports.getDefaultValues = exports.getConfigurationKeys = exports.merge = exports.getConfigurationValue = exports.removeFromValueTree = exports.addToValueTree = exports.toValuesTree = exports.toOverrides = exports.compare = exports.ConfigurationTargetToString = exports.ConfigurationTarget = exports.isConfigurationOverrides = exports.IConfigurationService = void 0;
@@ -23762,7 +23552,7 @@ define(__m[25/*vs/platform/configuration/common/configuration*/], __M([0/*requir
         }
         if (typeof curr === 'object' && curr !== null) {
             try {
-                curr[last] = value; // workaround https://github.com/Microsoft/vscode/issues/13606
+                curr[last] = value; // workaround https://github.com/microsoft/vscode/issues/13606
             }
             catch (e) {
                 conflictReporter(`Ignoring ${key} as ${segments.join('.')} is ${JSON.stringify(curr)}`);
@@ -23871,7 +23661,7 @@ define(__m[25/*vs/platform/configuration/common/configuration*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[157/*vs/platform/configuration/common/configurationModels*/], __M([0/*require*/,1/*exports*/,28/*vs/base/common/json*/,34/*vs/base/common/map*/,15/*vs/base/common/arrays*/,18/*vs/base/common/types*/,19/*vs/base/common/objects*/,7/*vs/base/common/uri*/,42/*vs/platform/configuration/common/configurationRegistry*/,25/*vs/platform/configuration/common/configuration*/,33/*vs/platform/registry/common/platform*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,10/*vs/base/common/resources*/]), function (require, exports, json, map_1, arrays, types, objects, uri_1, configurationRegistry_1, configuration_1, platform_1, lifecycle_1, event_1, resources_1) {
+define(__m[154/*vs/platform/configuration/common/configurationModels*/], __M([0/*require*/,1/*exports*/,29/*vs/base/common/json*/,32/*vs/base/common/map*/,16/*vs/base/common/arrays*/,14/*vs/base/common/types*/,25/*vs/base/common/objects*/,7/*vs/base/common/uri*/,41/*vs/platform/configuration/common/configurationRegistry*/,26/*vs/platform/configuration/common/configuration*/,31/*vs/platform/registry/common/platform*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,19/*vs/base/common/resources*/]), function (require, exports, json, map_1, arrays, types, objects, uri_1, configurationRegistry_1, configuration_1, platform_1, lifecycle_1, event_1, resources_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.AllKeysConfigurationChangeEvent = exports.ConfigurationChangeEvent = exports.mergeChanges = exports.Configuration = exports.UserSettings = exports.ConfigurationModelParser = exports.DefaultConfigurationModel = exports.ConfigurationModel = void 0;
@@ -24572,7 +24362,7 @@ define(__m[157/*vs/platform/configuration/common/configurationModels*/], __M([0/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[158/*vs/platform/configuration/common/configurationService*/], __M([0/*require*/,1/*exports*/,33/*vs/platform/registry/common/platform*/,42/*vs/platform/configuration/common/configurationRegistry*/,2/*vs/base/common/lifecycle*/,25/*vs/platform/configuration/common/configuration*/,157/*vs/platform/configuration/common/configurationModels*/,3/*vs/base/common/event*/,9/*vs/base/common/async*/]), function (require, exports, platform_1, configurationRegistry_1, lifecycle_1, configuration_1, configurationModels_1, event_1, async_1) {
+define(__m[155/*vs/platform/configuration/common/configurationService*/], __M([0/*require*/,1/*exports*/,31/*vs/platform/registry/common/platform*/,41/*vs/platform/configuration/common/configurationRegistry*/,2/*vs/base/common/lifecycle*/,26/*vs/platform/configuration/common/configuration*/,154/*vs/platform/configuration/common/configurationModels*/,3/*vs/base/common/event*/,9/*vs/base/common/async*/]), function (require, exports, platform_1, configurationRegistry_1, lifecycle_1, configuration_1, configurationModels_1, event_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ConfigurationService = void 0;
@@ -24646,13 +24436,12 @@ define(__m[158/*vs/platform/configuration/common/configurationService*/], __M([0
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[159/*vs/platform/remote/common/remoteHosts*/], __M([0/*require*/,1/*exports*/,26/*vs/base/common/network*/]), function (require, exports, network_1) {
+define(__m[156/*vs/platform/remote/common/remoteHosts*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/network*/]), function (require, exports, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.getRemoteName = exports.getRemoteAuthority = exports.REMOTE_HOST_SCHEME = void 0;
-    exports.REMOTE_HOST_SCHEME = network_1.Schemas.vscodeRemote;
+    exports.getRemoteName = exports.getRemoteAuthority = void 0;
     function getRemoteAuthority(uri) {
-        return uri.scheme === exports.REMOTE_HOST_SCHEME ? uri.authority : undefined;
+        return uri.scheme === network_1.Schemas.vscodeRemote ? uri.authority : undefined;
     }
     exports.getRemoteAuthority = getRemoteAuthority;
     function getRemoteName(authority) {
@@ -24682,7 +24471,7 @@ define(__m[159/*vs/platform/remote/common/remoteHosts*/], __M([0/*require*/,1/*e
 
 
 
-define(__m[160/*vs/platform/request/browser/requestService*/], __M([0/*require*/,1/*exports*/,25/*vs/platform/configuration/common/configuration*/,13/*vs/platform/log/common/log*/,96/*vs/base/parts/request/browser/request*/]), function (require, exports, configuration_1, log_1, request_1) {
+define(__m[157/*vs/platform/request/browser/requestService*/], __M([0/*require*/,1/*exports*/,26/*vs/platform/configuration/common/configuration*/,13/*vs/platform/log/common/log*/,95/*vs/base/parts/request/browser/request*/]), function (require, exports, configuration_1, log_1, request_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.RequestService = void 0;
@@ -24717,7 +24506,7 @@ define(__m[160/*vs/platform/request/browser/requestService*/], __M([0/*require*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[43/*vs/platform/request/common/request*/], __M([0/*require*/,1/*exports*/,115/*vs/nls!vs/platform/request/common/request*/,5/*vs/platform/instantiation/common/instantiation*/,42/*vs/platform/configuration/common/configurationRegistry*/,33/*vs/platform/registry/common/platform*/,17/*vs/base/common/buffer*/]), function (require, exports, nls_1, instantiation_1, configurationRegistry_1, platform_1, buffer_1) {
+define(__m[42/*vs/platform/request/common/request*/], __M([0/*require*/,1/*exports*/,115/*vs/nls!vs/platform/request/common/request*/,6/*vs/platform/instantiation/common/instantiation*/,41/*vs/platform/configuration/common/configurationRegistry*/,31/*vs/platform/registry/common/platform*/,18/*vs/base/common/buffer*/]), function (require, exports, nls_1, instantiation_1, configurationRegistry_1, platform_1, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.asJson = exports.asText = exports.isSuccess = exports.IRequestService = void 0;
@@ -24813,7 +24602,7 @@ define(__m[43/*vs/platform/request/common/request*/], __M([0/*require*/,1/*expor
 
 
 
-define(__m[161/*vs/platform/download/common/downloadService*/], __M([0/*require*/,1/*exports*/,43/*vs/platform/request/common/request*/,27/*vs/base/common/cancellation*/,16/*vs/platform/files/common/files*/,26/*vs/base/common/network*/]), function (require, exports, request_1, cancellation_1, files_1, network_1) {
+define(__m[158/*vs/platform/download/common/downloadService*/], __M([0/*require*/,1/*exports*/,42/*vs/platform/request/common/request*/,27/*vs/base/common/cancellation*/,15/*vs/platform/files/common/files*/,10/*vs/base/common/network*/]), function (require, exports, request_1, cancellation_1, files_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.DownloadService = void 0;
@@ -24824,6 +24613,7 @@ define(__m[161/*vs/platform/download/common/downloadService*/], __M([0/*require*
         }
         async download(resource, target, cancellationToken = cancellation_1.CancellationToken.None) {
             if (resource.scheme === network_1.Schemas.file || resource.scheme === network_1.Schemas.vscodeRemote) {
+                // Intentionally only support this for file|remote<->file|remote scenarios
                 await this.fileService.copy(resource, target);
                 return;
             }
@@ -24858,12 +24648,13 @@ define(__m[161/*vs/platform/download/common/downloadService*/], __M([0/*require*
 
 
 
-define(__m[162/*vs/platform/extensionManagement/common/extensionTipsService*/], __M([0/*require*/,1/*exports*/,37/*vs/platform/product/common/productService*/,16/*vs/platform/files/common/files*/,15/*vs/base/common/arrays*/,57/*vs/base/common/collections*/,43/*vs/platform/request/common/request*/,27/*vs/base/common/cancellation*/,13/*vs/platform/log/common/log*/,10/*vs/base/common/resources*/,127/*vs/platform/extensionManagement/common/configRemotes*/]), function (require, exports, productService_1, files_1, arrays_1, collections_1, request_1, cancellation_1, log_1, resources_1, configRemotes_1) {
+define(__m[159/*vs/platform/extensionManagement/common/extensionTipsService*/], __M([0/*require*/,1/*exports*/,36/*vs/platform/product/common/productService*/,15/*vs/platform/files/common/files*/,16/*vs/base/common/arrays*/,59/*vs/base/common/collections*/,42/*vs/platform/request/common/request*/,27/*vs/base/common/cancellation*/,13/*vs/platform/log/common/log*/,19/*vs/base/common/resources*/,125/*vs/platform/extensionManagement/common/configRemotes*/,2/*vs/base/common/lifecycle*/]), function (require, exports, productService_1, files_1, arrays_1, collections_1, request_1, cancellation_1, log_1, resources_1, configRemotes_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtensionTipsService = void 0;
-    let ExtensionTipsService = class ExtensionTipsService {
+    let ExtensionTipsService = class ExtensionTipsService extends lifecycle_1.Disposable {
         constructor(fileService, productService, requestService, logService) {
+            super();
             this.fileService = fileService;
             this.productService = productService;
             this.requestService = requestService;
@@ -24960,113 +24751,7 @@ define(__m[162/*vs/platform/extensionManagement/common/extensionTipsService*/], 
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
-define(__m[163/*vs/platform/extensionManagement/node/extensionTipsService*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,4/*vs/base/common/path*/,37/*vs/platform/product/common/productService*/,8/*vs/platform/environment/common/environment*/,47/*vs/base/common/process*/,16/*vs/platform/files/common/files*/,6/*vs/base/common/platform*/,15/*vs/base/common/arrays*/,57/*vs/base/common/collections*/,43/*vs/platform/request/common/request*/,13/*vs/platform/log/common/log*/,162/*vs/platform/extensionManagement/common/extensionTipsService*/]), function (require, exports, uri_1, path_1, productService_1, environment_1, process_1, files_1, platform_1, arrays_1, collections_1, request_1, log_1, extensionTipsService_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.ExtensionTipsService = void 0;
-    let ExtensionTipsService = class ExtensionTipsService extends extensionTipsService_1.ExtensionTipsService {
-        constructor(environmentService, fileService, productService, requestService, logService) {
-            super(fileService, productService, requestService, logService);
-            this.environmentService = environmentService;
-            this.allImportantExecutableTips = new Map();
-            this.allOtherExecutableTips = new Map();
-            if (productService.exeBasedExtensionTips) {
-                collections_1.forEach(productService.exeBasedExtensionTips, ({ key, value }) => {
-                    const importantRecommendations = [];
-                    const otherRecommendations = [];
-                    collections_1.forEach(value.recommendations, ({ key: extensionId, value }) => {
-                        if (value.important) {
-                            importantRecommendations.push({ extensionId, extensionName: value.name, isExtensionPack: !!value.isExtensionPack });
-                        }
-                        else {
-                            otherRecommendations.push({ extensionId, extensionName: value.name, isExtensionPack: !!value.isExtensionPack });
-                        }
-                    });
-                    if (importantRecommendations.length) {
-                        this.allImportantExecutableTips.set(key, { exeFriendlyName: value.friendlyName, windowsPath: value.windowsPath, recommendations: importantRecommendations });
-                    }
-                    if (otherRecommendations.length) {
-                        this.allOtherExecutableTips.set(key, { exeFriendlyName: value.friendlyName, windowsPath: value.windowsPath, recommendations: otherRecommendations });
-                    }
-                });
-            }
-        }
-        getImportantExecutableBasedTips() {
-            return this.getValidExecutableBasedExtensionTips(this.allImportantExecutableTips);
-        }
-        getOtherExecutableBasedTips() {
-            return this.getValidExecutableBasedExtensionTips(this.allOtherExecutableTips);
-        }
-        async getValidExecutableBasedExtensionTips(executableTips) {
-            const result = [];
-            const checkedExecutables = new Map();
-            for (const exeName of executableTips.keys()) {
-                const extensionTip = executableTips.get(exeName);
-                if (!extensionTip || !arrays_1.isNonEmptyArray(extensionTip.recommendations)) {
-                    continue;
-                }
-                const exePaths = [];
-                if (platform_1.isWindows) {
-                    if (extensionTip.windowsPath) {
-                        exePaths.push(extensionTip.windowsPath.replace('%USERPROFILE%', process_1.env['USERPROFILE'])
-                            .replace('%ProgramFiles(x86)%', process_1.env['ProgramFiles(x86)'])
-                            .replace('%ProgramFiles%', process_1.env['ProgramFiles'])
-                            .replace('%APPDATA%', process_1.env['APPDATA'])
-                            .replace('%WINDIR%', process_1.env['WINDIR']));
-                    }
-                }
-                else {
-                    exePaths.push(path_1.join('/usr/local/bin', exeName));
-                    exePaths.push(path_1.join('/usr/bin', exeName));
-                    exePaths.push(path_1.join(this.environmentService.userHome.fsPath, exeName));
-                }
-                for (const exePath of exePaths) {
-                    let exists = checkedExecutables.get(exePath);
-                    if (exists === undefined) {
-                        exists = await this.fileService.exists(uri_1.URI.file(exePath));
-                        checkedExecutables.set(exePath, exists);
-                    }
-                    if (exists) {
-                        for (const { extensionId, extensionName, isExtensionPack } of extensionTip.recommendations) {
-                            result.push({
-                                extensionId,
-                                extensionName,
-                                isExtensionPack,
-                                exeName,
-                                exeFriendlyName: extensionTip.exeFriendlyName,
-                                windowsPath: extensionTip.windowsPath,
-                            });
-                        }
-                    }
-                }
-            }
-            return result;
-        }
-    };
-    ExtensionTipsService = __decorate([
-        __param(0, environment_1.IEnvironmentService),
-        __param(1, files_1.IFileService),
-        __param(2, productService_1.IProductService),
-        __param(3, request_1.IRequestService),
-        __param(4, log_1.ILogService)
-    ], ExtensionTipsService);
-    exports.ExtensionTipsService = ExtensionTipsService;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[49/*vs/platform/serviceMachineId/common/serviceMachineId*/], __M([0/*require*/,1/*exports*/,29/*vs/base/common/uuid*/,17/*vs/base/common/buffer*/]), function (require, exports, uuid_1, buffer_1) {
+define(__m[47/*vs/platform/serviceMachineId/common/serviceMachineId*/], __M([0/*require*/,1/*exports*/,30/*vs/base/common/uuid*/,18/*vs/base/common/buffer*/]), function (require, exports, uuid_1, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getServiceMachineId = void 0;
@@ -25104,7 +24789,7 @@ define(__m[49/*vs/platform/serviceMachineId/common/serviceMachineId*/], __M([0/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[22/*vs/platform/storage/common/storage*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,18/*vs/base/common/types*/]), function (require, exports, instantiation_1, event_1, lifecycle_1, types_1) {
+define(__m[22/*vs/platform/storage/common/storage*/], __M([0/*require*/,1/*exports*/,6/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,14/*vs/base/common/types*/]), function (require, exports, instantiation_1, event_1, lifecycle_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.logStorage = exports.InMemoryStorageService = exports.StorageScope = exports.WillSaveStateReason = exports.IStorageService = exports.IS_NEW_KEY = void 0;
@@ -25256,7 +24941,7 @@ define(__m[22/*vs/platform/storage/common/storage*/], __M([0/*require*/,1/*expor
 
 
 
-define(__m[164/*vs/platform/extensionManagement/common/extensionEnablementService*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,30/*vs/platform/extensionManagement/common/extensionManagement*/,36/*vs/platform/extensionManagement/common/extensionManagementUtil*/,22/*vs/platform/storage/common/storage*/,18/*vs/base/common/types*/]), function (require, exports, event_1, lifecycle_1, extensionManagement_1, extensionManagementUtil_1, storage_1, types_1) {
+define(__m[160/*vs/platform/extensionManagement/common/extensionEnablementService*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,28/*vs/platform/extensionManagement/common/extensionManagement*/,35/*vs/platform/extensionManagement/common/extensionManagementUtil*/,22/*vs/platform/storage/common/storage*/,14/*vs/base/common/types*/]), function (require, exports, event_1, lifecycle_1, extensionManagement_1, extensionManagementUtil_1, storage_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.StorageManager = exports.GlobalExtensionEnablementService = void 0;
@@ -25396,7 +25081,7 @@ define(__m[164/*vs/platform/extensionManagement/common/extensionEnablementServic
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[24/*vs/platform/telemetry/common/telemetry*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[23/*vs/platform/telemetry/common/telemetry*/], __M([0/*require*/,1/*exports*/,6/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.machineIdKey = exports.lastSessionDateStorageKey = exports.firstSessionDateStorageKey = exports.currentSessionDateStorageKey = exports.instanceStorageKey = exports.ITelemetryService = void 0;
@@ -25418,7 +25103,7 @@ define(__m[24/*vs/platform/telemetry/common/telemetry*/], __M([0/*require*/,1/*e
 
 
 
-define(__m[165/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*require*/,1/*exports*/,40/*os*/,88/*vs/base/node/id*/,125/*vs/platform/diagnostics/common/diagnostics*/,35/*fs*/,4/*vs/base/common/path*/,28/*vs/base/common/json*/,91/*vs/base/node/ps*/,41/*vs/platform/product/common/product*/,14/*vs/base/common/strings*/,6/*vs/base/common/platform*/,7/*vs/base/common/uri*/,24/*vs/platform/telemetry/common/telemetry*/,5/*vs/platform/instantiation/common/instantiation*/,59/*vs/base/common/iterator*/]), function (require, exports, osLib, id_1, diagnostics_1, fs_1, path_1, json_1, ps_1, product_1, strings_1, platform_1, uri_1, telemetry_1, instantiation_1, iterator_1) {
+define(__m[161/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*require*/,1/*exports*/,39/*os*/,87/*vs/base/node/id*/,124/*vs/platform/diagnostics/common/diagnostics*/,33/*fs*/,4/*vs/base/common/path*/,29/*vs/base/common/json*/,90/*vs/base/node/ps*/,40/*vs/platform/product/common/product*/,5/*vs/base/common/platform*/,7/*vs/base/common/uri*/,23/*vs/platform/telemetry/common/telemetry*/,6/*vs/platform/instantiation/common/instantiation*/,49/*vs/base/common/iterator*/,10/*vs/base/common/network*/]), function (require, exports, osLib, id_1, diagnostics_1, fs_1, path_1, json_1, ps_1, product_1, platform_1, uri_1, telemetry_1, instantiation_1, iterator_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.DiagnosticsService = exports.collectLaunchConfigs = exports.getMachineInfo = exports.collectWorkspaceStats = exports.IDiagnosticsService = exports.ID = void 0;
@@ -25457,7 +25142,7 @@ define(__m[165/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*requ
                         resolve();
                         return;
                     }
-                    if (token.count > MAX_FILES) {
+                    if (token.count >= MAX_FILES) {
                         token.count += files.length;
                         token.maxReached = true;
                         resolve();
@@ -25760,7 +25445,7 @@ define(__m[165/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*requ
         expandGPUFeatures(gpuFeatures) {
             const longestFeatureName = Math.max(...Object.keys(gpuFeatures).map(feature => feature.length));
             // Make columns aligned by adding spaces after feature name
-            return Object.keys(gpuFeatures).map(feature => `${feature}:  ${strings_1.repeat(' ', longestFeatureName - feature.length)}  ${gpuFeatures[feature]}`).join('\n                  ');
+            return Object.keys(gpuFeatures).map(feature => `${feature}:  ${' '.repeat(longestFeatureName - feature.length)}  ${gpuFeatures[feature]}`).join('\n                  ');
         }
         formatWorkspaceMetadata(info) {
             const output = [];
@@ -25772,7 +25457,7 @@ define(__m[165/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*requ
                 output.push(`|  Window (${window.title})`);
                 window.folderURIs.forEach(uriComponents => {
                     const folderUri = uri_1.URI.revive(uriComponents);
-                    if (folderUri.scheme === 'file') {
+                    if (folderUri.scheme === network_1.Schemas.file) {
                         const folder = folderUri.fsPath;
                         workspaceStatPromises.push(collectWorkspaceStats(folder, ['node_modules', '.git']).then(stats => {
                             let countMessage = `${stats.fileCount} files`;
@@ -25813,13 +25498,13 @@ define(__m[165/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*requ
                 name = item.pid === mainPid ? `${product_1.default.applicationName} main` : 'remote agent';
             }
             else {
-                name = `${strings_1.repeat('  ', indent)} ${item.name}`;
+                name = `${'  '.repeat(indent)} ${item.name}`;
                 if (item.name === 'window') {
                     name = `${name} (${mapPidToWindowTitle.get(item.pid)})`;
                 }
             }
             const memory = process.platform === 'win32' ? item.mem : (osLib.totalmem() * (item.mem / 100));
-            output.push(`${strings_1.pad(Number(item.load.toFixed(0)), 5, ' ')}\t${strings_1.pad(Number((memory / MB).toFixed(0)), 6, ' ')}\t${strings_1.pad(Number((item.pid).toFixed(0)), 6, ' ')}\t${name}`);
+            output.push(`${item.load.toFixed(0).padStart(5, ' ')}\t${(memory / MB).toFixed(0).padStart(6, ' ')}\t${item.pid.toFixed(0).padStart(6, ' ')}\t${name}`);
             // Recurse into children if any
             if (Array.isArray(item.children)) {
                 item.children.forEach(child => this.formatProcessItem(mainPid, mapPidToWindowTitle, output, child, indent + 1));
@@ -25828,7 +25513,7 @@ define(__m[165/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*requ
         async reportWorkspaceStats(workspace) {
             for (const { uri } of workspace.folders) {
                 const folderUri = uri_1.URI.revive(uri);
-                if (folderUri.scheme !== 'file') {
+                if (folderUri.scheme !== network_1.Schemas.file) {
                     continue;
                 }
                 const folder = folderUri.fsPath;
@@ -25885,7 +25570,7 @@ define(__m[165/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*requ
 
 
 
-define(__m[166/*vs/platform/extensionManagement/common/extensionGalleryService*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/errors*/,30/*vs/platform/extensionManagement/common/extensionManagement*/,36/*vs/platform/extensionManagement/common/extensionManagementUtil*/,19/*vs/base/common/objects*/,24/*vs/platform/telemetry/common/telemetry*/,43/*vs/platform/request/common/request*/,66/*vs/platform/extensions/common/extensionValidator*/,8/*vs/platform/environment/common/environment*/,27/*vs/base/common/cancellation*/,13/*vs/platform/log/common/log*/,16/*vs/platform/files/common/files*/,7/*vs/base/common/uri*/,37/*vs/platform/product/common/productService*/,22/*vs/platform/storage/common/storage*/,49/*vs/platform/serviceMachineId/common/serviceMachineId*/,5/*vs/platform/instantiation/common/instantiation*/,10/*vs/base/common/resources*/]), function (require, exports, errors_1, extensionManagement_1, extensionManagementUtil_1, objects_1, telemetry_1, request_1, extensionValidator_1, environment_1, cancellation_1, log_1, files_1, uri_1, productService_1, storage_1, serviceMachineId_1, instantiation_1, resources_1) {
+define(__m[162/*vs/platform/extensionManagement/common/extensionGalleryService*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/errors*/,28/*vs/platform/extensionManagement/common/extensionManagement*/,35/*vs/platform/extensionManagement/common/extensionManagementUtil*/,25/*vs/base/common/objects*/,23/*vs/platform/telemetry/common/telemetry*/,42/*vs/platform/request/common/request*/,66/*vs/platform/extensions/common/extensionValidator*/,8/*vs/platform/environment/common/environment*/,27/*vs/base/common/cancellation*/,13/*vs/platform/log/common/log*/,15/*vs/platform/files/common/files*/,7/*vs/base/common/uri*/,36/*vs/platform/product/common/productService*/,22/*vs/platform/storage/common/storage*/,47/*vs/platform/serviceMachineId/common/serviceMachineId*/,6/*vs/platform/instantiation/common/instantiation*/,19/*vs/base/common/resources*/]), function (require, exports, errors_1, extensionManagement_1, extensionManagementUtil_1, objects_1, telemetry_1, request_1, extensionValidator_1, environment_1, cancellation_1, log_1, files_1, uri_1, productService_1, storage_1, serviceMachineId_1, instantiation_1, resources_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.resolveMarketplaceHeaders = exports.ExtensionGalleryService = void 0;
@@ -25954,26 +25639,26 @@ define(__m[166/*vs/platform/extensionManagement/common/extensionGalleryService*/
         get sortOrder() { return this.state.sortOrder; }
         get flags() { return this.state.flags; }
         withPage(pageNumber, pageSize = this.state.pageSize) {
-            return new Query(objects_1.assign({}, this.state, { pageNumber, pageSize }));
+            return new Query(Object.assign(Object.assign({}, this.state), { pageNumber, pageSize }));
         }
         withFilter(filterType, ...values) {
             const criteria = [
                 ...this.state.criteria,
                 ...values.length ? values.map(value => ({ filterType, value })) : [{ filterType }]
             ];
-            return new Query(objects_1.assign({}, this.state, { criteria }));
+            return new Query(Object.assign(Object.assign({}, this.state), { criteria }));
         }
         withSortBy(sortBy) {
-            return new Query(objects_1.assign({}, this.state, { sortBy }));
+            return new Query(Object.assign(Object.assign({}, this.state), { sortBy }));
         }
         withSortOrder(sortOrder) {
-            return new Query(objects_1.assign({}, this.state, { sortOrder }));
+            return new Query(Object.assign(Object.assign({}, this.state), { sortOrder }));
         }
         withFlags(...flags) {
-            return new Query(objects_1.assign({}, this.state, { flags: flags.reduce((r, f) => r | f, 0) }));
+            return new Query(Object.assign(Object.assign({}, this.state), { flags: flags.reduce((r, f) => r | f, 0) }));
         }
         withAssetTypes(...assetTypes) {
-            return new Query(objects_1.assign({}, this.state, { assetTypes }));
+            return new Query(Object.assign(Object.assign({}, this.state), { assetTypes }));
         }
         get raw() {
             const { criteria, pageNumber, pageSize, sortBy, sortOrder, flags, assetTypes } = this.state;
@@ -26134,10 +25819,10 @@ define(__m[166/*vs/platform/extensionManagement/common/extensionGalleryService*/
                 return extension;
             }
         }
-        getCompatibleExtensionByEngine(arg1, version) {
+        async getCompatibleExtensionByEngine(arg1, version) {
             const extension = extensionManagement_1.isIExtensionIdentifier(arg1) ? null : arg1;
             if (extension && extension.properties.engine && extensionValidator_1.isEngineValid(extension.properties.engine, this.productService.version)) {
-                return Promise.resolve(extension);
+                return extension;
             }
             const { id, uuid } = extension ? extension.identifier : arg1;
             let query = new Query()
@@ -26150,36 +25835,32 @@ define(__m[166/*vs/platform/extensionManagement/common/extensionGalleryService*/
             else {
                 query = query.withFilter(FilterType.ExtensionName, id);
             }
-            return this.queryGallery(query, cancellation_1.CancellationToken.None)
-                .then(({ galleryExtensions }) => {
-                const [rawExtension] = galleryExtensions;
-                if (!rawExtension || !rawExtension.versions.length) {
-                    return null;
-                }
-                if (version) {
-                    const versionAsset = rawExtension.versions.filter(v => v.version === version)[0];
-                    if (versionAsset) {
-                        const extension = toExtension(rawExtension, versionAsset, 0, query);
-                        if (extension.properties.engine && extensionValidator_1.isEngineValid(extension.properties.engine, this.productService.version)) {
-                            return extension;
-                        }
+            const { galleryExtensions } = await this.queryGallery(query, cancellation_1.CancellationToken.None);
+            const [rawExtension] = galleryExtensions;
+            if (!rawExtension || !rawExtension.versions.length) {
+                return null;
+            }
+            if (version) {
+                const versionAsset = rawExtension.versions.filter(v => v.version === version)[0];
+                if (versionAsset) {
+                    const extension = toExtension(rawExtension, versionAsset, 0, query);
+                    if (extension.properties.engine && extensionValidator_1.isEngineValid(extension.properties.engine, this.productService.version)) {
+                        return extension;
                     }
-                    return null;
                 }
-                return this.getLastValidExtensionVersion(rawExtension, rawExtension.versions)
-                    .then(rawVersion => {
-                    if (rawVersion) {
-                        return toExtension(rawExtension, rawVersion, 0, query);
-                    }
-                    return null;
-                });
-            });
+                return null;
+            }
+            const rawVersion = await this.getLastValidExtensionVersion(rawExtension, rawExtension.versions);
+            if (rawVersion) {
+                return toExtension(rawExtension, rawVersion, 0, query);
+            }
+            return null;
         }
-        query(arg1, arg2) {
+        async query(arg1, arg2) {
             const options = cancellation_1.CancellationToken.isCancellationToken(arg1) ? {} : arg1;
             const token = cancellation_1.CancellationToken.isCancellationToken(arg1) ? arg1 : arg2;
             if (!this.isEnabled()) {
-                return Promise.reject(new Error('No extension gallery service configured.'));
+                throw new Error('No extension gallery service configured.');
             }
             const type = options.names ? 'ids' : (options.text ? 'text' : 'all');
             let text = options.text || '';
@@ -26227,72 +25908,64 @@ define(__m[166/*vs/platform/extensionManagement/common/extensionGalleryService*/
             if (typeof options.sortOrder === 'number') {
                 query = query.withSortOrder(options.sortOrder);
             }
-            return this.queryGallery(query, token).then(({ galleryExtensions, total }) => {
-                const extensions = galleryExtensions.map((e, index) => toExtension(e, e.versions[0], index, query, options.source));
-                const pageSize = query.pageSize;
-                const getPage = (pageIndex, ct) => {
-                    if (ct.isCancellationRequested) {
-                        return Promise.reject(errors_1.canceled());
-                    }
-                    const nextPageQuery = query.withPage(pageIndex + 1);
-                    return this.queryGallery(nextPageQuery, ct)
-                        .then(({ galleryExtensions }) => galleryExtensions.map((e, index) => toExtension(e, e.versions[0], index, nextPageQuery, options.source)));
-                };
-                return { firstPage: extensions, total, pageSize, getPage };
-            });
+            const { galleryExtensions, total } = await this.queryGallery(query, token);
+            const extensions = galleryExtensions.map((e, index) => toExtension(e, e.versions[0], index, query, options.source));
+            const getPage = async (pageIndex, ct) => {
+                if (ct.isCancellationRequested) {
+                    throw errors_1.canceled();
+                }
+                const nextPageQuery = query.withPage(pageIndex + 1);
+                const { galleryExtensions } = await this.queryGallery(nextPageQuery, ct);
+                return galleryExtensions.map((e, index) => toExtension(e, e.versions[0], index, nextPageQuery, options.source));
+            };
+            return { firstPage: extensions, total, pageSize: query.pageSize, getPage };
         }
-        queryGallery(query, token) {
+        async queryGallery(query, token) {
+            if (!this.isEnabled()) {
+                throw new Error('No extension gallery service configured.');
+            }
             // Always exclude non validated and unpublished extensions
             query = query
                 .withFlags(query.flags, Flags.ExcludeNonValidated)
                 .withFilter(FilterType.ExcludeWithFlags, flagsToString(Flags.Unpublished));
-            if (!this.isEnabled()) {
-                return Promise.reject(new Error('No extension gallery service configured.'));
+            const commonHeaders = await this.commonHeadersPromise;
+            const data = JSON.stringify(query.raw);
+            const headers = Object.assign(Object.assign({}, commonHeaders), { 'Content-Type': 'application/json', 'Accept': 'application/json;api-version=3.0-preview.1', 'Accept-Encoding': 'gzip', 'Content-Length': String(data.length) });
+            const context = await this.requestService.request({
+                type: 'POST',
+                url: this.api('/extensionquery'),
+                data,
+                headers
+            }, token);
+            if (context.res.statusCode && context.res.statusCode >= 400 && context.res.statusCode < 500) {
+                return { galleryExtensions: [], total: 0 };
             }
-            return this.commonHeadersPromise.then(commonHeaders => {
-                const data = JSON.stringify(query.raw);
-                const headers = objects_1.assign({}, commonHeaders, {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json;api-version=3.0-preview.1',
-                    'Accept-Encoding': 'gzip',
-                    'Content-Length': data.length
-                });
-                return this.requestService.request({
-                    type: 'POST',
-                    url: this.api('/extensionquery'),
-                    data,
-                    headers
-                }, token).then(context => {
-                    if (context.res.statusCode && context.res.statusCode >= 400 && context.res.statusCode < 500) {
-                        return { galleryExtensions: [], total: 0 };
-                    }
-                    return request_1.asJson(context).then(result => {
-                        if (result) {
-                            const r = result.results[0];
-                            const galleryExtensions = r.extensions;
-                            const resultCount = r.resultMetadata && r.resultMetadata.filter(m => m.metadataType === 'ResultCount')[0];
-                            const total = resultCount && resultCount.metadataItems.filter(i => i.name === 'TotalCount')[0].count || 0;
-                            return { galleryExtensions, total };
-                        }
-                        return { galleryExtensions: [], total: 0 };
-                    });
-                });
-            });
+            const result = await request_1.asJson(context);
+            if (result) {
+                const r = result.results[0];
+                const galleryExtensions = r.extensions;
+                const resultCount = r.resultMetadata && r.resultMetadata.filter(m => m.metadataType === 'ResultCount')[0];
+                const total = resultCount && resultCount.metadataItems.filter(i => i.name === 'TotalCount')[0].count || 0;
+                return { galleryExtensions, total };
+            }
+            return { galleryExtensions: [], total: 0 };
         }
-        reportStatistic(publisher, name, version, type) {
+        async reportStatistic(publisher, name, version, type) {
             if (!this.isEnabled()) {
-                return Promise.resolve(undefined);
+                return undefined;
             }
-            return this.commonHeadersPromise.then(commonHeaders => {
-                const headers = Object.assign(Object.assign({}, commonHeaders), { Accept: '*/*;api-version=4.0-preview.1' });
-                return this.requestService.request({
+            const commonHeaders = await this.commonHeadersPromise;
+            const headers = Object.assign(Object.assign({}, commonHeaders), { Accept: '*/*;api-version=4.0-preview.1' });
+            try {
+                await this.requestService.request({
                     type: 'POST',
                     url: this.api(`/publishers/${publisher}/extensions/${name}/${version}/stats?statType=${type}`),
                     headers
-                }, cancellation_1.CancellationToken.None).then(undefined, () => undefined);
-            });
+                }, cancellation_1.CancellationToken.None);
+            }
+            catch (error) { /* Ignore */ }
         }
-        download(extension, location, operation) {
+        async download(extension, location, operation) {
             this.logService.trace('ExtensionGalleryService#download', extension.identifier.id);
             const data = extensionManagementUtil_1.getGalleryExtensionTelemetryData(extension);
             const startTime = new Date().getTime();
@@ -26304,48 +25977,48 @@ define(__m[166/*vs/platform/extensionManagement/common/extensionGalleryService*/
                     ]
                 }
             */
-            const log = (duration) => this.telemetryService.publicLog('galleryService:downloadVSIX', objects_1.assign(data, { duration }));
+            const log = (duration) => this.telemetryService.publicLog('galleryService:downloadVSIX', Object.assign(Object.assign({}, data), { duration }));
             const operationParam = operation === 1 /* Install */ ? 'install' : operation === 2 /* Update */ ? 'update' : '';
             const downloadAsset = operationParam ? {
                 uri: `${extension.assets.download.uri}&${operationParam}=true`,
                 fallbackUri: `${extension.assets.download.fallbackUri}?${operationParam}=true`
             } : extension.assets.download;
-            return this.getAsset(downloadAsset)
-                .then(context => this.fileService.writeFile(location, context.stream))
-                .then(() => log(new Date().getTime() - startTime));
+            const context = await this.getAsset(downloadAsset);
+            await this.fileService.writeFile(location, context.stream);
+            log(new Date().getTime() - startTime);
         }
-        getReadme(extension, token) {
+        async getReadme(extension, token) {
             if (extension.assets.readme) {
-                return this.getAsset(extension.assets.readme, {}, token)
-                    .then(context => request_1.asText(context))
-                    .then(content => content || '');
+                const context = await this.getAsset(extension.assets.readme, {}, token);
+                const content = await request_1.asText(context);
+                return content || '';
             }
-            return Promise.resolve('');
+            return '';
         }
-        getManifest(extension, token) {
+        async getManifest(extension, token) {
             if (extension.assets.manifest) {
-                return this.getAsset(extension.assets.manifest, {}, token)
-                    .then(request_1.asText)
-                    .then(text => text ? JSON.parse(text) : null);
+                const context = await this.getAsset(extension.assets.manifest, {}, token);
+                const text = await request_1.asText(context);
+                return text ? JSON.parse(text) : null;
             }
-            return Promise.resolve(null);
+            return null;
         }
-        getCoreTranslation(extension, languageId) {
+        async getCoreTranslation(extension, languageId) {
             const asset = extension.assets.coreTranslations.filter(t => t[0] === languageId.toUpperCase())[0];
             if (asset) {
-                return this.getAsset(asset[1])
-                    .then(request_1.asText)
-                    .then(text => text ? JSON.parse(text) : null);
+                const context = await this.getAsset(asset[1]);
+                const text = await request_1.asText(context);
+                return text ? JSON.parse(text) : null;
             }
-            return Promise.resolve(null);
+            return null;
         }
-        getChangelog(extension, token) {
+        async getChangelog(extension, token) {
             if (extension.assets.changelog) {
-                return this.getAsset(extension.assets.changelog, {}, token)
-                    .then(context => request_1.asText(context))
-                    .then(content => content || '');
+                const context = await this.getAsset(extension.assets.changelog, {}, token);
+                const content = await request_1.asText(context);
+                return content || '';
             }
-            return Promise.resolve('');
+            return '';
         }
         async getAllVersions(extension, compatible) {
             let query = new Query()
@@ -26379,34 +26052,33 @@ define(__m[166/*vs/platform/extensionManagement/common/extensionGalleryService*/
             }
             return result;
         }
-        getAsset(asset, options = {}, token = cancellation_1.CancellationToken.None) {
-            return this.commonHeadersPromise.then(commonHeaders => {
-                const baseOptions = { type: 'GET' };
-                const headers = objects_1.assign({}, commonHeaders, options.headers || {});
-                options = objects_1.assign({}, options, baseOptions, { headers });
-                const url = asset.uri;
-                const fallbackUrl = asset.fallbackUri;
-                const firstOptions = objects_1.assign({}, options, { url });
-                return this.requestService.request(firstOptions, token)
-                    .then(context => {
-                    if (context.res.statusCode === 200) {
-                        return Promise.resolve(context);
-                    }
-                    return request_1.asText(context)
-                        .then(message => Promise.reject(new Error(`Expected 200, got back ${context.res.statusCode} instead.\n\n${message}`)));
-                })
-                    .then(undefined, err => {
-                    if (errors_1.isPromiseCanceledError(err)) {
-                        return Promise.reject(err);
-                    }
-                    const message = errors_1.getErrorMessage(err);
-                    this.telemetryService.publicLog2('galleryService:cdnFallback', { url, message });
-                    const fallbackOptions = objects_1.assign({}, options, { url: fallbackUrl });
-                    return this.requestService.request(fallbackOptions, token);
-                });
-            });
+        async getAsset(asset, options = {}, token = cancellation_1.CancellationToken.None) {
+            const commonHeaders = await this.commonHeadersPromise;
+            const baseOptions = { type: 'GET' };
+            const headers = Object.assign(Object.assign({}, commonHeaders), (options.headers || {}));
+            options = Object.assign(Object.assign(Object.assign({}, options), baseOptions), { headers });
+            const url = asset.uri;
+            const fallbackUrl = asset.fallbackUri;
+            const firstOptions = Object.assign(Object.assign({}, options), { url });
+            try {
+                const context = await this.requestService.request(firstOptions, token);
+                if (context.res.statusCode === 200) {
+                    return context;
+                }
+                const message = await request_1.asText(context);
+                throw new Error(`Expected 200, got back ${context.res.statusCode} instead.\n\n${message}`);
+            }
+            catch (err) {
+                if (errors_1.isPromiseCanceledError(err)) {
+                    throw err;
+                }
+                const message = errors_1.getErrorMessage(err);
+                this.telemetryService.publicLog2('galleryService:cdnFallback', { url, message });
+                const fallbackOptions = Object.assign(Object.assign({}, options), { url: fallbackUrl });
+                return this.requestService.request(fallbackOptions, token);
+            }
         }
-        getLastValidExtensionVersion(extension, versions) {
+        async getLastValidExtensionVersion(extension, versions) {
             const version = this.getLastValidExtensionVersionFromProperties(extension, versions);
             if (version) {
                 return version;
@@ -26420,63 +26092,62 @@ define(__m[166/*vs/platform/extensionManagement/common/extensionGalleryService*/
                     return null;
                 }
                 if (extensionValidator_1.isEngineValid(engine, this.productService.version)) {
-                    return Promise.resolve(version);
+                    return version;
                 }
             }
             return null;
         }
-        getEngine(version) {
+        async getEngine(version) {
             const engine = getEngine(version);
             if (engine) {
-                return Promise.resolve(engine);
+                return engine;
             }
-            const manifest = getVersionAsset(version, AssetType.Manifest);
-            if (!manifest) {
-                return Promise.reject('Manifest was not found');
+            const manifestAsset = getVersionAsset(version, AssetType.Manifest);
+            if (!manifestAsset) {
+                throw new Error('Manifest was not found');
             }
             const headers = { 'Accept-Encoding': 'gzip' };
-            return this.getAsset(manifest, { headers })
-                .then(context => request_1.asJson(context))
-                .then(manifest => manifest ? manifest.engines.vscode : Promise.reject('Error while reading manifest'));
+            const context = await this.getAsset(manifestAsset, { headers });
+            const manifest = await request_1.asJson(context);
+            if (manifest) {
+                return manifest.engines.vscode;
+            }
+            throw new Error('Error while reading manifest');
         }
-        getLastValidExtensionVersionRecursively(extension, versions) {
+        async getLastValidExtensionVersionRecursively(extension, versions) {
             if (!versions.length) {
-                return Promise.resolve(null);
+                return null;
             }
             const version = versions[0];
-            return this.getEngine(version)
-                .then(engine => {
-                if (!extensionValidator_1.isEngineValid(engine, this.productService.version)) {
-                    return this.getLastValidExtensionVersionRecursively(extension, versions.slice(1));
-                }
-                version.properties = version.properties || [];
-                version.properties.push({ key: PropertyType.Engine, value: engine });
-                return version;
-            });
+            const engine = await this.getEngine(version);
+            if (!extensionValidator_1.isEngineValid(engine, this.productService.version)) {
+                return this.getLastValidExtensionVersionRecursively(extension, versions.slice(1));
+            }
+            version.properties = version.properties || [];
+            version.properties.push({ key: PropertyType.Engine, value: engine });
+            return version;
         }
-        getExtensionsReport() {
+        async getExtensionsReport() {
             if (!this.isEnabled()) {
-                return Promise.reject(new Error('No extension gallery service configured.'));
+                throw new Error('No extension gallery service configured.');
             }
             if (!this.extensionsControlUrl) {
-                return Promise.resolve([]);
+                return [];
             }
-            return this.requestService.request({ type: 'GET', url: this.extensionsControlUrl }, cancellation_1.CancellationToken.None).then(context => {
-                if (context.res.statusCode !== 200) {
-                    return Promise.reject(new Error('Could not get extensions report.'));
+            const context = await this.requestService.request({ type: 'GET', url: this.extensionsControlUrl }, cancellation_1.CancellationToken.None);
+            if (context.res.statusCode !== 200) {
+                throw new Error('Could not get extensions report.');
+            }
+            const result = await request_1.asJson(context);
+            const map = new Map();
+            if (result) {
+                for (const id of result.malicious) {
+                    const ext = map.get(id) || { id: { id }, malicious: true, slow: false };
+                    ext.malicious = true;
+                    map.set(id, ext);
                 }
-                return request_1.asJson(context).then(result => {
-                    const map = new Map();
-                    if (result) {
-                        for (const id of result.malicious) {
-                            const ext = map.get(id) || { id: { id }, malicious: true, slow: false };
-                            ext.malicious = true;
-                            map.set(id, ext);
-                        }
-                    }
-                    return [...map.values()];
-                });
-            });
+            }
+            return [...map.values()];
         }
     };
     ExtensionGalleryService = __decorate([
@@ -26505,7 +26176,285 @@ define(__m[166/*vs/platform/extensionManagement/common/extensionGalleryService*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[167/*vs/platform/storage/node/storageIpc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,29/*vs/base/common/uuid*/,24/*vs/platform/telemetry/common/telemetry*/]), function (require, exports, event_1, lifecycle_1, uuid_1, telemetry_1) {
+
+
+
+
+
+
+
+
+
+define(__m[163/*vs/platform/extensionManagement/electron-sandbox/extensionTipsService*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,4/*vs/base/common/path*/,36/*vs/platform/product/common/productService*/,8/*vs/platform/environment/common/environment*/,53/*vs/base/parts/sandbox/electron-sandbox/globals*/,15/*vs/platform/files/common/files*/,5/*vs/base/common/platform*/,16/*vs/base/common/arrays*/,28/*vs/platform/extensionManagement/common/extensionManagement*/,59/*vs/base/common/collections*/,42/*vs/platform/request/common/request*/,13/*vs/platform/log/common/log*/,159/*vs/platform/extensionManagement/common/extensionTipsService*/,9/*vs/base/common/async*/,23/*vs/platform/telemetry/common/telemetry*/,69/*vs/platform/extensionRecommendations/common/extensionRecommendations*/,106/*vs/nls!vs/platform/extensionManagement/electron-sandbox/extensionTipsService*/,22/*vs/platform/storage/common/storage*/]), function (require, exports, uri_1, path_1, productService_1, environment_1, globals_1, files_1, platform_1, arrays_1, extensionManagement_1, collections_1, request_1, log_1, extensionTipsService_1, async_1, telemetry_1, extensionRecommendations_1, nls_1, storage_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ExtensionTipsService = void 0;
+    const promptedExecutableTipsStorageKey = 'extensionTips/promptedExecutableTips';
+    const lastPromptedMediumImpExeTimeStorageKey = 'extensionTips/lastPromptedMediumImpExeTime';
+    let ExtensionTipsService = class ExtensionTipsService extends extensionTipsService_1.ExtensionTipsService {
+        constructor(environmentService, telemetryService, extensionManagementService, storageService, extensionRecommendationNotificationService, fileService, productService, requestService, logService) {
+            super(fileService, productService, requestService, logService);
+            this.environmentService = environmentService;
+            this.telemetryService = telemetryService;
+            this.extensionManagementService = extensionManagementService;
+            this.storageService = storageService;
+            this.extensionRecommendationNotificationService = extensionRecommendationNotificationService;
+            this.highImportanceExecutableTips = new Map();
+            this.mediumImportanceExecutableTips = new Map();
+            this.allOtherExecutableTips = new Map();
+            this.highImportanceTipsByExe = new Map();
+            this.mediumImportanceTipsByExe = new Map();
+            if (productService.exeBasedExtensionTips) {
+                collections_1.forEach(productService.exeBasedExtensionTips, ({ key, value: exeBasedExtensionTip }) => {
+                    const highImportanceRecommendations = [];
+                    const mediumImportanceRecommendations = [];
+                    const otherRecommendations = [];
+                    collections_1.forEach(exeBasedExtensionTip.recommendations, ({ key: extensionId, value }) => {
+                        if (value.important) {
+                            if (exeBasedExtensionTip.important) {
+                                highImportanceRecommendations.push({ extensionId, extensionName: value.name, isExtensionPack: !!value.isExtensionPack });
+                            }
+                            else {
+                                mediumImportanceRecommendations.push({ extensionId, extensionName: value.name, isExtensionPack: !!value.isExtensionPack });
+                            }
+                        }
+                        else {
+                            otherRecommendations.push({ extensionId, extensionName: value.name, isExtensionPack: !!value.isExtensionPack });
+                        }
+                    });
+                    if (highImportanceRecommendations.length) {
+                        this.highImportanceExecutableTips.set(key, { exeFriendlyName: exeBasedExtensionTip.friendlyName, windowsPath: exeBasedExtensionTip.windowsPath, recommendations: highImportanceRecommendations });
+                    }
+                    if (mediumImportanceRecommendations.length) {
+                        this.mediumImportanceExecutableTips.set(key, { exeFriendlyName: exeBasedExtensionTip.friendlyName, windowsPath: exeBasedExtensionTip.windowsPath, recommendations: mediumImportanceRecommendations });
+                    }
+                    if (otherRecommendations.length) {
+                        this.allOtherExecutableTips.set(key, { exeFriendlyName: exeBasedExtensionTip.friendlyName, windowsPath: exeBasedExtensionTip.windowsPath, recommendations: otherRecommendations });
+                    }
+                });
+            }
+            /*
+                3s has come out to be the good number to fetch and prompt important exe based recommendations
+                Also fetch important exe based recommendations for reporting telemetry
+            */
+            async_1.timeout(3000).then(async () => {
+                await this.collectTips();
+                this.promptHighImportanceExeBasedTip();
+                this.promptMediumImportanceExeBasedTip();
+            });
+        }
+        async getImportantExecutableBasedTips() {
+            const highImportanceExeTips = await this.getValidExecutableBasedExtensionTips(this.highImportanceExecutableTips);
+            const mediumImportanceExeTips = await this.getValidExecutableBasedExtensionTips(this.mediumImportanceExecutableTips);
+            return [...highImportanceExeTips, ...mediumImportanceExeTips];
+        }
+        getOtherExecutableBasedTips() {
+            return this.getValidExecutableBasedExtensionTips(this.allOtherExecutableTips);
+        }
+        async collectTips() {
+            const highImportanceExeTips = await this.getValidExecutableBasedExtensionTips(this.highImportanceExecutableTips);
+            const mediumImportanceExeTips = await this.getValidExecutableBasedExtensionTips(this.mediumImportanceExecutableTips);
+            const local = await this.extensionManagementService.getInstalled();
+            this.highImportanceTipsByExe = this.groupImportantTipsByExe(highImportanceExeTips, local);
+            this.mediumImportanceTipsByExe = this.groupImportantTipsByExe(mediumImportanceExeTips, local);
+        }
+        groupImportantTipsByExe(importantExeBasedTips, local) {
+            const importantExeBasedRecommendations = new Map();
+            importantExeBasedTips.forEach(tip => importantExeBasedRecommendations.set(tip.extensionId.toLowerCase(), tip));
+            const { installed, uninstalled: recommendations } = this.groupByInstalled([...importantExeBasedRecommendations.keys()], local);
+            /* Log installed and uninstalled exe based recommendations */
+            for (const extensionId of installed) {
+                const tip = importantExeBasedRecommendations.get(extensionId);
+                if (tip) {
+                    this.telemetryService.publicLog2('exeExtensionRecommendations:alreadyInstalled', { extensionId, exeName: path_1.basename(tip.windowsPath) });
+                }
+            }
+            for (const extensionId of recommendations) {
+                const tip = importantExeBasedRecommendations.get(extensionId);
+                if (tip) {
+                    this.telemetryService.publicLog2('exeExtensionRecommendations:notInstalled', { extensionId, exeName: path_1.basename(tip.windowsPath) });
+                }
+            }
+            const promptedExecutableTips = this.getPromptedExecutableTips();
+            const tipsByExe = new Map();
+            for (const extensionId of recommendations) {
+                const tip = importantExeBasedRecommendations.get(extensionId);
+                if (tip && (!promptedExecutableTips[tip.exeName] || !promptedExecutableTips[tip.exeName].includes(tip.extensionId))) {
+                    let tips = tipsByExe.get(tip.exeName);
+                    if (!tips) {
+                        tips = [];
+                        tipsByExe.set(tip.exeName, tips);
+                    }
+                    tips.push(tip);
+                }
+            }
+            return tipsByExe;
+        }
+        /**
+         * High importance tips are prompted once per restart session
+         */
+        promptHighImportanceExeBasedTip() {
+            if (this.highImportanceTipsByExe.size === 0) {
+                return;
+            }
+            const [exeName, tips] = [...this.highImportanceTipsByExe.entries()][0];
+            this.promptExeRecommendations(tips)
+                .then(result => {
+                switch (result) {
+                    case "reacted" /* Accepted */:
+                        this.addToRecommendedExecutables(tips[0].exeName, tips);
+                        break;
+                    case "ignored" /* Ignored */:
+                        this.highImportanceTipsByExe.delete(exeName);
+                        break;
+                    case "toomany" /* TooMany */:
+                        // Too many notifications. Schedule the prompt after one hour
+                        const disposable = this._register(async_1.disposableTimeout(() => { disposable.dispose(); this.promptHighImportanceExeBasedTip(); }, 60 * 60 * 1000 /* 1 hour */));
+                        break;
+                }
+            });
+        }
+        /**
+         * Medium importance tips are prompted once per 7 days
+         */
+        promptMediumImportanceExeBasedTip() {
+            if (this.mediumImportanceTipsByExe.size === 0) {
+                return;
+            }
+            const lastPromptedMediumExeTime = this.getLastPromptedMediumExeTime();
+            const timeSinceLastPrompt = Date.now() - lastPromptedMediumExeTime;
+            const promptInterval = 7 * 24 * 60 * 60 * 1000; // 7 Days
+            if (timeSinceLastPrompt < promptInterval) {
+                // Wait until interval and prompt
+                const disposable = this._register(async_1.disposableTimeout(() => { disposable.dispose(); this.promptMediumImportanceExeBasedTip(); }, promptInterval - timeSinceLastPrompt));
+                return;
+            }
+            const [exeName, tips] = [...this.mediumImportanceTipsByExe.entries()][0];
+            this.promptExeRecommendations(tips)
+                .then(result => {
+                switch (result) {
+                    case "reacted" /* Accepted */:
+                        // Accepted: Update the last prompted time and caches.
+                        this.updateLastPromptedMediumExeTime(Date.now());
+                        this.mediumImportanceTipsByExe.delete(exeName);
+                        this.addToRecommendedExecutables(tips[0].exeName, tips);
+                        // Schedule the next recommendation for next internval
+                        const disposable1 = this._register(async_1.disposableTimeout(() => { disposable1.dispose(); this.promptMediumImportanceExeBasedTip(); }, promptInterval));
+                        break;
+                    case "ignored" /* Ignored */:
+                        // Ignored: Remove from the cache and prompt next recommendation
+                        this.mediumImportanceTipsByExe.delete(exeName);
+                        this.promptMediumImportanceExeBasedTip();
+                        break;
+                    case "toomany" /* TooMany */:
+                        // Too many notifications. Schedule the prompt after one hour
+                        const disposable2 = this._register(async_1.disposableTimeout(() => { disposable2.dispose(); this.promptMediumImportanceExeBasedTip(); }, 60 * 60 * 1000 /* 1 hour */));
+                        break;
+                }
+            });
+        }
+        promptExeRecommendations(tips) {
+            const extensionIds = tips.map(({ extensionId }) => extensionId.toLowerCase());
+            const message = nls_1.localize(0, null, tips[0].exeFriendlyName);
+            return this.extensionRecommendationNotificationService.promptImportantExtensionsInstallNotification(extensionIds, message, `@exe:"${tips[0].exeName}"`, 3 /* EXE */);
+        }
+        getLastPromptedMediumExeTime() {
+            let value = this.storageService.getNumber(lastPromptedMediumImpExeTimeStorageKey, 0 /* GLOBAL */);
+            if (!value) {
+                value = Date.now();
+                this.updateLastPromptedMediumExeTime(value);
+            }
+            return value;
+        }
+        updateLastPromptedMediumExeTime(value) {
+            this.storageService.store(lastPromptedMediumImpExeTimeStorageKey, value, 0 /* GLOBAL */);
+        }
+        getPromptedExecutableTips() {
+            return JSON.parse(this.storageService.get(promptedExecutableTipsStorageKey, 0 /* GLOBAL */, '{}'));
+        }
+        addToRecommendedExecutables(exeName, tips) {
+            const promptedExecutableTips = this.getPromptedExecutableTips();
+            promptedExecutableTips[exeName] = tips.map(({ extensionId }) => extensionId.toLowerCase());
+            this.storageService.store(promptedExecutableTipsStorageKey, JSON.stringify(promptedExecutableTips), 0 /* GLOBAL */);
+        }
+        groupByInstalled(recommendationsToSuggest, local) {
+            const installed = [], uninstalled = [];
+            const installedExtensionsIds = local.reduce((result, i) => { result.add(i.identifier.id.toLowerCase()); return result; }, new Set());
+            recommendationsToSuggest.forEach(id => {
+                if (installedExtensionsIds.has(id.toLowerCase())) {
+                    installed.push(id);
+                }
+                else {
+                    uninstalled.push(id);
+                }
+            });
+            return { installed, uninstalled };
+        }
+        async getValidExecutableBasedExtensionTips(executableTips) {
+            const result = [];
+            const checkedExecutables = new Map();
+            for (const exeName of executableTips.keys()) {
+                const extensionTip = executableTips.get(exeName);
+                if (!extensionTip || !arrays_1.isNonEmptyArray(extensionTip.recommendations)) {
+                    continue;
+                }
+                const exePaths = [];
+                if (platform_1.isWindows) {
+                    if (extensionTip.windowsPath) {
+                        exePaths.push(extensionTip.windowsPath.replace('%USERPROFILE%', globals_1.process.env['USERPROFILE'])
+                            .replace('%ProgramFiles(x86)%', globals_1.process.env['ProgramFiles(x86)'])
+                            .replace('%ProgramFiles%', globals_1.process.env['ProgramFiles'])
+                            .replace('%APPDATA%', globals_1.process.env['APPDATA'])
+                            .replace('%WINDIR%', globals_1.process.env['WINDIR']));
+                    }
+                }
+                else {
+                    exePaths.push(path_1.join('/usr/local/bin', exeName));
+                    exePaths.push(path_1.join('/usr/bin', exeName));
+                    exePaths.push(path_1.join(this.environmentService.userHome.fsPath, exeName));
+                }
+                for (const exePath of exePaths) {
+                    let exists = checkedExecutables.get(exePath);
+                    if (exists === undefined) {
+                        exists = await this.fileService.exists(uri_1.URI.file(exePath));
+                        checkedExecutables.set(exePath, exists);
+                    }
+                    if (exists) {
+                        for (const { extensionId, extensionName, isExtensionPack } of extensionTip.recommendations) {
+                            result.push({
+                                extensionId,
+                                extensionName,
+                                isExtensionPack,
+                                exeName,
+                                exeFriendlyName: extensionTip.exeFriendlyName,
+                                windowsPath: extensionTip.windowsPath,
+                            });
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+    };
+    ExtensionTipsService = __decorate([
+        __param(0, environment_1.INativeEnvironmentService),
+        __param(1, telemetry_1.ITelemetryService),
+        __param(2, extensionManagement_1.IExtensionManagementService),
+        __param(3, storage_1.IStorageService),
+        __param(4, extensionRecommendations_1.IExtensionRecommendationNotificationService),
+        __param(5, files_1.IFileService),
+        __param(6, productService_1.IProductService),
+        __param(7, request_1.IRequestService),
+        __param(8, log_1.ILogService)
+    ], ExtensionTipsService);
+    exports.ExtensionTipsService = ExtensionTipsService;
+});
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+define(__m[164/*vs/platform/storage/node/storageIpc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,30/*vs/base/common/uuid*/,23/*vs/platform/telemetry/common/telemetry*/]), function (require, exports, event_1, lifecycle_1, uuid_1, telemetry_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.GlobalStorageDatabaseChannelClient = exports.GlobalStorageDatabaseChannel = void 0;
@@ -26672,7 +26621,7 @@ define(__m[167/*vs/platform/storage/node/storageIpc*/], __M([0/*require*/,1/*exp
 
 
 
-define(__m[168/*vs/platform/telemetry/common/telemetryService*/], __M([0/*require*/,1/*exports*/,116/*vs/nls!vs/platform/telemetry/common/telemetryService*/,14/*vs/base/common/strings*/,5/*vs/platform/instantiation/common/instantiation*/,25/*vs/platform/configuration/common/configuration*/,42/*vs/platform/configuration/common/configurationRegistry*/,2/*vs/base/common/lifecycle*/,19/*vs/base/common/objects*/,33/*vs/platform/registry/common/platform*/]), function (require, exports, nls_1, strings_1, instantiation_1, configuration_1, configurationRegistry_1, lifecycle_1, objects_1, platform_1) {
+define(__m[165/*vs/platform/telemetry/common/telemetryService*/], __M([0/*require*/,1/*exports*/,116/*vs/nls!vs/platform/telemetry/common/telemetryService*/,17/*vs/base/common/strings*/,6/*vs/platform/instantiation/common/instantiation*/,26/*vs/platform/configuration/common/configuration*/,41/*vs/platform/configuration/common/configurationRegistry*/,2/*vs/base/common/lifecycle*/,25/*vs/base/common/objects*/,31/*vs/platform/registry/common/platform*/]), function (require, exports, nls_1, strings_1, instantiation_1, configuration_1, configurationRegistry_1, lifecycle_1, objects_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.TelemetryService = void 0;
@@ -26840,7 +26789,7 @@ define(__m[168/*vs/platform/telemetry/common/telemetryService*/], __M([0/*requir
 
 
 
-define(__m[79/*vs/platform/telemetry/common/telemetryUtils*/], __M([0/*require*/,1/*exports*/,25/*vs/platform/configuration/common/configuration*/,13/*vs/platform/log/common/log*/,19/*vs/base/common/objects*/,18/*vs/base/common/types*/]), function (require, exports, configuration_1, log_1, objects_1, types_1) {
+define(__m[78/*vs/platform/telemetry/common/telemetryUtils*/], __M([0/*require*/,1/*exports*/,26/*vs/platform/configuration/common/configuration*/,13/*vs/platform/log/common/log*/,25/*vs/base/common/objects*/,14/*vs/base/common/types*/]), function (require, exports, configuration_1, log_1, objects_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.cleanRemoteAuthority = exports.validateTelemetryData = exports.configurationTelemetry = exports.LogAppender = exports.NullAppender = exports.combinedAppender = exports.NullTelemetryService = void 0;
@@ -27014,7 +26963,7 @@ define(__m[79/*vs/platform/telemetry/common/telemetryUtils*/], __M([0/*require*/
 
 
 
-define(__m[169/*vs/platform/telemetry/node/appInsightsAppender*/], __M([0/*require*/,1/*exports*/,197/*applicationinsights*/,19/*vs/base/common/objects*/,79/*vs/platform/telemetry/common/telemetryUtils*/,13/*vs/platform/log/common/log*/]), function (require, exports, appInsights, objects_1, telemetryUtils_1, log_1) {
+define(__m[166/*vs/platform/telemetry/node/appInsightsAppender*/], __M([0/*require*/,1/*exports*/,195/*applicationinsights*/,25/*vs/base/common/objects*/,78/*vs/platform/telemetry/common/telemetryUtils*/,13/*vs/platform/log/common/log*/]), function (require, exports, appInsights, objects_1, telemetryUtils_1, log_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.AppInsightsAppender = void 0;
@@ -27098,7 +27047,7 @@ define(__m[169/*vs/platform/telemetry/node/appInsightsAppender*/], __M([0/*requi
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[170/*vs/platform/telemetry/node/commonProperties*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/platform*/,40/*os*/,29/*vs/base/common/uuid*/,21/*vs/base/node/pfs*/]), function (require, exports, Platform, os, uuid, pfs_1) {
+define(__m[167/*vs/platform/telemetry/node/commonProperties*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/platform*/,39/*os*/,30/*vs/base/common/uuid*/,21/*vs/base/node/pfs*/]), function (require, exports, Platform, os, uuid, pfs_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.resolveCommonProperties = void 0;
@@ -27175,7 +27124,7 @@ define(__m[170/*vs/platform/telemetry/node/commonProperties*/], __M([0/*require*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[171/*vs/platform/telemetry/node/telemetryIpc*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[168/*vs/platform/telemetry/node/telemetryIpc*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.TelemetryAppenderClient = exports.TelemetryAppenderChannel = void 0;
@@ -27213,7 +27162,7 @@ define(__m[171/*vs/platform/telemetry/node/telemetryIpc*/], __M([0/*require*/,1/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[50/*vs/platform/userDataSync/common/content*/], __M([0/*require*/,1/*exports*/,38/*vs/base/common/jsonEdit*/]), function (require, exports, jsonEdit_1) {
+define(__m[48/*vs/platform/userDataSync/common/content*/], __M([0/*require*/,1/*exports*/,37/*vs/base/common/jsonEdit*/]), function (require, exports, jsonEdit_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getLineEndOffset = exports.getLineStartOffset = exports.edit = void 0;
@@ -27267,7 +27216,7 @@ define(__m[50/*vs/platform/userDataSync/common/content*/], __M([0/*require*/,1/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[172/*vs/platform/userDataSync/common/extensionsMerge*/], __M([0/*require*/,1/*exports*/,19/*vs/base/common/objects*/,15/*vs/base/common/arrays*/]), function (require, exports, objects_1, arrays_1) {
+define(__m[169/*vs/platform/userDataSync/common/extensionsMerge*/], __M([0/*require*/,1/*exports*/,25/*vs/base/common/objects*/,16/*vs/base/common/arrays*/]), function (require, exports, objects_1, arrays_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getIgnoredExtensions = exports.merge = void 0;
@@ -27475,7 +27424,7 @@ define(__m[172/*vs/platform/userDataSync/common/extensionsMerge*/], __M([0/*requ
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[173/*vs/platform/userDataSync/common/globalStateMerge*/], __M([0/*require*/,1/*exports*/,19/*vs/base/common/objects*/]), function (require, exports, objects) {
+define(__m[170/*vs/platform/userDataSync/common/globalStateMerge*/], __M([0/*require*/,1/*exports*/,25/*vs/base/common/objects*/]), function (require, exports, objects) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.merge = void 0;
@@ -27621,7 +27570,7 @@ define(__m[173/*vs/platform/userDataSync/common/globalStateMerge*/], __M([0/*req
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[174/*vs/platform/userDataSync/common/keybindingsMerge*/], __M([0/*require*/,1/*exports*/,19/*vs/base/common/objects*/,28/*vs/base/common/json*/,15/*vs/base/common/arrays*/,137/*vs/platform/contextkey/common/contextkey*/,50/*vs/platform/userDataSync/common/content*/]), function (require, exports, objects, json_1, arrays_1, contextkey_1, contentUtil) {
+define(__m[171/*vs/platform/userDataSync/common/keybindingsMerge*/], __M([0/*require*/,1/*exports*/,25/*vs/base/common/objects*/,29/*vs/base/common/json*/,16/*vs/base/common/arrays*/,134/*vs/platform/contextkey/common/contextkey*/,48/*vs/platform/userDataSync/common/content*/]), function (require, exports, objects, json_1, arrays_1, contextkey_1, contentUtil) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.merge = exports.parseKeybindings = void 0;
@@ -27910,7 +27859,7 @@ define(__m[174/*vs/platform/userDataSync/common/keybindingsMerge*/], __M([0/*req
     }
     function updateKeybindings(content, command, keybindings, formattingOptions) {
         const allKeybindings = parseKeybindings(content);
-        const location = arrays_1.firstIndex(allKeybindings, keybinding => keybinding.command === command || keybinding.command === `-${command}`);
+        const location = allKeybindings.findIndex(keybinding => keybinding.command === command || keybinding.command === `-${command}`);
         // Remove all entries with this command
         for (let index = allKeybindings.length - 1; index >= 0; index--) {
             if (allKeybindings[index].command === command || allKeybindings[index].command === `-${command}`) {
@@ -27929,7 +27878,7 @@ define(__m[174/*vs/platform/userDataSync/common/keybindingsMerge*/], __M([0/*req
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[175/*vs/platform/userDataSync/common/snippetsMerge*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[172/*vs/platform/userDataSync/common/snippetsMerge*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.areSame = exports.merge = void 0;
@@ -28085,7 +28034,7 @@ define(__m[175/*vs/platform/userDataSync/common/snippetsMerge*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[80/*vs/platform/userDataSync/common/storageKeys*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, event_1, lifecycle_1, instantiation_1) {
+define(__m[79/*vs/platform/userDataSync/common/storageKeys*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,6/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, event_1, lifecycle_1, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.StorageKeysSyncRegistryService = exports.IStorageKeysSyncRegistryService = void 0;
@@ -28113,7 +28062,7 @@ define(__m[80/*vs/platform/userDataSync/common/storageKeys*/], __M([0/*require*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[23/*vs/platform/userDataSync/common/userDataSync*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,30/*vs/platform/extensionManagement/common/extensionManagement*/,33/*vs/platform/registry/common/platform*/,42/*vs/platform/configuration/common/configurationRegistry*/,121/*vs/nls!vs/platform/userDataSync/common/userDataSync*/,78/*vs/platform/jsonschemas/common/jsonContributionRegistry*/,10/*vs/base/common/resources*/,15/*vs/base/common/arrays*/,18/*vs/base/common/types*/]), function (require, exports, instantiation_1, extensionManagement_1, platform_1, configurationRegistry_1, nls_1, jsonContributionRegistry_1, resources_1, arrays_1, types_1) {
+define(__m[24/*vs/platform/userDataSync/common/userDataSync*/], __M([0/*require*/,1/*exports*/,6/*vs/platform/instantiation/common/instantiation*/,28/*vs/platform/extensionManagement/common/extensionManagement*/,31/*vs/platform/registry/common/platform*/,41/*vs/platform/configuration/common/configurationRegistry*/,121/*vs/nls!vs/platform/userDataSync/common/userDataSync*/,77/*vs/platform/jsonschemas/common/jsonContributionRegistry*/,19/*vs/base/common/resources*/,16/*vs/base/common/arrays*/,14/*vs/base/common/types*/]), function (require, exports, instantiation_1, extensionManagement_1, platform_1, configurationRegistry_1, nls_1, jsonContributionRegistry_1, resources_1, arrays_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getSyncResourceFromLocalPreview = exports.PREVIEW_DIR_NAME = exports.USER_DATA_SYNC_SCHEME = exports.IUserDataSyncLogService = exports.IUserDataSyncUtilService = exports.IUserDataAutoSyncService = exports.IUserDataSyncService = exports.IUserDataSyncResourceEnablementService = exports.MergeState = exports.Change = exports.SyncStatus = exports.UserDataAutoSyncError = exports.UserDataSyncStoreError = exports.UserDataSyncError = exports.UserDataSyncErrorCode = exports.HEADER_EXECUTION_ID = exports.HEADER_OPERATION_ID = exports.IUserDataSyncBackupStoreService = exports.IUserDataSyncStoreService = exports.IUserDataSyncStoreManagementService = exports.ALL_SYNC_RESOURCES = exports.SyncResource = exports.isAuthenticationProvider = exports.registerConfiguration = exports.getDefaultIgnoredSettings = exports.getDisallowedIgnoredSettings = exports.CONFIGURATION_SYNC_STORE_KEY = void 0;
@@ -28346,7 +28295,7 @@ define(__m[23/*vs/platform/userDataSync/common/userDataSync*/], __M([0/*require*
 
 
 
-define(__m[45/*vs/platform/userDataSync/common/abstractSynchronizer*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,16/*vs/platform/files/common/files*/,17/*vs/base/common/buffer*/,7/*vs/base/common/uri*/,23/*vs/platform/userDataSync/common/userDataSync*/,8/*vs/platform/environment/common/environment*/,10/*vs/base/common/resources*/,9/*vs/base/common/async*/,3/*vs/base/common/event*/,24/*vs/platform/telemetry/common/telemetry*/,28/*vs/base/common/json*/,117/*vs/nls!vs/platform/userDataSync/common/abstractSynchronizer*/,25/*vs/platform/configuration/common/configuration*/,18/*vs/base/common/types*/,14/*vs/base/common/strings*/,15/*vs/base/common/arrays*/,49/*vs/platform/serviceMachineId/common/serviceMachineId*/,22/*vs/platform/storage/common/storage*/,27/*vs/base/common/cancellation*/]), function (require, exports, lifecycle_1, files_1, buffer_1, uri_1, userDataSync_1, environment_1, resources_1, async_1, event_1, telemetry_1, json_1, nls_1, configuration_1, types_1, strings_1, arrays_1, serviceMachineId_1, storage_1, cancellation_1) {
+define(__m[43/*vs/platform/userDataSync/common/abstractSynchronizer*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,15/*vs/platform/files/common/files*/,18/*vs/base/common/buffer*/,7/*vs/base/common/uri*/,24/*vs/platform/userDataSync/common/userDataSync*/,8/*vs/platform/environment/common/environment*/,19/*vs/base/common/resources*/,9/*vs/base/common/async*/,3/*vs/base/common/event*/,23/*vs/platform/telemetry/common/telemetry*/,29/*vs/base/common/json*/,117/*vs/nls!vs/platform/userDataSync/common/abstractSynchronizer*/,26/*vs/platform/configuration/common/configuration*/,14/*vs/base/common/types*/,17/*vs/base/common/strings*/,16/*vs/base/common/arrays*/,47/*vs/platform/serviceMachineId/common/serviceMachineId*/,22/*vs/platform/storage/common/storage*/,27/*vs/base/common/cancellation*/]), function (require, exports, lifecycle_1, files_1, buffer_1, uri_1, userDataSync_1, environment_1, resources_1, async_1, event_1, telemetry_1, json_1, nls_1, configuration_1, types_1, strings_1, arrays_1, serviceMachineId_1, storage_1, cancellation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.AbstractInitializer = exports.AbstractJsonFileSynchroniser = exports.AbstractFileSynchroniser = exports.AbstractSynchroniser = void 0;
@@ -28365,8 +28314,8 @@ define(__m[45/*vs/platform/userDataSync/common/abstractSynchronizer*/], __M([0/*
         }
         return false;
     }
-    function getLastSyncResourceUri(syncResource, environmentService) {
-        return resources_1.joinPath(environmentService.userDataSyncHome, syncResource, `lastSync${syncResource}.json`);
+    function getLastSyncResourceUri(syncResource, environmentService, extUri) {
+        return extUri.joinPath(environmentService.userDataSyncHome, syncResource, `lastSync${syncResource}.json`);
     }
     let AbstractSynchroniser = class AbstractSynchroniser extends lifecycle_1.Disposable {
         constructor(resource, fileService, environmentService, storageService, userDataSyncStoreService, userDataSyncBackupStoreService, userDataSyncResourceEnablementService, telemetryService, logService, configurationService) {
@@ -28392,9 +28341,10 @@ define(__m[45/*vs/platform/userDataSync/common/abstractSynchronizer*/], __M([0/*
             this.onDidChangeLocal = this._onDidChangeLocal.event;
             this.syncHeaders = {};
             this.syncResourceLogLabel = strings_1.uppercaseFirstLetter(this.resource);
-            this.syncFolder = resources_1.joinPath(environmentService.userDataSyncHome, resource);
-            this.syncPreviewFolder = resources_1.joinPath(this.syncFolder, userDataSync_1.PREVIEW_DIR_NAME);
-            this.lastSyncResource = getLastSyncResourceUri(resource, environmentService);
+            this.extUri = this.fileService.hasCapability(environmentService.userDataSyncHome, 1024 /* PathCaseSensitive */) ? resources_1.extUri : resources_1.extUriIgnorePathCase;
+            this.syncFolder = this.extUri.joinPath(environmentService.userDataSyncHome, resource);
+            this.syncPreviewFolder = this.extUri.joinPath(this.syncFolder, userDataSync_1.PREVIEW_DIR_NAME);
+            this.lastSyncResource = getLastSyncResourceUri(resource, environmentService, this.extUri);
             this.currentMachineIdPromise = serviceMachineId_1.getServiceMachineId(environmentService, fileService, storageService);
         }
         get status() { return this._status; }
@@ -28640,7 +28590,7 @@ define(__m[45/*vs/platform/userDataSync/common/abstractSynchronizer*/], __M([0/*
                 return;
             }
             let preview = await this.syncPreviewPromise;
-            const index = preview.resourcePreviews.findIndex(({ localResource, remoteResource, previewResource }) => resources_1.isEqual(localResource, resource) || resources_1.isEqual(remoteResource, resource) || resources_1.isEqual(previewResource, resource));
+            const index = preview.resourcePreviews.findIndex(({ localResource, remoteResource, previewResource }) => this.extUri.isEqual(localResource, resource) || this.extUri.isEqual(remoteResource, resource) || this.extUri.isEqual(previewResource, resource));
             if (index === -1) {
                 return;
             }
@@ -28687,7 +28637,7 @@ define(__m[45/*vs/platform/userDataSync/common/abstractSynchronizer*/], __M([0/*
         }
         updateConflicts(resourcePreviews) {
             const conflicts = resourcePreviews.filter(({ mergeState }) => mergeState === "conflict" /* Conflict */);
-            if (!arrays_1.equals(this._conflicts, conflicts, (a, b) => resources_1.isEqual(a.previewResource, b.previewResource))) {
+            if (!arrays_1.equals(this._conflicts, conflicts, (a, b) => this.extUri.isEqual(a.previewResource, b.previewResource))) {
                 this._conflicts = conflicts;
                 this._onDidChangeConflicts.fire(conflicts);
             }
@@ -28711,8 +28661,8 @@ define(__m[45/*vs/platform/userDataSync/common/abstractSynchronizer*/], __M([0/*
             return uri_1.URI.from({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local-backup', path: `/${this.resource}/${ref}` });
         }
         async getMachineId({ uri }) {
-            const ref = resources_1.basename(uri);
-            if (resources_1.isEqual(uri, this.toRemoteBackupResource(ref))) {
+            const ref = this.extUri.basename(uri);
+            if (this.extUri.isEqual(uri, this.toRemoteBackupResource(ref))) {
                 const { content } = await this.getUserData(ref);
                 if (content) {
                     const syncData = this.parseSyncData(content);
@@ -28722,12 +28672,12 @@ define(__m[45/*vs/platform/userDataSync/common/abstractSynchronizer*/], __M([0/*
             return undefined;
         }
         async resolveContent(uri) {
-            const ref = resources_1.basename(uri);
-            if (resources_1.isEqual(uri, this.toRemoteBackupResource(ref))) {
+            const ref = this.extUri.basename(uri);
+            if (this.extUri.isEqual(uri, this.toRemoteBackupResource(ref))) {
                 const { content } = await this.getUserData(ref);
                 return content;
             }
-            if (resources_1.isEqual(uri, this.toLocalBackupResource(ref))) {
+            if (this.extUri.isEqual(uri, this.toLocalBackupResource(ref))) {
                 return this.userDataSyncBackupStoreService.resolveContent(this.resource, ref);
             }
             return null;
@@ -28736,13 +28686,13 @@ define(__m[45/*vs/platform/userDataSync/common/abstractSynchronizer*/], __M([0/*
             const syncPreview = this.syncPreviewPromise ? await this.syncPreviewPromise : null;
             if (syncPreview) {
                 for (const resourcePreview of syncPreview.resourcePreviews) {
-                    if (resources_1.isEqual(resourcePreview.acceptedResource, uri)) {
+                    if (this.extUri.isEqual(resourcePreview.acceptedResource, uri)) {
                         return resourcePreview.acceptResult ? resourcePreview.acceptResult.content : null;
                     }
-                    if (resources_1.isEqual(resourcePreview.remoteResource, uri)) {
+                    if (this.extUri.isEqual(resourcePreview.remoteResource, uri)) {
                         return resourcePreview.remoteContent;
                     }
-                    if (resources_1.isEqual(resourcePreview.localResource, uri)) {
+                    if (this.extUri.isEqual(resourcePreview.localResource, uri)) {
                         return resourcePreview.localContent;
                     }
                 }
@@ -28884,7 +28834,7 @@ define(__m[45/*vs/platform/userDataSync/common/abstractSynchronizer*/], __M([0/*
         constructor(file, resource, fileService, environmentService, storageService, userDataSyncStoreService, userDataSyncBackupStoreService, userDataSyncResourceEnablementService, telemetryService, logService, configurationService) {
             super(resource, fileService, environmentService, storageService, userDataSyncStoreService, userDataSyncBackupStoreService, userDataSyncResourceEnablementService, telemetryService, logService, configurationService);
             this.file = file;
-            this._register(this.fileService.watch(resources_1.dirname(file)));
+            this._register(this.fileService.watch(this.extUri.dirname(file)));
             this._register(this.fileService.onDidFilesChange(e => this.onFileChanges(e)));
         }
         async getLocalFileContent() {
@@ -28972,7 +28922,8 @@ define(__m[45/*vs/platform/userDataSync/common/abstractSynchronizer*/], __M([0/*
             this.environmentService = environmentService;
             this.logService = logService;
             this.fileService = fileService;
-            this.lastSyncResource = getLastSyncResourceUri(this.resource, environmentService);
+            this.extUri = this.fileService.hasCapability(environmentService.userDataSyncHome, 1024 /* PathCaseSensitive */) ? resources_1.extUri : resources_1.extUriIgnorePathCase;
+            this.lastSyncResource = getLastSyncResourceUri(this.resource, environmentService, resources_1.extUri);
         }
         async initialize({ ref, content }) {
             if (!content) {
@@ -29034,7 +28985,7 @@ define(__m[45/*vs/platform/userDataSync/common/abstractSynchronizer*/], __M([0/*
 
 
 
-define(__m[176/*vs/platform/userDataSync/common/extensionsSync*/], __M([0/*require*/,1/*exports*/,23/*vs/platform/userDataSync/common/userDataSync*/,3/*vs/base/common/event*/,8/*vs/platform/environment/common/environment*/,30/*vs/platform/extensionManagement/common/extensionManagement*/,36/*vs/platform/extensionManagement/common/extensionManagementUtil*/,16/*vs/platform/files/common/files*/,25/*vs/platform/configuration/common/configuration*/,172/*vs/platform/userDataSync/common/extensionsMerge*/,45/*vs/platform/userDataSync/common/abstractSynchronizer*/,24/*vs/platform/telemetry/common/telemetry*/,7/*vs/base/common/uri*/,10/*vs/base/common/resources*/,46/*vs/base/common/jsonFormatter*/,38/*vs/base/common/jsonEdit*/,14/*vs/base/common/strings*/,22/*vs/platform/storage/common/storage*/,27/*vs/base/common/cancellation*/]), function (require, exports, userDataSync_1, event_1, environment_1, extensionManagement_1, extensionManagementUtil_1, files_1, configuration_1, extensionsMerge_1, abstractSynchronizer_1, telemetry_1, uri_1, resources_1, jsonFormatter_1, jsonEdit_1, strings_1, storage_1, cancellation_1) {
+define(__m[173/*vs/platform/userDataSync/common/extensionsSync*/], __M([0/*require*/,1/*exports*/,24/*vs/platform/userDataSync/common/userDataSync*/,3/*vs/base/common/event*/,8/*vs/platform/environment/common/environment*/,28/*vs/platform/extensionManagement/common/extensionManagement*/,35/*vs/platform/extensionManagement/common/extensionManagementUtil*/,15/*vs/platform/files/common/files*/,26/*vs/platform/configuration/common/configuration*/,169/*vs/platform/userDataSync/common/extensionsMerge*/,43/*vs/platform/userDataSync/common/abstractSynchronizer*/,23/*vs/platform/telemetry/common/telemetry*/,7/*vs/base/common/uri*/,44/*vs/base/common/jsonFormatter*/,37/*vs/base/common/jsonEdit*/,17/*vs/base/common/strings*/,22/*vs/platform/storage/common/storage*/,27/*vs/base/common/cancellation*/]), function (require, exports, userDataSync_1, event_1, environment_1, extensionManagement_1, extensionManagementUtil_1, files_1, configuration_1, extensionsMerge_1, abstractSynchronizer_1, telemetry_1, uri_1, jsonFormatter_1, jsonEdit_1, strings_1, storage_1, cancellation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtensionsInitializer = exports.ExtensionsSynchroniser = void 0;
@@ -29075,7 +29026,7 @@ define(__m[176/*vs/platform/userDataSync/common/extensionsSync*/], __M([0/*requi
             */
             /* Version 4: Change settings from `sync.${setting}` to `settingsSync.{setting}` */
             this.version = 4;
-            this.previewResource = resources_1.joinPath(this.syncPreviewFolder, 'extensions.json');
+            this.previewResource = this.extUri.joinPath(this.syncPreviewFolder, 'extensions.json');
             this.localResource = this.previewResource.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' });
             this.remoteResource = this.previewResource.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' });
             this.acceptedResource = this.previewResource.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' });
@@ -29144,15 +29095,15 @@ define(__m[176/*vs/platform/userDataSync/common/extensionsSync*/], __M([0/*requi
         }
         async getAcceptResult(resourcePreview, resource, content, token) {
             /* Accept local resource */
-            if (resources_1.isEqual(resource, this.localResource)) {
+            if (this.extUri.isEqual(resource, this.localResource)) {
                 return this.acceptLocal(resourcePreview);
             }
             /* Accept remote resource */
-            if (resources_1.isEqual(resource, this.remoteResource)) {
+            if (this.extUri.isEqual(resource, this.remoteResource)) {
                 return this.acceptRemote(resourcePreview);
             }
             /* Accept preview resource */
-            if (resources_1.isEqual(resource, this.previewResource)) {
+            if (this.extUri.isEqual(resource, this.previewResource)) {
                 return resourcePreview.previewResult;
             }
             throw new Error(`Invalid Resource: ${resource.toString()}`);
@@ -29223,27 +29174,27 @@ define(__m[176/*vs/platform/userDataSync/common/extensionsSync*/], __M([0/*requi
             }
         }
         async getAssociatedResources({ uri }) {
-            return [{ resource: resources_1.joinPath(uri, 'extensions.json'), comparableResource: ExtensionsSynchroniser.EXTENSIONS_DATA_URI }];
+            return [{ resource: this.extUri.joinPath(uri, 'extensions.json'), comparableResource: ExtensionsSynchroniser.EXTENSIONS_DATA_URI }];
         }
         async resolveContent(uri) {
-            if (resources_1.isEqual(uri, ExtensionsSynchroniser.EXTENSIONS_DATA_URI)) {
+            if (this.extUri.isEqual(uri, ExtensionsSynchroniser.EXTENSIONS_DATA_URI)) {
                 const installedExtensions = await this.extensionManagementService.getInstalled();
                 const ignoredExtensions = extensionsMerge_1.getIgnoredExtensions(installedExtensions, this.configurationService);
                 const localExtensions = this.getLocalExtensions(installedExtensions).filter(e => !ignoredExtensions.some(id => extensionManagementUtil_1.areSameExtensions({ id }, e.identifier)));
                 return this.format(localExtensions);
             }
-            if (resources_1.isEqual(this.remoteResource, uri) || resources_1.isEqual(this.localResource, uri) || resources_1.isEqual(this.acceptedResource, uri)) {
+            if (this.extUri.isEqual(this.remoteResource, uri) || this.extUri.isEqual(this.localResource, uri) || this.extUri.isEqual(this.acceptedResource, uri)) {
                 return this.resolvePreviewContent(uri);
             }
             let content = await super.resolveContent(uri);
             if (content) {
                 return content;
             }
-            content = await super.resolveContent(resources_1.dirname(uri));
+            content = await super.resolveContent(this.extUri.dirname(uri));
             if (content) {
                 const syncData = this.parseSyncData(content);
                 if (syncData) {
-                    switch (resources_1.basename(uri)) {
+                    switch (this.extUri.basename(uri)) {
                         case 'extensions.json':
                             return this.format(this.parseExtensions(syncData));
                     }
@@ -29468,7 +29419,7 @@ define(__m[176/*vs/platform/userDataSync/common/extensionsSync*/], __M([0/*requi
 
 
 
-define(__m[177/*vs/platform/userDataSync/common/globalStateSync*/], __M([0/*require*/,1/*exports*/,23/*vs/platform/userDataSync/common/userDataSync*/,17/*vs/base/common/buffer*/,3/*vs/base/common/event*/,8/*vs/platform/environment/common/environment*/,10/*vs/base/common/resources*/,16/*vs/platform/files/common/files*/,50/*vs/platform/userDataSync/common/content*/,173/*vs/platform/userDataSync/common/globalStateMerge*/,28/*vs/base/common/json*/,45/*vs/platform/userDataSync/common/abstractSynchronizer*/,24/*vs/platform/telemetry/common/telemetry*/,25/*vs/platform/configuration/common/configuration*/,7/*vs/base/common/uri*/,46/*vs/base/common/jsonFormatter*/,38/*vs/base/common/jsonEdit*/,22/*vs/platform/storage/common/storage*/,80/*vs/platform/userDataSync/common/storageKeys*/,15/*vs/base/common/arrays*/]), function (require, exports, userDataSync_1, buffer_1, event_1, environment_1, resources_1, files_1, content_1, globalStateMerge_1, json_1, abstractSynchronizer_1, telemetry_1, configuration_1, uri_1, jsonFormatter_1, jsonEdit_1, storage_1, storageKeys_1, arrays_1) {
+define(__m[174/*vs/platform/userDataSync/common/globalStateSync*/], __M([0/*require*/,1/*exports*/,24/*vs/platform/userDataSync/common/userDataSync*/,18/*vs/base/common/buffer*/,3/*vs/base/common/event*/,8/*vs/platform/environment/common/environment*/,15/*vs/platform/files/common/files*/,48/*vs/platform/userDataSync/common/content*/,170/*vs/platform/userDataSync/common/globalStateMerge*/,29/*vs/base/common/json*/,43/*vs/platform/userDataSync/common/abstractSynchronizer*/,23/*vs/platform/telemetry/common/telemetry*/,26/*vs/platform/configuration/common/configuration*/,7/*vs/base/common/uri*/,44/*vs/base/common/jsonFormatter*/,37/*vs/base/common/jsonEdit*/,22/*vs/platform/storage/common/storage*/,79/*vs/platform/userDataSync/common/storageKeys*/,16/*vs/base/common/arrays*/]), function (require, exports, userDataSync_1, buffer_1, event_1, environment_1, files_1, content_1, globalStateMerge_1, json_1, abstractSynchronizer_1, telemetry_1, configuration_1, uri_1, jsonFormatter_1, jsonEdit_1, storage_1, storageKeys_1, arrays_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.GlobalStateInitializer = exports.GlobalStateSynchroniser = void 0;
@@ -29481,11 +29432,11 @@ define(__m[177/*vs/platform/userDataSync/common/globalStateSync*/], __M([0/*requ
             this.storageService = storageService;
             this.storageKeysSyncRegistryService = storageKeysSyncRegistryService;
             this.version = 1;
-            this.previewResource = resources_1.joinPath(this.syncPreviewFolder, 'globalState.json');
+            this.previewResource = this.extUri.joinPath(this.syncPreviewFolder, 'globalState.json');
             this.localResource = this.previewResource.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' });
             this.remoteResource = this.previewResource.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' });
             this.acceptedResource = this.previewResource.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' });
-            this._register(this.fileService.watch(resources_1.dirname(this.environmentService.argvResource)));
+            this._register(this.fileService.watch(this.extUri.dirname(this.environmentService.argvResource)));
             this._register(event_1.Event.any(
             /* Locale change */
             event_1.Event.filter(this.fileService.onDidFilesChange, e => e.contains(this.environmentService.argvResource)), 
@@ -29531,15 +29482,15 @@ define(__m[177/*vs/platform/userDataSync/common/globalStateSync*/], __M([0/*requ
         }
         async getAcceptResult(resourcePreview, resource, content, token) {
             /* Accept local resource */
-            if (resources_1.isEqual(resource, this.localResource)) {
+            if (this.extUri.isEqual(resource, this.localResource)) {
                 return this.acceptLocal(resourcePreview);
             }
             /* Accept remote resource */
-            if (resources_1.isEqual(resource, this.remoteResource)) {
+            if (this.extUri.isEqual(resource, this.remoteResource)) {
                 return this.acceptRemote(resourcePreview);
             }
             /* Accept preview resource */
-            if (resources_1.isEqual(resource, this.previewResource)) {
+            if (this.extUri.isEqual(resource, this.previewResource)) {
                 return resourcePreview.previewResult;
             }
             throw new Error(`Invalid Resource: ${resource.toString()}`);
@@ -29603,25 +29554,25 @@ define(__m[177/*vs/platform/userDataSync/common/globalStateSync*/], __M([0/*requ
             }
         }
         async getAssociatedResources({ uri }) {
-            return [{ resource: resources_1.joinPath(uri, 'globalState.json'), comparableResource: GlobalStateSynchroniser.GLOBAL_STATE_DATA_URI }];
+            return [{ resource: this.extUri.joinPath(uri, 'globalState.json'), comparableResource: GlobalStateSynchroniser.GLOBAL_STATE_DATA_URI }];
         }
         async resolveContent(uri) {
-            if (resources_1.isEqual(uri, GlobalStateSynchroniser.GLOBAL_STATE_DATA_URI)) {
+            if (this.extUri.isEqual(uri, GlobalStateSynchroniser.GLOBAL_STATE_DATA_URI)) {
                 const localGlobalState = await this.getLocalGlobalState();
                 return this.format(localGlobalState);
             }
-            if (resources_1.isEqual(this.remoteResource, uri) || resources_1.isEqual(this.localResource, uri) || resources_1.isEqual(this.acceptedResource, uri)) {
+            if (this.extUri.isEqual(this.remoteResource, uri) || this.extUri.isEqual(this.localResource, uri) || this.extUri.isEqual(this.acceptedResource, uri)) {
                 return this.resolvePreviewContent(uri);
             }
             let content = await super.resolveContent(uri);
             if (content) {
                 return content;
             }
-            content = await super.resolveContent(resources_1.dirname(uri));
+            content = await super.resolveContent(this.extUri.dirname(uri));
             if (content) {
                 const syncData = this.parseSyncData(content);
                 if (syncData) {
-                    switch (resources_1.basename(uri)) {
+                    switch (this.extUri.basename(uri)) {
                         case 'globalState.json':
                             return this.format(JSON.parse(syncData.content));
                     }
@@ -29630,7 +29581,7 @@ define(__m[177/*vs/platform/userDataSync/common/globalStateSync*/], __M([0/*requ
             return null;
         }
         format(globalState) {
-            const storageKeys = Object.keys(globalState.storage).sort();
+            const storageKeys = globalState.storage ? Object.keys(globalState.storage).sort() : [];
             const storage = {};
             storageKeys.forEach(key => storage[key] = globalState.storage[key]);
             globalState.storage = storage;
@@ -29809,7 +29760,7 @@ define(__m[177/*vs/platform/userDataSync/common/globalStateSync*/], __M([0/*requ
 
 
 
-define(__m[178/*vs/platform/userDataSync/common/keybindingsSync*/], __M([0/*require*/,1/*exports*/,16/*vs/platform/files/common/files*/,23/*vs/platform/userDataSync/common/userDataSync*/,174/*vs/platform/userDataSync/common/keybindingsMerge*/,28/*vs/base/common/json*/,118/*vs/nls!vs/platform/userDataSync/common/keybindingsSync*/,8/*vs/platform/environment/common/environment*/,25/*vs/platform/configuration/common/configuration*/,6/*vs/base/common/platform*/,18/*vs/base/common/types*/,15/*vs/base/common/arrays*/,45/*vs/platform/userDataSync/common/abstractSynchronizer*/,24/*vs/platform/telemetry/common/telemetry*/,10/*vs/base/common/resources*/,22/*vs/platform/storage/common/storage*/,17/*vs/base/common/buffer*/]), function (require, exports, files_1, userDataSync_1, keybindingsMerge_1, json_1, nls_1, environment_1, configuration_1, platform_1, types_1, arrays_1, abstractSynchronizer_1, telemetry_1, resources_1, storage_1, buffer_1) {
+define(__m[175/*vs/platform/userDataSync/common/keybindingsSync*/], __M([0/*require*/,1/*exports*/,15/*vs/platform/files/common/files*/,24/*vs/platform/userDataSync/common/userDataSync*/,171/*vs/platform/userDataSync/common/keybindingsMerge*/,29/*vs/base/common/json*/,118/*vs/nls!vs/platform/userDataSync/common/keybindingsSync*/,8/*vs/platform/environment/common/environment*/,26/*vs/platform/configuration/common/configuration*/,5/*vs/base/common/platform*/,14/*vs/base/common/types*/,16/*vs/base/common/arrays*/,43/*vs/platform/userDataSync/common/abstractSynchronizer*/,23/*vs/platform/telemetry/common/telemetry*/,22/*vs/platform/storage/common/storage*/,18/*vs/base/common/buffer*/]), function (require, exports, files_1, userDataSync_1, keybindingsMerge_1, json_1, nls_1, environment_1, configuration_1, platform_1, types_1, arrays_1, abstractSynchronizer_1, telemetry_1, storage_1, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.KeybindingsInitializer = exports.KeybindingsSynchroniser = exports.getKeybindingsContentFromSyncContent = void 0;
@@ -29833,7 +29784,7 @@ define(__m[178/*vs/platform/userDataSync/common/keybindingsSync*/], __M([0/*requ
             super(environmentService.keybindingsResource, "keybindings" /* Keybindings */, fileService, environmentService, storageService, userDataSyncStoreService, userDataSyncBackupStoreService, userDataSyncResourceEnablementService, telemetryService, logService, userDataSyncUtilService, configurationService);
             /* Version 2: Change settings from `sync.${setting}` to `settingsSync.{setting}` */
             this.version = 2;
-            this.previewResource = resources_1.joinPath(this.syncPreviewFolder, 'keybindings.json');
+            this.previewResource = this.extUri.joinPath(this.syncPreviewFolder, 'keybindings.json');
             this.localResource = this.previewResource.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' });
             this.remoteResource = this.previewResource.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' });
             this.acceptedResource = this.previewResource.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' });
@@ -29899,7 +29850,7 @@ define(__m[178/*vs/platform/userDataSync/common/keybindingsSync*/], __M([0/*requ
         }
         async getAcceptResult(resourcePreview, resource, content, token) {
             /* Accept local resource */
-            if (resources_1.isEqual(resource, this.localResource)) {
+            if (this.extUri.isEqual(resource, this.localResource)) {
                 return {
                     content: resourcePreview.fileContent ? resourcePreview.fileContent.value.toString() : null,
                     localChange: 0 /* None */,
@@ -29907,7 +29858,7 @@ define(__m[178/*vs/platform/userDataSync/common/keybindingsSync*/], __M([0/*requ
                 };
             }
             /* Accept remote resource */
-            if (resources_1.isEqual(resource, this.remoteResource)) {
+            if (this.extUri.isEqual(resource, this.remoteResource)) {
                 return {
                     content: resourcePreview.remoteContent,
                     localChange: 2 /* Modified */,
@@ -29915,7 +29866,7 @@ define(__m[178/*vs/platform/userDataSync/common/keybindingsSync*/], __M([0/*requ
                 };
             }
             /* Accept preview resource */
-            if (resources_1.isEqual(resource, this.previewResource)) {
+            if (this.extUri.isEqual(resource, this.previewResource)) {
                 if (content === undefined) {
                     return {
                         content: resourcePreview.previewResult.content,
@@ -29999,21 +29950,21 @@ define(__m[178/*vs/platform/userDataSync/common/keybindingsSync*/], __M([0/*requ
         }
         async getAssociatedResources({ uri }) {
             const comparableResource = (await this.fileService.exists(this.file)) ? this.file : this.localResource;
-            return [{ resource: resources_1.joinPath(uri, 'keybindings.json'), comparableResource }];
+            return [{ resource: this.extUri.joinPath(uri, 'keybindings.json'), comparableResource }];
         }
         async resolveContent(uri) {
-            if (resources_1.isEqual(this.remoteResource, uri) || resources_1.isEqual(this.localResource, uri) || resources_1.isEqual(this.acceptedResource, uri)) {
+            if (this.extUri.isEqual(this.remoteResource, uri) || this.extUri.isEqual(this.localResource, uri) || this.extUri.isEqual(this.acceptedResource, uri)) {
                 return this.resolvePreviewContent(uri);
             }
             let content = await super.resolveContent(uri);
             if (content) {
                 return content;
             }
-            content = await super.resolveContent(resources_1.dirname(uri));
+            content = await super.resolveContent(this.extUri.dirname(uri));
             if (content) {
                 const syncData = this.parseSyncData(content);
                 if (syncData) {
-                    switch (resources_1.basename(uri)) {
+                    switch (this.extUri.basename(uri)) {
                         case 'keybindings.json':
                             return this.getKeybindingsContentFromSyncContent(syncData.content);
                     }
@@ -30132,7 +30083,7 @@ define(__m[178/*vs/platform/userDataSync/common/keybindingsSync*/], __M([0/*requ
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[179/*vs/platform/userDataSync/common/settingsMerge*/], __M([0/*require*/,1/*exports*/,19/*vs/base/common/objects*/,28/*vs/base/common/json*/,38/*vs/base/common/jsonEdit*/,46/*vs/base/common/jsonFormatter*/,50/*vs/platform/userDataSync/common/content*/,23/*vs/platform/userDataSync/common/userDataSync*/,15/*vs/base/common/arrays*/]), function (require, exports, objects, json_1, jsonEdit_1, jsonFormatter_1, contentUtil, userDataSync_1, arrays_1) {
+define(__m[176/*vs/platform/userDataSync/common/settingsMerge*/], __M([0/*require*/,1/*exports*/,25/*vs/base/common/objects*/,29/*vs/base/common/json*/,37/*vs/base/common/jsonEdit*/,44/*vs/base/common/jsonFormatter*/,48/*vs/platform/userDataSync/common/content*/,24/*vs/platform/userDataSync/common/userDataSync*/,16/*vs/base/common/arrays*/]), function (require, exports, objects, json_1, jsonEdit_1, jsonFormatter_1, contentUtil, userDataSync_1, arrays_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.addSetting = exports.isEmpty = exports.areSame = exports.merge = exports.updateIgnoredSettings = exports.getIgnoredSettings = void 0;
@@ -30411,7 +30362,7 @@ define(__m[179/*vs/platform/userDataSync/common/settingsMerge*/], __M([0/*requir
     }
     exports.addSetting = addSetting;
     function getInsertLocation(key, sourceTree, targetTree) {
-        const sourceNodeIndex = arrays_1.firstIndex(sourceTree, (node => { var _a; return ((_a = node.setting) === null || _a === void 0 ? void 0 : _a.key) === key; }));
+        const sourceNodeIndex = sourceTree.findIndex(node => { var _a; return ((_a = node.setting) === null || _a === void 0 ? void 0 : _a.key) === key; });
         const sourcePreviousNode = sourceTree[sourceNodeIndex - 1];
         if (sourcePreviousNode) {
             /*
@@ -30720,7 +30671,7 @@ define(__m[179/*vs/platform/userDataSync/common/settingsMerge*/], __M([0/*requir
 
 
 
-define(__m[180/*vs/platform/userDataSync/common/settingsSync*/], __M([0/*require*/,1/*exports*/,16/*vs/platform/files/common/files*/,23/*vs/platform/userDataSync/common/userDataSync*/,17/*vs/base/common/buffer*/,119/*vs/nls!vs/platform/userDataSync/common/settingsSync*/,3/*vs/base/common/event*/,8/*vs/platform/environment/common/environment*/,25/*vs/platform/configuration/common/configuration*/,179/*vs/platform/userDataSync/common/settingsMerge*/,50/*vs/platform/userDataSync/common/content*/,45/*vs/platform/userDataSync/common/abstractSynchronizer*/,24/*vs/platform/telemetry/common/telemetry*/,30/*vs/platform/extensionManagement/common/extensionManagement*/,10/*vs/base/common/resources*/,22/*vs/platform/storage/common/storage*/,38/*vs/base/common/jsonEdit*/]), function (require, exports, files_1, userDataSync_1, buffer_1, nls_1, event_1, environment_1, configuration_1, settingsMerge_1, content_1, abstractSynchronizer_1, telemetry_1, extensionManagement_1, resources_1, storage_1, jsonEdit_1) {
+define(__m[177/*vs/platform/userDataSync/common/settingsSync*/], __M([0/*require*/,1/*exports*/,15/*vs/platform/files/common/files*/,24/*vs/platform/userDataSync/common/userDataSync*/,18/*vs/base/common/buffer*/,119/*vs/nls!vs/platform/userDataSync/common/settingsSync*/,3/*vs/base/common/event*/,8/*vs/platform/environment/common/environment*/,26/*vs/platform/configuration/common/configuration*/,176/*vs/platform/userDataSync/common/settingsMerge*/,48/*vs/platform/userDataSync/common/content*/,43/*vs/platform/userDataSync/common/abstractSynchronizer*/,23/*vs/platform/telemetry/common/telemetry*/,28/*vs/platform/extensionManagement/common/extensionManagement*/,22/*vs/platform/storage/common/storage*/,37/*vs/base/common/jsonEdit*/]), function (require, exports, files_1, userDataSync_1, buffer_1, nls_1, event_1, environment_1, configuration_1, settingsMerge_1, content_1, abstractSynchronizer_1, telemetry_1, extensionManagement_1, storage_1, jsonEdit_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SettingsInitializer = exports.SettingsSynchroniser = exports.parseSettingsSyncContent = void 0;
@@ -30740,7 +30691,7 @@ define(__m[180/*vs/platform/userDataSync/common/settingsSync*/], __M([0/*require
             this.extensionManagementService = extensionManagementService;
             /* Version 2: Change settings from `sync.${setting}` to `settingsSync.{setting}` */
             this.version = 2;
-            this.previewResource = resources_1.joinPath(this.syncPreviewFolder, 'settings.json');
+            this.previewResource = this.extUri.joinPath(this.syncPreviewFolder, 'settings.json');
             this.localResource = this.previewResource.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' });
             this.remoteResource = this.previewResource.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' });
             this.acceptedResource = this.previewResource.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' });
@@ -30803,7 +30754,7 @@ define(__m[180/*vs/platform/userDataSync/common/settingsSync*/], __M([0/*require
             const formattingOptions = await this.getFormattingOptions();
             const ignoredSettings = await this.getIgnoredSettings();
             /* Accept local resource */
-            if (resources_1.isEqual(resource, this.localResource)) {
+            if (this.extUri.isEqual(resource, this.localResource)) {
                 return {
                     /* Remove ignored settings */
                     content: resourcePreview.fileContent ? settingsMerge_1.updateIgnoredSettings(resourcePreview.fileContent.value.toString(), '{}', ignoredSettings, formattingOptions) : null,
@@ -30812,7 +30763,7 @@ define(__m[180/*vs/platform/userDataSync/common/settingsSync*/], __M([0/*require
                 };
             }
             /* Accept remote resource */
-            if (resources_1.isEqual(resource, this.remoteResource)) {
+            if (this.extUri.isEqual(resource, this.remoteResource)) {
                 return {
                     /* Update ignored settings from local file content */
                     content: resourcePreview.remoteContent !== null ? settingsMerge_1.updateIgnoredSettings(resourcePreview.remoteContent, resourcePreview.fileContent ? resourcePreview.fileContent.value.toString() : '{}', ignoredSettings, formattingOptions) : null,
@@ -30821,7 +30772,7 @@ define(__m[180/*vs/platform/userDataSync/common/settingsSync*/], __M([0/*require
                 };
             }
             /* Accept preview resource */
-            if (resources_1.isEqual(resource, this.previewResource)) {
+            if (this.extUri.isEqual(resource, this.previewResource)) {
                 if (content === undefined) {
                     return {
                         content: resourcePreview.previewResult.content,
@@ -30896,23 +30847,23 @@ define(__m[180/*vs/platform/userDataSync/common/settingsSync*/], __M([0/*require
         }
         async getAssociatedResources({ uri }) {
             const comparableResource = (await this.fileService.exists(this.file)) ? this.file : this.localResource;
-            return [{ resource: resources_1.joinPath(uri, 'settings.json'), comparableResource }];
+            return [{ resource: this.extUri.joinPath(uri, 'settings.json'), comparableResource }];
         }
         async resolveContent(uri) {
-            if (resources_1.isEqual(this.remoteResource, uri) || resources_1.isEqual(this.localResource, uri) || resources_1.isEqual(this.acceptedResource, uri)) {
+            if (this.extUri.isEqual(this.remoteResource, uri) || this.extUri.isEqual(this.localResource, uri) || this.extUri.isEqual(this.acceptedResource, uri)) {
                 return this.resolvePreviewContent(uri);
             }
             let content = await super.resolveContent(uri);
             if (content) {
                 return content;
             }
-            content = await super.resolveContent(resources_1.dirname(uri));
+            content = await super.resolveContent(this.extUri.dirname(uri));
             if (content) {
                 const syncData = this.parseSyncData(content);
                 if (syncData) {
                     const settingsSyncContent = this.parseSettingsSyncContent(syncData.content);
                     if (settingsSyncContent) {
-                        switch (resources_1.basename(uri)) {
+                        switch (this.extUri.basename(uri)) {
                             case 'settings.json':
                                 return settingsSyncContent.settings;
                         }
@@ -31073,7 +31024,7 @@ define(__m[180/*vs/platform/userDataSync/common/settingsSync*/], __M([0/*require
 
 
 
-define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require*/,1/*exports*/,23/*vs/platform/userDataSync/common/userDataSync*/,8/*vs/platform/environment/common/environment*/,16/*vs/platform/files/common/files*/,25/*vs/platform/configuration/common/configuration*/,45/*vs/platform/userDataSync/common/abstractSynchronizer*/,24/*vs/platform/telemetry/common/telemetry*/,10/*vs/base/common/resources*/,17/*vs/base/common/buffer*/,175/*vs/platform/userDataSync/common/snippetsMerge*/,22/*vs/platform/storage/common/storage*/,19/*vs/base/common/objects*/]), function (require, exports, userDataSync_1, environment_1, files_1, configuration_1, abstractSynchronizer_1, telemetry_1, resources_1, buffer_1, snippetsMerge_1, storage_1, objects_1) {
+define(__m[178/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require*/,1/*exports*/,24/*vs/platform/userDataSync/common/userDataSync*/,8/*vs/platform/environment/common/environment*/,15/*vs/platform/files/common/files*/,26/*vs/platform/configuration/common/configuration*/,43/*vs/platform/userDataSync/common/abstractSynchronizer*/,23/*vs/platform/telemetry/common/telemetry*/,18/*vs/base/common/buffer*/,172/*vs/platform/userDataSync/common/snippetsMerge*/,22/*vs/platform/storage/common/storage*/,25/*vs/base/common/objects*/]), function (require, exports, userDataSync_1, environment_1, files_1, configuration_1, abstractSynchronizer_1, telemetry_1, buffer_1, snippetsMerge_1, storage_1, objects_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SnippetsInitializer = exports.SnippetsSynchroniser = void 0;
@@ -31087,7 +31038,7 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
             this._register(this.fileService.onDidFilesChange(e => this.onFileChanges(e)));
         }
         onFileChanges(e) {
-            if (!e.changes.some(change => resources_1.isEqualOrParent(change.resource, this.snippetsFolder))) {
+            if (!e.changes.some(change => this.extUri.isEqualOrParent(change.resource, this.snippetsFolder))) {
                 return;
             }
             this.triggerLocalChange();
@@ -31111,7 +31062,7 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
         }
         async getAcceptResult(resourcePreview, resource, content, token) {
             /* Accept local resource */
-            if (resources_1.isEqualOrParent(resource, this.syncPreviewFolder.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }))) {
+            if (this.extUri.isEqualOrParent(resource, this.syncPreviewFolder.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }))) {
                 return {
                     content: resourcePreview.fileContent ? resourcePreview.fileContent.value.toString() : null,
                     localChange: 0 /* None */,
@@ -31121,7 +31072,7 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
                 };
             }
             /* Accept remote resource */
-            if (resources_1.isEqualOrParent(resource, this.syncPreviewFolder.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }))) {
+            if (this.extUri.isEqualOrParent(resource, this.syncPreviewFolder.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }))) {
                 return {
                     content: resourcePreview.remoteContent,
                     localChange: resourcePreview.remoteContent !== null
@@ -31131,7 +31082,7 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
                 };
             }
             /* Accept preview resource */
-            if (resources_1.isEqualOrParent(resource, this.syncPreviewFolder)) {
+            if (this.extUri.isEqualOrParent(resource, this.syncPreviewFolder)) {
                 if (content === undefined) {
                     return {
                         content: resourcePreview.previewResult.content,
@@ -31192,15 +31143,15 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
                 };
                 resourcePreviews.set(key, {
                     fileContent: null,
-                    localResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
+                    localResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
                     localContent: null,
-                    remoteResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
+                    remoteResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
                     remoteContent: remoteSnippets[key],
-                    previewResource: resources_1.joinPath(this.syncPreviewFolder, key),
+                    previewResource: this.extUri.joinPath(this.syncPreviewFolder, key),
                     previewResult,
                     localChange: previewResult.localChange,
                     remoteChange: previewResult.remoteChange,
-                    acceptedResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
+                    acceptedResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
                 });
             }
             /* Snippets updated remotely -> update locally */
@@ -31212,16 +31163,16 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
                     remoteChange: 0 /* None */,
                 };
                 resourcePreviews.set(key, {
-                    localResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
+                    localResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
                     fileContent: localFileContent[key],
                     localContent: localFileContent[key].value.toString(),
-                    remoteResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
+                    remoteResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
                     remoteContent: remoteSnippets[key],
-                    previewResource: resources_1.joinPath(this.syncPreviewFolder, key),
+                    previewResource: this.extUri.joinPath(this.syncPreviewFolder, key),
                     previewResult,
                     localChange: previewResult.localChange,
                     remoteChange: previewResult.remoteChange,
-                    acceptedResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
+                    acceptedResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
                 });
             }
             /* Snippets removed remotely -> remove locally */
@@ -31233,16 +31184,16 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
                     remoteChange: 0 /* None */,
                 };
                 resourcePreviews.set(key, {
-                    localResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
+                    localResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
                     fileContent: localFileContent[key],
                     localContent: localFileContent[key].value.toString(),
-                    remoteResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
+                    remoteResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
                     remoteContent: null,
-                    previewResource: resources_1.joinPath(this.syncPreviewFolder, key),
+                    previewResource: this.extUri.joinPath(this.syncPreviewFolder, key),
                     previewResult,
                     localChange: previewResult.localChange,
                     remoteChange: previewResult.remoteChange,
-                    acceptedResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
+                    acceptedResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
                 });
             }
             /* Snippets added locally -> add remotely */
@@ -31254,16 +31205,16 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
                     remoteChange: 1 /* Added */,
                 };
                 resourcePreviews.set(key, {
-                    localResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
+                    localResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
                     fileContent: localFileContent[key],
                     localContent: localFileContent[key].value.toString(),
-                    remoteResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
+                    remoteResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
                     remoteContent: null,
-                    previewResource: resources_1.joinPath(this.syncPreviewFolder, key),
+                    previewResource: this.extUri.joinPath(this.syncPreviewFolder, key),
                     previewResult,
                     localChange: previewResult.localChange,
                     remoteChange: previewResult.remoteChange,
-                    acceptedResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
+                    acceptedResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
                 });
             }
             /* Snippets updated locally -> update remotely */
@@ -31275,16 +31226,16 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
                     remoteChange: 2 /* Modified */,
                 };
                 resourcePreviews.set(key, {
-                    localResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
+                    localResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
                     fileContent: localFileContent[key],
                     localContent: localFileContent[key].value.toString(),
-                    remoteResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
+                    remoteResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
                     remoteContent: remoteSnippets[key],
-                    previewResource: resources_1.joinPath(this.syncPreviewFolder, key),
+                    previewResource: this.extUri.joinPath(this.syncPreviewFolder, key),
                     previewResult,
                     localChange: previewResult.localChange,
                     remoteChange: previewResult.remoteChange,
-                    acceptedResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
+                    acceptedResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
                 });
             }
             /* Snippets removed locally -> remove remotely */
@@ -31296,16 +31247,16 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
                     remoteChange: 3 /* Deleted */,
                 };
                 resourcePreviews.set(key, {
-                    localResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
+                    localResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
                     fileContent: null,
                     localContent: null,
-                    remoteResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
+                    remoteResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
                     remoteContent: remoteSnippets[key],
-                    previewResource: resources_1.joinPath(this.syncPreviewFolder, key),
+                    previewResource: this.extUri.joinPath(this.syncPreviewFolder, key),
                     previewResult,
                     localChange: previewResult.localChange,
                     remoteChange: previewResult.remoteChange,
-                    acceptedResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
+                    acceptedResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
                 });
             }
             /* Snippets with conflicts */
@@ -31317,16 +31268,16 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
                     remoteChange: remoteSnippets[key] ? 2 /* Modified */ : 1 /* Added */
                 };
                 resourcePreviews.set(key, {
-                    localResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
+                    localResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
                     fileContent: localFileContent[key] || null,
                     localContent: localFileContent[key] ? localFileContent[key].value.toString() : null,
-                    remoteResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
+                    remoteResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
                     remoteContent: remoteSnippets[key] || null,
-                    previewResource: resources_1.joinPath(this.syncPreviewFolder, key),
+                    previewResource: this.extUri.joinPath(this.syncPreviewFolder, key),
                     previewResult,
                     localChange: previewResult.localChange,
                     remoteChange: previewResult.remoteChange,
-                    acceptedResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
+                    acceptedResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
                 });
             }
             /* Unmodified Snippets */
@@ -31339,16 +31290,16 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
                         remoteChange: 0 /* None */
                     };
                     resourcePreviews.set(key, {
-                        localResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
+                        localResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }),
                         fileContent: localFileContent[key] || null,
                         localContent: localFileContent[key] ? localFileContent[key].value.toString() : null,
-                        remoteResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
+                        remoteResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }),
                         remoteContent: remoteSnippets[key] || null,
-                        previewResource: resources_1.joinPath(this.syncPreviewFolder, key),
+                        previewResource: this.extUri.joinPath(this.syncPreviewFolder, key),
                         previewResult,
                         localChange: previewResult.localChange,
                         remoteChange: previewResult.remoteChange,
-                        acceptedResource: resources_1.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
+                        acceptedResource: this.extUri.joinPath(this.syncPreviewFolder, key).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' })
                     });
                 }
             }
@@ -31362,10 +31313,10 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
                     const snippets = this.parseSnippets(syncData);
                     const result = [];
                     for (const snippet of Object.keys(snippets)) {
-                        const resource = resources_1.joinPath(uri, snippet);
-                        const comparableResource = resources_1.joinPath(this.snippetsFolder, snippet);
+                        const resource = this.extUri.joinPath(uri, snippet);
+                        const comparableResource = this.extUri.joinPath(this.snippetsFolder, snippet);
                         const exists = await this.fileService.exists(comparableResource);
-                        result.push({ resource, comparableResource: exists ? comparableResource : resources_1.joinPath(this.syncPreviewFolder, snippet).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }) });
+                        result.push({ resource, comparableResource: exists ? comparableResource : this.extUri.joinPath(this.syncPreviewFolder, snippet).with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }) });
                     }
                     return result;
                 }
@@ -31373,21 +31324,21 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
             return [];
         }
         async resolveContent(uri) {
-            if (resources_1.isEqualOrParent(uri, this.syncPreviewFolder.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }))
-                || resources_1.isEqualOrParent(uri, this.syncPreviewFolder.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }))
-                || resources_1.isEqualOrParent(uri, this.syncPreviewFolder.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' }))) {
+            if (this.extUri.isEqualOrParent(uri, this.syncPreviewFolder.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'remote' }))
+                || this.extUri.isEqualOrParent(uri, this.syncPreviewFolder.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'local' }))
+                || this.extUri.isEqualOrParent(uri, this.syncPreviewFolder.with({ scheme: userDataSync_1.USER_DATA_SYNC_SCHEME, authority: 'accepted' }))) {
                 return this.resolvePreviewContent(uri);
             }
             let content = await super.resolveContent(uri);
             if (content) {
                 return content;
             }
-            content = await super.resolveContent(resources_1.dirname(uri));
+            content = await super.resolveContent(this.extUri.dirname(uri));
             if (content) {
                 const syncData = this.parseSyncData(content);
                 if (syncData) {
                     const snippets = this.parseSnippets(syncData);
-                    return snippets[resources_1.basename(uri)] || null;
+                    return snippets[this.extUri.basename(uri)] || null;
                 }
             }
             return null;
@@ -31408,7 +31359,7 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
             const local = {};
             for (const resourcePreview of resourcePreviews) {
                 if (resourcePreview.fileContent) {
-                    local[resources_1.basename(resourcePreview.localResource)] = resourcePreview.fileContent;
+                    local[this.extUri.basename(resourcePreview.localResource)] = resourcePreview.fileContent;
                 }
             }
             await this.backupLocal(JSON.stringify(this.toSnippetsContents(local)));
@@ -31416,25 +31367,25 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
         async updateLocalSnippets(resourcePreviews, force) {
             for (const { fileContent, acceptResult, localResource, remoteResource, localChange } of resourcePreviews) {
                 if (localChange !== 0 /* None */) {
-                    const key = remoteResource ? resources_1.basename(remoteResource) : resources_1.basename(localResource);
-                    const resource = resources_1.joinPath(this.snippetsFolder, key);
+                    const key = remoteResource ? this.extUri.basename(remoteResource) : this.extUri.basename(localResource);
+                    const resource = this.extUri.joinPath(this.snippetsFolder, key);
                     // Removed
                     if (localChange === 3 /* Deleted */) {
-                        this.logService.trace(`${this.syncResourceLogLabel}: Deleting snippet...`, resources_1.basename(resource));
+                        this.logService.trace(`${this.syncResourceLogLabel}: Deleting snippet...`, this.extUri.basename(resource));
                         await this.fileService.del(resource);
-                        this.logService.info(`${this.syncResourceLogLabel}: Deleted snippet`, resources_1.basename(resource));
+                        this.logService.info(`${this.syncResourceLogLabel}: Deleted snippet`, this.extUri.basename(resource));
                     }
                     // Added
                     else if (localChange === 1 /* Added */) {
-                        this.logService.trace(`${this.syncResourceLogLabel}: Creating snippet...`, resources_1.basename(resource));
+                        this.logService.trace(`${this.syncResourceLogLabel}: Creating snippet...`, this.extUri.basename(resource));
                         await this.fileService.createFile(resource, buffer_1.VSBuffer.fromString(acceptResult.content), { overwrite: force });
-                        this.logService.info(`${this.syncResourceLogLabel}: Created snippet`, resources_1.basename(resource));
+                        this.logService.info(`${this.syncResourceLogLabel}: Created snippet`, this.extUri.basename(resource));
                     }
                     // Updated
                     else {
-                        this.logService.trace(`${this.syncResourceLogLabel}: Updating snippet...`, resources_1.basename(resource));
+                        this.logService.trace(`${this.syncResourceLogLabel}: Updating snippet...`, this.extUri.basename(resource));
                         await this.fileService.writeFile(resource, buffer_1.VSBuffer.fromString(acceptResult.content), force ? undefined : fileContent);
-                        this.logService.info(`${this.syncResourceLogLabel}: Updated snippet`, resources_1.basename(resource));
+                        this.logService.info(`${this.syncResourceLogLabel}: Updated snippet`, this.extUri.basename(resource));
                     }
                 }
             }
@@ -31444,7 +31395,7 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
             const newSnippets = objects_1.deepClone(currentSnippets);
             for (const { acceptResult, localResource, remoteResource, remoteChange } of resourcePreviews) {
                 if (remoteChange !== 0 /* None */) {
-                    const key = localResource ? resources_1.basename(localResource) : resources_1.basename(remoteResource);
+                    const key = localResource ? this.extUri.basename(localResource) : this.extUri.basename(remoteResource);
                     if (remoteChange === 3 /* Deleted */) {
                         delete newSnippets[key];
                     }
@@ -31488,9 +31439,9 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
             }
             for (const entry of stat.children || []) {
                 const resource = entry.resource;
-                const extension = resources_1.extname(resource);
+                const extension = this.extUri.extname(resource);
                 if (extension === '.json' || extension === '.code-snippets') {
-                    const key = resources_1.relativePath(this.snippetsFolder, resource);
+                    const key = this.extUri.relativePath(this.snippetsFolder, resource);
                     const content = await this.fileService.readFile(resource);
                     snippets[key] = content;
                 }
@@ -31528,9 +31479,9 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
             for (const key of Object.keys(remoteSnippets)) {
                 const content = remoteSnippets[key];
                 if (content) {
-                    const resource = resources_1.joinPath(this.environmentService.snippetsHome, key);
+                    const resource = this.extUri.joinPath(this.environmentService.snippetsHome, key);
                     await this.fileService.createFile(resource, buffer_1.VSBuffer.fromString(content));
-                    this.logService.info('Created snippet', resources_1.basename(resource));
+                    this.logService.info('Created snippet', this.extUri.basename(resource));
                 }
             }
             await this.updateLastSyncUserData(remoteUserData);
@@ -31567,7 +31518,7 @@ define(__m[181/*vs/platform/userDataSync/common/snippetsSync*/], __M([0/*require
 
 
 
-define(__m[54/*vs/platform/userDataSync/common/userDataSyncAccount*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,23/*vs/platform/userDataSync/common/userDataSync*/]), function (require, exports, instantiation_1, event_1, lifecycle_1, userDataSync_1) {
+define(__m[56/*vs/platform/userDataSync/common/userDataSyncAccount*/], __M([0/*require*/,1/*exports*/,6/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,24/*vs/platform/userDataSync/common/userDataSync*/]), function (require, exports, instantiation_1, event_1, lifecycle_1, userDataSync_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.UserDataSyncAccountService = exports.IUserDataSyncAccountService = void 0;
@@ -31618,7 +31569,7 @@ define(__m[54/*vs/platform/userDataSync/common/userDataSyncAccount*/], __M([0/*r
 
 
 
-define(__m[182/*vs/platform/userDataSync/common/userDataSyncBackupStoreService*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,23/*vs/platform/userDataSync/common/userDataSync*/,10/*vs/base/common/resources*/,25/*vs/platform/configuration/common/configuration*/,16/*vs/platform/files/common/files*/,8/*vs/platform/environment/common/environment*/,53/*vs/base/common/date*/,17/*vs/base/common/buffer*/]), function (require, exports, lifecycle_1, userDataSync_1, resources_1, configuration_1, files_1, environment_1, date_1, buffer_1) {
+define(__m[179/*vs/platform/userDataSync/common/userDataSyncBackupStoreService*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,24/*vs/platform/userDataSync/common/userDataSync*/,19/*vs/base/common/resources*/,26/*vs/platform/configuration/common/configuration*/,15/*vs/platform/files/common/files*/,8/*vs/platform/environment/common/environment*/,54/*vs/base/common/date*/,18/*vs/base/common/buffer*/]), function (require, exports, lifecycle_1, userDataSync_1, resources_1, configuration_1, files_1, environment_1, date_1, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.UserDataSyncBackupStoreService = void 0;
@@ -31718,7 +31669,7 @@ define(__m[182/*vs/platform/userDataSync/common/userDataSyncBackupStoreService*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[183/*vs/platform/userDataSync/common/userDataSyncIpc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,7/*vs/base/common/uri*/,2/*vs/base/common/lifecycle*/]), function (require, exports, event_1, uri_1, lifecycle_1) {
+define(__m[180/*vs/platform/userDataSync/common/userDataSyncIpc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,7/*vs/base/common/uri*/,2/*vs/base/common/lifecycle*/]), function (require, exports, event_1, uri_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.UserDataSyncStoreManagementServiceChannel = exports.UserDataSyncAccountServiceChannel = exports.UserDataSyncMachinesServiceChannel = exports.StorageKeysSyncRegistryChannelClient = exports.StorageKeysSyncRegistryChannel = exports.UserDataSyncUtilServiceClient = exports.UserDataSycnUtilServiceChannel = exports.UserDataAutoSyncChannel = exports.UserDataSyncChannel = void 0;
@@ -31955,6 +31906,9 @@ define(__m[183/*vs/platform/userDataSync/common/userDataSyncIpc*/], __M([0/*requ
             this.service = service;
         }
         listen(_, event) {
+            switch (event) {
+                case 'onDidChangeUserDataSyncStore': return this.service.onDidChangeUserDataSyncStore;
+            }
             throw new Error(`Event not found: ${event}`);
         }
         call(context, command, args) {
@@ -31981,7 +31935,7 @@ define(__m[183/*vs/platform/userDataSync/common/userDataSyncIpc*/], __M([0/*requ
 
 
 
-define(__m[184/*vs/platform/userDataSync/common/userDataSyncLog*/], __M([0/*require*/,1/*exports*/,13/*vs/platform/log/common/log*/,8/*vs/platform/environment/common/environment*/]), function (require, exports, log_1, environment_1) {
+define(__m[181/*vs/platform/userDataSync/common/userDataSyncLog*/], __M([0/*require*/,1/*exports*/,13/*vs/platform/log/common/log*/,8/*vs/platform/environment/common/environment*/]), function (require, exports, log_1, environment_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.UserDataSyncLogService = void 0;
@@ -32032,7 +31986,7 @@ define(__m[184/*vs/platform/userDataSync/common/userDataSyncLog*/], __M([0/*requ
 
 
 
-define(__m[55/*vs/platform/userDataSync/common/userDataSyncMachines*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,2/*vs/base/common/lifecycle*/,49/*vs/platform/serviceMachineId/common/serviceMachineId*/,8/*vs/platform/environment/common/environment*/,16/*vs/platform/files/common/files*/,22/*vs/platform/storage/common/storage*/,23/*vs/platform/userDataSync/common/userDataSync*/,122/*vs/nls!vs/platform/userDataSync/common/userDataSyncMachines*/,37/*vs/platform/product/common/productService*/,6/*vs/base/common/platform*/,14/*vs/base/common/strings*/,3/*vs/base/common/event*/]), function (require, exports, instantiation_1, lifecycle_1, serviceMachineId_1, environment_1, files_1, storage_1, userDataSync_1, nls_1, productService_1, platform_1, strings_1, event_1) {
+define(__m[57/*vs/platform/userDataSync/common/userDataSyncMachines*/], __M([0/*require*/,1/*exports*/,6/*vs/platform/instantiation/common/instantiation*/,2/*vs/base/common/lifecycle*/,47/*vs/platform/serviceMachineId/common/serviceMachineId*/,8/*vs/platform/environment/common/environment*/,15/*vs/platform/files/common/files*/,22/*vs/platform/storage/common/storage*/,24/*vs/platform/userDataSync/common/userDataSync*/,122/*vs/nls!vs/platform/userDataSync/common/userDataSyncMachines*/,36/*vs/platform/product/common/productService*/,5/*vs/base/common/platform*/,17/*vs/base/common/strings*/,3/*vs/base/common/event*/]), function (require, exports, instantiation_1, lifecycle_1, serviceMachineId_1, environment_1, files_1, storage_1, userDataSync_1, nls_1, productService_1, platform_1, strings_1, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.UserDataSyncMachinesService = exports.IUserDataSyncMachinesService = void 0;
@@ -32177,7 +32131,7 @@ define(__m[55/*vs/platform/userDataSync/common/userDataSyncMachines*/], __M([0/*
 
 
 
-define(__m[185/*vs/platform/userDataSync/common/userDataAutoSyncService*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/async*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,23/*vs/platform/userDataSync/common/userDataSync*/,54/*vs/platform/userDataSync/common/userDataSyncAccount*/,24/*vs/platform/telemetry/common/telemetry*/,20/*vs/base/common/errors*/,22/*vs/platform/storage/common/storage*/,8/*vs/platform/environment/common/environment*/,55/*vs/platform/userDataSync/common/userDataSyncMachines*/,120/*vs/nls!vs/platform/userDataSync/common/userDataAutoSyncService*/,53/*vs/base/common/date*/,7/*vs/base/common/uri*/,10/*vs/base/common/resources*/]), function (require, exports, async_1, event_1, lifecycle_1, userDataSync_1, userDataSyncAccount_1, telemetry_1, errors_1, storage_1, environment_1, userDataSyncMachines_1, nls_1, date_1, uri_1, resources_1) {
+define(__m[182/*vs/platform/userDataSync/common/userDataAutoSyncService*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/async*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,24/*vs/platform/userDataSync/common/userDataSync*/,56/*vs/platform/userDataSync/common/userDataSyncAccount*/,23/*vs/platform/telemetry/common/telemetry*/,20/*vs/base/common/errors*/,22/*vs/platform/storage/common/storage*/,8/*vs/platform/environment/common/environment*/,57/*vs/platform/userDataSync/common/userDataSyncMachines*/,120/*vs/nls!vs/platform/userDataSync/common/userDataAutoSyncService*/,54/*vs/base/common/date*/,7/*vs/base/common/uri*/,19/*vs/base/common/resources*/]), function (require, exports, async_1, event_1, lifecycle_1, userDataSync_1, userDataSyncAccount_1, telemetry_1, errors_1, storage_1, environment_1, userDataSyncMachines_1, nls_1, date_1, uri_1, resources_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.UserDataAutoSyncService = exports.UserDataAutoSyncEnablementService = void 0;
@@ -32195,17 +32149,20 @@ define(__m[185/*vs/platform/userDataSync/common/userDataAutoSyncService*/], __M(
             this.onDidChangeEnablement = this._onDidChangeEnablement.event;
             this._register(storageService.onDidChangeStorage(e => this.onDidStorageChange(e)));
         }
-        isEnabled() {
+        isEnabled(defaultEnablement) {
             switch (this.environmentService.sync) {
                 case 'on':
                     return true;
                 case 'off':
                     return false;
             }
-            return this.storageService.getBoolean(enablementKey, 0 /* GLOBAL */, this.environmentService.enableSyncByDefault);
+            return this.storageService.getBoolean(enablementKey, 0 /* GLOBAL */, !!defaultEnablement);
         }
         canToggleEnablement() {
             return this.userDataSyncStoreManagementService.userDataSyncStore !== undefined && this.environmentService.sync === undefined;
+        }
+        setEnablement(enabled) {
+            this.storageService.store(enablementKey, enabled, 0 /* GLOBAL */);
         }
         onDidStorageChange(workspaceStorageChangeEvent) {
             if (workspaceStorageChangeEvent.scope === 0 /* GLOBAL */) {
@@ -32241,7 +32198,18 @@ define(__m[185/*vs/platform/userDataSync/common/userDataAutoSyncService*/], __M(
             this.syncTriggerDelayer = this._register(new async_1.Delayer(0));
             this.lastSyncUrl = this.syncUrl;
             this.syncUrl = (_a = userDataSyncStoreManagementService.userDataSyncStore) === null || _a === void 0 ? void 0 : _a.url;
-            if (userDataSyncStoreManagementService.userDataSyncStore) {
+            if (this.syncUrl) {
+                this.logService.info('Using settings sync service', this.syncUrl.toString());
+                this._register(userDataSyncStoreManagementService.onDidChangeUserDataSyncStore(() => {
+                    var _a, _b;
+                    if (!resources_1.isEqual(this.syncUrl, (_a = userDataSyncStoreManagementService.userDataSyncStore) === null || _a === void 0 ? void 0 : _a.url)) {
+                        this.lastSyncUrl = this.syncUrl;
+                        this.syncUrl = (_b = userDataSyncStoreManagementService.userDataSyncStore) === null || _b === void 0 ? void 0 : _b.url;
+                        if (this.syncUrl) {
+                            this.logService.info('Using settings sync service', this.syncUrl.toString());
+                        }
+                    }
+                }));
                 if (this.isEnabled()) {
                     this.logService.info('Auto Sync is enabled.');
                 }
@@ -32313,7 +32281,7 @@ define(__m[185/*vs/platform/userDataSync/common/userDataAutoSyncService*/], __M(
         async turnOn() {
             this.stopDisableMachineEventually();
             this.lastSyncUrl = this.syncUrl;
-            this.setEnablement(true);
+            this.updateEnablement(true);
         }
         async turnOff(everywhere, softTurnOffOnError, donotRemoveMachine) {
             try {
@@ -32322,7 +32290,7 @@ define(__m[185/*vs/platform/userDataSync/common/userDataAutoSyncService*/], __M(
                     await this.userDataSyncMachinesService.removeCurrentMachine();
                 }
                 // Disable Auto Sync
-                this.setEnablement(false);
+                this.updateEnablement(false);
                 // Reset Session
                 this.storageService.remove(sessionIdKey, 0 /* GLOBAL */);
                 // Reset
@@ -32337,17 +32305,17 @@ define(__m[185/*vs/platform/userDataSync/common/userDataAutoSyncService*/], __M(
             catch (error) {
                 if (softTurnOffOnError) {
                     this.logService.error(error);
-                    this.setEnablement(false);
+                    this.updateEnablement(false);
                 }
                 else {
                     throw error;
                 }
             }
         }
-        setEnablement(enabled) {
+        updateEnablement(enabled) {
             if (this.isEnabled() !== enabled) {
                 this.telemetryService.publicLog2(enablementKey, { enabled });
-                this.storageService.store(enablementKey, enabled, 0 /* GLOBAL */);
+                this.setEnablement(enabled);
                 this.updateAutoSync();
             }
         }
@@ -32629,7 +32597,7 @@ define(__m[185/*vs/platform/userDataSync/common/userDataAutoSyncService*/], __M(
 
 
 
-define(__m[186/*vs/platform/userDataSync/common/userDataSyncResourceEnablementService*/], __M([0/*require*/,1/*exports*/,23/*vs/platform/userDataSync/common/userDataSync*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,22/*vs/platform/storage/common/storage*/,24/*vs/platform/telemetry/common/telemetry*/]), function (require, exports, userDataSync_1, lifecycle_1, event_1, storage_1, telemetry_1) {
+define(__m[183/*vs/platform/userDataSync/common/userDataSyncResourceEnablementService*/], __M([0/*require*/,1/*exports*/,24/*vs/platform/userDataSync/common/userDataSync*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,22/*vs/platform/storage/common/storage*/,23/*vs/platform/telemetry/common/telemetry*/]), function (require, exports, userDataSync_1, lifecycle_1, event_1, storage_1, telemetry_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.UserDataSyncResourceEnablementService = void 0;
@@ -32645,7 +32613,7 @@ define(__m[186/*vs/platform/userDataSync/common/userDataSyncResourceEnablementSe
             this._register(storageService.onDidChangeStorage(e => this.onDidStorageChange(e)));
         }
         isResourceEnabled(resource) {
-            return this.storageService.getBoolean(getEnablementKey(resource), 0 /* GLOBAL */, true);
+            return this.storageService.getBoolean(getEnablementKey(resource), 0 /* GLOBAL */, this.getDefaultResourceEnablementValue(resource));
         }
         setResourceEnablement(resource, enabled) {
             if (this.isResourceEnabled(resource) !== enabled) {
@@ -32662,6 +32630,9 @@ define(__m[186/*vs/platform/userDataSync/common/userDataSyncResourceEnablementSe
                     return;
                 }
             }
+        }
+        getDefaultResourceEnablementValue(resource) {
+            return true;
         }
     };
     UserDataSyncResourceEnablementService = __decorate([
@@ -32684,7 +32655,7 @@ define(__m[186/*vs/platform/userDataSync/common/userDataSyncResourceEnablementSe
 
 
 
-define(__m[187/*vs/platform/userDataSync/common/userDataSyncService*/], __M([0/*require*/,1/*exports*/,23/*vs/platform/userDataSync/common/userDataSync*/,2/*vs/base/common/lifecycle*/,5/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/,176/*vs/platform/userDataSync/common/extensionsSync*/,178/*vs/platform/userDataSync/common/keybindingsSync*/,177/*vs/platform/userDataSync/common/globalStateSync*/,48/*vs/base/common/errorMessage*/,24/*vs/platform/telemetry/common/telemetry*/,15/*vs/base/common/arrays*/,22/*vs/platform/storage/common/storage*/,180/*vs/platform/userDataSync/common/settingsSync*/,10/*vs/base/common/resources*/,181/*vs/platform/userDataSync/common/snippetsSync*/,29/*vs/base/common/uuid*/,9/*vs/base/common/async*/,20/*vs/base/common/errors*/]), function (require, exports, userDataSync_1, lifecycle_1, instantiation_1, event_1, extensionsSync_1, keybindingsSync_1, globalStateSync_1, errorMessage_1, telemetry_1, arrays_1, storage_1, settingsSync_1, resources_1, snippetsSync_1, uuid_1, async_1, errors_1) {
+define(__m[184/*vs/platform/userDataSync/common/userDataSyncService*/], __M([0/*require*/,1/*exports*/,24/*vs/platform/userDataSync/common/userDataSync*/,2/*vs/base/common/lifecycle*/,6/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/,173/*vs/platform/userDataSync/common/extensionsSync*/,175/*vs/platform/userDataSync/common/keybindingsSync*/,174/*vs/platform/userDataSync/common/globalStateSync*/,46/*vs/base/common/errorMessage*/,23/*vs/platform/telemetry/common/telemetry*/,16/*vs/base/common/arrays*/,22/*vs/platform/storage/common/storage*/,177/*vs/platform/userDataSync/common/settingsSync*/,19/*vs/base/common/resources*/,178/*vs/platform/userDataSync/common/snippetsSync*/,30/*vs/base/common/uuid*/,9/*vs/base/common/async*/,20/*vs/base/common/errors*/]), function (require, exports, userDataSync_1, lifecycle_1, instantiation_1, event_1, extensionsSync_1, keybindingsSync_1, globalStateSync_1, errorMessage_1, telemetry_1, arrays_1, storage_1, settingsSync_1, resources_1, snippetsSync_1, uuid_1, async_1, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.UserDataSyncService = void 0;
@@ -32768,6 +32739,8 @@ define(__m[187/*vs/platform/userDataSync/common/userDataSyncService*/], __M([0/*
                 async stop() {
                     if (cancellablePromise) {
                         cancellablePromise.cancel();
+                    }
+                    if (that.status !== "idle" /* Idle */) {
                         return that.stop();
                     }
                 }
@@ -33285,7 +33258,7 @@ define(__m[187/*vs/platform/userDataSync/common/userDataSyncService*/], __M([0/*
 
 
 
-define(__m[188/*vs/platform/userDataSync/common/userDataSyncStoreService*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,23/*vs/platform/userDataSync/common/userDataSync*/,43/*vs/platform/request/common/request*/,10/*vs/base/common/resources*/,27/*vs/base/common/cancellation*/,25/*vs/platform/configuration/common/configuration*/,37/*vs/platform/product/common/productService*/,49/*vs/platform/serviceMachineId/common/serviceMachineId*/,8/*vs/platform/environment/common/environment*/,16/*vs/platform/files/common/files*/,22/*vs/platform/storage/common/storage*/,19/*vs/base/common/objects*/,29/*vs/base/common/uuid*/,6/*vs/base/common/platform*/,3/*vs/base/common/event*/,9/*vs/base/common/async*/,18/*vs/base/common/types*/,7/*vs/base/common/uri*/]), function (require, exports, lifecycle_1, userDataSync_1, request_1, resources_1, cancellation_1, configuration_1, productService_1, serviceMachineId_1, environment_1, files_1, storage_1, objects_1, uuid_1, platform_1, event_1, async_1, types_1, uri_1) {
+define(__m[185/*vs/platform/userDataSync/common/userDataSyncStoreService*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,24/*vs/platform/userDataSync/common/userDataSync*/,42/*vs/platform/request/common/request*/,19/*vs/base/common/resources*/,27/*vs/base/common/cancellation*/,26/*vs/platform/configuration/common/configuration*/,36/*vs/platform/product/common/productService*/,47/*vs/platform/serviceMachineId/common/serviceMachineId*/,8/*vs/platform/environment/common/environment*/,15/*vs/platform/files/common/files*/,22/*vs/platform/storage/common/storage*/,30/*vs/base/common/uuid*/,5/*vs/base/common/platform*/,3/*vs/base/common/event*/,9/*vs/base/common/async*/,14/*vs/base/common/types*/,7/*vs/base/common/uri*/]), function (require, exports, lifecycle_1, userDataSync_1, request_1, resources_1, cancellation_1, configuration_1, productService_1, serviceMachineId_1, environment_1, files_1, storage_1, uuid_1, platform_1, event_1, async_1, types_1, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.RequestsSession = exports.UserDataSyncStoreService = exports.UserDataSyncStoreClient = exports.UserDataSyncStoreManagementService = exports.AbstractUserDataSyncStoreManagementService = void 0;
@@ -33302,25 +33275,37 @@ define(__m[188/*vs/platform/userDataSync/common/userDataSyncStoreService*/], __M
             this.productService = productService;
             this.configurationService = configurationService;
             this.storageService = storageService;
-            this.userDataSyncStore = this.toUserDataSyncStore(productService[userDataSync_1.CONFIGURATION_SYNC_STORE_KEY], configurationService.getValue(userDataSync_1.CONFIGURATION_SYNC_STORE_KEY));
+            this._onDidChangeUserDataSyncStore = this._register(new event_1.Emitter());
+            this.onDidChangeUserDataSyncStore = this._onDidChangeUserDataSyncStore.event;
+            this.updateUserDataSyncStore();
+        }
+        get userDataSyncStore() { return this._userDataSyncStore; }
+        updateUserDataSyncStore() {
+            this._userDataSyncStore = this.toUserDataSyncStore(this.productService[userDataSync_1.CONFIGURATION_SYNC_STORE_KEY], this.configurationService.getValue(userDataSync_1.CONFIGURATION_SYNC_STORE_KEY));
+            this._onDidChangeUserDataSyncStore.fire();
         }
         toUserDataSyncStore(productStore, configuredStore) {
+            // Web overrides
+            productStore = platform_1.isWeb && (productStore === null || productStore === void 0 ? void 0 : productStore.web) ? Object.assign(Object.assign({}, productStore), productStore.web) : productStore;
             const value = Object.assign(Object.assign({}, (productStore || {})), (configuredStore || {}));
             if (value
                 && types_1.isString(value.url)
                 && types_1.isObject(value.authenticationProviders)
                 && Object.keys(value.authenticationProviders).every(authenticationProviderId => types_1.isArray(value.authenticationProviders[authenticationProviderId].scopes))) {
                 const syncStore = value;
-                const type = this.storageService.get(SYNC_SERVICE_URL_TYPE, 0 /* GLOBAL */);
-                const url = (configuredStore === null || configuredStore === void 0 ? void 0 : configuredStore.url) || (type === 'insiders' ? syncStore.insidersUrl : type === 'stable' ? syncStore.stableUrl : undefined)
-                    || syncStore.url;
+                const canSwitch = !!syncStore.canSwitch && !(configuredStore === null || configuredStore === void 0 ? void 0 : configuredStore.url);
+                const type = canSwitch ? this.storageService.get(SYNC_SERVICE_URL_TYPE, 0 /* GLOBAL */) : undefined;
+                const url = (configuredStore === null || configuredStore === void 0 ? void 0 : configuredStore.url) || type === 'insiders' ? syncStore.insidersUrl
+                    : type === 'stable' ? syncStore.stableUrl
+                        : syncStore.url;
                 return {
                     url: uri_1.URI.parse(url),
                     type,
                     defaultType: syncStore.url === syncStore.insidersUrl ? 'insiders' : syncStore.url === syncStore.stableUrl ? 'stable' : undefined,
                     defaultUrl: uri_1.URI.parse(syncStore.url),
-                    stableUrl: syncStore.stableUrl ? uri_1.URI.parse(syncStore.stableUrl) : undefined,
-                    insidersUrl: syncStore.insidersUrl ? uri_1.URI.parse(syncStore.insidersUrl) : undefined,
+                    stableUrl: uri_1.URI.parse(syncStore.stableUrl),
+                    insidersUrl: uri_1.URI.parse(syncStore.insidersUrl),
+                    canSwitch: !!syncStore.canSwitch && !(configuredStore === null || configuredStore === void 0 ? void 0 : configuredStore.url),
                     authenticationProviders: Object.keys(syncStore.authenticationProviders).reduce((result, id) => {
                         result.push({ id, scopes: syncStore.authenticationProviders[id].scopes });
                         return result;
@@ -33337,7 +33322,7 @@ define(__m[188/*vs/platform/userDataSync/common/userDataSyncStoreService*/], __M
     ], AbstractUserDataSyncStoreManagementService);
     exports.AbstractUserDataSyncStoreManagementService = AbstractUserDataSyncStoreManagementService;
     let UserDataSyncStoreManagementService = class UserDataSyncStoreManagementService extends AbstractUserDataSyncStoreManagementService {
-        constructor(productService, configurationService, storageService, logService) {
+        constructor(productService, configurationService, storageService) {
             super(productService, configurationService, storageService);
             const previousConfigurationSyncStore = this.storageService.get(SYNC_PREVIOUS_STORE, 0 /* GLOBAL */);
             if (previousConfigurationSyncStore) {
@@ -33350,19 +33335,17 @@ define(__m[188/*vs/platform/userDataSync/common/userDataSyncStoreService*/], __M
             else {
                 this.storageService.remove(SYNC_PREVIOUS_STORE, 0 /* GLOBAL */);
             }
-            if (this.userDataSyncStore) {
-                logService.info('Using settings sync service', this.userDataSyncStore.url.toString());
-            }
         }
         async switch(type) {
-            var _a, _b;
-            if (type !== ((_a = this.userDataSyncStore) === null || _a === void 0 ? void 0 : _a.type)) {
-                if (type === ((_b = this.userDataSyncStore) === null || _b === void 0 ? void 0 : _b.defaultType)) {
+            var _a;
+            if (((_a = this.userDataSyncStore) === null || _a === void 0 ? void 0 : _a.canSwitch) && type !== this.userDataSyncStore.type) {
+                if (type === this.userDataSyncStore.defaultType) {
                     this.storageService.remove(SYNC_SERVICE_URL_TYPE, 0 /* GLOBAL */);
                 }
                 else {
                     this.storageService.store(SYNC_SERVICE_URL_TYPE, type, 0 /* GLOBAL */);
                 }
+                this.updateUserDataSyncStore();
             }
         }
         async getPreviousUserDataSyncStore() {
@@ -33372,8 +33355,7 @@ define(__m[188/*vs/platform/userDataSync/common/userDataSyncStoreService*/], __M
     UserDataSyncStoreManagementService = __decorate([
         __param(0, productService_1.IProductService),
         __param(1, configuration_1.IConfigurationService),
-        __param(2, storage_1.IStorageService),
-        __param(3, userDataSync_1.IUserDataSyncLogService)
+        __param(2, storage_1.IStorageService)
     ], UserDataSyncStoreManagementService);
     exports.UserDataSyncStoreManagementService = UserDataSyncStoreManagementService;
     let UserDataSyncStoreClient = class UserDataSyncStoreClient extends lifecycle_1.Disposable {
@@ -33390,7 +33372,7 @@ define(__m[188/*vs/platform/userDataSync/common/userDataSyncStoreService*/], __M
             this._onDidChangeDonotMakeRequestsUntil = this._register(new event_1.Emitter());
             this.onDidChangeDonotMakeRequestsUntil = this._onDidChangeDonotMakeRequestsUntil.event;
             this.resetDonotMakeRequestsUntilPromise = undefined;
-            this.userDataSyncStoreUrl = userDataSyncStoreUrl ? resources_1.joinPath(userDataSyncStoreUrl, 'v1') : undefined;
+            this.updateUserDataSyncStoreUrl(userDataSyncStoreUrl);
             this.commonHeadersPromise = serviceMachineId_1.getServiceMachineId(environmentService, fileService, storageService)
                 .then(uuid => {
                 const headers = {
@@ -33410,6 +33392,9 @@ define(__m[188/*vs/platform/userDataSync/common/userDataSyncStoreService*/], __M
         get donotMakeRequestsUntil() { return this._donotMakeRequestsUntil; }
         setAuthToken(token, type) {
             this.authToken = { token, type };
+        }
+        updateUserDataSyncStoreUrl(userDataSyncStoreUrl) {
+            this.userDataSyncStoreUrl = userDataSyncStoreUrl ? resources_1.joinPath(userDataSyncStoreUrl, 'v1') : undefined;
         }
         initDonotMakeRequestsUntil() {
             const donotMakeRequestsUntil = this.storageService.getNumber(DONOT_MAKE_REQUESTS_UNTIL_KEY, 0 /* GLOBAL */);
@@ -33552,10 +33537,7 @@ define(__m[188/*vs/platform/userDataSync/common/userDataSyncStoreService*/], __M
             }
             this.setDonotMakeRequestsUntil(undefined);
             const commonHeaders = await this.commonHeadersPromise;
-            options.headers = objects_1.assign(options.headers || {}, commonHeaders, {
-                'X-Account-Type': this.authToken.type,
-                'authorization': `Bearer ${this.authToken.token}`,
-            });
+            options.headers = Object.assign(Object.assign(Object.assign({}, (options.headers || {})), commonHeaders), { 'X-Account-Type': this.authToken.type, 'authorization': `Bearer ${this.authToken.token}` });
             // Add session headers
             this.addSessionHeaders(options.headers);
             this.logService.trace('Sending request to server', { url: options.url, type: options.type, headers: Object.assign(Object.assign({}, options.headers), { authorization: undefined }) });
@@ -33641,6 +33623,7 @@ define(__m[188/*vs/platform/userDataSync/common/userDataSyncStoreService*/], __M
         constructor(userDataSyncStoreManagementService, productService, requestService, logService, environmentService, fileService, storageService) {
             var _a;
             super((_a = userDataSyncStoreManagementService.userDataSyncStore) === null || _a === void 0 ? void 0 : _a.url, productService, requestService, logService, environmentService, fileService, storageService);
+            this._register(userDataSyncStoreManagementService.onDidChangeUserDataSyncStore(() => { var _a; return this.updateUserDataSyncStoreUrl((_a = userDataSyncStoreManagementService.userDataSyncStore) === null || _a === void 0 ? void 0 : _a.url); }));
         }
     };
     UserDataSyncStoreService = __decorate([
@@ -33685,10 +33668,6 @@ define(__m[188/*vs/platform/userDataSync/common/userDataSyncStoreService*/], __M
     exports.RequestsSession = RequestsSession;
 });
 
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
 
 
 
@@ -33698,14 +33677,14 @@ define(__m[188/*vs/platform/userDataSync/common/userDataSyncStoreService*/], __M
 
 
 
-define(__m[189/*vs/platform/userDataSync/electron-browser/userDataAutoSyncService*/], __M([0/*require*/,1/*exports*/,23/*vs/platform/userDataSync/common/userDataSync*/,3/*vs/base/common/event*/,74/*vs/platform/electron/electron-sandbox/electron*/,185/*vs/platform/userDataSync/common/userDataAutoSyncService*/,54/*vs/platform/userDataSync/common/userDataSyncAccount*/,24/*vs/platform/telemetry/common/telemetry*/,22/*vs/platform/storage/common/storage*/,8/*vs/platform/environment/common/environment*/,55/*vs/platform/userDataSync/common/userDataSyncMachines*/]), function (require, exports, userDataSync_1, event_1, electron_1, userDataAutoSyncService_1, userDataSyncAccount_1, telemetry_1, storage_1, environment_1, userDataSyncMachines_1) {
+define(__m[186/*vs/platform/userDataSync/electron-sandbox/userDataAutoSyncService*/], __M([0/*require*/,1/*exports*/,24/*vs/platform/userDataSync/common/userDataSync*/,3/*vs/base/common/event*/,55/*vs/platform/native/electron-sandbox/native*/,182/*vs/platform/userDataSync/common/userDataAutoSyncService*/,56/*vs/platform/userDataSync/common/userDataSyncAccount*/,23/*vs/platform/telemetry/common/telemetry*/,22/*vs/platform/storage/common/storage*/,8/*vs/platform/environment/common/environment*/,57/*vs/platform/userDataSync/common/userDataSyncMachines*/]), function (require, exports, userDataSync_1, event_1, native_1, userDataAutoSyncService_1, userDataSyncAccount_1, telemetry_1, storage_1, environment_1, userDataSyncMachines_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.UserDataAutoSyncService = void 0;
     let UserDataAutoSyncService = class UserDataAutoSyncService extends userDataAutoSyncService_1.UserDataAutoSyncService {
-        constructor(userDataSyncStoreManagementService, userDataSyncStoreService, userDataSyncResourceEnablementService, userDataSyncService, electronService, logService, authTokenService, telemetryService, userDataSyncMachinesService, storageService, environmentService) {
+        constructor(userDataSyncStoreManagementService, userDataSyncStoreService, userDataSyncResourceEnablementService, userDataSyncService, nativeHostService, logService, authTokenService, telemetryService, userDataSyncMachinesService, storageService, environmentService) {
             super(userDataSyncStoreManagementService, userDataSyncStoreService, userDataSyncResourceEnablementService, userDataSyncService, logService, authTokenService, telemetryService, userDataSyncMachinesService, storageService, environmentService);
-            this._register(event_1.Event.debounce(event_1.Event.any(event_1.Event.map(electronService.onWindowFocus, () => 'windowFocus'), event_1.Event.map(electronService.onWindowOpen, () => 'windowOpen')), (last, source) => last ? [...last, source] : [source], 1000)(sources => this.triggerSync(sources, true, false)));
+            this._register(event_1.Event.debounce(event_1.Event.any(event_1.Event.map(nativeHostService.onWindowFocus, () => 'windowFocus'), event_1.Event.map(nativeHostService.onWindowOpen, () => 'windowOpen')), (last, source) => last ? [...last, source] : [source], 1000)(sources => this.triggerSync(sources, true, false)));
         }
     };
     UserDataAutoSyncService = __decorate([
@@ -33713,7 +33692,7 @@ define(__m[189/*vs/platform/userDataSync/electron-browser/userDataAutoSyncServic
         __param(1, userDataSync_1.IUserDataSyncStoreService),
         __param(2, userDataSync_1.IUserDataSyncResourceEnablementService),
         __param(3, userDataSync_1.IUserDataSyncService),
-        __param(4, electron_1.IElectronService),
+        __param(4, native_1.INativeHostService),
         __param(5, userDataSync_1.IUserDataSyncLogService),
         __param(6, userDataSyncAccount_1.IUserDataSyncAccountService),
         __param(7, telemetry_1.ITelemetryService),
@@ -33728,7 +33707,61 @@ define(__m[189/*vs/platform/userDataSync/electron-browser/userDataAutoSyncServic
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[190/*vs/platform/workspaces/common/workspaces*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,123/*vs/nls!vs/platform/workspaces/common/workspaces*/,7/*vs/base/common/uri*/,6/*vs/base/common/platform*/,4/*vs/base/common/path*/,10/*vs/base/common/resources*/,38/*vs/base/common/jsonEdit*/,28/*vs/base/common/json*/,26/*vs/base/common/network*/,62/*vs/base/common/labels*/,39/*vs/base/common/extpath*/,159/*vs/platform/remote/common/remoteHosts*/]), function (require, exports, instantiation_1, nls_1, uri_1, platform_1, path_1, resources_1, jsonEdit, json, network_1, labels_1, extpath_1, remoteHosts_1) {
+
+
+
+
+
+
+
+
+
+define(__m[187/*vs/platform/windows/electron-sandbox/windowTracker*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,9/*vs/base/common/async*/,55/*vs/platform/native/electron-sandbox/native*/]), function (require, exports, event_1, lifecycle_1, async_1, native_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ActiveWindowManager = void 0;
+    let ActiveWindowManager = class ActiveWindowManager extends lifecycle_1.Disposable {
+        constructor(nativeHostService) {
+            super();
+            this.disposables = this._register(new lifecycle_1.DisposableStore());
+            // remember last active window id upon events
+            const onActiveWindowChange = event_1.Event.latch(event_1.Event.any(nativeHostService.onWindowOpen, nativeHostService.onWindowFocus));
+            onActiveWindowChange(this.setActiveWindow, this, this.disposables);
+            // resolve current active window
+            this.firstActiveWindowIdPromise = async_1.createCancelablePromise(() => nativeHostService.getActiveWindowId());
+            (async () => {
+                try {
+                    const windowId = await this.firstActiveWindowIdPromise;
+                    this.activeWindowId = (typeof this.activeWindowId === 'number') ? this.activeWindowId : windowId;
+                }
+                finally {
+                    this.firstActiveWindowIdPromise = undefined;
+                }
+            })();
+        }
+        setActiveWindow(windowId) {
+            if (this.firstActiveWindowIdPromise) {
+                this.firstActiveWindowIdPromise.cancel();
+                this.firstActiveWindowIdPromise = undefined;
+            }
+            this.activeWindowId = windowId;
+        }
+        async getActiveClientId() {
+            const id = this.firstActiveWindowIdPromise ? (await this.firstActiveWindowIdPromise) : this.activeWindowId;
+            return `window:${id}`;
+        }
+    };
+    ActiveWindowManager = __decorate([
+        __param(0, native_1.INativeHostService)
+    ], ActiveWindowManager);
+    exports.ActiveWindowManager = ActiveWindowManager;
+});
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+define(__m[188/*vs/platform/workspaces/common/workspaces*/], __M([0/*require*/,1/*exports*/,6/*vs/platform/instantiation/common/instantiation*/,123/*vs/nls!vs/platform/workspaces/common/workspaces*/,7/*vs/base/common/uri*/,5/*vs/base/common/platform*/,4/*vs/base/common/path*/,19/*vs/base/common/resources*/,37/*vs/base/common/jsonEdit*/,29/*vs/base/common/json*/,10/*vs/base/common/network*/,63/*vs/base/common/labels*/,38/*vs/base/common/extpath*/,156/*vs/platform/remote/common/remoteHosts*/]), function (require, exports, instantiation_1, nls_1, uri_1, platform_1, path_1, resources_1, jsonEdit, json, network_1, labels_1, extpath_1, remoteHosts_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toStoreData = exports.restoreRecentlyOpened = exports.useSlashForPath = exports.rewriteWorkspaceFileForNewLocation = exports.getStoredWorkspaceFolder = exports.hasWorkspaceFileExtension = exports.isSingleFolderWorkspaceInitializationPayload = exports.isUntitledWorkspace = exports.toWorkspaceIdentifier = exports.isWorkspaceIdentifier = exports.isSingleFolderWorkspaceIdentifier = exports.isRawUriWorkspaceFolder = exports.isRawFileWorkspaceFolder = exports.isStoredWorkspaceFolder = exports.reviveWorkspaceIdentifier = exports.isRecentFile = exports.isRecentFolder = exports.isRecentWorkspace = exports.IWorkspacesService = exports.UNTITLED_WORKSPACE_NAME = exports.WORKSPACE_FILTER = exports.WORKSPACE_EXTENSION = void 0;
@@ -33995,7 +34028,7 @@ define(__m[190/*vs/platform/workspaces/common/workspaces*/], __M([0/*require*/,1
 
 
 
-define(__m[191/*vs/platform/storage/node/storageService*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,13/*vs/platform/log/common/log*/,22/*vs/platform/storage/common/storage*/,99/*vs/base/parts/storage/node/storage*/,98/*vs/base/parts/storage/common/storage*/,198/*vs/base/common/performance*/,4/*vs/base/common/path*/,21/*vs/base/node/pfs*/,8/*vs/platform/environment/common/environment*/,190/*vs/platform/workspaces/common/workspaces*/,18/*vs/base/common/types*/,9/*vs/base/common/async*/]), function (require, exports, lifecycle_1, event_1, log_1, storage_1, storage_2, storage_3, performance_1, path_1, pfs_1, environment_1, workspaces_1, types_1, async_1) {
+define(__m[189/*vs/platform/storage/node/storageService*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,13/*vs/platform/log/common/log*/,22/*vs/platform/storage/common/storage*/,98/*vs/base/parts/storage/node/storage*/,97/*vs/base/parts/storage/common/storage*/,196/*vs/base/common/performance*/,4/*vs/base/common/path*/,21/*vs/base/node/pfs*/,8/*vs/platform/environment/common/environment*/,188/*vs/platform/workspaces/common/workspaces*/,14/*vs/base/common/types*/,9/*vs/base/common/async*/]), function (require, exports, lifecycle_1, event_1, log_1, storage_1, storage_2, storage_3, performance_1, path_1, pfs_1, environment_1, workspaces_1, types_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NativeStorageService = void 0;
@@ -34201,7 +34234,7 @@ define(__m[191/*vs/platform/storage/node/storageService*/], __M([0/*require*/,1/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[56/*vs/base/node/zip*/], __M([0/*require*/,1/*exports*/,104/*vs/nls!vs/base/node/zip*/,4/*vs/base/common/path*/,35/*fs*/,9/*vs/base/common/async*/,21/*vs/base/node/pfs*/,199/*yauzl*/,200/*yazl*/]), function (require, exports, nls, path, fs_1, async_1, pfs_1, yauzl_1, yazl) {
+define(__m[58/*vs/base/node/zip*/], __M([0/*require*/,1/*exports*/,103/*vs/nls!vs/base/node/zip*/,4/*vs/base/common/path*/,33/*fs*/,9/*vs/base/common/async*/,21/*vs/base/node/pfs*/,197/*yauzl*/,198/*yazl*/,14/*vs/base/common/types*/]), function (require, exports, nls, path, fs_1, async_1, pfs_1, yauzl_1, yazl, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.buffer = exports.extract = exports.zip = exports.ExtractError = void 0;
@@ -34318,7 +34351,7 @@ define(__m[56/*vs/base/node/zip*/], __M([0/*require*/,1/*exports*/,104/*vs/nls!v
                     reject(toExtractError(error));
                 }
                 else {
-                    resolve(zipfile);
+                    resolve(types_1.assertIsDefined(zipfile));
                 }
             });
         });
@@ -34330,7 +34363,7 @@ define(__m[56/*vs/base/node/zip*/], __M([0/*require*/,1/*exports*/,104/*vs/nls!v
                     reject(toExtractError(error));
                 }
                 else {
-                    resolve(stream);
+                    resolve(types_1.assertIsDefined(stream));
                 }
             });
         });
@@ -34393,7 +34426,7 @@ define(__m[56/*vs/base/node/zip*/], __M([0/*require*/,1/*exports*/,104/*vs/nls!v
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[192/*vs/platform/extensionManagement/node/extensionManagementUtil*/], __M([0/*require*/,1/*exports*/,56/*vs/base/node/zip*/,108/*vs/nls!vs/platform/extensionManagement/node/extensionManagementUtil*/]), function (require, exports, zip_1, nls_1) {
+define(__m[190/*vs/platform/extensionManagement/node/extensionManagementUtil*/], __M([0/*require*/,1/*exports*/,58/*vs/base/node/zip*/,108/*vs/nls!vs/platform/extensionManagement/node/extensionManagementUtil*/]), function (require, exports, zip_1, nls_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getManifest = void 0;
@@ -34424,7 +34457,7 @@ define(__m[192/*vs/platform/extensionManagement/node/extensionManagementUtil*/],
 
 
 
-define(__m[193/*vs/platform/extensionManagement/node/extensionsScanner*/], __M([0/*require*/,1/*exports*/,76/*semver-umd*/,2/*vs/base/common/lifecycle*/,21/*vs/base/node/pfs*/,4/*vs/base/common/path*/,13/*vs/platform/log/common/log*/,30/*vs/platform/extensionManagement/common/extensionManagement*/,36/*vs/platform/extensionManagement/common/extensionManagementUtil*/,9/*vs/base/common/async*/,7/*vs/base/common/uri*/,8/*vs/platform/environment/common/environment*/,31/*vs/base/common/amd*/,129/*vs/platform/extensionManagement/common/extensionNls*/,109/*vs/nls!vs/platform/extensionManagement/node/extensionsScanner*/,37/*vs/platform/product/common/productService*/,56/*vs/base/node/zip*/,6/*vs/base/common/platform*/,15/*vs/base/common/arrays*/,19/*vs/base/common/objects*/]), function (require, exports, semver, lifecycle_1, pfs, path, log_1, extensionManagement_1, extensionManagementUtil_1, async_1, uri_1, environment_1, amd_1, extensionNls_1, nls_1, productService_1, zip_1, platform_1, arrays_1, objects_1) {
+define(__m[191/*vs/platform/extensionManagement/node/extensionsScanner*/], __M([0/*require*/,1/*exports*/,75/*semver-umd*/,2/*vs/base/common/lifecycle*/,21/*vs/base/node/pfs*/,4/*vs/base/common/path*/,13/*vs/platform/log/common/log*/,28/*vs/platform/extensionManagement/common/extensionManagement*/,35/*vs/platform/extensionManagement/common/extensionManagementUtil*/,9/*vs/base/common/async*/,7/*vs/base/common/uri*/,8/*vs/platform/environment/common/environment*/,127/*vs/platform/extensionManagement/common/extensionNls*/,109/*vs/nls!vs/platform/extensionManagement/node/extensionsScanner*/,36/*vs/platform/product/common/productService*/,58/*vs/base/node/zip*/,5/*vs/base/common/platform*/,16/*vs/base/common/arrays*/,10/*vs/base/common/network*/]), function (require, exports, semver, lifecycle_1, pfs, path, log_1, extensionManagement_1, extensionManagementUtil_1, async_1, uri_1, environment_1, extensionNls_1, nls_1, productService_1, zip_1, platform_1, arrays_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtensionsScanner = void 0;
@@ -34458,7 +34491,13 @@ define(__m[193/*vs/platform/extensionManagement/node/extensionsScanner*/], __M([
             if (type === null || type === 1 /* User */) {
                 promises.push(this.scanUserExtensions(true).then(null, e => Promise.reject(new extensionManagement_1.ExtensionManagementError(this.joinErrors(e).message, ERROR_SCANNING_USER_EXTENSIONS))));
             }
-            return Promise.all(promises).then(arrays_1.flatten, errors => Promise.reject(this.joinErrors(errors)));
+            try {
+                const result = await Promise.all(promises);
+                return arrays_1.flatten(result);
+            }
+            catch (error) {
+                throw this.joinErrors(error);
+            }
         }
         async scanUserExtensions(excludeOutdated) {
             this.logService.trace('Started scanning user extensions');
@@ -34519,7 +34558,7 @@ define(__m[193/*vs/platform/extensionManagement/node/extensionsScanner*/], __M([
             const manifestPath = path.join(local.location.fsPath, 'package.json');
             const raw = await pfs.readFile(manifestPath, 'utf8');
             const { manifest } = await this.parseManifest(raw);
-            objects_1.assign(manifest, { __metadata: metadata });
+            manifest.__metadata = metadata;
             await pfs.writeFile(manifestPath, JSON.stringify(manifest, null, '\t'));
             return local;
         }
@@ -34528,26 +34567,30 @@ define(__m[193/*vs/platform/extensionManagement/node/extensionsScanner*/], __M([
         }
         async withUninstalledExtensions(fn) {
             return this.uninstalledFileLimiter.queue(async () => {
-                let result = null;
-                return pfs.readFile(this.uninstalledPath, 'utf8')
-                    .then(undefined, err => err.code === 'ENOENT' ? Promise.resolve('{}') : Promise.reject(err))
-                    .then(raw => { try {
-                    return JSON.parse(raw);
+                let raw;
+                try {
+                    raw = await pfs.readFile(this.uninstalledPath, 'utf8');
                 }
-                catch (e) {
-                    return {};
-                } })
-                    .then(uninstalled => { result = fn(uninstalled); return uninstalled; })
-                    .then(uninstalled => {
-                    if (Object.keys(uninstalled).length === 0) {
-                        return pfs.rimraf(this.uninstalledPath);
+                catch (err) {
+                    if (err.code !== 'ENOENT') {
+                        throw err;
                     }
-                    else {
-                        const raw = JSON.stringify(uninstalled);
-                        return pfs.writeFile(this.uninstalledPath, raw);
+                }
+                let uninstalled = {};
+                if (raw) {
+                    try {
+                        uninstalled = JSON.parse(raw);
                     }
-                })
-                    .then(() => result);
+                    catch (e) { /* ignore */ }
+                }
+                const result = fn(uninstalled);
+                if (Object.keys(uninstalled).length) {
+                    await pfs.writeFile(this.uninstalledPath, JSON.stringify(uninstalled));
+                }
+                else {
+                    await pfs.rimraf(this.uninstalledPath);
+                }
+                return result;
             });
         }
         async removeExtension(extension, type) {
@@ -34559,22 +34602,38 @@ define(__m[193/*vs/platform/extensionManagement/node/extensionsScanner*/], __M([
             await this.removeExtension(extension, 'uninstalled');
             await this.withUninstalledExtensions(uninstalled => delete uninstalled[new extensionManagementUtil_1.ExtensionIdentifierWithVersion(extension.identifier, extension.manifest.version).key()]);
         }
-        extractAtLocation(identifier, zipPath, location, token) {
+        async extractAtLocation(identifier, zipPath, location, token) {
             this.logService.trace(`Started extracting the extension from ${zipPath} to ${location}`);
-            return pfs.rimraf(location)
-                .then(() => zip_1.extract(zipPath, location, { sourcePath: 'extension', overwrite: true }, token)
-                .then(() => this.logService.info(`Extracted extension to ${location}:`, identifier.id), e => pfs.rimraf(location).finally(() => { })
-                .then(() => Promise.reject(new extensionManagement_1.ExtensionManagementError(e.message, e instanceof zip_1.ExtractError && e.type ? e.type : INSTALL_ERROR_EXTRACTING)))), e => Promise.reject(new extensionManagement_1.ExtensionManagementError(this.joinErrors(e).message, INSTALL_ERROR_DELETING)));
+            // Clean the location
+            try {
+                await pfs.rimraf(location);
+            }
+            catch (e) {
+                throw new extensionManagement_1.ExtensionManagementError(this.joinErrors(e).message, INSTALL_ERROR_DELETING);
+            }
+            try {
+                await zip_1.extract(zipPath, location, { sourcePath: 'extension', overwrite: true }, token);
+                this.logService.info(`Extracted extension to ${location}:`, identifier.id);
+            }
+            catch (e) {
+                try {
+                    await pfs.rimraf(location);
+                }
+                catch (e) { /* Ignore */ }
+                throw new extensionManagement_1.ExtensionManagementError(e.message, e instanceof zip_1.ExtractError && e.type ? e.type : INSTALL_ERROR_EXTRACTING);
+            }
         }
-        rename(identifier, extractPath, renamePath, retryUntil) {
-            return pfs.rename(extractPath, renamePath)
-                .then(undefined, error => {
+        async rename(identifier, extractPath, renamePath, retryUntil) {
+            try {
+                await pfs.rename(extractPath, renamePath);
+            }
+            catch (error) {
                 if (platform_1.isWindows && error && error.code === 'EPERM' && Date.now() < retryUntil) {
                     this.logService.info(`Failed renaming ${extractPath} to ${renamePath} with 'EPERM' error. Trying again...`, identifier.id);
                     return this.rename(identifier, extractPath, renamePath, retryUntil);
                 }
-                return Promise.reject(new extensionManagement_1.ExtensionManagementError(error.message || nls_1.localize(2, null, extractPath, renamePath), error.code || INSTALL_ERROR_RENAMING));
-            });
+                throw new extensionManagement_1.ExtensionManagementError(error.message || nls_1.localize(2, null, extractPath, renamePath), error.code || INSTALL_ERROR_RENAMING);
+            }
         }
         async scanSystemExtensions() {
             this.logService.trace('Started scanning system extensions');
@@ -34680,7 +34739,7 @@ define(__m[193/*vs/platform/extensionManagement/node/extensionsScanner*/], __M([
         }
         get devSystemExtensionsPath() {
             if (!this._devSystemExtensionsPath) {
-                this._devSystemExtensionsPath = path.normalize(path.join(amd_1.getPathFromAmdModule(require, ''), '..', '.build', 'builtInExtensions'));
+                this._devSystemExtensionsPath = path.normalize(path.join(network_1.FileAccess.asFileUri('', require).fsPath, '..', '.build', 'builtInExtensions'));
             }
             return this._devSystemExtensionsPath;
         }
@@ -34714,7 +34773,7 @@ define(__m[193/*vs/platform/extensionManagement/node/extensionsScanner*/], __M([
     };
     ExtensionsScanner = __decorate([
         __param(1, log_1.ILogService),
-        __param(2, environment_1.IEnvironmentService),
+        __param(2, environment_1.INativeEnvironmentService),
         __param(3, productService_1.IProductService)
     ], ExtensionsScanner);
     exports.ExtensionsScanner = ExtensionsScanner;
@@ -34733,7 +34792,7 @@ define(__m[193/*vs/platform/extensionManagement/node/extensionsScanner*/], __M([
 
 
 
-define(__m[194/*vs/platform/extensionManagement/node/extensionManagementService*/], __M([0/*require*/,1/*exports*/,107/*vs/nls!vs/platform/extensionManagement/node/extensionManagementService*/,4/*vs/base/common/path*/,21/*vs/base/node/pfs*/,19/*vs/base/common/objects*/,2/*vs/base/common/lifecycle*/,15/*vs/base/common/arrays*/,56/*vs/base/node/zip*/,30/*vs/platform/extensionManagement/common/extensionManagement*/,36/*vs/platform/extensionManagement/common/extensionManagementUtil*/,8/*vs/platform/environment/common/environment*/,9/*vs/base/common/async*/,3/*vs/base/common/event*/,76/*semver-umd*/,7/*vs/base/common/uri*/,41/*vs/platform/product/common/product*/,6/*vs/base/common/platform*/,13/*vs/platform/log/common/log*/,141/*vs/platform/extensionManagement/node/extensionsManifestCache*/,48/*vs/base/common/errorMessage*/,24/*vs/platform/telemetry/common/telemetry*/,66/*vs/platform/extensions/common/extensionValidator*/,40/*os*/,29/*vs/base/common/uuid*/,68/*vs/platform/download/common/download*/,5/*vs/platform/instantiation/common/instantiation*/,26/*vs/base/common/network*/,27/*vs/base/common/cancellation*/,192/*vs/platform/extensionManagement/node/extensionManagementUtil*/,144/*vs/platform/extensionManagement/node/extensionDownloader*/,193/*vs/platform/extensionManagement/node/extensionsScanner*/,145/*vs/platform/extensionManagement/node/extensionLifecycle*/]), function (require, exports, nls, path, pfs, objects_1, lifecycle_1, arrays_1, zip_1, extensionManagement_1, extensionManagementUtil_1, environment_1, async_1, event_1, semver, uri_1, product_1, platform_1, log_1, extensionsManifestCache_1, errorMessage_1, telemetry_1, extensionValidator_1, os_1, uuid_1, download_1, instantiation_1, network_1, cancellation_1, extensionManagementUtil_2, extensionDownloader_1, extensionsScanner_1, extensionLifecycle_1) {
+define(__m[192/*vs/platform/extensionManagement/node/extensionManagementService*/], __M([0/*require*/,1/*exports*/,107/*vs/nls!vs/platform/extensionManagement/node/extensionManagementService*/,4/*vs/base/common/path*/,21/*vs/base/node/pfs*/,2/*vs/base/common/lifecycle*/,16/*vs/base/common/arrays*/,58/*vs/base/node/zip*/,28/*vs/platform/extensionManagement/common/extensionManagement*/,35/*vs/platform/extensionManagement/common/extensionManagementUtil*/,8/*vs/platform/environment/common/environment*/,9/*vs/base/common/async*/,3/*vs/base/common/event*/,75/*semver-umd*/,7/*vs/base/common/uri*/,40/*vs/platform/product/common/product*/,5/*vs/base/common/platform*/,13/*vs/platform/log/common/log*/,137/*vs/platform/extensionManagement/node/extensionsManifestCache*/,46/*vs/base/common/errorMessage*/,23/*vs/platform/telemetry/common/telemetry*/,66/*vs/platform/extensions/common/extensionValidator*/,19/*vs/base/common/resources*/,30/*vs/base/common/uuid*/,68/*vs/platform/download/common/download*/,6/*vs/platform/instantiation/common/instantiation*/,10/*vs/base/common/network*/,27/*vs/base/common/cancellation*/,190/*vs/platform/extensionManagement/node/extensionManagementUtil*/,141/*vs/platform/extensionManagement/node/extensionDownloader*/,191/*vs/platform/extensionManagement/node/extensionsScanner*/,142/*vs/platform/extensionManagement/node/extensionLifecycle*/]), function (require, exports, nls, path, pfs, lifecycle_1, arrays_1, zip_1, extensionManagement_1, extensionManagementUtil_1, environment_1, async_1, event_1, semver, uri_1, product_1, platform_1, log_1, extensionsManifestCache_1, errorMessage_1, telemetry_1, extensionValidator_1, resources_1, uuid_1, download_1, instantiation_1, network_1, cancellation_1, extensionManagementUtil_2, extensionDownloader_1, extensionsScanner_1, extensionLifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtensionManagementService = void 0;
@@ -34745,6 +34804,7 @@ define(__m[194/*vs/platform/extensionManagement/node/extensionManagementService*
     let ExtensionManagementService = class ExtensionManagementService extends lifecycle_1.Disposable {
         constructor(environmentService, galleryService, logService, downloadService, telemetryService, instantiationService) {
             super();
+            this.environmentService = environmentService;
             this.galleryService = galleryService;
             this.logService = logService;
             this.downloadService = downloadService;
@@ -34771,22 +34831,23 @@ define(__m[194/*vs/platform/extensionManagement/node/extensionManagementService*
                 this.uninstallingExtensions.clear();
             }));
         }
-        zip(extension) {
+        async zip(extension) {
             this.logService.trace('ExtensionManagementService#zip', extension.identifier.id);
-            return this.collectFiles(extension)
-                .then(files => zip_1.zip(path.join(os_1.tmpdir(), uuid_1.generateUuid()), files))
-                .then(path => uri_1.URI.file(path));
+            const files = await this.collectFiles(extension);
+            const location = await zip_1.zip(resources_1.joinPath(this.environmentService.tmpDir, uuid_1.generateUuid()).fsPath, files);
+            return uri_1.URI.file(location);
         }
-        unzip(zipLocation) {
+        async unzip(zipLocation) {
             this.logService.trace('ExtensionManagementService#unzip', zipLocation.toString());
-            return this.install(zipLocation).then(local => local.identifier);
+            const local = await this.install(zipLocation);
+            return local.identifier;
         }
         async getManifest(vsix) {
             const downloadLocation = await this.downloadVsix(vsix);
             const zipPath = path.resolve(downloadLocation.fsPath);
             return extensionManagementUtil_2.getManifest(zipPath);
         }
-        collectFiles(extension) {
+        async collectFiles(extension) {
             const collectFilesFromDirectory = async (dir) => {
                 let entries = await pfs.readdir(dir);
                 entries = entries.map(e => path.join(dir, e));
@@ -34805,100 +34866,167 @@ define(__m[194/*vs/platform/extensionManagement/node/extensionManagementService*
                 });
                 return promise;
             };
-            return collectFilesFromDirectory(extension.location.fsPath)
-                .then(files => files.map(f => ({ path: `extension/${path.relative(extension.location.fsPath, f)}`, localPath: f })));
+            const files = await collectFilesFromDirectory(extension.location.fsPath);
+            return files.map(f => ({ path: `extension/${path.relative(extension.location.fsPath, f)}`, localPath: f }));
         }
-        install(vsix, isMachineScoped) {
+        async install(vsix, isMachineScoped) {
             this.logService.trace('ExtensionManagementService#install', vsix.toString());
-            return async_1.createCancelablePromise(token => {
-                return this.downloadVsix(vsix).then(downloadLocation => {
-                    const zipPath = path.resolve(downloadLocation.fsPath);
-                    return extensionManagementUtil_2.getManifest(zipPath)
-                        .then(manifest => {
-                        const identifier = { id: extensionManagementUtil_1.getGalleryExtensionId(manifest.publisher, manifest.name) };
-                        let operation = 1 /* Install */;
-                        if (manifest.engines && manifest.engines.vscode && !extensionValidator_1.isEngineValid(manifest.engines.vscode, product_1.default.version)) {
-                            return Promise.reject(new Error(nls.localize(0, null, identifier.id, product_1.default.version)));
+            return async_1.createCancelablePromise(async (token) => {
+                const downloadLocation = await this.downloadVsix(vsix);
+                const zipPath = path.resolve(downloadLocation.fsPath);
+                const manifest = await extensionManagementUtil_2.getManifest(zipPath);
+                const identifier = { id: extensionManagementUtil_1.getGalleryExtensionId(manifest.publisher, manifest.name) };
+                let operation = 1 /* Install */;
+                if (manifest.engines && manifest.engines.vscode && !extensionValidator_1.isEngineValid(manifest.engines.vscode, product_1.default.version)) {
+                    throw new Error(nls.localize(0, null, identifier.id, product_1.default.version));
+                }
+                const identifierWithVersion = new extensionManagementUtil_1.ExtensionIdentifierWithVersion(identifier, manifest.version);
+                const installedExtensions = await this.getInstalled(1 /* User */);
+                const existing = installedExtensions.find(i => extensionManagementUtil_1.areSameExtensions(identifier, i.identifier));
+                if (existing) {
+                    isMachineScoped = isMachineScoped || existing.isMachineScoped;
+                    operation = 2 /* Update */;
+                    if (identifierWithVersion.equals(new extensionManagementUtil_1.ExtensionIdentifierWithVersion(existing.identifier, existing.manifest.version))) {
+                        try {
+                            await this.extensionsScanner.removeExtension(existing, 'existing');
                         }
-                        const identifierWithVersion = new extensionManagementUtil_1.ExtensionIdentifierWithVersion(identifier, manifest.version);
-                        return this.getInstalled(1 /* User */)
-                            .then(installedExtensions => {
-                            const existing = installedExtensions.filter(i => extensionManagementUtil_1.areSameExtensions(identifier, i.identifier))[0];
-                            if (existing) {
-                                isMachineScoped = isMachineScoped || existing.isMachineScoped;
-                                operation = 2 /* Update */;
-                                if (identifierWithVersion.equals(new extensionManagementUtil_1.ExtensionIdentifierWithVersion(existing.identifier, existing.manifest.version))) {
-                                    return this.extensionsScanner.removeExtension(existing, 'existing').then(null, e => Promise.reject(new Error(nls.localize(1, null, manifest.displayName || manifest.name))));
-                                }
-                                else if (semver.gt(existing.manifest.version, manifest.version)) {
-                                    return this.uninstallExtension(existing);
-                                }
-                            }
-                            else {
-                                // Remove the extension with same version if it is already uninstalled.
-                                // Installing a VSIX extension shall replace the existing extension always.
-                                return this.unsetUninstalledAndGetLocal(identifierWithVersion)
-                                    .then(existing => {
-                                    if (existing) {
-                                        return this.extensionsScanner.removeExtension(existing, 'existing').then(null, e => Promise.reject(new Error(nls.localize(2, null, manifest.displayName || manifest.name))));
-                                    }
-                                    return undefined;
-                                });
-                            }
-                            return undefined;
-                        })
-                            .then(() => {
-                            this.logService.info('Installing the extension:', identifier.id);
-                            this._onInstallExtension.fire({ identifier, zipPath });
-                            return this.getGalleryMetadata(extensionManagementUtil_1.getGalleryExtensionId(manifest.publisher, manifest.name))
-                                .then(metadata => this.installFromZipPath(identifierWithVersion, zipPath, isMachineScoped ? Object.assign(Object.assign({}, metadata), { isMachineScoped }) : metadata, operation, token), () => this.installFromZipPath(identifierWithVersion, zipPath, isMachineScoped ? { isMachineScoped } : undefined, operation, token))
-                                .then(local => { this.logService.info('Successfully installed the extension:', identifier.id); return local; }, e => {
-                                this.logService.error('Failed to install the extension:', identifier.id, e.message);
-                                return Promise.reject(e);
-                            });
-                        });
-                    });
-                });
+                        catch (e) {
+                            throw new Error(nls.localize(1, null, manifest.displayName || manifest.name));
+                        }
+                    }
+                    else if (semver.gt(existing.manifest.version, manifest.version)) {
+                        await this.uninstallExtension(existing);
+                    }
+                }
+                else {
+                    // Remove the extension with same version if it is already uninstalled.
+                    // Installing a VSIX extension shall replace the existing extension always.
+                    const existing = await this.unsetUninstalledAndGetLocal(identifierWithVersion);
+                    if (existing) {
+                        try {
+                            await this.extensionsScanner.removeExtension(existing, 'existing');
+                        }
+                        catch (e) {
+                            throw new Error(nls.localize(2, null, manifest.displayName || manifest.name));
+                        }
+                    }
+                }
+                this.logService.info('Installing the extension:', identifier.id);
+                this._onInstallExtension.fire({ identifier, zipPath });
+                let metadata;
+                try {
+                    metadata = await this.getGalleryMetadata(extensionManagementUtil_1.getGalleryExtensionId(manifest.publisher, manifest.name));
+                }
+                catch (e) { /* Ignore */ }
+                try {
+                    const local = await this.installFromZipPath(identifierWithVersion, zipPath, isMachineScoped ? Object.assign(Object.assign({}, (metadata || {})), { isMachineScoped }) : metadata, operation, token);
+                    this.logService.info('Successfully installed the extension:', identifier.id);
+                    return local;
+                }
+                catch (e) {
+                    this.logService.error('Failed to install the extension:', identifier.id, e.message);
+                    throw e;
+                }
             });
         }
-        downloadVsix(vsix) {
+        async downloadVsix(vsix) {
             if (vsix.scheme === network_1.Schemas.file) {
-                return Promise.resolve(vsix);
+                return vsix;
             }
             if (!this.downloadService) {
                 throw new Error('Download service is not available');
             }
-            const downloadedLocation = path.join(os_1.tmpdir(), uuid_1.generateUuid());
-            return this.downloadService.download(vsix, uri_1.URI.file(downloadedLocation)).then(() => uri_1.URI.file(downloadedLocation));
+            const downloadedLocation = resources_1.joinPath(this.environmentService.tmpDir, uuid_1.generateUuid());
+            await this.downloadService.download(vsix, downloadedLocation);
+            return downloadedLocation;
         }
-        installFromZipPath(identifierWithVersion, zipPath, metadata, operation, token) {
-            return this.toNonCancellablePromise(this.installExtension({ zipPath, identifierWithVersion, metadata }, token)
-                .then(local => this.installDependenciesAndPackExtensions(local, undefined)
-                .then(() => local, error => {
-                if (arrays_1.isNonEmptyArray(local.manifest.extensionDependencies)) {
-                    this.logService.warn(`Cannot install dependencies of extension:`, local.identifier.id, error.message);
+        async installFromZipPath(identifierWithVersion, zipPath, metadata, operation, token) {
+            try {
+                const local = await this.installExtension({ zipPath, identifierWithVersion, metadata }, token);
+                try {
+                    await this.installDependenciesAndPackExtensions(local, undefined);
                 }
-                if (arrays_1.isNonEmptyArray(local.manifest.extensionPack)) {
-                    this.logService.warn(`Cannot install packed extensions of extension:`, local.identifier.id, error.message);
+                catch (error) {
+                    if (arrays_1.isNonEmptyArray(local.manifest.extensionDependencies)) {
+                        this.logService.warn(`Cannot install dependencies of extension:`, local.identifier.id, error.message);
+                    }
+                    if (arrays_1.isNonEmptyArray(local.manifest.extensionPack)) {
+                        this.logService.warn(`Cannot install packed extensions of extension:`, local.identifier.id, error.message);
+                    }
                 }
+                this._onDidInstallExtension.fire({ identifier: identifierWithVersion.identifier, zipPath, local, operation });
                 return local;
-            }))
-                .then(local => { this._onDidInstallExtension.fire({ identifier: identifierWithVersion.identifier, zipPath, local, operation }); return local; }, error => { this._onDidInstallExtension.fire({ identifier: identifierWithVersion.identifier, zipPath, operation, error }); return Promise.reject(error); }));
+            }
+            catch (error) {
+                this._onDidInstallExtension.fire({ identifier: identifierWithVersion.identifier, zipPath, operation, error });
+                throw error;
+            }
         }
         async canInstall(extension) {
             return true;
         }
         async installFromGallery(extension, isMachineScoped) {
             if (!this.galleryService.isEnabled()) {
-                return Promise.reject(new Error(nls.localize(3, null)));
+                throw new Error(nls.localize(3, null));
             }
+            try {
+                extension = await this.checkAndGetCompatibleVersion(extension);
+            }
+            catch (error) {
+                const errorCode = error && error.code ? error.code : ERROR_UNKNOWN;
+                this.logService.error(`Failed to install extension:`, extension.identifier.id, error ? error.message : errorCode);
+                this.reportTelemetry(this.getTelemetryEvent(1 /* Install */), extensionManagementUtil_1.getGalleryExtensionTelemetryData(extension), undefined, error);
+                if (error instanceof Error) {
+                    error.name = errorCode;
+                }
+                throw error;
+            }
+            const key = new extensionManagementUtil_1.ExtensionIdentifierWithVersion(extension.identifier, extension.version).key();
+            let cancellablePromise = this.installingExtensions.get(key);
+            if (!cancellablePromise) {
+                cancellablePromise = async_1.createCancelablePromise(token => this.doInstallFromGallery(extension, !!isMachineScoped, token));
+                this.installingExtensions.set(key, cancellablePromise);
+                cancellablePromise.finally(() => this.installingExtensions.delete(key));
+            }
+            return cancellablePromise;
+        }
+        async doInstallFromGallery(extension, isMachineScoped, token) {
             const startTime = new Date().getTime();
-            const onDidInstallExtensionSuccess = (extension, operation, local) => {
+            let operation = 1 /* Install */;
+            this.logService.info('Installing extension:', extension.identifier.id);
+            this._onInstallExtension.fire({ identifier: extension.identifier, gallery: extension });
+            try {
+                const installed = await this.getInstalled(1 /* User */);
+                const existingExtension = installed.find(i => extensionManagementUtil_1.areSameExtensions(i.identifier, extension.identifier));
+                if (existingExtension) {
+                    operation = 2 /* Update */;
+                }
+                const installableExtension = await this.downloadInstallableExtension(extension, operation);
+                installableExtension.metadata.isMachineScoped = isMachineScoped || (existingExtension === null || existingExtension === void 0 ? void 0 : existingExtension.isMachineScoped);
+                const local = await this.installExtension(installableExtension, token);
+                try {
+                    await this.extensionsDownloader.delete(uri_1.URI.file(installableExtension.zipPath));
+                }
+                catch (error) { /* Ignore */ }
+                try {
+                    await this.installDependenciesAndPackExtensions(local, existingExtension);
+                }
+                catch (error) {
+                    try {
+                        await this.uninstall(local);
+                    }
+                    catch (error) { /* Ignore */ }
+                    throw error;
+                }
+                if (existingExtension && semver.neq(existingExtension.manifest.version, extension.version)) {
+                    await this.setUninstalled(existingExtension);
+                }
                 this.logService.info(`Extensions installed successfully:`, extension.identifier.id);
                 this._onDidInstallExtension.fire({ identifier: extension.identifier, gallery: extension, local, operation });
                 this.reportTelemetry(this.getTelemetryEvent(operation), extensionManagementUtil_1.getGalleryExtensionTelemetryData(extension), new Date().getTime() - startTime, undefined);
-            };
-            const onDidInstallExtensionFailure = (extension, operation, error) => {
+                return local;
+            }
+            catch (error) {
                 const errorCode = error && error.code ? error.code : ERROR_UNKNOWN;
                 this.logService.error(`Failed to install extension:`, extension.identifier.id, error ? error.message : errorCode);
                 this._onDidInstallExtension.fire({ identifier: extension.identifier, gallery: extension, operation, error: errorCode });
@@ -34906,134 +35034,96 @@ define(__m[194/*vs/platform/extensionManagement/node/extensionManagementService*
                 if (error instanceof Error) {
                     error.name = errorCode;
                 }
-            };
-            try {
-                extension = await this.checkAndGetCompatibleVersion(extension);
+                throw error;
             }
-            catch (error) {
-                onDidInstallExtensionFailure(extension, 1 /* Install */, error);
-                return Promise.reject(error);
-            }
-            const key = new extensionManagementUtil_1.ExtensionIdentifierWithVersion(extension.identifier, extension.version).key();
-            let cancellablePromise = this.installingExtensions.get(key);
-            if (!cancellablePromise) {
-                this.logService.info('Installing extension:', extension.identifier.id);
-                this._onInstallExtension.fire({ identifier: extension.identifier, gallery: extension });
-                let operation = 1 /* Install */;
-                let cancellationToken, successCallback, errorCallback;
-                cancellablePromise = async_1.createCancelablePromise(token => { cancellationToken = token; return new Promise((c, e) => { successCallback = c; errorCallback = e; }); });
-                this.installingExtensions.set(key, cancellablePromise);
-                try {
-                    const installed = await this.getInstalled(1 /* User */);
-                    const existingExtension = installed.find(i => extensionManagementUtil_1.areSameExtensions(i.identifier, extension.identifier));
-                    if (existingExtension) {
-                        operation = 2 /* Update */;
-                    }
-                    this.downloadInstallableExtension(extension, operation)
-                        .then(installableExtension => {
-                        installableExtension.metadata.isMachineScoped = isMachineScoped || (existingExtension === null || existingExtension === void 0 ? void 0 : existingExtension.isMachineScoped);
-                        return this.installExtension(installableExtension, cancellationToken)
-                            .then(local => this.extensionsDownloader.delete(uri_1.URI.file(installableExtension.zipPath)).finally(() => { }).then(() => local));
-                    })
-                        .then(local => this.installDependenciesAndPackExtensions(local, existingExtension)
-                        .then(() => local, error => this.uninstall(local).then(() => Promise.reject(error), () => Promise.reject(error))))
-                        .then(async (local) => {
-                        if (existingExtension && semver.neq(existingExtension.manifest.version, extension.version)) {
-                            await this.setUninstalled(existingExtension);
-                        }
-                        this.installingExtensions.delete(key);
-                        onDidInstallExtensionSuccess(extension, operation, local);
-                        successCallback(local);
-                    }, error => {
-                        this.installingExtensions.delete(key);
-                        onDidInstallExtensionFailure(extension, operation, error);
-                        errorCallback(error);
-                    });
-                }
-                catch (error) {
-                    this.installingExtensions.delete(key);
-                    onDidInstallExtensionFailure(extension, operation, error);
-                    return Promise.reject(error);
-                }
-            }
-            return cancellablePromise;
         }
         async checkAndGetCompatibleVersion(extension) {
             if (await this.isMalicious(extension)) {
-                return Promise.reject(new extensionManagement_1.ExtensionManagementError(nls.localize(4, null), extensionManagement_1.INSTALL_ERROR_MALICIOUS));
+                throw new extensionManagement_1.ExtensionManagementError(nls.localize(4, null), extensionManagement_1.INSTALL_ERROR_MALICIOUS);
             }
             const compatibleExtension = await this.galleryService.getCompatibleExtension(extension);
             if (!compatibleExtension) {
-                return Promise.reject(new extensionManagement_1.ExtensionManagementError(nls.localize(5, null, extension.identifier.id, product_1.default.version), extensionManagement_1.INSTALL_ERROR_INCOMPATIBLE));
+                throw new extensionManagement_1.ExtensionManagementError(nls.localize(5, null, extension.identifier.id, product_1.default.version), extensionManagement_1.INSTALL_ERROR_INCOMPATIBLE);
             }
             return compatibleExtension;
         }
-        reinstallFromGallery(extension) {
+        async reinstallFromGallery(extension) {
             this.logService.trace('ExtensionManagementService#reinstallFromGallery', extension.identifier.id);
             if (!this.galleryService.isEnabled()) {
-                return Promise.reject(new Error(nls.localize(6, null)));
+                throw new Error(nls.localize(6, null));
             }
-            return this.findGalleryExtension(extension)
-                .then(galleryExtension => {
-                if (galleryExtension) {
-                    return this.setUninstalled(extension)
-                        .then(() => this.extensionsScanner.removeUninstalledExtension(extension)
-                        .then(() => this.installFromGallery(galleryExtension).then(), e => Promise.reject(new Error(nls.localize(7, null, errorMessage_1.toErrorMessage(e))))));
-                }
-                return Promise.reject(new Error(nls.localize(8, null)));
-            });
+            const galleryExtension = await this.findGalleryExtension(extension);
+            if (!galleryExtension) {
+                throw new Error(nls.localize(7, null));
+            }
+            await this.setUninstalled(extension);
+            try {
+                await this.extensionsScanner.removeUninstalledExtension(extension);
+            }
+            catch (e) {
+                throw new Error(nls.localize(8, null, errorMessage_1.toErrorMessage(e)));
+            }
+            await this.installFromGallery(galleryExtension);
         }
         getTelemetryEvent(operation) {
             return operation === 2 /* Update */ ? 'extensionGallery:update' : 'extensionGallery:install';
         }
-        isMalicious(extension) {
-            return this.getExtensionsReport()
-                .then(report => extensionManagementUtil_1.getMaliciousExtensionsSet(report).has(extension.identifier.id));
+        async isMalicious(extension) {
+            const report = await this.getExtensionsReport();
+            return extensionManagementUtil_1.getMaliciousExtensionsSet(report).has(extension.identifier.id);
         }
-        downloadInstallableExtension(extension, operation) {
+        async downloadInstallableExtension(extension, operation) {
             const metadata = {
                 id: extension.identifier.uuid,
                 publisherId: extension.publisherId,
                 publisherDisplayName: extension.publisherDisplayName,
             };
-            this.logService.trace('Started downloading extension:', extension.identifier.id);
-            return this.extensionsDownloader.downloadExtension(extension, operation)
-                .then(zip => {
-                const zipPath = zip.fsPath;
+            let zipPath;
+            try {
+                this.logService.trace('Started downloading extension:', extension.identifier.id);
+                const zip = await this.extensionsDownloader.downloadExtension(extension, operation);
                 this.logService.info('Downloaded extension:', extension.identifier.id, zipPath);
-                return extensionManagementUtil_2.getManifest(zipPath)
-                    .then(manifest => ({ zipPath, identifierWithVersion: new extensionManagementUtil_1.ExtensionIdentifierWithVersion(extension.identifier, manifest.version), metadata }), error => Promise.reject(new extensionManagement_1.ExtensionManagementError(this.joinErrors(error).message, INSTALL_ERROR_VALIDATING)));
-            }, error => Promise.reject(new extensionManagement_1.ExtensionManagementError(this.joinErrors(error).message, INSTALL_ERROR_DOWNLOADING)));
+                zipPath = zip.fsPath;
+            }
+            catch (error) {
+                throw new extensionManagement_1.ExtensionManagementError(this.joinErrors(error).message, INSTALL_ERROR_DOWNLOADING);
+            }
+            try {
+                const manifest = await extensionManagementUtil_2.getManifest(zipPath);
+                return { zipPath, identifierWithVersion: new extensionManagementUtil_1.ExtensionIdentifierWithVersion(extension.identifier, manifest.version), metadata };
+            }
+            catch (error) {
+                throw new extensionManagement_1.ExtensionManagementError(this.joinErrors(error).message, INSTALL_ERROR_VALIDATING);
+            }
         }
-        installExtension(installableExtension, token) {
-            return this.unsetUninstalledAndGetLocal(installableExtension.identifierWithVersion)
-                .then(local => {
+        async installExtension(installableExtension, token) {
+            try {
+                const local = await this.unsetUninstalledAndGetLocal(installableExtension.identifierWithVersion);
                 if (local) {
                     return local;
                 }
-                return this.extractAndInstall(installableExtension, token);
-            }, e => {
+            }
+            catch (e) {
                 if (platform_1.isMacintosh) {
-                    return Promise.reject(new extensionManagement_1.ExtensionManagementError(nls.localize(9, null), INSTALL_ERROR_UNSET_UNINSTALLED));
+                    throw new extensionManagement_1.ExtensionManagementError(nls.localize(9, null), INSTALL_ERROR_UNSET_UNINSTALLED);
                 }
-                return Promise.reject(new extensionManagement_1.ExtensionManagementError(nls.localize(10, null), INSTALL_ERROR_UNSET_UNINSTALLED));
-            });
+                else {
+                    throw new extensionManagement_1.ExtensionManagementError(nls.localize(10, null), INSTALL_ERROR_UNSET_UNINSTALLED);
+                }
+            }
+            return this.extractAndInstall(installableExtension, token);
         }
-        unsetUninstalledAndGetLocal(identifierWithVersion) {
-            return this.isUninstalled(identifierWithVersion)
-                .then(isUninstalled => {
-                if (isUninstalled) {
-                    this.logService.trace('Removing the extension from uninstalled list:', identifierWithVersion.identifier.id);
-                    // If the same version of extension is marked as uninstalled, remove it from there and return the local.
-                    return this.unsetUninstalled(identifierWithVersion)
-                        .then(() => {
-                        this.logService.info('Removed the extension from uninstalled list:', identifierWithVersion.identifier.id);
-                        return this.getInstalled(1 /* User */);
-                    })
-                        .then(installed => installed.filter(i => new extensionManagementUtil_1.ExtensionIdentifierWithVersion(i.identifier, i.manifest.version).equals(identifierWithVersion))[0]);
-                }
+        async unsetUninstalledAndGetLocal(identifierWithVersion) {
+            const isUninstalled = await this.isUninstalled(identifierWithVersion);
+            if (!isUninstalled) {
                 return null;
-            });
+            }
+            this.logService.trace('Removing the extension from uninstalled list:', identifierWithVersion.identifier.id);
+            // If the same version of extension is marked as uninstalled, remove it from there and return the local.
+            await this.unsetUninstalled(identifierWithVersion);
+            this.logService.info('Removed the extension from uninstalled list:', identifierWithVersion.identifier.id);
+            const installed = await this.getInstalled(1 /* User */);
+            return installed.find(i => new extensionManagementUtil_1.ExtensionIdentifierWithVersion(i.identifier, i.manifest.version).equals(identifierWithVersion)) || null;
         }
         async extractAndInstall({ zipPath, identifierWithVersion, metadata }, token) {
             const { identifier } = identifierWithVersion;
@@ -35045,55 +35135,58 @@ define(__m[194/*vs/platform/extensionManagement/node/extensionManagementService*
             return local;
         }
         async installDependenciesAndPackExtensions(installed, existing) {
-            if (this.galleryService.isEnabled()) {
-                const dependenciesAndPackExtensions = installed.manifest.extensionDependencies || [];
-                if (installed.manifest.extensionPack) {
-                    for (const extension of installed.manifest.extensionPack) {
-                        // add only those extensions which are new in currently installed extension
-                        if (!(existing && existing.manifest.extensionPack && existing.manifest.extensionPack.some(old => extensionManagementUtil_1.areSameExtensions({ id: old }, { id: extension })))) {
-                            if (dependenciesAndPackExtensions.every(e => !extensionManagementUtil_1.areSameExtensions({ id: e }, { id: extension }))) {
-                                dependenciesAndPackExtensions.push(extension);
-                            }
+            if (!this.galleryService.isEnabled()) {
+                return;
+            }
+            const dependenciesAndPackExtensions = installed.manifest.extensionDependencies || [];
+            if (installed.manifest.extensionPack) {
+                for (const extension of installed.manifest.extensionPack) {
+                    // add only those extensions which are new in currently installed extension
+                    if (!(existing && existing.manifest.extensionPack && existing.manifest.extensionPack.some(old => extensionManagementUtil_1.areSameExtensions({ id: old }, { id: extension })))) {
+                        if (dependenciesAndPackExtensions.every(e => !extensionManagementUtil_1.areSameExtensions({ id: e }, { id: extension }))) {
+                            dependenciesAndPackExtensions.push(extension);
                         }
                     }
                 }
-                if (dependenciesAndPackExtensions.length) {
-                    return this.getInstalled()
-                        .then(installed => {
-                        // filter out installed extensions
-                        const names = dependenciesAndPackExtensions.filter(id => installed.every(({ identifier: galleryIdentifier }) => !extensionManagementUtil_1.areSameExtensions(galleryIdentifier, { id })));
-                        if (names.length) {
-                            return this.galleryService.query({ names, pageSize: dependenciesAndPackExtensions.length }, cancellation_1.CancellationToken.None)
-                                .then(galleryResult => {
-                                const extensionsToInstall = galleryResult.firstPage;
-                                return Promise.all(extensionsToInstall.map(e => this.installFromGallery(e)))
-                                    .then(undefined, errors => this.rollback(extensionsToInstall).then(() => Promise.reject(errors), () => Promise.reject(errors)));
-                            });
+            }
+            if (dependenciesAndPackExtensions.length) {
+                const installed = await this.getInstalled();
+                // filter out installed extensions
+                const names = dependenciesAndPackExtensions.filter(id => installed.every(({ identifier: galleryIdentifier }) => !extensionManagementUtil_1.areSameExtensions(galleryIdentifier, { id })));
+                if (names.length) {
+                    const galleryResult = await this.galleryService.query({ names, pageSize: dependenciesAndPackExtensions.length }, cancellation_1.CancellationToken.None);
+                    const extensionsToInstall = galleryResult.firstPage;
+                    try {
+                        await Promise.all(extensionsToInstall.map(e => this.installFromGallery(e)));
+                    }
+                    catch (error) {
+                        try {
+                            await this.rollback(extensionsToInstall);
                         }
-                        return;
-                    });
+                        catch (e) { /* ignore */ }
+                        throw error;
+                    }
                 }
             }
-            return Promise.resolve(undefined);
         }
-        rollback(extensions) {
-            return this.getInstalled(1 /* User */)
-                .then(installed => Promise.all(installed.filter(local => extensions.some(galleryExtension => new extensionManagementUtil_1.ExtensionIdentifierWithVersion(local.identifier, local.manifest.version).equals(new extensionManagementUtil_1.ExtensionIdentifierWithVersion(galleryExtension.identifier, galleryExtension.version)))) // Check with version because we want to rollback the exact version
-                .map(local => this.uninstall(local))))
-                .then(() => undefined, () => undefined);
+        async rollback(extensions) {
+            const installed = await this.getInstalled(1 /* User */);
+            const extensionsToUninstall = installed.filter(local => extensions.some(galleryExtension => new extensionManagementUtil_1.ExtensionIdentifierWithVersion(local.identifier, local.manifest.version).equals(new extensionManagementUtil_1.ExtensionIdentifierWithVersion(galleryExtension.identifier, galleryExtension.version)))); // Check with version because we want to rollback the exact version
+            await Promise.all(extensionsToUninstall.map(local => this.uninstall(local)));
         }
-        uninstall(extension) {
+        async uninstall(extension) {
             this.logService.trace('ExtensionManagementService#uninstall', extension.identifier.id);
-            return this.toNonCancellablePromise(this.getInstalled(1 /* User */)
-                .then(installed => {
-                const extensionToUninstall = installed.filter(e => extensionManagementUtil_1.areSameExtensions(e.identifier, extension.identifier))[0];
-                if (extensionToUninstall) {
-                    return this.checkForDependenciesAndUninstall(extensionToUninstall, installed).then(undefined, error => Promise.reject(this.joinErrors(error)));
-                }
-                else {
-                    return Promise.reject(new Error(nls.localize(11, null, extension.manifest.displayName || extension.manifest.name)));
-                }
-            }));
+            const installed = await this.getInstalled(1 /* User */);
+            const extensionToUninstall = installed.find(e => extensionManagementUtil_1.areSameExtensions(e.identifier, extension.identifier));
+            if (!extensionToUninstall) {
+                throw new Error(nls.localize(11, null, extension.manifest.displayName || extension.manifest.name));
+            }
+            try {
+                await this.checkForDependenciesAndUninstall(extensionToUninstall, installed);
+            }
+            catch (error) {
+                throw this.joinErrors(error);
+            }
         }
         async updateMetadata(local, metadata) {
             this.logService.trace('ExtensionManagementService#updateMetadata', local.identifier.id);
@@ -35101,22 +35194,24 @@ define(__m[194/*vs/platform/extensionManagement/node/extensionManagementService*
             this.manifestCache.invalidate();
             return local;
         }
-        getGalleryMetadata(extensionName) {
-            return this.findGalleryExtensionByName(extensionName)
-                .then(galleryExtension => galleryExtension ? { id: galleryExtension.identifier.uuid, publisherDisplayName: galleryExtension.publisherDisplayName, publisherId: galleryExtension.publisherId } : undefined);
+        async getGalleryMetadata(extensionName) {
+            const galleryExtension = await this.findGalleryExtensionByName(extensionName);
+            return galleryExtension ? { id: galleryExtension.identifier.uuid, publisherDisplayName: galleryExtension.publisherDisplayName, publisherId: galleryExtension.publisherId } : undefined;
         }
-        findGalleryExtension(local) {
+        async findGalleryExtension(local) {
             if (local.identifier.uuid) {
-                return this.findGalleryExtensionById(local.identifier.uuid)
-                    .then(galleryExtension => galleryExtension ? galleryExtension : this.findGalleryExtensionByName(local.identifier.id));
+                const galleryExtension = await this.findGalleryExtensionById(local.identifier.uuid);
+                return galleryExtension ? galleryExtension : this.findGalleryExtensionByName(local.identifier.id);
             }
             return this.findGalleryExtensionByName(local.identifier.id);
         }
-        findGalleryExtensionById(uuid) {
-            return this.galleryService.query({ ids: [uuid], pageSize: 1 }, cancellation_1.CancellationToken.None).then(galleryResult => galleryResult.firstPage[0]);
+        async findGalleryExtensionById(uuid) {
+            const galleryResult = await this.galleryService.query({ ids: [uuid], pageSize: 1 }, cancellation_1.CancellationToken.None);
+            return galleryResult.firstPage[0];
         }
-        findGalleryExtensionByName(name) {
-            return this.galleryService.query({ names: [name], pageSize: 1 }, cancellation_1.CancellationToken.None).then(galleryResult => galleryResult.firstPage[0]);
+        async findGalleryExtensionByName(name) {
+            const galleryResult = await this.galleryService.query({ names: [name], pageSize: 1 }, cancellation_1.CancellationToken.None);
+            return galleryResult.firstPage[0];
         }
         joinErrors(errorOrErrors) {
             const errors = Array.isArray(errorOrErrors) ? errorOrErrors : [errorOrErrors];
@@ -35127,19 +35222,22 @@ define(__m[194/*vs/platform/extensionManagement/node/extensionManagementService*
                 return new Error(`${previousValue.message}${previousValue.message ? ',' : ''}${currentValue instanceof Error ? currentValue.message : currentValue}`);
             }, new Error(''));
         }
-        checkForDependenciesAndUninstall(extension, installed) {
-            return this.preUninstallExtension(extension)
-                .then(() => {
+        async checkForDependenciesAndUninstall(extension, installed) {
+            try {
+                await this.preUninstallExtension(extension);
                 const packedExtensions = this.getAllPackExtensionsToUninstall(extension, installed);
                 if (packedExtensions.length) {
-                    return this.uninstallExtensions(extension, packedExtensions, installed);
+                    await this.uninstallExtensions(extension, packedExtensions, installed);
                 }
-                return this.uninstallExtensions(extension, [], installed);
-            })
-                .then(() => this.postUninstallExtension(extension), error => {
-                this.postUninstallExtension(extension, new extensionManagement_1.ExtensionManagementError(error instanceof Error ? error.message : error, INSTALL_ERROR_LOCAL));
-                return Promise.reject(error);
-            });
+                else {
+                    await this.uninstallExtensions(extension, [], installed);
+                }
+            }
+            catch (error) {
+                await this.postUninstallExtension(extension, new extensionManagement_1.ExtensionManagementError(error instanceof Error ? error.message : error, INSTALL_ERROR_LOCAL));
+                throw error;
+            }
+            await this.postUninstallExtension(extension);
         }
         async uninstallExtensions(extension, otherExtensionsToUninstall, installed) {
             const extensionsToUninstall = [extension, ...otherExtensionsToUninstall];
@@ -35197,30 +35295,35 @@ define(__m[194/*vs/platform/extensionManagement/node/extensionManagementService*
         getDependents(extension, installed) {
             return installed.filter(e => e.manifest.extensionDependencies && e.manifest.extensionDependencies.some(id => extensionManagementUtil_1.areSameExtensions({ id }, extension.identifier)));
         }
-        doUninstall(extension) {
-            return this.preUninstallExtension(extension)
-                .then(() => this.uninstallExtension(extension))
-                .then(() => this.postUninstallExtension(extension), error => {
-                this.postUninstallExtension(extension, new extensionManagement_1.ExtensionManagementError(error instanceof Error ? error.message : error, INSTALL_ERROR_LOCAL));
-                return Promise.reject(error);
-            });
+        async doUninstall(extension) {
+            try {
+                await this.preUninstallExtension(extension);
+                await this.uninstallExtension(extension);
+            }
+            catch (error) {
+                await this.postUninstallExtension(extension, new extensionManagement_1.ExtensionManagementError(error instanceof Error ? error.message : error, INSTALL_ERROR_LOCAL));
+                throw error;
+            }
+            await this.postUninstallExtension(extension);
         }
-        preUninstallExtension(extension) {
-            return Promise.resolve(pfs.exists(extension.location.fsPath))
-                .then(exists => exists ? null : Promise.reject(new Error(nls.localize(18, null))))
-                .then(() => {
-                this.logService.info('Uninstalling extension:', extension.identifier.id);
-                this._onUninstallExtension.fire(extension.identifier);
-            });
+        async preUninstallExtension(extension) {
+            const exists = await pfs.exists(extension.location.fsPath);
+            if (!exists) {
+                throw new Error(nls.localize(18, null));
+            }
+            this.logService.info('Uninstalling extension:', extension.identifier.id);
+            this._onUninstallExtension.fire(extension.identifier);
         }
-        uninstallExtension(local) {
+        async uninstallExtension(local) {
             let promise = this.uninstallingExtensions.get(local.identifier.id);
             if (!promise) {
                 // Set all versions of the extension as uninstalled
-                promise = async_1.createCancelablePromise(token => this.extensionsScanner.scanUserExtensions(false)
-                    .then(userExtensions => this.setUninstalled(...userExtensions.filter(u => extensionManagementUtil_1.areSameExtensions(u.identifier, local.identifier))))
-                    .then(() => { this.uninstallingExtensions.delete(local.identifier.id); }));
+                promise = async_1.createCancelablePromise(async () => {
+                    const userExtensions = await this.extensionsScanner.scanUserExtensions(false);
+                    await this.setUninstalled(...userExtensions.filter(u => extensionManagementUtil_1.areSameExtensions(u.identifier, local.identifier)));
+                });
                 this.uninstallingExtensions.set(local.identifier.id, promise);
+                promise.finally(() => this.uninstallingExtensions.delete(local.identifier.id));
             }
             return promise;
         }
@@ -35232,7 +35335,10 @@ define(__m[194/*vs/platform/extensionManagement/node/extensionManagementService*
                 this.logService.info('Successfully uninstalled extension:', extension.identifier.id);
                 // only report if extension has a mapped gallery extension. UUID identifies the gallery extension.
                 if (extension.identifier.uuid) {
-                    await this.galleryService.reportStatistic(extension.manifest.publisher, extension.manifest.name, extension.manifest.version, "uninstall" /* Uninstall */);
+                    try {
+                        await this.galleryService.reportStatistic(extension.manifest.publisher, extension.manifest.name, extension.manifest.version, "uninstall" /* Uninstall */);
+                    }
+                    catch (error) { /* ignore */ }
                 }
             }
             this.reportTelemetry('extensionGallery:uninstall', extensionManagementUtil_1.getLocalExtensionTelemetryData(extension), undefined, error);
@@ -35245,8 +35351,9 @@ define(__m[194/*vs/platform/extensionManagement/node/extensionManagementService*
         removeDeprecatedExtensions() {
             return this.extensionsScanner.cleanUp();
         }
-        isUninstalled(identifier) {
-            return this.filterUninstalled(identifier).then(uninstalled => uninstalled.length === 1);
+        async isUninstalled(identifier) {
+            const uninstalled = await this.filterUninstalled(identifier);
+            return uninstalled.length === 1;
         }
         filterUninstalled(...identifiers) {
             return this.extensionsScanner.withUninstalledExtensions(allUninstalled => {
@@ -35261,7 +35368,10 @@ define(__m[194/*vs/platform/extensionManagement/node/extensionManagementService*
         }
         setUninstalled(...extensions) {
             const ids = extensions.map(e => new extensionManagementUtil_1.ExtensionIdentifierWithVersion(e.identifier, e.manifest.version));
-            return this.extensionsScanner.withUninstalledExtensions(uninstalled => objects_1.assign(uninstalled, ids.reduce((result, id) => { result[id.key()] = true; return result; }, {})));
+            return this.extensionsScanner.withUninstalledExtensions(uninstalled => {
+                ids.forEach(id => uninstalled[id.key()] = true);
+                return uninstalled;
+            });
         }
         unsetUninstalled(extensionIdentifier) {
             return this.extensionsScanner.withUninstalledExtensions(uninstalled => delete uninstalled[extensionIdentifier.key()]);
@@ -35274,19 +35384,17 @@ define(__m[194/*vs/platform/extensionManagement/node/extensionManagementService*
             }
             return this.reportedExtensions;
         }
-        updateReportCache() {
-            this.logService.trace('ExtensionManagementService.refreshReportedCache');
-            return this.galleryService.getExtensionsReport()
-                .then(result => {
+        async updateReportCache() {
+            try {
+                this.logService.trace('ExtensionManagementService.refreshReportedCache');
+                const result = await this.galleryService.getExtensionsReport();
                 this.logService.trace(`ExtensionManagementService.refreshReportedCache - got ${result.length} reported extensions from service`);
                 return result;
-            }, err => {
+            }
+            catch (err) {
                 this.logService.trace('ExtensionManagementService.refreshReportedCache - failed to get extension report');
                 return [];
-            });
-        }
-        toNonCancellablePromise(promise) {
-            return new Promise((c, e) => promise.then(result => c(result), error => e(error)));
+            }
         }
         reportTelemetry(eventName, extensionData, duration, error) {
             const errorcode = error ? error instanceof extensionManagement_1.ExtensionManagementError ? error.code : ERROR_UNKNOWN : undefined;
@@ -35321,11 +35429,11 @@ define(__m[194/*vs/platform/extensionManagement/node/extensionManagementService*
                     ]
                 }
             */
-            this.telemetryService.publicLogError(eventName, objects_1.assign(extensionData, { success: !error, duration, errorcode }));
+            this.telemetryService.publicLogError(eventName, Object.assign(Object.assign({}, extensionData), { success: !error, duration, errorcode }));
         }
     };
     ExtensionManagementService = __decorate([
-        __param(0, environment_1.IEnvironmentService),
+        __param(0, environment_1.INativeEnvironmentService),
         __param(1, extensionManagement_1.IExtensionGalleryService),
         __param(2, log_1.ILogService),
         __param(3, instantiation_1.optional(download_1.IDownloadService)),
@@ -35339,7 +35447,7 @@ define(__m[194/*vs/platform/extensionManagement/node/extensionManagementService*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[201/*vs/code/electron-browser/sharedProcess/sharedProcessMain*/], __M([0/*require*/,1/*exports*/,35/*fs*/,6/*vs/base/common/platform*/,41/*vs/platform/product/common/product*/,95/*vs/base/parts/ipc/node/ipc.net*/,72/*vs/platform/instantiation/common/serviceCollection*/,67/*vs/platform/instantiation/common/descriptors*/,143/*vs/platform/instantiation/common/instantiationService*/,8/*vs/platform/environment/common/environment*/,156/*vs/platform/environment/node/environmentService*/,128/*vs/platform/extensionManagement/common/extensionManagementIpc*/,30/*vs/platform/extensionManagement/common/extensionManagement*/,194/*vs/platform/extensionManagement/node/extensionManagementService*/,166/*vs/platform/extensionManagement/common/extensionGalleryService*/,25/*vs/platform/configuration/common/configuration*/,158/*vs/platform/configuration/common/configurationService*/,43/*vs/platform/request/common/request*/,160/*vs/platform/request/browser/requestService*/,24/*vs/platform/telemetry/common/telemetry*/,79/*vs/platform/telemetry/common/telemetryUtils*/,170/*vs/platform/telemetry/node/commonProperties*/,171/*vs/platform/telemetry/node/telemetryIpc*/,168/*vs/platform/telemetry/common/telemetryService*/,169/*vs/platform/telemetry/node/appInsightsAppender*/,64/*vs/base/parts/sandbox/electron-sandbox/globals*/,13/*vs/platform/log/common/log*/,152/*vs/platform/log/common/logIpc*/,148/*vs/platform/localizations/node/localizations*/,75/*vs/platform/localizations/common/localizations*/,2/*vs/base/common/lifecycle*/,161/*vs/platform/download/common/downloadService*/,68/*vs/platform/download/common/download*/,32/*vs/base/parts/ipc/common/ipc*/,155/*vs/code/electron-browser/sharedProcess/contrib/nodeCachedDataCleaner*/,154/*vs/code/electron-browser/sharedProcess/contrib/languagePackCachedDataCleaner*/,140/*vs/code/electron-browser/sharedProcess/contrib/storageDataCleaner*/,139/*vs/code/electron-browser/sharedProcess/contrib/logsDataCleaner*/,73/*vs/platform/ipc/electron-sandbox/mainProcessService*/,77/*vs/platform/log/node/spdlogService*/,165/*vs/platform/diagnostics/node/diagnosticsService*/,126/*vs/platform/diagnostics/node/diagnosticsIpc*/,146/*vs/platform/files/common/fileService*/,16/*vs/platform/files/common/files*/,147/*vs/platform/files/node/diskFileSystemProvider*/,26/*vs/base/common/network*/,37/*vs/platform/product/common/productService*/,23/*vs/platform/userDataSync/common/userDataSync*/,187/*vs/platform/userDataSync/common/userDataSyncService*/,188/*vs/platform/userDataSync/common/userDataSyncStoreService*/,183/*vs/platform/userDataSync/common/userDataSyncIpc*/,74/*vs/platform/electron/electron-sandbox/electron*/,153/*vs/platform/log/node/loggerService*/,184/*vs/platform/userDataSync/common/userDataSyncLog*/,138/*vs/platform/credentials/common/credentials*/,124/*vs/platform/credentials/node/credentialsService*/,189/*vs/platform/userDataSync/electron-browser/userDataAutoSyncService*/,191/*vs/platform/storage/node/storageService*/,167/*vs/platform/storage/node/storageIpc*/,22/*vs/platform/storage/common/storage*/,164/*vs/platform/extensionManagement/common/extensionEnablementService*/,186/*vs/platform/userDataSync/common/userDataSyncResourceEnablementService*/,54/*vs/platform/userDataSync/common/userDataSyncAccount*/,182/*vs/platform/userDataSync/common/userDataSyncBackupStoreService*/,80/*vs/platform/userDataSync/common/storageKeys*/,163/*vs/platform/extensionManagement/node/extensionTipsService*/,55/*vs/platform/userDataSync/common/userDataSyncMachines*/]), function (require, exports, fs, platform, product_1, ipc_net_1, serviceCollection_1, descriptors_1, instantiationService_1, environment_1, environmentService_1, extensionManagementIpc_1, extensionManagement_1, extensionManagementService_1, extensionGalleryService_1, configuration_1, configurationService_1, request_1, requestService_1, telemetry_1, telemetryUtils_1, commonProperties_1, telemetryIpc_1, telemetryService_1, appInsightsAppender_1, globals_1, log_1, logIpc_1, localizations_1, localizations_2, lifecycle_1, downloadService_1, download_1, ipc_1, nodeCachedDataCleaner_1, languagePackCachedDataCleaner_1, storageDataCleaner_1, logsDataCleaner_1, mainProcessService_1, spdlogService_1, diagnosticsService_1, diagnosticsIpc_1, fileService_1, files_1, diskFileSystemProvider_1, network_1, productService_1, userDataSync_1, userDataSyncService_1, userDataSyncStoreService_1, userDataSyncIpc_1, electron_1, loggerService_1, userDataSyncLog_1, credentials_1, credentialsService_1, userDataAutoSyncService_1, storageService_1, storageIpc_1, storage_1, extensionEnablementService_1, userDataSyncResourceEnablementService_1, userDataSyncAccount_1, userDataSyncBackupStoreService_1, storageKeys_1, extensionTipsService_1, userDataSyncMachines_1) {
+define(__m[199/*vs/code/electron-browser/sharedProcess/sharedProcessMain*/], __M([0/*require*/,1/*exports*/,33/*fs*/,5/*vs/base/common/platform*/,40/*vs/platform/product/common/product*/,94/*vs/base/parts/ipc/node/ipc.net*/,73/*vs/platform/instantiation/common/serviceCollection*/,67/*vs/platform/instantiation/common/descriptors*/,139/*vs/platform/instantiation/common/instantiationService*/,8/*vs/platform/environment/common/environment*/,153/*vs/platform/environment/node/environmentService*/,126/*vs/platform/extensionManagement/common/extensionManagementIpc*/,28/*vs/platform/extensionManagement/common/extensionManagement*/,192/*vs/platform/extensionManagement/node/extensionManagementService*/,162/*vs/platform/extensionManagement/common/extensionGalleryService*/,26/*vs/platform/configuration/common/configuration*/,155/*vs/platform/configuration/common/configurationService*/,42/*vs/platform/request/common/request*/,157/*vs/platform/request/browser/requestService*/,23/*vs/platform/telemetry/common/telemetry*/,78/*vs/platform/telemetry/common/telemetryUtils*/,167/*vs/platform/telemetry/node/commonProperties*/,168/*vs/platform/telemetry/node/telemetryIpc*/,165/*vs/platform/telemetry/common/telemetryService*/,166/*vs/platform/telemetry/node/appInsightsAppender*/,53/*vs/base/parts/sandbox/electron-sandbox/globals*/,13/*vs/platform/log/common/log*/,149/*vs/platform/log/common/logIpc*/,145/*vs/platform/localizations/node/localizations*/,74/*vs/platform/localizations/common/localizations*/,2/*vs/base/common/lifecycle*/,158/*vs/platform/download/common/downloadService*/,68/*vs/platform/download/common/download*/,34/*vs/base/parts/ipc/common/ipc*/,152/*vs/code/electron-browser/sharedProcess/contrib/nodeCachedDataCleaner*/,151/*vs/code/electron-browser/sharedProcess/contrib/languagePackCachedDataCleaner*/,136/*vs/code/electron-browser/sharedProcess/contrib/storageDataCleaner*/,135/*vs/code/electron-browser/sharedProcess/contrib/logsDataCleaner*/,140/*vs/platform/ipc/electron-sandbox/mainProcessService*/,76/*vs/platform/log/node/spdlogService*/,161/*vs/platform/diagnostics/node/diagnosticsService*/,143/*vs/platform/files/common/fileService*/,15/*vs/platform/files/common/files*/,144/*vs/platform/files/node/diskFileSystemProvider*/,10/*vs/base/common/network*/,36/*vs/platform/product/common/productService*/,24/*vs/platform/userDataSync/common/userDataSync*/,184/*vs/platform/userDataSync/common/userDataSyncService*/,185/*vs/platform/userDataSync/common/userDataSyncStoreService*/,180/*vs/platform/userDataSync/common/userDataSyncIpc*/,55/*vs/platform/native/electron-sandbox/native*/,150/*vs/platform/log/node/loggerService*/,181/*vs/platform/userDataSync/common/userDataSyncLog*/,186/*vs/platform/userDataSync/electron-sandbox/userDataAutoSyncService*/,189/*vs/platform/storage/node/storageService*/,164/*vs/platform/storage/node/storageIpc*/,22/*vs/platform/storage/common/storage*/,160/*vs/platform/extensionManagement/common/extensionEnablementService*/,183/*vs/platform/userDataSync/common/userDataSyncResourceEnablementService*/,56/*vs/platform/userDataSync/common/userDataSyncAccount*/,179/*vs/platform/userDataSync/common/userDataSyncBackupStoreService*/,79/*vs/platform/userDataSync/common/storageKeys*/,163/*vs/platform/extensionManagement/electron-sandbox/extensionTipsService*/,57/*vs/platform/userDataSync/common/userDataSyncMachines*/,69/*vs/platform/extensionRecommendations/common/extensionRecommendations*/,128/*vs/platform/extensionRecommendations/electron-sandbox/extensionRecommendationsIpc*/,187/*vs/platform/windows/electron-sandbox/windowTracker*/]), function (require, exports, fs, platform, product_1, ipc_net_1, serviceCollection_1, descriptors_1, instantiationService_1, environment_1, environmentService_1, extensionManagementIpc_1, extensionManagement_1, extensionManagementService_1, extensionGalleryService_1, configuration_1, configurationService_1, request_1, requestService_1, telemetry_1, telemetryUtils_1, commonProperties_1, telemetryIpc_1, telemetryService_1, appInsightsAppender_1, globals_1, log_1, logIpc_1, localizations_1, localizations_2, lifecycle_1, downloadService_1, download_1, ipc_1, nodeCachedDataCleaner_1, languagePackCachedDataCleaner_1, storageDataCleaner_1, logsDataCleaner_1, mainProcessService_1, spdlogService_1, diagnosticsService_1, fileService_1, files_1, diskFileSystemProvider_1, network_1, productService_1, userDataSync_1, userDataSyncService_1, userDataSyncStoreService_1, userDataSyncIpc_1, native_1, loggerService_1, userDataSyncLog_1, userDataAutoSyncService_1, storageService_1, storageIpc_1, storage_1, extensionEnablementService_1, userDataSyncResourceEnablementService_1, userDataSyncAccount_1, userDataSyncBackupStoreService_1, storageKeys_1, extensionTipsService_1, userDataSyncMachines_1, extensionRecommendations_1, extensionRecommendationsIpc_1, windowTracker_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.startup = void 0;
@@ -35367,7 +35475,7 @@ define(__m[201/*vs/code/electron-browser/sharedProcess/sharedProcessMain*/], __M
         process.once('exit', onExit);
         globals_1.ipcRenderer.once('vscode:electron-main->shared-process=exit', onExit);
         disposables.add(server);
-        const environmentService = new environmentService_1.EnvironmentService(initData.args, process.execPath);
+        const environmentService = new environmentService_1.NativeEnvironmentService(initData.args);
         const mainRouter = new ipc_1.StaticRouter(ctx => ctx === 'main');
         const loggerClient = new logIpc_1.LoggerChannelClient(server.getChannel('logger', mainRouter));
         const logService = new logIpc_1.FollowerLogService(loggerClient, new spdlogService_1.SpdLogService('sharedprocess', environmentService.logsPath, initData.logLevel));
@@ -35393,14 +35501,18 @@ define(__m[201/*vs/code/electron-browser/sharedProcess/sharedProcessMain*/], __M
         disposables.add(lifecycle_1.toDisposable(() => storageService.flush()));
         services.set(storageKeys_1.IStorageKeysSyncRegistryService, new userDataSyncIpc_1.StorageKeysSyncRegistryChannelClient(mainProcessService.getChannel('storageKeysSyncRegistryService')));
         services.set(environment_1.IEnvironmentService, environmentService);
+        services.set(environment_1.INativeEnvironmentService, environmentService);
         services.set(productService_1.IProductService, Object.assign({ _serviceBrand: undefined }, product_1.default));
         services.set(log_1.ILogService, logService);
         services.set(configuration_1.IConfigurationService, configurationService);
         services.set(request_1.IRequestService, new descriptors_1.SyncDescriptor(requestService_1.RequestService));
         services.set(log_1.ILoggerService, new descriptors_1.SyncDescriptor(loggerService_1.LoggerService));
-        const electronService = ipc_1.createChannelSender(mainProcessService.getChannel('electron'), { context: configuration.windowId });
-        services.set(electron_1.IElectronService, electronService);
+        const nativeHostService = ipc_1.createChannelSender(mainProcessService.getChannel('nativeHost'), { context: configuration.windowId });
+        services.set(native_1.INativeHostService, nativeHostService);
+        const activeWindowManager = new windowTracker_1.ActiveWindowManager(nativeHostService);
+        const activeWindowRouter = new ipc_1.StaticRouter(ctx => activeWindowManager.getActiveClientId().then(id => ctx === id));
         services.set(download_1.IDownloadService, new descriptors_1.SyncDescriptor(downloadService_1.DownloadService));
+        services.set(extensionRecommendations_1.IExtensionRecommendationNotificationService, new extensionRecommendationsIpc_1.ExtensionRecommendationNotificationServiceChannelClient(server.getChannel('IExtensionRecommendationNotificationService', activeWindowRouter)));
         const instantiationService = new instantiationService_1.InstantiationService(services);
         let telemetryService;
         instantiationService.invokeFunction(accessor => {
@@ -35434,7 +35546,6 @@ define(__m[201/*vs/code/electron-browser/sharedProcess/sharedProcessMain*/], __M
             services.set(localizations_2.ILocalizationsService, new descriptors_1.SyncDescriptor(localizations_1.LocalizationsService));
             services.set(diagnosticsService_1.IDiagnosticsService, new descriptors_1.SyncDescriptor(diagnosticsService_1.DiagnosticsService));
             services.set(extensionManagement_1.IExtensionTipsService, new descriptors_1.SyncDescriptor(extensionTipsService_1.ExtensionTipsService));
-            services.set(credentials_1.ICredentialsService, new descriptors_1.SyncDescriptor(credentialsService_1.KeytarCredentialsService));
             services.set(userDataSyncAccount_1.IUserDataSyncAccountService, new descriptors_1.SyncDescriptor(userDataSyncAccount_1.UserDataSyncAccountService));
             services.set(userDataSync_1.IUserDataSyncLogService, new descriptors_1.SyncDescriptor(userDataSyncLog_1.UserDataSyncLogService));
             services.set(userDataSync_1.IUserDataSyncUtilService, new userDataSyncIpc_1.UserDataSyncUtilServiceClient(server.getChannel('userDataSyncUtil', client => client.ctx !== 'main')));
@@ -35455,7 +35566,7 @@ define(__m[201/*vs/code/electron-browser/sharedProcess/sharedProcessMain*/], __M
                 const localizationsChannel = ipc_1.createChannelReceiver(localizationsService);
                 server.registerChannel('localizations', localizationsChannel);
                 const diagnosticsService = accessor.get(diagnosticsService_1.IDiagnosticsService);
-                const diagnosticsChannel = new diagnosticsIpc_1.DiagnosticsChannel(diagnosticsService);
+                const diagnosticsChannel = ipc_1.createChannelReceiver(diagnosticsService);
                 server.registerChannel('diagnostics', diagnosticsChannel);
                 const extensionTipsService = accessor.get(extensionManagement_1.IExtensionTipsService);
                 const extensionTipsChannel = new extensionManagementIpc_1.ExtensionTipsChannel(extensionTipsService);

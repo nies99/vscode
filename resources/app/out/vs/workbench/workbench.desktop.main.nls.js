@@ -219,9 +219,9 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	],
 	"vs/editor/common/config/editorOptions": [
 		"The editor will use platform APIs to detect when a Screen Reader is attached.",
-		"The editor will be permanently optimized for usage with a Screen Reader.",
+		"The editor will be permanently optimized for usage with a Screen Reader. Word wrapping will be disabled.",
 		"The editor will never be optimized for usage with a Screen Reader.",
-		"Controls whether the editor should run in a mode where it is optimized for screen readers.",
+		"Controls whether the editor should run in a mode where it is optimized for screen readers. Setting to on will disable word wrapping.",
 		"Controls whether a space character is inserted when commenting.",
 		"Controls if empty lines should be ignored with toggle, add or remove actions for line comments.",
 		"Controls whether copying without a selection copies the current line.",
@@ -346,7 +346,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Use language configurations to determine when to automatically surround selections.",
 		"Surround with quotes but not brackets.",
 		"Surround with brackets but not quotes.",
-		"Controls whether the editor should automatically surround selections.",
+		"Controls whether the editor should automatically surround selections when typing quotes or brackets.",
 		"Controls whether the editor shows CodeLens.",
 		"Controls whether the editor should render the inline color decorators and color picker.",
 		"Enable that the selection with the mouse and keys is doing column selection.",
@@ -354,7 +354,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Control the cursor animation style.",
 		"Controls whether the smooth caret animation should be enabled.",
 		"Controls the cursor style.",
-		"Controls the minimal number of visible leading and trailing lines surrounding the cursor. Known as 'scrollOff' or `scrollOffset` in some other editors.",
+		"Controls the minimal number of visible leading and trailing lines surrounding the cursor. Known as 'scrollOff' or 'scrollOffset' in some other editors.",
 		"`cursorSurroundingLines` is enforced only when triggered via the keyboard or API.",
 		"`cursorSurroundingLines` is enforced always.",
 		"Controls when `cursorSurroundingLines` should be enforced.",
@@ -1381,7 +1381,15 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Minimap slider background color when clicked on.",
 		"The color used for the problems error icon.",
 		"The color used for the problems warning icon.",
-		"The color used for the problems info icon."
+		"The color used for the problems info icon.",
+		"The foreground color used in charts.",
+		"The color used for horizontal lines in charts.",
+		"The red color used charts.",
+		"The blue color used charts.",
+		"The yellow color used charts.",
+		"The orange color used charts.",
+		"The green color used charts.",
+		"The purple color used charts."
 	],
 	"vs/platform/theme/common/iconRegistry": [
 		"The id of the font to use. If not set, the font that is defined first is used.",
@@ -1520,9 +1528,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	"vs/workbench/api/browser/mainThreadCustomEditors": [
 		"Edit"
 	],
-	"vs/workbench/api/browser/mainThreadEditors": [
-		"{0} ⟷ {1}"
-	],
 	"vs/workbench/api/browser/mainThreadExtensionService": [
 		"Cannot activate the '{0}' extension because it depends on the '{1}' extension, which is not loaded. Would you like to reload the window to load the extension?",
 		"Reload Window",
@@ -1568,6 +1573,9 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Contributes views containers to the editor",
 		"Contribute views containers to Activity Bar",
 		"Contribute views containers to Panel",
+		"Type of the the view. This can either be `tree` for a tree view based view or `webview` for a webview based view. The default is `tree`.",
+		"The view is backed by a `TreeView` created by `createTreeView`.",
+		"The view is backed by a `WebviewView` registered by `registerWebviewViewProvider`.",
 		"Identifier of the view. This should be unique across all views. It is recommended to include your extension id as part of the view id. Use this to register a data provider through `vscode.window.registerTreeDataProviderForView` API. Also to trigger activating your extension by registering `onView:${id}` event to `activationEvents`.",
 		"The human-readable name of the view. Will be shown",
 		"Condition which must be true to show this view",
@@ -1596,13 +1604,11 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"property `{0}` is mandatory and must be of type `string`",
 		"property `{0}` is mandatory and must be of type `string`",
 		"Show {0}",
-		"View",
 		"View container '{0}' requires 'enableProposedApi' turned on to be added to 'Remote'.",
 		"View container '{0}' does not exist and all views registered to it will be added to 'Explorer'.",
 		"Cannot register multiple views with same id `{0}`",
 		"A view with id `{0}` is already registered.",
 		"Unknown view type `{0}`.",
-		"Webview views are proposed api and are only supported when running out of dev or with the following command line switch: --enable-proposed-api",
 		"views must be an array",
 		"property `{0}` is mandatory and must be of type `string`",
 		"property `{0}` is mandatory and must be of type `string`",
@@ -1668,6 +1674,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"The debug variables view context menu",
 		"The debug toolbar menu",
 		"The top level navigational menu (web only)",
+		"The top level file menu",
 		"The Source Control title menu",
 		"The Source Control menu",
 		"The Source Control resource group context menu",
@@ -1710,7 +1717,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Icon path when a dark theme is used",
 		"Contributes menu items to the editor",
 		"Proposed API",
-		"(Proposed API) Contributes submenu items to the editor",
+		"Contributes submenu items to the editor",
 		"expected non-empty value.",
 		"property `{0}` is mandatory and must be of type `string`",
 		"property `{0}` can be omitted or must be of type `string`",
@@ -1729,19 +1736,15 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Command `{0}` appears multiple times in the `commands` section.",
 		"`{0}` is not a valid submenu identifier",
 		"`{0}` is not a valid submenu label",
-		"Submenus are proposed API and are only available when running out of dev or with the following command line switch: --enable-proposed-api {0}",
 		"`{0}` is not a valid menu identifier",
 		"{0} is a proposed menu identifier and is only available when running out of dev or with the following command line switch: --enable-proposed-api {1}",
-		"{0} is a submenu identifier and is only available when running out of dev or with the following command line switch: --enable-proposed-api {1}",
 		"Menu item references a command `{0}` which is not defined in the 'commands' section.",
 		"Menu item references an alt-command `{0}` which is not defined in the 'commands' section.",
 		"Menu item references the same command as default and alt-command",
-		"Menu item references a submenu which is only available when running out of dev or with the following command line switch: --enable-proposed-api {0}",
 		"Menu item references a submenu for a menu which doesn't have submenu support.",
 		"Menu item references a submenu `{0}` which is not defined in the 'submenus' section."
 	],
 	"vs/workbench/browser/actions/developerActions": [
-		"Developer",
 		"Inspect Context Keys",
 		"Toggle Screencast Mode",
 		"Log Storage Database Contents",
@@ -1755,7 +1758,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Controls the size (in pixels) of the mouse indicator in screencast mode."
 	],
 	"vs/workbench/browser/actions/helpActions": [
-		"Help",
 		"Keyboard Shortcuts Reference",
 		"Documentation",
 		"Introductory Videos",
@@ -1775,7 +1777,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Privac&&y Statement"
 	],
 	"vs/workbench/browser/actions/layoutActions": [
-		"View",
 		"Close Side Bar",
 		"Toggle Activity Bar Visibility",
 		"Show &&Activity Bar",
@@ -1826,8 +1827,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Navigate to the View Below",
 		"Focus Next Part",
 		"Focus Previous Part",
-		"Go Home",
-		"View"
+		"Go Home"
 	],
 	"vs/workbench/browser/actions/quickAccessActions": [
 		"Go to File...",
@@ -1862,9 +1862,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"About",
 		"New Window",
 		"File",
-		"View",
-		"Developer",
-		"Help",
 		"New &&Window",
 		"Open &&Recent",
 		"&&More...",
@@ -1900,9 +1897,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"{0} is currently unavailable",
 		"Hide",
 		"Previous Side Bar View",
-		"Next Side Bar View",
-		"View",
-		"View"
+		"Next Side Bar View"
 	],
 	"vs/workbench/browser/parts/activitybar/activitybarPart": [
 		"Hide Home Button",
@@ -1932,7 +1927,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"{0} ({1})",
 		"Hide",
 		"Keep",
-		"{0} active",
 		"Toggle View Pinned"
 	],
 	"vs/workbench/browser/parts/compositePart": [
@@ -1994,7 +1988,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	],
 	"vs/workbench/browser/parts/editor/breadcrumbsControl": [
 		"Toggle Breadcrumbs",
-		"View",
 		"Show &&Breadcrumbs",
 		"Focus Breadcrumbs"
 	],
@@ -2013,7 +2006,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Show All Opened Editors By Appearance",
 		"Type the name of an editor to open it.",
 		"Show All Opened Editors By Most Recently Used",
-		"View",
 		"File",
 		"Split Up",
 		"Split Down",
@@ -2044,18 +2036,24 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Close All",
 		"Close",
 		"Close All",
+		"Unpin",
+		"Close",
+		"Unpin",
+		"Close",
 		"Previous Change",
 		"Next Change",
 		"Ignore Leading/Trailing Whitespace Differences",
 		"Show Leading/Trailing Whitespace Differences",
-		"View",
 		"Keep Editor",
 		"Pin Editor",
 		"Unpin Editor",
+		"Close Editor",
+		"Close Pinned Editor",
 		"Close All Editors in Group",
 		"Close Saved Editors in Group",
 		"Close Other Editors in Group",
 		"Close Editors to the Right in Group",
+		"Close Editor Group",
 		"&&Reopen Closed Editor",
 		"&&Clear Recently Opened",
 		"Editor &&Layout",
@@ -2116,6 +2114,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Focus Above Editor Group",
 		"Focus Below Editor Group",
 		"Close Editor",
+		"Unpin Editor",
 		"Close",
 		"Revert and Close Editor",
 		"Close Editors to the Left in Group",
@@ -2216,7 +2215,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"{0} selections",
 		"LF",
 		"CRLF",
-		"Are you using a screen reader to operate VS Code? (Certain features like word wrap are disabled when using a screen reader)",
+		"Are you using a screen reader to operate VS Code? (word wrap is disabled when using a screen reader)",
 		"Yes",
 		"No",
 		"No text editor active at this time",
@@ -2354,22 +2353,14 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Move Panel To Bottom",
 		"Previous Panel View",
 		"Next Panel View",
-		"View",
-		"View",
-		"View",
-		"View",
-		"View",
-		"View",
-		"Show &&Panel",
-		"View"
+		"Show &&Panel"
 	],
 	"vs/workbench/browser/parts/panel/panelPart": [
 		"Hide Panel",
 		"Drag a view into the panel to display."
 	],
 	"vs/workbench/browser/parts/sidebar/sidebarPart": [
-		"Focus into Side Bar",
-		"View"
+		"Focus into Side Bar"
 	],
 	"vs/workbench/browser/parts/statusbar/statusbarPart": [
 		"Hide '{0}'",
@@ -2411,7 +2402,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	],
 	"vs/workbench/browser/parts/views/viewsService": [
 		"Focus on {0} View",
-		"View",
 		"Reset Location"
 	],
 	"vs/workbench/browser/viewlet": [
@@ -2427,8 +2417,8 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Increases the size, so it can be grabbed more easily with the mouse",
 		"Controls the height of the scrollbars used for tabs and breadcrumbs in the editor title area.",
 		"Controls whether opened editors should show in tabs or not.",
-		"Controls whether scrolling over tabs will open them or not. By default tabs will only reveal upon scrolling, but not open. You can press and hold the Shift-key while scrolling to change this behaviour for that duration.",
-		"Controls whether a top border is drawn on modified (dirty) editor tabs or not.",
+		"Controls whether scrolling over tabs will open them or not. By default tabs will only reveal upon scrolling, but not open. You can press and hold the Shift-key while scrolling to change this behaviour for that duration. This value is ignored when `#workbench.editor.showTabs#` is `false`.",
+		"Controls whether a top border is drawn on modified (dirty) editor tabs or not. This value is ignored when `#workbench.editor.showTabs#` is `false`.",
 		"Show the name of the file. When tabs are enabled and two files have the same name in one group the distinguishing sections of each file's path are added. When tabs are disabled, the path relative to the workspace folder is shown if the editor is active.",
 		"Show the name of the file followed by its directory name.",
 		"Show the name of the file followed by its path relative to the workspace folder.",
@@ -2437,10 +2427,14 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"The name of the untitled file is derived from the contents of its first line unless it has an associated file path. It will fallback to the name in case the line is empty or contains no word characters.",
 		"The name of the untitled file is not derived from the contents of the file.",
 		"Controls the format of the label for an untitled editor.",
-		"Controls the position of the editor's tabs close buttons, or disables them when set to 'off'.",
+		"Controls the position of the editor's tabs close buttons, or disables them when set to 'off'. This value is ignored when `#workbench.editor.showTabs#` is `false`.",
 		"Always keep tabs large enough to show the full editor label.",
 		"Allow tabs to get smaller when the available space is not enough to show all tabs at once.",
-		"Controls the sizing of editor tabs.",
+		"Controls the sizing of editor tabs. This value is ignored when `#workbench.editor.showTabs#` is `false`.",
+		"A pinned tab inherits the look of non pinned tabs.",
+		"A pinned tab will show in a compact form with only icon or first letter of the editor name.",
+		"A pinned tab shrinks to a compact fixed size showing parts of the editor name.",
+		"Controls the sizing of pinned editor tabs. Pinned tabs are sorted to the begining of all opened tabs and typically do not close until unpinned. This value is ignored when `#workbench.editor.showTabs#` is `false`.",
 		"Splits all the editor groups to equal parts.",
 		"Splits the active editor group to equal parts.",
 		"Controls the sizing of editor groups when splitting them.",
@@ -2468,6 +2462,10 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Controls whether opening keybinding settings also opens an editor showing all default keybindings.",
 		"Controls the location of the sidebar and activity bar. They can either show on the left or right of the workbench.",
 		"Controls the default location of the panel (terminal, debug console, output, problems). It can either show at the bottom, right, or left of the workbench.",
+		"Controls whether the panel opens maximized. It can either always open maximized, never open maximized, or open to the last state it was in before being closed.",
+		"Always maximize the panel when opening it.",
+		"Never maximize the panel when opening it. The panel will open un-maximized.",
+		"Open the panel to the state that it was in, before it was closed.",
 		"Controls the visibility of the status bar at the bottom of the workbench.",
 		"Controls the visibility of the activity bar in the workbench.",
 		"Controls the behavior of clicking an activity bar icon in the workbench.",
@@ -2503,7 +2501,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Menu is always visible even in full screen mode.",
 		"Menu is hidden but can be displayed via Alt key.",
 		"Menu is always hidden.",
-		"Menu is displayed as a compact button in the sidebar. This value is ignored when 'window.titleBarStyle' is 'native'.",
+		"Menu is displayed as a compact button in the sidebar. This value is ignored when `#window.titleBarStyle#` is `native`.",
 		"Control the visibility of the menu bar. A setting of 'toggle' means that the menu bar is hidden and a single press of the Alt key will show it. By default, the menu bar will be visible, unless the window is full screen.",
 		"Controls whether the main menus can be opened via Alt-key shortcuts. Disabling mnemonics allows to bind these Alt-key shortcuts to editor commands instead.",
 		"Controls whether the menu bar will be focused by pressing the Alt-key. This setting has no effect on toggling the menu bar with the Alt-key.",
@@ -2526,6 +2524,11 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Controls whether turning on Zen Mode also hides the editor line numbers.",
 		"Controls whether a window should restore to zen mode if it was exited in zen mode.",
 		"Controls whether notifications are shown while in zen mode. If true, only error notifications will pop out."
+	],
+	"vs/workbench/common/actions": [
+		"View",
+		"Help",
+		"Developer"
 	],
 	"vs/workbench/common/configuration": [
 		"Workbench"
@@ -2551,6 +2554,8 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Tab background color in an unfocused group when hovering. Tabs are the containers for editors in the editor area. Multiple tabs can be opened in one editor group. There can be multiple editor groups.",
 		"Tab foreground color when hovering. Tabs are the containers for editors in the editor area. Multiple tabs can be opened in one editor group. There can be multiple editor groups.",
 		"Tab foreground color in an unfocused group when hovering. Tabs are the containers for editors in the editor area. Multiple tabs can be opened in one editor group. There can be multiple editor groups.",
+		"Border to separate tabs from each other. Tabs are the containers for editors in the editor area. Multiple tabs can be opened in one editor group. There can be multiple editor groups.",
+		"Border to separate pinned tabs from other tabs. Tabs are the containers for editors in the editor area. Multiple tabs can be opened in one editor group. There can be multiple editor groups.",
 		"Border on the bottom of an active tab. Tabs are the containers for editors in the editor area. Multiple tabs can be opened in one editor group. There can be multiple editor groups.",
 		"Border on the bottom of an active tab in an unfocused group. Tabs are the containers for editors in the editor area. Multiple tabs can be opened in one editor group. There can be multiple editor groups.",
 		"Border to the top of an active tab. Tabs are the containers for editors in the editor area. Multiple tabs can be opened in one editor group. There can be multiple editor groups.",
@@ -2561,7 +2566,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Border on the top of modified (dirty) inactive tabs in an active group. Tabs are the containers for editors in the editor area. Multiple tabs can be opened in one editor group. There can be multiple editor groups.",
 		"Border on the top of modified (dirty) active tabs in an unfocused group. Tabs are the containers for editors in the editor area. Multiple tabs can be opened in one editor group. There can be multiple editor groups.",
 		"Border on the top of modified (dirty) inactive tabs in an unfocused group. Tabs are the containers for editors in the editor area. Multiple tabs can be opened in one editor group. There can be multiple editor groups.",
-		"Border to separate tabs from each other. Tabs are the containers for editors in the editor area. Multiple tabs can be opened in one editor group. There can be multiple editor groups.",
 		"Background color of the editor pane visible on the left and right side of the centered editor layout.",
 		"Deprecated background color of an editor group.",
 		"Deprecated: Background color of an editor group is no longer being supported with the introduction of the grid editor layout. You can use editorGroup.emptyBackground to set the background color of empty editor groups.",
@@ -2820,8 +2824,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	],
 	"vs/workbench/contrib/codeEditor/browser/inspectKeybindings": [
 		"Developer: Inspect Key Mappings",
-		"Inspect Key Mappings (JSON)",
-		"Developer"
+		"Inspect Key Mappings (JSON)"
 	],
 	"vs/workbench/contrib/codeEditor/browser/languageConfigurationExtensionPoint": [
 		"Errors parsing {0}: {1}",
@@ -2894,7 +2897,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	],
 	"vs/workbench/contrib/codeEditor/browser/toggleMinimap": [
 		"Toggle Minimap",
-		"View",
 		"Show &&Minimap"
 	],
 	"vs/workbench/contrib/codeEditor/browser/toggleMultiCursorModifier": [
@@ -2905,12 +2907,10 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	],
 	"vs/workbench/contrib/codeEditor/browser/toggleRenderControlCharacter": [
 		"Toggle Control Characters",
-		"View",
 		"Render &&Control Characters"
 	],
 	"vs/workbench/contrib/codeEditor/browser/toggleRenderWhitespace": [
 		"Toggle Render Whitespace",
-		"View",
 		"&&Render Whitespace"
 	],
 	"vs/workbench/contrib/codeEditor/browser/toggleWordWrap": [
@@ -2921,8 +2921,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Toggle &&Word Wrap"
 	],
 	"vs/workbench/contrib/codeEditor/electron-browser/startDebugTextMate": [
-		"Start Text Mate Syntax Grammar Logging",
-		"Developer"
+		"Start Text Mate Syntax Grammar Logging"
 	],
 	"vs/workbench/contrib/codeEditor/electron-sandbox/selectionClipboard": [
 		"Paste Selection Clipboard"
@@ -3069,10 +3068,8 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Background color for the highlight of line at focused stack frame position."
 	],
 	"vs/workbench/contrib/debug/browser/callStackView": [
-		"Paused on {0}",
 		"Show More Stack Frames",
 		"Session",
-		"Paused on {0}",
 		"Running",
 		"Thread",
 		"Restart Frame",
@@ -3080,9 +3077,10 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Show {0} More: {1}",
 		"Show {0} More Stack Frames",
 		"Debug Call Stack",
-		"Thread {0}, callstack, debug",
-		"Stack Frame {0}, line {1}, {2}, callstack, debug",
-		"Debug Session {0}",
+		"Thread {0} {1}",
+		"Stack Frame {0}, line {1}, {2}",
+		"Running",
+		"Session {0} {1}",
 		"Show {0} More Stack Frames"
 	],
 	"vs/workbench/contrib/debug/browser/debug.contribution": [
@@ -3129,9 +3127,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"&&Install Additional Debuggers...",
 		"Debug Console",
 		"Debug Console",
-		"View",
 		"Run",
-		"View",
 		"Variables",
 		"Watch",
 		"Call Stack",
@@ -3265,7 +3261,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"The active file can not be debugged. Make sure it is saved and that you have a debug extension installed for that file type.",
 		"Debug adapter process has terminated unexpectedly ({0})",
 		"Cancel",
-		"Debugging paused {0}, {1} {2} {3}",
+		"{1}:{2}, debugging paused {0}, {3}",
 		"Added breakpoint, line {0}, file {1}",
 		"Removed breakpoint, line {0}, file {1}"
 	],
@@ -3381,6 +3377,9 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Select Debug Console",
 		"Clear Console",
 		"Debug console was cleared"
+	],
+	"vs/workbench/contrib/debug/browser/replFilter": [
+		"Showing {0} of {1}"
 	],
 	"vs/workbench/contrib/debug/browser/replViewer": [
 		"Debug Console",
@@ -3516,7 +3515,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"This extension may interest you because it's popular among users of the {0} repository."
 	],
 	"vs/workbench/contrib/extensions/browser/exeBasedRecommendations": [
-		"You have {0} installed on your system. Do you want to install the recommended extensions for it?",
 		"This extension is recommended because you have {0} installed."
 	],
 	"vs/workbench/contrib/extensions/browser/extensionEditor": [
@@ -3539,7 +3537,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Extension update history, rendered from the extension's 'CHANGELOG.md' file",
 		"Dependencies",
 		"Lists extensions this extension depends on",
-		"You have chosen not to receive recommendations for this extension.",
 		"You have chosen not to receive recommendations for this extension.",
 		"No README available.",
 		"Extension Pack ({0})",
@@ -3605,25 +3602,20 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Find Next",
 		"Find Previous"
 	],
-	"vs/workbench/contrib/extensions/browser/extensionRecommendations": [
+	"vs/workbench/contrib/extensions/browser/extensionRecommendationNotificationService": [
 		"Don't Show Again",
-		"Install",
-		"Show Recommendations",
 		"Do you want to ignore all extension recommendations?",
 		"Yes, Ignore All",
 		"No",
 		"Do you want to install the recommended extensions for this repository?",
 		"Install",
-		"Show Recommendations",
-		"Don't Show Again"
+		"Show Recommendations"
 	],
 	"vs/workbench/contrib/extensions/browser/extensions.contribution": [
 		"Press Enter to manage extensions.",
 		"Manage Extensions",
 		"Extension",
 		"Extensions",
-		"View",
-		"Developer",
 		"Extensions",
 		"When enabled, automatically installs updates for extensions. The updates are fetched from a Microsoft online service.",
 		"When enabled, automatically checks extensions for updates. If an extension has an update, it is marked as outdated in the Extensions view. The updates are fetched from a Microsoft online service.",
@@ -3646,6 +3638,8 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"&&Extensions",
 		"E&&xtensions",
 		"Extensions",
+		"Type the name of an extension to install or search.",
+		"Install or Search Extensions",
 		"Copy",
 		"Name: {0}",
 		"Id: {0}",
@@ -3655,9 +3649,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"VS Marketplace Link: {0}",
 		"Copy Extension Id",
 		"Extension Settings",
-		"Sync This Extension",
-		"Type the name of an extension to install or search.",
-		"Install or Search Extensions"
+		"Sync This Extension"
 	],
 	"vs/workbench/contrib/extensions/browser/extensionsActions": [
 		"Download Manually",
@@ -3901,7 +3893,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Recommended",
 		"Recently Published",
 		"Category",
-		"Web",
 		"Sort By",
 		"Filter Extensions...",
 		"1 extension found in the {0} section.",
@@ -3981,26 +3972,11 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Cancel"
 	],
 	"vs/workbench/contrib/extensions/electron-browser/extensions.contribution": [
-		"Running Extensions",
-		"Developer"
-	],
-	"vs/workbench/contrib/extensions/electron-browser/extensionsActions": [
-		"Open Extensions Folder"
+		"Running Extensions"
 	],
 	"vs/workbench/contrib/extensions/electron-browser/extensionsAutoProfiler": [
 		"The extension '{0}' took a very long time to complete its last operation and it has prevented other extensions from running.",
 		"Show Extensions"
-	],
-	"vs/workbench/contrib/extensions/electron-browser/extensionsSlowActions": [
-		"Performance Issue",
-		"Report Issue",
-		"Did you attach the CPU-Profile?",
-		"OK",
-		"This is a reminder to make sure that you have not forgotten to attach '{0}' to the issue you have just created.",
-		"Show Issues",
-		"Did you attach the CPU-Profile?",
-		"OK",
-		"This is a reminder to make sure that you have not forgotten to attach '{0}' to an existing performance issue."
 	],
 	"vs/workbench/contrib/extensions/electron-browser/runtimeExtensionsEditor": [
 		"Activated by {0} on start-up",
@@ -4029,6 +4005,20 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	],
 	"vs/workbench/contrib/extensions/electron-browser/runtimeExtensionsInput": [
 		"Running Extensions"
+	],
+	"vs/workbench/contrib/extensions/electron-sandbox/extensionsActions": [
+		"Open Extensions Folder"
+	],
+	"vs/workbench/contrib/extensions/electron-sandbox/extensionsSlowActions": [
+		"Performance Issue",
+		"Report Issue",
+		"Did you attach the CPU-Profile?",
+		"OK",
+		"This is a reminder to make sure that you have not forgotten to attach '{0}' to the issue you have just created.",
+		"Show Issues",
+		"Did you attach the CPU-Profile?",
+		"OK",
+		"This is a reminder to make sure that you have not forgotten to attach '{0}' to an existing performance issue."
 	],
 	"vs/workbench/contrib/externalTerminal/browser/externalTerminal.contribution": [
 		"Open in Terminal",
@@ -4079,7 +4069,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	],
 	"vs/workbench/contrib/feedback/browser/feedbackStatusbarItem": [
 		"Tweet Feedback",
-		"Help",
 		"Tweet Feedback",
 		"Tweet Feedback",
 		"Tweet Feedback"
@@ -4204,8 +4193,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Save All Files",
 		"Revert File",
 		"Compare Active File with Saved",
-		"Close Editor",
-		"View",
 		"Open to the Side",
 		"Revert File",
 		"Save All",
@@ -4250,7 +4237,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	],
 	"vs/workbench/contrib/files/browser/files.contribution": [
 		"Show Explorer",
-		"View",
 		"Binary File Editor",
 		"Disable hot exit. A prompt will show when attempting to close a window with dirty files.",
 		"Hot exit will be triggered when the last window is closed on Windows/Linux or when the `workbench.action.quit` command is triggered (command palette, keybinding, menu). All windows without folders opened will be restored upon next launch. A list of workspaces with unsaved files can be accessed via `File > Open Recent > More...`",
@@ -4418,17 +4404,14 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	"vs/workbench/contrib/format/browser/formatModified": [
 		"Format Modified Lines"
 	],
-	"vs/workbench/contrib/issue/electron-browser/issue.contribution": [
-		"Help",
-		"Report Issue...",
-		"Developer"
+	"vs/workbench/contrib/issue/electron-sandbox/issue.contribution": [
+		"Report Issue..."
 	],
-	"vs/workbench/contrib/issue/electron-browser/issueActions": [
+	"vs/workbench/contrib/issue/electron-sandbox/issueActions": [
 		"Open Process Explorer",
 		"Report Performance Issue"
 	],
 	"vs/workbench/contrib/keybindings/browser/keybindings.contribution": [
-		"Developer",
 		"Toggle Keyboard Shortcuts Troubleshooting"
 	],
 	"vs/workbench/contrib/localizations/browser/localizations.contribution": [
@@ -4461,10 +4444,8 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Install and Restart"
 	],
 	"vs/workbench/contrib/logs/common/logs.contribution": [
-		"Developer",
 		"Settings Sync",
 		"Window",
-		"Developer",
 		"Main",
 		"Shared",
 		"Telemetry"
@@ -4487,10 +4468,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Select Session",
 		"Select Log file"
 	],
-	"vs/workbench/contrib/logs/electron-browser/logs.contribution": [
-		"Developer"
-	],
-	"vs/workbench/contrib/logs/electron-browser/logsActions": [
+	"vs/workbench/contrib/logs/electron-sandbox/logsActions": [
 		"Open Logs Folder",
 		"Open Extension Logs Folder"
 	],
@@ -4545,7 +4523,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Showing {0} of {1}"
 	],
 	"vs/workbench/contrib/markers/browser/messages": [
-		"View",
 		"Toggle Problems (Errors, Warnings, Infos)",
 		"Focus Problems (Errors, Warnings, Infos)",
 		"Problems View",
@@ -4593,7 +4570,9 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	"vs/workbench/contrib/notebook/browser/contrib/coreActions": [
 		"Notebook",
 		"Execute Cell",
+		"Execute Cell",
 		"Stop Cell Execution",
+		"Execute Cell",
 		"Execute Cell",
 		"Cancel Execution",
 		"Delete Cell",
@@ -4653,8 +4632,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Expand Cell Content",
 		"Collapse Cell Output",
 		"Expand Cell Output",
-		"Inspect Notebook Layout",
-		"Developer"
+		"Inspect Notebook Layout"
 	],
 	"vs/workbench/contrib/notebook/browser/contrib/find/findController": [
 		"Hide Find in Notebook",
@@ -4680,7 +4658,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	],
 	"vs/workbench/contrib/notebook/browser/diff/notebookDiffActions": [
 		"Open Text Diff Editor",
-		"{0} ⟷ {1}",
 		"Revert Metadata",
 		"Revert Outputs"
 	],
@@ -4706,14 +4683,12 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"File to load in the webview to render the extension."
 	],
 	"vs/workbench/contrib/notebook/browser/notebook.contribution": [
+		"{0} ⟷ {1}",
 		"Notebook",
 		"Priority list for output mime types",
 		"Where the cell toolbar should be shown, or whether it should be hidden.",
 		"Whether the cell status bar should be shown.",
 		"Whether to use the enhanced text diff editor for notebook."
-	],
-	"vs/workbench/contrib/notebook/browser/notebookDiffEditorInput": [
-		"{0} ↔ {1}"
 	],
 	"vs/workbench/contrib/notebook/browser/notebookEditor": [
 		"Cannot open resource with notebook editor type '{0}', please check if you have the right extension installed or enabled.",
@@ -4824,15 +4799,12 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Log Viewer",
 		"Switch to Output",
 		"Clear Output",
-		"View",
 		"Output was cleared",
 		"Toggle Auto Scrolling",
 		"Turn Auto Scrolling Off",
 		"Turn Auto Scrolling On",
 		"Open Log Output File",
 		"Toggle Output",
-		"View",
-		"Developer",
 		"Show Logs...",
 		"Select Log",
 		"Open Log File...",
@@ -4851,8 +4823,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Log ({0})"
 	],
 	"vs/workbench/contrib/performance/browser/performance.contribution": [
-		"Startup Performance",
-		"Developer"
+		"Startup Performance"
 	],
 	"vs/workbench/contrib/performance/browser/perfviewEditor": [
 		"Startup Performance"
@@ -4935,16 +4906,18 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"&&Online Services Settings",
 		"Online Services Settings",
 		"Open Remote Settings ({0})",
-		"Focus settings search",
-		"Clear settings search results",
+		"Focus Settings Search",
+		"Clear Settings Search Results",
 		"Focus settings file",
 		"Focus settings file",
 		"Focus next setting",
 		"Focus previous setting",
 		"Edit focused setting",
 		"Focus settings list",
-		"Focus settings TOC tree",
-		"Show context menu",
+		"Focus Settings Table of Contents",
+		"Focus Setting Control",
+		"Show Setting Context Menu",
+		"Move Focus Up One Level",
 		"Preferences",
 		"Open Keyboard Shortcuts",
 		"Keyboard Shortcuts",
@@ -5005,7 +4978,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	],
 	"vs/workbench/contrib/preferences/browser/settingsEditor2": [
 		"Search settings",
-		"For more actions, Press {0}.",
 		"Clear Settings Search Input",
 		"No Settings Found",
 		"Clear Filters",
@@ -5065,7 +5037,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"More Actions... ",
 		"Also modified in",
 		"Modified in",
-		" Modified. ",
 		"Show matching extensions",
 		"Edit in settings.json",
 		"default",
@@ -5073,6 +5044,9 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Reset Setting",
 		"Validation Error.",
 		"Validation Error.",
+		"Modified.",
+		"Also modified in",
+		"Modified in",
 		"Settings",
 		"Copy Setting ID",
 		"Copy Setting as JSON",
@@ -5099,6 +5073,9 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Settings editor number input box background.",
 		"Settings editor number input box foreground.",
 		"Settings editor number input box border.",
+		"The background color of a settings row when focused.",
+		"The background color of a settings row when hovered.",
+		"The color of the row's top and bottom border when the row is focused.",
 		"OK",
 		"Cancel",
 		"List item `{0}`",
@@ -5165,7 +5142,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Terminal",
 		"Log ({0})",
 		"Output",
-		"View",
 		"Open View",
 		"Quick Open View"
 	],
@@ -5198,7 +5174,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Remote Explorer",
 		"Remote Explorer",
 		"Show Remote Explorer",
-		"View",
 		"Attempting to reconnect in {0} second...",
 		"Attempting to reconnect in {0} seconds...",
 		"Reconnect Now",
@@ -5207,7 +5182,9 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Attempting to reconnect...",
 		"Cannot reconnect. Please reload the window.",
 		"Reload Window",
-		"Cancel"
+		"Cancel",
+		"{0} from the remote has been forwarded to {1} locally.",
+		"Show Forwarded Ports"
 	],
 	"vs/workbench/contrib/remote/browser/remoteIndicator": [
 		"Remote",
@@ -5268,7 +5245,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Remote",
 		"Override the kind of an extension. `ui` extensions are installed and run on the local machine while `workspace` extensions are run on the remote. By overriding an extension's default kind using this setting, you specify if that extension should be installed and enabled locally or remotely."
 	],
-	"vs/workbench/contrib/remote/electron-browser/remote.contribution": [
+	"vs/workbench/contrib/remote/electron-sandbox/remote.contribution": [
 		"Remote",
 		"When enabled extensions are downloaded locally and installed on remote.",
 		"Restores the ports you forwarded in a workspace."
@@ -5387,7 +5364,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Go to Symbol in Workspace...",
 		"Search",
 		"Search",
-		"View",
 		"Open the search viewlet",
 		"A set of options for the search viewlet",
 		"Find in Files",
@@ -6098,15 +6074,13 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Follow Link"
 	],
 	"vs/workbench/contrib/terminal/browser/links/terminalWordLinkProvider": [
-		"Search workspace",
 		"Search workspace"
 	],
 	"vs/workbench/contrib/terminal/browser/terminal.contribution": [
 		"Type the name of a terminal to open.",
 		"Show All Opened Terminals",
 		"Terminal",
-		"Terminal",
-		"View"
+		"Terminal"
 	],
 	"vs/workbench/contrib/terminal/browser/terminalActions": [
 		"Select current working directory for new terminal",
@@ -6176,6 +6150,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Toggle Find Using Case Sensitive",
 		"Find Next",
 		"Find Previous",
+		"Search Workspace",
 		"Relaunch Active Terminal",
 		"Show Environment Information"
 	],
@@ -6259,8 +6234,10 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"When set the foreground color of each cell will change to try meet the contrast ratio specified. Example values:\n\n- 1: The default, do nothing.\n- 4.5: [WCAG AA compliance (minimum)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).\n- 7: [WCAG AAA compliance (enhanced)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast7.html).\n- 21: White on black or black on white.",
 		"Scrolling speed multiplier when pressing `Alt`.",
 		"A multiplier to be used on the `deltaY` of mouse wheel scroll events.",
-		"The font weight to use within the terminal for non-bold text.",
-		"The font weight to use within the terminal for bold text.",
+		"Only \"normal\" and \"bold\" keywords or numbers between 1 and 1000 are allowed.",
+		"The font weight to use within the terminal for non-bold text. Accepts \"normal\" and \"bold\" keywords or numbers between 1 and 1000.",
+		"Only \"normal\" and \"bold\" keywords or numbers between 1 and 1000 are allowed.",
+		"The font weight to use within the terminal for bold text. Accepts \"normal\" and \"bold\" keywords or numbers between 1 and 1000.",
 		"Controls whether the terminal cursor blinks.",
 		"Controls the style of terminal cursor.",
 		"Controls the width of the cursor when `#terminal.integrated.cursorStyle#` is set to `line`.",
@@ -6347,7 +6324,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Select Product Icon Theme",
 		"Generate Color Theme From Current Settings",
 		"Preferences",
-		"Developer",
 		"&&Color Theme",
 		"File &&Icon Theme",
 		"Color Theme",
@@ -6444,7 +6420,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	],
 	"vs/workbench/contrib/url/browser/url.contribution": [
 		"Open URL",
-		"Developer",
 		"URL to open"
 	],
 	"vs/workbench/contrib/userDataSync/browser/userDataSync": [
@@ -6493,11 +6468,8 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Turn On",
 		"Open Documentation",
 		"Cancel",
-		"Turn On",
-		"or",
-		"Sign in with your {0} account to synchronize your data across devices.",
 		"Sign in & Turn on",
-		"Choose what to sync",
+		"Please sign in to synchronize your data across devices.",
 		"for each platform",
 		"{0}: Configure...",
 		"Choose what to sync",
@@ -6508,13 +6480,9 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"{0} (Remote)",
 		"{0} (Merges)",
 		"{0} ↔ {1}",
-		"Select Settings Sync Service...",
-		"Choose settings sync Service to use",
-		"Switching settings sync service requires restarting {0}",
-		"Switching settings sync service requires reloading {0}",
-		"Default & Current",
+		"{0}: Select Service",
+		"Ensure you are using the same settings sync service when syncing with multiple environments",
 		"Default",
-		"Current",
 		"Insiders",
 		"Stable",
 		"Turn on Settings Sync...",
@@ -6533,7 +6501,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Show Synced Data",
 		"Error while turning off sync: {0}",
 		"{0}: Show Log",
-		"{0}: Select Service...",
 		"Accept Remote",
 		"Accept Merges",
 		"{0}: {1}",
@@ -6629,21 +6596,21 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	"vs/workbench/contrib/webview/browser/baseWebviewElement": [
 		"Error loading webview: {0}"
 	],
-	"vs/workbench/contrib/webview/browser/webview": [
-		"Developer"
+	"vs/workbench/contrib/webview/electron-browser/webviewCommands": [
+		"Open Webview Developer Tools"
 	],
-	"vs/workbench/contrib/webview/browser/webview.contribution": [
-		"webview editor"
-	],
-	"vs/workbench/contrib/webview/browser/webviewCommands": [
+	"vs/workbench/contrib/webviewPanel/browser/webviewCommands": [
 		"Show find",
 		"Stop find",
 		"Find next",
 		"Find previous",
 		"Reload Webviews"
 	],
-	"vs/workbench/contrib/webview/electron-browser/webviewCommands": [
-		"Open Webview Developer Tools"
+	"vs/workbench/contrib/webviewPanel/browser/webviewPanel.contribution": [
+		"webview editor"
+	],
+	"vs/workbench/contrib/welcome/common/viewsWelcomeContribution": [
+		"The viewsWelcome contribution in '{0}' requires 'enableProposedApi' to be enabled."
 	],
 	"vs/workbench/contrib/welcome/common/viewsWelcomeExtensionPoint": [
 		"Contributed views welcome content. Welcome content will be rendered in views whenever they have no meaningful content to display, ie. the File Explorer when no folder is open. Such content is useful as in-product documentation to drive users to use certain features before they are available. A good example would be a `Clone Repository` button in the File Explorer welcome view.",
@@ -6651,7 +6618,8 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Target view identifier for this welcome content.",
 		"Target view identifier for this welcome content.",
 		"Welcome content to be displayed. The format of the contents is a subset of Markdown, with support for links only.",
-		"Condition when the welcome content should be displayed."
+		"Condition when the welcome content should be displayed.",
+		"Group to which this welcome content belongs."
 	],
 	"vs/workbench/contrib/welcome/overlay/browser/welcomeOverlay": [
 		"File explorer",
@@ -6664,9 +6632,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Find and run all commands",
 		"Show notifications",
 		"User Interface Overview",
-		"Hide Interface Overview",
-		"Help",
-		"Help"
+		"Hide Interface Overview"
 	],
 	"vs/workbench/contrib/welcome/page/browser/vs_code_welcome_page": [
 		"Visual Studio Code",
@@ -6747,7 +6713,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Open a new untitled file (only applies when opening an empty workspace).",
 		"Open the Welcome page when opening an empty workbench.",
 		"Controls which editor is shown at startup, if none are restored from the previous session.",
-		"Help",
 		"&&Welcome"
 	],
 	"vs/workbench/contrib/welcome/telemetryOptOut/browser/telemetryOptOut": [
@@ -6764,7 +6729,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	],
 	"vs/workbench/contrib/welcome/walkThrough/browser/walkThrough.contribution": [
 		"Interactive Playground",
-		"Help",
 		"I&&nteractive Playground"
 	],
 	"vs/workbench/contrib/welcome/walkThrough/browser/walkThroughPart": [
@@ -6773,12 +6737,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Background color for the embedded editors on the Interactive Playground."
 	],
 	"vs/workbench/electron-browser/actions/developerActions": [
-		"Toggle Shared Process",
-		"Developer"
-	],
-	"vs/workbench/electron-browser/window": [
-		"It is not recommended to run {0} as root user.",
-		"Preferences"
+		"Toggle Shared Process"
 	],
 	"vs/workbench/electron-sandbox/actions/developerActions": [
 		"Toggle Developer Tools",
@@ -6799,14 +6758,12 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Quick Switch Window..."
 	],
 	"vs/workbench/electron-sandbox/desktop.contribution": [
-		"View",
 		"New Window Tab",
 		"Show Previous Window Tab",
 		"Show Next Window Tab",
 		"Move Window Tab to New Window",
 		"Merge All Windows",
 		"Toggle Window Tabs Bar",
-		"Developer",
 		"Preferences",
 		"Clos&&e Window",
 		"E&&xit",
@@ -6834,9 +6791,9 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Open new windows in full screen mode.",
 		"Controls the dimensions of opening a new window when at least one window is already opened. Note that this setting does not have an impact on the first window that is opened. The first window will always restore the size and location as you left it before closing.",
 		"Controls whether closing the last editor should also close the window. This setting only applies for windows that do not show folders.",
-		"If enabled, will automatically change to high contrast theme if the OS is using a high contrast theme, and to dark theme when switching away from a high contrast theme.",
 		"If enabled, double clicking the application icon in the title bar will close the window and the window cannot be dragged by the icon. This setting only has an effect when `#window.titleBarStyle#` is set to `custom`.",
 		"Adjust the appearance of the window title bar. On Linux and Windows, this setting also affects the application and context menu appearances. Changes require a full restart to apply.",
+		"Adjust the appearance of dialog windows.",
 		"Enables macOS Sierra window tabs. Note that changes require a full restart to apply and that native tabs will disable a custom title bar style if configured.",
 		"Controls if native full-screen should be used on macOS. Disable this option to prevent macOS from creating a new space when going full-screen.",
 		"If enabled, clicking on an inactive window will both activate the window and trigger the element under the mouse if it is clickable. If disabled, clicking anywhere on an inactive window will activate it only and a second click is required on the element.",
@@ -6853,6 +6810,10 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Unique id used for correlating crash reports sent from this app instance.",
 		"Enable proposed APIs for a list of extension ids (such as `vscode.git`). Proposed APIs are unstable and subject to breaking without warning at any time. This should only be set for extension development and testing purposes.",
 		"Forces the renderer to be accessible. ONLY change this if you are using a screen reader on Linux. On other platforms the renderer will automatically be accessible. This flag is automatically set if you have editor.accessibilitySupport: on."
+	],
+	"vs/workbench/electron-sandbox/window": [
+		"It is not recommended to run {0} as root user.",
+		"Preferences"
 	],
 	"vs/workbench/services/authentication/browser/authenticationService": [
 		"The id of the authentication provider.",
@@ -7003,7 +6964,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Please select a file.",
 		"Please select a folder."
 	],
-	"vs/workbench/services/dialogs/electron-browser/dialogService": [
+	"vs/workbench/services/dialogs/electron-sandbox/dialogService": [
 		"&&Yes",
 		"Cancel",
 		"Version: {0}\nCommit: {1}\nDate: {2}\nElectron: {3}\nChrome: {4}\nNode.js: {5}\nV8: {6}\nOS: {7}",
@@ -7025,10 +6986,10 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Text Editor"
 	],
 	"vs/workbench/services/extensionManagement/common/extensionEnablementService": [
-		"Cannot disable {0} extension because it contributes language packs.",
-		"Cannot disable {0} extension because Settings Sync depends on it.",
+		"Cannot change enablement of {0} extension because it contributes language packs.",
+		"Cannot change enablement {0} extension because Settings Sync depends on it.",
 		"No workspace.",
-		"Cannot disable {0} extension in workspace because it contributes authentication providers"
+		"Cannot change enablement of {0} extension in workspace because it contributes authentication providers"
 	],
 	"vs/workbench/services/extensionManagement/common/extensionManagementService": [
 		"Cannot uninstall extension '{0}'. Extension '{1}' depends on this.",
@@ -7045,7 +7006,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Local",
 		"Remote"
 	],
-	"vs/workbench/services/extensionManagement/electron-browser/remoteExtensionManagementService": [
+	"vs/workbench/services/extensionManagement/electron-sandbox/remoteExtensionManagementService": [
 		"Unable to install extension '{0}' as it is not compatible with VS Code '{1}'."
 	],
 	"vs/workbench/services/extensions/browser/extensionUrlHandler": [
@@ -7062,14 +7023,17 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Would you like to reload the window and open the URL '{0}'?",
 		"Reload Window and Open",
 		"Manage Authorized Extension URIs...",
-		"Extensions"
+		"Extensions",
+		"There are currently no authorized extension URIs."
 	],
 	"vs/workbench/services/extensions/browser/webWorkerExtensionHost": [
 		"Worker Extension Host"
 	],
+	"vs/workbench/services/extensions/common/abstractExtensionService": [
+		"The following extensions contain dependency loops and have been disabled: {0}"
+	],
 	"vs/workbench/services/extensions/common/extensionHostManager": [
-		"Measure Extension Host Latency",
-		"Developer"
+		"Measure Extension Host Latency"
 	],
 	"vs/workbench/services/extensions/common/extensionsRegistry": [
 		"UI extension kind. In a remote window, such extensions are enabled only when available on the local machine.",
@@ -7134,7 +7098,6 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	"vs/workbench/services/extensions/electron-browser/extensionService": [
 		"All installed extensions are temporarily disabled. Reload the window to return to the previous state.",
 		"Reload",
-		"The following extensions contain dependency loops and have been disabled: {0}",
 		"Extension host cannot start: version mismatch.",
 		"Relaunch VS Code",
 		"Extension host terminated unexpectedly.",
@@ -7147,8 +7110,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Extension '{0}' is required to open the remote window.\nDo you want to install the extension?",
 		"Install and Reload",
 		"`{0}` not found on marketplace",
-		"Restart Extension Host",
-		"Developer"
+		"Restart Extension Host"
 	],
 	"vs/workbench/services/extensions/electron-browser/localProcessExtensionHost": [
 		"Extension host did not start in 10 seconds, it might be stopped on the first line and needs a debugger to continue.",
@@ -7475,11 +7437,11 @@ define("vs/workbench/workbench.desktop.main.nls", {
 	"vs/workbench/services/themes/common/themeConfiguration": [
 		"Specifies the color theme used in the workbench.",
 		"Theme is unknown or not installed.",
-		"Specifies the preferred color theme for dark OS appearance when '{0}' is enabled.",
+		"Specifies the preferred color theme for dark OS appearance when `#{0}#` is enabled.",
 		"Theme is unknown or not installed.",
-		"Specifies the preferred color theme for light OS appearance when '{0}' is enabled.",
+		"Specifies the preferred color theme for light OS appearance when `#{0}#` is enabled.",
 		"Theme is unknown or not installed.",
-		"Specifies the preferred color theme used in high contrast mode when '{0}' is enabled.",
+		"Specifies the preferred color theme used in high contrast mode when `#{0}#` is enabled.",
 		"Theme is unknown or not installed.",
 		"If set, automatically switch to the preferred color theme based on the OS appearance.",
 		"Overrides colors from the currently selected color theme.",
@@ -7489,6 +7451,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Specifies the product icon theme used.",
 		"Default",
 		"Product icon theme is unknown or not installed.",
+		"If enabled, will automatically change to high contrast theme if the OS is using a high contrast theme.",
 		"Sets the colors and styles for comments",
 		"Sets the colors and styles for strings literals.",
 		"Sets the colors and styles for keywords.",
@@ -7499,11 +7462,13 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Sets colors and styles using textmate theming rules (advanced).",
 		"Whether semantic highlighting should be enabled for this theme.",
 		"Use `enabled` in `editor.semanticTokenColorCustomizations` setting instead.",
+		"Use `enabled` in `#editor.semanticTokenColorCustomizations#` setting instead.",
 		"Overrides editor syntax colors and font style from the currently selected color theme.",
 		"Whether semantic highlighting is enabled or disabled for this theme",
 		"Semantic token styling rules for this theme.",
 		"Overrides editor semantic token color and styles from the currently selected color theme.",
-		"Use `editor.semanticTokenColorCustomizations` instead."
+		"Use `editor.semanticTokenColorCustomizations` instead.",
+		"Use `#editor.semanticTokenColorCustomizations#` instead."
 	],
 	"vs/workbench/services/themes/common/themeExtensionPoints": [
 		"Contributes textmate color themes.",
@@ -7573,13 +7538,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"This will clear your data in the cloud and stop sync on all your devices.",
 		"Clear",
 		"Reset",
-		"Switching settings sync service requires a restart to take effect.",
-		"Switching settings sync service requires a reload to take effect.",
-		"Press the restart button to restart {0} and switch.",
-		"Press the reload button to reload {0} and switch.",
-		"&&Restart",
-		"&&Reload",
-		"Select an account",
+		"Select an account to sign in",
 		"Signed in",
 		"Last Used with Sync",
 		"Others",
@@ -7611,7 +7570,7 @@ define("vs/workbench/workbench.desktop.main.nls", {
 		"Unable to write into workspace configuration file because the file is dirty. Please save it and try again.",
 		"Open Workspace Configuration"
 	],
-	"vs/workbench/services/workspaces/electron-browser/workspaceEditingService": [
+	"vs/workbench/services/workspaces/electron-sandbox/workspaceEditingService": [
 		"Save",
 		"Don't Save",
 		"Cancel",

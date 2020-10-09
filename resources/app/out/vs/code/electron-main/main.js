@@ -2,7 +2,7 @@
  * Copyright (C) Microsoft Corporation. All rights reserved.
  *--------------------------------------------------------*/
 (function() {
-var __m = ["require","exports","vs/base/common/lifecycle","vs/base/common/event","vs/base/common/platform","vs/platform/instantiation/common/instantiation","vs/base/common/uri","vs/base/common/path","vs/platform/log/common/log","vs/base/common/async","vs/nls!vs/code/electron-main/main","vs/nls","electron","vs/base/common/types","vs/platform/environment/common/environment","vs/base/common/strings","vs/base/common/errors","vs/platform/configuration/common/configuration","vs/base/common/buffer","vs/base/common/network","fs","vs/base/node/pfs","vs/platform/lifecycle/electron-main/lifecycleMainService","vs/base/common/arrays","vs/base/common/resources","vs/platform/product/common/product","vs/platform/files/common/files","vs/base/common/objects","vs/base/common/extpath","vs/platform/telemetry/common/telemetry","os","vs/base/common/cancellation","vs/base/common/labels","vs/base/common/uuid","vs/base/parts/ipc/common/ipc","vs/platform/registry/common/platform","vs/platform/workspaces/common/workspaces","vs/base/common/amd","vs/base/common/map","vs/platform/request/common/request","vs/platform/state/node/state","vs/platform/windows/electron-main/windows","vs/base/common/json","child_process","vs/platform/update/common/update","vs/platform/configuration/common/configurationRegistry","vs/platform/backup/electron-main/backup","vs/platform/dialogs/electron-main/dialogs","vs/platform/workspaces/electron-main/workspacesMainService","vs/base/common/functional","vs/base/parts/ipc/node/ipc.net","vs/platform/remote/common/tunnel","vs/base/common/decorators","vs/base/common/keyCodes","net","vs/platform/environment/node/argv","vs/platform/remote/common/remoteHosts","vs/platform/windows/common/windows","vs/platform/electron/electron-main/electronMainService","vs/platform/workspaces/electron-main/workspacesHistoryMainService","vs/base/common/process","vs/base/common/stream","vs/base/common/glob","vs/base/common/normalization","crypto","util","vs/platform/instantiation/common/descriptors","vs/platform/instantiation/common/serviceCollection","vs/platform/product/common/productService","vs/platform/theme/electron-main/themeMainService","vs/platform/update/electron-main/abstractUpdateService","vs/base/common/iterator","vs/base/common/scanCode","vs/base/node/decoder","vs/base/node/id","vs/base/node/ps","vs/base/parts/ipc/common/ipc.net","vs/base/parts/ipc/node/ipc.cp","vs/platform/debug/common/extensionHostDebugIpc","vs/platform/diagnostics/common/diagnostics","vs/platform/diagnostics/node/diagnosticsIpc","vs/platform/files/common/io","vs/platform/files/node/watcher/watcher","vs/platform/sign/common/sign","vs/platform/storage/common/storage","vs/platform/storage/node/storageMainService","vs/platform/diagnostics/node/diagnosticsService","vs/platform/url/common/url","vs/platform/userDataSync/common/storageKeys","vs/platform/webview/common/resourceLoader","vs/platform/windows/node/window","vs/platform/launch/electron-main/launchMainService","vs/base/common/assert","vs/base/common/jsonFormatter","vs/base/common/jsonEdit","vs/base/common/linkedList","vs/base/common/keybindingParser","vs/base/common/console","vs/base/common/marshalling","vs/base/common/mime","vs/base/node/crypto","vs/base/node/macAddress","vs/base/node/paths","vs/base/node/extpath","vs/base/node/ports","vs/base/node/watcher","vs/base/parts/contextmenu/common/contextmenu","vs/base/parts/contextmenu/electron-main/contextmenu","vs/base/parts/ipc/common/ipc.electron","vs/base/parts/ipc/electron-main/ipc.electron-main","vs/base/parts/storage/common/storage","vs/base/parts/storage/node/storage","vs/code/node/paths","vs/code/node/shellEnv","vs/nls!vs/base/common/date","vs/base/common/date","vs/nls!vs/base/common/errorMessage","vs/base/common/errorMessage","vs/nls!vs/base/common/keybindingLabels","vs/base/common/keybindingLabels","vs/nls!vs/base/node/processes","vs/base/node/processes","vs/nls!vs/code/electron-main/app","vs/nls!vs/code/electron-main/auth","vs/code/electron-main/auth","vs/nls!vs/code/electron-main/window","vs/nls!vs/platform/configuration/common/configurationRegistry","vs/nls!vs/platform/dialogs/electron-main/dialogs","vs/nls!vs/platform/environment/node/argv","vs/nls!vs/platform/environment/node/argvHelper","vs/nls!vs/platform/extensionManagement/common/extensionManagement","vs/nls!vs/platform/extensions/common/extensionValidator","vs/nls!vs/platform/files/common/fileService","vs/nls!vs/platform/files/common/files","vs/nls!vs/platform/files/common/io","vs/nls!vs/platform/files/node/diskFileSystemProvider","vs/nls!vs/platform/issue/electron-main/issueMainService","vs/nls!vs/platform/menubar/electron-main/menubar","vs/nls!vs/platform/request/common/request","vs/nls!vs/platform/telemetry/common/telemetryService","vs/nls!vs/platform/update/common/update.config.contribution","vs/nls!vs/platform/windows/electron-main/windowsMainService","vs/nls!vs/platform/workspaces/common/workspaces","vs/nls!vs/platform/workspaces/electron-main/workspacesHistoryMainService","vs/nls!vs/platform/workspaces/electron-main/workspacesMainService","vs/platform/driver/node/driver","vs/platform/debug/electron-main/extensionHostDebugIpc","vs/platform/environment/node/waitMarkerFile","vs/platform/extensions/common/extensionValidator","vs/platform/files/node/watcher/nsfw/watcherIpc","vs/platform/files/node/watcher/nsfw/watcherService","vs/platform/files/node/watcher/unix/watcherIpc","vs/platform/files/node/watcher/unix/watcherService","vs/platform/files/node/watcher/win32/csharpWatcherService","vs/platform/files/node/watcher/win32/watcherService","vs/platform/instantiation/common/graph","vs/platform/extensionManagement/common/extensionManagement","vs/platform/extensions/common/extensions","vs/platform/extensionManagement/common/extensionManagementUtil","vs/platform/environment/node/argvHelper","vs/platform/files/node/watcher/nodejs/watcherService","vs/platform/instantiation/common/instantiationService","vs/platform/ipc/electron-main/sharedProcessMainService","vs/platform/keybinding/common/baseResolvedKeybinding","vs/platform/keybinding/common/usLayoutResolvedKeybinding","vs/platform/lifecycle/common/lifecycle","vs/platform/files/common/fileService","vs/platform/files/node/diskFileSystemProvider","vs/platform/log/common/bufferLog","vs/platform/log/common/logIpc","vs/platform/log/node/spdlogService","vs/platform/menubar/common/menubar","vs/platform/environment/node/environmentService","vs/platform/jsonschemas/common/jsonContributionRegistry","vs/platform/configuration/common/configurationModels","vs/platform/configuration/common/configurationService","vs/platform/remote/common/remoteAuthorityResolver","vs/platform/remote/common/remoteAgentConnection","vs/platform/remote/node/nodeSocketFactory","vs/platform/request/node/proxy","url","vs/platform/serviceMachineId/common/serviceMachineId","vs/platform/remote/node/tunnelService","vs/platform/sign/node/signService","vs/platform/state/node/stateService","vs/platform/extensionManagement/common/extensionGalleryService","vs/platform/storage/node/storageIpc","vs/platform/telemetry/common/telemetryService","vs/platform/telemetry/common/telemetryUtils","vs/platform/telemetry/node/commonProperties","vs/platform/telemetry/node/telemetryIpc","vs/platform/theme/common/themeService","vs/code/electron-main/sharedProcess","vs/platform/update/common/update.config.contribution","vs/platform/update/electron-main/updateIpc","vs/platform/update/electron-main/updateService.darwin","vs/platform/update/electron-main/updateService.linux","vs/platform/update/electron-main/updateService.snap","vs/platform/update/electron-main/updateService.win32","vs/platform/url/common/urlIpc","vs/platform/url/common/urlService","vs/platform/url/electron-main/electronUrlListener","vs/platform/userDataSync/common/userDataSyncIpc","vs/platform/webview/common/mimeTypes","vs/platform/webview/common/webviewManagerService","vs/platform/webview/common/webviewPortMapping","vs/platform/webview/electron-main/webviewPortMappingProvider","vs/platform/webview/electron-main/webviewProtocolProvider","vs/platform/webview/electron-main/webviewMainService","vs/platform/windows/electron-main/windowsStateStorage","vs/platform/backup/electron-main/backupMainService","vs/platform/driver/electron-main/driver","vs/platform/windows/electron-main/windowTracker","vs/platform/workspace/common/workspace","vs/code/electron-main/window","vs/platform/issue/electron-main/issueMainService","vs/platform/menubar/electron-main/menubar","vs/platform/menubar/electron-main/menubarMainService","vs/platform/windows/electron-main/windowsMainService","vs/platform/workspaces/electron-main/workspacesService","vs/code/electron-main/app","vs/platform/request/node/requestService","vs/platform/request/electron-main/requestMainService","string_decoder","minimist","assert","stream","vs/base/common/performance","zlib","vs/code/electron-main/main"];
+var __m = ["require","exports","vs/base/common/lifecycle","vs/base/common/event","vs/base/common/platform","vs/platform/instantiation/common/instantiation","vs/base/common/path","vs/base/common/uri","vs/platform/log/common/log","vs/base/common/network","vs/base/common/async","vs/nls!vs/code/electron-main/main","vs/nls","electron","vs/base/common/types","vs/platform/environment/common/environment","vs/base/common/strings","vs/base/common/errors","vs/base/common/resources","vs/platform/configuration/common/configuration","vs/base/common/buffer","fs","vs/base/node/pfs","vs/platform/product/common/product","vs/platform/lifecycle/electron-main/lifecycleMainService","vs/platform/files/common/files","vs/base/common/arrays","vs/base/common/extpath","vs/platform/telemetry/common/telemetry","os","vs/base/common/cancellation","vs/base/common/objects","vs/base/common/labels","vs/base/common/uuid","vs/base/parts/ipc/common/ipc","vs/platform/registry/common/platform","vs/platform/workspaces/common/workspaces","vs/base/common/map","vs/platform/request/common/request","vs/platform/state/node/state","vs/platform/windows/electron-main/windows","vs/base/common/json","vs/platform/update/common/update","child_process","vs/platform/configuration/common/configurationRegistry","vs/platform/backup/electron-main/backup","vs/platform/dialogs/electron-main/dialogs","vs/platform/workspaces/electron-main/workspacesMainService","vs/base/common/decorators","vs/base/common/functional","vs/base/parts/ipc/node/ipc.net","vs/platform/remote/common/tunnel","vs/base/common/keyCodes","net","vs/platform/environment/node/argv","vs/platform/windows/common/windows","vs/platform/native/electron-main/nativeHostMainService","vs/platform/workspaces/electron-main/workspacesHistoryMainService","vs/base/common/iterator","vs/base/common/process","vs/base/common/stream","vs/base/common/glob","vs/base/common/normalization","crypto","vs/base/node/id","util","vs/platform/instantiation/common/descriptors","vs/platform/instantiation/common/serviceCollection","vs/platform/product/common/productService","vs/platform/theme/electron-main/themeMainService","vs/platform/update/electron-main/abstractUpdateService","vs/base/common/scanCode","vs/base/node/decoder","vs/base/node/ps","vs/base/parts/ipc/common/ipc.net","vs/base/parts/ipc/node/ipc.cp","vs/platform/debug/common/extensionHostDebugIpc","vs/platform/diagnostics/common/diagnostics","vs/platform/files/common/io","vs/platform/files/node/watcher/watcher","vs/platform/remote/common/remoteHosts","vs/platform/sign/common/sign","vs/platform/storage/common/storage","vs/platform/storage/node/storageMainService","vs/platform/diagnostics/node/diagnosticsService","vs/platform/url/common/url","vs/platform/userDataSync/common/storageKeys","vs/platform/webview/common/resourceLoader","vs/platform/windows/node/window","vs/platform/launch/electron-main/launchMainService","vs/base/common/assert","vs/base/common/jsonFormatter","vs/base/common/jsonEdit","vs/base/common/linkedList","vs/base/common/keybindingParser","vs/base/common/console","vs/base/common/marshalling","vs/base/common/mime","vs/base/node/crypto","vs/base/node/macAddress","vs/base/node/paths","vs/base/node/extpath","vs/base/node/ports","vs/base/node/watcher","vs/base/parts/contextmenu/common/contextmenu","vs/base/parts/contextmenu/electron-main/contextmenu","vs/base/parts/ipc/common/ipc.electron","vs/base/parts/ipc/electron-main/ipc.electron-main","vs/base/parts/storage/common/storage","vs/base/parts/storage/node/storage","vs/code/node/shellEnv","vs/nls!vs/base/common/date","vs/base/common/date","vs/nls!vs/base/common/errorMessage","vs/base/common/errorMessage","vs/nls!vs/base/common/keybindingLabels","vs/base/common/keybindingLabels","vs/nls!vs/base/node/processes","vs/base/node/processes","vs/nls!vs/code/electron-main/app","vs/nls!vs/code/electron-main/auth","vs/code/electron-main/auth","vs/nls!vs/code/electron-main/window","vs/nls!vs/platform/configuration/common/configurationRegistry","vs/nls!vs/platform/dialogs/electron-main/dialogs","vs/nls!vs/platform/environment/node/argv","vs/nls!vs/platform/environment/node/argvHelper","vs/nls!vs/platform/extensionManagement/common/extensionManagement","vs/nls!vs/platform/extensions/common/extensionValidator","vs/nls!vs/platform/files/common/fileService","vs/nls!vs/platform/files/common/files","vs/nls!vs/platform/files/common/io","vs/nls!vs/platform/files/node/diskFileSystemProvider","vs/nls!vs/platform/issue/electron-main/issueMainService","vs/nls!vs/platform/menubar/electron-main/menubar","vs/nls!vs/platform/request/common/request","vs/nls!vs/platform/telemetry/common/telemetryService","vs/nls!vs/platform/update/common/update.config.contribution","vs/nls!vs/platform/windows/electron-main/windowsMainService","vs/nls!vs/platform/workspaces/common/workspaces","vs/nls!vs/platform/workspaces/electron-main/workspacesHistoryMainService","vs/nls!vs/platform/workspaces/electron-main/workspacesMainService","vs/platform/driver/node/driver","vs/platform/debug/electron-main/extensionHostDebugIpc","vs/platform/environment/node/waitMarkerFile","vs/platform/extensions/common/extensionValidator","vs/platform/files/node/watcher/nsfw/watcherService","vs/platform/files/node/watcher/unix/watcherService","vs/platform/files/node/watcher/win32/csharpWatcherService","vs/platform/files/node/watcher/win32/watcherService","vs/platform/instantiation/common/graph","vs/platform/extensionManagement/common/extensionManagement","vs/platform/extensions/common/extensions","vs/platform/extensionManagement/common/extensionManagementUtil","vs/platform/environment/node/argvHelper","vs/platform/files/node/watcher/nodejs/watcherService","vs/platform/instantiation/common/instantiationService","vs/platform/ipc/electron-main/sharedProcessMainService","vs/platform/keybinding/common/baseResolvedKeybinding","vs/platform/keybinding/common/usLayoutResolvedKeybinding","vs/platform/lifecycle/common/lifecycle","vs/platform/files/common/fileService","vs/platform/files/node/diskFileSystemProvider","vs/platform/log/common/bufferLog","vs/platform/log/common/logIpc","vs/platform/log/node/spdlogService","vs/platform/menubar/common/menubar","vs/platform/environment/node/environmentService","vs/platform/jsonschemas/common/jsonContributionRegistry","vs/platform/configuration/common/configurationModels","vs/platform/configuration/common/configurationService","vs/platform/remote/common/remoteAuthorityResolver","vs/platform/remote/common/remoteAgentConnection","vs/platform/remote/node/nodeSocketFactory","vs/platform/request/node/proxy","url","vs/platform/serviceMachineId/common/serviceMachineId","vs/platform/remote/node/tunnelService","vs/platform/sign/node/signService","vs/platform/state/node/stateService","vs/platform/extensionManagement/common/extensionGalleryService","vs/platform/storage/node/storageIpc","vs/platform/telemetry/common/telemetryService","vs/platform/telemetry/common/telemetryUtils","vs/platform/telemetry/node/commonProperties","vs/platform/telemetry/node/telemetryIpc","vs/platform/theme/common/theme","vs/platform/theme/common/themeService","vs/code/electron-main/sharedProcess","vs/platform/update/common/update.config.contribution","vs/platform/update/electron-main/updateIpc","vs/platform/update/electron-main/updateService.darwin","vs/platform/update/electron-main/updateService.linux","vs/platform/update/electron-main/updateService.snap","vs/platform/update/electron-main/updateService.win32","vs/platform/url/common/urlIpc","vs/platform/url/common/urlService","vs/platform/url/electron-main/electronUrlListener","vs/platform/userDataSync/common/userDataSyncIpc","vs/platform/webview/common/mimeTypes","vs/platform/webview/common/webviewManagerService","vs/platform/webview/common/webviewPortMapping","vs/platform/webview/electron-main/webviewPortMappingProvider","vs/platform/webview/electron-main/webviewProtocolProvider","vs/platform/webview/electron-main/webviewMainService","vs/platform/windows/electron-main/windowsStateStorage","vs/platform/backup/electron-main/backupMainService","vs/platform/driver/electron-main/driver","vs/platform/windows/electron-main/windowTracker","vs/platform/workspace/common/workspace","vs/code/electron-main/window","vs/platform/issue/electron-main/issueMainService","vs/platform/menubar/electron-main/menubar","vs/platform/menubar/electron-main/menubarMainService","vs/platform/windows/electron-main/windowsMainService","vs/platform/workspaces/electron-main/workspacesService","vs/code/electron-main/app","vs/platform/request/node/requestService","vs/platform/request/electron-main/requestMainService","string_decoder","minimist","assert","stream","vs/base/common/performance","zlib","vs/code/electron-main/main"];
 var __M = function(deps) {
   var result = [];
   for (var i = 0, len = deps.length; i < len; i++) {
@@ -14,7 +14,7 @@ var __M = function(deps) {
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[92/*vs/base/common/assert*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[90/*vs/base/common/assert*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ok = void 0;
@@ -33,7 +33,7 @@ define(__m[92/*vs/base/common/assert*/], __M([0/*require*/,1/*exports*/]), funct
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[52/*vs/base/common/decorators*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[48/*vs/base/common/decorators*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.throttle = exports.debounce = exports.memoize = exports.createMemoizer = exports.createDecorator = void 0;
@@ -173,7 +173,7 @@ define(__m[52/*vs/base/common/decorators*/], __M([0/*require*/,1/*exports*/]), f
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[16/*vs/base/common/errors*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[17/*vs/base/common/errors*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NotSupportedError = exports.NotImplementedError = exports.getErrorMessage = exports.disposed = exports.readonly = exports.illegalState = exports.illegalArgument = exports.canceled = exports.isPromiseCanceledError = exports.transformErrorForSerialization = exports.onUnexpectedExternalError = exports.onUnexpectedError = exports.setUnexpectedErrorHandler = exports.errorHandler = exports.ErrorHandler = void 0;
@@ -340,10 +340,10 @@ define(__m[16/*vs/base/common/errors*/], __M([0/*require*/,1/*exports*/]), funct
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[23/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/errors*/]), function (require, exports, errors_1) {
+define(__m[26/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/errors*/]), function (require, exports, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.getRandomElement = exports.asArray = exports.mapArrayOrNot = exports.find = exports.pushToEnd = exports.pushToStart = exports.shuffle = exports.arrayInsert = exports.remove = exports.insert = exports.index = exports.range = exports.flatten = exports.commonPrefixLength = exports.firstOrDefault = exports.first = exports.firstIndex = exports.lastIndex = exports.uniqueFilter = exports.distinctES6 = exports.distinct = exports.isNonEmptyArray = exports.isFalsyOrEmpty = exports.move = exports.coalesceInPlace = exports.coalesce = exports.topAsync = exports.top = exports.delta = exports.sortedDiff = exports.groupBy = exports.mergeSort = exports.findFirstInSorted = exports.binarySearch = exports.equals = exports.tail2 = exports.tail = void 0;
+    exports.getRandomElement = exports.asArray = exports.mapArrayOrNot = exports.pushToEnd = exports.pushToStart = exports.shuffle = exports.arrayInsert = exports.remove = exports.insert = exports.index = exports.range = exports.flatten = exports.commonPrefixLength = exports.firstOrDefault = exports.lastIndex = exports.uniqueFilter = exports.distinctES6 = exports.distinct = exports.isNonEmptyArray = exports.isFalsyOrEmpty = exports.move = exports.coalesceInPlace = exports.coalesce = exports.topAsync = exports.top = exports.delta = exports.sortedDiff = exports.groupBy = exports.mergeSort = exports.findFirstInSorted = exports.binarySearch = exports.equals = exports.tail2 = exports.tail = void 0;
     /**
      * Returns the last element of an array.
      * @param array The array.
@@ -705,24 +705,6 @@ define(__m[23/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,16/*vs/b
         return -1;
     }
     exports.lastIndex = lastIndex;
-    /**
-     * @deprecated ES6: use `Array.findIndex`
-     */
-    function firstIndex(array, fn) {
-        for (let i = 0; i < array.length; i++) {
-            const element = array[i];
-            if (fn(element)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-    exports.firstIndex = firstIndex;
-    function first(array, fn, notFoundValue = undefined) {
-        const index = firstIndex(array, fn);
-        return index < 0 ? notFoundValue : array[index];
-    }
-    exports.first = first;
     function firstOrDefault(array, notFoundValue) {
         return array.length > 0 ? array[0] : notFoundValue;
     }
@@ -847,19 +829,6 @@ define(__m[23/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,16/*vs/b
         }
     }
     exports.pushToEnd = pushToEnd;
-    /**
-     * @deprecated ES6: use `Array.find`
-     */
-    function find(arr, predicate) {
-        for (let i = 0; i < arr.length; i++) {
-            const element = arr[i];
-            if (predicate(element, i, arr)) {
-                return element;
-            }
-        }
-        return undefined;
-    }
-    exports.find = find;
     function mapArrayOrNot(items, fn) {
         return Array.isArray(items) ?
             items.map(fn) :
@@ -904,7 +873,7 @@ define(__m[49/*vs/base/common/functional*/], __M([0/*require*/,1/*exports*/]), f
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[71/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[58/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Iterable = void 0;
@@ -989,7 +958,7 @@ define(__m[71/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), fun
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[42/*vs/base/common/json*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[41/*vs/base/common/json*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getNodeType = exports.stripComments = exports.visit = exports.findNodeAtOffset = exports.contains = exports.getNodeValue = exports.getNodePath = exports.findNodeAtLocation = exports.parseTree = exports.parse = exports.getLocation = exports.createScanner = exports.ParseOptions = exports.ParseErrorCode = exports.SyntaxKind = exports.ScanError = void 0;
@@ -2138,7 +2107,7 @@ define(__m[42/*vs/base/common/json*/], __M([0/*require*/,1/*exports*/]), functio
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[93/*vs/base/common/jsonFormatter*/], __M([0/*require*/,1/*exports*/,42/*vs/base/common/json*/]), function (require, exports, json_1) {
+define(__m[91/*vs/base/common/jsonFormatter*/], __M([0/*require*/,1/*exports*/,41/*vs/base/common/json*/]), function (require, exports, json_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isEOL = exports.getEOL = exports.format = void 0;
@@ -2339,7 +2308,7 @@ define(__m[93/*vs/base/common/jsonFormatter*/], __M([0/*require*/,1/*exports*/,4
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[94/*vs/base/common/jsonEdit*/], __M([0/*require*/,1/*exports*/,42/*vs/base/common/json*/,93/*vs/base/common/jsonFormatter*/,23/*vs/base/common/arrays*/]), function (require, exports, json_1, jsonFormatter_1, arrays_1) {
+define(__m[92/*vs/base/common/jsonEdit*/], __M([0/*require*/,1/*exports*/,41/*vs/base/common/json*/,91/*vs/base/common/jsonFormatter*/,26/*vs/base/common/arrays*/]), function (require, exports, json_1, jsonFormatter_1, arrays_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.applyEdits = exports.applyEdit = exports.withFormatting = exports.setProperty = exports.removeProperty = void 0;
@@ -2527,7 +2496,7 @@ define(__m[94/*vs/base/common/jsonEdit*/], __M([0/*require*/,1/*exports*/,42/*vs
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[53/*vs/base/common/keyCodes*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/errors*/]), function (require, exports, errors_1) {
+define(__m[52/*vs/base/common/keyCodes*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/errors*/]), function (require, exports, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ResolvedKeybinding = exports.ResolvedKeybindingPart = exports.ChordKeybinding = exports.SimpleKeybinding = exports.createSimpleKeybinding = exports.createKeybinding = exports.KeyChord = exports.KeyMod = exports.KeyCodeUtils = exports.KeyCode = void 0;
@@ -3030,7 +2999,7 @@ define(__m[53/*vs/base/common/keyCodes*/], __M([0/*require*/,1/*exports*/,16/*vs
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[2/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,49/*vs/base/common/functional*/,71/*vs/base/common/iterator*/]), function (require, exports, functional_1, iterator_1) {
+define(__m[2/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,49/*vs/base/common/functional*/,58/*vs/base/common/iterator*/]), function (require, exports, functional_1, iterator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ImmortalReference = exports.ReferenceCollection = exports.MutableDisposable = exports.Disposable = exports.DisposableStore = exports.toDisposable = exports.combinedDisposable = exports.dispose = exports.isDisposable = exports.MultiDisposeError = void 0;
@@ -3265,7 +3234,7 @@ define(__m[2/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,49/*vs
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[95/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[93/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LinkedList = void 0;
@@ -3396,7 +3365,7 @@ define(__m[95/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), f
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[3/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/errors*/,49/*vs/base/common/functional*/,2/*vs/base/common/lifecycle*/,95/*vs/base/common/linkedList*/]), function (require, exports, errors_1, functional_1, lifecycle_1, linkedList_1) {
+define(__m[3/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/errors*/,49/*vs/base/common/functional*/,2/*vs/base/common/lifecycle*/,93/*vs/base/common/linkedList*/]), function (require, exports, errors_1, functional_1, lifecycle_1, linkedList_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Relay = exports.EventBufferer = exports.EventMultiplexer = exports.AsyncEmitter = exports.PauseableEmitter = exports.Emitter = exports.setGlobalLeakWarningThreshold = exports.Event = void 0;
@@ -4095,7 +4064,7 @@ define(__m[3/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,16/*vs/bas
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[31/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/]), function (require, exports, event_1) {
+define(__m[30/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/]), function (require, exports, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CancellationTokenSource = exports.CancellationToken = void 0;
@@ -4211,10 +4180,10 @@ define(__m[31/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,3/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[9/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,31/*vs/base/common/cancellation*/,16/*vs/base/common/errors*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/]), function (require, exports, cancellation_1, errors, event_1, lifecycle_1) {
+define(__m[10/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,30/*vs/base/common/cancellation*/,17/*vs/base/common/errors*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/]), function (require, exports, cancellation_1, errors, event_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
+    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellablePromises = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
     function isThenable(obj) {
         return obj && typeof obj.then === 'function';
     }
@@ -4254,10 +4223,25 @@ define(__m[9/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,31/*vs/bas
         return Promise.race([promise, new Promise(resolve => token.onCancellationRequested(() => resolve(defaultValue)))]);
     }
     exports.raceCancellation = raceCancellation;
+    /**
+     * Returns as soon as one of the promises is resolved and cancels remaining promises
+     */
+    async function raceCancellablePromises(cancellablePromises) {
+        let resolvedPromiseIndex = -1;
+        const promises = cancellablePromises.map((promise, index) => promise.then(result => { resolvedPromiseIndex = index; return result; }));
+        const result = await Promise.race(promises);
+        cancellablePromises.forEach((cancellablePromise, index) => {
+            if (index !== resolvedPromiseIndex) {
+                cancellablePromise.cancel();
+            }
+        });
+        return result;
+    }
+    exports.raceCancellablePromises = raceCancellablePromises;
     function raceTimeout(promise, timeout, onTimeout) {
         let promiseResolve = undefined;
         const timer = setTimeout(() => {
-            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve();
+            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve(undefined);
             onTimeout === null || onTimeout === void 0 ? void 0 : onTimeout();
         }, timeout);
         return Promise.race([
@@ -4708,10 +4692,10 @@ define(__m[9/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,31/*vs/bas
     }
     exports.IntervalTimer = IntervalTimer;
     class RunOnceScheduler {
-        constructor(runner, timeout) {
+        constructor(runner, delay) {
             this.timeoutToken = -1;
             this.runner = runner;
-            this.timeout = timeout;
+            this.timeout = delay;
             this.timeoutHandler = this.onTimeout.bind(this);
         }
         /**
@@ -4736,6 +4720,12 @@ define(__m[9/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,31/*vs/bas
         schedule(delay = this.timeout) {
             this.cancel();
             this.timeoutToken = setTimeout(this.timeoutHandler, delay);
+        }
+        get delay() {
+            return this.timeout;
+        }
+        set delay(value) {
+            this.timeout = value;
         }
         /**
          * Returns true if scheduled.
@@ -5036,6 +5026,7 @@ if (typeof define === 'function') {
  *--------------------------------------------------------------------------------------------*/
 define(__m[4/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
+    var _a;
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isLittleEndian = exports.OS = exports.OperatingSystem = exports.setImmediate = exports.globals = exports.translationsConfigFile = exports.locale = exports.Language = exports.language = exports.isRootUser = exports.userAgent = exports.platform = exports.isIOS = exports.isWeb = exports.isNative = exports.isLinux = exports.isMacintosh = exports.isWindows = exports.PlatformToString = exports.Platform = void 0;
     const LANGUAGE_DEFAULT = 'en';
@@ -5049,8 +5040,18 @@ define(__m[4/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
     let _language = LANGUAGE_DEFAULT;
     let _translationsConfigFile = undefined;
     let _userAgent = undefined;
-    const isElectronRenderer = (typeof process !== 'undefined' && typeof process.versions !== 'undefined' && typeof process.versions.electron !== 'undefined' && process.type === 'renderer');
-    // OS detection
+    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
+    let nodeProcess = undefined;
+    if (typeof process !== 'undefined') {
+        // Native environment (non-sandboxed)
+        nodeProcess = process;
+    }
+    else if (typeof _globals.vscode !== 'undefined') {
+        // Native envionment (sandboxed)
+        nodeProcess = _globals.vscode.process;
+    }
+    const isElectronRenderer = typeof ((_a = nodeProcess === null || nodeProcess === void 0 ? void 0 : nodeProcess.versions) === null || _a === void 0 ? void 0 : _a.electron) === 'string' && nodeProcess.type === 'renderer';
+    // Web environment
     if (typeof navigator === 'object' && !isElectronRenderer) {
         _userAgent = navigator.userAgent;
         _isWindows = _userAgent.indexOf('Windows') >= 0;
@@ -5061,13 +5062,14 @@ define(__m[4/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
         _locale = navigator.language;
         _language = _locale;
     }
-    else if (typeof process === 'object') {
-        _isWindows = (process.platform === 'win32');
-        _isMacintosh = (process.platform === 'darwin');
-        _isLinux = (process.platform === 'linux');
+    // Native environment
+    else if (typeof nodeProcess === 'object') {
+        _isWindows = (nodeProcess.platform === 'win32');
+        _isMacintosh = (nodeProcess.platform === 'darwin');
+        _isLinux = (nodeProcess.platform === 'linux');
         _locale = LANGUAGE_DEFAULT;
         _language = LANGUAGE_DEFAULT;
-        const rawNlsConfig = process.env['VSCODE_NLS_CONFIG'];
+        const rawNlsConfig = nodeProcess.env['VSCODE_NLS_CONFIG'];
         if (rawNlsConfig) {
             try {
                 const nlsConfig = JSON.parse(rawNlsConfig);
@@ -5081,6 +5083,10 @@ define(__m[4/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
             }
         }
         _isNative = true;
+    }
+    // Unknown environment
+    else {
+        console.error('Unable to resolve platform.');
     }
     var Platform;
     (function (Platform) {
@@ -5117,7 +5123,7 @@ define(__m[4/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
     exports.platform = _platform;
     exports.userAgent = _userAgent;
     function isRootUser() {
-        return _isNative && !_isWindows && (process.getuid() === 0);
+        return !!nodeProcess && !_isWindows && (nodeProcess.getuid() === 0);
     }
     exports.isRootUser = isRootUser;
     /**
@@ -5159,7 +5165,6 @@ define(__m[4/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
      * The translatios that are available through language packs.
      */
     exports.translationsConfigFile = _translationsConfigFile;
-    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
     exports.globals = _globals;
     exports.setImmediate = (function defineSetImmediate() {
         if (exports.globals.setImmediate) {
@@ -5189,8 +5194,8 @@ define(__m[4/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
                 exports.globals.postMessage({ vscodeSetImmediateId: myId }, '*');
             };
         }
-        if (typeof process !== 'undefined' && typeof process.nextTick === 'function') {
-            return process.nextTick.bind(process);
+        if (nodeProcess) {
+            return nodeProcess.nextTick.bind(nodeProcess);
         }
         const _promise = Promise.resolve();
         return (callback) => _promise.then(callback);
@@ -5222,16 +5227,31 @@ define(__m[4/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[60/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/]), function (require, exports, platform_1) {
+define(__m[59/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/]), function (require, exports, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.nextTick = exports.platform = exports.env = exports.cwd = void 0;
-    const safeProcess = (typeof process === 'undefined') ? {
-        cwd() { return '/'; },
-        env: Object.create(null),
-        get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
-        nextTick(callback) { return platform_1.setImmediate(callback); }
-    } : process;
+    let safeProcess;
+    // Native node.js environment
+    if (typeof process !== 'undefined') {
+        safeProcess = process;
+    }
+    // Native sandbox environment
+    else if (typeof platform_1.globals.vscode !== 'undefined') {
+        safeProcess = platform_1.globals.vscode.process;
+    }
+    // Web environment
+    else {
+        safeProcess = {
+            // Supported
+            get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
+            nextTick(callback) { return platform_1.setImmediate(callback); },
+            // Unsupported
+            get env() { return Object.create(null); },
+            cwd() { return '/'; },
+            getuid() { return -1; }
+        };
+    }
     exports.cwd = safeProcess.cwd;
     exports.env = safeProcess.env;
     exports.platform = safeProcess.platform;
@@ -5242,7 +5262,7 @@ define(__m[60/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,4/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[7/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,60/*vs/base/common/process*/]), function (require, exports, process) {
+define(__m[6/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,59/*vs/base/common/process*/]), function (require, exports, process) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.delimiter = exports.sep = exports.toNamespacedPath = exports.parse = exports.format = exports.extname = exports.basename = exports.dirname = exports.relative = exports.resolve = exports.join = exports.isAbsolute = exports.normalize = exports.posix = exports.win32 = void 0;
@@ -6608,7 +6628,7 @@ define(__m[7/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,60/*vs/base
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[72/*vs/base/common/scanCode*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[71/*vs/base/common/scanCode*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ScanCodeBinding = exports.IMMUTABLE_KEY_CODE_TO_CODE = exports.IMMUTABLE_CODE_TO_KEY_CODE = exports.ScanCodeUtils = exports.ScanCode = void 0;
@@ -7274,7 +7294,7 @@ define(__m[72/*vs/base/common/scanCode*/], __M([0/*require*/,1/*exports*/]), fun
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[96/*vs/base/common/keybindingParser*/], __M([0/*require*/,1/*exports*/,53/*vs/base/common/keyCodes*/,72/*vs/base/common/scanCode*/]), function (require, exports, keyCodes_1, scanCode_1) {
+define(__m[94/*vs/base/common/keybindingParser*/], __M([0/*require*/,1/*exports*/,52/*vs/base/common/keyCodes*/,71/*vs/base/common/scanCode*/]), function (require, exports, keyCodes_1, scanCode_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.KeybindingParser = void 0;
@@ -7386,7 +7406,7 @@ define(__m[96/*vs/base/common/keybindingParser*/], __M([0/*require*/,1/*exports*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[61/*vs/base/common/stream*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/]), function (require, exports, lifecycle_1) {
+define(__m[60/*vs/base/common/stream*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/]), function (require, exports, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.transform = exports.toReadable = exports.toStream = exports.peekStream = exports.consumeStream = exports.peekReadable = exports.consumeReadable = exports.newWriteableStream = exports.isReadableBufferedStream = exports.isReadableStream = void 0;
@@ -7731,10 +7751,10 @@ define(__m[61/*vs/base/common/stream*/], __M([0/*require*/,1/*exports*/,2/*vs/ba
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[15/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[16/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.repeat = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.endsWith = exports.startsWith = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
+    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
     function isFalsyOrWhitespace(str) {
         if (!str || typeof str !== 'string') {
             return true;
@@ -7860,40 +7880,6 @@ define(__m[15/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), func
         return pattern.replace(/\*/g, '');
     }
     exports.stripWildcards = stripWildcards;
-    /**
-     * @deprecated ES6: use `String.startsWith`
-     */
-    function startsWith(haystack, needle) {
-        if (haystack.length < needle.length) {
-            return false;
-        }
-        if (haystack === needle) {
-            return true;
-        }
-        for (let i = 0; i < needle.length; i++) {
-            if (haystack[i] !== needle[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
-    exports.startsWith = startsWith;
-    /**
-     * @deprecated ES6: use `String.endsWith`
-     */
-    function endsWith(haystack, needle) {
-        const diff = haystack.length - needle.length;
-        if (diff > 0) {
-            return haystack.indexOf(needle, diff) === diff;
-        }
-        else if (diff === 0) {
-            return haystack === needle;
-        }
-        else {
-            return false;
-        }
-    }
-    exports.endsWith = endsWith;
     function createRegExp(searchString, isRegex, options = {}) {
         if (!searchString) {
             throw new Error('Cannot create regex from empty string');
@@ -8514,17 +8500,6 @@ define(__m[15/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), func
     }
     exports.stripUTF8BOM = stripUTF8BOM;
     /**
-     * @deprecated ES6
-     */
-    function repeat(s, count) {
-        let result = '';
-        for (let i = 0; i < count; i++) {
-            result += s;
-        }
-        return result;
-    }
-    exports.repeat = repeat;
-    /**
      * Checks if the characters of the provided query string are included in the
      * target string. The characters do not have to be contiguous within the string.
      */
@@ -8743,7 +8718,7 @@ define(__m[15/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), func
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[18/*vs/base/common/buffer*/], __M([0/*require*/,1/*exports*/,15/*vs/base/common/strings*/,61/*vs/base/common/stream*/]), function (require, exports, strings, streams) {
+define(__m[20/*vs/base/common/buffer*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/strings*/,60/*vs/base/common/stream*/]), function (require, exports, strings, streams) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.newWriteableBufferStream = exports.streamToBufferReadableStream = exports.bufferToStream = exports.bufferedStreamToBuffer = exports.streamToBuffer = exports.bufferToReadable = exports.readableToBuffer = exports.writeUInt8 = exports.readUInt8 = exports.writeUInt32LE = exports.readUInt32LE = exports.writeUInt32BE = exports.readUInt32BE = exports.writeUInt16LE = exports.readUInt16LE = exports.VSBuffer = void 0;
@@ -8946,7 +8921,7 @@ define(__m[18/*vs/base/common/buffer*/], __M([0/*require*/,1/*exports*/,15/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[13/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[14/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NotImplementedProxy = exports.withUndefinedAsNull = exports.withNullAsUndefined = exports.createProxyObject = exports.getAllMethodNames = exports.getAllPropertyNames = exports.validateConstraint = exports.validateConstraints = exports.areFunctions = exports.isFunction = exports.isEmptyObject = exports.assertAllDefined = exports.assertIsDefined = exports.assertType = exports.isUndefinedOrNull = exports.isDefined = exports.isUndefined = exports.isBoolean = exports.isNumber = exports.isObject = exports.isStringArray = exports.isString = exports.isArray = void 0;
@@ -9182,7 +9157,7 @@ define(__m[13/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), functi
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[28/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/,15/*vs/base/common/strings*/,7/*vs/base/common/path*/,13/*vs/base/common/types*/]), function (require, exports, platform_1, strings_1, path_1, types_1) {
+define(__m[27/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/,16/*vs/base/common/strings*/,6/*vs/base/common/path*/,14/*vs/base/common/types*/]), function (require, exports, platform_1, strings_1, path_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.parseLineAndColumnAware = exports.indexOfPath = exports.isRootOrDriveLetter = exports.sanitizeFilePath = exports.isWindowsDriveLetter = exports.isEqualOrParent = exports.isEqual = exports.isValidBasename = exports.isUNC = exports.getRoot = exports.toSlashes = exports.isPathSeparator = void 0;
@@ -9351,34 +9326,34 @@ define(__m[28/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,4/*vs/b
         return strings_1.equalsIgnoreCase(pathA, pathB);
     }
     exports.isEqual = isEqual;
-    function isEqualOrParent(path, candidate, ignoreCase, separator = path_1.sep) {
-        if (path === candidate) {
+    function isEqualOrParent(base, parentCandidate, ignoreCase, separator = path_1.sep) {
+        if (base === parentCandidate) {
             return true;
         }
-        if (!path || !candidate) {
+        if (!base || !parentCandidate) {
             return false;
         }
-        if (candidate.length > path.length) {
+        if (parentCandidate.length > base.length) {
             return false;
         }
         if (ignoreCase) {
-            const beginsWith = strings_1.startsWithIgnoreCase(path, candidate);
+            const beginsWith = strings_1.startsWithIgnoreCase(base, parentCandidate);
             if (!beginsWith) {
                 return false;
             }
-            if (candidate.length === path.length) {
+            if (parentCandidate.length === base.length) {
                 return true; // same path, different casing
             }
-            let sepOffset = candidate.length;
-            if (candidate.charAt(candidate.length - 1) === separator) {
+            let sepOffset = parentCandidate.length;
+            if (parentCandidate.charAt(parentCandidate.length - 1) === separator) {
                 sepOffset--; // adjust the expected sep offset in case our candidate already ends in separator character
             }
-            return path.charAt(sepOffset) === separator;
+            return base.charAt(sepOffset) === separator;
         }
-        if (candidate.charAt(candidate.length - 1) !== separator) {
-            candidate += separator;
+        if (parentCandidate.charAt(parentCandidate.length - 1) !== separator) {
+            parentCandidate += separator;
         }
-        return path.indexOf(candidate) === 0;
+        return base.indexOf(parentCandidate) === 0;
     }
     exports.isEqualOrParent = isEqualOrParent;
     function isWindowsDriveLetter(char0) {
@@ -9474,16 +9449,16 @@ define(__m[28/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,4/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[27/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,13/*vs/base/common/types*/]), function (require, exports, types_1) {
+define(__m[31/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,14/*vs/base/common/types*/]), function (require, exports, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.distinct = exports.getOrDefault = exports.safeStringify = exports.equals = exports.assign = exports.mixin = exports.cloneAndChange = exports.deepFreeze = exports.deepClone = void 0;
+    exports.distinct = exports.getOrDefault = exports.safeStringify = exports.equals = exports.mixin = exports.cloneAndChange = exports.deepFreeze = exports.deepClone = void 0;
     function deepClone(obj) {
         if (!obj || typeof obj !== 'object') {
             return obj;
         }
         if (obj instanceof RegExp) {
-            // See https://github.com/Microsoft/TypeScript/issues/10990
+            // See https://github.com/microsoft/TypeScript/issues/10990
             return obj;
         }
         const result = Array.isArray(obj) ? [] : {};
@@ -9582,11 +9557,6 @@ define(__m[27/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,13/*vs/
         return destination;
     }
     exports.mixin = mixin;
-    function assign(destination, ...sources) {
-        sources.forEach(source => Object.keys(source).forEach(key => destination[key] = source[key]));
-        return destination;
-    }
-    exports.assign = assign;
     function equals(one, other) {
         if (one === other) {
             return true;
@@ -9639,19 +9609,19 @@ define(__m[27/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,13/*vs/
     }
     exports.equals = equals;
     /**
-     * Calls JSON.Stringify with a replacer to break apart any circular references.
-     * This prevents JSON.stringify from throwing the exception
+     * Calls `JSON.Stringify` with a replacer to break apart any circular references.
+     * This prevents `JSON`.stringify` from throwing the exception
      *  "Uncaught TypeError: Converting circular structure to JSON"
      */
     function safeStringify(obj) {
-        const seen = [];
+        const seen = new Set();
         return JSON.stringify(obj, (key, value) => {
             if (types_1.isObject(value) || Array.isArray(value)) {
-                if (seen.indexOf(value) !== -1) {
+                if (seen.has(value)) {
                     return '[Circular]';
                 }
                 else {
-                    seen.push(value);
+                    seen.add(value);
                 }
             }
             return value;
@@ -9695,7 +9665,7 @@ define(__m[27/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,13/*vs/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[6/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/,7/*vs/base/common/path*/]), function (require, exports, platform_1, paths) {
+define(__m[7/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/,6/*vs/base/common/path*/]), function (require, exports, platform_1, paths) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.uriToFsPath = exports.URI = void 0;
@@ -10288,25 +10258,7 @@ define(__m[6/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,4/*vs/base/c
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[37/*vs/base/common/amd*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/]), function (require, exports, uri_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.getUriFromAmdModule = exports.getPathFromAmdModule = void 0;
-    function getPathFromAmdModule(requirefn, relativePath) {
-        return getUriFromAmdModule(requirefn, relativePath).fsPath;
-    }
-    exports.getPathFromAmdModule = getPathFromAmdModule;
-    function getUriFromAmdModule(requirefn, relativePath) {
-        return uri_1.URI.parse(requirefn.toUrl(relativePath));
-    }
-    exports.getUriFromAmdModule = getUriFromAmdModule;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[97/*vs/base/common/console*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/]), function (require, exports, uri_1) {
+define(__m[95/*vs/base/common/console*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/]), function (require, exports, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.log = exports.getFirstFrame = exports.parse = exports.isRemoteConsoleLog = void 0;
@@ -10417,7 +10369,7 @@ define(__m[97/*vs/base/common/console*/], __M([0/*require*/,1/*exports*/,6/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[98/*vs/base/common/marshalling*/], __M([0/*require*/,1/*exports*/,18/*vs/base/common/buffer*/,15/*vs/base/common/strings*/,6/*vs/base/common/uri*/]), function (require, exports, buffer_1, strings_1, uri_1) {
+define(__m[96/*vs/base/common/marshalling*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/buffer*/,16/*vs/base/common/strings*/,7/*vs/base/common/uri*/]), function (require, exports, buffer_1, strings_1, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.revive = exports.parse = exports.stringify = void 0;
@@ -10478,10 +10430,10 @@ define(__m[98/*vs/base/common/marshalling*/], __M([0/*require*/,1/*exports*/,18/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[19/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,4/*vs/base/common/platform*/]), function (require, exports, uri_1, platform) {
+define(__m[9/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,4/*vs/base/common/platform*/]), function (require, exports, uri_1, platform) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.RemoteAuthorities = exports.Schemas = void 0;
+    exports.FileAccess = exports.RemoteAuthorities = exports.Schemas = void 0;
     var Schemas;
     (function (Schemas) {
         /**
@@ -10578,13 +10530,33 @@ define(__m[19/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,6/*vs/b
         }
     }
     exports.RemoteAuthorities = new RemoteAuthoritiesImpl();
+    class FileAccessImpl {
+        asBrowserUri(uriOrModule, moduleIdToUrl) {
+            const uri = this.toUri(uriOrModule, moduleIdToUrl);
+            if (uri.scheme === Schemas.vscodeRemote) {
+                return exports.RemoteAuthorities.rewrite(uri);
+            }
+            return uri;
+        }
+        asFileUri(uriOrModule, moduleIdToUrl) {
+            const uri = this.toUri(uriOrModule, moduleIdToUrl);
+            return uri;
+        }
+        toUri(uriOrModule, moduleIdToUrl) {
+            if (uri_1.URI.isUri(uriOrModule)) {
+                return uriOrModule;
+            }
+            return uri_1.URI.parse(moduleIdToUrl.toUrl(uriOrModule));
+        }
+    }
+    exports.FileAccess = new FileAccessImpl();
 });
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[38/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,15/*vs/base/common/strings*/,19/*vs/base/common/network*/,4/*vs/base/common/platform*/]), function (require, exports, uri_1, strings_1, network_1, platform_1) {
+define(__m[37/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,16/*vs/base/common/strings*/,9/*vs/base/common/network*/,4/*vs/base/common/platform*/]), function (require, exports, uri_1, strings_1, network_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LRUCache = exports.LinkedMap = exports.Touch = exports.ResourceMap = exports.TernarySearchTree = exports.UriIterator = exports.PathIterator = exports.StringIterator = exports.setToString = exports.mapToString = exports.getOrSet = void 0;
@@ -10707,7 +10679,7 @@ define(__m[38/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,6/*vs/base/
                 this._states.push(2 /* Authority */);
             }
             if (this._value.path) {
-                //todo@jrieken the case-sensitive logic is copied form `resources.ts#hasToIgnoreCase`
+                //todo@jrieken #107886 the case-sensitive logic is copied form `resources.ts#hasToIgnoreCase`
                 // which cannot be used because it depends on this
                 const caseSensitive = key.scheme === network_1.Schemas.file && platform_1.isLinux;
                 this._pathIterator = new PathIterator(false, caseSensitive);
@@ -11470,7 +11442,7 @@ define(__m[38/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,6/*vs/base/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[62/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,23/*vs/base/common/arrays*/,15/*vs/base/common/strings*/,28/*vs/base/common/extpath*/,7/*vs/base/common/path*/,38/*vs/base/common/map*/,9/*vs/base/common/async*/]), function (require, exports, arrays, strings, extpath, paths, map_1, async_1) {
+define(__m[61/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/strings*/,27/*vs/base/common/extpath*/,6/*vs/base/common/path*/,37/*vs/base/common/map*/,10/*vs/base/common/async*/]), function (require, exports, strings, extpath, paths, map_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getPathTerms = exports.getBasenameTerms = exports.isRelativePattern = exports.hasSiblingFn = exports.hasSiblingPromiseFn = exports.parse = exports.match = exports.splitGlobAware = exports.getEmptyExpression = void 0;
@@ -11752,7 +11724,7 @@ define(__m[62/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,23/*vs/bas
             }
             return null;
         };
-        const withBasenames = arrays.first(parsedPatterns, pattern => !!pattern.allBasenames);
+        const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
         if (withBasenames) {
             parsedPattern.allBasenames = withBasenames.allBasenames;
         }
@@ -11888,7 +11860,7 @@ define(__m[62/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,23/*vs/bas
                 }
                 return null;
             };
-            const withBasenames = arrays.first(parsedPatterns, pattern => !!pattern.allBasenames);
+            const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
             if (withBasenames) {
                 resultExpression.allBasenames = withBasenames.allBasenames;
             }
@@ -11918,7 +11890,7 @@ define(__m[62/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,23/*vs/bas
             }
             return null;
         };
-        const withBasenames = arrays.first(parsedPatterns, pattern => !!pattern.allBasenames);
+        const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
         if (withBasenames) {
             resultExpression.allBasenames = withBasenames.allBasenames;
         }
@@ -12013,7 +11985,7 @@ define(__m[62/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,23/*vs/bas
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[63/*vs/base/common/normalization*/], __M([0/*require*/,1/*exports*/,38/*vs/base/common/map*/]), function (require, exports, map_1) {
+define(__m[62/*vs/base/common/normalization*/], __M([0/*require*/,1/*exports*/,37/*vs/base/common/map*/]), function (require, exports, map_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.removeAccents = exports.normalizeNFD = exports.normalizeNFC = exports.canNormalize = void 0;
@@ -12074,7 +12046,7 @@ define(__m[63/*vs/base/common/normalization*/], __M([0/*require*/,1/*exports*/,3
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[24/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,28/*vs/base/common/extpath*/,7/*vs/base/common/path*/,6/*vs/base/common/uri*/,15/*vs/base/common/strings*/,19/*vs/base/common/network*/,4/*vs/base/common/platform*/,62/*vs/base/common/glob*/,38/*vs/base/common/map*/]), function (require, exports, extpath, paths, uri_1, strings_1, network_1, platform_1, glob_1, map_1) {
+define(__m[18/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,27/*vs/base/common/extpath*/,6/*vs/base/common/path*/,7/*vs/base/common/uri*/,16/*vs/base/common/strings*/,9/*vs/base/common/network*/,4/*vs/base/common/platform*/,61/*vs/base/common/glob*/,37/*vs/base/common/map*/]), function (require, exports, extpath, paths, uri_1, strings_1, network_1, platform_1, glob_1, map_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toLocalResource = exports.ResourceGlobMatcher = exports.DataUri = exports.distinctParents = exports.addTrailingPathSeparator = exports.removeTrailingPathSeparator = exports.hasTrailingPathSeparator = exports.isEqualAuthority = exports.isAbsolutePath = exports.resolvePath = exports.relativePath = exports.normalizePath = exports.joinPath = exports.dirname = exports.extname = exports.basename = exports.basenameOrAuthority = exports.getComparisonKey = exports.isEqualOrParent = exports.isEqual = exports.extUriIgnorePathCase = exports.extUriBiasedIgnorePathCase = exports.extUri = exports.ExtUri = exports.originalFSPath = void 0;
@@ -12368,15 +12340,15 @@ define(__m[24/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,28/*v
         }
     }
     exports.ResourceGlobMatcher = ResourceGlobMatcher;
-    function toLocalResource(resource, authority) {
+    function toLocalResource(resource, authority, localScheme) {
         if (authority) {
             let path = resource.path;
             if (path && path[0] !== paths.posix.sep) {
                 path = paths.posix.sep + path;
             }
-            return resource.with({ scheme: network_1.Schemas.vscodeRemote, authority, path });
+            return resource.with({ scheme: localScheme, authority, path });
         }
-        return resource.with({ scheme: network_1.Schemas.file });
+        return resource.with({ scheme: localScheme });
     }
     exports.toLocalResource = toLocalResource;
 });
@@ -12385,7 +12357,7 @@ define(__m[24/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,28/*v
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[32/*vs/base/common/labels*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,7/*vs/base/common/path*/,15/*vs/base/common/strings*/,19/*vs/base/common/network*/,4/*vs/base/common/platform*/,24/*vs/base/common/resources*/]), function (require, exports, uri_1, path_1, strings_1, network_1, platform_1, resources_1) {
+define(__m[32/*vs/base/common/labels*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,6/*vs/base/common/path*/,16/*vs/base/common/strings*/,9/*vs/base/common/network*/,4/*vs/base/common/platform*/,18/*vs/base/common/resources*/]), function (require, exports, uri_1, path_1, strings_1, network_1, platform_1, resources_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.splitName = exports.unmnemonicLabel = exports.mnemonicButtonLabel = exports.mnemonicMenuLabel = exports.template = exports.shorten = exports.untildify = exports.tildify = exports.normalizeDriveLetter = exports.getBaseLabel = exports.getPathLabel = void 0;
@@ -12711,7 +12683,7 @@ define(__m[32/*vs/base/common/labels*/], __M([0/*require*/,1/*exports*/,6/*vs/ba
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[99/*vs/base/common/mime*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/path*/,15/*vs/base/common/strings*/,62/*vs/base/common/glob*/,19/*vs/base/common/network*/,24/*vs/base/common/resources*/]), function (require, exports, path_1, strings_1, glob_1, network_1, resources_1) {
+define(__m[97/*vs/base/common/mime*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/path*/,16/*vs/base/common/strings*/,61/*vs/base/common/glob*/,9/*vs/base/common/network*/,18/*vs/base/common/resources*/]), function (require, exports, path_1, strings_1, glob_1, network_1, resources_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getExtensionForMimeType = exports.getMediaMime = exports.isUnspecific = exports.guessMimeTypes = exports.clearTextMimes = exports.registerTextMime = exports.MIME_UNKNOWN = exports.MIME_BINARY = exports.MIME_TEXT = void 0;
@@ -12834,7 +12806,7 @@ define(__m[99/*vs/base/common/mime*/], __M([0/*require*/,1/*exports*/,7/*vs/base
         let patternMatch = null;
         let extensionMatch = null;
         // We want to prioritize associations based on the order they are registered so that the last registered
-        // association wins over all other. This is for https://github.com/Microsoft/vscode/issues/20074
+        // association wins over all other. This is for https://github.com/microsoft/vscode/issues/20074
         for (let i = associations.length - 1; i >= 0; i--) {
             const association = associations[i];
             // First exact name match
@@ -12880,7 +12852,7 @@ define(__m[99/*vs/base/common/mime*/], __M([0/*require*/,1/*exports*/,7/*vs/base
         }
         if (firstLine.length > 0) {
             // We want to prioritize associations based on the order they are registered so that the last registered
-            // association wins over all other. This is for https://github.com/Microsoft/vscode/issues/20074
+            // association wins over all other. This is for https://github.com/microsoft/vscode/issues/20074
             for (let i = registeredAssociations.length - 1; i >= 0; i--) {
                 const association = registeredAssociations[i];
                 if (!association.firstline) {
@@ -13036,12 +13008,12 @@ define(__m[33/*vs/base/common/uuid*/], __M([0/*require*/,1/*exports*/]), functio
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[100/*vs/base/node/crypto*/], __M([0/*require*/,1/*exports*/,20/*fs*/,64/*crypto*/,49/*vs/base/common/functional*/]), function (require, exports, fs, crypto, functional_1) {
+define(__m[98/*vs/base/node/crypto*/], __M([0/*require*/,1/*exports*/,21/*fs*/,63/*crypto*/,49/*vs/base/common/functional*/]), function (require, exports, fs, crypto, functional_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.checksum = void 0;
-    function checksum(path, sha1hash) {
-        const promise = new Promise((c, e) => {
+    async function checksum(path, sha1hash) {
+        const checksumPromise = new Promise((resolve, reject) => {
             const input = fs.createReadStream(path);
             const hash = crypto.createHash('sha1');
             input.pipe(hash);
@@ -13049,10 +13021,10 @@ define(__m[100/*vs/base/node/crypto*/], __M([0/*require*/,1/*exports*/,20/*fs*/,
                 input.removeAllListeners();
                 hash.removeAllListeners();
                 if (err) {
-                    e(err);
+                    reject(err);
                 }
                 else {
-                    c(result);
+                    resolve(result);
                 }
             });
             input.once('error', done);
@@ -13060,12 +13032,10 @@ define(__m[100/*vs/base/node/crypto*/], __M([0/*require*/,1/*exports*/,20/*fs*/,
             hash.once('error', done);
             hash.once('data', (data) => done(undefined, data.toString('hex')));
         });
-        return promise.then(hash => {
-            if (hash !== sha1hash) {
-                return Promise.reject(new Error('Hash mismatch'));
-            }
-            return Promise.resolve();
-        });
+        const hash = await checksumPromise;
+        if (hash !== sha1hash) {
+            throw new Error('Hash mismatch');
+        }
     }
     exports.checksum = checksum;
 });
@@ -13074,7 +13044,7 @@ define(__m[100/*vs/base/node/crypto*/], __M([0/*require*/,1/*exports*/,20/*fs*/,
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[73/*vs/base/node/decoder*/], __M([0/*require*/,1/*exports*/,223/*string_decoder*/]), function (require, exports, sd) {
+define(__m[72/*vs/base/node/decoder*/], __M([0/*require*/,1/*exports*/,219/*string_decoder*/]), function (require, exports, sd) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LineDecoder = void 0;
@@ -13134,14 +13104,10 @@ define(__m[73/*vs/base/node/decoder*/], __M([0/*require*/,1/*exports*/,223/*stri
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[101/*vs/base/node/macAddress*/], __M([0/*require*/,1/*exports*/,43/*child_process*/,4/*vs/base/common/platform*/]), function (require, exports, child_process_1, platform_1) {
+define(__m[99/*vs/base/node/macAddress*/], __M([0/*require*/,1/*exports*/,29/*os*/]), function (require, exports, os_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getMac = void 0;
-    const cmdline = {
-        windows: 'getmac.exe',
-        unix: '/sbin/ifconfig -a || /sbin/ip link'
-    };
     const invalidMacAddresses = new Set([
         '00:00:00:00:00:00',
         'ff:ff:ff:ff:ff:ff',
@@ -13169,22 +13135,15 @@ define(__m[101/*vs/base/node/macAddress*/], __M([0/*require*/,1/*exports*/,43/*c
     function doGetMac() {
         return new Promise((resolve, reject) => {
             try {
-                child_process_1.exec(platform_1.isWindows ? cmdline.windows : cmdline.unix, { timeout: 10000 }, (err, stdout, stdin) => {
-                    if (err) {
-                        return reject(`Unable to retrieve mac address (${err.toString()})`);
-                    }
-                    else {
-                        const regex = /(?:[a-f\d]{2}[:\-]){5}[a-f\d]{2}/gi;
-                        let match;
-                        while ((match = regex.exec(stdout)) !== null) {
-                            const macAddressCandidate = match[0];
-                            if (validateMacAddress(macAddressCandidate)) {
-                                return resolve(macAddressCandidate);
-                            }
+                const ifaces = os_1.networkInterfaces();
+                for (const [, infos] of Object.entries(ifaces)) {
+                    for (const info of infos) {
+                        if (validateMacAddress(info.mac)) {
+                            return resolve(info.mac);
                         }
-                        return reject('Unable to retrieve mac address (unexpected format)');
                     }
-                });
+                }
+                reject('Unable to retrieve mac address (unexpected format)');
             }
             catch (err) {
                 reject(err);
@@ -13197,7 +13156,7 @@ define(__m[101/*vs/base/node/macAddress*/], __M([0/*require*/,1/*exports*/,43/*c
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[74/*vs/base/node/id*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/errors*/,33/*vs/base/common/uuid*/,30/*os*/,38/*vs/base/common/map*/,101/*vs/base/node/macAddress*/]), function (require, exports, errors, uuid, os_1, map_1, macAddress_1) {
+define(__m[64/*vs/base/node/id*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/errors*/,33/*vs/base/common/uuid*/,29/*os*/,37/*vs/base/common/map*/,99/*vs/base/node/macAddress*/]), function (require, exports, errors, uuid, os_1, map_1, macAddress_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getMachineId = exports.virtualMachineHint = void 0;
@@ -13286,11 +13245,11 @@ define(__m[74/*vs/base/node/id*/], __M([0/*require*/,1/*exports*/,16/*vs/base/co
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[102/*vs/base/node/paths*/], __M([0/*require*/,1/*exports*/,37/*vs/base/common/amd*/]), function (require, exports, amd_1) {
+define(__m[100/*vs/base/node/paths*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/network*/]), function (require, exports, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getDefaultUserDataPath = exports.getAppDataPath = void 0;
-    const pathsPath = amd_1.getPathFromAmdModule(require, 'paths');
+    const pathsPath = network_1.FileAccess.asFileUri('paths', require).fsPath;
     const paths = require.__$__nodeRequire(pathsPath);
     exports.getAppDataPath = paths.getAppDataPath;
     exports.getDefaultUserDataPath = paths.getDefaultUserDataPath;
@@ -13300,11 +13259,11 @@ define(__m[102/*vs/base/node/paths*/], __M([0/*require*/,1/*exports*/,37/*vs/bas
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[21/*vs/base/node/pfs*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/path*/,9/*vs/base/common/async*/,20/*fs*/,30/*os*/,4/*vs/base/common/platform*/,3/*vs/base/common/event*/,65/*util*/,28/*vs/base/common/extpath*/,33/*vs/base/common/uuid*/,63/*vs/base/common/normalization*/]), function (require, exports, path_1, async_1, fs, os, platform, event_1, util_1, extpath_1, uuid_1, normalization_1) {
+define(__m[22/*vs/base/node/pfs*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/path*/,10/*vs/base/common/async*/,21/*fs*/,29/*os*/,4/*vs/base/common/platform*/,3/*vs/base/common/event*/,65/*util*/,27/*vs/base/common/extpath*/,33/*vs/base/common/uuid*/,62/*vs/base/common/normalization*/]), function (require, exports, path_1, async_1, fs, os, platform, event_1, util_1, extpath_1, uuid_1, normalization_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.copy = exports.move = exports.whenDeleted = exports.fileExists = exports.dirExists = exports.readDirsInDir = exports.writeFileSync = exports.writeFile = exports.mkdirp = exports.readFile = exports.truncate = exports.symlink = exports.unlink = exports.renameIgnoreError = exports.rename = exports.lstat = exports.statLink = exports.stat = exports.chmod = exports.exists = exports.readdirSync = exports.readdirWithFileTypes = exports.readdir = exports.rimrafSync = exports.rimraf = exports.RimRafMode = exports.MAX_HEAP_SIZE = exports.MAX_FILE_SIZE = void 0;
-    // See https://github.com/Microsoft/vscode/issues/30180
+    // See https://github.com/microsoft/vscode/issues/30180
     const WIN32_MAX_FILE_SIZE = 300 * 1024 * 1024; // 300 MB
     const GENERAL_MAX_FILE_SIZE = 16 * 1024 * 1024 * 1024; // 16 GB
     // See https://github.com/v8/v8/blob/5918a23a3d571b9625e5cce246bdd5b46ff7cd8b/src/heap/heap.cc#L149
@@ -13756,12 +13715,12 @@ define(__m[21/*vs/base/node/pfs*/], __M([0/*require*/,1/*exports*/,7/*vs/base/co
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[103/*vs/base/node/extpath*/], __M([0/*require*/,1/*exports*/,20/*fs*/,15/*vs/base/common/strings*/,7/*vs/base/common/path*/,21/*vs/base/node/pfs*/,65/*util*/]), function (require, exports, fs, strings_1, path_1, pfs_1, util_1) {
+define(__m[101/*vs/base/node/extpath*/], __M([0/*require*/,1/*exports*/,21/*fs*/,16/*vs/base/common/strings*/,6/*vs/base/common/path*/,22/*vs/base/node/pfs*/,65/*util*/]), function (require, exports, fs, strings_1, path_1, pfs_1, util_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.realpathSync = exports.realpath = exports.realcaseSync = void 0;
     /**
-     * Copied from: https://github.com/Microsoft/vscode-node-debug/blob/master/src/node/pathUtilities.ts#L83
+     * Copied from: https://github.com/microsoft/vscode-node-debug/blob/master/src/node/pathUtilities.ts#L83
      *
      * Given an absolute, normalized, and existing file path 'realcase' returns the exact path that the file has on disk.
      * On a case insensitive file system, the returned path might differ from the original path by character casing.
@@ -13843,7 +13802,7 @@ define(__m[103/*vs/base/node/extpath*/], __M([0/*require*/,1/*exports*/,20/*fs*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[104/*vs/base/node/ports*/], __M([0/*require*/,1/*exports*/,54/*net*/]), function (require, exports, net) {
+define(__m[102/*vs/base/node/ports*/], __M([0/*require*/,1/*exports*/,53/*net*/]), function (require, exports, net) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.findFreePortFaster = exports.findFreePort = exports.randomPort = void 0;
@@ -13964,7 +13923,7 @@ define(__m[104/*vs/base/node/ports*/], __M([0/*require*/,1/*exports*/,54/*net*/]
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[75/*vs/base/node/ps*/], __M([0/*require*/,1/*exports*/,43/*child_process*/,37/*vs/base/common/amd*/]), function (require, exports, child_process_1, amd_1) {
+define(__m[73/*vs/base/node/ps*/], __M([0/*require*/,1/*exports*/,43/*child_process*/,9/*vs/base/common/network*/]), function (require, exports, child_process_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.listProcesses = void 0;
@@ -14123,7 +14082,7 @@ define(__m[75/*vs/base/node/ps*/], __M([0/*require*/,1/*exports*/,43/*child_proc
                     // The cpu usage value reported on Linux is the average over the process lifetime,
                     // recalculate the usage over a one second interval
                     // JSON.stringify is needed to escape spaces, https://github.com/nodejs/node/issues/6803
-                    let cmd = JSON.stringify(amd_1.getPathFromAmdModule(require, 'vs/base/node/cpuUsage.sh'));
+                    let cmd = JSON.stringify(network_1.FileAccess.asFileUri('vs/base/node/cpuUsage.sh', require).fsPath);
                     cmd += ' ' + pids.join(' ');
                     child_process_1.exec(cmd, {}, (err, stdout, stderr) => {
                         if (err || stderr) {
@@ -14135,6 +14094,10 @@ define(__m[75/*vs/base/node/ps*/], __M([0/*require*/,1/*exports*/,43/*child_proc
                                 const processInfo = map.get(pids[i]);
                                 processInfo.load = parseFloat(cpuUsage[i]);
                             }
+                            if (!rootItem) {
+                                reject(new Error(`Root process ${rootPid} not found`));
+                                return;
+                            }
                             resolve(rootItem);
                         }
                     });
@@ -14145,7 +14108,7 @@ define(__m[75/*vs/base/node/ps*/], __M([0/*require*/,1/*exports*/,43/*child_proc
                             reject(err || new Error(stderr.toString()));
                         }
                         else {
-                            const cmd = JSON.stringify(amd_1.getPathFromAmdModule(require, 'vs/base/node/ps.sh'));
+                            const cmd = JSON.stringify(network_1.FileAccess.asFileUri('vs/base/node/ps.sh', require).fsPath);
                             child_process_1.exec(cmd, {}, (err, stdout, stderr) => {
                                 if (err || stderr) {
                                     reject(err || new Error(stderr.toString()));
@@ -14172,7 +14135,12 @@ define(__m[75/*vs/base/node/ps*/], __M([0/*require*/,1/*exports*/,43/*child_proc
                                     calculateLinuxCpuUsage();
                                 }
                                 else {
-                                    resolve(rootItem);
+                                    if (!rootItem) {
+                                        reject(new Error(`Root process ${rootPid} not found`));
+                                    }
+                                    else {
+                                        resolve(rootItem);
+                                    }
                                 }
                             }
                         });
@@ -14198,7 +14166,7 @@ define(__m[75/*vs/base/node/ps*/], __M([0/*require*/,1/*exports*/,43/*child_proc
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[105/*vs/base/node/watcher*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/path*/,20/*fs*/,4/*vs/base/common/platform*/,63/*vs/base/common/normalization*/,2/*vs/base/common/lifecycle*/,21/*vs/base/node/pfs*/]), function (require, exports, path_1, fs_1, platform_1, normalization_1, lifecycle_1, pfs_1) {
+define(__m[103/*vs/base/node/watcher*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/path*/,21/*fs*/,4/*vs/base/common/platform*/,62/*vs/base/common/normalization*/,2/*vs/base/common/lifecycle*/,22/*vs/base/node/pfs*/]), function (require, exports, path_1, fs_1, platform_1, normalization_1, lifecycle_1, pfs_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CHANGE_BUFFER_DELAY = exports.watchFolder = exports.watchFile = void 0;
@@ -14242,7 +14210,7 @@ define(__m[105/*vs/base/node/watcher*/], __M([0/*require*/,1/*exports*/,7/*vs/ba
                 }
                 // Normalize file name
                 let changedFileName = '';
-                if (raw) { // https://github.com/Microsoft/vscode/issues/38191
+                if (raw) { // https://github.com/microsoft/vscode/issues/38191
                     changedFileName = raw.toString();
                     if (platform_1.isMacintosh) {
                         // Mac: uses NFD unicode form on disk, but we want NFC
@@ -14362,7 +14330,7 @@ define(__m[105/*vs/base/node/watcher*/], __M([0/*require*/,1/*exports*/,7/*vs/ba
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[106/*vs/base/parts/contextmenu/common/contextmenu*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[104/*vs/base/parts/contextmenu/common/contextmenu*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CONTEXT_MENU_CLOSE_CHANNEL = exports.CONTEXT_MENU_CHANNEL = void 0;
@@ -14374,7 +14342,7 @@ define(__m[106/*vs/base/parts/contextmenu/common/contextmenu*/], __M([0/*require
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[107/*vs/base/parts/contextmenu/electron-main/contextmenu*/], __M([0/*require*/,1/*exports*/,12/*electron*/,106/*vs/base/parts/contextmenu/common/contextmenu*/,13/*vs/base/common/types*/]), function (require, exports, electron_1, contextmenu_1, types_1) {
+define(__m[105/*vs/base/parts/contextmenu/electron-main/contextmenu*/], __M([0/*require*/,1/*exports*/,13/*electron*/,104/*vs/base/parts/contextmenu/common/contextmenu*/,14/*vs/base/common/types*/]), function (require, exports, electron_1, contextmenu_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.registerContextMenuListener = void 0;
@@ -14387,7 +14355,7 @@ define(__m[107/*vs/base/parts/contextmenu/electron-main/contextmenu*/], __M([0/*
                 y: options ? options.y : undefined,
                 positioningItem: options ? options.positioningItem : undefined,
                 callback: () => {
-                    // Workaround for https://github.com/Microsoft/vscode/issues/72447
+                    // Workaround for https://github.com/microsoft/vscode/issues/72447
                     // It turns out that the menu gets GC'ed if not referenced anymore
                     // As such we drag it into this scope so that it is not being GC'ed
                     if (menu) {
@@ -14437,7 +14405,7 @@ define(__m[107/*vs/base/parts/contextmenu/electron-main/contextmenu*/], __M([0/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[34/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,9/*vs/base/common/async*/,31/*vs/base/common/cancellation*/,16/*vs/base/common/errors*/,18/*vs/base/common/buffer*/,23/*vs/base/common/arrays*/,13/*vs/base/common/types*/,98/*vs/base/common/marshalling*/,15/*vs/base/common/strings*/]), function (require, exports, event_1, lifecycle_1, async_1, cancellation_1, errors, buffer_1, arrays_1, types_1, marshalling_1, strings) {
+define(__m[34/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,10/*vs/base/common/async*/,30/*vs/base/common/cancellation*/,17/*vs/base/common/errors*/,20/*vs/base/common/buffer*/,26/*vs/base/common/arrays*/,14/*vs/base/common/types*/,96/*vs/base/common/marshalling*/,16/*vs/base/common/strings*/]), function (require, exports, event_1, lifecycle_1, async_1, cancellation_1, errors, buffer_1, arrays_1, types_1, marshalling_1, strings) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IPCLogger = exports.logWithColors = exports.createChannelSender = exports.createChannelReceiver = exports.StaticRouter = exports.getNextTickChannel = exports.getDelayedChannel = exports.IPCClient = exports.IPCServer = exports.ChannelClient = exports.RequestInitiator = exports.ChannelServer = exports.ResponseType = exports.RequestType = void 0;
@@ -15297,7 +15265,7 @@ define(__m[34/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,3
         data = pretty(data);
         const colorTable = colorTables[initiator];
         const color = colorTable[req % colorTable.length];
-        let args = [`%c[${direction}]%c[${strings.pad(totalLength, 7, ' ')}]%c[len: ${strings.pad(msgLength, 5, ' ')}]%c${strings.pad(req, 5, ' ')} - ${str}`, 'color: darkgreen', 'color: grey', 'color: grey', `color: ${color}`];
+        let args = [`%c[${direction}]%c[${String(totalLength).padStart(7, ' ')}]%c[len: ${String(msgLength).padStart(5, ' ')}]%c${String(req).padStart(5, ' ')} - ${str}`, 'color: darkgreen', 'color: grey', 'color: grey', `color: ${color}`];
         if (/\($/.test(str)) {
             args = args.concat(data);
             args.push(')');
@@ -15331,7 +15299,7 @@ define(__m[34/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,3
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[108/*vs/base/parts/ipc/common/ipc.electron*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[106/*vs/base/parts/ipc/common/ipc.electron*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Protocol = void 0;
@@ -15359,7 +15327,7 @@ define(__m[108/*vs/base/parts/ipc/common/ipc.electron*/], __M([0/*require*/,1/*e
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[76/*vs/base/parts/ipc/common/ipc.net*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,34/*vs/base/parts/ipc/common/ipc*/,2/*vs/base/common/lifecycle*/,18/*vs/base/common/buffer*/,4/*vs/base/common/platform*/,60/*vs/base/common/process*/]), function (require, exports, event_1, ipc_1, lifecycle_1, buffer_1, platform, process) {
+define(__m[74/*vs/base/parts/ipc/common/ipc.net*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,34/*vs/base/parts/ipc/common/ipc*/,2/*vs/base/common/lifecycle*/,20/*vs/base/common/buffer*/,4/*vs/base/common/platform*/,59/*vs/base/common/process*/]), function (require, exports, event_1, ipc_1, lifecycle_1, buffer_1, platform, process) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.PersistentProtocol = exports.BufferedEmitter = exports.Client = exports.Protocol = exports.ProtocolConstants = exports.ChunkStream = void 0;
@@ -16088,7 +16056,7 @@ define(__m[76/*vs/base/parts/ipc/common/ipc.net*/], __M([0/*require*/,1/*exports
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[109/*vs/base/parts/ipc/electron-main/ipc.electron-main*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,34/*vs/base/parts/ipc/common/ipc*/,108/*vs/base/parts/ipc/common/ipc.electron*/,12/*electron*/,2/*vs/base/common/lifecycle*/,18/*vs/base/common/buffer*/]), function (require, exports, event_1, ipc_1, ipc_electron_1, electron_1, lifecycle_1, buffer_1) {
+define(__m[107/*vs/base/parts/ipc/electron-main/ipc.electron-main*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,34/*vs/base/parts/ipc/common/ipc*/,106/*vs/base/parts/ipc/common/ipc.electron*/,13/*electron*/,2/*vs/base/common/lifecycle*/,20/*vs/base/common/buffer*/]), function (require, exports, event_1, ipc_1, ipc_electron_1, electron_1, lifecycle_1, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Server = void 0;
@@ -16126,7 +16094,7 @@ define(__m[109/*vs/base/parts/ipc/electron-main/ipc.electron-main*/], __M([0/*re
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[50/*vs/base/parts/ipc/node/ipc.net*/], __M([0/*require*/,1/*exports*/,54/*net*/,3/*vs/base/common/event*/,34/*vs/base/parts/ipc/common/ipc*/,7/*vs/base/common/path*/,30/*os*/,33/*vs/base/common/uuid*/,2/*vs/base/common/lifecycle*/,18/*vs/base/common/buffer*/,76/*vs/base/parts/ipc/common/ipc.net*/,16/*vs/base/common/errors*/]), function (require, exports, net_1, event_1, ipc_1, path_1, os_1, uuid_1, lifecycle_1, buffer_1, ipc_net_1, errors_1) {
+define(__m[50/*vs/base/parts/ipc/node/ipc.net*/], __M([0/*require*/,1/*exports*/,53/*net*/,3/*vs/base/common/event*/,34/*vs/base/parts/ipc/common/ipc*/,6/*vs/base/common/path*/,29/*os*/,33/*vs/base/common/uuid*/,2/*vs/base/common/lifecycle*/,20/*vs/base/common/buffer*/,74/*vs/base/parts/ipc/common/ipc.net*/,17/*vs/base/common/errors*/]), function (require, exports, net_1, event_1, ipc_1, path_1, os_1, uuid_1, lifecycle_1, buffer_1, ipc_net_1, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.connect = exports.serve = exports.Server = exports.generateRandomPipeName = exports.WebSocketNodeSocket = exports.NodeSocket = void 0;
@@ -16376,15 +16344,18 @@ define(__m[50/*vs/base/parts/ipc/node/ipc.net*/], __M([0/*require*/,1/*exports*/
             buffer.writeUInt8(buffer.readUInt8(offset + 2) ^ m1, offset + 2);
         }
     }
+    // Read this before there's any chance it is overwritten
+    const xdgRuntimeDir = process.env['XDG_RUNTIME_DIR'];
     function generateRandomPipeName() {
         const randomSuffix = uuid_1.generateUuid();
         if (process.platform === 'win32') {
             return `\\\\.\\pipe\\vscode-ipc-${randomSuffix}-sock`;
         }
-        else {
-            // Mac/Unix: use socket file
-            return path_1.join(os_1.tmpdir(), `vscode-ipc-${randomSuffix}.sock`);
+        // Mac/Unix: use socket file
+        if (xdgRuntimeDir) {
+            return path_1.join(xdgRuntimeDir, `vscode-ipc-${randomSuffix}.sock`);
         }
+        return path_1.join(os_1.tmpdir(), `vscode-ipc-${randomSuffix}.sock`);
     }
     exports.generateRandomPipeName = generateRandomPipeName;
     class Server extends ipc_1.IPCServer {
@@ -16435,7 +16406,7 @@ define(__m[50/*vs/base/parts/ipc/node/ipc.net*/], __M([0/*require*/,1/*exports*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[110/*vs/base/parts/storage/common/storage*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,9/*vs/base/common/async*/,13/*vs/base/common/types*/]), function (require, exports, lifecycle_1, event_1, async_1, types_1) {
+define(__m[108/*vs/base/parts/storage/common/storage*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,10/*vs/base/common/async*/,14/*vs/base/common/types*/]), function (require, exports, lifecycle_1, event_1, async_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.InMemoryStorageDatabase = exports.Storage = exports.StorageHint = void 0;
@@ -16642,7 +16613,7 @@ define(__m[110/*vs/base/parts/storage/common/storage*/], __M([0/*require*/,1/*ex
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[111/*vs/base/parts/storage/node/storage*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,9/*vs/base/common/async*/,38/*vs/base/common/map*/,7/*vs/base/common/path*/,21/*vs/base/node/pfs*/]), function (require, exports, event_1, async_1, map_1, path_1, pfs_1) {
+define(__m[109/*vs/base/parts/storage/node/storage*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,10/*vs/base/common/async*/,37/*vs/base/common/map*/,6/*vs/base/common/path*/,22/*vs/base/node/pfs*/]), function (require, exports, event_1, async_1, map_1, path_1, pfs_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SQLiteStorageDatabase = void 0;
@@ -16979,83 +16950,7 @@ define(__m[111/*vs/base/parts/storage/node/storage*/], __M([0/*require*/,1/*expo
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[112/*vs/code/node/paths*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/path*/,23/*vs/base/common/arrays*/,15/*vs/base/common/strings*/,28/*vs/base/common/extpath*/,4/*vs/base/common/platform*/,13/*vs/base/common/types*/]), function (require, exports, path, arrays, strings, extpath, platform, types) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.validatePaths = void 0;
-    function validatePaths(args) {
-        // Track URLs if they're going to be used
-        if (args['open-url']) {
-            args._urls = args._;
-            args._ = [];
-        }
-        // Normalize paths and watch out for goto line mode
-        if (!args['remote']) {
-            const paths = doValidatePaths(args._, args.goto);
-            args._ = paths;
-        }
-        return args;
-    }
-    exports.validatePaths = validatePaths;
-    function doValidatePaths(args, gotoLineMode) {
-        const cwd = process.env['VSCODE_CWD'] || process.cwd();
-        const result = args.map(arg => {
-            let pathCandidate = String(arg);
-            let parsedPath = undefined;
-            if (gotoLineMode) {
-                parsedPath = extpath.parseLineAndColumnAware(pathCandidate);
-                pathCandidate = parsedPath.path;
-            }
-            if (pathCandidate) {
-                pathCandidate = preparePath(cwd, pathCandidate);
-            }
-            const sanitizedFilePath = extpath.sanitizeFilePath(pathCandidate, cwd);
-            const basename = path.basename(sanitizedFilePath);
-            if (basename /* can be empty if code is opened on root */ && !extpath.isValidBasename(basename)) {
-                return null; // do not allow invalid file names
-            }
-            if (gotoLineMode && parsedPath) {
-                parsedPath.path = sanitizedFilePath;
-                return toPath(parsedPath);
-            }
-            return sanitizedFilePath;
-        });
-        const caseInsensitive = platform.isWindows || platform.isMacintosh;
-        const distinct = arrays.distinct(result, e => e && caseInsensitive ? e.toLowerCase() : (e || ''));
-        return arrays.coalesce(distinct);
-    }
-    function preparePath(cwd, p) {
-        // Trim trailing quotes
-        if (platform.isWindows) {
-            p = strings.rtrim(p, '"'); // https://github.com/Microsoft/vscode/issues/1498
-        }
-        // Trim whitespaces
-        p = strings.trim(strings.trim(p, ' '), '\t');
-        if (platform.isWindows) {
-            // Resolve the path against cwd if it is relative
-            p = path.resolve(cwd, p);
-            // Trim trailing '.' chars on Windows to prevent invalid file names
-            p = strings.rtrim(p, '.');
-        }
-        return p;
-    }
-    function toPath(p) {
-        const segments = [p.path];
-        if (types.isNumber(p.line)) {
-            segments.push(String(p.line));
-        }
-        if (types.isNumber(p.column)) {
-            segments.push(String(p.column));
-        }
-        return segments.join(':');
-    }
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[113/*vs/code/node/shellEnv*/], __M([0/*require*/,1/*exports*/,43/*child_process*/,33/*vs/base/common/uuid*/,4/*vs/base/common/platform*/]), function (require, exports, child_process_1, uuid_1, platform_1) {
+define(__m[110/*vs/code/node/shellEnv*/], __M([0/*require*/,1/*exports*/,43/*child_process*/,33/*vs/base/common/uuid*/,4/*vs/base/common/platform*/]), function (require, exports, child_process_1, uuid_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getShellEnvironment = void 0;
@@ -17101,7 +16996,7 @@ define(__m[113/*vs/code/node/shellEnv*/], __M([0/*require*/,1/*exports*/,43/*chi
                     else {
                         delete env['ELECTRON_NO_ATTACH_CONSOLE'];
                     }
-                    // https://github.com/Microsoft/vscode/issues/22593#issuecomment-336050758
+                    // https://github.com/microsoft/vscode/issues/22593#issuecomment-336050758
                     delete env['XDG_RUNTIME_DIR'];
                     logService.trace('getUnixShellEnvironment#result', env);
                     resolve(env);
@@ -17145,12 +17040,12 @@ define(__m[113/*vs/code/node/shellEnv*/], __M([0/*require*/,1/*exports*/,43/*chi
     exports.getShellEnvironment = getShellEnvironment;
 });
 
-define(__m[114/*vs/nls!vs/base/common/date*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/base/common/date", data); });
+define(__m[111/*vs/nls!vs/base/common/date*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/base/common/date", data); });
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[115/*vs/base/common/date*/], __M([0/*require*/,1/*exports*/,15/*vs/base/common/strings*/,114/*vs/nls!vs/base/common/date*/]), function (require, exports, strings_1, nls_1) {
+define(__m[112/*vs/base/common/date*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/strings*/,111/*vs/nls!vs/base/common/date*/]), function (require, exports, strings_1, nls_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toLocalISOString = exports.fromNow = void 0;
@@ -17276,12 +17171,12 @@ define(__m[115/*vs/base/common/date*/], __M([0/*require*/,1/*exports*/,15/*vs/ba
     exports.toLocalISOString = toLocalISOString;
 });
 
-define(__m[116/*vs/nls!vs/base/common/errorMessage*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/base/common/errorMessage", data); });
+define(__m[113/*vs/nls!vs/base/common/errorMessage*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/base/common/errorMessage", data); });
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[117/*vs/base/common/errorMessage*/], __M([0/*require*/,1/*exports*/,116/*vs/nls!vs/base/common/errorMessage*/,13/*vs/base/common/types*/,23/*vs/base/common/arrays*/]), function (require, exports, nls, types, arrays) {
+define(__m[114/*vs/base/common/errorMessage*/], __M([0/*require*/,1/*exports*/,113/*vs/nls!vs/base/common/errorMessage*/,14/*vs/base/common/types*/,26/*vs/base/common/arrays*/]), function (require, exports, nls, types, arrays) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toErrorMessage = void 0;
@@ -17345,12 +17240,12 @@ define(__m[117/*vs/base/common/errorMessage*/], __M([0/*require*/,1/*exports*/,1
     exports.toErrorMessage = toErrorMessage;
 });
 
-define(__m[118/*vs/nls!vs/base/common/keybindingLabels*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/base/common/keybindingLabels", data); });
+define(__m[115/*vs/nls!vs/base/common/keybindingLabels*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/base/common/keybindingLabels", data); });
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[119/*vs/base/common/keybindingLabels*/], __M([0/*require*/,1/*exports*/,118/*vs/nls!vs/base/common/keybindingLabels*/]), function (require, exports, nls) {
+define(__m[116/*vs/base/common/keybindingLabels*/], __M([0/*require*/,1/*exports*/,115/*vs/nls!vs/base/common/keybindingLabels*/]), function (require, exports, nls) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.UserSettingsLabelProvider = exports.ElectronAcceleratorLabelProvider = exports.AriaLabelProvider = exports.UILabelProvider = exports.ModifierLabelProvider = void 0;
@@ -17488,12 +17383,12 @@ define(__m[119/*vs/base/common/keybindingLabels*/], __M([0/*require*/,1/*exports
     }
 });
 
-define(__m[120/*vs/nls!vs/base/node/processes*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/base/node/processes", data); });
+define(__m[117/*vs/nls!vs/base/node/processes*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/base/node/processes", data); });
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[121/*vs/base/node/processes*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/path*/,20/*fs*/,65/*util*/,43/*child_process*/,120/*vs/nls!vs/base/node/processes*/,13/*vs/base/common/types*/,27/*vs/base/common/objects*/,28/*vs/base/common/extpath*/,4/*vs/base/common/platform*/,73/*vs/base/node/decoder*/,37/*vs/base/common/amd*/]), function (require, exports, path, fs, util_1, cp, nls, Types, Objects, extpath, Platform, decoder_1, amd_1) {
+define(__m[118/*vs/base/node/processes*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/path*/,21/*fs*/,65/*util*/,43/*child_process*/,117/*vs/nls!vs/base/node/processes*/,14/*vs/base/common/types*/,31/*vs/base/common/objects*/,27/*vs/base/common/extpath*/,4/*vs/base/common/platform*/,72/*vs/base/node/decoder*/,9/*vs/base/common/network*/]), function (require, exports, path, fs, util_1, cp, nls, Types, Objects, extpath, Platform, decoder_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.win32 = exports.createQueuedSender = exports.LineProcess = exports.AbstractProcess = exports.getWindowsShell = exports.TerminateResponseCode = exports.Source = void 0;
@@ -17539,7 +17434,7 @@ define(__m[121/*vs/base/node/processes*/], __M([0/*require*/,1/*exports*/,7/*vs/
         }
         else if (Platform.isLinux || Platform.isMacintosh) {
             try {
-                const cmd = amd_1.getPathFromAmdModule(require, 'vs/base/node/terminateProcess.sh');
+                const cmd = network_1.FileAccess.asFileUri('vs/base/node/terminateProcess.sh', require).fsPath;
                 return new Promise((resolve, reject) => {
                     cp.execFile(cmd, [process.pid.toString()], { encoding: 'utf8', shell: true }, (err, stdout, stderr) => {
                         if (err) {
@@ -17930,7 +17825,7 @@ define(__m[121/*vs/base/node/processes*/], __M([0/*require*/,1/*exports*/,7/*vs/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[77/*vs/base/parts/ipc/node/ipc.cp*/], __M([0/*require*/,1/*exports*/,43/*child_process*/,2/*vs/base/common/lifecycle*/,9/*vs/base/common/async*/,27/*vs/base/common/objects*/,3/*vs/base/common/event*/,121/*vs/base/node/processes*/,34/*vs/base/parts/ipc/common/ipc*/,97/*vs/base/common/console*/,31/*vs/base/common/cancellation*/,16/*vs/base/common/errors*/,18/*vs/base/common/buffer*/]), function (require, exports, child_process_1, lifecycle_1, async_1, objects_1, event_1, processes_1, ipc_1, console_1, cancellation_1, errors, buffer_1) {
+define(__m[75/*vs/base/parts/ipc/node/ipc.cp*/], __M([0/*require*/,1/*exports*/,43/*child_process*/,2/*vs/base/common/lifecycle*/,10/*vs/base/common/async*/,31/*vs/base/common/objects*/,3/*vs/base/common/event*/,118/*vs/base/node/processes*/,34/*vs/base/parts/ipc/common/ipc*/,95/*vs/base/common/console*/,30/*vs/base/common/cancellation*/,17/*vs/base/common/errors*/,20/*vs/base/common/buffer*/,4/*vs/base/common/platform*/]), function (require, exports, child_process_1, lifecycle_1, async_1, objects_1, event_1, processes_1, ipc_1, console_1, cancellation_1, errors, buffer_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Client = exports.Server = void 0;
@@ -18028,9 +17923,9 @@ define(__m[77/*vs/base/parts/ipc/node/ipc.cp*/], __M([0/*require*/,1/*exports*/,
             if (!this._client) {
                 const args = this.options && this.options.args ? this.options.args : [];
                 const forkOpts = Object.create(null);
-                forkOpts.env = objects_1.assign(objects_1.deepClone(process.env), { 'VSCODE_PARENT_PID': String(process.pid) });
+                forkOpts.env = Object.assign(Object.assign({}, objects_1.deepClone(process.env)), { 'VSCODE_PARENT_PID': String(process.pid) });
                 if (this.options && this.options.env) {
-                    forkOpts.env = objects_1.assign(forkOpts.env, this.options.env);
+                    forkOpts.env = Object.assign(Object.assign({}, forkOpts.env), this.options.env);
                 }
                 if (this.options && this.options.freshExecArgv) {
                     forkOpts.execArgv = [];
@@ -18040,6 +17935,11 @@ define(__m[77/*vs/base/parts/ipc/node/ipc.cp*/], __M([0/*require*/,1/*exports*/,
                 }
                 if (this.options && typeof this.options.debugBrk === 'number') {
                     forkOpts.execArgv = ['--nolazy', '--inspect-brk=' + this.options.debugBrk];
+                }
+                if (platform_1.isMacintosh && forkOpts.env) {
+                    // Unset `DYLD_LIBRARY_PATH`, as it leads to process crashes
+                    // See https://github.com/microsoft/vscode/issues/105848
+                    delete forkOpts.env['DYLD_LIBRARY_PATH'];
                 }
                 this.child = child_process_1.fork(this.modulePath, args, forkOpts);
                 const onMessageEmitter = new event_1.Emitter();
@@ -18108,13 +18008,13 @@ define(__m[77/*vs/base/parts/ipc/node/ipc.cp*/], __M([0/*require*/,1/*exports*/,
     exports.Client = Client;
 });
 
-define(__m[122/*vs/nls!vs/code/electron-main/app*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/code/electron-main/app", data); });
-define(__m[123/*vs/nls!vs/code/electron-main/auth*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/code/electron-main/auth", data); });
+define(__m[119/*vs/nls!vs/code/electron-main/app*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/code/electron-main/app", data); });
+define(__m[120/*vs/nls!vs/code/electron-main/auth*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/code/electron-main/auth", data); });
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[124/*vs/code/electron-main/auth*/], __M([0/*require*/,1/*exports*/,123/*vs/nls!vs/code/electron-main/auth*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,6/*vs/base/common/uri*/,12/*electron*/]), function (require, exports, nls_1, lifecycle_1, event_1, uri_1, electron_1) {
+define(__m[121/*vs/code/electron-main/auth*/], __M([0/*require*/,1/*exports*/,120/*vs/nls!vs/code/electron-main/auth*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,9/*vs/base/common/network*/,13/*electron*/]), function (require, exports, nls_1, lifecycle_1, event_1, network_1, electron_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ProxyAuthHandler = void 0;
@@ -18141,15 +18041,16 @@ define(__m[124/*vs/code/electron-main/auth*/], __M([0/*require*/,1/*exports*/,12
                 skipTaskbar: true,
                 resizable: false,
                 width: 450,
-                height: 220,
+                height: 225,
                 show: true,
                 title: 'VS Code',
                 webPreferences: {
-                    preload: uri_1.URI.parse(require.toUrl('vs/base/parts/sandbox/electron-browser/preload.js')).fsPath,
+                    preload: network_1.FileAccess.asFileUri('vs/base/parts/sandbox/electron-browser/preload.js', require).fsPath,
                     sandbox: true,
                     contextIsolation: true,
                     enableWebSQL: false,
                     enableRemoteModule: false,
+                    spellcheck: false,
                     devTools: false
                 }
             };
@@ -18159,7 +18060,7 @@ define(__m[124/*vs/code/electron-main/auth*/], __M([0/*require*/,1/*exports*/,12
                 opts.modal = true;
             }
             const win = new electron_1.BrowserWindow(opts);
-            const url = require.toUrl('vs/code/electron-sandbox/proxy/auth.html');
+            const windowUrl = network_1.FileAccess.asBrowserUri('vs/code/electron-sandbox/proxy/auth.html', require);
             const proxyUrl = `${authInfo.host}:${authInfo.port}`;
             const title = nls_1.localize(0, null);
             const message = nls_1.localize(1, null, proxyUrl);
@@ -18178,38 +18079,38 @@ define(__m[124/*vs/code/electron-main/auth*/], __M([0/*require*/,1/*exports*/,12
                     win.close();
                 }
             });
-            win.loadURL(url);
+            win.loadURL(windowUrl.toString(true));
         }
     }
     exports.ProxyAuthHandler = ProxyAuthHandler;
 });
 
 
-define(__m[125/*vs/nls!vs/code/electron-main/window*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/code/electron-main/window", data); });
-define(__m[126/*vs/nls!vs/platform/configuration/common/configurationRegistry*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/configuration/common/configurationRegistry", data); });
-define(__m[127/*vs/nls!vs/platform/dialogs/electron-main/dialogs*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/dialogs/electron-main/dialogs", data); });
-define(__m[128/*vs/nls!vs/platform/environment/node/argv*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/environment/node/argv", data); });
-define(__m[129/*vs/nls!vs/platform/environment/node/argvHelper*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/environment/node/argvHelper", data); });
-define(__m[130/*vs/nls!vs/platform/extensionManagement/common/extensionManagement*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/extensionManagement/common/extensionManagement", data); });
-define(__m[131/*vs/nls!vs/platform/extensions/common/extensionValidator*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/extensions/common/extensionValidator", data); });
-define(__m[132/*vs/nls!vs/platform/files/common/fileService*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/files/common/fileService", data); });
-define(__m[133/*vs/nls!vs/platform/files/common/files*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/files/common/files", data); });
-define(__m[134/*vs/nls!vs/platform/files/common/io*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/files/common/io", data); });
-define(__m[135/*vs/nls!vs/platform/files/node/diskFileSystemProvider*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/files/node/diskFileSystemProvider", data); });
-define(__m[136/*vs/nls!vs/platform/issue/electron-main/issueMainService*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/issue/electron-main/issueMainService", data); });
-define(__m[137/*vs/nls!vs/platform/menubar/electron-main/menubar*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/menubar/electron-main/menubar", data); });
-define(__m[138/*vs/nls!vs/platform/request/common/request*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/request/common/request", data); });
-define(__m[139/*vs/nls!vs/platform/telemetry/common/telemetryService*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/telemetry/common/telemetryService", data); });
-define(__m[140/*vs/nls!vs/platform/update/common/update.config.contribution*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/update/common/update.config.contribution", data); });
-define(__m[141/*vs/nls!vs/platform/windows/electron-main/windowsMainService*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/windows/electron-main/windowsMainService", data); });
-define(__m[142/*vs/nls!vs/platform/workspaces/common/workspaces*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/workspaces/common/workspaces", data); });
-define(__m[143/*vs/nls!vs/platform/workspaces/electron-main/workspacesHistoryMainService*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/workspaces/electron-main/workspacesHistoryMainService", data); });
-define(__m[144/*vs/nls!vs/platform/workspaces/electron-main/workspacesMainService*/], __M([11/*vs/nls*/,10/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/workspaces/electron-main/workspacesMainService", data); });
+define(__m[122/*vs/nls!vs/code/electron-main/window*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/code/electron-main/window", data); });
+define(__m[123/*vs/nls!vs/platform/configuration/common/configurationRegistry*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/configuration/common/configurationRegistry", data); });
+define(__m[124/*vs/nls!vs/platform/dialogs/electron-main/dialogs*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/dialogs/electron-main/dialogs", data); });
+define(__m[125/*vs/nls!vs/platform/environment/node/argv*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/environment/node/argv", data); });
+define(__m[126/*vs/nls!vs/platform/environment/node/argvHelper*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/environment/node/argvHelper", data); });
+define(__m[127/*vs/nls!vs/platform/extensionManagement/common/extensionManagement*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/extensionManagement/common/extensionManagement", data); });
+define(__m[128/*vs/nls!vs/platform/extensions/common/extensionValidator*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/extensions/common/extensionValidator", data); });
+define(__m[129/*vs/nls!vs/platform/files/common/fileService*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/files/common/fileService", data); });
+define(__m[130/*vs/nls!vs/platform/files/common/files*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/files/common/files", data); });
+define(__m[131/*vs/nls!vs/platform/files/common/io*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/files/common/io", data); });
+define(__m[132/*vs/nls!vs/platform/files/node/diskFileSystemProvider*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/files/node/diskFileSystemProvider", data); });
+define(__m[133/*vs/nls!vs/platform/issue/electron-main/issueMainService*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/issue/electron-main/issueMainService", data); });
+define(__m[134/*vs/nls!vs/platform/menubar/electron-main/menubar*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/menubar/electron-main/menubar", data); });
+define(__m[135/*vs/nls!vs/platform/request/common/request*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/request/common/request", data); });
+define(__m[136/*vs/nls!vs/platform/telemetry/common/telemetryService*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/telemetry/common/telemetryService", data); });
+define(__m[137/*vs/nls!vs/platform/update/common/update.config.contribution*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/update/common/update.config.contribution", data); });
+define(__m[138/*vs/nls!vs/platform/windows/electron-main/windowsMainService*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/windows/electron-main/windowsMainService", data); });
+define(__m[139/*vs/nls!vs/platform/workspaces/common/workspaces*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/workspaces/common/workspaces", data); });
+define(__m[140/*vs/nls!vs/platform/workspaces/electron-main/workspacesHistoryMainService*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/workspaces/electron-main/workspacesHistoryMainService", data); });
+define(__m[141/*vs/nls!vs/platform/workspaces/electron-main/workspacesMainService*/], __M([12/*vs/nls*/,11/*vs/nls!vs/code/electron-main/main*/]), function(nls, data) { return nls.create("vs/platform/workspaces/electron-main/workspacesMainService", data); });
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[78/*vs/platform/debug/common/extensionHostDebugIpc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/]), function (require, exports, event_1, lifecycle_1) {
+define(__m[76/*vs/platform/debug/common/extensionHostDebugIpc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/]), function (require, exports, event_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtensionHostDebugChannelClient = exports.ExtensionHostDebugBroadcastChannel = void 0;
@@ -18300,7 +18201,7 @@ define(__m[78/*vs/platform/debug/common/extensionHostDebugIpc*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[79/*vs/platform/diagnostics/common/diagnostics*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[77/*vs/platform/diagnostics/common/diagnostics*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isRemoteDiagnosticError = void 0;
@@ -18314,57 +18215,7 @@ define(__m[79/*vs/platform/diagnostics/common/diagnostics*/], __M([0/*require*/,
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[80/*vs/platform/diagnostics/node/diagnosticsIpc*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.DiagnosticsService = exports.DiagnosticsChannel = void 0;
-    class DiagnosticsChannel {
-        constructor(service) {
-            this.service = service;
-        }
-        listen(context, event) {
-            throw new Error('Invalid listen');
-        }
-        call(context, command, args) {
-            switch (command) {
-                case 'getDiagnostics':
-                    return this.service.getDiagnostics(args[0], args[1]);
-                case 'getSystemInfo':
-                    return this.service.getSystemInfo(args[0], args[1]);
-                case 'getPerformanceInfo':
-                    return this.service.getPerformanceInfo(args[0], args[1]);
-                case 'reportWorkspaceStats':
-                    return this.service.reportWorkspaceStats(args);
-            }
-            throw new Error('Invalid call');
-        }
-    }
-    exports.DiagnosticsChannel = DiagnosticsChannel;
-    class DiagnosticsService {
-        constructor(channel) {
-            this.channel = channel;
-        }
-        getDiagnostics(mainProcessInfo, remoteInfo) {
-            return this.channel.call('getDiagnostics', [mainProcessInfo, remoteInfo]);
-        }
-        getSystemInfo(mainProcessInfo, remoteInfo) {
-            return this.channel.call('getSystemInfo', [mainProcessInfo, remoteInfo]);
-        }
-        getPerformanceInfo(mainProcessInfo, remoteInfo) {
-            return this.channel.call('getPerformanceInfo', [mainProcessInfo, remoteInfo]);
-        }
-        reportWorkspaceStats(workspace) {
-            return this.channel.call('reportWorkspaceStats', workspace);
-        }
-    }
-    exports.DiagnosticsService = DiagnosticsService;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[145/*vs/platform/driver/node/driver*/], __M([0/*require*/,1/*exports*/,50/*vs/base/parts/ipc/node/ipc.net*/]), function (require, exports, ipc_net_1) {
+define(__m[142/*vs/platform/driver/node/driver*/], __M([0/*require*/,1/*exports*/,50/*vs/base/parts/ipc/node/ipc.net*/]), function (require, exports, ipc_net_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.connect = exports.WindowDriverChannelClient = exports.WindowDriverChannel = exports.WindowDriverRegistryChannelClient = exports.WindowDriverRegistryChannel = exports.DriverChannelClient = exports.DriverChannel = void 0;
@@ -18549,7 +18400,7 @@ define(__m[145/*vs/platform/driver/node/driver*/], __M([0/*require*/,1/*exports*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[55/*vs/platform/environment/node/argv*/], __M([0/*require*/,1/*exports*/,224/*minimist*/,128/*vs/nls!vs/platform/environment/node/argv*/,4/*vs/base/common/platform*/]), function (require, exports, minimist, nls_1, platform_1) {
+define(__m[54/*vs/platform/environment/node/argv*/], __M([0/*require*/,1/*exports*/,220/*minimist*/,125/*vs/nls!vs/platform/environment/node/argv*/,4/*vs/base/common/platform*/]), function (require, exports, minimist, nls_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.buildVersionMessage = exports.buildHelpMessage = exports.formatOptions = exports.parseArgs = exports.OPTIONS = void 0;
@@ -18610,7 +18461,6 @@ define(__m[55/*vs/platform/environment/node/argv*/], __M([0/*require*/,1/*export
         'driver': { type: 'string' },
         'logExtensionHostCommunication': { type: 'boolean' },
         'skip-release-notes': { type: 'boolean' },
-        'disable-restore-windows': { type: 'boolean' },
         'disable-telemetry': { type: 'boolean' },
         'disable-updates': { type: 'boolean' },
         'disable-crash-reporter': { type: 'boolean' },
@@ -18681,8 +18531,8 @@ define(__m[55/*vs/platform/environment/node/argv*/], __M([0/*require*/,1/*export
         const parsedArgs = minimist(args, { string, boolean, alias });
         const cleanedArgs = {};
         const remainingArgs = parsedArgs;
-        // https://github.com/microsoft/vscode/issues/58177
-        cleanedArgs._ = parsedArgs._.filter(arg => String(arg).length > 0);
+        // https://github.com/microsoft/vscode/issues/58177, https://github.com/microsoft/vscode/issues/106617
+        cleanedArgs._ = parsedArgs._.map(arg => String(arg)).filter(arg => arg.length > 0);
         delete remainingArgs._;
         for (let optionId in options) {
             const o = options[optionId];
@@ -18823,7 +18673,7 @@ define(__m[55/*vs/platform/environment/node/argv*/], __M([0/*require*/,1/*export
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[146/*vs/platform/debug/electron-main/extensionHostDebugIpc*/], __M([0/*require*/,1/*exports*/,55/*vs/platform/environment/node/argv*/,54/*net*/,78/*vs/platform/debug/common/extensionHostDebugIpc*/]), function (require, exports, argv_1, net_1, extensionHostDebugIpc_1) {
+define(__m[143/*vs/platform/debug/electron-main/extensionHostDebugIpc*/], __M([0/*require*/,1/*exports*/,54/*vs/platform/environment/node/argv*/,53/*net*/,76/*vs/platform/debug/common/extensionHostDebugIpc*/]), function (require, exports, argv_1, net_1, extensionHostDebugIpc_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ElectronExtensionHostDebugBroadcastChannel = void 0;
@@ -18915,7 +18765,7 @@ define(__m[146/*vs/platform/debug/electron-main/extensionHostDebugIpc*/], __M([0
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[147/*vs/platform/environment/node/waitMarkerFile*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/path*/,30/*os*/,20/*fs*/]), function (require, exports, path, os, fs) {
+define(__m[144/*vs/platform/environment/node/waitMarkerFile*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/path*/,29/*os*/,21/*fs*/]), function (require, exports, path, os, fs) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.createWaitMarkerFile = void 0;
@@ -18942,7 +18792,7 @@ define(__m[147/*vs/platform/environment/node/waitMarkerFile*/], __M([0/*require*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[148/*vs/platform/extensions/common/extensionValidator*/], __M([0/*require*/,1/*exports*/,131/*vs/nls!vs/platform/extensions/common/extensionValidator*/]), function (require, exports, nls) {
+define(__m[145/*vs/platform/extensions/common/extensionValidator*/], __M([0/*require*/,1/*exports*/,128/*vs/nls!vs/platform/extensions/common/extensionValidator*/]), function (require, exports, nls) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isVersionValid = exports.isEngineValid = exports.isValidExtensionVersion = exports.isValidVersion = exports.normalizeVersion = exports.parseVersion = exports.isValidVersionStr = void 0;
@@ -19142,59 +18992,7 @@ define(__m[148/*vs/platform/extensions/common/extensionValidator*/], __M([0/*req
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[149/*vs/platform/files/node/watcher/nsfw/watcherIpc*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.WatcherChannelClient = exports.WatcherChannel = void 0;
-    class WatcherChannel {
-        constructor(service) {
-            this.service = service;
-        }
-        listen(_, event, arg) {
-            switch (event) {
-                case 'watch': return this.service.watch(arg);
-                case 'onLogMessage': return this.service.onLogMessage;
-            }
-            throw new Error(`Event not found: ${event}`);
-        }
-        call(_, command, arg) {
-            switch (command) {
-                case 'setRoots': return this.service.setRoots(arg);
-                case 'setVerboseLogging': return this.service.setVerboseLogging(arg);
-                case 'stop': return this.service.stop();
-            }
-            throw new Error(`Call not found: ${command}`);
-        }
-    }
-    exports.WatcherChannel = WatcherChannel;
-    class WatcherChannelClient {
-        constructor(channel) {
-            this.channel = channel;
-        }
-        watch(options) {
-            return this.channel.listen('watch', options);
-        }
-        setVerboseLogging(enable) {
-            return this.channel.call('setVerboseLogging', enable);
-        }
-        setRoots(roots) {
-            return this.channel.call('setRoots', roots);
-        }
-        get onLogMessage() {
-            return this.channel.listen('onLogMessage');
-        }
-        stop() {
-            return this.channel.call('stop');
-        }
-    }
-    exports.WatcherChannelClient = WatcherChannelClient;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[150/*vs/platform/files/node/watcher/nsfw/watcherService*/], __M([0/*require*/,1/*exports*/,34/*vs/base/parts/ipc/common/ipc*/,77/*vs/base/parts/ipc/node/ipc.cp*/,149/*vs/platform/files/node/watcher/nsfw/watcherIpc*/,2/*vs/base/common/lifecycle*/,37/*vs/base/common/amd*/]), function (require, exports, ipc_1, ipc_cp_1, watcherIpc_1, lifecycle_1, amd_1) {
+define(__m[146/*vs/platform/files/node/watcher/nsfw/watcherService*/], __M([0/*require*/,1/*exports*/,34/*vs/base/parts/ipc/common/ipc*/,75/*vs/base/parts/ipc/node/ipc.cp*/,2/*vs/base/common/lifecycle*/,9/*vs/base/common/network*/]), function (require, exports, ipc_1, ipc_cp_1, lifecycle_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.FileWatcher = void 0;
@@ -19210,7 +19008,7 @@ define(__m[150/*vs/platform/files/node/watcher/nsfw/watcherService*/], __M([0/*r
             this.startWatching();
         }
         startWatching() {
-            const client = this._register(new ipc_cp_1.Client(amd_1.getPathFromAmdModule(require, 'bootstrap-fork'), {
+            const client = this._register(new ipc_cp_1.Client(network_1.FileAccess.asFileUri('bootstrap-fork', require).fsPath, {
                 serverName: 'File Watcher (nsfw)',
                 args: ['--type=watcherService'],
                 env: {
@@ -19234,12 +19032,10 @@ define(__m[150/*vs/platform/files/node/watcher/nsfw/watcherService*/], __M([0/*r
                 }
             }));
             // Initialize watcher
-            const channel = ipc_1.getNextTickChannel(client.getChannel('watcher'));
-            this.service = new watcherIpc_1.WatcherChannelClient(channel);
+            this.service = ipc_1.createChannelSender(ipc_1.getNextTickChannel(client.getChannel('watcher')));
             this.service.setVerboseLogging(this.verboseLogging);
-            const options = {};
-            this._register(this.service.watch(options)(e => !this.isDisposed && this.onDidFilesChange(e)));
-            this._register(this.service.onLogMessage(m => this.onLogMessage(m)));
+            this._register(this.service.onDidChangeFile(e => !this.isDisposed && this.onDidFilesChange(e)));
+            this._register(this.service.onDidLogMessage(m => this.onLogMessage(m)));
             // Start watching
             this.setFolders(this.folders);
         }
@@ -19271,59 +19067,7 @@ define(__m[150/*vs/platform/files/node/watcher/nsfw/watcherService*/], __M([0/*r
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[151/*vs/platform/files/node/watcher/unix/watcherIpc*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.WatcherChannelClient = exports.WatcherChannel = void 0;
-    class WatcherChannel {
-        constructor(service) {
-            this.service = service;
-        }
-        listen(_, event, arg) {
-            switch (event) {
-                case 'watch': return this.service.watch(arg);
-                case 'onLogMessage': return this.service.onLogMessage;
-            }
-            throw new Error(`Event not found: ${event}`);
-        }
-        call(_, command, arg) {
-            switch (command) {
-                case 'setRoots': return this.service.setRoots(arg);
-                case 'setVerboseLogging': return this.service.setVerboseLogging(arg);
-                case 'stop': return this.service.stop();
-            }
-            throw new Error(`Call not found: ${command}`);
-        }
-    }
-    exports.WatcherChannel = WatcherChannel;
-    class WatcherChannelClient {
-        constructor(channel) {
-            this.channel = channel;
-        }
-        watch(options) {
-            return this.channel.listen('watch', options);
-        }
-        setVerboseLogging(enable) {
-            return this.channel.call('setVerboseLogging', enable);
-        }
-        get onLogMessage() {
-            return this.channel.listen('onLogMessage');
-        }
-        setRoots(roots) {
-            return this.channel.call('setRoots', roots);
-        }
-        stop() {
-            return this.channel.call('stop');
-        }
-    }
-    exports.WatcherChannelClient = WatcherChannelClient;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[152/*vs/platform/files/node/watcher/unix/watcherService*/], __M([0/*require*/,1/*exports*/,34/*vs/base/parts/ipc/common/ipc*/,77/*vs/base/parts/ipc/node/ipc.cp*/,151/*vs/platform/files/node/watcher/unix/watcherIpc*/,2/*vs/base/common/lifecycle*/,37/*vs/base/common/amd*/]), function (require, exports, ipc_1, ipc_cp_1, watcherIpc_1, lifecycle_1, amd_1) {
+define(__m[147/*vs/platform/files/node/watcher/unix/watcherService*/], __M([0/*require*/,1/*exports*/,34/*vs/base/parts/ipc/common/ipc*/,75/*vs/base/parts/ipc/node/ipc.cp*/,2/*vs/base/common/lifecycle*/,9/*vs/base/common/network*/]), function (require, exports, ipc_1, ipc_cp_1, lifecycle_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.FileWatcher = void 0;
@@ -19340,7 +19084,7 @@ define(__m[152/*vs/platform/files/node/watcher/unix/watcherService*/], __M([0/*r
             this.startWatching();
         }
         startWatching() {
-            const client = this._register(new ipc_cp_1.Client(amd_1.getPathFromAmdModule(require, 'bootstrap-fork'), {
+            const client = this._register(new ipc_cp_1.Client(network_1.FileAccess.asFileUri('bootstrap-fork', require).fsPath, {
                 serverName: 'File Watcher (chokidar)',
                 args: ['--type=watcherService'],
                 env: {
@@ -19364,11 +19108,10 @@ define(__m[152/*vs/platform/files/node/watcher/unix/watcherService*/], __M([0/*r
                 }
             }));
             // Initialize watcher
-            const channel = ipc_1.getNextTickChannel(client.getChannel('watcher'));
-            this.service = new watcherIpc_1.WatcherChannelClient(channel);
-            this.service.setVerboseLogging(this.verboseLogging);
-            this._register(this.service.watch(this.watcherOptions)(e => !this.isDisposed && this.onDidFilesChange(e)));
-            this._register(this.service.onLogMessage(m => this.onLogMessage(m)));
+            this.service = ipc_1.createChannelSender(ipc_1.getNextTickChannel(client.getChannel('watcher')));
+            this.service.init(Object.assign(Object.assign({}, this.watcherOptions), { verboseLogging: this.verboseLogging }));
+            this._register(this.service.onDidChangeFile(e => !this.isDisposed && this.onDidFilesChange(e)));
+            this._register(this.service.onDidLogMessage(m => this.onLogMessage(m)));
             // Start watching
             this.service.setRoots(this.folders);
         }
@@ -19400,7 +19143,7 @@ define(__m[152/*vs/platform/files/node/watcher/unix/watcherService*/], __M([0/*r
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[153/*vs/platform/files/node/watcher/win32/csharpWatcherService*/], __M([0/*require*/,1/*exports*/,43/*child_process*/,73/*vs/base/node/decoder*/,62/*vs/base/common/glob*/,37/*vs/base/common/amd*/]), function (require, exports, cp, decoder, glob, amd_1) {
+define(__m[148/*vs/platform/files/node/watcher/win32/csharpWatcherService*/], __M([0/*require*/,1/*exports*/,43/*child_process*/,72/*vs/base/node/decoder*/,61/*vs/base/common/glob*/,9/*vs/base/common/network*/]), function (require, exports, cp, decoder, glob, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.OutOfProcessWin32FolderWatcher = void 0;
@@ -19428,7 +19171,7 @@ define(__m[153/*vs/platform/files/node/watcher/win32/csharpWatcherService*/], __
             if (this.verboseLogging) {
                 args.push('-verbose');
             }
-            this.handle = cp.spawn(amd_1.getPathFromAmdModule(require, 'vs/platform/files/node/watcher/win32/CodeHelper.exe'), args);
+            this.handle = cp.spawn(network_1.FileAccess.asFileUri('vs/platform/files/node/watcher/win32/CodeHelper.exe', require).fsPath, args);
             const stdoutLineDecoder = new decoder.LineDecoder();
             // Events over stdout
             this.handle.stdout.on('data', (data) => {
@@ -19509,7 +19252,7 @@ define(__m[153/*vs/platform/files/node/watcher/win32/csharpWatcherService*/], __
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[154/*vs/platform/files/node/watcher/win32/watcherService*/], __M([0/*require*/,1/*exports*/,153/*vs/platform/files/node/watcher/win32/csharpWatcherService*/,7/*vs/base/common/path*/,15/*vs/base/common/strings*/]), function (require, exports, csharpWatcherService_1, path_1, strings_1) {
+define(__m[149/*vs/platform/files/node/watcher/win32/watcherService*/], __M([0/*require*/,1/*exports*/,148/*vs/platform/files/node/watcher/win32/csharpWatcherService*/,6/*vs/base/common/path*/,16/*vs/base/common/strings*/]), function (require, exports, csharpWatcherService_1, path_1, strings_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.FileWatcher = void 0;
@@ -19587,7 +19330,7 @@ define(__m[66/*vs/platform/instantiation/common/descriptors*/], __M([0/*require*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[155/*vs/platform/instantiation/common/graph*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[150/*vs/platform/instantiation/common/graph*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Graph = exports.Node = void 0;
@@ -19719,22 +19462,22 @@ define(__m[5/*vs/platform/instantiation/common/instantiation*/], __M([0/*require
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[14/*vs/platform/environment/common/environment*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[15/*vs/platform/environment/common/environment*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.BACKUPS = exports.IEnvironmentService = void 0;
+    exports.INativeEnvironmentService = exports.IEnvironmentService = void 0;
     exports.IEnvironmentService = instantiation_1.createDecorator('environmentService');
-    exports.BACKUPS = 'Backups';
+    exports.INativeEnvironmentService = instantiation_1.createDecorator('nativeEnvironmentService');
 });
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[156/*vs/platform/extensionManagement/common/extensionManagement*/], __M([0/*require*/,1/*exports*/,130/*vs/nls!vs/platform/extensionManagement/common/extensionManagement*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, nls_1, instantiation_1) {
+define(__m[151/*vs/platform/extensionManagement/common/extensionManagement*/], __M([0/*require*/,1/*exports*/,127/*vs/nls!vs/platform/extensionManagement/common/extensionManagement*/,5/*vs/platform/instantiation/common/instantiation*/,9/*vs/base/common/network*/]), function (require, exports, nls_1, instantiation_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.PreferencesLabel = exports.ExtensionsChannelId = exports.ExtensionsLabel = exports.DefaultIconPath = exports.IExtensionTipsService = exports.IGlobalExtensionEnablementService = exports.ENABLED_EXTENSIONS_STORAGE_PATH = exports.DISABLED_EXTENSIONS_STORAGE_PATH = exports.IExtensionManagementService = exports.ExtensionManagementError = exports.INSTALL_ERROR_INCOMPATIBLE = exports.INSTALL_ERROR_MALICIOUS = exports.INSTALL_ERROR_NOT_SUPPORTED = exports.IExtensionGalleryService = exports.InstallOperation = exports.StatisticType = exports.SortOrder = exports.SortBy = exports.isIExtensionIdentifier = exports.EXTENSION_IDENTIFIER_REGEX = exports.EXTENSION_IDENTIFIER_PATTERN = void 0;
+    exports.PreferencesLocalizedLabel = exports.PreferencesLabel = exports.ExtensionsChannelId = exports.ExtensionsLocalizedLabel = exports.ExtensionsLabel = exports.DefaultIconPath = exports.IExtensionTipsService = exports.IGlobalExtensionEnablementService = exports.ENABLED_EXTENSIONS_STORAGE_PATH = exports.DISABLED_EXTENSIONS_STORAGE_PATH = exports.IExtensionManagementService = exports.ExtensionManagementError = exports.INSTALL_ERROR_INCOMPATIBLE = exports.INSTALL_ERROR_MALICIOUS = exports.INSTALL_ERROR_NOT_SUPPORTED = exports.IExtensionGalleryService = exports.InstallOperation = exports.StatisticType = exports.SortOrder = exports.SortBy = exports.isIExtensionIdentifier = exports.EXTENSION_IDENTIFIER_REGEX = exports.EXTENSION_IDENTIFIER_PATTERN = void 0;
     exports.EXTENSION_IDENTIFIER_PATTERN = '^([a-z0-9A-Z][a-z0-9-A-Z]*)\\.([a-z0-9A-Z][a-z0-9-A-Z]*)$';
     exports.EXTENSION_IDENTIFIER_REGEX = new RegExp(exports.EXTENSION_IDENTIFIER_PATTERN);
     function isIExtensionIdentifier(thing) {
@@ -19787,17 +19530,19 @@ define(__m[156/*vs/platform/extensionManagement/common/extensionManagement*/], _
     exports.ENABLED_EXTENSIONS_STORAGE_PATH = 'extensionsIdentifiers/enabled';
     exports.IGlobalExtensionEnablementService = instantiation_1.createDecorator('IGlobalExtensionEnablementService');
     exports.IExtensionTipsService = instantiation_1.createDecorator('IExtensionTipsService');
-    exports.DefaultIconPath = require.toUrl('./media/defaultIcon.png');
+    exports.DefaultIconPath = network_1.FileAccess.asBrowserUri('./media/defaultIcon.png', require).toString(true);
     exports.ExtensionsLabel = nls_1.localize(0, null);
+    exports.ExtensionsLocalizedLabel = { value: exports.ExtensionsLabel, original: 'Extensions' };
     exports.ExtensionsChannelId = 'extensions';
     exports.PreferencesLabel = nls_1.localize(1, null);
+    exports.PreferencesLocalizedLabel = { value: exports.PreferencesLabel, original: 'Preferences' };
 });
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[157/*vs/platform/extensions/common/extensions*/], __M([0/*require*/,1/*exports*/,15/*vs/base/common/strings*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, strings, instantiation_1) {
+define(__m[152/*vs/platform/extensions/common/extensions*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/strings*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, strings, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IBuiltinExtensionsScannerService = exports.isAuthenticaionProviderExtension = exports.isLanguagePackExtension = exports.ExtensionIdentifier = exports.ExtensionType = exports.EXTENSION_CATEGORIES = exports.isIExtensionIdentifier = exports.BUILTIN_MANIFEST_CACHE_FILE = exports.USER_MANIFEST_CACHE_FILE = exports.MANIFEST_CACHE_FOLDER = void 0;
@@ -19899,7 +19644,7 @@ define(__m[157/*vs/platform/extensions/common/extensions*/], __M([0/*require*/,1
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[158/*vs/platform/extensionManagement/common/extensionManagementUtil*/], __M([0/*require*/,1/*exports*/,15/*vs/base/common/strings*/,157/*vs/platform/extensions/common/extensions*/]), function (require, exports, strings_1, extensions_1) {
+define(__m[153/*vs/platform/extensionManagement/common/extensionManagementUtil*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/strings*/,152/*vs/platform/extensions/common/extensions*/]), function (require, exports, strings_1, extensions_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getMaliciousExtensionsSet = exports.BetterMergeId = exports.getGalleryExtensionTelemetryData = exports.getLocalExtensionTelemetryData = exports.groupByExtension = exports.getGalleryExtensionId = exports.adoptToGalleryExtensionId = exports.ExtensionIdentifierWithVersion = exports.areSameExtensions = void 0;
@@ -20006,7 +19751,7 @@ define(__m[158/*vs/platform/extensionManagement/common/extensionManagementUtil*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[26/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/,133/*vs/nls!vs/platform/files/common/files*/,7/*vs/base/common/path*/,6/*vs/base/common/uri*/,5/*vs/platform/instantiation/common/instantiation*/,15/*vs/base/common/strings*/,13/*vs/base/common/types*/]), function (require, exports, nls_1, path_1, uri_1, instantiation_1, strings_1, types_1) {
+define(__m[25/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/,130/*vs/nls!vs/platform/files/common/files*/,6/*vs/base/common/path*/,7/*vs/base/common/uri*/,5/*vs/platform/instantiation/common/instantiation*/,16/*vs/base/common/strings*/,14/*vs/base/common/types*/]), function (require, exports, nls_1, path_1, uri_1, instantiation_1, strings_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.BinarySize = exports.FALLBACK_MAX_MEMORY_SIZE_MB = exports.MIN_MAX_MEMORY_SIZE_MB = exports.whenProviderRegistered = exports.etag = exports.ETAG_DISABLED = exports.FileKind = exports.FILES_EXCLUDE_CONFIG = exports.FILES_ASSOCIATIONS_CONFIG = exports.HotExitConfiguration = exports.AutoSaveConfiguration = exports.FileOperationResult = exports.FileOperationError = exports.isParent = exports.FileChangesEvent = exports.FileChangeType = exports.FileOperationEvent = exports.FileOperation = exports.toFileOperationResult = exports.toFileSystemProviderErrorCode = exports.markAsFileSystemProviderError = exports.ensureFileSystemProviderError = exports.createFileSystemProviderError = exports.FileSystemProviderError = exports.FileSystemProviderErrorCode = exports.hasFileReadStreamCapability = exports.hasOpenReadWriteCloseCapability = exports.hasFileFolderCopyCapability = exports.hasReadWriteCapability = exports.FileSystemProviderCapabilities = exports.FileType = exports.IFileService = void 0;
@@ -20071,7 +19816,7 @@ define(__m[26/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/
     exports.createFileSystemProviderError = createFileSystemProviderError;
     function ensureFileSystemProviderError(error) {
         if (!error) {
-            return createFileSystemProviderError(nls_1.localize(0, null), FileSystemProviderErrorCode.Unknown); // https://github.com/Microsoft/vscode/issues/72798
+            return createFileSystemProviderError(nls_1.localize(0, null), FileSystemProviderErrorCode.Unknown); // https://github.com/microsoft/vscode/issues/72798
         }
         return error;
     }
@@ -20359,7 +20104,7 @@ define(__m[26/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[159/*vs/platform/environment/node/argvHelper*/], __M([0/*require*/,1/*exports*/,225/*assert*/,23/*vs/base/common/arrays*/,129/*vs/nls!vs/platform/environment/node/argvHelper*/,26/*vs/platform/files/common/files*/,55/*vs/platform/environment/node/argv*/]), function (require, exports, assert, arrays_1, nls_1, files_1, argv_1) {
+define(__m[154/*vs/platform/environment/node/argvHelper*/], __M([0/*require*/,1/*exports*/,221/*assert*/,126/*vs/nls!vs/platform/environment/node/argvHelper*/,25/*vs/platform/files/common/files*/,54/*vs/platform/environment/node/argv*/]), function (require, exports, assert, nls_1, files_1, argv_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.addArg = exports.parseCLIProcessArgv = exports.parseMainProcessArgv = void 0;
@@ -20382,7 +20127,7 @@ define(__m[159/*vs/platform/environment/node/argvHelper*/], __M([0/*require*/,1/
         return args;
     }
     function stripAppPath(argv) {
-        const index = arrays_1.firstIndex(argv, a => !/^-/.test(a));
+        const index = argv.findIndex(a => !/^-/.test(a));
         if (index > -1) {
             return [...argv.slice(0, index), ...argv.slice(index + 1)];
         }
@@ -20406,10 +20151,7 @@ define(__m[159/*vs/platform/environment/node/argvHelper*/], __M([0/*require*/,1/
      * Use this to parse raw code CLI process.argv such as: `Electron cli.js . --verbose --wait`
      */
     function parseCLIProcessArgv(processArgv) {
-        let [, , ...args] = processArgv;
-        if (process.env['VSCODE_DEV']) {
-            args = stripAppPath(args) || [];
-        }
+        let [, , ...args] = processArgv; // remove the first non-option argument: it's always the app location
         return parseAndValidate(args, true);
     }
     exports.parseCLIProcessArgv = parseCLIProcessArgv;
@@ -20433,7 +20175,7 @@ define(__m[159/*vs/platform/environment/node/argvHelper*/], __M([0/*require*/,1/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[81/*vs/platform/files/common/io*/], __M([0/*require*/,1/*exports*/,134/*vs/nls!vs/platform/files/common/io*/,18/*vs/base/common/buffer*/,26/*vs/platform/files/common/files*/,16/*vs/base/common/errors*/]), function (require, exports, nls_1, buffer_1, files_1, errors_1) {
+define(__m[78/*vs/platform/files/common/io*/], __M([0/*require*/,1/*exports*/,131/*vs/nls!vs/platform/files/common/io*/,20/*vs/base/common/buffer*/,25/*vs/platform/files/common/files*/,17/*vs/base/common/errors*/]), function (require, exports, nls_1, buffer_1, files_1, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.readFileIntoStream = void 0;
@@ -20527,7 +20269,7 @@ define(__m[81/*vs/platform/files/common/io*/], __M([0/*require*/,1/*exports*/,13
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[82/*vs/platform/files/node/watcher/watcher*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,26/*vs/platform/files/common/files*/,4/*vs/base/common/platform*/]), function (require, exports, uri_1, files_1, platform_1) {
+define(__m[79/*vs/platform/files/node/watcher/watcher*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,25/*vs/platform/files/common/files*/,4/*vs/base/common/platform*/]), function (require, exports, uri_1, files_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.normalizeFileChanges = exports.toFileChanges = void 0;
@@ -20614,7 +20356,7 @@ define(__m[82/*vs/platform/files/node/watcher/watcher*/], __M([0/*require*/,1/*e
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[160/*vs/platform/files/node/watcher/nodejs/watcherService*/], __M([0/*require*/,1/*exports*/,82/*vs/platform/files/node/watcher/watcher*/,2/*vs/base/common/lifecycle*/,21/*vs/base/node/pfs*/,103/*vs/base/node/extpath*/,105/*vs/base/node/watcher*/,9/*vs/base/common/async*/,7/*vs/base/common/path*/]), function (require, exports, watcher_1, lifecycle_1, pfs_1, extpath_1, watcher_2, async_1, path_1) {
+define(__m[155/*vs/platform/files/node/watcher/nodejs/watcherService*/], __M([0/*require*/,1/*exports*/,79/*vs/platform/files/node/watcher/watcher*/,2/*vs/base/common/lifecycle*/,22/*vs/base/node/pfs*/,101/*vs/base/node/extpath*/,103/*vs/base/node/watcher*/,10/*vs/base/common/async*/,6/*vs/base/common/path*/]), function (require, exports, watcher_1, lifecycle_1, pfs_1, extpath_1, watcher_2, async_1, path_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.FileWatcher = void 0;
@@ -20678,7 +20420,7 @@ define(__m[160/*vs/platform/files/node/watcher/nodejs/watcherService*/], __M([0/
                 this.onVerbose(`${event.type === 1 /* ADDED */ ? '[ADDED]' : event.type === 2 /* DELETED */ ? '[DELETED]' : '[CHANGED]'} ${event.path}`);
             }
             // Handle emit through delayer to accommodate for bulk changes and thus reduce spam
-            this.fileChangesDelayer.trigger(() => {
+            this.fileChangesDelayer.trigger(async () => {
                 const fileChanges = this.fileChangesBuffer;
                 this.fileChangesBuffer = [];
                 // Event normalization
@@ -20693,7 +20435,6 @@ define(__m[160/*vs/platform/files/node/watcher/nodejs/watcherService*/], __M([0/
                 if (normalizedFileChanges.length > 0) {
                     this.onDidFilesChange(normalizedFileChanges);
                 }
-                return Promise.resolve();
             });
         }
         onError(error) {
@@ -20748,7 +20489,7 @@ define(__m[67/*vs/platform/instantiation/common/serviceCollection*/], __M([0/*re
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[161/*vs/platform/instantiation/common/instantiationService*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/errors*/,155/*vs/platform/instantiation/common/graph*/,66/*vs/platform/instantiation/common/descriptors*/,5/*vs/platform/instantiation/common/instantiation*/,67/*vs/platform/instantiation/common/serviceCollection*/,9/*vs/base/common/async*/]), function (require, exports, errors_1, graph_1, descriptors_1, instantiation_1, serviceCollection_1, async_1) {
+define(__m[156/*vs/platform/instantiation/common/instantiationService*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/errors*/,150/*vs/platform/instantiation/common/graph*/,66/*vs/platform/instantiation/common/descriptors*/,5/*vs/platform/instantiation/common/instantiation*/,67/*vs/platform/instantiation/common/serviceCollection*/,10/*vs/base/common/async*/]), function (require, exports, errors_1, graph_1, descriptors_1, instantiation_1, serviceCollection_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.InstantiationService = void 0;
@@ -20898,9 +20639,15 @@ define(__m[161/*vs/platform/instantiation/common/instantiationService*/], __M([0
                     break;
                 }
                 for (const { data } of roots) {
-                    // create instance and overwrite the service collections
-                    const instance = this._createServiceInstanceWithOwner(data.id, data.desc.ctor, data.desc.staticArguments, data.desc.supportsDelayedInstantiation, data._trace);
-                    this._setServiceInstance(data.id, instance);
+                    // Repeat the check for this still being a service sync descriptor. That's because
+                    // instantiating a dependency might have side-effect and recursively trigger instantiation
+                    // so that some dependencies are now fullfilled already.
+                    const instanceOrDesc = this._getServiceInstanceOrDescriptor(data.id);
+                    if (instanceOrDesc instanceof descriptors_1.SyncDescriptor) {
+                        // create instance and overwrite the service collections
+                        const instance = this._createServiceInstanceWithOwner(data.id, data.desc.ctor, data.desc.staticArguments, data.desc.supportsDelayedInstantiation, data._trace);
+                        this._setServiceInstance(data.id, instance);
+                    }
                     graph.removeNode(data);
                 }
             }
@@ -21020,7 +20767,7 @@ define(__m[161/*vs/platform/instantiation/common/instantiationService*/], __M([0
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[162/*vs/platform/ipc/electron-main/sharedProcessMainService*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[157/*vs/platform/ipc/electron-main/sharedProcessMainService*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SharedProcessMainService = exports.ISharedProcessMainService = void 0;
@@ -21043,7 +20790,7 @@ define(__m[162/*vs/platform/ipc/electron-main/sharedProcessMainService*/], __M([
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[163/*vs/platform/keybinding/common/baseResolvedKeybinding*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/errors*/,119/*vs/base/common/keybindingLabels*/,53/*vs/base/common/keyCodes*/]), function (require, exports, errors_1, keybindingLabels_1, keyCodes_1) {
+define(__m[158/*vs/platform/keybinding/common/baseResolvedKeybinding*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/errors*/,116/*vs/base/common/keybindingLabels*/,52/*vs/base/common/keyCodes*/]), function (require, exports, errors_1, keybindingLabels_1, keyCodes_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.BaseResolvedKeybinding = void 0;
@@ -21095,7 +20842,7 @@ define(__m[163/*vs/platform/keybinding/common/baseResolvedKeybinding*/], __M([0/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[164/*vs/platform/keybinding/common/usLayoutResolvedKeybinding*/], __M([0/*require*/,1/*exports*/,53/*vs/base/common/keyCodes*/,163/*vs/platform/keybinding/common/baseResolvedKeybinding*/]), function (require, exports, keyCodes_1, baseResolvedKeybinding_1) {
+define(__m[159/*vs/platform/keybinding/common/usLayoutResolvedKeybinding*/], __M([0/*require*/,1/*exports*/,52/*vs/base/common/keyCodes*/,158/*vs/platform/keybinding/common/baseResolvedKeybinding*/]), function (require, exports, keyCodes_1, baseResolvedKeybinding_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.USLayoutResolvedKeybinding = void 0;
@@ -21197,7 +20944,7 @@ define(__m[164/*vs/platform/keybinding/common/usLayoutResolvedKeybinding*/], __M
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[165/*vs/platform/lifecycle/common/lifecycle*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,5/*vs/platform/instantiation/common/instantiation*/,9/*vs/base/common/async*/]), function (require, exports, event_1, instantiation_1, async_1) {
+define(__m[160/*vs/platform/lifecycle/common/lifecycle*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,5/*vs/platform/instantiation/common/instantiation*/,10/*vs/base/common/async*/]), function (require, exports, event_1, instantiation_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.handleVetos = exports.NullLifecycleService = exports.LifecyclePhaseToString = exports.LifecyclePhase = exports.StartupKindToString = exports.StartupKind = exports.ShutdownReason = exports.ILifecycleService = void 0;
@@ -21298,7 +21045,7 @@ define(__m[165/*vs/platform/lifecycle/common/lifecycle*/], __M([0/*require*/,1/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[8/*vs/platform/log/common/log*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,2/*vs/base/common/lifecycle*/,4/*vs/base/common/platform*/,3/*vs/base/common/event*/,117/*vs/base/common/errorMessage*/]), function (require, exports, instantiation_1, lifecycle_1, platform_1, event_1, errorMessage_1) {
+define(__m[8/*vs/platform/log/common/log*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,2/*vs/base/common/lifecycle*/,4/*vs/base/common/platform*/,3/*vs/base/common/event*/,114/*vs/base/common/errorMessage*/]), function (require, exports, instantiation_1, lifecycle_1, platform_1, event_1, errorMessage_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getLogLevel = exports.NullLogService = exports.DelegatedLogService = exports.MultiplexLogService = exports.ConsoleLogInMainService = exports.LogServiceAdapter = exports.ConsoleLogService = exports.ConsoleLogMainService = exports.AbstractLogService = exports.DEFAULT_LOG_LEVEL = exports.LogLevel = exports.ILoggerService = exports.ILogService = void 0;
@@ -21660,7 +21407,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-define(__m[166/*vs/platform/files/common/fileService*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,26/*vs/platform/files/common/files*/,3/*vs/base/common/event*/,24/*vs/base/common/resources*/,132/*vs/nls!vs/platform/files/common/fileService*/,38/*vs/base/common/map*/,23/*vs/base/common/arrays*/,32/*vs/base/common/labels*/,8/*vs/platform/log/common/log*/,18/*vs/base/common/buffer*/,61/*vs/base/common/stream*/,9/*vs/base/common/async*/,31/*vs/base/common/cancellation*/,19/*vs/base/common/network*/,81/*vs/platform/files/common/io*/]), function (require, exports, lifecycle_1, files_1, event_1, resources_1, nls_1, map_1, arrays_1, labels_1, log_1, buffer_1, stream_1, async_1, cancellation_1, network_1, io_1) {
+define(__m[161/*vs/platform/files/common/fileService*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/lifecycle*/,25/*vs/platform/files/common/files*/,3/*vs/base/common/event*/,18/*vs/base/common/resources*/,129/*vs/nls!vs/platform/files/common/fileService*/,37/*vs/base/common/map*/,26/*vs/base/common/arrays*/,32/*vs/base/common/labels*/,8/*vs/platform/log/common/log*/,20/*vs/base/common/buffer*/,60/*vs/base/common/stream*/,10/*vs/base/common/async*/,30/*vs/base/common/cancellation*/,9/*vs/base/common/network*/,78/*vs/platform/files/common/io*/,58/*vs/base/common/iterator*/]), function (require, exports, lifecycle_1, files_1, event_1, resources_1, nls_1, map_1, arrays_1, labels_1, log_1, buffer_1, stream_1, async_1, cancellation_1, network_1, io_1, iterator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.FileService = void 0;
@@ -21736,6 +21483,9 @@ define(__m[166/*vs/platform/files/common/fileService*/], __M([0/*require*/,1/*ex
         hasCapability(resource, capability) {
             const provider = this.provider.get(resource.scheme);
             return !!(provider && (provider.capabilities & capability));
+        }
+        listCapabilities() {
+            return iterator_1.Iterable.map(this.provider, ([scheme, provider]) => ({ scheme, capabilities: provider.capabilities }));
         }
         async withProvider(resource) {
             // Assert path is absolute
@@ -22590,7 +22340,7 @@ define(__m[166/*vs/platform/files/common/fileService*/], __M([0/*require*/,1/*ex
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[167/*vs/platform/files/node/diskFileSystemProvider*/], __M([0/*require*/,1/*exports*/,20/*fs*/,65/*util*/,2/*vs/base/common/lifecycle*/,26/*vs/platform/files/common/files*/,3/*vs/base/common/event*/,4/*vs/base/common/platform*/,21/*vs/base/node/pfs*/,7/*vs/base/common/path*/,24/*vs/base/common/resources*/,28/*vs/base/common/extpath*/,9/*vs/base/common/async*/,8/*vs/platform/log/common/log*/,135/*vs/nls!vs/platform/files/node/diskFileSystemProvider*/,82/*vs/platform/files/node/watcher/watcher*/,152/*vs/platform/files/node/watcher/unix/watcherService*/,154/*vs/platform/files/node/watcher/win32/watcherService*/,150/*vs/platform/files/node/watcher/nsfw/watcherService*/,160/*vs/platform/files/node/watcher/nodejs/watcherService*/,61/*vs/base/common/stream*/,81/*vs/platform/files/common/io*/,23/*vs/base/common/arrays*/,18/*vs/base/common/buffer*/]), function (require, exports, fs_1, util_1, lifecycle_1, files_1, event_1, platform_1, pfs_1, path_1, resources_1, extpath_1, async_1, log_1, nls_1, watcher_1, watcherService_1, watcherService_2, watcherService_3, watcherService_4, stream_1, io_1, arrays_1, buffer_1) {
+define(__m[162/*vs/platform/files/node/diskFileSystemProvider*/], __M([0/*require*/,1/*exports*/,21/*fs*/,65/*util*/,2/*vs/base/common/lifecycle*/,25/*vs/platform/files/common/files*/,3/*vs/base/common/event*/,4/*vs/base/common/platform*/,22/*vs/base/node/pfs*/,6/*vs/base/common/path*/,18/*vs/base/common/resources*/,27/*vs/base/common/extpath*/,10/*vs/base/common/async*/,8/*vs/platform/log/common/log*/,132/*vs/nls!vs/platform/files/node/diskFileSystemProvider*/,79/*vs/platform/files/node/watcher/watcher*/,147/*vs/platform/files/node/watcher/unix/watcherService*/,149/*vs/platform/files/node/watcher/win32/watcherService*/,146/*vs/platform/files/node/watcher/nsfw/watcherService*/,155/*vs/platform/files/node/watcher/nodejs/watcherService*/,60/*vs/base/common/stream*/,78/*vs/platform/files/common/io*/,26/*vs/base/common/arrays*/,20/*vs/base/common/buffer*/]), function (require, exports, fs_1, util_1, lifecycle_1, files_1, event_1, platform_1, pfs_1, path_1, resources_1, extpath_1, async_1, log_1, nls_1, watcher_1, watcherService_1, watcherService_2, watcherService_3, watcherService_4, stream_1, io_1, arrays_1, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.DiskFileSystemProvider = void 0;
@@ -22749,8 +22499,8 @@ define(__m[167/*vs/platform/files/node/diskFileSystemProvider*/], __M([0/*requir
                         try {
                             // On Windows and if the file exists, we use a different strategy of saving the file
                             // by first truncating the file and then writing with r+ flag. This helps to save hidden files on Windows
-                            // (see https://github.com/Microsoft/vscode/issues/931) and prevent removing alternate data streams
-                            // (see https://github.com/Microsoft/vscode/issues/6363)
+                            // (see https://github.com/microsoft/vscode/issues/931) and prevent removing alternate data streams
+                            // (see https://github.com/microsoft/vscode/issues/6363)
                             await pfs_1.truncate(filePath, 0);
                             // After a successful truncate() the flag can be set to 'r+' which will not truncate.
                             flags = 'r+';
@@ -23136,7 +22886,7 @@ define(__m[167/*vs/platform/files/node/diskFileSystemProvider*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[168/*vs/platform/log/common/bufferLog*/], __M([0/*require*/,1/*exports*/,8/*vs/platform/log/common/log*/]), function (require, exports, log_1) {
+define(__m[163/*vs/platform/log/common/bufferLog*/], __M([0/*require*/,1/*exports*/,8/*vs/platform/log/common/log*/]), function (require, exports, log_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.BufferLogService = void 0;
@@ -23216,7 +22966,7 @@ define(__m[168/*vs/platform/log/common/bufferLog*/], __M([0/*require*/,1/*export
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[169/*vs/platform/log/common/logIpc*/], __M([0/*require*/,1/*exports*/,8/*vs/platform/log/common/log*/,3/*vs/base/common/event*/]), function (require, exports, log_1, event_1) {
+define(__m[164/*vs/platform/log/common/logIpc*/], __M([0/*require*/,1/*exports*/,8/*vs/platform/log/common/log*/,3/*vs/base/common/event*/]), function (require, exports, log_1, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.FollowerLogService = exports.LoggerChannelClient = exports.LoggerChannel = void 0;
@@ -23295,7 +23045,7 @@ define(__m[169/*vs/platform/log/common/logIpc*/], __M([0/*require*/,1/*exports*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[170/*vs/platform/log/node/spdlogService*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/path*/,8/*vs/platform/log/common/log*/]), function (require, exports, path, log_1) {
+define(__m[165/*vs/platform/log/node/spdlogService*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/path*/,8/*vs/platform/log/common/log*/]), function (require, exports, path, log_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SpdLogService = exports.createRotatingLogger = void 0;
@@ -23461,7 +23211,7 @@ define(__m[170/*vs/platform/log/node/spdlogService*/], __M([0/*require*/,1/*expo
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[171/*vs/platform/menubar/common/menubar*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[166/*vs/platform/menubar/common/menubar*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isMenubarMenuItemAction = exports.isMenubarMenuItemUriAction = exports.isMenubarMenuItemSeparator = exports.isMenubarMenuItemSubmenu = void 0;
@@ -23487,34 +23237,41 @@ define(__m[171/*vs/platform/menubar/common/menubar*/], __M([0/*require*/,1/*expo
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[25/*vs/platform/product/common/product*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/,7/*vs/base/common/path*/,37/*vs/base/common/amd*/,60/*vs/base/common/process*/]), function (require, exports, platform_1, path, amd_1, process_1) {
+define(__m[23/*vs/platform/product/common/product*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/,59/*vs/base/common/process*/,9/*vs/base/common/network*/,18/*vs/base/common/resources*/]), function (require, exports, platform_1, process_1, network_1, resources_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     let product;
-    // Web
-    if (platform_1.isWeb) {
+    // Web or Native (sandbox TODO@sandbox need to add all properties of product.json)
+    if (platform_1.isWeb || typeof require === 'undefined' || typeof require.__$__nodeRequire !== 'function') {
         // Built time configuration (do NOT modify)
         product = { /*BUILD->INSERT_PRODUCT_CONFIGURATION*/};
         // Running out of sources
         if (Object.keys(product).length === 0) {
             Object.assign(product, {
-                version: '1.49.0-dev',
-                nameLong: 'Visual Studio Code Web Dev',
-                nameShort: 'VSCode Web Dev',
+                version: '1.50.0-dev',
+                nameShort: platform_1.isWeb ? 'Code Web - OSS Dev' : 'Code - OSS Dev',
+                nameLong: platform_1.isWeb ? 'Code Web - OSS Dev' : 'Code - OSS Dev',
+                applicationName: 'code-oss',
+                dataFolderName: '.vscode-oss',
                 urlProtocol: 'code-oss',
+                reportIssueUrl: 'https://github.com/microsoft/vscode/issues/new',
+                licenseName: 'MIT',
+                licenseUrl: 'https://github.com/microsoft/vscode/blob/master/LICENSE.txt',
                 extensionAllowedProposedApi: [
+                    'ms-vscode.vscode-js-profile-flame',
+                    'ms-vscode.vscode-js-profile-table',
                     'ms-vscode.references-view',
                     'ms-vscode.github-browser'
                 ],
             });
         }
     }
-    // Node: AMD loader
-    else if (typeof require !== 'undefined' && typeof require.__$__nodeRequire === 'function') {
+    // Native (non-sandboxed)
+    else {
         // Obtain values from product.json and package.json
-        const rootPath = path.dirname(amd_1.getPathFromAmdModule(require, ''));
-        product = require.__$__nodeRequire(path.join(rootPath, 'product.json'));
-        const pkg = require.__$__nodeRequire(path.join(rootPath, 'package.json'));
+        const rootPath = resources_1.dirname(network_1.FileAccess.asFileUri('', require));
+        product = require.__$__nodeRequire(resources_1.joinPath(rootPath, 'product.json').fsPath);
+        const pkg = require.__$__nodeRequire(resources_1.joinPath(rootPath, 'package.json').fsPath);
         // Running out of sources
         if (process_1.env['VSCODE_DEV']) {
             Object.assign(product, {
@@ -23526,10 +23283,6 @@ define(__m[25/*vs/platform/product/common/product*/], __M([0/*require*/,1/*expor
         Object.assign(product, {
             version: pkg.version
         });
-    }
-    // Unknown
-    else {
-        throw new Error('Unable to resolve product configuration');
     }
     exports.default = product;
 });
@@ -23544,14 +23297,13 @@ define(__m[25/*vs/platform/product/common/product*/], __M([0/*require*/,1/*expor
 
 
 
-define(__m[172/*vs/platform/environment/node/environmentService*/], __M([0/*require*/,1/*exports*/,14/*vs/platform/environment/common/environment*/,64/*crypto*/,102/*vs/base/node/paths*/,30/*os*/,7/*vs/base/common/path*/,24/*vs/base/common/resources*/,52/*vs/base/common/decorators*/,25/*vs/platform/product/common/product*/,115/*vs/base/common/date*/,4/*vs/base/common/platform*/,37/*vs/base/common/amd*/,6/*vs/base/common/uri*/]), function (require, exports, environment_1, crypto, paths, os, path, resources, decorators_1, product_1, date_1, platform_1, amd_1, uri_1) {
+define(__m[167/*vs/platform/environment/node/environmentService*/], __M([0/*require*/,1/*exports*/,63/*crypto*/,100/*vs/base/node/paths*/,29/*os*/,6/*vs/base/common/path*/,18/*vs/base/common/resources*/,48/*vs/base/common/decorators*/,23/*vs/platform/product/common/product*/,112/*vs/base/common/date*/,4/*vs/base/common/platform*/,9/*vs/base/common/network*/,7/*vs/base/common/uri*/]), function (require, exports, crypto, paths, os, path, resources, decorators_1, product_1, date_1, platform_1, network_1, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.parseUserDataDir = exports.parsePathArg = exports.parseSearchPort = exports.parseExtensionHostPort = exports.xdgRuntimeDir = exports.EnvironmentService = void 0;
-    class EnvironmentService {
-        constructor(_args, _execPath) {
+    exports.parseUserDataDir = exports.parsePathArg = exports.parseSearchPort = exports.parseExtensionHostPort = exports.xdgRuntimeDir = exports.NativeEnvironmentService = void 0;
+    class NativeEnvironmentService {
+        constructor(_args) {
             this._args = _args;
-            this._execPath = _execPath;
             if (!process.env['VSCODE_LOGS']) {
                 const key = date_1.toLocalISOString(new Date()).replace(/-|:|\.\d+Z$/g, '');
                 process.env['VSCODE_LOGS'] = path.join(this.userDataPath, 'logs', key);
@@ -23559,9 +23311,7 @@ define(__m[172/*vs/platform/environment/node/environmentService*/], __M([0/*requ
             this.logsPath = process.env['VSCODE_LOGS'];
         }
         get args() { return this._args; }
-        get appRoot() { return path.dirname(amd_1.getPathFromAmdModule(require, '')); }
-        get execPath() { return this._execPath; }
-        get cliPath() { return getCLIPath(this.execPath, this.appRoot, this.isBuilt); }
+        get appRoot() { return path.dirname(network_1.FileAccess.asFileUri('', require).fsPath); }
         get userHome() { return uri_1.URI.file(os.homedir()); }
         get userDataPath() {
             const vscodePortable = process.env['VSCODE_PORTABLE'];
@@ -23571,12 +23321,12 @@ define(__m[172/*vs/platform/environment/node/environmentService*/], __M([0/*requ
             return parseUserDataDir(this._args, process);
         }
         get appSettingsHome() { return uri_1.URI.file(path.join(this.userDataPath, 'User')); }
+        get tmpDir() { return uri_1.URI.file(os.tmpdir()); }
         get userRoamingDataHome() { return this.appSettingsHome; }
         get settingsResource() { return resources.joinPath(this.userRoamingDataHome, 'settings.json'); }
         get userDataSyncHome() { return resources.joinPath(this.userRoamingDataHome, 'sync'); }
         get userDataSyncLogResource() { return uri_1.URI.file(path.join(this.logsPath, 'userDataSync.log')); }
         get sync() { return this.args.sync; }
-        get enableSyncByDefault() { return false; }
         get machineSettingsResource() { return resources.joinPath(uri_1.URI.file(path.join(this.userDataPath, 'Machine')), 'settings.json'); }
         get globalStorageHome() { return uri_1.URI.joinPath(this.appSettingsHome, 'globalStorage'); }
         get workspaceStorageHome() { return uri_1.URI.joinPath(this.appSettingsHome, 'workspaceStorage'); }
@@ -23591,8 +23341,8 @@ define(__m[172/*vs/platform/environment/node/environmentService*/], __M([0/*requ
         }
         get snippetsHome() { return resources.joinPath(this.userRoamingDataHome, 'snippets'); }
         get isExtensionDevelopment() { return !!this._args.extensionDevelopmentPath; }
-        get backupHome() { return uri_1.URI.file(path.join(this.userDataPath, environment_1.BACKUPS)); }
-        get backupWorkspacesPath() { return path.join(this.backupHome.fsPath, 'workspaces.json'); }
+        get backupHome() { return path.join(this.userDataPath, 'Backups'); }
+        get backupWorkspacesPath() { return path.join(this.backupHome, 'workspaces.json'); }
         get untitledWorkspacesHome() { return uri_1.URI.file(path.join(this.userDataPath, 'Workspaces')); }
         get installSourcePath() { return path.join(this.userDataPath, 'installSource'); }
         get builtinExtensionsPath() {
@@ -23601,7 +23351,7 @@ define(__m[172/*vs/platform/environment/node/environmentService*/], __M([0/*requ
                 return fromArgs;
             }
             else {
-                return path.normalize(path.join(amd_1.getPathFromAmdModule(require, ''), '..', 'extensions'));
+                return path.normalize(path.join(network_1.FileAccess.asFileUri('', require).fsPath, '..', 'extensions'));
             }
         }
         get extensionsDownloadPath() {
@@ -23665,17 +23415,7 @@ define(__m[172/*vs/platform/environment/node/environmentService*/], __M([0/*requ
             }
             return false;
         }
-        get extensionEnabledProposedApi() {
-            if (Array.isArray(this.args['enable-proposed-api'])) {
-                return this.args['enable-proposed-api'];
-            }
-            if ('enable-proposed-api' in this.args) {
-                return [];
-            }
-            return undefined;
-        }
         get debugExtensionHost() { return parseExtensionHostPort(this._args, this.isBuilt); }
-        get logExtensionHostCommunication() { return !!this.args.logExtensionHostCommunication; }
         get isBuilt() { return !process.env['VSCODE_DEV']; }
         get verbose() { return !!this._args.verbose; }
         get logLevel() { return this._args.log; }
@@ -23693,106 +23433,100 @@ define(__m[172/*vs/platform/environment/node/environmentService*/], __M([0/*requ
     }
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "appRoot", null);
+    ], NativeEnvironmentService.prototype, "appRoot", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "cliPath", null);
+    ], NativeEnvironmentService.prototype, "userHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "userHome", null);
+    ], NativeEnvironmentService.prototype, "userDataPath", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "userDataPath", null);
+    ], NativeEnvironmentService.prototype, "appSettingsHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "appSettingsHome", null);
+    ], NativeEnvironmentService.prototype, "tmpDir", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "userRoamingDataHome", null);
+    ], NativeEnvironmentService.prototype, "userRoamingDataHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "settingsResource", null);
+    ], NativeEnvironmentService.prototype, "settingsResource", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "userDataSyncHome", null);
+    ], NativeEnvironmentService.prototype, "userDataSyncHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "userDataSyncLogResource", null);
+    ], NativeEnvironmentService.prototype, "userDataSyncLogResource", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "sync", null);
+    ], NativeEnvironmentService.prototype, "sync", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "enableSyncByDefault", null);
+    ], NativeEnvironmentService.prototype, "machineSettingsResource", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "machineSettingsResource", null);
+    ], NativeEnvironmentService.prototype, "globalStorageHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "globalStorageHome", null);
+    ], NativeEnvironmentService.prototype, "workspaceStorageHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "workspaceStorageHome", null);
+    ], NativeEnvironmentService.prototype, "keybindingsResource", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "keybindingsResource", null);
+    ], NativeEnvironmentService.prototype, "keyboardLayoutResource", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "keyboardLayoutResource", null);
+    ], NativeEnvironmentService.prototype, "argvResource", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "argvResource", null);
+    ], NativeEnvironmentService.prototype, "snippetsHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "snippetsHome", null);
+    ], NativeEnvironmentService.prototype, "isExtensionDevelopment", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "isExtensionDevelopment", null);
+    ], NativeEnvironmentService.prototype, "backupHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "backupHome", null);
+    ], NativeEnvironmentService.prototype, "backupWorkspacesPath", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "backupWorkspacesPath", null);
+    ], NativeEnvironmentService.prototype, "untitledWorkspacesHome", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "untitledWorkspacesHome", null);
+    ], NativeEnvironmentService.prototype, "installSourcePath", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "installSourcePath", null);
+    ], NativeEnvironmentService.prototype, "builtinExtensionsPath", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "builtinExtensionsPath", null);
+    ], NativeEnvironmentService.prototype, "extensionsPath", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "extensionsPath", null);
+    ], NativeEnvironmentService.prototype, "extensionDevelopmentLocationURI", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "extensionDevelopmentLocationURI", null);
+    ], NativeEnvironmentService.prototype, "extensionTestsLocationURI", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "extensionTestsLocationURI", null);
+    ], NativeEnvironmentService.prototype, "debugExtensionHost", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "debugExtensionHost", null);
+    ], NativeEnvironmentService.prototype, "mainIPCHandle", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "logExtensionHostCommunication", null);
+    ], NativeEnvironmentService.prototype, "sharedIPCHandle", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "mainIPCHandle", null);
+    ], NativeEnvironmentService.prototype, "nodeCachedDataDir", null);
     __decorate([
         decorators_1.memoize
-    ], EnvironmentService.prototype, "sharedIPCHandle", null);
-    __decorate([
-        decorators_1.memoize
-    ], EnvironmentService.prototype, "nodeCachedDataDir", null);
-    __decorate([
-        decorators_1.memoize
-    ], EnvironmentService.prototype, "serviceMachineIdResource", null);
-    exports.EnvironmentService = EnvironmentService;
+    ], NativeEnvironmentService.prototype, "serviceMachineIdResource", null);
+    exports.NativeEnvironmentService = NativeEnvironmentService;
     // Read this before there's any chance it is overwritten
-    // Related to https://github.com/Microsoft/vscode/issues/30624
+    // Related to https://github.com/microsoft/vscode/issues/30624
     exports.xdgRuntimeDir = process.env['XDG_RUNTIME_DIR'];
     const safeIpcPathLengths = {
         [2 /* Linux */]: 107,
@@ -23826,27 +23560,6 @@ define(__m[172/*vs/platform/environment/node/environmentService*/], __M([0/*requ
             return getWin32IPCHandle(userDataPath, type);
         }
         return getNixIPCHandle(userDataPath, type);
-    }
-    function getCLIPath(execPath, appRoot, isBuilt) {
-        // Windows
-        if (platform_1.isWindows) {
-            if (isBuilt) {
-                return path.join(path.dirname(execPath), 'bin', `${product_1.default.applicationName}.cmd`);
-            }
-            return path.join(appRoot, 'scripts', 'code-cli.bat');
-        }
-        // Linux
-        if (platform_1.isLinux) {
-            if (isBuilt) {
-                return path.join(path.dirname(execPath), 'bin', `${product_1.default.applicationName}`);
-            }
-            return path.join(appRoot, 'scripts', 'code-cli.sh');
-        }
-        // macOS
-        if (isBuilt) {
-            return path.join(appRoot, 'bin', 'code');
-        }
-        return path.join(appRoot, 'scripts', 'code-cli.sh');
     }
     function parseExtensionHostPort(args, isBuild) {
         return parseDebugPort(args['inspect-extensions'], args['inspect-brk-extensions'], 5870, isBuild, args.debugId);
@@ -23896,7 +23609,7 @@ define(__m[68/*vs/platform/product/common/productService*/], __M([0/*require*/,1
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[35/*vs/platform/registry/common/platform*/], __M([0/*require*/,1/*exports*/,13/*vs/base/common/types*/,92/*vs/base/common/assert*/]), function (require, exports, Types, Assert) {
+define(__m[35/*vs/platform/registry/common/platform*/], __M([0/*require*/,1/*exports*/,14/*vs/base/common/types*/,90/*vs/base/common/assert*/]), function (require, exports, Types, Assert) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Registry = void 0;
@@ -23924,7 +23637,7 @@ define(__m[35/*vs/platform/registry/common/platform*/], __M([0/*require*/,1/*exp
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[173/*vs/platform/jsonschemas/common/jsonContributionRegistry*/], __M([0/*require*/,1/*exports*/,35/*vs/platform/registry/common/platform*/,3/*vs/base/common/event*/]), function (require, exports, platform, event_1) {
+define(__m[168/*vs/platform/jsonschemas/common/jsonContributionRegistry*/], __M([0/*require*/,1/*exports*/,35/*vs/platform/registry/common/platform*/,3/*vs/base/common/event*/]), function (require, exports, platform, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Extensions = void 0;
@@ -23964,7 +23677,7 @@ define(__m[173/*vs/platform/jsonschemas/common/jsonContributionRegistry*/], __M(
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[45/*vs/platform/configuration/common/configurationRegistry*/], __M([0/*require*/,1/*exports*/,126/*vs/nls!vs/platform/configuration/common/configurationRegistry*/,3/*vs/base/common/event*/,35/*vs/platform/registry/common/platform*/,13/*vs/base/common/types*/,173/*vs/platform/jsonschemas/common/jsonContributionRegistry*/]), function (require, exports, nls, event_1, platform_1, types, jsonContributionRegistry_1) {
+define(__m[44/*vs/platform/configuration/common/configurationRegistry*/], __M([0/*require*/,1/*exports*/,123/*vs/nls!vs/platform/configuration/common/configurationRegistry*/,3/*vs/base/common/event*/,35/*vs/platform/registry/common/platform*/,14/*vs/base/common/types*/,168/*vs/platform/jsonschemas/common/jsonContributionRegistry*/]), function (require, exports, nls, event_1, platform_1, types, jsonContributionRegistry_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getScopes = exports.validateProperty = exports.getDefaultValue = exports.overrideIdentifierFromKey = exports.OVERRIDE_PROPERTY_PATTERN = exports.resourceLanguageSettingsSchemaId = exports.resourceSettings = exports.windowSettings = exports.machineOverridableSettings = exports.machineSettings = exports.applicationSettings = exports.allSettings = exports.ConfigurationScope = exports.Extensions = void 0;
@@ -24325,7 +24038,7 @@ define(__m[45/*vs/platform/configuration/common/configurationRegistry*/], __M([0
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[17/*vs/platform/configuration/common/configuration*/], __M([0/*require*/,1/*exports*/,27/*vs/base/common/objects*/,13/*vs/base/common/types*/,6/*vs/base/common/uri*/,35/*vs/platform/registry/common/platform*/,5/*vs/platform/instantiation/common/instantiation*/,45/*vs/platform/configuration/common/configurationRegistry*/]), function (require, exports, objects, types, uri_1, platform_1, instantiation_1, configurationRegistry_1) {
+define(__m[19/*vs/platform/configuration/common/configuration*/], __M([0/*require*/,1/*exports*/,31/*vs/base/common/objects*/,14/*vs/base/common/types*/,7/*vs/base/common/uri*/,35/*vs/platform/registry/common/platform*/,5/*vs/platform/instantiation/common/instantiation*/,44/*vs/platform/configuration/common/configurationRegistry*/]), function (require, exports, objects, types, uri_1, platform_1, instantiation_1, configurationRegistry_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getMigratedSettingValue = exports.keyFromOverrideIdentifier = exports.getDefaultValues = exports.getConfigurationKeys = exports.merge = exports.getConfigurationValue = exports.removeFromValueTree = exports.addToValueTree = exports.toValuesTree = exports.toOverrides = exports.compare = exports.ConfigurationTargetToString = exports.ConfigurationTarget = exports.isConfigurationOverrides = exports.IConfigurationService = void 0;
@@ -24466,7 +24179,7 @@ define(__m[17/*vs/platform/configuration/common/configuration*/], __M([0/*requir
         }
         if (typeof curr === 'object' && curr !== null) {
             try {
-                curr[last] = value; // workaround https://github.com/Microsoft/vscode/issues/13606
+                curr[last] = value; // workaround https://github.com/microsoft/vscode/issues/13606
             }
             catch (e) {
                 conflictReporter(`Ignoring ${key} as ${segments.join('.')} is ${JSON.stringify(curr)}`);
@@ -24575,7 +24288,7 @@ define(__m[17/*vs/platform/configuration/common/configuration*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[174/*vs/platform/configuration/common/configurationModels*/], __M([0/*require*/,1/*exports*/,42/*vs/base/common/json*/,38/*vs/base/common/map*/,23/*vs/base/common/arrays*/,13/*vs/base/common/types*/,27/*vs/base/common/objects*/,6/*vs/base/common/uri*/,45/*vs/platform/configuration/common/configurationRegistry*/,17/*vs/platform/configuration/common/configuration*/,35/*vs/platform/registry/common/platform*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,24/*vs/base/common/resources*/]), function (require, exports, json, map_1, arrays, types, objects, uri_1, configurationRegistry_1, configuration_1, platform_1, lifecycle_1, event_1, resources_1) {
+define(__m[169/*vs/platform/configuration/common/configurationModels*/], __M([0/*require*/,1/*exports*/,41/*vs/base/common/json*/,37/*vs/base/common/map*/,26/*vs/base/common/arrays*/,14/*vs/base/common/types*/,31/*vs/base/common/objects*/,7/*vs/base/common/uri*/,44/*vs/platform/configuration/common/configurationRegistry*/,19/*vs/platform/configuration/common/configuration*/,35/*vs/platform/registry/common/platform*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,18/*vs/base/common/resources*/]), function (require, exports, json, map_1, arrays, types, objects, uri_1, configurationRegistry_1, configuration_1, platform_1, lifecycle_1, event_1, resources_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.AllKeysConfigurationChangeEvent = exports.ConfigurationChangeEvent = exports.mergeChanges = exports.Configuration = exports.UserSettings = exports.ConfigurationModelParser = exports.DefaultConfigurationModel = exports.ConfigurationModel = void 0;
@@ -25276,7 +24989,7 @@ define(__m[174/*vs/platform/configuration/common/configurationModels*/], __M([0/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[175/*vs/platform/configuration/common/configurationService*/], __M([0/*require*/,1/*exports*/,35/*vs/platform/registry/common/platform*/,45/*vs/platform/configuration/common/configurationRegistry*/,2/*vs/base/common/lifecycle*/,17/*vs/platform/configuration/common/configuration*/,174/*vs/platform/configuration/common/configurationModels*/,3/*vs/base/common/event*/,9/*vs/base/common/async*/]), function (require, exports, platform_1, configurationRegistry_1, lifecycle_1, configuration_1, configurationModels_1, event_1, async_1) {
+define(__m[170/*vs/platform/configuration/common/configurationService*/], __M([0/*require*/,1/*exports*/,35/*vs/platform/registry/common/platform*/,44/*vs/platform/configuration/common/configurationRegistry*/,2/*vs/base/common/lifecycle*/,19/*vs/platform/configuration/common/configuration*/,169/*vs/platform/configuration/common/configurationModels*/,3/*vs/base/common/event*/,10/*vs/base/common/async*/]), function (require, exports, platform_1, configurationRegistry_1, lifecycle_1, configuration_1, configurationModels_1, event_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ConfigurationService = void 0;
@@ -25350,7 +25063,7 @@ define(__m[175/*vs/platform/configuration/common/configurationService*/], __M([0
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[176/*vs/platform/remote/common/remoteAuthorityResolver*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[171/*vs/platform/remote/common/remoteAuthorityResolver*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.RemoteAuthorityResolverError = exports.RemoteAuthorityResolverErrorCode = exports.IRemoteAuthorityResolverService = void 0;
@@ -25370,7 +25083,7 @@ define(__m[176/*vs/platform/remote/common/remoteAuthorityResolver*/], __M([0/*re
             this._detail = detail;
             this.isHandled = (code === RemoteAuthorityResolverErrorCode.NotAvailable) && detail === true;
             // workaround when extending builtin objects and when compiling to ES5, see:
-            // https://github.com/Microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
+            // https://github.com/microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
             if (typeof Object.setPrototypeOf === 'function') {
                 Object.setPrototypeOf(this, RemoteAuthorityResolverError.prototype);
             }
@@ -25392,7 +25105,7 @@ define(__m[176/*vs/platform/remote/common/remoteAuthorityResolver*/], __M([0/*re
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[177/*vs/platform/remote/common/remoteAgentConnection*/], __M([0/*require*/,1/*exports*/,76/*vs/base/parts/ipc/common/ipc.net*/,33/*vs/base/common/uuid*/,2/*vs/base/common/lifecycle*/,18/*vs/base/common/buffer*/,3/*vs/base/common/event*/,176/*vs/platform/remote/common/remoteAuthorityResolver*/,16/*vs/base/common/errors*/,9/*vs/base/common/async*/]), function (require, exports, ipc_net_1, uuid_1, lifecycle_1, buffer_1, event_1, remoteAuthorityResolver_1, errors_1, async_1) {
+define(__m[172/*vs/platform/remote/common/remoteAgentConnection*/], __M([0/*require*/,1/*exports*/,74/*vs/base/parts/ipc/common/ipc.net*/,33/*vs/base/common/uuid*/,2/*vs/base/common/lifecycle*/,20/*vs/base/common/buffer*/,3/*vs/base/common/event*/,171/*vs/platform/remote/common/remoteAuthorityResolver*/,17/*vs/base/common/errors*/,10/*vs/base/common/async*/]), function (require, exports, ipc_net_1, uuid_1, lifecycle_1, buffer_1, event_1, remoteAuthorityResolver_1, errors_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtensionHostPersistentConnection = exports.ManagementPersistentConnection = exports.ReconnectionPermanentFailureEvent = exports.ConnectionGainEvent = exports.ReconnectionRunningEvent = exports.ReconnectionWaitEvent = exports.ConnectionLostEvent = exports.PersistentConnectionEventType = exports.connectRemoteAgentTunnel = exports.connectRemoteAgentExtensionHost = exports.connectRemoteAgentManagement = exports.ConnectionType = void 0;
@@ -25839,13 +25552,12 @@ define(__m[177/*vs/platform/remote/common/remoteAgentConnection*/], __M([0/*requ
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[56/*vs/platform/remote/common/remoteHosts*/], __M([0/*require*/,1/*exports*/,19/*vs/base/common/network*/]), function (require, exports, network_1) {
+define(__m[80/*vs/platform/remote/common/remoteHosts*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/network*/]), function (require, exports, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.getRemoteName = exports.getRemoteAuthority = exports.REMOTE_HOST_SCHEME = void 0;
-    exports.REMOTE_HOST_SCHEME = network_1.Schemas.vscodeRemote;
+    exports.getRemoteName = exports.getRemoteAuthority = void 0;
     function getRemoteAuthority(uri) {
-        return uri.scheme === exports.REMOTE_HOST_SCHEME ? uri.authority : undefined;
+        return uri.scheme === network_1.Schemas.vscodeRemote ? uri.authority : undefined;
     }
     exports.getRemoteAuthority = getRemoteAuthority;
     function getRemoteName(authority) {
@@ -26048,7 +25760,7 @@ define(__m[51/*vs/platform/remote/common/tunnel*/], __M([0/*require*/,1/*exports
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[178/*vs/platform/remote/node/nodeSocketFactory*/], __M([0/*require*/,1/*exports*/,54/*net*/,50/*vs/base/parts/ipc/node/ipc.net*/]), function (require, exports, net, ipc_net_1) {
+define(__m[173/*vs/platform/remote/node/nodeSocketFactory*/], __M([0/*require*/,1/*exports*/,53/*net*/,50/*vs/base/parts/ipc/node/ipc.net*/]), function (require, exports, net, ipc_net_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.nodeSocketFactory = void 0;
@@ -26089,7 +25801,7 @@ define(__m[178/*vs/platform/remote/node/nodeSocketFactory*/], __M([0/*require*/,
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[39/*vs/platform/request/common/request*/], __M([0/*require*/,1/*exports*/,138/*vs/nls!vs/platform/request/common/request*/,5/*vs/platform/instantiation/common/instantiation*/,45/*vs/platform/configuration/common/configurationRegistry*/,35/*vs/platform/registry/common/platform*/,18/*vs/base/common/buffer*/]), function (require, exports, nls_1, instantiation_1, configurationRegistry_1, platform_1, buffer_1) {
+define(__m[38/*vs/platform/request/common/request*/], __M([0/*require*/,1/*exports*/,135/*vs/nls!vs/platform/request/common/request*/,5/*vs/platform/instantiation/common/instantiation*/,44/*vs/platform/configuration/common/configurationRegistry*/,35/*vs/platform/registry/common/platform*/,20/*vs/base/common/buffer*/]), function (require, exports, nls_1, instantiation_1, configurationRegistry_1, platform_1, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.asJson = exports.asText = exports.isSuccess = exports.IRequestService = void 0;
@@ -26176,7 +25888,7 @@ define(__m[39/*vs/platform/request/common/request*/], __M([0/*require*/,1/*expor
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[179/*vs/platform/request/node/proxy*/], __M([0/*require*/,1/*exports*/,180/*url*/,13/*vs/base/common/types*/]), function (require, exports, url_1, types_1) {
+define(__m[174/*vs/platform/request/node/proxy*/], __M([0/*require*/,1/*exports*/,175/*url*/,14/*vs/base/common/types*/]), function (require, exports, url_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getProxyAgent = void 0;
@@ -26216,7 +25928,7 @@ define(__m[179/*vs/platform/request/node/proxy*/], __M([0/*require*/,1/*exports*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[181/*vs/platform/serviceMachineId/common/serviceMachineId*/], __M([0/*require*/,1/*exports*/,33/*vs/base/common/uuid*/,18/*vs/base/common/buffer*/]), function (require, exports, uuid_1, buffer_1) {
+define(__m[176/*vs/platform/serviceMachineId/common/serviceMachineId*/], __M([0/*require*/,1/*exports*/,33/*vs/base/common/uuid*/,20/*vs/base/common/buffer*/]), function (require, exports, uuid_1, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getServiceMachineId = void 0;
@@ -26254,7 +25966,7 @@ define(__m[181/*vs/platform/serviceMachineId/common/serviceMachineId*/], __M([0/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[83/*vs/platform/sign/common/sign*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[81/*vs/platform/sign/common/sign*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ISignService = exports.SIGN_SERVICE_ID = void 0;
@@ -26275,7 +25987,7 @@ define(__m[83/*vs/platform/sign/common/sign*/], __M([0/*require*/,1/*exports*/,5
 
 
 
-define(__m[182/*vs/platform/remote/node/tunnelService*/], __M([0/*require*/,1/*exports*/,54/*net*/,9/*vs/base/common/async*/,2/*vs/base/common/lifecycle*/,104/*vs/base/node/ports*/,8/*vs/platform/log/common/log*/,68/*vs/platform/product/common/productService*/,177/*vs/platform/remote/common/remoteAgentConnection*/,51/*vs/platform/remote/common/tunnel*/,178/*vs/platform/remote/node/nodeSocketFactory*/,83/*vs/platform/sign/common/sign*/]), function (require, exports, net, async_1, lifecycle_1, ports_1, log_1, productService_1, remoteAgentConnection_1, tunnel_1, nodeSocketFactory_1, sign_1) {
+define(__m[177/*vs/platform/remote/node/tunnelService*/], __M([0/*require*/,1/*exports*/,53/*net*/,10/*vs/base/common/async*/,2/*vs/base/common/lifecycle*/,102/*vs/base/node/ports*/,8/*vs/platform/log/common/log*/,68/*vs/platform/product/common/productService*/,172/*vs/platform/remote/common/remoteAgentConnection*/,51/*vs/platform/remote/common/tunnel*/,173/*vs/platform/remote/node/nodeSocketFactory*/,81/*vs/platform/sign/common/sign*/]), function (require, exports, net, async_1, lifecycle_1, ports_1, log_1, productService_1, remoteAgentConnection_1, tunnel_1, nodeSocketFactory_1, sign_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.TunnelService = void 0;
@@ -26344,8 +26056,15 @@ define(__m[182/*vs/platform/remote/node/tunnelService*/], __M([0/*require*/,1/*e
                 remoteSocket.end();
             });
             localSocket.on('close', () => remoteSocket.end());
+            localSocket.on('error', () => {
+                this._socketsDispose.delete(localSocket.localAddress);
+                remoteSocket.destroy();
+            });
             remoteSocket.on('end', () => localSocket.end());
             remoteSocket.on('close', () => localSocket.end());
+            remoteSocket.on('error', () => {
+                localSocket.destroy();
+            });
             localSocket.pipe(remoteSocket);
             remoteSocket.pipe(localSocket);
             this._socketsDispose.set(localSocket.localAddress, () => {
@@ -26401,7 +26120,7 @@ define(__m[182/*vs/platform/remote/node/tunnelService*/], __M([0/*require*/,1/*e
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[183/*vs/platform/sign/node/signService*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[178/*vs/platform/sign/node/signService*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SignService = void 0;
@@ -26430,7 +26149,7 @@ define(__m[183/*vs/platform/sign/node/signService*/], __M([0/*require*/,1/*expor
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[40/*vs/platform/state/node/state*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[39/*vs/platform/state/node/state*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IStateService = void 0;
@@ -26450,7 +26169,7 @@ define(__m[40/*vs/platform/state/node/state*/], __M([0/*require*/,1/*exports*/,5
 
 
 
-define(__m[22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/], __M([0/*require*/,1/*exports*/,12/*electron*/,8/*vs/platform/log/common/log*/,40/*vs/platform/state/node/state*/,3/*vs/base/common/event*/,5/*vs/platform/instantiation/common/instantiation*/,165/*vs/platform/lifecycle/common/lifecycle*/,4/*vs/base/common/platform*/,2/*vs/base/common/lifecycle*/,9/*vs/base/common/async*/]), function (require, exports, electron_1, log_1, state_1, event_1, instantiation_1, lifecycle_1, platform_1, lifecycle_2, async_1) {
+define(__m[24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/], __M([0/*require*/,1/*exports*/,13/*electron*/,8/*vs/platform/log/common/log*/,39/*vs/platform/state/node/state*/,3/*vs/base/common/event*/,5/*vs/platform/instantiation/common/instantiation*/,160/*vs/platform/lifecycle/common/lifecycle*/,4/*vs/base/common/platform*/,2/*vs/base/common/lifecycle*/,10/*vs/base/common/async*/]), function (require, exports, electron_1, log_1, state_1, event_1, instantiation_1, lifecycle_1, platform_1, lifecycle_2, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LifecycleMainService = exports.LifecycleMainPhase = exports.UnloadReason = exports.ILifecycleMainService = void 0;
@@ -26850,7 +26569,7 @@ define(__m[22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/], __M(
 
 
 
-define(__m[184/*vs/platform/state/node/stateService*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/path*/,20/*fs*/,14/*vs/platform/environment/common/environment*/,21/*vs/base/node/pfs*/,13/*vs/base/common/types*/,8/*vs/platform/log/common/log*/]), function (require, exports, path, fs, environment_1, pfs_1, types_1, log_1) {
+define(__m[179/*vs/platform/state/node/stateService*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/path*/,21/*fs*/,15/*vs/platform/environment/common/environment*/,22/*vs/base/node/pfs*/,14/*vs/base/common/types*/,8/*vs/platform/log/common/log*/]), function (require, exports, path, fs, environment_1, pfs_1, types_1, log_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.StateService = exports.FileStorage = void 0;
@@ -26963,7 +26682,7 @@ define(__m[184/*vs/platform/state/node/stateService*/], __M([0/*require*/,1/*exp
     };
     StateService.STATE_FILE = 'storage.json';
     StateService = __decorate([
-        __param(0, environment_1.IEnvironmentService),
+        __param(0, environment_1.INativeEnvironmentService),
         __param(1, log_1.ILogService)
     ], StateService);
     exports.StateService = StateService;
@@ -26973,7 +26692,7 @@ define(__m[184/*vs/platform/state/node/stateService*/], __M([0/*require*/,1/*exp
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[84/*vs/platform/storage/common/storage*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,13/*vs/base/common/types*/]), function (require, exports, instantiation_1, event_1, lifecycle_1, types_1) {
+define(__m[82/*vs/platform/storage/common/storage*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,14/*vs/base/common/types*/]), function (require, exports, instantiation_1, event_1, lifecycle_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.logStorage = exports.InMemoryStorageService = exports.StorageScope = exports.WillSaveStateReason = exports.IStorageService = exports.IS_NEW_KEY = void 0;
@@ -27125,7 +26844,7 @@ define(__m[84/*vs/platform/storage/common/storage*/], __M([0/*require*/,1/*expor
 
 
 
-define(__m[85/*vs/platform/storage/node/storageMainService*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,8/*vs/platform/log/common/log*/,14/*vs/platform/environment/common/environment*/,111/*vs/base/parts/storage/node/storage*/,110/*vs/base/parts/storage/common/storage*/,7/*vs/base/common/path*/,84/*vs/platform/storage/common/storage*/]), function (require, exports, instantiation_1, event_1, lifecycle_1, log_1, environment_1, storage_1, storage_2, path_1, storage_3) {
+define(__m[83/*vs/platform/storage/node/storageMainService*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,8/*vs/platform/log/common/log*/,15/*vs/platform/environment/common/environment*/,109/*vs/base/parts/storage/node/storage*/,108/*vs/base/parts/storage/common/storage*/,6/*vs/base/common/path*/,82/*vs/platform/storage/common/storage*/]), function (require, exports, instantiation_1, event_1, lifecycle_1, log_1, environment_1, storage_1, storage_2, path_1, storage_3) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.StorageMainService = exports.IStorageMainService = void 0;
@@ -27211,7 +26930,7 @@ define(__m[85/*vs/platform/storage/node/storageMainService*/], __M([0/*require*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[29/*vs/platform/telemetry/common/telemetry*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[28/*vs/platform/telemetry/common/telemetry*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.machineIdKey = exports.lastSessionDateStorageKey = exports.firstSessionDateStorageKey = exports.currentSessionDateStorageKey = exports.instanceStorageKey = exports.ITelemetryService = void 0;
@@ -27233,7 +26952,7 @@ define(__m[29/*vs/platform/telemetry/common/telemetry*/], __M([0/*require*/,1/*e
 
 
 
-define(__m[86/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*require*/,1/*exports*/,30/*os*/,74/*vs/base/node/id*/,79/*vs/platform/diagnostics/common/diagnostics*/,20/*fs*/,7/*vs/base/common/path*/,42/*vs/base/common/json*/,75/*vs/base/node/ps*/,25/*vs/platform/product/common/product*/,15/*vs/base/common/strings*/,4/*vs/base/common/platform*/,6/*vs/base/common/uri*/,29/*vs/platform/telemetry/common/telemetry*/,5/*vs/platform/instantiation/common/instantiation*/,71/*vs/base/common/iterator*/]), function (require, exports, osLib, id_1, diagnostics_1, fs_1, path_1, json_1, ps_1, product_1, strings_1, platform_1, uri_1, telemetry_1, instantiation_1, iterator_1) {
+define(__m[84/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*require*/,1/*exports*/,29/*os*/,64/*vs/base/node/id*/,77/*vs/platform/diagnostics/common/diagnostics*/,21/*fs*/,6/*vs/base/common/path*/,41/*vs/base/common/json*/,73/*vs/base/node/ps*/,23/*vs/platform/product/common/product*/,4/*vs/base/common/platform*/,7/*vs/base/common/uri*/,28/*vs/platform/telemetry/common/telemetry*/,5/*vs/platform/instantiation/common/instantiation*/,58/*vs/base/common/iterator*/,9/*vs/base/common/network*/]), function (require, exports, osLib, id_1, diagnostics_1, fs_1, path_1, json_1, ps_1, product_1, platform_1, uri_1, telemetry_1, instantiation_1, iterator_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.DiagnosticsService = exports.collectLaunchConfigs = exports.getMachineInfo = exports.collectWorkspaceStats = exports.IDiagnosticsService = exports.ID = void 0;
@@ -27272,7 +26991,7 @@ define(__m[86/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*requi
                         resolve();
                         return;
                     }
-                    if (token.count > MAX_FILES) {
+                    if (token.count >= MAX_FILES) {
                         token.count += files.length;
                         token.maxReached = true;
                         resolve();
@@ -27575,7 +27294,7 @@ define(__m[86/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*requi
         expandGPUFeatures(gpuFeatures) {
             const longestFeatureName = Math.max(...Object.keys(gpuFeatures).map(feature => feature.length));
             // Make columns aligned by adding spaces after feature name
-            return Object.keys(gpuFeatures).map(feature => `${feature}:  ${strings_1.repeat(' ', longestFeatureName - feature.length)}  ${gpuFeatures[feature]}`).join('\n                  ');
+            return Object.keys(gpuFeatures).map(feature => `${feature}:  ${' '.repeat(longestFeatureName - feature.length)}  ${gpuFeatures[feature]}`).join('\n                  ');
         }
         formatWorkspaceMetadata(info) {
             const output = [];
@@ -27587,7 +27306,7 @@ define(__m[86/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*requi
                 output.push(`|  Window (${window.title})`);
                 window.folderURIs.forEach(uriComponents => {
                     const folderUri = uri_1.URI.revive(uriComponents);
-                    if (folderUri.scheme === 'file') {
+                    if (folderUri.scheme === network_1.Schemas.file) {
                         const folder = folderUri.fsPath;
                         workspaceStatPromises.push(collectWorkspaceStats(folder, ['node_modules', '.git']).then(stats => {
                             let countMessage = `${stats.fileCount} files`;
@@ -27628,13 +27347,13 @@ define(__m[86/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*requi
                 name = item.pid === mainPid ? `${product_1.default.applicationName} main` : 'remote agent';
             }
             else {
-                name = `${strings_1.repeat('  ', indent)} ${item.name}`;
+                name = `${'  '.repeat(indent)} ${item.name}`;
                 if (item.name === 'window') {
                     name = `${name} (${mapPidToWindowTitle.get(item.pid)})`;
                 }
             }
             const memory = process.platform === 'win32' ? item.mem : (osLib.totalmem() * (item.mem / 100));
-            output.push(`${strings_1.pad(Number(item.load.toFixed(0)), 5, ' ')}\t${strings_1.pad(Number((memory / MB).toFixed(0)), 6, ' ')}\t${strings_1.pad(Number((item.pid).toFixed(0)), 6, ' ')}\t${name}`);
+            output.push(`${item.load.toFixed(0).padStart(5, ' ')}\t${(memory / MB).toFixed(0).padStart(6, ' ')}\t${item.pid.toFixed(0).padStart(6, ' ')}\t${name}`);
             // Recurse into children if any
             if (Array.isArray(item.children)) {
                 item.children.forEach(child => this.formatProcessItem(mainPid, mapPidToWindowTitle, output, child, indent + 1));
@@ -27643,7 +27362,7 @@ define(__m[86/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*requi
         async reportWorkspaceStats(workspace) {
             for (const { uri } of workspace.folders) {
                 const folderUri = uri_1.URI.revive(uri);
-                if (folderUri.scheme !== 'file') {
+                if (folderUri.scheme !== network_1.Schemas.file) {
                     continue;
                 }
                 const folder = folderUri.fsPath;
@@ -27700,7 +27419,7 @@ define(__m[86/*vs/platform/diagnostics/node/diagnosticsService*/], __M([0/*requi
 
 
 
-define(__m[185/*vs/platform/extensionManagement/common/extensionGalleryService*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/errors*/,156/*vs/platform/extensionManagement/common/extensionManagement*/,158/*vs/platform/extensionManagement/common/extensionManagementUtil*/,27/*vs/base/common/objects*/,29/*vs/platform/telemetry/common/telemetry*/,39/*vs/platform/request/common/request*/,148/*vs/platform/extensions/common/extensionValidator*/,14/*vs/platform/environment/common/environment*/,31/*vs/base/common/cancellation*/,8/*vs/platform/log/common/log*/,26/*vs/platform/files/common/files*/,6/*vs/base/common/uri*/,68/*vs/platform/product/common/productService*/,84/*vs/platform/storage/common/storage*/,181/*vs/platform/serviceMachineId/common/serviceMachineId*/,5/*vs/platform/instantiation/common/instantiation*/,24/*vs/base/common/resources*/]), function (require, exports, errors_1, extensionManagement_1, extensionManagementUtil_1, objects_1, telemetry_1, request_1, extensionValidator_1, environment_1, cancellation_1, log_1, files_1, uri_1, productService_1, storage_1, serviceMachineId_1, instantiation_1, resources_1) {
+define(__m[180/*vs/platform/extensionManagement/common/extensionGalleryService*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/errors*/,151/*vs/platform/extensionManagement/common/extensionManagement*/,153/*vs/platform/extensionManagement/common/extensionManagementUtil*/,31/*vs/base/common/objects*/,28/*vs/platform/telemetry/common/telemetry*/,38/*vs/platform/request/common/request*/,145/*vs/platform/extensions/common/extensionValidator*/,15/*vs/platform/environment/common/environment*/,30/*vs/base/common/cancellation*/,8/*vs/platform/log/common/log*/,25/*vs/platform/files/common/files*/,7/*vs/base/common/uri*/,68/*vs/platform/product/common/productService*/,82/*vs/platform/storage/common/storage*/,176/*vs/platform/serviceMachineId/common/serviceMachineId*/,5/*vs/platform/instantiation/common/instantiation*/,18/*vs/base/common/resources*/]), function (require, exports, errors_1, extensionManagement_1, extensionManagementUtil_1, objects_1, telemetry_1, request_1, extensionValidator_1, environment_1, cancellation_1, log_1, files_1, uri_1, productService_1, storage_1, serviceMachineId_1, instantiation_1, resources_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.resolveMarketplaceHeaders = exports.ExtensionGalleryService = void 0;
@@ -27769,26 +27488,26 @@ define(__m[185/*vs/platform/extensionManagement/common/extensionGalleryService*/
         get sortOrder() { return this.state.sortOrder; }
         get flags() { return this.state.flags; }
         withPage(pageNumber, pageSize = this.state.pageSize) {
-            return new Query(objects_1.assign({}, this.state, { pageNumber, pageSize }));
+            return new Query(Object.assign(Object.assign({}, this.state), { pageNumber, pageSize }));
         }
         withFilter(filterType, ...values) {
             const criteria = [
                 ...this.state.criteria,
                 ...values.length ? values.map(value => ({ filterType, value })) : [{ filterType }]
             ];
-            return new Query(objects_1.assign({}, this.state, { criteria }));
+            return new Query(Object.assign(Object.assign({}, this.state), { criteria }));
         }
         withSortBy(sortBy) {
-            return new Query(objects_1.assign({}, this.state, { sortBy }));
+            return new Query(Object.assign(Object.assign({}, this.state), { sortBy }));
         }
         withSortOrder(sortOrder) {
-            return new Query(objects_1.assign({}, this.state, { sortOrder }));
+            return new Query(Object.assign(Object.assign({}, this.state), { sortOrder }));
         }
         withFlags(...flags) {
-            return new Query(objects_1.assign({}, this.state, { flags: flags.reduce((r, f) => r | f, 0) }));
+            return new Query(Object.assign(Object.assign({}, this.state), { flags: flags.reduce((r, f) => r | f, 0) }));
         }
         withAssetTypes(...assetTypes) {
-            return new Query(objects_1.assign({}, this.state, { assetTypes }));
+            return new Query(Object.assign(Object.assign({}, this.state), { assetTypes }));
         }
         get raw() {
             const { criteria, pageNumber, pageSize, sortBy, sortOrder, flags, assetTypes } = this.state;
@@ -27949,10 +27668,10 @@ define(__m[185/*vs/platform/extensionManagement/common/extensionGalleryService*/
                 return extension;
             }
         }
-        getCompatibleExtensionByEngine(arg1, version) {
+        async getCompatibleExtensionByEngine(arg1, version) {
             const extension = extensionManagement_1.isIExtensionIdentifier(arg1) ? null : arg1;
             if (extension && extension.properties.engine && extensionValidator_1.isEngineValid(extension.properties.engine, this.productService.version)) {
-                return Promise.resolve(extension);
+                return extension;
             }
             const { id, uuid } = extension ? extension.identifier : arg1;
             let query = new Query()
@@ -27965,36 +27684,32 @@ define(__m[185/*vs/platform/extensionManagement/common/extensionGalleryService*/
             else {
                 query = query.withFilter(FilterType.ExtensionName, id);
             }
-            return this.queryGallery(query, cancellation_1.CancellationToken.None)
-                .then(({ galleryExtensions }) => {
-                const [rawExtension] = galleryExtensions;
-                if (!rawExtension || !rawExtension.versions.length) {
-                    return null;
-                }
-                if (version) {
-                    const versionAsset = rawExtension.versions.filter(v => v.version === version)[0];
-                    if (versionAsset) {
-                        const extension = toExtension(rawExtension, versionAsset, 0, query);
-                        if (extension.properties.engine && extensionValidator_1.isEngineValid(extension.properties.engine, this.productService.version)) {
-                            return extension;
-                        }
+            const { galleryExtensions } = await this.queryGallery(query, cancellation_1.CancellationToken.None);
+            const [rawExtension] = galleryExtensions;
+            if (!rawExtension || !rawExtension.versions.length) {
+                return null;
+            }
+            if (version) {
+                const versionAsset = rawExtension.versions.filter(v => v.version === version)[0];
+                if (versionAsset) {
+                    const extension = toExtension(rawExtension, versionAsset, 0, query);
+                    if (extension.properties.engine && extensionValidator_1.isEngineValid(extension.properties.engine, this.productService.version)) {
+                        return extension;
                     }
-                    return null;
                 }
-                return this.getLastValidExtensionVersion(rawExtension, rawExtension.versions)
-                    .then(rawVersion => {
-                    if (rawVersion) {
-                        return toExtension(rawExtension, rawVersion, 0, query);
-                    }
-                    return null;
-                });
-            });
+                return null;
+            }
+            const rawVersion = await this.getLastValidExtensionVersion(rawExtension, rawExtension.versions);
+            if (rawVersion) {
+                return toExtension(rawExtension, rawVersion, 0, query);
+            }
+            return null;
         }
-        query(arg1, arg2) {
+        async query(arg1, arg2) {
             const options = cancellation_1.CancellationToken.isCancellationToken(arg1) ? {} : arg1;
             const token = cancellation_1.CancellationToken.isCancellationToken(arg1) ? arg1 : arg2;
             if (!this.isEnabled()) {
-                return Promise.reject(new Error('No extension gallery service configured.'));
+                throw new Error('No extension gallery service configured.');
             }
             const type = options.names ? 'ids' : (options.text ? 'text' : 'all');
             let text = options.text || '';
@@ -28042,72 +27757,64 @@ define(__m[185/*vs/platform/extensionManagement/common/extensionGalleryService*/
             if (typeof options.sortOrder === 'number') {
                 query = query.withSortOrder(options.sortOrder);
             }
-            return this.queryGallery(query, token).then(({ galleryExtensions, total }) => {
-                const extensions = galleryExtensions.map((e, index) => toExtension(e, e.versions[0], index, query, options.source));
-                const pageSize = query.pageSize;
-                const getPage = (pageIndex, ct) => {
-                    if (ct.isCancellationRequested) {
-                        return Promise.reject(errors_1.canceled());
-                    }
-                    const nextPageQuery = query.withPage(pageIndex + 1);
-                    return this.queryGallery(nextPageQuery, ct)
-                        .then(({ galleryExtensions }) => galleryExtensions.map((e, index) => toExtension(e, e.versions[0], index, nextPageQuery, options.source)));
-                };
-                return { firstPage: extensions, total, pageSize, getPage };
-            });
+            const { galleryExtensions, total } = await this.queryGallery(query, token);
+            const extensions = galleryExtensions.map((e, index) => toExtension(e, e.versions[0], index, query, options.source));
+            const getPage = async (pageIndex, ct) => {
+                if (ct.isCancellationRequested) {
+                    throw errors_1.canceled();
+                }
+                const nextPageQuery = query.withPage(pageIndex + 1);
+                const { galleryExtensions } = await this.queryGallery(nextPageQuery, ct);
+                return galleryExtensions.map((e, index) => toExtension(e, e.versions[0], index, nextPageQuery, options.source));
+            };
+            return { firstPage: extensions, total, pageSize: query.pageSize, getPage };
         }
-        queryGallery(query, token) {
+        async queryGallery(query, token) {
+            if (!this.isEnabled()) {
+                throw new Error('No extension gallery service configured.');
+            }
             // Always exclude non validated and unpublished extensions
             query = query
                 .withFlags(query.flags, Flags.ExcludeNonValidated)
                 .withFilter(FilterType.ExcludeWithFlags, flagsToString(Flags.Unpublished));
-            if (!this.isEnabled()) {
-                return Promise.reject(new Error('No extension gallery service configured.'));
+            const commonHeaders = await this.commonHeadersPromise;
+            const data = JSON.stringify(query.raw);
+            const headers = Object.assign(Object.assign({}, commonHeaders), { 'Content-Type': 'application/json', 'Accept': 'application/json;api-version=3.0-preview.1', 'Accept-Encoding': 'gzip', 'Content-Length': String(data.length) });
+            const context = await this.requestService.request({
+                type: 'POST',
+                url: this.api('/extensionquery'),
+                data,
+                headers
+            }, token);
+            if (context.res.statusCode && context.res.statusCode >= 400 && context.res.statusCode < 500) {
+                return { galleryExtensions: [], total: 0 };
             }
-            return this.commonHeadersPromise.then(commonHeaders => {
-                const data = JSON.stringify(query.raw);
-                const headers = objects_1.assign({}, commonHeaders, {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json;api-version=3.0-preview.1',
-                    'Accept-Encoding': 'gzip',
-                    'Content-Length': data.length
-                });
-                return this.requestService.request({
-                    type: 'POST',
-                    url: this.api('/extensionquery'),
-                    data,
-                    headers
-                }, token).then(context => {
-                    if (context.res.statusCode && context.res.statusCode >= 400 && context.res.statusCode < 500) {
-                        return { galleryExtensions: [], total: 0 };
-                    }
-                    return request_1.asJson(context).then(result => {
-                        if (result) {
-                            const r = result.results[0];
-                            const galleryExtensions = r.extensions;
-                            const resultCount = r.resultMetadata && r.resultMetadata.filter(m => m.metadataType === 'ResultCount')[0];
-                            const total = resultCount && resultCount.metadataItems.filter(i => i.name === 'TotalCount')[0].count || 0;
-                            return { galleryExtensions, total };
-                        }
-                        return { galleryExtensions: [], total: 0 };
-                    });
-                });
-            });
+            const result = await request_1.asJson(context);
+            if (result) {
+                const r = result.results[0];
+                const galleryExtensions = r.extensions;
+                const resultCount = r.resultMetadata && r.resultMetadata.filter(m => m.metadataType === 'ResultCount')[0];
+                const total = resultCount && resultCount.metadataItems.filter(i => i.name === 'TotalCount')[0].count || 0;
+                return { galleryExtensions, total };
+            }
+            return { galleryExtensions: [], total: 0 };
         }
-        reportStatistic(publisher, name, version, type) {
+        async reportStatistic(publisher, name, version, type) {
             if (!this.isEnabled()) {
-                return Promise.resolve(undefined);
+                return undefined;
             }
-            return this.commonHeadersPromise.then(commonHeaders => {
-                const headers = Object.assign(Object.assign({}, commonHeaders), { Accept: '*/*;api-version=4.0-preview.1' });
-                return this.requestService.request({
+            const commonHeaders = await this.commonHeadersPromise;
+            const headers = Object.assign(Object.assign({}, commonHeaders), { Accept: '*/*;api-version=4.0-preview.1' });
+            try {
+                await this.requestService.request({
                     type: 'POST',
                     url: this.api(`/publishers/${publisher}/extensions/${name}/${version}/stats?statType=${type}`),
                     headers
-                }, cancellation_1.CancellationToken.None).then(undefined, () => undefined);
-            });
+                }, cancellation_1.CancellationToken.None);
+            }
+            catch (error) { /* Ignore */ }
         }
-        download(extension, location, operation) {
+        async download(extension, location, operation) {
             this.logService.trace('ExtensionGalleryService#download', extension.identifier.id);
             const data = extensionManagementUtil_1.getGalleryExtensionTelemetryData(extension);
             const startTime = new Date().getTime();
@@ -28119,48 +27826,48 @@ define(__m[185/*vs/platform/extensionManagement/common/extensionGalleryService*/
                     ]
                 }
             */
-            const log = (duration) => this.telemetryService.publicLog('galleryService:downloadVSIX', objects_1.assign(data, { duration }));
+            const log = (duration) => this.telemetryService.publicLog('galleryService:downloadVSIX', Object.assign(Object.assign({}, data), { duration }));
             const operationParam = operation === 1 /* Install */ ? 'install' : operation === 2 /* Update */ ? 'update' : '';
             const downloadAsset = operationParam ? {
                 uri: `${extension.assets.download.uri}&${operationParam}=true`,
                 fallbackUri: `${extension.assets.download.fallbackUri}?${operationParam}=true`
             } : extension.assets.download;
-            return this.getAsset(downloadAsset)
-                .then(context => this.fileService.writeFile(location, context.stream))
-                .then(() => log(new Date().getTime() - startTime));
+            const context = await this.getAsset(downloadAsset);
+            await this.fileService.writeFile(location, context.stream);
+            log(new Date().getTime() - startTime);
         }
-        getReadme(extension, token) {
+        async getReadme(extension, token) {
             if (extension.assets.readme) {
-                return this.getAsset(extension.assets.readme, {}, token)
-                    .then(context => request_1.asText(context))
-                    .then(content => content || '');
+                const context = await this.getAsset(extension.assets.readme, {}, token);
+                const content = await request_1.asText(context);
+                return content || '';
             }
-            return Promise.resolve('');
+            return '';
         }
-        getManifest(extension, token) {
+        async getManifest(extension, token) {
             if (extension.assets.manifest) {
-                return this.getAsset(extension.assets.manifest, {}, token)
-                    .then(request_1.asText)
-                    .then(text => text ? JSON.parse(text) : null);
+                const context = await this.getAsset(extension.assets.manifest, {}, token);
+                const text = await request_1.asText(context);
+                return text ? JSON.parse(text) : null;
             }
-            return Promise.resolve(null);
+            return null;
         }
-        getCoreTranslation(extension, languageId) {
+        async getCoreTranslation(extension, languageId) {
             const asset = extension.assets.coreTranslations.filter(t => t[0] === languageId.toUpperCase())[0];
             if (asset) {
-                return this.getAsset(asset[1])
-                    .then(request_1.asText)
-                    .then(text => text ? JSON.parse(text) : null);
+                const context = await this.getAsset(asset[1]);
+                const text = await request_1.asText(context);
+                return text ? JSON.parse(text) : null;
             }
-            return Promise.resolve(null);
+            return null;
         }
-        getChangelog(extension, token) {
+        async getChangelog(extension, token) {
             if (extension.assets.changelog) {
-                return this.getAsset(extension.assets.changelog, {}, token)
-                    .then(context => request_1.asText(context))
-                    .then(content => content || '');
+                const context = await this.getAsset(extension.assets.changelog, {}, token);
+                const content = await request_1.asText(context);
+                return content || '';
             }
-            return Promise.resolve('');
+            return '';
         }
         async getAllVersions(extension, compatible) {
             let query = new Query()
@@ -28194,34 +27901,33 @@ define(__m[185/*vs/platform/extensionManagement/common/extensionGalleryService*/
             }
             return result;
         }
-        getAsset(asset, options = {}, token = cancellation_1.CancellationToken.None) {
-            return this.commonHeadersPromise.then(commonHeaders => {
-                const baseOptions = { type: 'GET' };
-                const headers = objects_1.assign({}, commonHeaders, options.headers || {});
-                options = objects_1.assign({}, options, baseOptions, { headers });
-                const url = asset.uri;
-                const fallbackUrl = asset.fallbackUri;
-                const firstOptions = objects_1.assign({}, options, { url });
-                return this.requestService.request(firstOptions, token)
-                    .then(context => {
-                    if (context.res.statusCode === 200) {
-                        return Promise.resolve(context);
-                    }
-                    return request_1.asText(context)
-                        .then(message => Promise.reject(new Error(`Expected 200, got back ${context.res.statusCode} instead.\n\n${message}`)));
-                })
-                    .then(undefined, err => {
-                    if (errors_1.isPromiseCanceledError(err)) {
-                        return Promise.reject(err);
-                    }
-                    const message = errors_1.getErrorMessage(err);
-                    this.telemetryService.publicLog2('galleryService:cdnFallback', { url, message });
-                    const fallbackOptions = objects_1.assign({}, options, { url: fallbackUrl });
-                    return this.requestService.request(fallbackOptions, token);
-                });
-            });
+        async getAsset(asset, options = {}, token = cancellation_1.CancellationToken.None) {
+            const commonHeaders = await this.commonHeadersPromise;
+            const baseOptions = { type: 'GET' };
+            const headers = Object.assign(Object.assign({}, commonHeaders), (options.headers || {}));
+            options = Object.assign(Object.assign(Object.assign({}, options), baseOptions), { headers });
+            const url = asset.uri;
+            const fallbackUrl = asset.fallbackUri;
+            const firstOptions = Object.assign(Object.assign({}, options), { url });
+            try {
+                const context = await this.requestService.request(firstOptions, token);
+                if (context.res.statusCode === 200) {
+                    return context;
+                }
+                const message = await request_1.asText(context);
+                throw new Error(`Expected 200, got back ${context.res.statusCode} instead.\n\n${message}`);
+            }
+            catch (err) {
+                if (errors_1.isPromiseCanceledError(err)) {
+                    throw err;
+                }
+                const message = errors_1.getErrorMessage(err);
+                this.telemetryService.publicLog2('galleryService:cdnFallback', { url, message });
+                const fallbackOptions = Object.assign(Object.assign({}, options), { url: fallbackUrl });
+                return this.requestService.request(fallbackOptions, token);
+            }
         }
-        getLastValidExtensionVersion(extension, versions) {
+        async getLastValidExtensionVersion(extension, versions) {
             const version = this.getLastValidExtensionVersionFromProperties(extension, versions);
             if (version) {
                 return version;
@@ -28235,63 +27941,62 @@ define(__m[185/*vs/platform/extensionManagement/common/extensionGalleryService*/
                     return null;
                 }
                 if (extensionValidator_1.isEngineValid(engine, this.productService.version)) {
-                    return Promise.resolve(version);
+                    return version;
                 }
             }
             return null;
         }
-        getEngine(version) {
+        async getEngine(version) {
             const engine = getEngine(version);
             if (engine) {
-                return Promise.resolve(engine);
+                return engine;
             }
-            const manifest = getVersionAsset(version, AssetType.Manifest);
-            if (!manifest) {
-                return Promise.reject('Manifest was not found');
+            const manifestAsset = getVersionAsset(version, AssetType.Manifest);
+            if (!manifestAsset) {
+                throw new Error('Manifest was not found');
             }
             const headers = { 'Accept-Encoding': 'gzip' };
-            return this.getAsset(manifest, { headers })
-                .then(context => request_1.asJson(context))
-                .then(manifest => manifest ? manifest.engines.vscode : Promise.reject('Error while reading manifest'));
+            const context = await this.getAsset(manifestAsset, { headers });
+            const manifest = await request_1.asJson(context);
+            if (manifest) {
+                return manifest.engines.vscode;
+            }
+            throw new Error('Error while reading manifest');
         }
-        getLastValidExtensionVersionRecursively(extension, versions) {
+        async getLastValidExtensionVersionRecursively(extension, versions) {
             if (!versions.length) {
-                return Promise.resolve(null);
+                return null;
             }
             const version = versions[0];
-            return this.getEngine(version)
-                .then(engine => {
-                if (!extensionValidator_1.isEngineValid(engine, this.productService.version)) {
-                    return this.getLastValidExtensionVersionRecursively(extension, versions.slice(1));
-                }
-                version.properties = version.properties || [];
-                version.properties.push({ key: PropertyType.Engine, value: engine });
-                return version;
-            });
+            const engine = await this.getEngine(version);
+            if (!extensionValidator_1.isEngineValid(engine, this.productService.version)) {
+                return this.getLastValidExtensionVersionRecursively(extension, versions.slice(1));
+            }
+            version.properties = version.properties || [];
+            version.properties.push({ key: PropertyType.Engine, value: engine });
+            return version;
         }
-        getExtensionsReport() {
+        async getExtensionsReport() {
             if (!this.isEnabled()) {
-                return Promise.reject(new Error('No extension gallery service configured.'));
+                throw new Error('No extension gallery service configured.');
             }
             if (!this.extensionsControlUrl) {
-                return Promise.resolve([]);
+                return [];
             }
-            return this.requestService.request({ type: 'GET', url: this.extensionsControlUrl }, cancellation_1.CancellationToken.None).then(context => {
-                if (context.res.statusCode !== 200) {
-                    return Promise.reject(new Error('Could not get extensions report.'));
+            const context = await this.requestService.request({ type: 'GET', url: this.extensionsControlUrl }, cancellation_1.CancellationToken.None);
+            if (context.res.statusCode !== 200) {
+                throw new Error('Could not get extensions report.');
+            }
+            const result = await request_1.asJson(context);
+            const map = new Map();
+            if (result) {
+                for (const id of result.malicious) {
+                    const ext = map.get(id) || { id: { id }, malicious: true, slow: false };
+                    ext.malicious = true;
+                    map.set(id, ext);
                 }
-                return request_1.asJson(context).then(result => {
-                    const map = new Map();
-                    if (result) {
-                        for (const id of result.malicious) {
-                            const ext = map.get(id) || { id: { id }, malicious: true, slow: false };
-                            ext.malicious = true;
-                            map.set(id, ext);
-                        }
-                    }
-                    return [...map.values()];
-                });
-            });
+            }
+            return [...map.values()];
         }
     };
     ExtensionGalleryService = __decorate([
@@ -28320,7 +28025,7 @@ define(__m[185/*vs/platform/extensionManagement/common/extensionGalleryService*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[186/*vs/platform/storage/node/storageIpc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,33/*vs/base/common/uuid*/,29/*vs/platform/telemetry/common/telemetry*/]), function (require, exports, event_1, lifecycle_1, uuid_1, telemetry_1) {
+define(__m[181/*vs/platform/storage/node/storageIpc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,33/*vs/base/common/uuid*/,28/*vs/platform/telemetry/common/telemetry*/]), function (require, exports, event_1, lifecycle_1, uuid_1, telemetry_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.GlobalStorageDatabaseChannelClient = exports.GlobalStorageDatabaseChannel = void 0;
@@ -28487,7 +28192,7 @@ define(__m[186/*vs/platform/storage/node/storageIpc*/], __M([0/*require*/,1/*exp
 
 
 
-define(__m[187/*vs/platform/telemetry/common/telemetryService*/], __M([0/*require*/,1/*exports*/,139/*vs/nls!vs/platform/telemetry/common/telemetryService*/,15/*vs/base/common/strings*/,5/*vs/platform/instantiation/common/instantiation*/,17/*vs/platform/configuration/common/configuration*/,45/*vs/platform/configuration/common/configurationRegistry*/,2/*vs/base/common/lifecycle*/,27/*vs/base/common/objects*/,35/*vs/platform/registry/common/platform*/]), function (require, exports, nls_1, strings_1, instantiation_1, configuration_1, configurationRegistry_1, lifecycle_1, objects_1, platform_1) {
+define(__m[182/*vs/platform/telemetry/common/telemetryService*/], __M([0/*require*/,1/*exports*/,136/*vs/nls!vs/platform/telemetry/common/telemetryService*/,16/*vs/base/common/strings*/,5/*vs/platform/instantiation/common/instantiation*/,19/*vs/platform/configuration/common/configuration*/,44/*vs/platform/configuration/common/configurationRegistry*/,2/*vs/base/common/lifecycle*/,31/*vs/base/common/objects*/,35/*vs/platform/registry/common/platform*/]), function (require, exports, nls_1, strings_1, instantiation_1, configuration_1, configurationRegistry_1, lifecycle_1, objects_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.TelemetryService = void 0;
@@ -28655,7 +28360,7 @@ define(__m[187/*vs/platform/telemetry/common/telemetryService*/], __M([0/*requir
 
 
 
-define(__m[188/*vs/platform/telemetry/common/telemetryUtils*/], __M([0/*require*/,1/*exports*/,17/*vs/platform/configuration/common/configuration*/,8/*vs/platform/log/common/log*/,27/*vs/base/common/objects*/,13/*vs/base/common/types*/]), function (require, exports, configuration_1, log_1, objects_1, types_1) {
+define(__m[183/*vs/platform/telemetry/common/telemetryUtils*/], __M([0/*require*/,1/*exports*/,19/*vs/platform/configuration/common/configuration*/,8/*vs/platform/log/common/log*/,31/*vs/base/common/objects*/,14/*vs/base/common/types*/]), function (require, exports, configuration_1, log_1, objects_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.cleanRemoteAuthority = exports.validateTelemetryData = exports.configurationTelemetry = exports.LogAppender = exports.NullAppender = exports.combinedAppender = exports.NullTelemetryService = void 0;
@@ -28820,7 +28525,7 @@ define(__m[188/*vs/platform/telemetry/common/telemetryUtils*/], __M([0/*require*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[189/*vs/platform/telemetry/node/commonProperties*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/,30/*os*/,33/*vs/base/common/uuid*/,21/*vs/base/node/pfs*/]), function (require, exports, Platform, os, uuid, pfs_1) {
+define(__m[184/*vs/platform/telemetry/node/commonProperties*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/,29/*os*/,33/*vs/base/common/uuid*/,22/*vs/base/node/pfs*/]), function (require, exports, Platform, os, uuid, pfs_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.resolveCommonProperties = void 0;
@@ -28897,7 +28602,7 @@ define(__m[189/*vs/platform/telemetry/node/commonProperties*/], __M([0/*require*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[190/*vs/platform/telemetry/node/telemetryIpc*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[185/*vs/platform/telemetry/node/telemetryIpc*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.TelemetryAppenderClient = exports.TelemetryAppenderChannel = void 0;
@@ -28935,10 +28640,29 @@ define(__m[190/*vs/platform/telemetry/node/telemetryIpc*/], __M([0/*require*/,1/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[191/*vs/platform/theme/common/themeService*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,2/*vs/base/common/lifecycle*/,35/*vs/platform/registry/common/platform*/,3/*vs/base/common/event*/]), function (require, exports, instantiation_1, lifecycle_1, platform, event_1) {
+define(__m[186/*vs/platform/theme/common/theme*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.Themable = exports.registerThemingParticipant = exports.Extensions = exports.getThemeTypeSelector = exports.HIGH_CONTRAST = exports.LIGHT = exports.DARK = exports.FolderThemeIcon = exports.FileThemeIcon = exports.ThemeIcon = exports.themeColorFromId = exports.IThemeService = void 0;
+    exports.ColorScheme = void 0;
+    /**
+     * Color scheme used by the OS and by color themes.
+     */
+    var ColorScheme;
+    (function (ColorScheme) {
+        ColorScheme["DARK"] = "dark";
+        ColorScheme["LIGHT"] = "light";
+        ColorScheme["HIGH_CONTRAST"] = "hc";
+    })(ColorScheme = exports.ColorScheme || (exports.ColorScheme = {}));
+});
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+define(__m[187/*vs/platform/theme/common/themeService*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,2/*vs/base/common/lifecycle*/,35/*vs/platform/registry/common/platform*/,3/*vs/base/common/event*/,186/*vs/platform/theme/common/theme*/]), function (require, exports, instantiation_1, lifecycle_1, platform, event_1, theme_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.Themable = exports.registerThemingParticipant = exports.Extensions = exports.getThemeTypeSelector = exports.FolderThemeIcon = exports.FileThemeIcon = exports.ThemeIcon = exports.themeColorFromId = exports.IThemeService = void 0;
     exports.IThemeService = instantiation_1.createDecorator('themeService');
     function themeColorFromId(id) {
         return { id };
@@ -28981,14 +28705,10 @@ define(__m[191/*vs/platform/theme/common/themeService*/], __M([0/*require*/,1/*e
     })(ThemeIcon = exports.ThemeIcon || (exports.ThemeIcon = {}));
     exports.FileThemeIcon = { id: 'file' };
     exports.FolderThemeIcon = { id: 'folder' };
-    // base themes
-    exports.DARK = 'dark';
-    exports.LIGHT = 'light';
-    exports.HIGH_CONTRAST = 'hc';
     function getThemeTypeSelector(type) {
         switch (type) {
-            case exports.DARK: return 'vs-dark';
-            case exports.HIGH_CONTRAST: return 'hc-black';
+            case theme_1.ColorScheme.DARK: return 'vs-dark';
+            case theme_1.ColorScheme.HIGH_CONTRAST: return 'hc-black';
             default: return 'vs';
         }
     }
@@ -29066,7 +28786,7 @@ define(__m[191/*vs/platform/theme/common/themeService*/], __M([0/*require*/,1/*e
 
 
 
-define(__m[69/*vs/platform/theme/electron-main/themeMainService*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/,12/*electron*/,40/*vs/platform/state/node/state*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, platform_1, electron_1, state_1, instantiation_1) {
+define(__m[69/*vs/platform/theme/electron-main/themeMainService*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/,13/*electron*/,39/*vs/platform/state/node/state*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, platform_1, electron_1, state_1, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ThemeMainService = exports.IThemeMainService = void 0;
@@ -29130,7 +28850,7 @@ define(__m[69/*vs/platform/theme/electron-main/themeMainService*/], __M([0/*requ
 
 
 
-define(__m[192/*vs/code/electron-main/sharedProcess*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,52/*vs/base/common/decorators*/,14/*vs/platform/environment/common/environment*/,12/*electron*/,9/*vs/base/common/async*/,8/*vs/platform/log/common/log*/,22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,69/*vs/platform/theme/electron-main/themeMainService*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/]), function (require, exports, uri_1, decorators_1, environment_1, electron_1, async_1, log_1, lifecycleMainService_1, themeMainService_1, lifecycle_1, event_1) {
+define(__m[188/*vs/code/electron-main/sharedProcess*/], __M([0/*require*/,1/*exports*/,48/*vs/base/common/decorators*/,15/*vs/platform/environment/common/environment*/,13/*electron*/,10/*vs/base/common/async*/,8/*vs/platform/log/common/log*/,24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,69/*vs/platform/theme/electron-main/themeMainService*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,9/*vs/base/common/network*/]), function (require, exports, decorators_1, environment_1, electron_1, async_1, log_1, lifecycleMainService_1, themeMainService_1, lifecycle_1, event_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SharedProcess = void 0;
@@ -29152,10 +28872,11 @@ define(__m[192/*vs/code/electron-main/sharedProcess*/], __M([0/*require*/,1/*exp
                 show: false,
                 backgroundColor: this.themeMainService.getBackgroundColor(),
                 webPreferences: {
-                    preload: uri_1.URI.parse(require.toUrl('vs/base/parts/sandbox/electron-browser/preload.js')).fsPath,
+                    preload: network_1.FileAccess.asFileUri('vs/base/parts/sandbox/electron-browser/preload.js', require).fsPath,
                     nodeIntegration: true,
                     enableWebSQL: false,
                     enableRemoteModule: false,
+                    spellcheck: false,
                     nativeWindowOpen: true,
                     images: false,
                     webgl: false,
@@ -29169,8 +28890,10 @@ define(__m[192/*vs/code/electron-main/sharedProcess*/], __M([0/*require*/,1/*exp
                 userEnv: this.userEnv,
                 windowId: this.window.id
             };
-            const url = `${require.toUrl('vs/code/electron-browser/sharedProcess/sharedProcess.html')}?config=${encodeURIComponent(JSON.stringify(config))}`;
-            this.window.loadURL(url);
+            const windowUrl = network_1.FileAccess
+                .asBrowserUri('vs/code/electron-browser/sharedProcess/sharedProcess.html', require)
+                .with({ query: `config=${encodeURIComponent(JSON.stringify(config))}` });
+            this.window.loadURL(windowUrl.toString(true));
             // Prevent the window from dying
             const onClose = (e) => {
                 this.logService.trace('SharedProcess#close prevented');
@@ -29259,7 +28982,7 @@ define(__m[192/*vs/code/electron-main/sharedProcess*/], __M([0/*require*/,1/*exp
         decorators_1.memoize
     ], SharedProcess.prototype, "_whenIpcReady", null);
     SharedProcess = __decorate([
-        __param(2, environment_1.IEnvironmentService),
+        __param(2, environment_1.INativeEnvironmentService),
         __param(3, lifecycleMainService_1.ILifecycleMainService),
         __param(4, log_1.ILogService),
         __param(5, themeMainService_1.IThemeMainService)
@@ -29271,7 +28994,7 @@ define(__m[192/*vs/code/electron-main/sharedProcess*/], __M([0/*require*/,1/*exp
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[44/*vs/platform/update/common/update*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[42/*vs/platform/update/common/update*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IUpdateService = exports.State = exports.UpdateType = exports.StateType = void 0;
@@ -29326,7 +29049,7 @@ define(__m[44/*vs/platform/update/common/update*/], __M([0/*require*/,1/*exports
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[193/*vs/platform/update/common/update.config.contribution*/], __M([0/*require*/,1/*exports*/,35/*vs/platform/registry/common/platform*/,45/*vs/platform/configuration/common/configurationRegistry*/,140/*vs/nls!vs/platform/update/common/update.config.contribution*/,4/*vs/base/common/platform*/]), function (require, exports, platform_1, configurationRegistry_1, nls_1, platform_2) {
+define(__m[189/*vs/platform/update/common/update.config.contribution*/], __M([0/*require*/,1/*exports*/,35/*vs/platform/registry/common/platform*/,44/*vs/platform/configuration/common/configurationRegistry*/,137/*vs/nls!vs/platform/update/common/update.config.contribution*/,4/*vs/base/common/platform*/]), function (require, exports, platform_1, configurationRegistry_1, nls_1, platform_2) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const configurationRegistry = platform_1.Registry.as(configurationRegistry_1.Extensions.Configuration);
@@ -29389,7 +29112,7 @@ define(__m[193/*vs/platform/update/common/update.config.contribution*/], __M([0/
 
 
 
-define(__m[70/*vs/platform/update/electron-main/abstractUpdateService*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,9/*vs/base/common/async*/,17/*vs/platform/configuration/common/configuration*/,22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,25/*vs/platform/product/common/product*/,44/*vs/platform/update/common/update*/,14/*vs/platform/environment/common/environment*/,8/*vs/platform/log/common/log*/,39/*vs/platform/request/common/request*/,31/*vs/base/common/cancellation*/]), function (require, exports, event_1, async_1, configuration_1, lifecycleMainService_1, product_1, update_1, environment_1, log_1, request_1, cancellation_1) {
+define(__m[70/*vs/platform/update/electron-main/abstractUpdateService*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,10/*vs/base/common/async*/,19/*vs/platform/configuration/common/configuration*/,24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,23/*vs/platform/product/common/product*/,42/*vs/platform/update/common/update*/,15/*vs/platform/environment/common/environment*/,8/*vs/platform/log/common/log*/,38/*vs/platform/request/common/request*/,30/*vs/base/common/cancellation*/]), function (require, exports, event_1, async_1, configuration_1, lifecycleMainService_1, product_1, update_1, environment_1, log_1, request_1, cancellation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.AbstractUpdateService = exports.createUpdateURL = void 0;
@@ -29538,7 +29261,7 @@ define(__m[70/*vs/platform/update/electron-main/abstractUpdateService*/], __M([0
     AbstractUpdateService = __decorate([
         __param(0, lifecycleMainService_1.ILifecycleMainService),
         __param(1, configuration_1.IConfigurationService),
-        __param(2, environment_1.IEnvironmentService),
+        __param(2, environment_1.INativeEnvironmentService),
         __param(3, request_1.IRequestService),
         __param(4, log_1.ILogService)
     ], AbstractUpdateService);
@@ -29549,7 +29272,7 @@ define(__m[70/*vs/platform/update/electron-main/abstractUpdateService*/], __M([0
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[194/*vs/platform/update/electron-main/updateIpc*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[190/*vs/platform/update/electron-main/updateIpc*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.UpdateChannel = void 0;
@@ -29591,7 +29314,7 @@ define(__m[194/*vs/platform/update/electron-main/updateIpc*/], __M([0/*require*/
 
 
 
-define(__m[195/*vs/platform/update/electron-main/updateService.darwin*/], __M([0/*require*/,1/*exports*/,12/*electron*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,52/*vs/base/common/decorators*/,17/*vs/platform/configuration/common/configuration*/,22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,44/*vs/platform/update/common/update*/,29/*vs/platform/telemetry/common/telemetry*/,14/*vs/platform/environment/common/environment*/,8/*vs/platform/log/common/log*/,70/*vs/platform/update/electron-main/abstractUpdateService*/,39/*vs/platform/request/common/request*/]), function (require, exports, electron, lifecycle_1, event_1, decorators_1, configuration_1, lifecycleMainService_1, update_1, telemetry_1, environment_1, log_1, abstractUpdateService_1, request_1) {
+define(__m[191/*vs/platform/update/electron-main/updateService.darwin*/], __M([0/*require*/,1/*exports*/,13/*electron*/,2/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,48/*vs/base/common/decorators*/,19/*vs/platform/configuration/common/configuration*/,24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,42/*vs/platform/update/common/update*/,28/*vs/platform/telemetry/common/telemetry*/,15/*vs/platform/environment/common/environment*/,8/*vs/platform/log/common/log*/,70/*vs/platform/update/electron-main/abstractUpdateService*/,38/*vs/platform/request/common/request*/]), function (require, exports, electron, lifecycle_1, event_1, decorators_1, configuration_1, lifecycleMainService_1, update_1, telemetry_1, environment_1, log_1, abstractUpdateService_1, request_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.DarwinUpdateService = void 0;
@@ -29679,7 +29402,7 @@ define(__m[195/*vs/platform/update/electron-main/updateService.darwin*/], __M([0
         __param(0, lifecycleMainService_1.ILifecycleMainService),
         __param(1, configuration_1.IConfigurationService),
         __param(2, telemetry_1.ITelemetryService),
-        __param(3, environment_1.IEnvironmentService),
+        __param(3, environment_1.INativeEnvironmentService),
         __param(4, request_1.IRequestService),
         __param(5, log_1.ILogService)
     ], DarwinUpdateService);
@@ -29699,7 +29422,7 @@ define(__m[195/*vs/platform/update/electron-main/updateService.darwin*/], __M([0
 
 
 
-define(__m[196/*vs/platform/update/electron-main/updateService.linux*/], __M([0/*require*/,1/*exports*/,25/*vs/platform/product/common/product*/,17/*vs/platform/configuration/common/configuration*/,22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,44/*vs/platform/update/common/update*/,29/*vs/platform/telemetry/common/telemetry*/,14/*vs/platform/environment/common/environment*/,8/*vs/platform/log/common/log*/,70/*vs/platform/update/electron-main/abstractUpdateService*/,39/*vs/platform/request/common/request*/,12/*electron*/,31/*vs/base/common/cancellation*/]), function (require, exports, product_1, configuration_1, lifecycleMainService_1, update_1, telemetry_1, environment_1, log_1, abstractUpdateService_1, request_1, electron_1, cancellation_1) {
+define(__m[192/*vs/platform/update/electron-main/updateService.linux*/], __M([0/*require*/,1/*exports*/,23/*vs/platform/product/common/product*/,19/*vs/platform/configuration/common/configuration*/,24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,42/*vs/platform/update/common/update*/,28/*vs/platform/telemetry/common/telemetry*/,15/*vs/platform/environment/common/environment*/,8/*vs/platform/log/common/log*/,70/*vs/platform/update/electron-main/abstractUpdateService*/,38/*vs/platform/request/common/request*/,13/*electron*/,30/*vs/base/common/cancellation*/]), function (require, exports, product_1, configuration_1, lifecycleMainService_1, update_1, telemetry_1, environment_1, log_1, abstractUpdateService_1, request_1, electron_1, cancellation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LinuxUpdateService = void 0;
@@ -29751,7 +29474,7 @@ define(__m[196/*vs/platform/update/electron-main/updateService.linux*/], __M([0/
         __param(0, lifecycleMainService_1.ILifecycleMainService),
         __param(1, configuration_1.IConfigurationService),
         __param(2, telemetry_1.ITelemetryService),
-        __param(3, environment_1.IEnvironmentService),
+        __param(3, environment_1.INativeEnvironmentService),
         __param(4, request_1.IRequestService),
         __param(5, log_1.ILogService)
     ], LinuxUpdateService);
@@ -29771,7 +29494,7 @@ define(__m[196/*vs/platform/update/electron-main/updateService.linux*/], __M([0/
 
 
 
-define(__m[197/*vs/platform/update/electron-main/updateService.snap*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,9/*vs/base/common/async*/,22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,44/*vs/platform/update/common/update*/,14/*vs/platform/environment/common/environment*/,8/*vs/platform/log/common/log*/,7/*vs/base/common/path*/,20/*fs*/,43/*child_process*/,29/*vs/platform/telemetry/common/telemetry*/]), function (require, exports, event_1, async_1, lifecycleMainService_1, update_1, environment_1, log_1, path, fs_1, child_process_1, telemetry_1) {
+define(__m[193/*vs/platform/update/electron-main/updateService.snap*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,10/*vs/base/common/async*/,24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,42/*vs/platform/update/common/update*/,15/*vs/platform/environment/common/environment*/,8/*vs/platform/log/common/log*/,6/*vs/base/common/path*/,21/*fs*/,43/*child_process*/,28/*vs/platform/telemetry/common/telemetry*/]), function (require, exports, event_1, async_1, lifecycleMainService_1, update_1, environment_1, log_1, path, fs_1, child_process_1, telemetry_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SnapUpdateService = void 0;
@@ -29858,7 +29581,7 @@ define(__m[197/*vs/platform/update/electron-main/updateService.snap*/], __M([0/*
     };
     AbstractUpdateService2 = __decorate([
         __param(0, lifecycleMainService_1.ILifecycleMainService),
-        __param(1, environment_1.IEnvironmentService),
+        __param(1, environment_1.INativeEnvironmentService),
         __param(2, log_1.ILogService)
     ], AbstractUpdateService2);
     let SnapUpdateService = class SnapUpdateService extends AbstractUpdateService2 {
@@ -29916,7 +29639,7 @@ define(__m[197/*vs/platform/update/electron-main/updateService.snap*/], __M([0/*
     };
     SnapUpdateService = __decorate([
         __param(2, lifecycleMainService_1.ILifecycleMainService),
-        __param(3, environment_1.IEnvironmentService),
+        __param(3, environment_1.INativeEnvironmentService),
         __param(4, log_1.ILogService),
         __param(5, telemetry_1.ITelemetryService)
     ], SnapUpdateService);
@@ -29936,7 +29659,7 @@ define(__m[197/*vs/platform/update/electron-main/updateService.snap*/], __M([0/*
 
 
 
-define(__m[198/*vs/platform/update/electron-main/updateService.win32*/], __M([0/*require*/,1/*exports*/,20/*fs*/,7/*vs/base/common/path*/,21/*vs/base/node/pfs*/,52/*vs/base/common/decorators*/,17/*vs/platform/configuration/common/configuration*/,22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,25/*vs/platform/product/common/product*/,44/*vs/platform/update/common/update*/,29/*vs/platform/telemetry/common/telemetry*/,14/*vs/platform/environment/common/environment*/,8/*vs/platform/log/common/log*/,70/*vs/platform/update/electron-main/abstractUpdateService*/,39/*vs/platform/request/common/request*/,100/*vs/base/node/crypto*/,30/*os*/,43/*child_process*/,12/*electron*/,31/*vs/base/common/cancellation*/,9/*vs/base/common/async*/,26/*vs/platform/files/common/files*/,6/*vs/base/common/uri*/]), function (require, exports, fs, path, pfs, decorators_1, configuration_1, lifecycleMainService_1, product_1, update_1, telemetry_1, environment_1, log_1, abstractUpdateService_1, request_1, crypto_1, os_1, child_process_1, electron_1, cancellation_1, async_1, files_1, uri_1) {
+define(__m[194/*vs/platform/update/electron-main/updateService.win32*/], __M([0/*require*/,1/*exports*/,21/*fs*/,6/*vs/base/common/path*/,22/*vs/base/node/pfs*/,48/*vs/base/common/decorators*/,19/*vs/platform/configuration/common/configuration*/,24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,23/*vs/platform/product/common/product*/,42/*vs/platform/update/common/update*/,28/*vs/platform/telemetry/common/telemetry*/,15/*vs/platform/environment/common/environment*/,8/*vs/platform/log/common/log*/,70/*vs/platform/update/electron-main/abstractUpdateService*/,38/*vs/platform/request/common/request*/,98/*vs/base/node/crypto*/,29/*os*/,43/*child_process*/,13/*electron*/,30/*vs/base/common/cancellation*/,10/*vs/base/common/async*/,25/*vs/platform/files/common/files*/,7/*vs/base/common/uri*/]), function (require, exports, fs, path, pfs, decorators_1, configuration_1, lifecycleMainService_1, product_1, update_1, telemetry_1, environment_1, log_1, abstractUpdateService_1, request_1, crypto_1, os_1, child_process_1, electron_1, cancellation_1, async_1, files_1, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Win32UpdateService = void 0;
@@ -30129,7 +29852,7 @@ define(__m[198/*vs/platform/update/electron-main/updateService.win32*/], __M([0/
         __param(0, lifecycleMainService_1.ILifecycleMainService),
         __param(1, configuration_1.IConfigurationService),
         __param(2, telemetry_1.ITelemetryService),
-        __param(3, environment_1.IEnvironmentService),
+        __param(3, environment_1.INativeEnvironmentService),
         __param(4, request_1.IRequestService),
         __param(5, log_1.ILogService),
         __param(6, files_1.IFileService)
@@ -30141,7 +29864,7 @@ define(__m[198/*vs/platform/update/electron-main/updateService.win32*/], __M([0/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[87/*vs/platform/url/common/url*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[85/*vs/platform/url/common/url*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IURLService = void 0;
@@ -30152,7 +29875,7 @@ define(__m[87/*vs/platform/url/common/url*/], __M([0/*require*/,1/*exports*/,5/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[199/*vs/platform/url/common/urlIpc*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,23/*vs/base/common/arrays*/]), function (require, exports, uri_1, arrays_1) {
+define(__m[195/*vs/platform/url/common/urlIpc*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/]), function (require, exports, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.URLHandlerRouter = exports.URLHandlerChannelClient = exports.URLHandlerChannel = void 0;
@@ -30195,7 +29918,7 @@ define(__m[199/*vs/platform/url/common/urlIpc*/], __M([0/*require*/,1/*exports*/
                     if (match) {
                         const windowId = match[1];
                         const regex = new RegExp(`window:${windowId}`);
-                        const connection = arrays_1.first(hub.connections, c => regex.test(c.ctx));
+                        const connection = hub.connections.find(c => regex.test(c.ctx));
                         if (connection) {
                             return connection;
                         }
@@ -30215,7 +29938,7 @@ define(__m[199/*vs/platform/url/common/urlIpc*/], __M([0/*require*/,1/*exports*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[200/*vs/platform/url/common/urlService*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,9/*vs/base/common/async*/,2/*vs/base/common/lifecycle*/,25/*vs/platform/product/common/product*/]), function (require, exports, uri_1, async_1, lifecycle_1, product_1) {
+define(__m[196/*vs/platform/url/common/urlService*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,10/*vs/base/common/async*/,2/*vs/base/common/lifecycle*/,23/*vs/platform/product/common/product*/]), function (require, exports, uri_1, async_1, lifecycle_1, product_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NativeURLService = exports.AbstractURLService = void 0;
@@ -30250,7 +29973,7 @@ define(__m[200/*vs/platform/url/common/urlService*/], __M([0/*require*/,1/*expor
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[201/*vs/platform/url/electron-main/electronUrlListener*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,25/*vs/platform/product/common/product*/,12/*electron*/,6/*vs/base/common/uri*/,2/*vs/base/common/lifecycle*/,4/*vs/base/common/platform*/,9/*vs/base/common/async*/]), function (require, exports, event_1, product_1, electron_1, uri_1, lifecycle_1, platform_1, async_1) {
+define(__m[197/*vs/platform/url/electron-main/electronUrlListener*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,23/*vs/platform/product/common/product*/,13/*electron*/,7/*vs/base/common/uri*/,2/*vs/base/common/lifecycle*/,4/*vs/base/common/platform*/,10/*vs/base/common/async*/]), function (require, exports, event_1, product_1, electron_1, uri_1, lifecycle_1, platform_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ElectronURLListener = void 0;
@@ -30334,7 +30057,7 @@ define(__m[201/*vs/platform/url/electron-main/electronUrlListener*/], __M([0/*re
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[88/*vs/platform/userDataSync/common/storageKeys*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, event_1, lifecycle_1, instantiation_1) {
+define(__m[86/*vs/platform/userDataSync/common/storageKeys*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, event_1, lifecycle_1, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.StorageKeysSyncRegistryService = exports.IStorageKeysSyncRegistryService = void 0;
@@ -30362,7 +30085,7 @@ define(__m[88/*vs/platform/userDataSync/common/storageKeys*/], __M([0/*require*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[202/*vs/platform/userDataSync/common/userDataSyncIpc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,6/*vs/base/common/uri*/,2/*vs/base/common/lifecycle*/]), function (require, exports, event_1, uri_1, lifecycle_1) {
+define(__m[198/*vs/platform/userDataSync/common/userDataSyncIpc*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,7/*vs/base/common/uri*/,2/*vs/base/common/lifecycle*/]), function (require, exports, event_1, uri_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.UserDataSyncStoreManagementServiceChannel = exports.UserDataSyncAccountServiceChannel = exports.UserDataSyncMachinesServiceChannel = exports.StorageKeysSyncRegistryChannelClient = exports.StorageKeysSyncRegistryChannel = exports.UserDataSyncUtilServiceClient = exports.UserDataSycnUtilServiceChannel = exports.UserDataAutoSyncChannel = exports.UserDataSyncChannel = void 0;
@@ -30599,6 +30322,9 @@ define(__m[202/*vs/platform/userDataSync/common/userDataSyncIpc*/], __M([0/*requ
             this.service = service;
         }
         listen(_, event) {
+            switch (event) {
+                case 'onDidChangeUserDataSyncStore': return this.service.onDidChangeUserDataSyncStore;
+            }
             throw new Error(`Event not found: ${event}`);
         }
         call(context, command, args) {
@@ -30616,7 +30342,7 @@ define(__m[202/*vs/platform/userDataSync/common/userDataSyncIpc*/], __M([0/*requ
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[203/*vs/platform/webview/common/mimeTypes*/], __M([0/*require*/,1/*exports*/,99/*vs/base/common/mime*/,7/*vs/base/common/path*/]), function (require, exports, mime_1, path_1) {
+define(__m[199/*vs/platform/webview/common/mimeTypes*/], __M([0/*require*/,1/*exports*/,97/*vs/base/common/mime*/,6/*vs/base/common/path*/]), function (require, exports, mime_1, path_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getWebviewContentMimeType = void 0;
@@ -30643,7 +30369,7 @@ define(__m[203/*vs/platform/webview/common/mimeTypes*/], __M([0/*require*/,1/*ex
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[89/*vs/platform/webview/common/resourceLoader*/], __M([0/*require*/,1/*exports*/,31/*vs/base/common/cancellation*/,28/*vs/base/common/extpath*/,19/*vs/base/common/network*/,7/*vs/base/common/path*/,6/*vs/base/common/uri*/,203/*vs/platform/webview/common/mimeTypes*/]), function (require, exports, cancellation_1, extpath_1, network_1, path_1, uri_1, mimeTypes_1) {
+define(__m[87/*vs/platform/webview/common/resourceLoader*/], __M([0/*require*/,1/*exports*/,30/*vs/base/common/cancellation*/,27/*vs/base/common/extpath*/,9/*vs/base/common/network*/,6/*vs/base/common/path*/,7/*vs/base/common/uri*/,199/*vs/platform/webview/common/mimeTypes*/]), function (require, exports, cancellation_1, extpath_1, network_1, path_1, uri_1, mimeTypes_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.loadLocalResource = exports.WebviewResourceResponse = exports.webviewPartitionId = void 0;
@@ -30742,7 +30468,7 @@ define(__m[89/*vs/platform/webview/common/resourceLoader*/], __M([0/*require*/,1
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[204/*vs/platform/webview/common/webviewManagerService*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[200/*vs/platform/webview/common/webviewManagerService*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IWebviewManagerService = void 0;
@@ -30753,7 +30479,7 @@ define(__m[204/*vs/platform/webview/common/webviewManagerService*/], __M([0/*req
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[205/*vs/platform/webview/common/webviewPortMapping*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,56/*vs/platform/remote/common/remoteHosts*/,51/*vs/platform/remote/common/tunnel*/]), function (require, exports, uri_1, remoteHosts_1, tunnel_1) {
+define(__m[201/*vs/platform/webview/common/webviewPortMapping*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/network*/,7/*vs/base/common/uri*/,51/*vs/platform/remote/common/tunnel*/]), function (require, exports, network_1, uri_1, tunnel_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.WebviewPortMappingManager = void 0;
@@ -30776,7 +30502,7 @@ define(__m[205/*vs/platform/webview/common/webviewPortMapping*/], __M([0/*requir
             for (const mapping of this._getMappings()) {
                 if (mapping.webviewPort === requestLocalHostInfo.port) {
                     const extensionLocation = this._getExtensionLocation();
-                    if (extensionLocation && extensionLocation.scheme === remoteHosts_1.REMOTE_HOST_SCHEME) {
+                    if (extensionLocation && extensionLocation.scheme === network_1.Schemas.vscodeRemote) {
                         const tunnel = resolveAuthority && await this.getOrCreateTunnel(resolveAuthority, mapping.extensionHostPort);
                         if (tunnel) {
                             if (tunnel.tunnelLocalPort === mapping.webviewPort) {
@@ -30830,7 +30556,7 @@ define(__m[205/*vs/platform/webview/common/webviewPortMapping*/], __M([0/*requir
 
 
 
-define(__m[206/*vs/platform/webview/electron-main/webviewPortMappingProvider*/], __M([0/*require*/,1/*exports*/,12/*electron*/,2/*vs/base/common/lifecycle*/,6/*vs/base/common/uri*/,51/*vs/platform/remote/common/tunnel*/,89/*vs/platform/webview/common/resourceLoader*/,205/*vs/platform/webview/common/webviewPortMapping*/]), function (require, exports, electron_1, lifecycle_1, uri_1, tunnel_1, resourceLoader_1, webviewPortMapping_1) {
+define(__m[202/*vs/platform/webview/electron-main/webviewPortMappingProvider*/], __M([0/*require*/,1/*exports*/,13/*electron*/,2/*vs/base/common/lifecycle*/,7/*vs/base/common/uri*/,51/*vs/platform/remote/common/tunnel*/,87/*vs/platform/webview/common/resourceLoader*/,201/*vs/platform/webview/common/webviewPortMapping*/]), function (require, exports, electron_1, lifecycle_1, uri_1, tunnel_1, resourceLoader_1, webviewPortMapping_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.WebviewPortMappingProvider = void 0;
@@ -30891,10 +30617,15 @@ define(__m[206/*vs/platform/webview/electron-main/webviewPortMappingProvider*/],
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[57/*vs/platform/windows/common/windows*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/]), function (require, exports, platform_1) {
+define(__m[55/*vs/platform/windows/common/windows*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/]), function (require, exports, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.zoomLevelToZoomFactor = exports.getTitleBarStyle = exports.getMenuBarVisibility = exports.isFileToOpen = exports.isFolderToOpen = exports.isWorkspaceToOpen = void 0;
+    exports.zoomLevelToZoomFactor = exports.getTitleBarStyle = exports.getMenuBarVisibility = exports.isFileToOpen = exports.isFolderToOpen = exports.isWorkspaceToOpen = exports.WindowMinimumSize = void 0;
+    exports.WindowMinimumSize = {
+        WIDTH: 400,
+        WIDTH_WITH_VERTICAL_PANEL: 600,
+        HEIGHT: 270
+    };
     function isWorkspaceToOpen(uriToOpen) {
         return !!uriToOpen.workspaceUri;
     }
@@ -30934,7 +30665,7 @@ define(__m[57/*vs/platform/windows/common/windows*/], __M([0/*require*/,1/*expor
             }
             const useSimpleFullScreen = platform_1.isMacintosh && configuration.nativeFullScreen === false;
             if (useSimpleFullScreen) {
-                return 'native'; // simple fullscreen does not work well with custom title style (https://github.com/Microsoft/vscode/issues/63291)
+                return 'native'; // simple fullscreen does not work well with custom title style (https://github.com/microsoft/vscode/issues/63291)
             }
             const style = configuration.titleBarStyle;
             if (style === 'native' || style === 'custom') {
@@ -30958,7 +30689,7 @@ define(__m[57/*vs/platform/windows/common/windows*/], __M([0/*require*/,1/*expor
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[41/*vs/platform/windows/electron-main/windows*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[40/*vs/platform/windows/electron-main/windows*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IWindowsMainService = exports.WindowMode = void 0;
@@ -30985,7 +30716,7 @@ define(__m[41/*vs/platform/windows/electron-main/windows*/], __M([0/*require*/,1
 
 
 
-define(__m[207/*vs/platform/webview/electron-main/webviewProtocolProvider*/], __M([0/*require*/,1/*exports*/,12/*electron*/,226/*stream*/,18/*vs/base/common/buffer*/,2/*vs/base/common/lifecycle*/,19/*vs/base/common/network*/,6/*vs/base/common/uri*/,26/*vs/platform/files/common/files*/,56/*vs/platform/remote/common/remoteHosts*/,39/*vs/platform/request/common/request*/,89/*vs/platform/webview/common/resourceLoader*/,41/*vs/platform/windows/electron-main/windows*/]), function (require, exports, electron_1, stream_1, buffer_1, lifecycle_1, network_1, uri_1, files_1, remoteHosts_1, request_1, resourceLoader_1, windows_1) {
+define(__m[203/*vs/platform/webview/electron-main/webviewProtocolProvider*/], __M([0/*require*/,1/*exports*/,13/*electron*/,222/*stream*/,20/*vs/base/common/buffer*/,2/*vs/base/common/lifecycle*/,9/*vs/base/common/network*/,7/*vs/base/common/uri*/,25/*vs/platform/files/common/files*/,38/*vs/platform/request/common/request*/,87/*vs/platform/webview/common/resourceLoader*/,40/*vs/platform/windows/electron-main/windows*/]), function (require, exports, electron_1, stream_1, buffer_1, lifecycle_1, network_1, uri_1, files_1, request_1, resourceLoader_1, windows_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.WebviewProtocolProvider = void 0;
@@ -31079,7 +30810,7 @@ define(__m[207/*vs/platform/webview/electron-main/webviewProtocolProvider*/], __
                     else {
                         url = require.toUrl(`vs/workbench/contrib/webview/browser/pre/${entry}`);
                     }
-                    return callback(decodeURIComponent(url.replace('file://', '')));
+                    return callback(decodeURIComponent(url.replace(`${network_1.Schemas.file}://`, '')));
                 }
             }
             catch (_a) {
@@ -31099,7 +30830,7 @@ define(__m[207/*vs/platform/webview/electron-main/webviewProtocolProvider*/], __
                         rewriteUri = (uri) => {
                             var _a;
                             if (metadata.remoteConnectionData) {
-                                if (uri.scheme === network_1.Schemas.vscodeRemote || (((_a = metadata.extensionLocation) === null || _a === void 0 ? void 0 : _a.scheme) === remoteHosts_1.REMOTE_HOST_SCHEME)) {
+                                if (uri.scheme === network_1.Schemas.vscodeRemote || (((_a = metadata.extensionLocation) === null || _a === void 0 ? void 0 : _a.scheme) === network_1.Schemas.vscodeRemote)) {
                                     return uri_1.URI.parse(`http://${metadata.remoteConnectionData.host}:${metadata.remoteConnectionData.port}`).with({
                                         path: '/vscode-remote-resource',
                                         query: `tkn=${metadata.remoteConnectionData.connectionToken}&path=${encodeURIComponent(uri.path)}`,
@@ -31195,7 +30926,7 @@ define(__m[207/*vs/platform/webview/electron-main/webviewProtocolProvider*/], __
 
 
 
-define(__m[208/*vs/platform/webview/electron-main/webviewMainService*/], __M([0/*require*/,1/*exports*/,12/*electron*/,2/*vs/base/common/lifecycle*/,6/*vs/base/common/uri*/,26/*vs/platform/files/common/files*/,51/*vs/platform/remote/common/tunnel*/,39/*vs/platform/request/common/request*/,206/*vs/platform/webview/electron-main/webviewPortMappingProvider*/,207/*vs/platform/webview/electron-main/webviewProtocolProvider*/,41/*vs/platform/windows/electron-main/windows*/]), function (require, exports, electron_1, lifecycle_1, uri_1, files_1, tunnel_1, request_1, webviewPortMappingProvider_1, webviewProtocolProvider_1, windows_1) {
+define(__m[204/*vs/platform/webview/electron-main/webviewMainService*/], __M([0/*require*/,1/*exports*/,13/*electron*/,2/*vs/base/common/lifecycle*/,7/*vs/base/common/uri*/,25/*vs/platform/files/common/files*/,51/*vs/platform/remote/common/tunnel*/,38/*vs/platform/request/common/request*/,202/*vs/platform/webview/electron-main/webviewPortMappingProvider*/,203/*vs/platform/webview/electron-main/webviewProtocolProvider*/,40/*vs/platform/windows/electron-main/windows*/]), function (require, exports, electron_1, lifecycle_1, uri_1, files_1, tunnel_1, request_1, webviewPortMappingProvider_1, webviewProtocolProvider_1, windows_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.WebviewMainService = void 0;
@@ -31250,7 +30981,7 @@ define(__m[208/*vs/platform/webview/electron-main/webviewMainService*/], __M([0/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[209/*vs/platform/windows/electron-main/windowsStateStorage*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/]), function (require, exports, uri_1) {
+define(__m[205/*vs/platform/windows/electron-main/windowsStateStorage*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/]), function (require, exports, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getWindowsStateStoreData = exports.restoreWindowsState = void 0;
@@ -31317,7 +31048,7 @@ define(__m[209/*vs/platform/windows/electron-main/windowsStateStorage*/], __M([0
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[36/*vs/platform/workspaces/common/workspaces*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,142/*vs/nls!vs/platform/workspaces/common/workspaces*/,6/*vs/base/common/uri*/,4/*vs/base/common/platform*/,7/*vs/base/common/path*/,24/*vs/base/common/resources*/,94/*vs/base/common/jsonEdit*/,42/*vs/base/common/json*/,19/*vs/base/common/network*/,32/*vs/base/common/labels*/,28/*vs/base/common/extpath*/,56/*vs/platform/remote/common/remoteHosts*/]), function (require, exports, instantiation_1, nls_1, uri_1, platform_1, path_1, resources_1, jsonEdit, json, network_1, labels_1, extpath_1, remoteHosts_1) {
+define(__m[36/*vs/platform/workspaces/common/workspaces*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,139/*vs/nls!vs/platform/workspaces/common/workspaces*/,7/*vs/base/common/uri*/,4/*vs/base/common/platform*/,6/*vs/base/common/path*/,18/*vs/base/common/resources*/,92/*vs/base/common/jsonEdit*/,41/*vs/base/common/json*/,9/*vs/base/common/network*/,32/*vs/base/common/labels*/,27/*vs/base/common/extpath*/,80/*vs/platform/remote/common/remoteHosts*/]), function (require, exports, instantiation_1, nls_1, uri_1, platform_1, path_1, resources_1, jsonEdit, json, network_1, labels_1, extpath_1, remoteHosts_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toStoreData = exports.restoreRecentlyOpened = exports.useSlashForPath = exports.rewriteWorkspaceFileForNewLocation = exports.getStoredWorkspaceFolder = exports.hasWorkspaceFileExtension = exports.isSingleFolderWorkspaceInitializationPayload = exports.isUntitledWorkspace = exports.toWorkspaceIdentifier = exports.isWorkspaceIdentifier = exports.isSingleFolderWorkspaceIdentifier = exports.isRawUriWorkspaceFolder = exports.isRawFileWorkspaceFolder = exports.isStoredWorkspaceFolder = exports.reviveWorkspaceIdentifier = exports.isRecentFile = exports.isRecentFolder = exports.isRecentWorkspace = exports.IWorkspacesService = exports.UNTITLED_WORKSPACE_NAME = exports.WORKSPACE_FILTER = exports.WORKSPACE_EXTENSION = void 0;
@@ -31575,7 +31306,7 @@ define(__m[36/*vs/platform/workspaces/common/workspaces*/], __M([0/*require*/,1/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[46/*vs/platform/backup/electron-main/backup*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,36/*vs/platform/workspaces/common/workspaces*/]), function (require, exports, instantiation_1, workspaces_1) {
+define(__m[45/*vs/platform/backup/electron-main/backup*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,36/*vs/platform/workspaces/common/workspaces*/]), function (require, exports, instantiation_1, workspaces_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isWorkspaceBackupInfo = exports.IBackupMainService = void 0;
@@ -31600,7 +31331,7 @@ define(__m[46/*vs/platform/backup/electron-main/backup*/], __M([0/*require*/,1/*
 
 
 
-define(__m[210/*vs/platform/backup/electron-main/backupMainService*/], __M([0/*require*/,1/*exports*/,20/*fs*/,64/*crypto*/,7/*vs/base/common/path*/,4/*vs/base/common/platform*/,21/*vs/base/node/pfs*/,46/*vs/platform/backup/electron-main/backup*/,14/*vs/platform/environment/common/environment*/,17/*vs/platform/configuration/common/configuration*/,26/*vs/platform/files/common/files*/,8/*vs/platform/log/common/log*/,36/*vs/platform/workspaces/common/workspaces*/,6/*vs/base/common/uri*/,28/*vs/base/common/extpath*/,19/*vs/base/common/network*/,24/*vs/base/common/resources*/]), function (require, exports, fs, crypto, path, platform, pfs_1, backup_1, environment_1, configuration_1, files_1, log_1, workspaces_1, uri_1, extpath_1, network_1, resources_1) {
+define(__m[206/*vs/platform/backup/electron-main/backupMainService*/], __M([0/*require*/,1/*exports*/,21/*fs*/,63/*crypto*/,6/*vs/base/common/path*/,4/*vs/base/common/platform*/,22/*vs/base/node/pfs*/,45/*vs/platform/backup/electron-main/backup*/,15/*vs/platform/environment/common/environment*/,19/*vs/platform/configuration/common/configuration*/,25/*vs/platform/files/common/files*/,8/*vs/platform/log/common/log*/,36/*vs/platform/workspaces/common/workspaces*/,7/*vs/base/common/uri*/,27/*vs/base/common/extpath*/,9/*vs/base/common/network*/,18/*vs/base/common/resources*/]), function (require, exports, fs, crypto, path, platform, pfs_1, backup_1, environment_1, configuration_1, files_1, log_1, workspaces_1, uri_1, extpath_1, network_1, resources_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.BackupMainService = void 0;
@@ -31616,7 +31347,7 @@ define(__m[210/*vs/platform/backup/electron-main/backupMainService*/], __M([0/*r
             // - respect path casing on Linux
             this.backupUriComparer = resources_1.extUriBiasedIgnorePathCase;
             this.backupPathComparer = { isEqual: (pathA, pathB) => extpath_1.isEqual(pathA, pathB, !platform.isLinux) };
-            this.backupHome = environmentService.backupHome.fsPath;
+            this.backupHome = environmentService.backupHome;
             this.workspacesJsonPath = environmentService.backupWorkspacesPath;
         }
         async initialize() {
@@ -32016,7 +31747,7 @@ define(__m[210/*vs/platform/backup/electron-main/backupMainService*/], __M([0/*r
         }
     };
     BackupMainService = __decorate([
-        __param(0, environment_1.IEnvironmentService),
+        __param(0, environment_1.INativeEnvironmentService),
         __param(1, configuration_1.IConfigurationService),
         __param(2, log_1.ILogService)
     ], BackupMainService);
@@ -32036,7 +31767,7 @@ define(__m[210/*vs/platform/backup/electron-main/backupMainService*/], __M([0/*r
 
 
 
-define(__m[47/*vs/platform/dialogs/electron-main/dialogs*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,12/*electron*/,9/*vs/base/common/async*/,40/*vs/platform/state/node/state*/,4/*vs/base/common/platform*/,7/*vs/base/common/path*/,63/*vs/base/common/normalization*/,21/*vs/base/node/pfs*/,13/*vs/base/common/types*/,127/*vs/nls!vs/platform/dialogs/electron-main/dialogs*/,36/*vs/platform/workspaces/common/workspaces*/,32/*vs/base/common/labels*/]), function (require, exports, instantiation_1, electron_1, async_1, state_1, platform_1, path_1, normalization_1, pfs_1, types_1, nls_1, workspaces_1, labels_1) {
+define(__m[46/*vs/platform/dialogs/electron-main/dialogs*/], __M([0/*require*/,1/*exports*/,5/*vs/platform/instantiation/common/instantiation*/,13/*electron*/,10/*vs/base/common/async*/,39/*vs/platform/state/node/state*/,4/*vs/base/common/platform*/,6/*vs/base/common/path*/,62/*vs/base/common/normalization*/,22/*vs/base/node/pfs*/,14/*vs/base/common/types*/,124/*vs/nls!vs/platform/dialogs/electron-main/dialogs*/,36/*vs/platform/workspaces/common/workspaces*/,32/*vs/base/common/labels*/]), function (require, exports, instantiation_1, electron_1, async_1, state_1, platform_1, path_1, normalization_1, pfs_1, types_1, nls_1, workspaces_1, labels_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.DialogMainService = exports.IDialogMainService = void 0;
@@ -32180,26 +31911,39 @@ define(__m[47/*vs/platform/dialogs/electron-main/dialogs*/], __M([0/*require*/,1
 
 
 
-define(__m[58/*vs/platform/electron/electron-main/electronMainService*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,41/*vs/platform/windows/electron-main/windows*/,12/*electron*/,22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,4/*vs/base/common/platform*/,14/*vs/platform/environment/common/environment*/,47/*vs/platform/dialogs/electron-main/dialogs*/,21/*vs/base/node/pfs*/,6/*vs/base/common/uri*/,29/*vs/platform/telemetry/common/telemetry*/,5/*vs/platform/instantiation/common/instantiation*/,30/*os*/]), function (require, exports, event_1, windows_1, electron_1, lifecycleMainService_1, platform_1, environment_1, dialogs_1, pfs_1, uri_1, telemetry_1, instantiation_1, os_1) {
+define(__m[56/*vs/platform/native/electron-main/nativeHostMainService*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,40/*vs/platform/windows/electron-main/windows*/,13/*electron*/,24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,4/*vs/base/common/platform*/,15/*vs/platform/environment/common/environment*/,46/*vs/platform/dialogs/electron-main/dialogs*/,22/*vs/base/node/pfs*/,7/*vs/base/common/uri*/,28/*vs/platform/telemetry/common/telemetry*/,5/*vs/platform/instantiation/common/instantiation*/,29/*os*/,64/*vs/base/node/id*/,8/*vs/platform/log/common/log*/,6/*vs/base/common/path*/,23/*vs/platform/product/common/product*/,48/*vs/base/common/decorators*/]), function (require, exports, event_1, windows_1, electron_1, lifecycleMainService_1, platform_1, environment_1, dialogs_1, pfs_1, uri_1, telemetry_1, instantiation_1, os_1, id_1, log_1, path_1, product_1, decorators_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.ElectronMainService = exports.IElectronMainService = void 0;
-    exports.IElectronMainService = instantiation_1.createDecorator('electronMainService');
-    let ElectronMainService = class ElectronMainService {
-        constructor(windowsMainService, dialogMainService, lifecycleMainService, environmentService, telemetryService) {
+    exports.NativeHostMainService = exports.INativeHostMainService = void 0;
+    exports.INativeHostMainService = instantiation_1.createDecorator('nativeHostMainService');
+    let NativeHostMainService = class NativeHostMainService {
+        constructor(windowsMainService, dialogMainService, lifecycleMainService, environmentService, telemetryService, logService) {
             this.windowsMainService = windowsMainService;
             this.dialogMainService = dialogMainService;
             this.lifecycleMainService = lifecycleMainService;
             this.environmentService = environmentService;
             this.telemetryService = telemetryService;
+            this.logService = logService;
             //#endregion
             //#region Events
-            this.onWindowOpen = event_1.Event.filter(event_1.Event.fromNodeEventEmitter(electron_1.app, 'browser-window-created', (event, window) => window.id), windowId => !!this.windowsMainService.getWindowById(windowId));
+            this.onWindowOpen = event_1.Event.map(this.windowsMainService.onWindowOpened, window => window.id);
             this.onWindowMaximize = event_1.Event.filter(event_1.Event.fromNodeEventEmitter(electron_1.app, 'browser-window-maximize', (event, window) => window.id), windowId => !!this.windowsMainService.getWindowById(windowId));
             this.onWindowUnmaximize = event_1.Event.filter(event_1.Event.fromNodeEventEmitter(electron_1.app, 'browser-window-unmaximize', (event, window) => window.id), windowId => !!this.windowsMainService.getWindowById(windowId));
             this.onWindowBlur = event_1.Event.filter(event_1.Event.fromNodeEventEmitter(electron_1.app, 'browser-window-blur', (event, window) => window.id), windowId => !!this.windowsMainService.getWindowById(windowId));
             this.onWindowFocus = event_1.Event.any(event_1.Event.map(event_1.Event.filter(event_1.Event.map(this.windowsMainService.onWindowsCountChanged, () => this.windowsMainService.getLastActiveWindow()), window => !!window), window => window.id), event_1.Event.filter(event_1.Event.fromNodeEventEmitter(electron_1.app, 'browser-window-focus', (event, window) => window.id), windowId => !!this.windowsMainService.getWindowById(windowId)));
             this.onOSResume = event_1.Event.fromNodeEventEmitter(electron_1.powerMonitor, 'resume');
+            this._onColorSchemeChange = new event_1.Emitter();
+            this.onColorSchemeChange = this._onColorSchemeChange.event;
+            this.registerListeners();
+        }
+        registerListeners() {
+            // Color Scheme changes
+            electron_1.nativeTheme.on('updated', () => {
+                this._onColorSchemeChange.fire({
+                    highContrast: electron_1.nativeTheme.shouldUseInvertedColorScheme || electron_1.nativeTheme.shouldUseHighContrastColors,
+                    dark: electron_1.nativeTheme.shouldUseDarkColors
+                });
+            });
         }
         //#region Properties
         get windowId() { throw new Error('Not implemented in electron-main'); }
@@ -32303,6 +32047,21 @@ define(__m[58/*vs/platform/electron/electron-main/electronMainService*/], __M([0
                 window.focus({ force: (_a = options === null || options === void 0 ? void 0 : options.force) !== null && _a !== void 0 ? _a : false });
             }
         }
+        async setMinimumSize(windowId, width, height) {
+            const window = this.windowById(windowId);
+            if (window) {
+                const [windowWidth, windowHeight] = window.win.getSize();
+                const [minWindowWidth, minWindowHeight] = window.win.getMinimumSize();
+                const [newMinWindowWidth, newMinWindowHeight] = [width !== null && width !== void 0 ? width : minWindowWidth, height !== null && height !== void 0 ? height : minWindowHeight];
+                const [newWindowWidth, newWindowHeight] = [Math.max(windowWidth, newMinWindowWidth), Math.max(windowHeight, newMinWindowHeight)];
+                if (minWindowWidth !== newMinWindowWidth || minWindowHeight !== newMinWindowHeight) {
+                    window.win.setMinimumSize(newMinWindowWidth, newMinWindowHeight);
+                }
+                if (windowWidth !== newWindowWidth || windowHeight !== newWindowHeight) {
+                    window.win.setSize(newWindowWidth, newWindowHeight);
+                }
+            }
+        }
         //#endregion
         //#region Dialog
         async showMessageBox(windowId, options) {
@@ -32385,12 +32144,6 @@ define(__m[58/*vs/platform/electron/electron-main/electronMainService*/], __M([0
             electron_1.shell.openExternal(url);
             return true;
         }
-        async updateTouchBar(windowId, items) {
-            const window = this.windowById(windowId);
-            if (window) {
-                window.updateTouchBar(items);
-            }
-        }
         async moveItemToTrash(windowId, fullPath) {
             return electron_1.shell.moveItemToTrash(fullPath);
         }
@@ -32404,8 +32157,73 @@ define(__m[58/*vs/platform/electron/electron-main/electronMainService*/], __M([0
             }
             return isAdmin;
         }
-        async getTotalMem() {
-            return os_1.totalmem();
+        async writeElevated(windowId, source, target, options) {
+            const sudoPrompt = await new Promise((resolve_2, reject_2) => { require(['sudo-prompt'], resolve_2, reject_2); });
+            return new Promise((resolve, reject) => {
+                const sudoCommand = [`"${this.cliPath}"`];
+                if (options === null || options === void 0 ? void 0 : options.overwriteReadonly) {
+                    sudoCommand.push('--file-chmod');
+                }
+                sudoCommand.push('--file-write', `"${source.fsPath}"`, `"${target.fsPath}"`);
+                const promptOptions = {
+                    name: product_1.default.nameLong.replace('-', ''),
+                    icns: (platform_1.isMacintosh && this.environmentService.isBuilt) ? path_1.join(path_1.dirname(this.environmentService.appRoot), `${product_1.default.nameShort}.icns`) : undefined
+                };
+                sudoPrompt.exec(sudoCommand.join(' '), promptOptions, (error, stdout, stderr) => {
+                    if (stdout) {
+                        this.logService.trace(`[sudo-prompt] received stdout: ${stdout}`);
+                    }
+                    if (stderr) {
+                        this.logService.trace(`[sudo-prompt] received stderr: ${stderr}`);
+                    }
+                    if (error) {
+                        reject(error);
+                    }
+                    else {
+                        resolve(undefined);
+                    }
+                });
+            });
+        }
+        get cliPath() {
+            // Windows
+            if (platform_1.isWindows) {
+                if (this.environmentService.isBuilt) {
+                    return path_1.join(path_1.dirname(process.execPath), 'bin', `${product_1.default.applicationName}.cmd`);
+                }
+                return path_1.join(this.environmentService.appRoot, 'scripts', 'code-cli.bat');
+            }
+            // Linux
+            if (platform_1.isLinux) {
+                if (this.environmentService.isBuilt) {
+                    return path_1.join(path_1.dirname(process.execPath), 'bin', `${product_1.default.applicationName}`);
+                }
+                return path_1.join(this.environmentService.appRoot, 'scripts', 'code-cli.sh');
+            }
+            // macOS
+            if (this.environmentService.isBuilt) {
+                return path_1.join(this.environmentService.appRoot, 'bin', 'code');
+            }
+            return path_1.join(this.environmentService.appRoot, 'scripts', 'code-cli.sh');
+        }
+        async getOSStatistics() {
+            return {
+                totalmem: os_1.totalmem(),
+                freemem: os_1.freemem(),
+                loadavg: os_1.loadavg()
+            };
+        }
+        async getOSProperties() {
+            return {
+                arch: os_1.arch(),
+                platform: os_1.platform(),
+                release: os_1.release(),
+                type: os_1.type(),
+                cpus: os_1.cpus()
+            };
+        }
+        async getOSVirtualMachineHint() {
+            return id_1.virtualMachineHint.value();
         }
         //#endregion
         //#region Process
@@ -32413,7 +32231,7 @@ define(__m[58/*vs/platform/electron/electron-main/electronMainService*/], __M([0
             process.kill(pid, code);
         }
         //#endregion
-        //#region clipboard
+        //#region Clipboard
         async readClipboardText(windowId, type) {
             return electron_1.clipboard.readText(type);
         }
@@ -32454,6 +32272,12 @@ define(__m[58/*vs/platform/electron/electron-main/electronMainService*/], __M([0
         }
         async toggleWindowTabsBar() {
             electron_1.Menu.sendActionToFirstResponder('toggleTabBar:');
+        }
+        async updateTouchBar(windowId, items) {
+            const window = this.windowById(windowId);
+            if (window) {
+                window.updateTouchBar(items);
+            }
         }
         //#endregion
         //#region Lifecycle
@@ -32538,6 +32362,42 @@ define(__m[58/*vs/platform/electron/electron-main/electronMainService*/], __M([0
             }
         }
         //#endregion
+        //#region Registry (windows)
+        async windowsGetStringRegKey(windowId, hive, path, name) {
+            if (!platform_1.isWindows) {
+                return undefined;
+            }
+            const Registry = await new Promise((resolve_3, reject_3) => { require(['vscode-windows-registry'], resolve_3, reject_3); });
+            try {
+                return Registry.GetStringRegKey(hive, path, name);
+            }
+            catch (_a) {
+                return undefined;
+            }
+        }
+        //#endregion
+        //#region Credentials
+        async getPassword(windowId, service, account) {
+            const keytar = await new Promise((resolve_4, reject_4) => { require(['keytar'], resolve_4, reject_4); });
+            return keytar.getPassword(service, account);
+        }
+        async setPassword(windowId, service, account, password) {
+            const keytar = await new Promise((resolve_5, reject_5) => { require(['keytar'], resolve_5, reject_5); });
+            return keytar.setPassword(service, account, password);
+        }
+        async deletePassword(windowId, service, account) {
+            const keytar = await new Promise((resolve_6, reject_6) => { require(['keytar'], resolve_6, reject_6); });
+            return keytar.deletePassword(service, account);
+        }
+        async findPassword(windowId, service) {
+            const keytar = await new Promise((resolve_7, reject_7) => { require(['keytar'], resolve_7, reject_7); });
+            return keytar.findPassword(service);
+        }
+        async findCredentials(windowId, service) {
+            const keytar = await new Promise((resolve_8, reject_8) => { require(['keytar'], resolve_8, reject_8); });
+            return keytar.findCredentials(service);
+        }
+        //#endregion
         windowById(windowId) {
             if (typeof windowId !== 'number') {
                 return undefined;
@@ -32545,14 +32405,18 @@ define(__m[58/*vs/platform/electron/electron-main/electronMainService*/], __M([0
             return this.windowsMainService.getWindowById(windowId);
         }
     };
-    ElectronMainService = __decorate([
+    __decorate([
+        decorators_1.memoize
+    ], NativeHostMainService.prototype, "cliPath", null);
+    NativeHostMainService = __decorate([
         __param(0, windows_1.IWindowsMainService),
         __param(1, dialogs_1.IDialogMainService),
         __param(2, lifecycleMainService_1.ILifecycleMainService),
-        __param(3, environment_1.IEnvironmentService),
-        __param(4, telemetry_1.ITelemetryService)
-    ], ElectronMainService);
-    exports.ElectronMainService = ElectronMainService;
+        __param(3, environment_1.INativeEnvironmentService),
+        __param(4, telemetry_1.ITelemetryService),
+        __param(5, log_1.ILogService)
+    ], NativeHostMainService);
+    exports.NativeHostMainService = NativeHostMainService;
 });
 
 /*---------------------------------------------------------------------------------------------
@@ -32568,7 +32432,7 @@ define(__m[58/*vs/platform/electron/electron-main/electronMainService*/], __M([0
 
 
 
-define(__m[211/*vs/platform/driver/electron-main/driver*/], __M([0/*require*/,1/*exports*/,145/*vs/platform/driver/node/driver*/,41/*vs/platform/windows/electron-main/windows*/,50/*vs/base/parts/ipc/node/ipc.net*/,2/*vs/base/common/lifecycle*/,34/*vs/base/parts/ipc/common/ipc*/,53/*vs/base/common/keyCodes*/,164/*vs/platform/keybinding/common/usLayoutResolvedKeybinding*/,4/*vs/base/common/platform*/,3/*vs/base/common/event*/,72/*vs/base/common/scanCode*/,96/*vs/base/common/keybindingParser*/,9/*vs/base/common/async*/,22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,58/*vs/platform/electron/electron-main/electronMainService*/]), function (require, exports, driver_1, windows_1, ipc_net_1, lifecycle_1, ipc_1, keyCodes_1, usLayoutResolvedKeybinding_1, platform_1, event_1, scanCode_1, keybindingParser_1, async_1, lifecycleMainService_1, electronMainService_1) {
+define(__m[207/*vs/platform/driver/electron-main/driver*/], __M([0/*require*/,1/*exports*/,142/*vs/platform/driver/node/driver*/,40/*vs/platform/windows/electron-main/windows*/,50/*vs/base/parts/ipc/node/ipc.net*/,2/*vs/base/common/lifecycle*/,34/*vs/base/parts/ipc/common/ipc*/,52/*vs/base/common/keyCodes*/,159/*vs/platform/keybinding/common/usLayoutResolvedKeybinding*/,4/*vs/base/common/platform*/,3/*vs/base/common/event*/,71/*vs/base/common/scanCode*/,94/*vs/base/common/keybindingParser*/,10/*vs/base/common/async*/,24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,56/*vs/platform/native/electron-main/nativeHostMainService*/]), function (require, exports, driver_1, windows_1, ipc_net_1, lifecycle_1, ipc_1, keyCodes_1, usLayoutResolvedKeybinding_1, platform_1, event_1, scanCode_1, keybindingParser_1, async_1, lifecycleMainService_1, nativeHostMainService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.serve = exports.Driver = void 0;
@@ -32576,12 +32440,12 @@ define(__m[211/*vs/platform/driver/electron-main/driver*/], __M([0/*require*/,1/
         return keyCode < 21 /* KEY_0 */;
     }
     let Driver = class Driver {
-        constructor(windowServer, options, windowsMainService, lifecycleMainService, electronMainService) {
+        constructor(windowServer, options, windowsMainService, lifecycleMainService, nativeHostMainService) {
             this.windowServer = windowServer;
             this.options = options;
             this.windowsMainService = windowsMainService;
             this.lifecycleMainService = lifecycleMainService;
-            this.electronMainService = electronMainService;
+            this.nativeHostMainService = nativeHostMainService;
             this.registeredWindowIds = new Set();
             this.reloadingWindowIds = new Set();
             this.onDidReloadingChange = new event_1.Emitter();
@@ -32620,7 +32484,7 @@ define(__m[211/*vs/platform/driver/electron-main/driver*/], __M([0/*require*/,1/
             this.lifecycleMainService.reload(window);
         }
         async exitApplication() {
-            return this.electronMainService.quit(undefined);
+            return this.nativeHostMainService.quit(undefined);
         }
         async dispatchKeybinding(windowId, keybinding) {
             await this.whenUnfrozen(windowId);
@@ -32717,7 +32581,7 @@ define(__m[211/*vs/platform/driver/electron-main/driver*/], __M([0/*require*/,1/
     Driver = __decorate([
         __param(2, windows_1.IWindowsMainService),
         __param(3, lifecycleMainService_1.ILifecycleMainService),
-        __param(4, electronMainService_1.IElectronMainService)
+        __param(4, nativeHostMainService_1.INativeHostMainService)
     ], Driver);
     exports.Driver = Driver;
     async function serve(windowServer, handle, environmentService, instantiationService) {
@@ -32746,19 +32610,19 @@ define(__m[211/*vs/platform/driver/electron-main/driver*/], __M([0/*require*/,1/
 
 
 
-define(__m[212/*vs/platform/windows/electron-main/windowTracker*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,9/*vs/base/common/async*/,58/*vs/platform/electron/electron-main/electronMainService*/]), function (require, exports, event_1, lifecycle_1, async_1, electronMainService_1) {
+define(__m[208/*vs/platform/windows/electron-main/windowTracker*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/lifecycle*/,10/*vs/base/common/async*/,56/*vs/platform/native/electron-main/nativeHostMainService*/]), function (require, exports, event_1, lifecycle_1, async_1, nativeHostMainService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ActiveWindowManager = void 0;
     let ActiveWindowManager = class ActiveWindowManager extends lifecycle_1.Disposable {
-        constructor(electronService) {
+        constructor(nativeHostMainService) {
             super();
             this.disposables = this._register(new lifecycle_1.DisposableStore());
             // remember last active window id upon events
-            const onActiveWindowChange = event_1.Event.latch(event_1.Event.any(electronService.onWindowOpen, electronService.onWindowFocus));
+            const onActiveWindowChange = event_1.Event.latch(event_1.Event.any(nativeHostMainService.onWindowOpen, nativeHostMainService.onWindowFocus));
             onActiveWindowChange(this.setActiveWindow, this, this.disposables);
             // resolve current active window
-            this.firstActiveWindowIdPromise = async_1.createCancelablePromise(() => electronService.getActiveWindowId(-1));
+            this.firstActiveWindowIdPromise = async_1.createCancelablePromise(() => nativeHostMainService.getActiveWindowId(-1));
             (async () => {
                 try {
                     const windowId = await this.firstActiveWindowIdPromise;
@@ -32782,7 +32646,7 @@ define(__m[212/*vs/platform/windows/electron-main/windowTracker*/], __M([0/*requ
         }
     };
     ActiveWindowManager = __decorate([
-        __param(0, electronMainService_1.IElectronMainService)
+        __param(0, nativeHostMainService_1.INativeHostMainService)
     ], ActiveWindowManager);
     exports.ActiveWindowManager = ActiveWindowManager;
 });
@@ -32791,7 +32655,7 @@ define(__m[212/*vs/platform/windows/electron-main/windowTracker*/], __M([0/*requ
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[90/*vs/platform/windows/node/window*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/,28/*vs/base/common/extpath*/,36/*vs/platform/workspaces/common/workspaces*/,24/*vs/base/common/resources*/]), function (require, exports, platform, extpath, workspaces_1, resources_1) {
+define(__m[88/*vs/platform/windows/node/window*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/platform*/,27/*vs/base/common/extpath*/,36/*vs/platform/workspaces/common/workspaces*/,18/*vs/base/common/resources*/]), function (require, exports, platform, extpath, workspaces_1, resources_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.findWindowOnWorkspaceOrFolderUri = exports.findWindowOnExtensionDevelopmentPath = exports.findWindowOnWorkspace = exports.getLastActiveWindow = exports.findBestWindowOrFolderForFile = exports.OpenContext = void 0;
@@ -32911,7 +32775,7 @@ define(__m[90/*vs/platform/windows/node/window*/], __M([0/*require*/,1/*exports*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[213/*vs/platform/workspace/common/workspace*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,24/*vs/base/common/resources*/,5/*vs/platform/instantiation/common/instantiation*/,38/*vs/base/common/map*/,36/*vs/platform/workspaces/common/workspaces*/]), function (require, exports, uri_1, resources, instantiation_1, map_1, workspaces_1) {
+define(__m[209/*vs/platform/workspace/common/workspace*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/uri*/,18/*vs/base/common/resources*/,5/*vs/platform/instantiation/common/instantiation*/,37/*vs/base/common/map*/,36/*vs/platform/workspaces/common/workspaces*/]), function (require, exports, uri_1, resources, instantiation_1, map_1, workspaces_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toWorkspaceFolders = exports.toWorkspaceFolder = exports.WorkspaceFolder = exports.Workspace = exports.IWorkspaceFolder = exports.IWorkspace = exports.WorkbenchState = exports.IWorkspaceContextService = void 0;
@@ -33061,7 +32925,7 @@ define(__m[213/*vs/platform/workspace/common/workspace*/], __M([0/*require*/,1/*
 
 
 
-define(__m[48/*vs/platform/workspaces/electron-main/workspacesMainService*/], __M([0/*require*/,1/*exports*/,36/*vs/platform/workspaces/common/workspaces*/,14/*vs/platform/environment/common/environment*/,7/*vs/base/common/path*/,21/*vs/base/node/pfs*/,20/*fs*/,4/*vs/base/common/platform*/,3/*vs/base/common/event*/,8/*vs/platform/log/common/log*/,64/*crypto*/,42/*vs/base/common/json*/,213/*vs/platform/workspace/common/workspace*/,19/*vs/base/common/network*/,2/*vs/base/common/lifecycle*/,24/*vs/base/common/resources*/,5/*vs/platform/instantiation/common/instantiation*/,144/*vs/nls!vs/platform/workspaces/electron-main/workspacesMainService*/,25/*vs/platform/product/common/product*/,12/*electron*/,13/*vs/base/common/types*/,46/*vs/platform/backup/electron-main/backup*/,47/*vs/platform/dialogs/electron-main/dialogs*/,90/*vs/platform/windows/node/window*/]), function (require, exports, workspaces_1, environment_1, path_1, pfs_1, fs_1, platform_1, event_1, log_1, crypto_1, json, workspace_1, network_1, lifecycle_1, resources_1, instantiation_1, nls_1, product_1, electron_1, types_1, backup_1, dialogs_1, window_1) {
+define(__m[47/*vs/platform/workspaces/electron-main/workspacesMainService*/], __M([0/*require*/,1/*exports*/,36/*vs/platform/workspaces/common/workspaces*/,15/*vs/platform/environment/common/environment*/,6/*vs/base/common/path*/,22/*vs/base/node/pfs*/,21/*fs*/,4/*vs/base/common/platform*/,3/*vs/base/common/event*/,8/*vs/platform/log/common/log*/,63/*crypto*/,41/*vs/base/common/json*/,209/*vs/platform/workspace/common/workspace*/,9/*vs/base/common/network*/,2/*vs/base/common/lifecycle*/,18/*vs/base/common/resources*/,5/*vs/platform/instantiation/common/instantiation*/,141/*vs/nls!vs/platform/workspaces/electron-main/workspacesMainService*/,23/*vs/platform/product/common/product*/,13/*electron*/,14/*vs/base/common/types*/,45/*vs/platform/backup/electron-main/backup*/,46/*vs/platform/dialogs/electron-main/dialogs*/,88/*vs/platform/windows/node/window*/]), function (require, exports, workspaces_1, environment_1, path_1, pfs_1, fs_1, platform_1, event_1, log_1, crypto_1, json, workspace_1, network_1, lifecycle_1, resources_1, instantiation_1, nls_1, product_1, electron_1, types_1, backup_1, dialogs_1, window_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getWorkspaceIdentifier = exports.WorkspacesMainService = exports.IWorkspacesMainService = void 0;
@@ -33310,7 +33174,7 @@ define(__m[48/*vs/platform/workspaces/electron-main/workspacesMainService*/], __
 
 
 
-define(__m[214/*vs/code/electron-main/window*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/path*/,27/*vs/base/common/objects*/,125/*vs/nls!vs/code/electron-main/window*/,3/*vs/base/common/event*/,6/*vs/base/common/uri*/,12/*electron*/,14/*vs/platform/environment/common/environment*/,8/*vs/platform/log/common/log*/,17/*vs/platform/configuration/common/configuration*/,55/*vs/platform/environment/node/argv*/,25/*vs/platform/product/common/product*/,57/*vs/platform/windows/common/windows*/,2/*vs/base/common/lifecycle*/,4/*vs/base/common/platform*/,48/*vs/platform/workspaces/electron-main/workspacesMainService*/,46/*vs/platform/backup/electron-main/backup*/,227/*vs/base/common/performance*/,185/*vs/platform/extensionManagement/common/extensionGalleryService*/,69/*vs/platform/theme/electron-main/themeMainService*/,9/*vs/base/common/async*/,29/*vs/platform/telemetry/common/telemetry*/,47/*vs/platform/dialogs/electron-main/dialogs*/,32/*vs/base/common/labels*/,191/*vs/platform/theme/common/themeService*/,22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,85/*vs/platform/storage/node/storageMainService*/,26/*vs/platform/files/common/files*/]), function (require, exports, path, objects, nls, event_1, uri_1, electron_1, environment_1, log_1, configuration_1, argv_1, product_1, windows_1, lifecycle_1, platform_1, workspacesMainService_1, backup_1, perf, extensionGalleryService_1, themeMainService_1, async_1, telemetry_1, dialogs_1, labels_1, themeService_1, lifecycleMainService_1, storageMainService_1, files_1) {
+define(__m[210/*vs/code/electron-main/window*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/path*/,31/*vs/base/common/objects*/,122/*vs/nls!vs/code/electron-main/window*/,3/*vs/base/common/event*/,7/*vs/base/common/uri*/,13/*electron*/,15/*vs/platform/environment/common/environment*/,8/*vs/platform/log/common/log*/,19/*vs/platform/configuration/common/configuration*/,54/*vs/platform/environment/node/argv*/,23/*vs/platform/product/common/product*/,55/*vs/platform/windows/common/windows*/,2/*vs/base/common/lifecycle*/,4/*vs/base/common/platform*/,47/*vs/platform/workspaces/electron-main/workspacesMainService*/,45/*vs/platform/backup/electron-main/backup*/,223/*vs/base/common/performance*/,180/*vs/platform/extensionManagement/common/extensionGalleryService*/,69/*vs/platform/theme/electron-main/themeMainService*/,10/*vs/base/common/async*/,28/*vs/platform/telemetry/common/telemetry*/,46/*vs/platform/dialogs/electron-main/dialogs*/,32/*vs/base/common/labels*/,187/*vs/platform/theme/common/themeService*/,24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,83/*vs/platform/storage/node/storageMainService*/,25/*vs/platform/files/common/files*/,9/*vs/base/common/network*/]), function (require, exports, path, objects, nls, event_1, uri_1, electron_1, environment_1, log_1, configuration_1, argv_1, product_1, windows_1, lifecycle_1, platform_1, workspacesMainService_1, backup_1, perf, extensionGalleryService_1, themeMainService_1, async_1, telemetry_1, dialogs_1, labels_1, themeService_1, lifecycleMainService_1, storageMainService_1, files_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CodeWindow = exports.defaultWindowState = void 0;
@@ -33387,11 +33251,11 @@ define(__m[214/*vs/code/electron-main/window*/], __M([0/*require*/,1/*exports*/,
                     x: this.windowState.x,
                     y: this.windowState.y,
                     backgroundColor: this.themeMainService.getBackgroundColor(),
-                    minWidth: CodeWindow.MIN_WIDTH,
-                    minHeight: CodeWindow.MIN_HEIGHT,
+                    minWidth: windows_1.WindowMinimumSize.WIDTH,
+                    minHeight: windows_1.WindowMinimumSize.HEIGHT,
                     show: !isFullscreenOrMaximized,
                     title: product_1.default.nameLong,
-                    webPreferences: Object.assign({ preload: uri_1.URI.parse(this.doGetPreloadUrl()).fsPath, enableWebSQL: false, enableRemoteModule: false, nativeWindowOpen: true, webviewTag: true, zoomFactor: windows_1.zoomLevelToZoomFactor(windowConfig === null || windowConfig === void 0 ? void 0 : windowConfig.zoomLevel) }, this.environmentService.sandbox ?
+                    webPreferences: Object.assign({ preload: network_1.FileAccess.asFileUri('vs/base/parts/sandbox/electron-browser/preload.js', require).fsPath, enableWebSQL: false, enableRemoteModule: false, spellcheck: false, nativeWindowOpen: true, webviewTag: true, zoomFactor: windows_1.zoomLevelToZoomFactor(windowConfig === null || windowConfig === void 0 ? void 0 : windowConfig.zoomLevel) }, this.environmentService.sandbox ?
                         // Sandbox
                         {
                             sandbox: true,
@@ -33519,7 +33383,7 @@ define(__m[214/*vs/code/electron-main/window*/], __M([0/*require*/,1/*exports*/,
             return !!this.documentEdited;
         }
         focus(options) {
-            // macOS: Electron >6.x changed its behaviour to not
+            // macOS: Electron > 7.x changed its behaviour to not
             // bring the application to the foreground when a window
             // is focused programmatically. Only via `app.focus` and
             // the option `steal: true` can you get the previous
@@ -33690,7 +33554,7 @@ define(__m[214/*vs/code/electron-main/window*/], __M([0/*require*/,1/*exports*/,
             // Unresponsive
             if (error === 1 /* UNRESPONSIVE */) {
                 if (this.isExtensionDevelopmentHost || this.isExtensionTestHost || (this._win && this._win.webContents && this._win.webContents.isDevToolsOpened())) {
-                    // TODO@Ben Workaround for https://github.com/Microsoft/vscode/issues/56994
+                    // TODO@Ben Workaround for https://github.com/microsoft/vscode/issues/56994
                     // In certain cases the window can report unresponsiveness because a breakpoint was hit
                     // and the process is stopped executing. The most typical cases are:
                     // - devtools are opened and debugging happens
@@ -33877,7 +33741,10 @@ define(__m[214/*vs/code/electron-main/window*/], __M([0/*require*/,1/*exports*/,
             // Set fullscreen state
             windowConfiguration.fullscreen = this.isFullScreen;
             // Set Accessibility Config
-            windowConfiguration.highContrast = electron_1.nativeTheme.shouldUseInvertedColorScheme || electron_1.nativeTheme.shouldUseHighContrastColors;
+            windowConfiguration.colorScheme = {
+                dark: electron_1.nativeTheme.shouldUseDarkColors,
+                highContrast: electron_1.nativeTheme.shouldUseInvertedColorScheme || electron_1.nativeTheme.shouldUseHighContrastColors
+            };
             windowConfiguration.autoDetectHighContrast = (_a = windowConfig === null || windowConfig === void 0 ? void 0 : windowConfig.autoDetectHighContrast) !== null && _a !== void 0 ? _a : true;
             windowConfiguration.accessibilitySupport = electron_1.app.accessibilitySupportEnabled;
             // Title style related
@@ -33917,10 +33784,10 @@ define(__m[214/*vs/code/electron-main/window*/], __M([0/*require*/,1/*exports*/,
             else {
                 workbench = 'vs/code/electron-browser/workbench/workbench.html';
             }
-            return `${require.toUrl(workbench)}?config=${encodeURIComponent(JSON.stringify(config))}`;
-        }
-        doGetPreloadUrl() {
-            return require.toUrl('vs/base/parts/sandbox/electron-browser/preload.js');
+            return network_1.FileAccess
+                .asBrowserUri(workbench, require)
+                .with({ query: `config=${encodeURIComponent(JSON.stringify(config))}` })
+                .toString(true);
         }
         serializeWindowState() {
             if (!this._win) {
@@ -33944,7 +33811,7 @@ define(__m[214/*vs/code/electron-main/window*/], __M([0/*require*/,1/*exports*/,
                     // Still carry over window dimensions from previous sessions
                     // if we can compute it in fullscreen state.
                     // does not seem possible in all cases on Linux for example
-                    // (https://github.com/Microsoft/vscode/issues/58218) so we
+                    // (https://github.com/microsoft/vscode/issues/58218) so we
                     // fallback to the defaults in that case.
                     width: this.windowState.width || defaultState.width,
                     height: this.windowState.height || defaultState.height,
@@ -34101,7 +33968,7 @@ define(__m[214/*vs/code/electron-main/window*/], __M([0/*require*/,1/*exports*/,
         }
         getWorkingArea(display) {
             // Prefer the working area of the display to account for taskbars on the
-            // desktop being positioned somewhere (https://github.com/Microsoft/vscode/issues/50830).
+            // desktop being positioned somewhere (https://github.com/microsoft/vscode/issues/50830).
             //
             // Linux X11 sessions sometimes report wrong display bounds, so we validate
             // the reported sizes are positive.
@@ -34182,7 +34049,7 @@ define(__m[214/*vs/code/electron-main/window*/], __M([0/*require*/,1/*exports*/,
             }
             if (visibility === 'hidden') {
                 // for some weird reason that I have no explanation for, the menu bar is not hiding when calling
-                // this without timeout (see https://github.com/Microsoft/vscode/issues/19777). there seems to be
+                // this without timeout (see https://github.com/microsoft/vscode/issues/19777). there seems to be
                 // a timing issue with us opening the first window and the menu bar getting created. somehow the
                 // fact that we want to hide the menu without being able to bring it back via Alt key makes Electron
                 // still show the menu. Unable to reproduce from a simple Hello World application though...
@@ -34305,7 +34172,7 @@ define(__m[214/*vs/code/electron-main/window*/], __M([0/*require*/,1/*exports*/,
             const segments = items.map(item => {
                 var _a, _b;
                 let icon;
-                if (item.icon && !themeService_1.ThemeIcon.isThemeIcon(item.icon) && ((_b = (_a = item.icon) === null || _a === void 0 ? void 0 : _a.dark) === null || _b === void 0 ? void 0 : _b.scheme) === 'file') {
+                if (item.icon && !themeService_1.ThemeIcon.isThemeIcon(item.icon) && ((_b = (_a = item.icon) === null || _a === void 0 ? void 0 : _a.dark) === null || _b === void 0 ? void 0 : _b.scheme) === network_1.Schemas.file) {
                     icon = electron_1.nativeImage.createFromPath(uri_1.URI.revive(item.icon.dark).fsPath);
                     if (icon.isEmpty()) {
                         icon = undefined;
@@ -34334,12 +34201,10 @@ define(__m[214/*vs/code/electron-main/window*/], __M([0/*require*/,1/*exports*/,
             this._win = null; // Important to dereference the window object to allow for GC
         }
     };
-    CodeWindow.MIN_WIDTH = 600;
-    CodeWindow.MIN_HEIGHT = 270;
     CodeWindow.MAX_URL_LENGTH = 2 * 1024 * 1024; // https://cs.chromium.org/chromium/src/url/url_constants.cc?l=32
     CodeWindow = __decorate([
         __param(1, log_1.ILogService),
-        __param(2, environment_1.IEnvironmentService),
+        __param(2, environment_1.INativeEnvironmentService),
         __param(3, files_1.IFileService),
         __param(4, storageMainService_1.IStorageMainService),
         __param(5, configuration_1.IConfigurationService),
@@ -34366,7 +34231,7 @@ define(__m[214/*vs/code/electron-main/window*/], __M([0/*require*/,1/*exports*/,
 
 
 
-define(__m[91/*vs/platform/launch/electron-main/launchMainService*/], __M([0/*require*/,1/*exports*/,8/*vs/platform/log/common/log*/,87/*vs/platform/url/common/url*/,4/*vs/base/common/platform*/,5/*vs/platform/instantiation/common/instantiation*/,41/*vs/platform/windows/electron-main/windows*/,21/*vs/base/node/pfs*/,48/*vs/platform/workspaces/electron-main/workspacesMainService*/,17/*vs/platform/configuration/common/configuration*/,6/*vs/base/common/uri*/,12/*electron*/,23/*vs/base/common/arrays*/]), function (require, exports, log_1, url_1, platform_1, instantiation_1, windows_1, pfs_1, workspacesMainService_1, configuration_1, uri_1, electron_1, arrays_1) {
+define(__m[89/*vs/platform/launch/electron-main/launchMainService*/], __M([0/*require*/,1/*exports*/,8/*vs/platform/log/common/log*/,85/*vs/platform/url/common/url*/,4/*vs/base/common/platform*/,5/*vs/platform/instantiation/common/instantiation*/,40/*vs/platform/windows/electron-main/windows*/,22/*vs/base/node/pfs*/,47/*vs/platform/workspaces/electron-main/workspacesMainService*/,19/*vs/platform/configuration/common/configuration*/,7/*vs/base/common/uri*/,13/*electron*/,26/*vs/base/common/arrays*/]), function (require, exports, log_1, url_1, platform_1, instantiation_1, windows_1, pfs_1, workspacesMainService_1, configuration_1, uri_1, electron_1, arrays_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LaunchMainService = exports.ILaunchMainService = exports.ID = void 0;
@@ -34398,10 +34263,18 @@ define(__m[91/*vs/platform/launch/electron-main/launchMainService*/], __M([0/*re
         }
         async start(args, userEnv) {
             this.logService.trace('Received data from other instance: ', args, userEnv);
-            // Since we now start to open a window, make sure the app has focus.
-            // Focussing a window will not ensure that the application itself
-            // has focus, so we use the `steal: true` hint to force focus.
-            electron_1.app.focus({ steal: true });
+            // macOS: Electron > 7.x changed its behaviour to not
+            // bring the application to the foreground when a window
+            // is focused programmatically. Only via `app.focus` and
+            // the option `steal: true` can you get the previous
+            // behaviour back. The only reason to use this option is
+            // when a window is getting focused while the application
+            // is not in the foreground and since we got instructed
+            // to open a new window from another instance, we ensure
+            // that the app has focus.
+            if (platform_1.isMacintosh) {
+                electron_1.app.focus({ steal: true });
+            }
             // Check early for open-url which is handled in URL service
             const urlsToOpen = parseOpenUrl(args);
             if (urlsToOpen.length) {
@@ -34534,7 +34407,7 @@ define(__m[91/*vs/platform/launch/electron-main/launchMainService*/], __M([0/*re
         getRemoteDiagnostics(options) {
             const windows = this.windowsMainService.getWindows();
             const promises = windows.map(window => {
-                return new Promise((resolve, reject) => {
+                return new Promise((resolve) => {
                     const remoteAuthority = window.remoteAuthority;
                     if (remoteAuthority) {
                         const replyChannel = `vscode:getDiagnosticInfoResponse${window.id}`;
@@ -34555,7 +34428,7 @@ define(__m[91/*vs/platform/launch/electron-main/launchMainService*/], __M([0/*re
                         }, 5000);
                     }
                     else {
-                        resolve();
+                        resolve(undefined);
                     }
                 });
             });
@@ -34618,7 +34491,7 @@ define(__m[91/*vs/platform/launch/electron-main/launchMainService*/], __M([0/*re
 
 
 
-define(__m[215/*vs/platform/issue/electron-main/issueMainService*/], __M([0/*require*/,1/*exports*/,136/*vs/nls!vs/platform/issue/electron-main/issueMainService*/,30/*os*/,25/*vs/platform/product/common/product*/,27/*vs/base/common/objects*/,55/*vs/platform/environment/node/argv*/,12/*electron*/,91/*vs/platform/launch/electron-main/launchMainService*/,79/*vs/platform/diagnostics/common/diagnostics*/,86/*vs/platform/diagnostics/node/diagnosticsService*/,14/*vs/platform/environment/common/environment*/,4/*vs/base/common/platform*/,8/*vs/platform/log/common/log*/,75/*vs/base/node/ps*/,47/*vs/platform/dialogs/electron-main/dialogs*/,6/*vs/base/common/uri*/,5/*vs/platform/instantiation/common/instantiation*/,57/*vs/platform/windows/common/windows*/]), function (require, exports, nls_1, os, product_1, objects, argv_1, electron_1, launchMainService_1, diagnostics_1, diagnosticsService_1, environment_1, platform_1, log_1, ps_1, dialogs_1, uri_1, instantiation_1, windows_1) {
+define(__m[211/*vs/platform/issue/electron-main/issueMainService*/], __M([0/*require*/,1/*exports*/,133/*vs/nls!vs/platform/issue/electron-main/issueMainService*/,29/*os*/,23/*vs/platform/product/common/product*/,54/*vs/platform/environment/node/argv*/,13/*electron*/,89/*vs/platform/launch/electron-main/launchMainService*/,77/*vs/platform/diagnostics/common/diagnostics*/,84/*vs/platform/diagnostics/node/diagnosticsService*/,15/*vs/platform/environment/common/environment*/,4/*vs/base/common/platform*/,8/*vs/platform/log/common/log*/,73/*vs/base/node/ps*/,46/*vs/platform/dialogs/electron-main/dialogs*/,5/*vs/platform/instantiation/common/instantiation*/,55/*vs/platform/windows/common/windows*/,9/*vs/base/common/network*/]), function (require, exports, nls_1, os, product_1, argv_1, electron_1, launchMainService_1, diagnostics_1, diagnosticsService_1, environment_1, platform_1, log_1, ps_1, dialogs_1, instantiation_1, windows_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IssueMainService = exports.IIssueMainService = void 0;
@@ -34771,7 +34644,7 @@ define(__m[215/*vs/platform/issue/electron-main/issueMainService*/], __M([0/*req
                             y: position.y,
                             title: nls_1.localize(7, null),
                             backgroundColor: data.styles.backgroundColor || DEFAULT_BACKGROUND_COLOR,
-                            webPreferences: Object.assign({ preload: uri_1.URI.parse(require.toUrl('vs/base/parts/sandbox/electron-browser/preload.js')).fsPath, enableWebSQL: false, enableRemoteModule: false, nativeWindowOpen: true, zoomFactor: windows_1.zoomLevelToZoomFactor(data.zoomLevel) }, this.environmentService.sandbox ?
+                            webPreferences: Object.assign({ preload: network_1.FileAccess.asFileUri('vs/base/parts/sandbox/electron-browser/preload.js', require).fsPath, enableWebSQL: false, enableRemoteModule: false, spellcheck: false, nativeWindowOpen: true, zoomFactor: windows_1.zoomLevelToZoomFactor(data.zoomLevel) }, this.environmentService.sandbox ?
                                 // Sandbox
                                 {
                                     sandbox: true,
@@ -34820,7 +34693,7 @@ define(__m[215/*vs/platform/issue/electron-main/issueMainService*/], __M([0/*req
                             y: position.y,
                             backgroundColor: data.styles.backgroundColor,
                             title: nls_1.localize(8, null),
-                            webPreferences: Object.assign({ preload: uri_1.URI.parse(require.toUrl('vs/base/parts/sandbox/electron-browser/preload.js')).fsPath, enableWebSQL: false, enableRemoteModule: false, nativeWindowOpen: true, zoomFactor: windows_1.zoomLevelToZoomFactor(data.zoomLevel) }, this.environmentService.sandbox ?
+                            webPreferences: Object.assign({ preload: network_1.FileAccess.asFileUri('vs/base/parts/sandbox/electron-browser/preload.js', require).fsPath, enableWebSQL: false, enableRemoteModule: false, spellcheck: false, nativeWindowOpen: true, zoomFactor: windows_1.zoomLevelToZoomFactor(data.zoomLevel) }, this.environmentService.sandbox ?
                                 // Sandbox
                                 {
                                     sandbox: true,
@@ -34840,7 +34713,7 @@ define(__m[215/*vs/platform/issue/electron-main/issueMainService*/], __M([0/*req
                             machineId: this.machineId,
                             data
                         };
-                        this._processExplorerWindow.loadURL(toLauchUrl('vs/code/electron-sandbox/processExplorer/processExplorer.html', windowConfiguration));
+                        this._processExplorerWindow.loadURL(toWindowUrl('vs/code/electron-sandbox/processExplorer/processExplorer.html', windowConfiguration));
                         this._processExplorerWindow.on('close', () => this._processExplorerWindow = null);
                         this._processExplorerParentWindow.on('close', () => {
                             if (this._processExplorerWindow) {
@@ -34958,27 +34831,30 @@ define(__m[215/*vs/platform/issue/electron-main/issueMainService*/], __M([0/*req
                     reportIssueUrl: product_1.default.reportIssueUrl
                 }
             };
-            return toLauchUrl('vs/code/electron-sandbox/issue/issueReporter.html', windowConfiguration);
+            return toWindowUrl('vs/code/electron-sandbox/issue/issueReporter.html', windowConfiguration);
         }
     };
     IssueMainService = __decorate([
-        __param(2, environment_1.IEnvironmentService),
+        __param(2, environment_1.INativeEnvironmentService),
         __param(3, launchMainService_1.ILaunchMainService),
         __param(4, log_1.ILogService),
         __param(5, diagnosticsService_1.IDiagnosticsService),
         __param(6, dialogs_1.IDialogMainService)
     ], IssueMainService);
     exports.IssueMainService = IssueMainService;
-    function toLauchUrl(pathToHtml, windowConfiguration) {
+    function toWindowUrl(modulePathToHtml, windowConfiguration) {
         const environment = argv_1.parseArgs(process.argv, argv_1.OPTIONS);
-        const config = objects.assign(environment, windowConfiguration);
+        const config = Object.assign(environment, windowConfiguration);
         for (const keyValue of Object.keys(config)) {
             const key = keyValue;
             if (config[key] === undefined || config[key] === null || config[key] === '') {
                 delete config[key]; // only send over properties that have a true value
             }
         }
-        return `${require.toUrl(pathToHtml)}?config=${encodeURIComponent(JSON.stringify(config))}`;
+        return network_1.FileAccess
+            .asBrowserUri(modulePathToHtml, require)
+            .with({ query: `config=${encodeURIComponent(JSON.stringify(config))}` })
+            .toString(true);
     }
 });
 
@@ -34995,7 +34871,7 @@ define(__m[215/*vs/platform/issue/electron-main/issueMainService*/], __M([0/*req
 
 
 
-define(__m[59/*vs/platform/workspaces/electron-main/workspacesHistoryMainService*/], __M([0/*require*/,1/*exports*/,143/*vs/nls!vs/platform/workspaces/electron-main/workspacesHistoryMainService*/,23/*vs/base/common/arrays*/,40/*vs/platform/state/node/state*/,12/*electron*/,8/*vs/platform/log/common/log*/,32/*vs/base/common/labels*/,3/*vs/base/common/event*/,4/*vs/base/common/platform*/,36/*vs/platform/workspaces/common/workspaces*/,48/*vs/platform/workspaces/electron-main/workspacesMainService*/,9/*vs/base/common/async*/,24/*vs/base/common/resources*/,6/*vs/base/common/uri*/,19/*vs/base/common/network*/,14/*vs/platform/environment/common/environment*/,21/*vs/base/node/pfs*/,22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,5/*vs/platform/instantiation/common/instantiation*/,2/*vs/base/common/lifecycle*/]), function (require, exports, nls, arrays, state_1, electron_1, log_1, labels_1, event_1, platform_1, workspaces_1, workspacesMainService_1, async_1, resources_1, uri_1, network_1, environment_1, pfs_1, lifecycleMainService_1, instantiation_1, lifecycle_1) {
+define(__m[57/*vs/platform/workspaces/electron-main/workspacesHistoryMainService*/], __M([0/*require*/,1/*exports*/,140/*vs/nls!vs/platform/workspaces/electron-main/workspacesHistoryMainService*/,26/*vs/base/common/arrays*/,39/*vs/platform/state/node/state*/,13/*electron*/,8/*vs/platform/log/common/log*/,32/*vs/base/common/labels*/,3/*vs/base/common/event*/,4/*vs/base/common/platform*/,36/*vs/platform/workspaces/common/workspaces*/,47/*vs/platform/workspaces/electron-main/workspacesMainService*/,10/*vs/base/common/async*/,18/*vs/base/common/resources*/,7/*vs/base/common/uri*/,9/*vs/base/common/network*/,15/*vs/platform/environment/common/environment*/,22/*vs/base/node/pfs*/,24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,5/*vs/platform/instantiation/common/instantiation*/,2/*vs/base/common/lifecycle*/]), function (require, exports, nls, arrays, state_1, electron_1, log_1, labels_1, event_1, platform_1, workspaces_1, workspacesMainService_1, async_1, resources_1, uri_1, network_1, environment_1, pfs_1, lifecycleMainService_1, instantiation_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.WorkspacesHistoryMainService = exports.IWorkspacesHistoryMainService = void 0;
@@ -35229,7 +35105,7 @@ define(__m[59/*vs/platform/workspaces/electron-main/workspacesHistoryMainService
                 // The user might have meanwhile removed items from the jump list and we have to respect that
                 // so we need to update our list of recent paths with the choice of the user to not add them again
                 // Also: Windows will not show our custom category at all if there is any entry which was removed
-                // by the user! See https://github.com/Microsoft/vscode/issues/15052
+                // by the user! See https://github.com/microsoft/vscode/issues/15052
                 let toRemove = [];
                 for (let item of electron_1.app.getJumpListSettings().removedItems) {
                     const args = item.args;
@@ -35309,7 +35185,7 @@ define(__m[59/*vs/platform/workspaces/electron-main/workspacesHistoryMainService
         __param(0, state_1.IStateService),
         __param(1, log_1.ILogService),
         __param(2, workspacesMainService_1.IWorkspacesMainService),
-        __param(3, environment_1.IEnvironmentService),
+        __param(3, environment_1.INativeEnvironmentService),
         __param(4, lifecycleMainService_1.ILifecycleMainService)
     ], WorkspacesHistoryMainService);
     exports.WorkspacesHistoryMainService = WorkspacesHistoryMainService;
@@ -35346,13 +35222,13 @@ define(__m[59/*vs/platform/workspaces/electron-main/workspacesHistoryMainService
 
 
 
-define(__m[216/*vs/platform/menubar/electron-main/menubar*/], __M([0/*require*/,1/*exports*/,137/*vs/nls!vs/platform/menubar/electron-main/menubar*/,4/*vs/base/common/platform*/,14/*vs/platform/environment/common/environment*/,12/*electron*/,57/*vs/platform/windows/common/windows*/,17/*vs/platform/configuration/common/configuration*/,29/*vs/platform/telemetry/common/telemetry*/,44/*vs/platform/update/common/update*/,25/*vs/platform/product/common/product*/,9/*vs/base/common/async*/,8/*vs/platform/log/common/log*/,32/*vs/base/common/labels*/,41/*vs/platform/windows/electron-main/windows*/,59/*vs/platform/workspaces/electron-main/workspacesHistoryMainService*/,171/*vs/platform/menubar/common/menubar*/,6/*vs/base/common/uri*/,40/*vs/platform/state/node/state*/,22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,58/*vs/platform/electron/electron-main/electronMainService*/]), function (require, exports, nls, platform_1, environment_1, electron_1, windows_1, configuration_1, telemetry_1, update_1, product_1, async_1, log_1, labels_1, windows_2, workspacesHistoryMainService_1, menubar_1, uri_1, state_1, lifecycleMainService_1, electronMainService_1) {
+define(__m[212/*vs/platform/menubar/electron-main/menubar*/], __M([0/*require*/,1/*exports*/,134/*vs/nls!vs/platform/menubar/electron-main/menubar*/,4/*vs/base/common/platform*/,15/*vs/platform/environment/common/environment*/,13/*electron*/,55/*vs/platform/windows/common/windows*/,19/*vs/platform/configuration/common/configuration*/,28/*vs/platform/telemetry/common/telemetry*/,42/*vs/platform/update/common/update*/,23/*vs/platform/product/common/product*/,10/*vs/base/common/async*/,8/*vs/platform/log/common/log*/,32/*vs/base/common/labels*/,40/*vs/platform/windows/electron-main/windows*/,57/*vs/platform/workspaces/electron-main/workspacesHistoryMainService*/,166/*vs/platform/menubar/common/menubar*/,7/*vs/base/common/uri*/,39/*vs/platform/state/node/state*/,24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,56/*vs/platform/native/electron-main/nativeHostMainService*/]), function (require, exports, nls, platform_1, environment_1, electron_1, windows_1, configuration_1, telemetry_1, update_1, product_1, async_1, log_1, labels_1, windows_2, workspacesHistoryMainService_1, menubar_1, uri_1, state_1, lifecycleMainService_1, nativeHostMainService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Menubar = void 0;
     const telemetryFrom = 'menu';
     let Menubar = class Menubar {
-        constructor(updateService, configurationService, windowsMainService, environmentService, telemetryService, workspacesHistoryMainService, stateService, lifecycleMainService, logService, electronMainService) {
+        constructor(updateService, configurationService, windowsMainService, environmentService, telemetryService, workspacesHistoryMainService, stateService, lifecycleMainService, logService, nativeHostMainService) {
             this.updateService = updateService;
             this.configurationService = configurationService;
             this.windowsMainService = windowsMainService;
@@ -35362,7 +35238,7 @@ define(__m[216/*vs/platform/menubar/electron-main/menubar*/], __M([0/*require*/,
             this.stateService = stateService;
             this.lifecycleMainService = lifecycleMainService;
             this.logService = logService;
-            this.electronMainService = electronMainService;
+            this.nativeHostMainService = nativeHostMainService;
             this.fallbackMenuHandlers = Object.create(null);
             this.menuUpdater = new async_1.RunOnceScheduler(() => this.doUpdateMenu(), 0);
             this.menuGC = new async_1.RunOnceScheduler(() => { this.oldMenus = []; }, 10000);
@@ -35393,8 +35269,8 @@ define(__m[216/*vs/platform/menubar/electron-main/menubar*/], __M([0/*require*/,
             // File Menu Items
             this.fallbackMenuHandlers['workbench.action.files.newUntitledFile'] = (menuItem, win, event) => this.windowsMainService.openEmptyWindow({ context: 2 /* MENU */, contextWindowId: win === null || win === void 0 ? void 0 : win.id });
             this.fallbackMenuHandlers['workbench.action.newWindow'] = (menuItem, win, event) => this.windowsMainService.openEmptyWindow({ context: 2 /* MENU */, contextWindowId: win === null || win === void 0 ? void 0 : win.id });
-            this.fallbackMenuHandlers['workbench.action.files.openFileFolder'] = (menuItem, win, event) => this.electronMainService.pickFileFolderAndOpen(undefined, { forceNewWindow: this.isOptionClick(event), telemetryExtraData: { from: telemetryFrom } });
-            this.fallbackMenuHandlers['workbench.action.openWorkspace'] = (menuItem, win, event) => this.electronMainService.pickWorkspaceAndOpen(undefined, { forceNewWindow: this.isOptionClick(event), telemetryExtraData: { from: telemetryFrom } });
+            this.fallbackMenuHandlers['workbench.action.files.openFileFolder'] = (menuItem, win, event) => this.nativeHostMainService.pickFileFolderAndOpen(undefined, { forceNewWindow: this.isOptionClick(event), telemetryExtraData: { from: telemetryFrom } });
+            this.fallbackMenuHandlers['workbench.action.openWorkspace'] = (menuItem, win, event) => this.nativeHostMainService.pickWorkspaceAndOpen(undefined, { forceNewWindow: this.isOptionClick(event), telemetryExtraData: { from: telemetryFrom } });
             // Recent Menu Items
             this.fallbackMenuHandlers['workbench.action.clearRecentFiles'] = () => this.workspacesHistoryMainService.clearRecentlyOpened();
             // Help Menu Items
@@ -35440,8 +35316,8 @@ define(__m[216/*vs/platform/menubar/electron-main/menubar*/], __M([0/*require*/,
             this.lifecycleMainService.onWillShutdown(() => this.willShutdown = true);
             // // Listen to some events from window service to update menu
             this.windowsMainService.onWindowsCountChanged(e => this.onWindowsCountChanged(e));
-            this.electronMainService.onWindowBlur(() => this.onWindowFocusChange());
-            this.electronMainService.onWindowFocus(() => this.onWindowFocusChange());
+            this.nativeHostMainService.onWindowBlur(() => this.onWindowFocusChange());
+            this.nativeHostMainService.onWindowFocus(() => this.onWindowFocusChange());
         }
         get currentEnableMenuBarMnemonics() {
             let enableMenuBarMnemonics = this.configurationService.getValue('window.enableMenuBarMnemonics');
@@ -35609,10 +35485,10 @@ define(__m[216/*vs/platform/menubar/electron-main/menubar*/], __M([0/*require*/,
                 click: () => {
                     const lastActiveWindow = this.windowsMainService.getLastActiveWindow();
                     if (this.windowsMainService.getWindowCount() === 0 || // allow to quit when no more windows are open
-                        !!electron_1.BrowserWindow.getFocusedWindow() || // allow to quit when window has focus (fix for https://github.com/Microsoft/vscode/issues/39191)
-                     (lastActiveWindow === null || lastActiveWindow === void 0 ? void 0 : lastActiveWindow.isMinimized()) // allow to quit when window has no focus but is minimized (https://github.com/Microsoft/vscode/issues/63000)
+                        !!electron_1.BrowserWindow.getFocusedWindow() || // allow to quit when window has focus (fix for https://github.com/microsoft/vscode/issues/39191)
+                     (lastActiveWindow === null || lastActiveWindow === void 0 ? void 0 : lastActiveWindow.isMinimized()) // allow to quit when window has no focus but is minimized (https://github.com/microsoft/vscode/issues/63000)
                     ) {
-                        this.electronMainService.quit(undefined);
+                        this.nativeHostMainService.quit(undefined);
                     }
                 }
             }));
@@ -35909,10 +35785,10 @@ define(__m[216/*vs/platform/menubar/electron-main/menubar*/], __M([0/*require*/,
         }
         runActionInRenderer(invocation) {
             // We make sure to not run actions when the window has no focus, this helps
-            // for https://github.com/Microsoft/vscode/issues/25907 and specifically for
-            // https://github.com/Microsoft/vscode/issues/11928
+            // for https://github.com/microsoft/vscode/issues/25907 and specifically for
+            // https://github.com/microsoft/vscode/issues/11928
             // Still allow to run when the last active window is minimized though for
-            // https://github.com/Microsoft/vscode/issues/63000
+            // https://github.com/microsoft/vscode/issues/63000
             let activeBrowserWindow = electron_1.BrowserWindow.getFocusedWindow();
             if (!activeBrowserWindow) {
                 const lastActiveWindow = this.windowsMainService.getLastActiveWindow();
@@ -35925,7 +35801,7 @@ define(__m[216/*vs/platform/menubar/electron-main/menubar*/], __M([0/*require*/,
                 this.logService.trace('menubar#runActionInRenderer', invocation);
                 if (platform_1.isMacintosh && !this.environmentService.isBuilt && !activeWindow.isReady) {
                     if ((invocation.type === 'commandId' && invocation.commandId === 'workbench.action.toggleDevTools') || (invocation.type !== 'commandId' && invocation.userSettingsLabel === 'alt+cmd+i')) {
-                        // prevent this action from running twice on macOS (https://github.com/Microsoft/vscode/issues/62719)
+                        // prevent this action from running twice on macOS (https://github.com/microsoft/vscode/issues/62719)
                         // we already register a keybinding in bootstrap-window.js for opening developer tools in case something
                         // goes wrong and that keybinding is only removed when the application has loaded (= window ready).
                         return;
@@ -36000,13 +35876,13 @@ define(__m[216/*vs/platform/menubar/electron-main/menubar*/], __M([0/*require*/,
         __param(0, update_1.IUpdateService),
         __param(1, configuration_1.IConfigurationService),
         __param(2, windows_2.IWindowsMainService),
-        __param(3, environment_1.IEnvironmentService),
+        __param(3, environment_1.INativeEnvironmentService),
         __param(4, telemetry_1.ITelemetryService),
         __param(5, workspacesHistoryMainService_1.IWorkspacesHistoryMainService),
         __param(6, state_1.IStateService),
         __param(7, lifecycleMainService_1.ILifecycleMainService),
         __param(8, log_1.ILogService),
-        __param(9, electronMainService_1.IElectronMainService)
+        __param(9, nativeHostMainService_1.INativeHostMainService)
     ], Menubar);
     exports.Menubar = Menubar;
     function __separator__() {
@@ -36027,7 +35903,7 @@ define(__m[216/*vs/platform/menubar/electron-main/menubar*/], __M([0/*require*/,
 
 
 
-define(__m[217/*vs/platform/menubar/electron-main/menubarMainService*/], __M([0/*require*/,1/*exports*/,216/*vs/platform/menubar/electron-main/menubar*/,8/*vs/platform/log/common/log*/,5/*vs/platform/instantiation/common/instantiation*/,22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/]), function (require, exports, menubar_1, log_1, instantiation_1, lifecycleMainService_1) {
+define(__m[213/*vs/platform/menubar/electron-main/menubarMainService*/], __M([0/*require*/,1/*exports*/,212/*vs/platform/menubar/electron-main/menubar*/,8/*vs/platform/log/common/log*/,5/*vs/platform/instantiation/common/instantiation*/,24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/]), function (require, exports, menubar_1, log_1, instantiation_1, lifecycleMainService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.MenubarMainService = exports.IMenubarMainService = void 0;
@@ -36070,7 +35946,7 @@ define(__m[217/*vs/platform/menubar/electron-main/menubarMainService*/], __M([0/
 
 
 
-define(__m[218/*vs/platform/windows/electron-main/windowsMainService*/], __M([0/*require*/,1/*exports*/,20/*fs*/,7/*vs/base/common/path*/,141/*vs/nls!vs/platform/windows/electron-main/windowsMainService*/,23/*vs/base/common/arrays*/,27/*vs/base/common/objects*/,46/*vs/platform/backup/electron-main/backup*/,14/*vs/platform/environment/common/environment*/,40/*vs/platform/state/node/state*/,214/*vs/code/electron-main/window*/,12/*electron*/,22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,17/*vs/platform/configuration/common/configuration*/,8/*vs/platform/log/common/log*/,57/*vs/platform/windows/common/windows*/,90/*vs/platform/windows/node/window*/,3/*vs/base/common/event*/,25/*vs/platform/product/common/product*/,59/*vs/platform/workspaces/electron-main/workspacesHistoryMainService*/,4/*vs/base/common/platform*/,36/*vs/platform/workspaces/common/workspaces*/,5/*vs/platform/instantiation/common/instantiation*/,19/*vs/base/common/network*/,6/*vs/base/common/uri*/,24/*vs/base/common/resources*/,56/*vs/platform/remote/common/remoteHosts*/,209/*vs/platform/windows/electron-main/windowsStateStorage*/,48/*vs/platform/workspaces/electron-main/workspacesMainService*/,49/*vs/base/common/functional*/,2/*vs/base/common/lifecycle*/,47/*vs/platform/dialogs/electron-main/dialogs*/,13/*vs/base/common/types*/,28/*vs/base/common/extpath*/,32/*vs/base/common/labels*/]), function (require, exports, fs, path_1, nls_1, arrays, objects_1, backup_1, environment_1, state_1, window_1, electron_1, lifecycleMainService_1, configuration_1, log_1, windows_1, window_2, event_1, product_1, workspacesHistoryMainService_1, platform_1, workspaces_1, instantiation_1, network_1, uri_1, resources_1, remoteHosts_1, windowsStateStorage_1, workspacesMainService_1, functional_1, lifecycle_1, dialogs_1, types_1, extpath_1, labels_1) {
+define(__m[214/*vs/platform/windows/electron-main/windowsMainService*/], __M([0/*require*/,1/*exports*/,21/*fs*/,6/*vs/base/common/path*/,138/*vs/nls!vs/platform/windows/electron-main/windowsMainService*/,26/*vs/base/common/arrays*/,31/*vs/base/common/objects*/,45/*vs/platform/backup/electron-main/backup*/,15/*vs/platform/environment/common/environment*/,39/*vs/platform/state/node/state*/,210/*vs/code/electron-main/window*/,13/*electron*/,24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,19/*vs/platform/configuration/common/configuration*/,8/*vs/platform/log/common/log*/,55/*vs/platform/windows/common/windows*/,88/*vs/platform/windows/node/window*/,3/*vs/base/common/event*/,23/*vs/platform/product/common/product*/,57/*vs/platform/workspaces/electron-main/workspacesHistoryMainService*/,4/*vs/base/common/platform*/,36/*vs/platform/workspaces/common/workspaces*/,5/*vs/platform/instantiation/common/instantiation*/,9/*vs/base/common/network*/,7/*vs/base/common/uri*/,18/*vs/base/common/resources*/,80/*vs/platform/remote/common/remoteHosts*/,205/*vs/platform/windows/electron-main/windowsStateStorage*/,47/*vs/platform/workspaces/electron-main/workspacesMainService*/,49/*vs/base/common/functional*/,2/*vs/base/common/lifecycle*/,46/*vs/platform/dialogs/electron-main/dialogs*/,14/*vs/base/common/types*/,27/*vs/base/common/extpath*/,32/*vs/base/common/labels*/]), function (require, exports, fs, path_1, nls_1, arrays, objects_1, backup_1, environment_1, state_1, window_1, electron_1, lifecycleMainService_1, configuration_1, log_1, windows_1, window_2, event_1, product_1, workspacesHistoryMainService_1, platform_1, workspaces_1, instantiation_1, network_1, uri_1, resources_1, remoteHosts_1, windowsStateStorage_1, workspacesMainService_1, functional_1, lifecycle_1, dialogs_1, types_1, extpath_1, labels_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.WindowsMainService = void 0;
@@ -36096,6 +35972,8 @@ define(__m[218/*vs/platform/windows/electron-main/windowsMainService*/], __M([0/
             this.instantiationService = instantiationService;
             this.dialogMainService = dialogMainService;
             this.shuttingDown = false;
+            this._onWindowOpened = this._register(new event_1.Emitter());
+            this.onWindowOpened = this._onWindowOpened.event;
             this._onWindowReady = this._register(new event_1.Emitter());
             this.onWindowReady = this._onWindowReady.event;
             this._onWindowsCountChanged = this._register(new event_1.Emitter());
@@ -36121,17 +35999,6 @@ define(__m[218/*vs/platform/windows/electron-main/windowsMainService*/], __M([0/
             }
         }
         registerListeners() {
-            // React to HC color scheme changes (Windows, macOS)
-            if (platform_1.isWindows || platform_1.isMacintosh) {
-                electron_1.nativeTheme.on('updated', () => {
-                    if (electron_1.nativeTheme.shouldUseInvertedColorScheme || electron_1.nativeTheme.shouldUseHighContrastColors) {
-                        this.sendToAll('vscode:enterHighContrast');
-                    }
-                    else {
-                        this.sendToAll('vscode:leaveHighContrast');
-                    }
-                });
-            }
             // When a window looses focus, save all windows state. This allows to
             // prevent loss of window-state data when OS is restarted without properly
             // shutting down the application (https://github.com/microsoft/vscode/issues/87171)
@@ -36284,9 +36151,11 @@ define(__m[218/*vs/platform/windows/electron-main/windowsMainService*/], __M([0/
             this.logService.trace('windowsManager#open');
             openConfig = this.validateOpenConfig(openConfig);
             const pathsToOpen = this.getPathsToOpen(openConfig);
+            this.logService.trace('windowsManager#open pathsToOpen', pathsToOpen);
             const foldersToAdd = [];
             const foldersToOpen = [];
             const workspacesToOpen = [];
+            const workspacesToRestore = [];
             const emptyToRestore = []; // empty windows with backupPath
             let emptyToOpen = 0;
             let fileInputs; // collect all file inputs
@@ -36330,10 +36199,9 @@ define(__m[218/*vs/platform/windows/electron-main/windowsMainService*/], __M([0/
             //
             // These are windows to restore because of hot-exit or from previous session (only performed once on startup!)
             //
-            let workspacesToRestore = [];
-            if (openConfig.initialStartup && !openConfig.cli.extensionDevelopmentPath && !openConfig.cli['disable-restore-windows']) {
+            if (openConfig.initialStartup) {
                 // Untitled workspaces are always restored
-                workspacesToRestore = this.workspacesMainService.getUntitledWorkspacesSync();
+                workspacesToRestore.push(...this.workspacesMainService.getUntitledWorkspacesSync());
                 workspacesToOpen.push(...workspacesToRestore);
                 // Empty windows with backups are always restored
                 emptyToRestore.push(...this.backupMainService.getEmptyWindowBackupPaths());
@@ -36343,6 +36211,7 @@ define(__m[218/*vs/platform/windows/electron-main/windowsMainService*/], __M([0/
             }
             // Open based on config
             const usedWindows = this.doOpen(openConfig, workspacesToOpen, foldersToOpen, emptyToRestore, emptyToOpen, fileInputs, foldersToAdd);
+            this.logService.trace(`windowsManager#open used window count ${usedWindows.length} (workspacesToOpen: ${workspacesToOpen.length}, foldersToOpen: ${foldersToOpen.length}, emptyToRestore: ${emptyToRestore.length}, emptyToOpen: ${emptyToOpen})`);
             // Make sure to pass focus to the most relevant of the windows if we open multiple
             if (usedWindows.length > 1) {
                 const focusLastActive = this.windowsState.lastActiveWindow && !openConfig.forceEmpty && openConfig.cli._.length && !openConfig.cli['file-uri'] && !openConfig.cli['folder-uri'] && !(openConfig.urisToOpen && openConfig.urisToOpen.length);
@@ -36572,6 +36441,7 @@ define(__m[218/*vs/platform/windows/electron-main/windowsMainService*/], __M([0/
             return arrays.distinct(usedWindows);
         }
         doOpenFilesInExistingWindow(configuration, window, fileInputs) {
+            this.logService.trace('windowsManager#doOpenFilesInExistingWindow');
             window.focus(); // make sure window has focus
             const params = {};
             if (fileInputs) {
@@ -36608,7 +36478,7 @@ define(__m[218/*vs/platform/windows/electron-main/windowsMainService*/], __M([0/
         }
         doOpenFolderOrWorkspace(openConfig, folderOrWorkspace, forceNewWindow, fileInputs, windowToUse) {
             if (!forceNewWindow && !windowToUse && typeof openConfig.contextWindowId === 'number') {
-                windowToUse = this.getWindowById(openConfig.contextWindowId); // fix for https://github.com/Microsoft/vscode/issues/49587
+                windowToUse = this.getWindowById(openConfig.contextWindowId); // fix for https://github.com/microsoft/vscode/issues/49587
             }
             return this.openInBrowserWindow({
                 userEnv: openConfig.userEnv,
@@ -36775,7 +36645,7 @@ define(__m[218/*vs/platform/windows/electron-main/windowsMainService*/], __M([0/
                                 windowsToOpen.push(pathToOpen);
                             }
                         }
-                        else if (restoreWindows !== 'folders' && openedWindow.backupPath && !openedWindow.remoteAuthority) { // Local windows that were empty. Empty windows with backups will always be restored in open()
+                        else if (restoreWindows !== 'folders' && openedWindow.backupPath) { // Empty window, potentially editors open to be restored
                             windowsToOpen.push({ backupPath: openedWindow.backupPath, remoteAuthority: openedWindow.remoteAuthority });
                         }
                     }
@@ -37107,7 +36977,7 @@ define(__m[218/*vs/platform/windows/electron-main/windowsMainService*/], __M([0/
             // For all other cases we first call into registerEmptyWindowBackupSync() to set it before
             // loading the window.
             if (options.emptyWindowBackupInfo) {
-                configuration.backupPath = path_1.join(this.environmentService.backupHome.fsPath, options.emptyWindowBackupInfo.backupFolder);
+                configuration.backupPath = path_1.join(this.environmentService.backupHome, options.emptyWindowBackupInfo.backupFolder);
             }
             let window;
             if (!options.forceNewWindow && !options.forceNewTabbedWindow) {
@@ -37155,6 +37025,8 @@ define(__m[218/*vs/platform/windows/electron-main/windowsMainService*/], __M([0/
                 }
                 // Add to our list of windows
                 WindowsMainService.WINDOWS.push(createdWindow);
+                // Indicate new window via event
+                this._onWindowOpened.fire(createdWindow);
                 // Indicate number change via event
                 this._onWindowsCountChanged.fire({ oldCount: WindowsMainService.WINDOWS.length - 1, newCount: WindowsMainService.WINDOWS.length });
                 // Window Events
@@ -37295,7 +37167,7 @@ define(__m[218/*vs/platform/windows/electron-main/windowsMainService*/], __M([0/
                 else if ((windowConfig.newWindowDimensions === 'inherit' || windowConfig.newWindowDimensions === 'offset') && lastActive) {
                     const lastActiveState = lastActive.serializeWindowState();
                     if (lastActiveState.mode === 3 /* Fullscreen */) {
-                        state.mode = 3 /* Fullscreen */; // only take mode (fixes https://github.com/Microsoft/vscode/issues/19331)
+                        state.mode = 3 /* Fullscreen */; // only take mode (fixes https://github.com/microsoft/vscode/issues/19331)
                     }
                     else {
                         state = lastActiveState;
@@ -37372,7 +37244,7 @@ define(__m[218/*vs/platform/windows/electron-main/windowsMainService*/], __M([0/
     WindowsMainService = __decorate([
         __param(2, log_1.ILogService),
         __param(3, state_1.IStateService),
-        __param(4, environment_1.IEnvironmentService),
+        __param(4, environment_1.INativeEnvironmentService),
         __param(5, lifecycleMainService_1.ILifecycleMainService),
         __param(6, backup_1.IBackupMainService),
         __param(7, configuration_1.IConfigurationService),
@@ -37397,7 +37269,7 @@ define(__m[218/*vs/platform/windows/electron-main/windowsMainService*/], __M([0/
 
 
 
-define(__m[219/*vs/platform/workspaces/electron-main/workspacesService*/], __M([0/*require*/,1/*exports*/,48/*vs/platform/workspaces/electron-main/workspacesMainService*/,41/*vs/platform/windows/electron-main/windows*/,59/*vs/platform/workspaces/electron-main/workspacesHistoryMainService*/,46/*vs/platform/backup/electron-main/backup*/]), function (require, exports, workspacesMainService_1, windows_1, workspacesHistoryMainService_1, backup_1) {
+define(__m[215/*vs/platform/workspaces/electron-main/workspacesService*/], __M([0/*require*/,1/*exports*/,47/*vs/platform/workspaces/electron-main/workspacesMainService*/,40/*vs/platform/windows/electron-main/windows*/,57/*vs/platform/workspaces/electron-main/workspacesHistoryMainService*/,45/*vs/platform/backup/electron-main/backup*/]), function (require, exports, workspacesMainService_1, windows_1, workspacesHistoryMainService_1, backup_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.WorkspacesService = void 0;
@@ -37468,7 +37340,7 @@ define(__m[219/*vs/platform/workspaces/electron-main/workspacesService*/], __M([
 
 
 
-define(__m[220/*vs/code/electron-main/app*/], __M([0/*require*/,1/*exports*/,12/*electron*/,4/*vs/base/common/platform*/,218/*vs/platform/windows/electron-main/windowsMainService*/,22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,113/*vs/code/node/shellEnv*/,44/*vs/platform/update/common/update*/,194/*vs/platform/update/electron-main/updateIpc*/,109/*vs/base/parts/ipc/electron-main/ipc.electron-main*/,50/*vs/base/parts/ipc/node/ipc.net*/,192/*vs/code/electron-main/sharedProcess*/,91/*vs/platform/launch/electron-main/launchMainService*/,5/*vs/platform/instantiation/common/instantiation*/,67/*vs/platform/instantiation/common/serviceCollection*/,66/*vs/platform/instantiation/common/descriptors*/,8/*vs/platform/log/common/log*/,40/*vs/platform/state/node/state*/,14/*vs/platform/environment/common/environment*/,17/*vs/platform/configuration/common/configuration*/,87/*vs/platform/url/common/url*/,199/*vs/platform/url/common/urlIpc*/,29/*vs/platform/telemetry/common/telemetry*/,188/*vs/platform/telemetry/common/telemetryUtils*/,190/*vs/platform/telemetry/node/telemetryIpc*/,187/*vs/platform/telemetry/common/telemetryService*/,189/*vs/platform/telemetry/node/commonProperties*/,34/*vs/base/parts/ipc/common/ipc*/,25/*vs/platform/product/common/product*/,124/*vs/code/electron-main/auth*/,2/*vs/base/common/lifecycle*/,41/*vs/platform/windows/electron-main/windows*/,212/*vs/platform/windows/electron-main/windowTracker*/,6/*vs/base/common/uri*/,36/*vs/platform/workspaces/common/workspaces*/,219/*vs/platform/workspaces/electron-main/workspacesService*/,74/*vs/base/node/id*/,198/*vs/platform/update/electron-main/updateService.win32*/,196/*vs/platform/update/electron-main/updateService.linux*/,195/*vs/platform/update/electron-main/updateService.darwin*/,215/*vs/platform/issue/electron-main/issueMainService*/,169/*vs/platform/log/common/logIpc*/,16/*vs/base/common/errors*/,201/*vs/platform/url/electron-main/electronUrlListener*/,211/*vs/platform/driver/electron-main/driver*/,217/*vs/platform/menubar/electron-main/menubarMainService*/,9/*vs/base/common/async*/,107/*vs/base/parts/contextmenu/electron-main/contextmenu*/,30/*os*/,7/*vs/base/common/path*/,122/*vs/nls!vs/code/electron-main/app*/,19/*vs/base/common/network*/,197/*vs/platform/update/electron-main/updateService.snap*/,85/*vs/platform/storage/node/storageMainService*/,186/*vs/platform/storage/node/storageIpc*/,210/*vs/platform/backup/electron-main/backupMainService*/,46/*vs/platform/backup/electron-main/backup*/,59/*vs/platform/workspaces/electron-main/workspacesHistoryMainService*/,200/*vs/platform/url/common/urlService*/,48/*vs/platform/workspaces/electron-main/workspacesMainService*/,20/*fs*/,80/*vs/platform/diagnostics/node/diagnosticsIpc*/,86/*vs/platform/diagnostics/node/diagnosticsService*/,78/*vs/platform/debug/common/extensionHostDebugIpc*/,146/*vs/platform/debug/electron-main/extensionHostDebugIpc*/,58/*vs/platform/electron/electron-main/electronMainService*/,162/*vs/platform/ipc/electron-main/sharedProcessMainService*/,47/*vs/platform/dialogs/electron-main/dialogs*/,13/*vs/base/common/types*/,23/*vs/base/common/arrays*/,88/*vs/platform/userDataSync/common/storageKeys*/,202/*vs/platform/userDataSync/common/userDataSyncIpc*/,32/*vs/base/common/labels*/,208/*vs/platform/webview/electron-main/webviewMainService*/,204/*vs/platform/webview/common/webviewManagerService*/,26/*vs/platform/files/common/files*/,42/*vs/base/common/json*/,33/*vs/base/common/uuid*/,18/*vs/base/common/buffer*/]), function (require, exports, electron_1, platform_1, windowsMainService_1, lifecycleMainService_1, shellEnv_1, update_1, updateIpc_1, ipc_electron_main_1, ipc_net_1, sharedProcess_1, launchMainService_1, instantiation_1, serviceCollection_1, descriptors_1, log_1, state_1, environment_1, configuration_1, url_1, urlIpc_1, telemetry_1, telemetryUtils_1, telemetryIpc_1, telemetryService_1, commonProperties_1, ipc_1, product_1, auth_1, lifecycle_1, windows_1, windowTracker_1, uri_1, workspaces_1, workspacesService_1, id_1, updateService_win32_1, updateService_linux_1, updateService_darwin_1, issueMainService_1, logIpc_1, errors_1, electronUrlListener_1, driver_1, menubarMainService_1, async_1, contextmenu_1, os_1, path_1, nls_1, network_1, updateService_snap_1, storageMainService_1, storageIpc_1, backupMainService_1, backup_1, workspacesHistoryMainService_1, urlService_1, workspacesMainService_1, fs_1, diagnosticsIpc_1, diagnosticsService_1, extensionHostDebugIpc_1, extensionHostDebugIpc_2, electronMainService_1, sharedProcessMainService_1, dialogs_1, types_1, arrays_1, storageKeys_1, userDataSyncIpc_1, labels_1, webviewMainService_1, webviewManagerService_1, files_1, json_1, uuid_1, buffer_1) {
+define(__m[216/*vs/code/electron-main/app*/], __M([0/*require*/,1/*exports*/,13/*electron*/,4/*vs/base/common/platform*/,214/*vs/platform/windows/electron-main/windowsMainService*/,24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,110/*vs/code/node/shellEnv*/,42/*vs/platform/update/common/update*/,190/*vs/platform/update/electron-main/updateIpc*/,107/*vs/base/parts/ipc/electron-main/ipc.electron-main*/,50/*vs/base/parts/ipc/node/ipc.net*/,188/*vs/code/electron-main/sharedProcess*/,89/*vs/platform/launch/electron-main/launchMainService*/,5/*vs/platform/instantiation/common/instantiation*/,67/*vs/platform/instantiation/common/serviceCollection*/,66/*vs/platform/instantiation/common/descriptors*/,8/*vs/platform/log/common/log*/,39/*vs/platform/state/node/state*/,15/*vs/platform/environment/common/environment*/,19/*vs/platform/configuration/common/configuration*/,85/*vs/platform/url/common/url*/,195/*vs/platform/url/common/urlIpc*/,28/*vs/platform/telemetry/common/telemetry*/,183/*vs/platform/telemetry/common/telemetryUtils*/,185/*vs/platform/telemetry/node/telemetryIpc*/,182/*vs/platform/telemetry/common/telemetryService*/,184/*vs/platform/telemetry/node/commonProperties*/,34/*vs/base/parts/ipc/common/ipc*/,23/*vs/platform/product/common/product*/,121/*vs/code/electron-main/auth*/,2/*vs/base/common/lifecycle*/,40/*vs/platform/windows/electron-main/windows*/,208/*vs/platform/windows/electron-main/windowTracker*/,7/*vs/base/common/uri*/,36/*vs/platform/workspaces/common/workspaces*/,215/*vs/platform/workspaces/electron-main/workspacesService*/,64/*vs/base/node/id*/,194/*vs/platform/update/electron-main/updateService.win32*/,192/*vs/platform/update/electron-main/updateService.linux*/,191/*vs/platform/update/electron-main/updateService.darwin*/,211/*vs/platform/issue/electron-main/issueMainService*/,164/*vs/platform/log/common/logIpc*/,17/*vs/base/common/errors*/,197/*vs/platform/url/electron-main/electronUrlListener*/,207/*vs/platform/driver/electron-main/driver*/,213/*vs/platform/menubar/electron-main/menubarMainService*/,10/*vs/base/common/async*/,105/*vs/base/parts/contextmenu/electron-main/contextmenu*/,6/*vs/base/common/path*/,18/*vs/base/common/resources*/,119/*vs/nls!vs/code/electron-main/app*/,9/*vs/base/common/network*/,193/*vs/platform/update/electron-main/updateService.snap*/,83/*vs/platform/storage/node/storageMainService*/,181/*vs/platform/storage/node/storageIpc*/,206/*vs/platform/backup/electron-main/backupMainService*/,45/*vs/platform/backup/electron-main/backup*/,57/*vs/platform/workspaces/electron-main/workspacesHistoryMainService*/,196/*vs/platform/url/common/urlService*/,47/*vs/platform/workspaces/electron-main/workspacesMainService*/,21/*fs*/,84/*vs/platform/diagnostics/node/diagnosticsService*/,76/*vs/platform/debug/common/extensionHostDebugIpc*/,143/*vs/platform/debug/electron-main/extensionHostDebugIpc*/,56/*vs/platform/native/electron-main/nativeHostMainService*/,157/*vs/platform/ipc/electron-main/sharedProcessMainService*/,46/*vs/platform/dialogs/electron-main/dialogs*/,14/*vs/base/common/types*/,26/*vs/base/common/arrays*/,86/*vs/platform/userDataSync/common/storageKeys*/,198/*vs/platform/userDataSync/common/userDataSyncIpc*/,32/*vs/base/common/labels*/,204/*vs/platform/webview/electron-main/webviewMainService*/,200/*vs/platform/webview/common/webviewManagerService*/,25/*vs/platform/files/common/files*/,41/*vs/base/common/json*/,33/*vs/base/common/uuid*/,20/*vs/base/common/buffer*/]), function (require, exports, electron_1, platform_1, windowsMainService_1, lifecycleMainService_1, shellEnv_1, update_1, updateIpc_1, ipc_electron_main_1, ipc_net_1, sharedProcess_1, launchMainService_1, instantiation_1, serviceCollection_1, descriptors_1, log_1, state_1, environment_1, configuration_1, url_1, urlIpc_1, telemetry_1, telemetryUtils_1, telemetryIpc_1, telemetryService_1, commonProperties_1, ipc_1, product_1, auth_1, lifecycle_1, windows_1, windowTracker_1, uri_1, workspaces_1, workspacesService_1, id_1, updateService_win32_1, updateService_linux_1, updateService_darwin_1, issueMainService_1, logIpc_1, errors_1, electronUrlListener_1, driver_1, menubarMainService_1, async_1, contextmenu_1, path_1, resources_1, nls_1, network_1, updateService_snap_1, storageMainService_1, storageIpc_1, backupMainService_1, backup_1, workspacesHistoryMainService_1, urlService_1, workspacesMainService_1, fs_1, diagnosticsService_1, extensionHostDebugIpc_1, extensionHostDebugIpc_2, nativeHostMainService_1, sharedProcessMainService_1, dialogs_1, types_1, arrays_1, storageKeys_1, userDataSyncIpc_1, labels_1, webviewMainService_1, webviewManagerService_1, files_1, json_1, uuid_1, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CodeApplication = void 0;
@@ -37614,10 +37486,6 @@ define(__m[220/*vs/code/electron-main/app*/], __M([0/*require*/,1/*exports*/,12/
                 const webContents = event.sender;
                 try {
                     const shellEnv = await shellEnv_1.getShellEnvironment(this.logService, this.environmentService);
-                    // TODO@sandbox workaround for https://github.com/electron/electron/issues/25119
-                    if (this.environmentService.sandbox) {
-                        await async_1.timeout(100);
-                    }
                     if (!webContents.isDestroyed()) {
                         webContents.send('vscode:acceptShellEnv', shellEnv);
                     }
@@ -37678,7 +37546,7 @@ define(__m[220/*vs/code/electron-main/app*/], __M([0/*require*/,1/*exports*/,12/
             // "com.microsoft.", which breaks native tabs for VS Code when using this
             // identifier (from the official build).
             // Explicitly opt out of the patch here before creating any windows.
-            // See: https://github.com/Microsoft/vscode/issues/35361#issuecomment-399794085
+            // See: https://github.com/microsoft/vscode/issues/35361#issuecomment-399794085
             try {
                 if (platform_1.isMacintosh && this.configurationService.getValue('window.nativeTabs') === true && !electron_1.systemPreferences.getUserDefault('NSUseImprovedLayoutPass', 'boolean')) {
                     electron_1.systemPreferences.setUserDefault('NSUseImprovedLayoutPass', 'boolean', true);
@@ -37759,10 +37627,9 @@ define(__m[220/*vs/code/electron-main/app*/], __M([0/*require*/,1/*exports*/,12/
             services.set(dialogs_1.IDialogMainService, new descriptors_1.SyncDescriptor(dialogs_1.DialogMainService));
             services.set(sharedProcessMainService_1.ISharedProcessMainService, new descriptors_1.SyncDescriptor(sharedProcessMainService_1.SharedProcessMainService, [sharedProcess]));
             services.set(launchMainService_1.ILaunchMainService, new descriptors_1.SyncDescriptor(launchMainService_1.LaunchMainService));
-            const diagnosticsChannel = ipc_1.getDelayedChannel(sharedProcessReady.then(client => client.getChannel('diagnostics')));
-            services.set(diagnosticsService_1.IDiagnosticsService, new descriptors_1.SyncDescriptor(diagnosticsIpc_1.DiagnosticsService, [diagnosticsChannel]));
+            services.set(diagnosticsService_1.IDiagnosticsService, ipc_1.createChannelSender(ipc_1.getDelayedChannel(sharedProcessReady.then(client => client.getChannel('diagnostics')))));
             services.set(issueMainService_1.IIssueMainService, new descriptors_1.SyncDescriptor(issueMainService_1.IssueMainService, [machineId, this.userEnv]));
-            services.set(electronMainService_1.IElectronMainService, new descriptors_1.SyncDescriptor(electronMainService_1.ElectronMainService));
+            services.set(nativeHostMainService_1.INativeHostMainService, new descriptors_1.SyncDescriptor(nativeHostMainService_1.NativeHostMainService));
             services.set(webviewManagerService_1.IWebviewManagerService, new descriptors_1.SyncDescriptor(webviewMainService_1.WebviewMainService));
             services.set(workspaces_1.IWorkspacesService, new descriptors_1.SyncDescriptor(workspacesService_1.WorkspacesService));
             services.set(menubarMainService_1.IMenubarMainService, new descriptors_1.SyncDescriptor(menubarMainService_1.MenubarMainService));
@@ -37798,7 +37665,7 @@ define(__m[220/*vs/code/electron-main/app*/], __M([0/*require*/,1/*exports*/,12/
                     return;
                 }
                 recordingStopped = true; // only once
-                const path = await electron_1.contentTracing.stopRecording(path_1.join(os_1.homedir(), `${product_1.default.applicationName}-${Math.random().toString(16).slice(-4)}.trace.txt`));
+                const path = await electron_1.contentTracing.stopRecording(resources_1.joinPath(this.environmentService.userHome, `${product_1.default.applicationName}-${Math.random().toString(16).slice(-4)}.trace.txt`).fsPath);
                 if (!timeout) {
                     if (this.dialogMainService) {
                         this.dialogMainService.showMessageBox({
@@ -37833,10 +37700,10 @@ define(__m[220/*vs/code/electron-main/app*/], __M([0/*require*/,1/*exports*/,12/
             const issueMainService = accessor.get(issueMainService_1.IIssueMainService);
             const issueChannel = ipc_1.createChannelReceiver(issueMainService);
             electronIpcServer.registerChannel('issue', issueChannel);
-            const electronMainService = accessor.get(electronMainService_1.IElectronMainService);
-            const electronChannel = ipc_1.createChannelReceiver(electronMainService);
-            electronIpcServer.registerChannel('electron', electronChannel);
-            sharedProcessClient.then(client => client.registerChannel('electron', electronChannel));
+            const nativeHostMainService = accessor.get(nativeHostMainService_1.INativeHostMainService);
+            const nativeHostChannel = ipc_1.createChannelReceiver(nativeHostMainService);
+            electronIpcServer.registerChannel('nativeHost', nativeHostChannel);
+            sharedProcessClient.then(client => client.registerChannel('nativeHost', nativeHostChannel));
             const sharedProcessMainService = accessor.get(sharedProcessMainService_1.ISharedProcessMainService);
             const sharedProcessChannel = ipc_1.createChannelReceiver(sharedProcessMainService);
             electronIpcServer.registerChannel('sharedProcess', sharedProcessChannel);
@@ -37935,7 +37802,7 @@ define(__m[220/*vs/code/electron-main/app*/], __M([0/*require*/,1/*exports*/,12/
                 }
             });
             // Create a URL handler which forwards to the last active window
-            const activeWindowManager = new windowTracker_1.ActiveWindowManager(electronMainService);
+            const activeWindowManager = new windowTracker_1.ActiveWindowManager(nativeHostMainService);
             const activeWindowRouter = new ipc_1.StaticRouter(ctx => activeWindowManager.getActiveClientId().then(id => ctx === id));
             const urlHandlerRouter = new urlIpc_1.URLHandlerRouter(activeWindowRouter);
             const urlHandlerChannel = electronIpcServer.getChannel('urlHandler', urlHandlerRouter);
@@ -37963,8 +37830,8 @@ define(__m[220/*vs/code/electron-main/app*/], __M([0/*require*/,1/*exports*/,12/
                     initialStartup: true
                 });
             }
-            // new window if "-n" or "--remote" was used without paths
-            if ((args['new-window'] || args.remote) && !hasCliArgs && !hasFolderURIs && !hasFileURIs) {
+            // new window if "-n"
+            if (args['new-window'] && !hasCliArgs && !hasFolderURIs && !hasFileURIs) {
                 return windowsMainService.open({
                     context,
                     cli: args,
@@ -38117,7 +37984,7 @@ define(__m[220/*vs/code/electron-main/app*/], __M([0/*require*/,1/*exports*/,12/
     CodeApplication = __decorate([
         __param(2, instantiation_1.IInstantiationService),
         __param(3, log_1.ILogService),
-        __param(4, environment_1.IEnvironmentService),
+        __param(4, environment_1.INativeEnvironmentService),
         __param(5, lifecycleMainService_1.ILifecycleMainService),
         __param(6, configuration_1.IConfigurationService),
         __param(7, state_1.IStateService)
@@ -38138,7 +38005,7 @@ define(__m[220/*vs/code/electron-main/app*/], __M([0/*require*/,1/*exports*/,12/
 
 
 
-define(__m[221/*vs/platform/request/node/requestService*/], __M([0/*require*/,1/*exports*/,228/*zlib*/,180/*url*/,2/*vs/base/common/lifecycle*/,27/*vs/base/common/objects*/,13/*vs/base/common/types*/,16/*vs/base/common/errors*/,179/*vs/platform/request/node/proxy*/,17/*vs/platform/configuration/common/configuration*/,8/*vs/platform/log/common/log*/,18/*vs/base/common/buffer*/]), function (require, exports, zlib_1, url_1, lifecycle_1, objects_1, types_1, errors_1, proxy_1, configuration_1, log_1, buffer_1) {
+define(__m[217/*vs/platform/request/node/requestService*/], __M([0/*require*/,1/*exports*/,224/*zlib*/,175/*url*/,2/*vs/base/common/lifecycle*/,14/*vs/base/common/types*/,17/*vs/base/common/errors*/,174/*vs/platform/request/node/proxy*/,19/*vs/platform/configuration/common/configuration*/,8/*vs/platform/log/common/log*/,20/*vs/base/common/buffer*/]), function (require, exports, zlib_1, url_1, lifecycle_1, types_1, errors_1, proxy_1, configuration_1, log_1, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.RequestService = void 0;
@@ -38165,7 +38032,7 @@ define(__m[221/*vs/platform/request/node/requestService*/], __M([0/*require*/,1/
             options.agent = agent;
             options.strictSSL = strictSSL;
             if (this.authorization) {
-                options.headers = objects_1.assign(options.headers || {}, { 'Proxy-Authorization': this.authorization });
+                options.headers = Object.assign(Object.assign({}, (options.headers || {})), { 'Proxy-Authorization': this.authorization });
             }
             return this._request(options, token);
         }
@@ -38197,10 +38064,7 @@ define(__m[221/*vs/platform/request/node/requestService*/], __M([0/*require*/,1/
                 req = rawRequest(opts, (res) => {
                     const followRedirects = types_1.isNumber(options.followRedirects) ? options.followRedirects : 3;
                     if (res.statusCode && res.statusCode >= 300 && res.statusCode < 400 && followRedirects > 0 && res.headers['location']) {
-                        this._request(objects_1.assign({}, options, {
-                            url: res.headers['location'],
-                            followRedirects: followRedirects - 1
-                        }), token).then(c, e);
+                        this._request(Object.assign(Object.assign({}, options), { url: res.headers['location'], followRedirects: followRedirects - 1 }), token).then(c, e);
                     }
                     else {
                         let stream = res;
@@ -38241,7 +38105,7 @@ define(__m[221/*vs/platform/request/node/requestService*/], __M([0/*require*/,1/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[222/*vs/platform/request/electron-main/requestMainService*/], __M([0/*require*/,1/*exports*/,221/*vs/platform/request/node/requestService*/,27/*vs/base/common/objects*/,12/*electron*/]), function (require, exports, requestService_1, objects_1, electron_1) {
+define(__m[218/*vs/platform/request/electron-main/requestMainService*/], __M([0/*require*/,1/*exports*/,217/*vs/platform/request/node/requestService*/,13/*electron*/]), function (require, exports, requestService_1, electron_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.RequestMainService = void 0;
@@ -38250,7 +38114,7 @@ define(__m[222/*vs/platform/request/electron-main/requestMainService*/], __M([0/
     }
     class RequestMainService extends requestService_1.RequestService {
         request(options, token) {
-            return super.request(objects_1.assign({}, options || {}, { getRawRequest }), token);
+            return super.request(Object.assign(Object.assign({}, (options || {})), { getRawRequest }), token);
         }
     }
     exports.RequestMainService = RequestMainService;
@@ -38260,7 +38124,7 @@ define(__m[222/*vs/platform/request/electron-main/requestMainService*/], __M([0/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[229/*vs/code/electron-main/main*/], __M([0/*require*/,1/*exports*/,12/*electron*/,4/*vs/base/common/platform*/,25/*vs/platform/product/common/product*/,159/*vs/platform/environment/node/argvHelper*/,147/*vs/platform/environment/node/waitMarkerFile*/,21/*vs/base/node/pfs*/,112/*vs/code/node/paths*/,22/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,50/*vs/base/parts/ipc/node/ipc.net*/,34/*vs/base/parts/ipc/common/ipc*/,161/*vs/platform/instantiation/common/instantiationService*/,67/*vs/platform/instantiation/common/serviceCollection*/,66/*vs/platform/instantiation/common/descriptors*/,8/*vs/platform/log/common/log*/,184/*vs/platform/state/node/stateService*/,40/*vs/platform/state/node/state*/,14/*vs/platform/environment/common/environment*/,172/*vs/platform/environment/node/environmentService*/,17/*vs/platform/configuration/common/configuration*/,175/*vs/platform/configuration/common/configurationService*/,39/*vs/platform/request/common/request*/,222/*vs/platform/request/electron-main/requestMainService*/,20/*fs*/,220/*vs/code/electron-main/app*/,10/*vs/nls!vs/code/electron-main/main*/,32/*vs/base/common/labels*/,170/*vs/platform/log/node/spdlogService*/,168/*vs/platform/log/common/bufferLog*/,16/*vs/base/common/errors*/,69/*vs/platform/theme/electron-main/themeMainService*/,49/*vs/base/common/functional*/,83/*vs/platform/sign/common/sign*/,183/*vs/platform/sign/node/signService*/,80/*vs/platform/diagnostics/node/diagnosticsIpc*/,166/*vs/platform/files/common/fileService*/,167/*vs/platform/files/node/diskFileSystemProvider*/,19/*vs/base/common/network*/,26/*vs/platform/files/common/files*/,88/*vs/platform/userDataSync/common/storageKeys*/,51/*vs/platform/remote/common/tunnel*/,182/*vs/platform/remote/node/tunnelService*/,68/*vs/platform/product/common/productService*/,193/*vs/platform/update/common/update.config.contribution*/]), function (require, exports, electron_1, platform_1, product_1, argvHelper_1, waitMarkerFile_1, pfs_1, paths_1, lifecycleMainService_1, ipc_net_1, ipc_1, instantiationService_1, serviceCollection_1, descriptors_1, log_1, stateService_1, state_1, environment_1, environmentService_1, configuration_1, configurationService_1, request_1, requestMainService_1, fs, app_1, nls_1, labels_1, spdlogService_1, bufferLog_1, errors_1, themeMainService_1, functional_1, sign_1, signService_1, diagnosticsIpc_1, fileService_1, diskFileSystemProvider_1, network_1, files_1, storageKeys_1, tunnel_1, tunnelService_1, productService_1) {
+define(__m[225/*vs/code/electron-main/main*/], __M([0/*require*/,1/*exports*/,13/*electron*/,21/*fs*/,4/*vs/base/common/platform*/,23/*vs/platform/product/common/product*/,154/*vs/platform/environment/node/argvHelper*/,144/*vs/platform/environment/node/waitMarkerFile*/,22/*vs/base/node/pfs*/,24/*vs/platform/lifecycle/electron-main/lifecycleMainService*/,50/*vs/base/parts/ipc/node/ipc.net*/,34/*vs/base/parts/ipc/common/ipc*/,156/*vs/platform/instantiation/common/instantiationService*/,67/*vs/platform/instantiation/common/serviceCollection*/,66/*vs/platform/instantiation/common/descriptors*/,8/*vs/platform/log/common/log*/,179/*vs/platform/state/node/stateService*/,39/*vs/platform/state/node/state*/,15/*vs/platform/environment/common/environment*/,167/*vs/platform/environment/node/environmentService*/,19/*vs/platform/configuration/common/configuration*/,170/*vs/platform/configuration/common/configurationService*/,38/*vs/platform/request/common/request*/,218/*vs/platform/request/electron-main/requestMainService*/,216/*vs/code/electron-main/app*/,11/*vs/nls!vs/code/electron-main/main*/,32/*vs/base/common/labels*/,165/*vs/platform/log/node/spdlogService*/,163/*vs/platform/log/common/bufferLog*/,17/*vs/base/common/errors*/,69/*vs/platform/theme/electron-main/themeMainService*/,49/*vs/base/common/functional*/,81/*vs/platform/sign/common/sign*/,178/*vs/platform/sign/node/signService*/,161/*vs/platform/files/common/fileService*/,162/*vs/platform/files/node/diskFileSystemProvider*/,9/*vs/base/common/network*/,25/*vs/platform/files/common/files*/,86/*vs/platform/userDataSync/common/storageKeys*/,51/*vs/platform/remote/common/tunnel*/,177/*vs/platform/remote/node/tunnelService*/,68/*vs/platform/product/common/productService*/,27/*vs/base/common/extpath*/,14/*vs/base/common/types*/,16/*vs/base/common/strings*/,6/*vs/base/common/path*/,26/*vs/base/common/arrays*/,189/*vs/platform/update/common/update.config.contribution*/]), function (require, exports, electron_1, fs, platform_1, product_1, argvHelper_1, waitMarkerFile_1, pfs_1, lifecycleMainService_1, ipc_net_1, ipc_1, instantiationService_1, serviceCollection_1, descriptors_1, log_1, stateService_1, state_1, environment_1, environmentService_1, configuration_1, configurationService_1, request_1, requestMainService_1, app_1, nls_1, labels_1, spdlogService_1, bufferLog_1, errors_1, themeMainService_1, functional_1, sign_1, signService_1, fileService_1, diskFileSystemProvider_1, network_1, files_1, storageKeys_1, tunnel_1, tunnelService_1, productService_1, extpath_1, types_1, strings_1, path_1, arrays_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     class ExpectedError extends Error {
@@ -38278,7 +38142,7 @@ define(__m[229/*vs/code/electron-main/main*/], __M([0/*require*/,1/*exports*/,12
             let args;
             try {
                 args = argvHelper_1.parseMainProcessArgv(process.argv);
-                args = paths_1.validatePaths(args);
+                args = this.validatePaths(args);
             }
             catch (err) {
                 console.error(err.message);
@@ -38305,7 +38169,7 @@ define(__m[229/*vs/code/electron-main/main*/], __M([0/*require*/,1/*exports*/,12
         async startup(args) {
             // We need to buffer the spdlog logs until we are sure
             // we are the only instance running, otherwise we'll have concurrent
-            // log file access on Windows (https://github.com/Microsoft/vscode/issues/41218)
+            // log file access on Windows (https://github.com/microsoft/vscode/issues/41218)
             const bufferLogService = new bufferLog_1.BufferLogService();
             const [instantiationService, instanceEnvironment, environmentService] = this.createServices(args, bufferLogService);
             try {
@@ -38343,9 +38207,10 @@ define(__m[229/*vs/code/electron-main/main*/], __M([0/*require*/,1/*exports*/,12
         }
         createServices(args, bufferLogService) {
             const services = new serviceCollection_1.ServiceCollection();
-            const environmentService = new environmentService_1.EnvironmentService(args, process.execPath);
+            const environmentService = new environmentService_1.NativeEnvironmentService(args);
             const instanceEnvironment = this.patchEnvironment(environmentService); // Patch `process.env` with the instance's environment
             services.set(environment_1.IEnvironmentService, environmentService);
+            services.set(environment_1.INativeEnvironmentService, environmentService);
             const logService = new log_1.MultiplexLogService([new log_1.ConsoleLogMainService(log_1.getLogLevel(environmentService)), bufferLogService]);
             process.once('exit', () => logService.dispose());
             services.set(log_1.ILogService, logService);
@@ -38372,7 +38237,7 @@ define(__m[229/*vs/code/electron-main/main*/], __M([0/*require*/,1/*exports*/,12
                 environmentService.logsPath,
                 environmentService.globalStorageHome.fsPath,
                 environmentService.workspaceStorageHome.fsPath,
-                environmentService.backupHome.fsPath
+                environmentService.backupHome
             ].map((path) => path ? pfs_1.mkdirp(path) : undefined));
             // Configuration service
             const configurationServiceInitialization = configurationService.initialize();
@@ -38459,7 +38324,7 @@ define(__m[229/*vs/code/electron-main/main*/], __M([0/*require*/,1/*exports*/,12
                         // Create a diagnostic service connected to the existing shared process
                         const sharedProcessClient = await ipc_net_1.connect(environmentService.sharedIPCHandle, 'main');
                         const diagnosticsChannel = sharedProcessClient.getChannel('diagnostics');
-                        const diagnosticsService = new diagnosticsIpc_1.DiagnosticsService(diagnosticsChannel);
+                        const diagnosticsService = ipc_1.createChannelSender(diagnosticsChannel);
                         const mainProcessInfo = await launchService.getMainProcessInfo();
                         const remoteDiagnostics = await launchService.getRemoteDiagnostics({ includeProcesses: true, includeWorkspaceMetadata: true });
                         const diagnostics = await diagnosticsService.getDiagnostics(mainProcessInfo, remoteDiagnostics);
@@ -38550,6 +38415,72 @@ define(__m[229/*vs/code/electron-main/main*/], __M([0/*require*/,1/*exports*/,12
                 }
             }
             lifecycleMainService.kill(exitCode);
+        }
+        //#region Helpers
+        validatePaths(args) {
+            // Track URLs if they're going to be used
+            if (args['open-url']) {
+                args._urls = args._;
+                args._ = [];
+            }
+            // Normalize paths and watch out for goto line mode
+            if (!args['remote']) {
+                const paths = this.doValidatePaths(args._, args.goto);
+                args._ = paths;
+            }
+            return args;
+        }
+        doValidatePaths(args, gotoLineMode) {
+            const cwd = process.env['VSCODE_CWD'] || process.cwd();
+            const result = args.map(arg => {
+                let pathCandidate = String(arg);
+                let parsedPath = undefined;
+                if (gotoLineMode) {
+                    parsedPath = extpath_1.parseLineAndColumnAware(pathCandidate);
+                    pathCandidate = parsedPath.path;
+                }
+                if (pathCandidate) {
+                    pathCandidate = this.preparePath(cwd, pathCandidate);
+                }
+                const sanitizedFilePath = extpath_1.sanitizeFilePath(pathCandidate, cwd);
+                const filePathBasename = path_1.basename(sanitizedFilePath);
+                if (filePathBasename /* can be empty if code is opened on root */ && !extpath_1.isValidBasename(filePathBasename)) {
+                    return null; // do not allow invalid file names
+                }
+                if (gotoLineMode && parsedPath) {
+                    parsedPath.path = sanitizedFilePath;
+                    return this.toPath(parsedPath);
+                }
+                return sanitizedFilePath;
+            });
+            const caseInsensitive = platform_1.isWindows || platform_1.isMacintosh;
+            const distinctPaths = arrays_1.distinct(result, path => path && caseInsensitive ? path.toLowerCase() : (path || ''));
+            return arrays_1.coalesce(distinctPaths);
+        }
+        preparePath(cwd, path) {
+            // Trim trailing quotes
+            if (platform_1.isWindows) {
+                path = strings_1.rtrim(path, '"'); // https://github.com/microsoft/vscode/issues/1498
+            }
+            // Trim whitespaces
+            path = strings_1.trim(strings_1.trim(path, ' '), '\t');
+            if (platform_1.isWindows) {
+                // Resolve the path against cwd if it is relative
+                path = path_1.resolve(cwd, path);
+                // Trim trailing '.' chars on Windows to prevent invalid file names
+                path = strings_1.rtrim(path, '.');
+            }
+            return path;
+        }
+        toPath(pathWithLineAndCol) {
+            const segments = [pathWithLineAndCol.path];
+            if (types_1.isNumber(pathWithLineAndCol.line)) {
+                segments.push(String(pathWithLineAndCol.line));
+            }
+            if (types_1.isNumber(pathWithLineAndCol.column)) {
+                segments.push(String(pathWithLineAndCol.column));
+            }
+            return segments.join(':');
         }
     }
     // Main Startup

@@ -2,7 +2,7 @@
  * Copyright (C) Microsoft Corporation. All rights reserved.
  *--------------------------------------------------------*/
 (function() {
-var __m = ["require","exports","vs/base/common/uri","vs/base/common/event","vs/platform/instantiation/common/instantiation","vs/workbench/api/common/extHost.protocol","vs/base/common/lifecycle","vs/workbench/api/common/extHostTypes","vs/base/common/strings","vs/base/common/path","vs/base/common/arrays","vs/base/common/errors","vs/platform/log/common/log","vs/workbench/api/common/extHostRpcService","vs/base/common/types","vs/nls","vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker","vs/workbench/api/common/extHostTypeConverters","vs/base/common/network","vs/base/common/async","vs/base/common/platform","vs/base/common/cancellation","vs/base/common/map","vs/base/common/resources","vs/base/common/objects","vs/platform/extensions/common/extensions","vs/base/common/buffer","vs/base/common/glob","vs/workbench/api/common/extHostInitDataService","vs/base/common/uuid","vs/editor/common/core/range","vs/workbench/api/common/extHostWorkspace","vs/workbench/api/common/extHostConfiguration","vs/workbench/api/common/extHostExtensionService","vs/base/common/process","vs/editor/common/core/position","vs/platform/registry/common/platform","vs/workbench/services/extensions/common/extensions","vs/workbench/services/search/common/search","vs/base/common/assert","vs/base/common/json","vs/base/common/extpath","vs/platform/contextkey/common/contextkey","vs/workbench/api/common/extHostDocumentsAndEditors","vs/workbench/api/common/extHostTerminalService","vs/base/common/collections","vs/base/common/decorators","vs/base/common/iterator","vs/base/common/linkedList","vs/base/common/severity","vs/base/common/marshalling","vs/base/common/codicons","vs/base/common/labels","vs/editor/common/modes/languageSelector","vs/base/common/errorMessage","vs/platform/instantiation/common/extensions","vs/editor/common/modes","vs/platform/files/common/files","vs/platform/instantiation/common/serviceCollection","vs/platform/configuration/common/configurationRegistry","vs/platform/workspace/common/workspace","vs/workbench/api/common/cache","vs/workbench/api/common/extHostUriTransformerService","vs/workbench/api/common/shared/webview","vs/workbench/contrib/notebook/common/notebookCommon","vs/workbench/api/common/extHostApiDeprecationService","vs/workbench/api/common/extHostCommands","vs/workbench/api/common/extHostFileSystemConsumer","vs/workbench/api/common/extHostStorage","vs/workbench/api/common/extHostStoragePaths","vs/workbench/api/common/extHostTunnelService","vs/workbench/api/common/extHostWebview","vs/base/common/functional","vs/base/common/idGenerator","vs/base/common/hash","vs/base/common/uint","vs/base/common/htmlContent","vs/editor/common/core/characterClassifier","vs/editor/common/model","vs/editor/common/model/wordHelper","vs/editor/common/viewModel/prefixSumComputer","vs/platform/instantiation/common/descriptors","vs/platform/markers/common/markers","vs/platform/configuration/common/configuration","vs/platform/remote/common/remoteAuthorityResolver","vs/platform/remote/common/remoteHosts","vs/platform/workspaces/common/workspaces","vs/workbench/api/common/extHostDocumentData","vs/workbench/api/common/extHostTextEditor","vs/workbench/services/extensions/common/proxyIdentifier","vs/workbench/api/common/extHostDecorations","vs/workbench/api/common/extHostOutput","vs/workbench/api/common/extHostWindow","vs/workbench/api/common/extHostTask","vs/workbench/api/common/extHostDebugService","vs/workbench/api/common/extHostSearch","vs/base/common/jsonFormatter","vs/base/common/jsonEdit","vs/base/common/numbers","vs/base/common/comparers","vs/base/common/stopwatch","vs/base/common/stream","vs/base/common/filters","vs/base/common/codicon","vs/base/common/uriIpc","vs/editor/common/controller/wordCharacterClassifier","vs/editor/common/core/selection","vs/editor/common/model/textModelSearch","vs/editor/common/modes/languageConfiguration","vs/editor/common/modes/linkComputer","vs/editor/common/modes/tokenizationRegistry","vs/editor/common/model/mirrorTextModel","vs/nls!vs/base/common/errorMessage","vs/nls!vs/editor/common/config/editorOptions","vs/editor/common/config/editorOptions","vs/nls!vs/platform/configuration/common/configurationRegistry","vs/nls!vs/platform/files/common/files","vs/nls!vs/platform/markers/common/markers","vs/nls!vs/platform/workspaces/common/workspaces","vs/nls!vs/workbench/api/common/extHost.api.impl","vs/nls!vs/workbench/api/common/extHostDiagnostics","vs/nls!vs/workbench/api/common/extHostExtensionActivator","vs/nls!vs/workbench/api/common/extHostExtensionService","vs/nls!vs/workbench/api/common/extHostProgress","vs/nls!vs/workbench/api/common/extHostStatusBar","vs/nls!vs/workbench/api/common/extHostTerminalService","vs/nls!vs/workbench/api/common/extHostTreeViews","vs/nls!vs/workbench/api/common/extHostWorkspace","vs/nls!vs/workbench/common/views","vs/nls!vs/workbench/contrib/debug/common/abstractDebugAdapter","vs/nls!vs/workbench/contrib/search/common/queryBuilder","vs/nls!vs/workbench/contrib/terminal/common/terminal","vs/nls!vs/workbench/services/configurationResolver/common/variableResolver","vs/platform/instantiation/common/graph","vs/editor/common/services/modelService","vs/editor/common/modes/languageFeatureRegistry","vs/platform/commands/common/commands","vs/platform/environment/common/environment","vs/platform/extensionManagement/common/extensionManagementUtil","vs/platform/instantiation/common/instantiationService","vs/platform/notification/common/notification","vs/platform/progress/common/progress","vs/platform/jsonschemas/common/jsonContributionRegistry","vs/platform/configuration/common/configurationModels","vs/workbench/api/common/extHostMemento","vs/workbench/api/common/shared/semanticTokensDto","vs/workbench/api/common/extHostCodeInsets","vs/workbench/common/views","vs/workbench/contrib/debug/common/abstractDebugAdapter","vs/workbench/contrib/debug/common/debugUtils","vs/workbench/api/common/extHostNotebookConcatDocument","vs/workbench/api/common/extHostTheming","vs/workbench/contrib/tasks/common/taskService","vs/workbench/contrib/terminal/common/environmentVariableShared","vs/workbench/contrib/terminal/common/terminal","vs/workbench/contrib/terminal/common/terminalDataBuffering","vs/workbench/services/configurationResolver/common/variableResolver","vs/workbench/services/editor/common/editorService","vs/workbench/api/common/apiCommands","vs/workbench/api/common/extHostApiCommands","vs/workbench/api/common/extHostDocumentSaveParticipant","vs/workbench/api/common/extHostProgress","vs/workbench/services/extensions/common/extensionDescriptionRegistry","vs/workbench/services/extensions/common/extensionHostProtocol","vs/workbench/api/common/extHostExtensionActivator","vs/workbench/api/common/extHostTreeViews","vs/workbench/services/extensions/common/lazyPromise","vs/workbench/api/common/extHostAuthentication","vs/workbench/api/common/extHostClipboard","vs/workbench/api/common/extHostComments","vs/workbench/api/common/extHostDiagnostics","vs/workbench/api/common/extHostDialogs","vs/workbench/api/common/extHostDocumentContentProviders","vs/workbench/api/common/extHostDocuments","vs/workbench/api/common/extHostFileSystem","vs/workbench/api/common/extHostFileSystemEventService","vs/workbench/api/common/extHostLabelService","vs/workbench/api/common/extHostLanguageFeatures","vs/workbench/api/common/extHostLanguages","vs/workbench/api/common/extHostMessageService","vs/workbench/api/common/extHostNotebook","vs/workbench/api/common/extHostQuickOpen","vs/workbench/api/common/extHostSCM","vs/workbench/api/common/extHostStatusBar","vs/workbench/api/common/extHostTextEditors","vs/workbench/api/common/extHostTimeline","vs/workbench/api/common/extHostUrls","vs/workbench/api/common/extHostCustomEditors","vs/workbench/api/common/extHostWebviewPanels","vs/workbench/api/common/extHostWebviewView","vs/workbench/api/worker/extHostLogService","vs/workbench/services/extensions/common/rpcProtocol","vs/workbench/services/remote/common/remoteAgentService","vs/workbench/services/path/common/pathService","vs/workbench/contrib/search/common/queryBuilder","vs/workbench/api/common/shared/workspaceContains","vs/workbench/api/common/extHostRequireInterceptor","vs/workbench/services/extensions/common/extensionHostMain","vs/workbench/services/search/common/fileSearchManager","vs/workbench/services/search/common/textSearchManager","vs/workbench/api/common/extHost.api.impl","vs/workbench/api/common/extHost.common.services","vs/workbench/api/worker/extHostExtensionService","vs/workbench/api/worker/extHost.worker.services","vs/base/common/marked/marked","vs/workbench/services/extensions/worker/extensionHostWorker"];
+var __m = ["require","exports","vs/base/common/uri","vs/base/common/event","vs/platform/instantiation/common/instantiation","vs/workbench/api/common/extHost.protocol","vs/base/common/lifecycle","vs/workbench/api/common/extHostTypes","vs/base/common/strings","vs/base/common/path","vs/base/common/errors","vs/base/common/arrays","vs/base/common/network","vs/platform/log/common/log","vs/workbench/api/common/extHostRpcService","vs/workbench/api/common/extHostTypeConverters","vs/base/common/types","vs/nls","vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker","vs/base/common/cancellation","vs/base/common/async","vs/base/common/platform","vs/base/common/map","vs/base/common/resources","vs/base/common/objects","vs/platform/extensions/common/extensions","vs/base/common/buffer","vs/base/common/glob","vs/workbench/api/common/extHostInitDataService","vs/base/common/uuid","vs/editor/common/core/range","vs/workbench/contrib/notebook/common/notebookCommon","vs/workbench/api/common/extHostWorkspace","vs/workbench/api/common/extHostConfiguration","vs/workbench/api/common/extHostExtensionService","vs/base/common/process","vs/editor/common/core/position","vs/platform/registry/common/platform","vs/workbench/services/extensions/common/extensions","vs/workbench/api/common/extHostTerminalService","vs/workbench/services/search/common/search","vs/base/common/assert","vs/base/common/json","vs/base/common/extpath","vs/platform/contextkey/common/contextkey","vs/workbench/api/common/extHostDocumentsAndEditors","vs/base/common/collections","vs/base/common/decorators","vs/base/common/idGenerator","vs/base/common/iterator","vs/base/common/linkedList","vs/base/common/hash","vs/base/common/severity","vs/base/common/marshalling","vs/base/common/codicons","vs/base/common/labels","vs/editor/common/modes/languageSelector","vs/base/common/errorMessage","vs/platform/instantiation/common/extensions","vs/editor/common/modes","vs/platform/files/common/files","vs/platform/instantiation/common/serviceCollection","vs/platform/configuration/common/configurationRegistry","vs/platform/workspace/common/workspace","vs/workbench/api/common/cache","vs/workbench/api/common/extHostFileSystemInfo","vs/workbench/api/common/extHostUriTransformerService","vs/workbench/api/common/shared/webview","vs/workbench/api/common/extHostApiDeprecationService","vs/workbench/api/common/extHostCommands","vs/workbench/api/common/extHostFileSystemConsumer","vs/workbench/api/common/extHostStorage","vs/workbench/api/common/extHostStoragePaths","vs/workbench/api/common/extHostTunnelService","vs/workbench/api/common/extHostWebview","vs/base/common/functional","vs/base/common/numbers","vs/base/common/uint","vs/base/common/htmlContent","vs/editor/common/core/characterClassifier","vs/editor/common/model","vs/editor/common/model/wordHelper","vs/editor/common/viewModel/prefixSumComputer","vs/platform/instantiation/common/descriptors","vs/platform/markers/common/markers","vs/platform/configuration/common/configuration","vs/platform/remote/common/remoteAuthorityResolver","vs/platform/remote/common/remoteHosts","vs/platform/workspaces/common/workspaces","vs/workbench/api/common/extHostDocumentData","vs/workbench/api/common/extHostTextEditor","vs/workbench/services/extensions/common/proxyIdentifier","vs/workbench/api/common/extHostDecorations","vs/workbench/api/common/extHostOutput","vs/workbench/api/common/extHostWindow","vs/workbench/api/common/extHostTask","vs/workbench/api/common/extHostDebugService","vs/workbench/api/common/extHostSearch","vs/base/common/jsonFormatter","vs/base/common/jsonEdit","vs/base/common/comparers","vs/base/common/stopwatch","vs/base/common/stream","vs/base/common/filters","vs/base/common/codicon","vs/base/common/uriIpc","vs/editor/common/controller/wordCharacterClassifier","vs/editor/common/core/selection","vs/editor/common/model/textModelSearch","vs/editor/common/modes/languageConfiguration","vs/editor/common/modes/linkComputer","vs/editor/common/modes/tokenizationRegistry","vs/editor/common/model/mirrorTextModel","vs/nls!vs/base/common/errorMessage","vs/nls!vs/editor/common/config/editorOptions","vs/editor/common/config/editorOptions","vs/nls!vs/platform/configuration/common/configurationRegistry","vs/nls!vs/platform/files/common/files","vs/nls!vs/platform/markers/common/markers","vs/nls!vs/platform/workspaces/common/workspaces","vs/nls!vs/workbench/api/common/extHost.api.impl","vs/nls!vs/workbench/api/common/extHostDiagnostics","vs/nls!vs/workbench/api/common/extHostExtensionActivator","vs/nls!vs/workbench/api/common/extHostExtensionService","vs/nls!vs/workbench/api/common/extHostProgress","vs/nls!vs/workbench/api/common/extHostStatusBar","vs/nls!vs/workbench/api/common/extHostTerminalService","vs/nls!vs/workbench/api/common/extHostTreeViews","vs/nls!vs/workbench/api/common/extHostWorkspace","vs/nls!vs/workbench/common/views","vs/nls!vs/workbench/contrib/debug/common/abstractDebugAdapter","vs/nls!vs/workbench/contrib/search/common/queryBuilder","vs/nls!vs/workbench/contrib/terminal/common/terminal","vs/nls!vs/workbench/services/configurationResolver/common/variableResolver","vs/platform/instantiation/common/graph","vs/editor/common/services/modelService","vs/editor/common/modes/languageFeatureRegistry","vs/platform/commands/common/commands","vs/platform/environment/common/environment","vs/platform/extensionManagement/common/extensionManagementUtil","vs/platform/instantiation/common/instantiationService","vs/platform/notification/common/notification","vs/platform/progress/common/progress","vs/platform/jsonschemas/common/jsonContributionRegistry","vs/platform/configuration/common/configurationModels","vs/workbench/api/common/extHostMemento","vs/workbench/api/common/shared/semanticTokensDto","vs/workbench/api/common/extHostCodeInsets","vs/workbench/common/views","vs/workbench/contrib/debug/common/abstractDebugAdapter","vs/workbench/contrib/debug/common/debugUtils","vs/workbench/api/common/extHostNotebookDocument","vs/workbench/api/common/extHostNotebookConcatDocument","vs/workbench/api/common/extHostNotebookEditor","vs/workbench/api/common/extHostTheming","vs/workbench/contrib/tasks/common/taskService","vs/workbench/contrib/terminal/common/environmentVariableShared","vs/workbench/contrib/terminal/common/terminal","vs/workbench/contrib/terminal/common/terminalDataBuffering","vs/workbench/services/configurationResolver/common/variableResolver","vs/workbench/services/editor/common/editorService","vs/workbench/api/common/apiCommands","vs/workbench/api/common/extHostApiCommands","vs/workbench/api/common/extHostDocumentSaveParticipant","vs/workbench/api/common/extHostProgress","vs/workbench/services/extensions/common/extensionDescriptionRegistry","vs/workbench/services/extensions/common/extensionHostProtocol","vs/workbench/api/common/extHostExtensionActivator","vs/workbench/api/common/extHostTreeViews","vs/workbench/services/extensions/common/lazyPromise","vs/workbench/api/common/extHostAuthentication","vs/workbench/api/common/extHostBulkEdits","vs/workbench/api/common/extHostClipboard","vs/workbench/api/common/extHostComments","vs/workbench/api/common/extHostDiagnostics","vs/workbench/api/common/extHostDialogs","vs/workbench/api/common/extHostDocumentContentProviders","vs/workbench/api/common/extHostDocuments","vs/workbench/api/common/extHostFileSystem","vs/workbench/api/common/extHostFileSystemEventService","vs/workbench/api/common/extHostLabelService","vs/workbench/api/common/extHostLanguageFeatures","vs/workbench/api/common/extHostLanguages","vs/workbench/api/common/extHostMessageService","vs/workbench/api/common/extHostNotebook","vs/workbench/api/common/extHostQuickOpen","vs/workbench/api/common/extHostSCM","vs/workbench/api/common/extHostStatusBar","vs/workbench/api/common/extHostTextEditors","vs/workbench/api/common/extHostTimeline","vs/workbench/api/common/extHostUrls","vs/workbench/api/common/extHostCustomEditors","vs/workbench/api/common/extHostWebviewPanels","vs/workbench/api/common/extHostWebviewView","vs/workbench/api/worker/extHostLogService","vs/workbench/services/extensions/common/rpcProtocol","vs/workbench/services/remote/common/remoteAgentService","vs/workbench/services/path/common/pathService","vs/workbench/contrib/search/common/queryBuilder","vs/workbench/api/common/shared/workspaceContains","vs/workbench/api/common/extHostRequireInterceptor","vs/workbench/services/extensions/common/extensionHostMain","vs/workbench/services/search/common/fileSearchManager","vs/workbench/services/search/common/textSearchManager","vs/workbench/api/common/extHost.api.impl","vs/workbench/api/common/extHost.common.services","vs/workbench/api/worker/extHostExtensionService","vs/workbench/api/worker/extHost.worker.services","vs/base/common/marked/marked","vs/workbench/services/extensions/worker/extensionHostWorker"];
 var __M = function(deps) {
   var result = [];
   for (var i = 0, len = deps.length; i < len; i++) {
@@ -14,7 +14,7 @@ var __M = function(deps) {
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[39/*vs/base/common/assert*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[41/*vs/base/common/assert*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ok = void 0;
@@ -33,7 +33,7 @@ define(__m[39/*vs/base/common/assert*/], __M([0/*require*/,1/*exports*/]), funct
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[45/*vs/base/common/collections*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[46/*vs/base/common/collections*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SetMap = exports.fromMap = exports.groupBy = exports.forEach = exports.values = void 0;
@@ -133,7 +133,7 @@ define(__m[45/*vs/base/common/collections*/], __M([0/*require*/,1/*exports*/]), 
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[46/*vs/base/common/decorators*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[47/*vs/base/common/decorators*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.throttle = exports.debounce = exports.memoize = exports.createMemoizer = exports.createDecorator = void 0;
@@ -273,7 +273,7 @@ define(__m[46/*vs/base/common/decorators*/], __M([0/*require*/,1/*exports*/]), f
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[11/*vs/base/common/errors*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[10/*vs/base/common/errors*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NotSupportedError = exports.NotImplementedError = exports.getErrorMessage = exports.disposed = exports.readonly = exports.illegalState = exports.illegalArgument = exports.canceled = exports.isPromiseCanceledError = exports.transformErrorForSerialization = exports.onUnexpectedExternalError = exports.onUnexpectedError = exports.setUnexpectedErrorHandler = exports.errorHandler = exports.ErrorHandler = void 0;
@@ -440,10 +440,10 @@ define(__m[11/*vs/base/common/errors*/], __M([0/*require*/,1/*exports*/]), funct
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[10/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,11/*vs/base/common/errors*/]), function (require, exports, errors_1) {
+define(__m[11/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/errors*/]), function (require, exports, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.getRandomElement = exports.asArray = exports.mapArrayOrNot = exports.find = exports.pushToEnd = exports.pushToStart = exports.shuffle = exports.arrayInsert = exports.remove = exports.insert = exports.index = exports.range = exports.flatten = exports.commonPrefixLength = exports.firstOrDefault = exports.first = exports.firstIndex = exports.lastIndex = exports.uniqueFilter = exports.distinctES6 = exports.distinct = exports.isNonEmptyArray = exports.isFalsyOrEmpty = exports.move = exports.coalesceInPlace = exports.coalesce = exports.topAsync = exports.top = exports.delta = exports.sortedDiff = exports.groupBy = exports.mergeSort = exports.findFirstInSorted = exports.binarySearch = exports.equals = exports.tail2 = exports.tail = void 0;
+    exports.getRandomElement = exports.asArray = exports.mapArrayOrNot = exports.pushToEnd = exports.pushToStart = exports.shuffle = exports.arrayInsert = exports.remove = exports.insert = exports.index = exports.range = exports.flatten = exports.commonPrefixLength = exports.firstOrDefault = exports.lastIndex = exports.uniqueFilter = exports.distinctES6 = exports.distinct = exports.isNonEmptyArray = exports.isFalsyOrEmpty = exports.move = exports.coalesceInPlace = exports.coalesce = exports.topAsync = exports.top = exports.delta = exports.sortedDiff = exports.groupBy = exports.mergeSort = exports.findFirstInSorted = exports.binarySearch = exports.equals = exports.tail2 = exports.tail = void 0;
     /**
      * Returns the last element of an array.
      * @param array The array.
@@ -805,24 +805,6 @@ define(__m[10/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,11/*vs/b
         return -1;
     }
     exports.lastIndex = lastIndex;
-    /**
-     * @deprecated ES6: use `Array.findIndex`
-     */
-    function firstIndex(array, fn) {
-        for (let i = 0; i < array.length; i++) {
-            const element = array[i];
-            if (fn(element)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-    exports.firstIndex = firstIndex;
-    function first(array, fn, notFoundValue = undefined) {
-        const index = firstIndex(array, fn);
-        return index < 0 ? notFoundValue : array[index];
-    }
-    exports.first = first;
     function firstOrDefault(array, notFoundValue) {
         return array.length > 0 ? array[0] : notFoundValue;
     }
@@ -947,19 +929,6 @@ define(__m[10/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,11/*vs/b
         }
     }
     exports.pushToEnd = pushToEnd;
-    /**
-     * @deprecated ES6: use `Array.find`
-     */
-    function find(arr, predicate) {
-        for (let i = 0; i < arr.length; i++) {
-            const element = arr[i];
-            if (predicate(element, i, arr)) {
-                return element;
-            }
-        }
-        return undefined;
-    }
-    exports.find = find;
     function mapArrayOrNot(items, fn) {
         return Array.isArray(items) ?
             items.map(fn) :
@@ -980,7 +949,7 @@ define(__m[10/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,11/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[72/*vs/base/common/functional*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[75/*vs/base/common/functional*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.once = void 0;
@@ -1004,7 +973,7 @@ define(__m[72/*vs/base/common/functional*/], __M([0/*require*/,1/*exports*/]), f
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[73/*vs/base/common/idGenerator*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[48/*vs/base/common/idGenerator*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.defaultGenerator = exports.IdGenerator = void 0;
@@ -1025,7 +994,7 @@ define(__m[73/*vs/base/common/idGenerator*/], __M([0/*require*/,1/*exports*/]), 
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[47/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[49/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Iterable = void 0;
@@ -1110,7 +1079,7 @@ define(__m[47/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), fun
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[40/*vs/base/common/json*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[42/*vs/base/common/json*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getNodeType = exports.stripComments = exports.visit = exports.findNodeAtOffset = exports.contains = exports.getNodeValue = exports.getNodePath = exports.findNodeAtLocation = exports.parseTree = exports.parse = exports.getLocation = exports.createScanner = exports.ParseOptions = exports.ParseErrorCode = exports.SyntaxKind = exports.ScanError = void 0;
@@ -2259,7 +2228,7 @@ define(__m[40/*vs/base/common/json*/], __M([0/*require*/,1/*exports*/]), functio
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[96/*vs/base/common/jsonFormatter*/], __M([0/*require*/,1/*exports*/,40/*vs/base/common/json*/]), function (require, exports, json_1) {
+define(__m[98/*vs/base/common/jsonFormatter*/], __M([0/*require*/,1/*exports*/,42/*vs/base/common/json*/]), function (require, exports, json_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isEOL = exports.getEOL = exports.format = void 0;
@@ -2460,7 +2429,7 @@ define(__m[96/*vs/base/common/jsonFormatter*/], __M([0/*require*/,1/*exports*/,4
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[97/*vs/base/common/jsonEdit*/], __M([0/*require*/,1/*exports*/,40/*vs/base/common/json*/,96/*vs/base/common/jsonFormatter*/,10/*vs/base/common/arrays*/]), function (require, exports, json_1, jsonFormatter_1, arrays_1) {
+define(__m[99/*vs/base/common/jsonEdit*/], __M([0/*require*/,1/*exports*/,42/*vs/base/common/json*/,98/*vs/base/common/jsonFormatter*/,11/*vs/base/common/arrays*/]), function (require, exports, json_1, jsonFormatter_1, arrays_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.applyEdits = exports.applyEdit = exports.withFormatting = exports.setProperty = exports.removeProperty = void 0;
@@ -2648,7 +2617,7 @@ define(__m[97/*vs/base/common/jsonEdit*/], __M([0/*require*/,1/*exports*/,40/*vs
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[6/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,72/*vs/base/common/functional*/,47/*vs/base/common/iterator*/]), function (require, exports, functional_1, iterator_1) {
+define(__m[6/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,75/*vs/base/common/functional*/,49/*vs/base/common/iterator*/]), function (require, exports, functional_1, iterator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ImmortalReference = exports.ReferenceCollection = exports.MutableDisposable = exports.Disposable = exports.DisposableStore = exports.toDisposable = exports.combinedDisposable = exports.dispose = exports.isDisposable = exports.MultiDisposeError = void 0;
@@ -2883,7 +2852,7 @@ define(__m[6/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,72/*vs
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[48/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[50/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LinkedList = void 0;
@@ -3014,7 +2983,7 @@ define(__m[48/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), f
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[3/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,11/*vs/base/common/errors*/,72/*vs/base/common/functional*/,6/*vs/base/common/lifecycle*/,48/*vs/base/common/linkedList*/]), function (require, exports, errors_1, functional_1, lifecycle_1, linkedList_1) {
+define(__m[3/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/errors*/,75/*vs/base/common/functional*/,6/*vs/base/common/lifecycle*/,50/*vs/base/common/linkedList*/]), function (require, exports, errors_1, functional_1, lifecycle_1, linkedList_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Relay = exports.EventBufferer = exports.EventMultiplexer = exports.AsyncEmitter = exports.PauseableEmitter = exports.Emitter = exports.setGlobalLeakWarningThreshold = exports.Event = void 0;
@@ -3713,7 +3682,7 @@ define(__m[3/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,11/*vs/bas
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[21/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/]), function (require, exports, event_1) {
+define(__m[19/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/]), function (require, exports, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CancellationTokenSource = exports.CancellationToken = void 0;
@@ -3829,10 +3798,10 @@ define(__m[21/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,3/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[19/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,21/*vs/base/common/cancellation*/,11/*vs/base/common/errors*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/]), function (require, exports, cancellation_1, errors, event_1, lifecycle_1) {
+define(__m[20/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,19/*vs/base/common/cancellation*/,10/*vs/base/common/errors*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/]), function (require, exports, cancellation_1, errors, event_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
+    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellablePromises = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
     function isThenable(obj) {
         return obj && typeof obj.then === 'function';
     }
@@ -3872,10 +3841,25 @@ define(__m[19/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,21/*vs/ba
         return Promise.race([promise, new Promise(resolve => token.onCancellationRequested(() => resolve(defaultValue)))]);
     }
     exports.raceCancellation = raceCancellation;
+    /**
+     * Returns as soon as one of the promises is resolved and cancels remaining promises
+     */
+    async function raceCancellablePromises(cancellablePromises) {
+        let resolvedPromiseIndex = -1;
+        const promises = cancellablePromises.map((promise, index) => promise.then(result => { resolvedPromiseIndex = index; return result; }));
+        const result = await Promise.race(promises);
+        cancellablePromises.forEach((cancellablePromise, index) => {
+            if (index !== resolvedPromiseIndex) {
+                cancellablePromise.cancel();
+            }
+        });
+        return result;
+    }
+    exports.raceCancellablePromises = raceCancellablePromises;
     function raceTimeout(promise, timeout, onTimeout) {
         let promiseResolve = undefined;
         const timer = setTimeout(() => {
-            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve();
+            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve(undefined);
             onTimeout === null || onTimeout === void 0 ? void 0 : onTimeout();
         }, timeout);
         return Promise.race([
@@ -4326,10 +4310,10 @@ define(__m[19/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,21/*vs/ba
     }
     exports.IntervalTimer = IntervalTimer;
     class RunOnceScheduler {
-        constructor(runner, timeout) {
+        constructor(runner, delay) {
             this.timeoutToken = -1;
             this.runner = runner;
-            this.timeout = timeout;
+            this.timeout = delay;
             this.timeoutHandler = this.onTimeout.bind(this);
         }
         /**
@@ -4354,6 +4338,12 @@ define(__m[19/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,21/*vs/ba
         schedule(delay = this.timeout) {
             this.cancel();
             this.timeoutToken = setTimeout(this.timeoutHandler, delay);
+        }
+        get delay() {
+            return this.timeout;
+        }
+        set delay(value) {
+            this.timeout = value;
         }
         /**
          * Returns true if scheduled.
@@ -7183,7 +7173,7 @@ define(__m[19/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,21/*vs/ba
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[98/*vs/base/common/numbers*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[76/*vs/base/common/numbers*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.MovingAverage = exports.Counter = exports.rot = exports.clamp = void 0;
@@ -7225,8 +7215,9 @@ define(__m[98/*vs/base/common/numbers*/], __M([0/*require*/,1/*exports*/]), func
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[20/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[21/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
+    var _a;
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isLittleEndian = exports.OS = exports.OperatingSystem = exports.setImmediate = exports.globals = exports.translationsConfigFile = exports.locale = exports.Language = exports.language = exports.isRootUser = exports.userAgent = exports.platform = exports.isIOS = exports.isWeb = exports.isNative = exports.isLinux = exports.isMacintosh = exports.isWindows = exports.PlatformToString = exports.Platform = void 0;
     const LANGUAGE_DEFAULT = 'en';
@@ -7240,8 +7231,18 @@ define(__m[20/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), fun
     let _language = LANGUAGE_DEFAULT;
     let _translationsConfigFile = undefined;
     let _userAgent = undefined;
-    const isElectronRenderer = (typeof process !== 'undefined' && typeof process.versions !== 'undefined' && typeof process.versions.electron !== 'undefined' && process.type === 'renderer');
-    // OS detection
+    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
+    let nodeProcess = undefined;
+    if (typeof process !== 'undefined') {
+        // Native environment (non-sandboxed)
+        nodeProcess = process;
+    }
+    else if (typeof _globals.vscode !== 'undefined') {
+        // Native envionment (sandboxed)
+        nodeProcess = _globals.vscode.process;
+    }
+    const isElectronRenderer = typeof ((_a = nodeProcess === null || nodeProcess === void 0 ? void 0 : nodeProcess.versions) === null || _a === void 0 ? void 0 : _a.electron) === 'string' && nodeProcess.type === 'renderer';
+    // Web environment
     if (typeof navigator === 'object' && !isElectronRenderer) {
         _userAgent = navigator.userAgent;
         _isWindows = _userAgent.indexOf('Windows') >= 0;
@@ -7252,13 +7253,14 @@ define(__m[20/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), fun
         _locale = navigator.language;
         _language = _locale;
     }
-    else if (typeof process === 'object') {
-        _isWindows = (process.platform === 'win32');
-        _isMacintosh = (process.platform === 'darwin');
-        _isLinux = (process.platform === 'linux');
+    // Native environment
+    else if (typeof nodeProcess === 'object') {
+        _isWindows = (nodeProcess.platform === 'win32');
+        _isMacintosh = (nodeProcess.platform === 'darwin');
+        _isLinux = (nodeProcess.platform === 'linux');
         _locale = LANGUAGE_DEFAULT;
         _language = LANGUAGE_DEFAULT;
-        const rawNlsConfig = process.env['VSCODE_NLS_CONFIG'];
+        const rawNlsConfig = nodeProcess.env['VSCODE_NLS_CONFIG'];
         if (rawNlsConfig) {
             try {
                 const nlsConfig = JSON.parse(rawNlsConfig);
@@ -7272,6 +7274,10 @@ define(__m[20/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), fun
             }
         }
         _isNative = true;
+    }
+    // Unknown environment
+    else {
+        console.error('Unable to resolve platform.');
     }
     var Platform;
     (function (Platform) {
@@ -7308,7 +7314,7 @@ define(__m[20/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), fun
     exports.platform = _platform;
     exports.userAgent = _userAgent;
     function isRootUser() {
-        return _isNative && !_isWindows && (process.getuid() === 0);
+        return !!nodeProcess && !_isWindows && (nodeProcess.getuid() === 0);
     }
     exports.isRootUser = isRootUser;
     /**
@@ -7350,7 +7356,6 @@ define(__m[20/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), fun
      * The translatios that are available through language packs.
      */
     exports.translationsConfigFile = _translationsConfigFile;
-    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
     exports.globals = _globals;
     exports.setImmediate = (function defineSetImmediate() {
         if (exports.globals.setImmediate) {
@@ -7380,8 +7385,8 @@ define(__m[20/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), fun
                 exports.globals.postMessage({ vscodeSetImmediateId: myId }, '*');
             };
         }
-        if (typeof process !== 'undefined' && typeof process.nextTick === 'function') {
-            return process.nextTick.bind(process);
+        if (nodeProcess) {
+            return nodeProcess.nextTick.bind(nodeProcess);
         }
         const _promise = Promise.resolve();
         return (callback) => _promise.then(callback);
@@ -7413,16 +7418,31 @@ define(__m[20/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), fun
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[34/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/platform*/]), function (require, exports, platform_1) {
+define(__m[35/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,21/*vs/base/common/platform*/]), function (require, exports, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.nextTick = exports.platform = exports.env = exports.cwd = void 0;
-    const safeProcess = (typeof process === 'undefined') ? {
-        cwd() { return '/'; },
-        env: Object.create(null),
-        get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
-        nextTick(callback) { return platform_1.setImmediate(callback); }
-    } : process;
+    let safeProcess;
+    // Native node.js environment
+    if (typeof process !== 'undefined') {
+        safeProcess = process;
+    }
+    // Native sandbox environment
+    else if (typeof platform_1.globals.vscode !== 'undefined') {
+        safeProcess = platform_1.globals.vscode.process;
+    }
+    // Web environment
+    else {
+        safeProcess = {
+            // Supported
+            get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
+            nextTick(callback) { return platform_1.setImmediate(callback); },
+            // Unsupported
+            get env() { return Object.create(null); },
+            cwd() { return '/'; },
+            getuid() { return -1; }
+        };
+    }
     exports.cwd = safeProcess.cwd;
     exports.env = safeProcess.env;
     exports.platform = safeProcess.platform;
@@ -7433,7 +7453,7 @@ define(__m[34/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,20/*vs/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[9/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,34/*vs/base/common/process*/]), function (require, exports, process) {
+define(__m[9/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,35/*vs/base/common/process*/]), function (require, exports, process) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.delimiter = exports.sep = exports.toNamespacedPath = exports.parse = exports.format = exports.extname = exports.basename = exports.dirname = exports.relative = exports.resolve = exports.join = exports.isAbsolute = exports.normalize = exports.posix = exports.win32 = void 0;
@@ -8799,7 +8819,7 @@ define(__m[9/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,34/*vs/base
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[99/*vs/base/common/comparers*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/path*/,19/*vs/base/common/async*/]), function (require, exports, path_1, async_1) {
+define(__m[100/*vs/base/common/comparers*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/path*/,20/*vs/base/common/async*/]), function (require, exports, path_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.compareByPrefix = exports.compareAnything = exports.comparePaths = exports.compareFileExtensionsDefault = exports.compareFileExtensions = exports.noIntlCompareFileNames = exports.compareFileNamesDefault = exports.compareFileNames = void 0;
@@ -9017,7 +9037,7 @@ define(__m[99/*vs/base/common/comparers*/], __M([0/*require*/,1/*exports*/,9/*vs
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[100/*vs/base/common/stopwatch*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/platform*/]), function (require, exports, platform_1) {
+define(__m[101/*vs/base/common/stopwatch*/], __M([0/*require*/,1/*exports*/,21/*vs/base/common/platform*/]), function (require, exports, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.StopWatch = void 0;
@@ -9051,7 +9071,7 @@ define(__m[100/*vs/base/common/stopwatch*/], __M([0/*require*/,1/*exports*/,20/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[101/*vs/base/common/stream*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/lifecycle*/]), function (require, exports, lifecycle_1) {
+define(__m[102/*vs/base/common/stream*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/lifecycle*/]), function (require, exports, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.transform = exports.toReadable = exports.toStream = exports.peekStream = exports.consumeStream = exports.peekReadable = exports.consumeReadable = exports.newWriteableStream = exports.isReadableBufferedStream = exports.isReadableStream = void 0;
@@ -9399,7 +9419,7 @@ define(__m[101/*vs/base/common/stream*/], __M([0/*require*/,1/*exports*/,6/*vs/b
 define(__m[8/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.repeat = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.endsWith = exports.startsWith = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
+    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
     function isFalsyOrWhitespace(str) {
         if (!str || typeof str !== 'string') {
             return true;
@@ -9525,40 +9545,6 @@ define(__m[8/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
         return pattern.replace(/\*/g, '');
     }
     exports.stripWildcards = stripWildcards;
-    /**
-     * @deprecated ES6: use `String.startsWith`
-     */
-    function startsWith(haystack, needle) {
-        if (haystack.length < needle.length) {
-            return false;
-        }
-        if (haystack === needle) {
-            return true;
-        }
-        for (let i = 0; i < needle.length; i++) {
-            if (haystack[i] !== needle[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
-    exports.startsWith = startsWith;
-    /**
-     * @deprecated ES6: use `String.endsWith`
-     */
-    function endsWith(haystack, needle) {
-        const diff = haystack.length - needle.length;
-        if (diff > 0) {
-            return haystack.indexOf(needle, diff) === diff;
-        }
-        else if (diff === 0) {
-            return haystack === needle;
-        }
-        else {
-            return false;
-        }
-    }
-    exports.endsWith = endsWith;
     function createRegExp(searchString, isRegex, options = {}) {
         if (!searchString) {
             throw new Error('Cannot create regex from empty string');
@@ -10179,17 +10165,6 @@ define(__m[8/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
     }
     exports.stripUTF8BOM = stripUTF8BOM;
     /**
-     * @deprecated ES6
-     */
-    function repeat(s, count) {
-        let result = '';
-        for (let i = 0; i < count; i++) {
-            result += s;
-        }
-        return result;
-    }
-    exports.repeat = repeat;
-    /**
      * Checks if the characters of the provided query string are included in the
      * target string. The characters do not have to be contiguous within the string.
      */
@@ -10408,7 +10383,7 @@ define(__m[8/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[26/*vs/base/common/buffer*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/strings*/,101/*vs/base/common/stream*/]), function (require, exports, strings, streams) {
+define(__m[26/*vs/base/common/buffer*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/strings*/,102/*vs/base/common/stream*/]), function (require, exports, strings, streams) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.newWriteableBufferStream = exports.streamToBufferReadableStream = exports.bufferToStream = exports.bufferedStreamToBuffer = exports.streamToBuffer = exports.bufferToReadable = exports.readableToBuffer = exports.writeUInt8 = exports.readUInt8 = exports.writeUInt32LE = exports.readUInt32LE = exports.writeUInt32BE = exports.readUInt32BE = exports.writeUInt16LE = exports.readUInt16LE = exports.VSBuffer = void 0;
@@ -10611,7 +10586,7 @@ define(__m[26/*vs/base/common/buffer*/], __M([0/*require*/,1/*exports*/,8/*vs/ba
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[74/*vs/base/common/hash*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/strings*/]), function (require, exports, strings) {
+define(__m[51/*vs/base/common/hash*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/strings*/]), function (require, exports, strings) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.StringSHA1 = exports.Hasher = exports.stringHash = exports.doHash = exports.hash = void 0;
@@ -10893,7 +10868,7 @@ define(__m[74/*vs/base/common/hash*/], __M([0/*require*/,1/*exports*/,8/*vs/base
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[49/*vs/base/common/severity*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/strings*/]), function (require, exports, strings) {
+define(__m[52/*vs/base/common/severity*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/strings*/]), function (require, exports, strings) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Severity;
@@ -10936,7 +10911,7 @@ define(__m[49/*vs/base/common/severity*/], __M([0/*require*/,1/*exports*/,8/*vs/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[14/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[16/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NotImplementedProxy = exports.withUndefinedAsNull = exports.withNullAsUndefined = exports.createProxyObject = exports.getAllMethodNames = exports.getAllPropertyNames = exports.validateConstraint = exports.validateConstraints = exports.areFunctions = exports.isFunction = exports.isEmptyObject = exports.assertAllDefined = exports.assertIsDefined = exports.assertType = exports.isUndefinedOrNull = exports.isDefined = exports.isUndefined = exports.isBoolean = exports.isNumber = exports.isObject = exports.isStringArray = exports.isString = exports.isArray = void 0;
@@ -11172,7 +11147,7 @@ define(__m[14/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), functi
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[41/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/platform*/,8/*vs/base/common/strings*/,9/*vs/base/common/path*/,14/*vs/base/common/types*/]), function (require, exports, platform_1, strings_1, path_1, types_1) {
+define(__m[43/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,21/*vs/base/common/platform*/,8/*vs/base/common/strings*/,9/*vs/base/common/path*/,16/*vs/base/common/types*/]), function (require, exports, platform_1, strings_1, path_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.parseLineAndColumnAware = exports.indexOfPath = exports.isRootOrDriveLetter = exports.sanitizeFilePath = exports.isWindowsDriveLetter = exports.isEqualOrParent = exports.isEqual = exports.isValidBasename = exports.isUNC = exports.getRoot = exports.toSlashes = exports.isPathSeparator = void 0;
@@ -11341,34 +11316,34 @@ define(__m[41/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,20/*vs/
         return strings_1.equalsIgnoreCase(pathA, pathB);
     }
     exports.isEqual = isEqual;
-    function isEqualOrParent(path, candidate, ignoreCase, separator = path_1.sep) {
-        if (path === candidate) {
+    function isEqualOrParent(base, parentCandidate, ignoreCase, separator = path_1.sep) {
+        if (base === parentCandidate) {
             return true;
         }
-        if (!path || !candidate) {
+        if (!base || !parentCandidate) {
             return false;
         }
-        if (candidate.length > path.length) {
+        if (parentCandidate.length > base.length) {
             return false;
         }
         if (ignoreCase) {
-            const beginsWith = strings_1.startsWithIgnoreCase(path, candidate);
+            const beginsWith = strings_1.startsWithIgnoreCase(base, parentCandidate);
             if (!beginsWith) {
                 return false;
             }
-            if (candidate.length === path.length) {
+            if (parentCandidate.length === base.length) {
                 return true; // same path, different casing
             }
-            let sepOffset = candidate.length;
-            if (candidate.charAt(candidate.length - 1) === separator) {
+            let sepOffset = parentCandidate.length;
+            if (parentCandidate.charAt(parentCandidate.length - 1) === separator) {
                 sepOffset--; // adjust the expected sep offset in case our candidate already ends in separator character
             }
-            return path.charAt(sepOffset) === separator;
+            return base.charAt(sepOffset) === separator;
         }
-        if (candidate.charAt(candidate.length - 1) !== separator) {
-            candidate += separator;
+        if (parentCandidate.charAt(parentCandidate.length - 1) !== separator) {
+            parentCandidate += separator;
         }
-        return path.indexOf(candidate) === 0;
+        return base.indexOf(parentCandidate) === 0;
     }
     exports.isEqualOrParent = isEqualOrParent;
     function isWindowsDriveLetter(char0) {
@@ -11464,16 +11439,16 @@ define(__m[41/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,20/*vs/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[24/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,14/*vs/base/common/types*/]), function (require, exports, types_1) {
+define(__m[24/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/types*/]), function (require, exports, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.distinct = exports.getOrDefault = exports.safeStringify = exports.equals = exports.assign = exports.mixin = exports.cloneAndChange = exports.deepFreeze = exports.deepClone = void 0;
+    exports.distinct = exports.getOrDefault = exports.safeStringify = exports.equals = exports.mixin = exports.cloneAndChange = exports.deepFreeze = exports.deepClone = void 0;
     function deepClone(obj) {
         if (!obj || typeof obj !== 'object') {
             return obj;
         }
         if (obj instanceof RegExp) {
-            // See https://github.com/Microsoft/TypeScript/issues/10990
+            // See https://github.com/microsoft/TypeScript/issues/10990
             return obj;
         }
         const result = Array.isArray(obj) ? [] : {};
@@ -11572,11 +11547,6 @@ define(__m[24/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,14/*vs/
         return destination;
     }
     exports.mixin = mixin;
-    function assign(destination, ...sources) {
-        sources.forEach(source => Object.keys(source).forEach(key => destination[key] = source[key]));
-        return destination;
-    }
-    exports.assign = assign;
     function equals(one, other) {
         if (one === other) {
             return true;
@@ -11629,19 +11599,19 @@ define(__m[24/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,14/*vs/
     }
     exports.equals = equals;
     /**
-     * Calls JSON.Stringify with a replacer to break apart any circular references.
-     * This prevents JSON.stringify from throwing the exception
+     * Calls `JSON.Stringify` with a replacer to break apart any circular references.
+     * This prevents `JSON`.stringify` from throwing the exception
      *  "Uncaught TypeError: Converting circular structure to JSON"
      */
     function safeStringify(obj) {
-        const seen = [];
+        const seen = new Set();
         return JSON.stringify(obj, (key, value) => {
             if (types_1.isObject(value) || Array.isArray(value)) {
-                if (seen.indexOf(value) !== -1) {
+                if (seen.has(value)) {
                     return '[Circular]';
                 }
                 else {
-                    seen.push(value);
+                    seen.add(value);
                 }
             }
             return value;
@@ -11685,7 +11655,7 @@ define(__m[24/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,14/*vs/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[75/*vs/base/common/uint*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[77/*vs/base/common/uint*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toUint32 = exports.toUint8 = exports.Constants = void 0;
@@ -11745,7 +11715,7 @@ define(__m[75/*vs/base/common/uint*/], __M([0/*require*/,1/*exports*/]), functio
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[2/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/platform*/,9/*vs/base/common/path*/]), function (require, exports, platform_1, paths) {
+define(__m[2/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,21/*vs/base/common/platform*/,9/*vs/base/common/path*/]), function (require, exports, platform_1, paths) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.uriToFsPath = exports.URI = void 0;
@@ -12338,7 +12308,7 @@ define(__m[2/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,20/*vs/base/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[50/*vs/base/common/marshalling*/], __M([0/*require*/,1/*exports*/,26/*vs/base/common/buffer*/,8/*vs/base/common/strings*/,2/*vs/base/common/uri*/]), function (require, exports, buffer_1, strings_1, uri_1) {
+define(__m[53/*vs/base/common/marshalling*/], __M([0/*require*/,1/*exports*/,26/*vs/base/common/buffer*/,8/*vs/base/common/strings*/,2/*vs/base/common/uri*/]), function (require, exports, buffer_1, strings_1, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.revive = exports.parse = exports.stringify = void 0;
@@ -12399,10 +12369,10 @@ define(__m[50/*vs/base/common/marshalling*/], __M([0/*require*/,1/*exports*/,26/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[18/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,20/*vs/base/common/platform*/]), function (require, exports, uri_1, platform) {
+define(__m[12/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,21/*vs/base/common/platform*/]), function (require, exports, uri_1, platform) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.RemoteAuthorities = exports.Schemas = void 0;
+    exports.FileAccess = exports.RemoteAuthorities = exports.Schemas = void 0;
     var Schemas;
     (function (Schemas) {
         /**
@@ -12499,13 +12469,33 @@ define(__m[18/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,2/*vs/b
         }
     }
     exports.RemoteAuthorities = new RemoteAuthoritiesImpl();
+    class FileAccessImpl {
+        asBrowserUri(uriOrModule, moduleIdToUrl) {
+            const uri = this.toUri(uriOrModule, moduleIdToUrl);
+            if (uri.scheme === Schemas.vscodeRemote) {
+                return exports.RemoteAuthorities.rewrite(uri);
+            }
+            return uri;
+        }
+        asFileUri(uriOrModule, moduleIdToUrl) {
+            const uri = this.toUri(uriOrModule, moduleIdToUrl);
+            return uri;
+        }
+        toUri(uriOrModule, moduleIdToUrl) {
+            if (uri_1.URI.isUri(uriOrModule)) {
+                return uriOrModule;
+            }
+            return uri_1.URI.parse(moduleIdToUrl.toUrl(uriOrModule));
+        }
+    }
+    exports.FileAccess = new FileAccessImpl();
 });
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[22/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,8/*vs/base/common/strings*/,18/*vs/base/common/network*/,20/*vs/base/common/platform*/]), function (require, exports, uri_1, strings_1, network_1, platform_1) {
+define(__m[22/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,8/*vs/base/common/strings*/,12/*vs/base/common/network*/,21/*vs/base/common/platform*/]), function (require, exports, uri_1, strings_1, network_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LRUCache = exports.LinkedMap = exports.Touch = exports.ResourceMap = exports.TernarySearchTree = exports.UriIterator = exports.PathIterator = exports.StringIterator = exports.setToString = exports.mapToString = exports.getOrSet = void 0;
@@ -12628,7 +12618,7 @@ define(__m[22/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,2/*vs/base/
                 this._states.push(2 /* Authority */);
             }
             if (this._value.path) {
-                //todo@jrieken the case-sensitive logic is copied form `resources.ts#hasToIgnoreCase`
+                //todo@jrieken #107886 the case-sensitive logic is copied form `resources.ts#hasToIgnoreCase`
                 // which cannot be used because it depends on this
                 const caseSensitive = key.scheme === network_1.Schemas.file && platform_1.isLinux;
                 this._pathIterator = new PathIterator(false, caseSensitive);
@@ -13391,7 +13381,7 @@ define(__m[22/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,2/*vs/base/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[102/*vs/base/common/filters*/], __M([0/*require*/,1/*exports*/,22/*vs/base/common/map*/,8/*vs/base/common/strings*/]), function (require, exports, map_1, strings) {
+define(__m[103/*vs/base/common/filters*/], __M([0/*require*/,1/*exports*/,22/*vs/base/common/map*/,8/*vs/base/common/strings*/]), function (require, exports, map_1, strings) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.fuzzyScoreGraceful = exports.fuzzyScoreGracefulAggressive = exports.fuzzyScore = exports.FuzzyScore = exports.isPatternInWord = exports.createMatches = exports.anyScore = exports.matchesFuzzy2 = exports.matchesFuzzy = exports.matchesWords = exports.matchesCamelCase = exports.isUpper = exports.matchesSubString = exports.matchesContiguousSubString = exports.matchesPrefix = exports.matchesStrictPrefix = exports.or = void 0;
@@ -14105,7 +14095,7 @@ define(__m[102/*vs/base/common/filters*/], __M([0/*require*/,1/*exports*/,22/*vs
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[103/*vs/base/common/codicon*/], __M([0/*require*/,1/*exports*/,102/*vs/base/common/filters*/,8/*vs/base/common/strings*/]), function (require, exports, filters_1, strings_1) {
+define(__m[104/*vs/base/common/codicon*/], __M([0/*require*/,1/*exports*/,103/*vs/base/common/filters*/,8/*vs/base/common/strings*/]), function (require, exports, filters_1, strings_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.matchesFuzzyCodiconAware = exports.parseCodicons = exports.codiconStartMarker = void 0;
@@ -14213,10 +14203,10 @@ define(__m[103/*vs/base/common/codicon*/], __M([0/*require*/,1/*exports*/,102/*v
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[51/*vs/base/common/codicons*/], __M([0/*require*/,1/*exports*/,103/*vs/base/common/codicon*/,3/*vs/base/common/event*/]), function (require, exports, codicon_1, event_1) {
+define(__m[54/*vs/base/common/codicons*/], __M([0/*require*/,1/*exports*/,104/*vs/base/common/codicon*/,3/*vs/base/common/event*/]), function (require, exports, codicon_1, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.stripCodicons = exports.renderCodicons = exports.renderCodiconsRegex = exports.markdownUnescapeCodicons = exports.markdownEscapeEscapedCodicons = exports.escapeCodicons = exports.Codicon = exports.registerIcon = exports.iconRegistry = void 0;
+    exports.stripCodicons = exports.markdownUnescapeCodicons = exports.markdownEscapeEscapedCodicons = exports.escapeCodicons = exports.Codicon = exports.registerIcon = exports.iconRegistry = void 0;
     class Registry {
         constructor() {
             this._icons = new Map();
@@ -14675,6 +14665,12 @@ define(__m[51/*vs/base/common/codicons*/], __M([0/*require*/,1/*exports*/,103/*v
         Codicon.vmConnect = new Codicon('vm-connect', { character: '\\eba9' });
         Codicon.cloud = new Codicon('cloud', { character: '\\ebaa' });
         Codicon.merge = new Codicon('merge', { character: '\\ebab' });
+        Codicon.exportIcon = new Codicon('export', { character: '\\ebac' });
+        Codicon.graphLeft = new Codicon('graph-left', { character: '\\ebad' });
+        Codicon.magnet = new Codicon('magnet', { character: '\\ebae' });
+        Codicon.notebook = new Codicon('notebook', { character: '\\ebaf' });
+        Codicon.redo = new Codicon('redo', { character: '\\ebb0' });
+        Codicon.checkAll = new Codicon('check-all', { character: '\\ebb1' });
     })(Codicon = exports.Codicon || (exports.Codicon = {}));
     const escapeCodiconsRegex = /(\\)?\$\([a-z0-9\-]+?(?:~[a-z0-9\-]*?)?\)/gi;
     function escapeCodicons(text) {
@@ -14692,19 +14688,6 @@ define(__m[51/*vs/base/common/codicons*/], __M([0/*require*/,1/*exports*/,103/*v
         return text.replace(markdownUnescapeCodiconsRegex, (match, escaped, codicon) => escaped ? match : `$(${codicon})`);
     }
     exports.markdownUnescapeCodicons = markdownUnescapeCodicons;
-    exports.renderCodiconsRegex = /(\\)?\$\((([a-z0-9\-]+?)(?:~([a-z0-9\-]*?))?)\)/gi;
-    /**
-     * @deprecated Use `renderCodiconsAsElement` instead
-     */
-    function renderCodicons(text) {
-        return text.replace(exports.renderCodiconsRegex, (_, escaped, codicon, name, animation) => {
-            // If the class for codicons is changed, it should also be updated in src\vs\base\browser\markdownRenderer.ts
-            return escaped
-                ? `$(${codicon})`
-                : `<span class="codicon codicon-${name}${animation ? ` codicon-animation-${animation}` : ''}"></span>`;
-        });
-    }
-    exports.renderCodicons = renderCodicons;
     const stripCodiconsRegex = /(\s)?(\\)?\$\([a-z0-9\-]+?(?:~[a-z0-9\-]*?)?\)(\s)?/gi;
     function stripCodicons(text) {
         if (text.indexOf(codicon_1.codiconStartMarker) === -1) {
@@ -14719,7 +14702,7 @@ define(__m[51/*vs/base/common/codicons*/], __M([0/*require*/,1/*exports*/,103/*v
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[27/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/arrays*/,8/*vs/base/common/strings*/,41/*vs/base/common/extpath*/,9/*vs/base/common/path*/,22/*vs/base/common/map*/,19/*vs/base/common/async*/]), function (require, exports, arrays, strings, extpath, paths, map_1, async_1) {
+define(__m[27/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/strings*/,43/*vs/base/common/extpath*/,9/*vs/base/common/path*/,22/*vs/base/common/map*/,20/*vs/base/common/async*/]), function (require, exports, strings, extpath, paths, map_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getPathTerms = exports.getBasenameTerms = exports.isRelativePattern = exports.hasSiblingFn = exports.hasSiblingPromiseFn = exports.parse = exports.match = exports.splitGlobAware = exports.getEmptyExpression = void 0;
@@ -15001,7 +14984,7 @@ define(__m[27/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,10/*vs/bas
             }
             return null;
         };
-        const withBasenames = arrays.first(parsedPatterns, pattern => !!pattern.allBasenames);
+        const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
         if (withBasenames) {
             parsedPattern.allBasenames = withBasenames.allBasenames;
         }
@@ -15137,7 +15120,7 @@ define(__m[27/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,10/*vs/bas
                 }
                 return null;
             };
-            const withBasenames = arrays.first(parsedPatterns, pattern => !!pattern.allBasenames);
+            const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
             if (withBasenames) {
                 resultExpression.allBasenames = withBasenames.allBasenames;
             }
@@ -15167,7 +15150,7 @@ define(__m[27/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,10/*vs/bas
             }
             return null;
         };
-        const withBasenames = arrays.first(parsedPatterns, pattern => !!pattern.allBasenames);
+        const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
         if (withBasenames) {
             resultExpression.allBasenames = withBasenames.allBasenames;
         }
@@ -15262,7 +15245,7 @@ define(__m[27/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,10/*vs/bas
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[76/*vs/base/common/htmlContent*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/arrays*/,51/*vs/base/common/codicons*/,11/*vs/base/common/errors*/]), function (require, exports, arrays_1, codicons_1, errors_1) {
+define(__m[78/*vs/base/common/htmlContent*/], __M([0/*require*/,1/*exports*/,11/*vs/base/common/arrays*/,54/*vs/base/common/codicons*/,10/*vs/base/common/errors*/]), function (require, exports, arrays_1, codicons_1, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.parseHrefAndDimensions = exports.removeMarkdownEscapes = exports.markedStringsEquals = exports.isMarkdownString = exports.isEmptyMarkdownString = exports.MarkdownString = void 0;
@@ -15394,7 +15377,7 @@ define(__m[76/*vs/base/common/htmlContent*/], __M([0/*require*/,1/*exports*/,10/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[23/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,41/*vs/base/common/extpath*/,9/*vs/base/common/path*/,2/*vs/base/common/uri*/,8/*vs/base/common/strings*/,18/*vs/base/common/network*/,20/*vs/base/common/platform*/,27/*vs/base/common/glob*/,22/*vs/base/common/map*/]), function (require, exports, extpath, paths, uri_1, strings_1, network_1, platform_1, glob_1, map_1) {
+define(__m[23/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,43/*vs/base/common/extpath*/,9/*vs/base/common/path*/,2/*vs/base/common/uri*/,8/*vs/base/common/strings*/,12/*vs/base/common/network*/,21/*vs/base/common/platform*/,27/*vs/base/common/glob*/,22/*vs/base/common/map*/]), function (require, exports, extpath, paths, uri_1, strings_1, network_1, platform_1, glob_1, map_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toLocalResource = exports.ResourceGlobMatcher = exports.DataUri = exports.distinctParents = exports.addTrailingPathSeparator = exports.removeTrailingPathSeparator = exports.hasTrailingPathSeparator = exports.isEqualAuthority = exports.isAbsolutePath = exports.resolvePath = exports.relativePath = exports.normalizePath = exports.joinPath = exports.dirname = exports.extname = exports.basename = exports.basenameOrAuthority = exports.getComparisonKey = exports.isEqualOrParent = exports.isEqual = exports.extUriIgnorePathCase = exports.extUriBiasedIgnorePathCase = exports.extUri = exports.ExtUri = exports.originalFSPath = void 0;
@@ -15688,15 +15671,15 @@ define(__m[23/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,41/*v
         }
     }
     exports.ResourceGlobMatcher = ResourceGlobMatcher;
-    function toLocalResource(resource, authority) {
+    function toLocalResource(resource, authority, localScheme) {
         if (authority) {
             let path = resource.path;
             if (path && path[0] !== paths.posix.sep) {
                 path = paths.posix.sep + path;
             }
-            return resource.with({ scheme: network_1.Schemas.vscodeRemote, authority, path });
+            return resource.with({ scheme: localScheme, authority, path });
         }
-        return resource.with({ scheme: network_1.Schemas.file });
+        return resource.with({ scheme: localScheme });
     }
     exports.toLocalResource = toLocalResource;
 });
@@ -15705,7 +15688,7 @@ define(__m[23/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,41/*v
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[52/*vs/base/common/labels*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,9/*vs/base/common/path*/,8/*vs/base/common/strings*/,18/*vs/base/common/network*/,20/*vs/base/common/platform*/,23/*vs/base/common/resources*/]), function (require, exports, uri_1, path_1, strings_1, network_1, platform_1, resources_1) {
+define(__m[55/*vs/base/common/labels*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,9/*vs/base/common/path*/,8/*vs/base/common/strings*/,12/*vs/base/common/network*/,21/*vs/base/common/platform*/,23/*vs/base/common/resources*/]), function (require, exports, uri_1, path_1, strings_1, network_1, platform_1, resources_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.splitName = exports.unmnemonicLabel = exports.mnemonicButtonLabel = exports.mnemonicMenuLabel = exports.template = exports.shorten = exports.untildify = exports.tildify = exports.normalizeDriveLetter = exports.getBaseLabel = exports.getPathLabel = void 0;
@@ -16031,7 +16014,7 @@ define(__m[52/*vs/base/common/labels*/], __M([0/*require*/,1/*exports*/,2/*vs/ba
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[104/*vs/base/common/uriIpc*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/]), function (require, exports, uri_1) {
+define(__m[105/*vs/base/common/uriIpc*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/]), function (require, exports, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.transformAndReviveIncomingURIs = exports.transformIncomingURIs = exports.transformOutgoingURIs = exports.DefaultURITransformer = exports.URITransformer = void 0;
@@ -16207,7 +16190,7 @@ define(__m[29/*vs/base/common/uuid*/], __M([0/*require*/,1/*exports*/]), functio
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[77/*vs/editor/common/core/characterClassifier*/], __M([0/*require*/,1/*exports*/,75/*vs/base/common/uint*/]), function (require, exports, uint_1) {
+define(__m[79/*vs/editor/common/core/characterClassifier*/], __M([0/*require*/,1/*exports*/,77/*vs/base/common/uint*/]), function (require, exports, uint_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CharacterSet = exports.CharacterClassifier = void 0;
@@ -16270,7 +16253,7 @@ define(__m[77/*vs/editor/common/core/characterClassifier*/], __M([0/*require*/,1
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[105/*vs/editor/common/controller/wordCharacterClassifier*/], __M([0/*require*/,1/*exports*/,77/*vs/editor/common/core/characterClassifier*/]), function (require, exports, characterClassifier_1) {
+define(__m[106/*vs/editor/common/controller/wordCharacterClassifier*/], __M([0/*require*/,1/*exports*/,79/*vs/editor/common/core/characterClassifier*/]), function (require, exports, characterClassifier_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getMapForWordSeparators = exports.WordCharacterClassifier = exports.WordCharacterClass = void 0;
@@ -16307,7 +16290,7 @@ define(__m[105/*vs/editor/common/controller/wordCharacterClassifier*/], __M([0/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[35/*vs/editor/common/core/position*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[36/*vs/editor/common/core/position*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Position = void 0;
@@ -16448,7 +16431,7 @@ define(__m[35/*vs/editor/common/core/position*/], __M([0/*require*/,1/*exports*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[30/*vs/editor/common/core/range*/], __M([0/*require*/,1/*exports*/,35/*vs/editor/common/core/position*/]), function (require, exports, position_1) {
+define(__m[30/*vs/editor/common/core/range*/], __M([0/*require*/,1/*exports*/,36/*vs/editor/common/core/position*/]), function (require, exports, position_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Range = void 0;
@@ -16814,7 +16797,7 @@ define(__m[30/*vs/editor/common/core/range*/], __M([0/*require*/,1/*exports*/,35
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[106/*vs/editor/common/core/selection*/], __M([0/*require*/,1/*exports*/,35/*vs/editor/common/core/position*/,30/*vs/editor/common/core/range*/]), function (require, exports, position_1, range_1) {
+define(__m[107/*vs/editor/common/core/selection*/], __M([0/*require*/,1/*exports*/,36/*vs/editor/common/core/position*/,30/*vs/editor/common/core/range*/]), function (require, exports, position_1, range_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Selection = exports.SelectionDirection = void 0;
@@ -16958,7 +16941,7 @@ define(__m[106/*vs/editor/common/core/selection*/], __M([0/*require*/,1/*exports
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[78/*vs/editor/common/model*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[80/*vs/editor/common/model*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ApplyEditsResult = exports.ValidAnnotatedEditOperation = exports.ModelConstants = exports.TrackedRangeStickiness = exports.FindMatch = exports.TextModelResolvedOptions = exports.EndOfLineSequence = exports.DefaultEndOfLine = exports.EndOfLinePreference = exports.MinimapPosition = exports.OverviewRulerLane = void 0;
@@ -17119,7 +17102,7 @@ define(__m[78/*vs/editor/common/model*/], __M([0/*require*/,1/*exports*/]), func
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[107/*vs/editor/common/model/textModelSearch*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/strings*/,105/*vs/editor/common/controller/wordCharacterClassifier*/,35/*vs/editor/common/core/position*/,30/*vs/editor/common/core/range*/,78/*vs/editor/common/model*/]), function (require, exports, strings, wordCharacterClassifier_1, position_1, range_1, model_1) {
+define(__m[108/*vs/editor/common/model/textModelSearch*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/strings*/,106/*vs/editor/common/controller/wordCharacterClassifier*/,36/*vs/editor/common/core/position*/,30/*vs/editor/common/core/range*/,80/*vs/editor/common/model*/]), function (require, exports, strings, wordCharacterClassifier_1, position_1, range_1, model_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Searcher = exports.isValidMatch = exports.TextModelSearch = exports.createFindMatch = exports.SearchData = exports.isMultilineRegexSource = exports.SearchParams = void 0;
@@ -17583,7 +17566,7 @@ define(__m[107/*vs/editor/common/model/textModelSearch*/], __M([0/*require*/,1/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[79/*vs/editor/common/model/wordHelper*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[81/*vs/editor/common/model/wordHelper*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getWordAtText = exports.ensureValidWordDefinition = exports.DEFAULT_WORD_REGEXP = exports.USUAL_WORD_SEPARATORS = void 0;
@@ -17708,10 +17691,10 @@ define(__m[79/*vs/editor/common/model/wordHelper*/], __M([0/*require*/,1/*export
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[108/*vs/editor/common/modes/languageConfiguration*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[109/*vs/editor/common/modes/languageConfiguration*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.StandardAutoClosingPairConditional = exports.IndentAction = void 0;
+    exports.AutoClosingPairs = exports.StandardAutoClosingPairConditional = exports.IndentAction = void 0;
     /**
      * Describes what to do with the indentation when pressing Enter.
      */
@@ -17767,13 +17750,37 @@ define(__m[108/*vs/editor/common/modes/languageConfiguration*/], __M([0/*require
         }
     }
     exports.StandardAutoClosingPairConditional = StandardAutoClosingPairConditional;
+    /**
+     * @internal
+     */
+    class AutoClosingPairs {
+        constructor(autoClosingPairs) {
+            this.autoClosingPairsOpen = new Map();
+            this.autoClosingPairsClose = new Map();
+            for (const pair of autoClosingPairs) {
+                appendEntry(this.autoClosingPairsOpen, pair.open.charAt(pair.open.length - 1), pair);
+                if (pair.close.length === 1) {
+                    appendEntry(this.autoClosingPairsClose, pair.close, pair);
+                }
+            }
+        }
+    }
+    exports.AutoClosingPairs = AutoClosingPairs;
+    function appendEntry(target, key, value) {
+        if (target.has(key)) {
+            target.get(key).push(value);
+        }
+        else {
+            target.set(key, [value]);
+        }
+    }
 });
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[53/*vs/editor/common/modes/languageSelector*/], __M([0/*require*/,1/*exports*/,27/*vs/base/common/glob*/,9/*vs/base/common/path*/]), function (require, exports, glob_1, path_1) {
+define(__m[56/*vs/editor/common/modes/languageSelector*/], __M([0/*require*/,1/*exports*/,27/*vs/base/common/glob*/,9/*vs/base/common/path*/]), function (require, exports, glob_1, path_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.score = void 0;
@@ -17871,7 +17878,7 @@ define(__m[53/*vs/editor/common/modes/languageSelector*/], __M([0/*require*/,1/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[109/*vs/editor/common/modes/linkComputer*/], __M([0/*require*/,1/*exports*/,77/*vs/editor/common/core/characterClassifier*/]), function (require, exports, characterClassifier_1) {
+define(__m[110/*vs/editor/common/modes/linkComputer*/], __M([0/*require*/,1/*exports*/,79/*vs/editor/common/core/characterClassifier*/]), function (require, exports, characterClassifier_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.computeLinks = exports.LinkComputer = exports.StateMachine = exports.Uint8Matrix = exports.State = void 0;
@@ -18168,7 +18175,7 @@ define(__m[109/*vs/editor/common/modes/linkComputer*/], __M([0/*require*/,1/*exp
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[110/*vs/editor/common/modes/tokenizationRegistry*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/]), function (require, exports, event_1, lifecycle_1) {
+define(__m[111/*vs/editor/common/modes/tokenizationRegistry*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/]), function (require, exports, event_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.TokenizationRegistryImpl = void 0;
@@ -18252,7 +18259,7 @@ define(__m[110/*vs/editor/common/modes/tokenizationRegistry*/], __M([0/*require*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[80/*vs/editor/common/viewModel/prefixSumComputer*/], __M([0/*require*/,1/*exports*/,75/*vs/base/common/uint*/]), function (require, exports, uint_1) {
+define(__m[82/*vs/editor/common/viewModel/prefixSumComputer*/], __M([0/*require*/,1/*exports*/,77/*vs/base/common/uint*/]), function (require, exports, uint_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.PrefixSumComputer = exports.PrefixSumIndexOfResult = void 0;
@@ -18397,7 +18404,7 @@ define(__m[80/*vs/editor/common/viewModel/prefixSumComputer*/], __M([0/*require*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[111/*vs/editor/common/model/mirrorTextModel*/], __M([0/*require*/,1/*exports*/,35/*vs/editor/common/core/position*/,80/*vs/editor/common/viewModel/prefixSumComputer*/]), function (require, exports, position_1, prefixSumComputer_1) {
+define(__m[112/*vs/editor/common/model/mirrorTextModel*/], __M([0/*require*/,1/*exports*/,36/*vs/editor/common/core/position*/,82/*vs/editor/common/viewModel/prefixSumComputer*/]), function (require, exports, position_1, prefixSumComputer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.MirrorTextModel = void 0;
@@ -18511,12 +18518,12 @@ define(__m[111/*vs/editor/common/model/mirrorTextModel*/], __M([0/*require*/,1/*
     exports.MirrorTextModel = MirrorTextModel;
 });
 
-define(__m[112/*vs/nls!vs/base/common/errorMessage*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/base/common/errorMessage", data); });
+define(__m[113/*vs/nls!vs/base/common/errorMessage*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/base/common/errorMessage", data); });
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[54/*vs/base/common/errorMessage*/], __M([0/*require*/,1/*exports*/,112/*vs/nls!vs/base/common/errorMessage*/,14/*vs/base/common/types*/,10/*vs/base/common/arrays*/]), function (require, exports, nls, types, arrays) {
+define(__m[57/*vs/base/common/errorMessage*/], __M([0/*require*/,1/*exports*/,113/*vs/nls!vs/base/common/errorMessage*/,16/*vs/base/common/types*/,11/*vs/base/common/arrays*/]), function (require, exports, nls, types, arrays) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toErrorMessage = void 0;
@@ -18580,12 +18587,12 @@ define(__m[54/*vs/base/common/errorMessage*/], __M([0/*require*/,1/*exports*/,11
     exports.toErrorMessage = toErrorMessage;
 });
 
-define(__m[113/*vs/nls!vs/editor/common/config/editorOptions*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/editor/common/config/editorOptions", data); });
+define(__m[114/*vs/nls!vs/editor/common/config/editorOptions*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/editor/common/config/editorOptions", data); });
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*exports*/,113/*vs/nls!vs/editor/common/config/editorOptions*/,20/*vs/base/common/platform*/,79/*vs/editor/common/model/wordHelper*/]), function (require, exports, nls, platform, wordHelper_1) {
+define(__m[115/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*exports*/,114/*vs/nls!vs/editor/common/config/editorOptions*/,21/*vs/base/common/platform*/,81/*vs/editor/common/model/wordHelper*/]), function (require, exports, nls, platform, wordHelper_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.EditorOptions = exports.EditorOption = exports.editorOptionsRegistry = exports.EDITOR_MODEL_DEFAULTS = exports.EDITOR_FONT_DEFAULTS = exports.WrappingIndent = exports.filterValidationDecorations = exports.RenderLineNumbersType = exports.EditorLayoutInfoComputer = exports.RenderMinimap = exports.EditorFontLigatures = exports.cursorStyleToString = exports.TextEditorCursorStyle = exports.TextEditorCursorBlinkingStyle = exports.ComputeOptionsMemory = exports.ValidatedEditorOptions = exports.ConfigurationChangedEvent = exports.MINIMAP_GUTTER_WIDTH = exports.EditorAutoIndentStrategy = void 0;
@@ -19014,7 +19021,7 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
     //#region editorClassName
     class EditorClassName extends ComputedEditorOption {
         constructor() {
-            super(113 /* editorClassName */, [57 /* mouseStyle */, 27 /* extraEditorClassName */]);
+            super(114 /* editorClassName */, [57 /* mouseStyle */, 27 /* extraEditorClassName */]);
         }
         compute(env, options, _) {
             const classNames = ['monaco-editor'];
@@ -19033,7 +19040,7 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
             if (options.get(92 /* showUnused */)) {
                 classNames.push('showUnused');
             }
-            if (options.get(112 /* showDeprecated */)) {
+            if (options.get(113 /* showDeprecated */)) {
                 classNames.push('showDeprecated');
             }
             return classNames.join(' ');
@@ -19359,11 +19366,11 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
      */
     class EditorLayoutInfoComputer extends ComputedEditorOption {
         constructor() {
-            super(116 /* layoutInfo */, [
+            super(117 /* layoutInfo */, [
                 42 /* glyphMargin */, 50 /* lineDecorationsWidth */, 31 /* folding */,
                 56 /* minimap */, 84 /* scrollbar */, 52 /* lineNumbers */,
                 53 /* lineNumbersMinChars */, 86 /* scrollBeyondLastLine */,
-                105 /* wordWrap */, 108 /* wordWrapColumn */, 109 /* wordWrapMinified */,
+                106 /* wordWrap */, 109 /* wordWrapColumn */, 110 /* wordWrapMinified */,
                 2 /* accessibilitySupport */
             ]);
         }
@@ -19549,9 +19556,9 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
             const maxDigitWidth = env.maxDigitWidth;
             const pixelRatio = env.pixelRatio;
             const viewLineCount = env.viewLineCount;
-            const wordWrap = options.get(105 /* wordWrap */);
-            const wordWrapColumn = options.get(108 /* wordWrapColumn */);
-            const wordWrapMinified = options.get(109 /* wordWrapMinified */);
+            const wordWrap = options.get(106 /* wordWrap */);
+            const wordWrapColumn = options.get(109 /* wordWrapColumn */);
+            const wordWrapMinified = options.get(110 /* wordWrapMinified */);
             const accessibilitySupport = options.get(2 /* accessibilitySupport */);
             const isDominatedByLongLines = env.isDominatedByLongLines;
             const showGlyphMargin = options.get(42 /* glyphMargin */);
@@ -19595,7 +19602,7 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
             let isViewportWrapping = false;
             let wrappingColumn = -1;
             if (accessibilitySupport !== 2 /* Enabled */) {
-                // See https://github.com/Microsoft/vscode/issues/27766
+                // See https://github.com/microsoft/vscode/issues/27766
                 // Never enable wrapping when a screen reader is attached
                 // because arrow down etc. will not move the cursor in the way
                 // a screen reader expects.
@@ -19852,7 +19859,7 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
     //#region pixelRatio
     class EditorPixelRatio extends ComputedEditorOption {
         constructor() {
-            super(114 /* pixelRatio */);
+            super(115 /* pixelRatio */);
         }
         compute(env, options, _) {
             return env.pixelRatio;
@@ -20371,7 +20378,7 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
     //#region tabFocusMode
     class EditorTabFocusMode extends ComputedEditorOption {
         constructor() {
-            super(115 /* tabFocusMode */, [72 /* readOnly */]);
+            super(116 /* tabFocusMode */, [72 /* readOnly */]);
         }
         compute(env, options, _) {
             const readOnly = options.get(72 /* readOnly */);
@@ -20412,10 +20419,10 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
     }
     class EditorWrappingInfoComputer extends ComputedEditorOption {
         constructor() {
-            super(117 /* wrappingInfo */, [116 /* layoutInfo */]);
+            super(118 /* wrappingInfo */, [117 /* layoutInfo */]);
         }
         compute(env, options, _) {
-            const layoutInfo = options.get(116 /* layoutInfo */);
+            const layoutInfo = options.get(117 /* layoutInfo */);
             return {
                 isDominatedByLongLines: env.isDominatedByLongLines,
                 isWordWrapMinified: layoutInfo.isWordWrapMinified,
@@ -20561,23 +20568,24 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
         EditorOption[EditorOption["suggestOnTriggerCharacters"] = 99] = "suggestOnTriggerCharacters";
         EditorOption[EditorOption["suggestSelection"] = 100] = "suggestSelection";
         EditorOption[EditorOption["tabCompletion"] = 101] = "tabCompletion";
-        EditorOption[EditorOption["unusualLineTerminators"] = 102] = "unusualLineTerminators";
-        EditorOption[EditorOption["useTabStops"] = 103] = "useTabStops";
-        EditorOption[EditorOption["wordSeparators"] = 104] = "wordSeparators";
-        EditorOption[EditorOption["wordWrap"] = 105] = "wordWrap";
-        EditorOption[EditorOption["wordWrapBreakAfterCharacters"] = 106] = "wordWrapBreakAfterCharacters";
-        EditorOption[EditorOption["wordWrapBreakBeforeCharacters"] = 107] = "wordWrapBreakBeforeCharacters";
-        EditorOption[EditorOption["wordWrapColumn"] = 108] = "wordWrapColumn";
-        EditorOption[EditorOption["wordWrapMinified"] = 109] = "wordWrapMinified";
-        EditorOption[EditorOption["wrappingIndent"] = 110] = "wrappingIndent";
-        EditorOption[EditorOption["wrappingStrategy"] = 111] = "wrappingStrategy";
-        EditorOption[EditorOption["showDeprecated"] = 112] = "showDeprecated";
+        EditorOption[EditorOption["tabIndex"] = 102] = "tabIndex";
+        EditorOption[EditorOption["unusualLineTerminators"] = 103] = "unusualLineTerminators";
+        EditorOption[EditorOption["useTabStops"] = 104] = "useTabStops";
+        EditorOption[EditorOption["wordSeparators"] = 105] = "wordSeparators";
+        EditorOption[EditorOption["wordWrap"] = 106] = "wordWrap";
+        EditorOption[EditorOption["wordWrapBreakAfterCharacters"] = 107] = "wordWrapBreakAfterCharacters";
+        EditorOption[EditorOption["wordWrapBreakBeforeCharacters"] = 108] = "wordWrapBreakBeforeCharacters";
+        EditorOption[EditorOption["wordWrapColumn"] = 109] = "wordWrapColumn";
+        EditorOption[EditorOption["wordWrapMinified"] = 110] = "wordWrapMinified";
+        EditorOption[EditorOption["wrappingIndent"] = 111] = "wrappingIndent";
+        EditorOption[EditorOption["wrappingStrategy"] = 112] = "wrappingStrategy";
+        EditorOption[EditorOption["showDeprecated"] = 113] = "showDeprecated";
         // Leave these at the end (because they have dependencies!)
-        EditorOption[EditorOption["editorClassName"] = 113] = "editorClassName";
-        EditorOption[EditorOption["pixelRatio"] = 114] = "pixelRatio";
-        EditorOption[EditorOption["tabFocusMode"] = 115] = "tabFocusMode";
-        EditorOption[EditorOption["layoutInfo"] = 116] = "layoutInfo";
-        EditorOption[EditorOption["wrappingInfo"] = 117] = "wrappingInfo";
+        EditorOption[EditorOption["editorClassName"] = 114] = "editorClassName";
+        EditorOption[EditorOption["pixelRatio"] = 115] = "pixelRatio";
+        EditorOption[EditorOption["tabFocusMode"] = 116] = "tabFocusMode";
+        EditorOption[EditorOption["layoutInfo"] = 117] = "layoutInfo";
+        EditorOption[EditorOption["wrappingInfo"] = 118] = "wrappingInfo";
     })(EditorOption = exports.EditorOption || (exports.EditorOption = {}));
     /**
      * WORKAROUND: TS emits "any" for complex editor options values (anything except string, bool, enum, etc. ends up being "any")
@@ -20797,7 +20805,7 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
             description: nls.localize(193, null)
         })),
         showUnused: register(new EditorBooleanOption(92 /* showUnused */, 'showUnused', true, { description: nls.localize(194, null) })),
-        showDeprecated: register(new EditorBooleanOption(112 /* showDeprecated */, 'showDeprecated', true, { description: nls.localize(195, null) })),
+        showDeprecated: register(new EditorBooleanOption(113 /* showDeprecated */, 'showDeprecated', true, { description: nls.localize(195, null) })),
         snippetSuggestions: register(new EditorStringEnumOption(93 /* snippetSuggestions */, 'snippetSuggestions', 'inline', ['top', 'bottom', 'inline', 'none'], {
             enumDescriptions: [
                 nls.localize(196, null),
@@ -20829,7 +20837,8 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
             ],
             description: nls.localize(212, null)
         })),
-        unusualLineTerminators: register(new EditorStringEnumOption(102 /* unusualLineTerminators */, 'unusualLineTerminators', 'prompt', ['off', 'prompt', 'auto'], {
+        tabIndex: register(new EditorIntOption(102 /* tabIndex */, 'tabIndex', 0, -1, 1073741824 /* MAX_SAFE_SMALL_INTEGER */)),
+        unusualLineTerminators: register(new EditorStringEnumOption(103 /* unusualLineTerminators */, 'unusualLineTerminators', 'prompt', ['auto', 'off', 'prompt'], {
             enumDescriptions: [
                 nls.localize(213, null),
                 nls.localize(214, null),
@@ -20837,9 +20846,9 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
             ],
             description: nls.localize(216, null)
         })),
-        useTabStops: register(new EditorBooleanOption(103 /* useTabStops */, 'useTabStops', true, { description: nls.localize(217, null) })),
-        wordSeparators: register(new EditorStringOption(104 /* wordSeparators */, 'wordSeparators', wordHelper_1.USUAL_WORD_SEPARATORS, { description: nls.localize(218, null) })),
-        wordWrap: register(new EditorStringEnumOption(105 /* wordWrap */, 'wordWrap', 'off', ['off', 'on', 'wordWrapColumn', 'bounded'], {
+        useTabStops: register(new EditorBooleanOption(104 /* useTabStops */, 'useTabStops', true, { description: nls.localize(217, null) })),
+        wordSeparators: register(new EditorStringOption(105 /* wordSeparators */, 'wordSeparators', wordHelper_1.USUAL_WORD_SEPARATORS, { description: nls.localize(218, null) })),
+        wordWrap: register(new EditorStringEnumOption(106 /* wordWrap */, 'wordWrap', 'off', ['off', 'on', 'wordWrapColumn', 'bounded'], {
             markdownEnumDescriptions: [
                 nls.localize(219, null),
                 nls.localize(220, null),
@@ -20865,9 +20874,9 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
 
 
         })),
-        wordWrapBreakAfterCharacters: register(new EditorStringOption(106 /* wordWrapBreakAfterCharacters */, 'wordWrapBreakAfterCharacters', ' \t})]?|/&.,;¢°′″‰℃、。｡､￠，．：；？！％・･ゝゞヽヾーァィゥェォッャュョヮヵヶぁぃぅぇぉっゃゅょゎゕゖㇰㇱㇲㇳㇴㇵㇶㇷㇸㇹㇺㇻㇼㇽㇾㇿ々〻ｧｨｩｪｫｬｭｮｯｰ”〉》」』】〕）］｝｣')),
-        wordWrapBreakBeforeCharacters: register(new EditorStringOption(107 /* wordWrapBreakBeforeCharacters */, 'wordWrapBreakBeforeCharacters', '([{‘“〈《「『【〔（［｛｢£¥＄￡￥+＋')),
-        wordWrapColumn: register(new EditorIntOption(108 /* wordWrapColumn */, 'wordWrapColumn', 80, 1, 1073741824 /* MAX_SAFE_SMALL_INTEGER */, {
+        wordWrapBreakAfterCharacters: register(new EditorStringOption(107 /* wordWrapBreakAfterCharacters */, 'wordWrapBreakAfterCharacters', ' \t})]?|/&.,;¢°′″‰℃、。｡､￠，．：；？！％・･ゝゞヽヾーァィゥェォッャュョヮヵヶぁぃぅぇぉっゃゅょゎゕゖㇰㇱㇲㇳㇴㇵㇶㇷㇸㇹㇺㇻㇼㇽㇾㇿ々〻ｧｨｩｪｫｬｭｮｯｰ”〉》」』】〕）］｝｣')),
+        wordWrapBreakBeforeCharacters: register(new EditorStringOption(108 /* wordWrapBreakBeforeCharacters */, 'wordWrapBreakBeforeCharacters', '([{‘“〈《「『【〔（［｛｢£¥＄￡￥+＋')),
+        wordWrapColumn: register(new EditorIntOption(109 /* wordWrapColumn */, 'wordWrapColumn', 80, 1, 1073741824 /* MAX_SAFE_SMALL_INTEGER */, {
             markdownDescription: nls.localize(224, null)
 
 
@@ -20876,8 +20885,8 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
 
 
         })),
-        wordWrapMinified: register(new EditorBooleanOption(109 /* wordWrapMinified */, 'wordWrapMinified', true)),
-        wrappingIndent: register(new EditorEnumOption(110 /* wrappingIndent */, 'wrappingIndent', 1 /* Same */, 'same', ['none', 'same', 'indent', 'deepIndent'], _wrappingIndentFromString, {
+        wordWrapMinified: register(new EditorBooleanOption(110 /* wordWrapMinified */, 'wordWrapMinified', true)),
+        wrappingIndent: register(new EditorEnumOption(111 /* wrappingIndent */, 'wrappingIndent', 1 /* Same */, 'same', ['none', 'same', 'indent', 'deepIndent'], _wrappingIndentFromString, {
             enumDescriptions: [
                 nls.localize(225, null),
                 nls.localize(226, null),
@@ -20886,7 +20895,7 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
             ],
             description: nls.localize(229, null),
         })),
-        wrappingStrategy: register(new EditorStringEnumOption(111 /* wrappingStrategy */, 'wrappingStrategy', 'simple', ['simple', 'advanced'], {
+        wrappingStrategy: register(new EditorStringEnumOption(112 /* wrappingStrategy */, 'wrappingStrategy', 'simple', ['simple', 'advanced'], {
             enumDescriptions: [
                 nls.localize(230, null),
                 nls.localize(231, null)
@@ -20902,29 +20911,29 @@ define(__m[114/*vs/editor/common/config/editorOptions*/], __M([0/*require*/,1/*e
     };
 });
 
-define(__m[115/*vs/nls!vs/platform/configuration/common/configurationRegistry*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/platform/configuration/common/configurationRegistry", data); });
-define(__m[116/*vs/nls!vs/platform/files/common/files*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/platform/files/common/files", data); });
-define(__m[117/*vs/nls!vs/platform/markers/common/markers*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/platform/markers/common/markers", data); });
-define(__m[118/*vs/nls!vs/platform/workspaces/common/workspaces*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/platform/workspaces/common/workspaces", data); });
-define(__m[119/*vs/nls!vs/workbench/api/common/extHost.api.impl*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHost.api.impl", data); });
-define(__m[120/*vs/nls!vs/workbench/api/common/extHostDiagnostics*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostDiagnostics", data); });
-define(__m[121/*vs/nls!vs/workbench/api/common/extHostExtensionActivator*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostExtensionActivator", data); });
-define(__m[122/*vs/nls!vs/workbench/api/common/extHostExtensionService*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostExtensionService", data); });
-define(__m[123/*vs/nls!vs/workbench/api/common/extHostProgress*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostProgress", data); });
-define(__m[124/*vs/nls!vs/workbench/api/common/extHostStatusBar*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostStatusBar", data); });
-define(__m[125/*vs/nls!vs/workbench/api/common/extHostTerminalService*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostTerminalService", data); });
-define(__m[126/*vs/nls!vs/workbench/api/common/extHostTreeViews*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostTreeViews", data); });
-define(__m[127/*vs/nls!vs/workbench/api/common/extHostWorkspace*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostWorkspace", data); });
-define(__m[128/*vs/nls!vs/workbench/common/views*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/common/views", data); });
-define(__m[129/*vs/nls!vs/workbench/contrib/debug/common/abstractDebugAdapter*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/contrib/debug/common/abstractDebugAdapter", data); });
-define(__m[130/*vs/nls!vs/workbench/contrib/search/common/queryBuilder*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/contrib/search/common/queryBuilder", data); });
-define(__m[131/*vs/nls!vs/workbench/contrib/terminal/common/terminal*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/contrib/terminal/common/terminal", data); });
-define(__m[132/*vs/nls!vs/workbench/services/configurationResolver/common/variableResolver*/], __M([15/*vs/nls*/,16/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/services/configurationResolver/common/variableResolver", data); });
+define(__m[116/*vs/nls!vs/platform/configuration/common/configurationRegistry*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/platform/configuration/common/configurationRegistry", data); });
+define(__m[117/*vs/nls!vs/platform/files/common/files*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/platform/files/common/files", data); });
+define(__m[118/*vs/nls!vs/platform/markers/common/markers*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/platform/markers/common/markers", data); });
+define(__m[119/*vs/nls!vs/platform/workspaces/common/workspaces*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/platform/workspaces/common/workspaces", data); });
+define(__m[120/*vs/nls!vs/workbench/api/common/extHost.api.impl*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHost.api.impl", data); });
+define(__m[121/*vs/nls!vs/workbench/api/common/extHostDiagnostics*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostDiagnostics", data); });
+define(__m[122/*vs/nls!vs/workbench/api/common/extHostExtensionActivator*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostExtensionActivator", data); });
+define(__m[123/*vs/nls!vs/workbench/api/common/extHostExtensionService*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostExtensionService", data); });
+define(__m[124/*vs/nls!vs/workbench/api/common/extHostProgress*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostProgress", data); });
+define(__m[125/*vs/nls!vs/workbench/api/common/extHostStatusBar*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostStatusBar", data); });
+define(__m[126/*vs/nls!vs/workbench/api/common/extHostTerminalService*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostTerminalService", data); });
+define(__m[127/*vs/nls!vs/workbench/api/common/extHostTreeViews*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostTreeViews", data); });
+define(__m[128/*vs/nls!vs/workbench/api/common/extHostWorkspace*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/api/common/extHostWorkspace", data); });
+define(__m[129/*vs/nls!vs/workbench/common/views*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/common/views", data); });
+define(__m[130/*vs/nls!vs/workbench/contrib/debug/common/abstractDebugAdapter*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/contrib/debug/common/abstractDebugAdapter", data); });
+define(__m[131/*vs/nls!vs/workbench/contrib/search/common/queryBuilder*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/contrib/search/common/queryBuilder", data); });
+define(__m[132/*vs/nls!vs/workbench/contrib/terminal/common/terminal*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/contrib/terminal/common/terminal", data); });
+define(__m[133/*vs/nls!vs/workbench/services/configurationResolver/common/variableResolver*/], __M([17/*vs/nls*/,18/*vs/nls!vs/workbench/services/extensions/worker/extensionHostWorker*/]), function(nls, data) { return nls.create("vs/workbench/services/configurationResolver/common/variableResolver", data); });
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[81/*vs/platform/instantiation/common/descriptors*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[83/*vs/platform/instantiation/common/descriptors*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.createSyncDescriptor = exports.SyncDescriptor = void 0;
@@ -20946,7 +20955,7 @@ define(__m[81/*vs/platform/instantiation/common/descriptors*/], __M([0/*require*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[55/*vs/platform/instantiation/common/extensions*/], __M([0/*require*/,1/*exports*/,81/*vs/platform/instantiation/common/descriptors*/]), function (require, exports, descriptors_1) {
+define(__m[58/*vs/platform/instantiation/common/extensions*/], __M([0/*require*/,1/*exports*/,83/*vs/platform/instantiation/common/descriptors*/]), function (require, exports, descriptors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getSingletonServiceDescriptors = exports.registerSingleton = void 0;
@@ -20965,7 +20974,7 @@ define(__m[55/*vs/platform/instantiation/common/extensions*/], __M([0/*require*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[133/*vs/platform/instantiation/common/graph*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[134/*vs/platform/instantiation/common/graph*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Graph = exports.Node = void 0;
@@ -21097,7 +21106,7 @@ define(__m[4/*vs/platform/instantiation/common/instantiation*/], __M([0/*require
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[134/*vs/editor/common/services/modelService*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[135/*vs/editor/common/services/modelService*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.shouldSynchronizeModel = exports.IModelService = void 0;
@@ -21112,10 +21121,10 @@ define(__m[134/*vs/editor/common/services/modelService*/], __M([0/*require*/,1/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[135/*vs/editor/common/modes/languageFeatureRegistry*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,53/*vs/editor/common/modes/languageSelector*/,134/*vs/editor/common/services/modelService*/]), function (require, exports, event_1, lifecycle_1, languageSelector_1, modelService_1) {
+define(__m[136/*vs/editor/common/modes/languageFeatureRegistry*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,51/*vs/base/common/hash*/,6/*vs/base/common/lifecycle*/,22/*vs/base/common/map*/,76/*vs/base/common/numbers*/,56/*vs/editor/common/modes/languageSelector*/,135/*vs/editor/common/services/modelService*/]), function (require, exports, event_1, hash_1, lifecycle_1, map_1, numbers_1, languageSelector_1, modelService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.LanguageFeatureRegistry = void 0;
+    exports.LanguageFeatureRequestDelays = exports.LanguageFeatureRegistry = void 0;
     function isExclusive(selector) {
         if (typeof selector === 'string') {
             return false;
@@ -21253,13 +21262,52 @@ define(__m[135/*vs/editor/common/modes/languageFeatureRegistry*/], __M([0/*requi
         }
     }
     exports.LanguageFeatureRegistry = LanguageFeatureRegistry;
+    /**
+     * Keeps moving average per model and set of providers so that requests
+     * can be debounce according to the provider performance
+     */
+    class LanguageFeatureRequestDelays {
+        constructor(_registry, min, max = Number.MAX_SAFE_INTEGER) {
+            this._registry = _registry;
+            this.min = min;
+            this.max = max;
+            this._cache = new map_1.LRUCache(50, 0.7);
+        }
+        _key(model) {
+            return model.id + hash_1.hash(this._registry.all(model));
+        }
+        _clamp(value) {
+            if (value === undefined) {
+                return this.min;
+            }
+            else {
+                return Math.min(this.max, Math.max(this.min, Math.floor(value * 1.3)));
+            }
+        }
+        get(model) {
+            const key = this._key(model);
+            const avg = this._cache.get(key);
+            return this._clamp(avg === null || avg === void 0 ? void 0 : avg.value);
+        }
+        update(model, value) {
+            const key = this._key(model);
+            let avg = this._cache.get(key);
+            if (!avg) {
+                avg = new numbers_1.MovingAverage();
+                this._cache.set(key, avg);
+            }
+            avg.update(value);
+            return this.get(model);
+        }
+    }
+    exports.LanguageFeatureRequestDelays = LanguageFeatureRequestDelays;
 });
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[56/*vs/editor/common/modes*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,30/*vs/editor/common/core/range*/,135/*vs/editor/common/modes/languageFeatureRegistry*/,110/*vs/editor/common/modes/tokenizationRegistry*/,51/*vs/base/common/codicons*/]), function (require, exports, uri_1, range_1, languageFeatureRegistry_1, tokenizationRegistry_1, codicons_1) {
+define(__m[59/*vs/editor/common/modes*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,30/*vs/editor/common/core/range*/,136/*vs/editor/common/modes/languageFeatureRegistry*/,111/*vs/editor/common/modes/tokenizationRegistry*/,54/*vs/base/common/codicons*/]), function (require, exports, uri_1, range_1, languageFeatureRegistry_1, tokenizationRegistry_1, codicons_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.TokenizationRegistry = exports.DocumentRangeSemanticTokensProviderRegistry = exports.DocumentSemanticTokensProviderRegistry = exports.FoldingRangeProviderRegistry = exports.SelectionRangeRegistry = exports.ColorProviderRegistry = exports.LinkProviderRegistry = exports.OnTypeFormattingEditProviderRegistry = exports.DocumentRangeFormattingEditProviderRegistry = exports.DocumentFormattingEditProviderRegistry = exports.CodeActionProviderRegistry = exports.CodeLensProviderRegistry = exports.TypeDefinitionProviderRegistry = exports.ImplementationProviderRegistry = exports.DeclarationProviderRegistry = exports.DefinitionProviderRegistry = exports.OnTypeRenameProviderRegistry = exports.DocumentHighlightProviderRegistry = exports.DocumentSymbolProviderRegistry = exports.EvaluatableExpressionProviderRegistry = exports.HoverProviderRegistry = exports.SignatureHelpProviderRegistry = exports.CompletionProviderRegistry = exports.RenameProviderRegistry = exports.ReferenceProviderRegistry = exports.CommentMode = exports.CommentThreadCollapsibleState = exports.FoldingRangeKind = exports.SymbolKinds = exports.SymbolTag = exports.SymbolKind = exports.isLocationLink = exports.DocumentHighlightKind = exports.SignatureHelpTriggerKind = exports.CodeActionTriggerType = exports.CompletionTriggerKind = exports.CompletionItemInsertTextRule = exports.CompletionItemTag = exports.completionKindFromString = exports.completionKindToCssClass = exports.CompletionItemKind = exports.TokenMetadata = exports.MetadataConsts = exports.StandardTokenType = exports.ColorId = exports.FontStyle = exports.LanguageIdentifier = exports.LanguageId = void 0;
@@ -21869,7 +21917,7 @@ define(__m[56/*vs/editor/common/modes*/], __M([0/*require*/,1/*exports*/,2/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[136/*vs/platform/commands/common/commands*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/lifecycle*/,14/*vs/base/common/types*/,4/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/,48/*vs/base/common/linkedList*/,47/*vs/base/common/iterator*/]), function (require, exports, lifecycle_1, types_1, instantiation_1, event_1, linkedList_1, iterator_1) {
+define(__m[137/*vs/platform/commands/common/commands*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/lifecycle*/,16/*vs/base/common/types*/,4/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/,50/*vs/base/common/linkedList*/,49/*vs/base/common/iterator*/]), function (require, exports, lifecycle_1, types_1, instantiation_1, event_1, linkedList_1, iterator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NullCommandService = exports.CommandsRegistry = exports.ICommandService = void 0;
@@ -21956,7 +22004,7 @@ define(__m[136/*vs/platform/commands/common/commands*/], __M([0/*require*/,1/*ex
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[42/*vs/platform/contextkey/common/contextkey*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/strings*/,4/*vs/platform/instantiation/common/instantiation*/,20/*vs/base/common/platform*/]), function (require, exports, strings_1, instantiation_1, platform_1) {
+define(__m[44/*vs/platform/contextkey/common/contextkey*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/strings*/,4/*vs/platform/instantiation/common/instantiation*/,21/*vs/base/common/platform*/]), function (require, exports, strings_1, instantiation_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SET_CONTEXT_COMMAND_ID = exports.IContextKeyService = exports.RawContextKey = exports.ContextKeyOrExpr = exports.ContextKeyAndExpr = exports.ContextKeyNotRegexExpr = exports.ContextKeyRegexExpr = exports.ContextKeyNotExpr = exports.ContextKeyNotEqualsExpr = exports.ContextKeyNotInExpr = exports.ContextKeyInExpr = exports.ContextKeyEqualsExpr = exports.ContextKeyDefinedExpr = exports.ContextKeyTrueExpr = exports.ContextKeyFalseExpr = exports.ContextKeyExpr = exports.ContextKeyExprType = void 0;
@@ -22671,6 +22719,9 @@ define(__m[42/*vs/platform/contextkey/common/contextkey*/], __M([0/*require*/,1/
                     expr.sort(cmp);
                 }
             }
+            if (expr.length === 1) {
+                return expr[0];
+            }
             return new ContextKeyAndExpr(expr);
         }
         serialize() {
@@ -22852,12 +22903,12 @@ define(__m[42/*vs/platform/contextkey/common/contextkey*/], __M([0/*require*/,1/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[137/*vs/platform/environment/common/environment*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[138/*vs/platform/environment/common/environment*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.BACKUPS = exports.IEnvironmentService = void 0;
+    exports.INativeEnvironmentService = exports.IEnvironmentService = void 0;
     exports.IEnvironmentService = instantiation_1.createDecorator('environmentService');
-    exports.BACKUPS = 'Backups';
+    exports.INativeEnvironmentService = instantiation_1.createDecorator('nativeEnvironmentService');
 });
 
 /*---------------------------------------------------------------------------------------------
@@ -22966,7 +23017,7 @@ define(__m[25/*vs/platform/extensions/common/extensions*/], __M([0/*require*/,1/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[138/*vs/platform/extensionManagement/common/extensionManagementUtil*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/strings*/,25/*vs/platform/extensions/common/extensions*/]), function (require, exports, strings_1, extensions_1) {
+define(__m[139/*vs/platform/extensionManagement/common/extensionManagementUtil*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/strings*/,25/*vs/platform/extensions/common/extensions*/]), function (require, exports, strings_1, extensions_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getMaliciousExtensionsSet = exports.BetterMergeId = exports.getGalleryExtensionTelemetryData = exports.getLocalExtensionTelemetryData = exports.groupByExtension = exports.getGalleryExtensionId = exports.adoptToGalleryExtensionId = exports.ExtensionIdentifierWithVersion = exports.areSameExtensions = void 0;
@@ -23073,7 +23124,7 @@ define(__m[138/*vs/platform/extensionManagement/common/extensionManagementUtil*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[57/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/,116/*vs/nls!vs/platform/files/common/files*/,9/*vs/base/common/path*/,2/*vs/base/common/uri*/,4/*vs/platform/instantiation/common/instantiation*/,8/*vs/base/common/strings*/,14/*vs/base/common/types*/]), function (require, exports, nls_1, path_1, uri_1, instantiation_1, strings_1, types_1) {
+define(__m[60/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/,117/*vs/nls!vs/platform/files/common/files*/,9/*vs/base/common/path*/,2/*vs/base/common/uri*/,4/*vs/platform/instantiation/common/instantiation*/,8/*vs/base/common/strings*/,16/*vs/base/common/types*/]), function (require, exports, nls_1, path_1, uri_1, instantiation_1, strings_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.BinarySize = exports.FALLBACK_MAX_MEMORY_SIZE_MB = exports.MIN_MAX_MEMORY_SIZE_MB = exports.whenProviderRegistered = exports.etag = exports.ETAG_DISABLED = exports.FileKind = exports.FILES_EXCLUDE_CONFIG = exports.FILES_ASSOCIATIONS_CONFIG = exports.HotExitConfiguration = exports.AutoSaveConfiguration = exports.FileOperationResult = exports.FileOperationError = exports.isParent = exports.FileChangesEvent = exports.FileChangeType = exports.FileOperationEvent = exports.FileOperation = exports.toFileOperationResult = exports.toFileSystemProviderErrorCode = exports.markAsFileSystemProviderError = exports.ensureFileSystemProviderError = exports.createFileSystemProviderError = exports.FileSystemProviderError = exports.FileSystemProviderErrorCode = exports.hasFileReadStreamCapability = exports.hasOpenReadWriteCloseCapability = exports.hasFileFolderCopyCapability = exports.hasReadWriteCapability = exports.FileSystemProviderCapabilities = exports.FileType = exports.IFileService = void 0;
@@ -23138,7 +23189,7 @@ define(__m[57/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/
     exports.createFileSystemProviderError = createFileSystemProviderError;
     function ensureFileSystemProviderError(error) {
         if (!error) {
-            return createFileSystemProviderError(nls_1.localize(0, null), FileSystemProviderErrorCode.Unknown); // https://github.com/Microsoft/vscode/issues/72798
+            return createFileSystemProviderError(nls_1.localize(0, null), FileSystemProviderErrorCode.Unknown); // https://github.com/microsoft/vscode/issues/72798
         }
         return error;
     }
@@ -23426,7 +23477,7 @@ define(__m[57/*vs/platform/files/common/files*/], __M([0/*require*/,1/*exports*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[58/*vs/platform/instantiation/common/serviceCollection*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[61/*vs/platform/instantiation/common/serviceCollection*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ServiceCollection = void 0;
@@ -23456,7 +23507,7 @@ define(__m[58/*vs/platform/instantiation/common/serviceCollection*/], __M([0/*re
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[139/*vs/platform/instantiation/common/instantiationService*/], __M([0/*require*/,1/*exports*/,11/*vs/base/common/errors*/,133/*vs/platform/instantiation/common/graph*/,81/*vs/platform/instantiation/common/descriptors*/,4/*vs/platform/instantiation/common/instantiation*/,58/*vs/platform/instantiation/common/serviceCollection*/,19/*vs/base/common/async*/]), function (require, exports, errors_1, graph_1, descriptors_1, instantiation_1, serviceCollection_1, async_1) {
+define(__m[140/*vs/platform/instantiation/common/instantiationService*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/errors*/,134/*vs/platform/instantiation/common/graph*/,83/*vs/platform/instantiation/common/descriptors*/,4/*vs/platform/instantiation/common/instantiation*/,61/*vs/platform/instantiation/common/serviceCollection*/,20/*vs/base/common/async*/]), function (require, exports, errors_1, graph_1, descriptors_1, instantiation_1, serviceCollection_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.InstantiationService = void 0;
@@ -23606,9 +23657,15 @@ define(__m[139/*vs/platform/instantiation/common/instantiationService*/], __M([0
                     break;
                 }
                 for (const { data } of roots) {
-                    // create instance and overwrite the service collections
-                    const instance = this._createServiceInstanceWithOwner(data.id, data.desc.ctor, data.desc.staticArguments, data.desc.supportsDelayedInstantiation, data._trace);
-                    this._setServiceInstance(data.id, instance);
+                    // Repeat the check for this still being a service sync descriptor. That's because
+                    // instantiating a dependency might have side-effect and recursively trigger instantiation
+                    // so that some dependencies are now fullfilled already.
+                    const instanceOrDesc = this._getServiceInstanceOrDescriptor(data.id);
+                    if (instanceOrDesc instanceof descriptors_1.SyncDescriptor) {
+                        // create instance and overwrite the service collections
+                        const instance = this._createServiceInstanceWithOwner(data.id, data.desc.ctor, data.desc.staticArguments, data.desc.supportsDelayedInstantiation, data._trace);
+                        this._setServiceInstance(data.id, instance);
+                    }
                     graph.removeNode(data);
                 }
             }
@@ -23728,7 +23785,7 @@ define(__m[139/*vs/platform/instantiation/common/instantiationService*/], __M([0
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[12/*vs/platform/log/common/log*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/,6/*vs/base/common/lifecycle*/,20/*vs/base/common/platform*/,3/*vs/base/common/event*/,54/*vs/base/common/errorMessage*/]), function (require, exports, instantiation_1, lifecycle_1, platform_1, event_1, errorMessage_1) {
+define(__m[13/*vs/platform/log/common/log*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/,6/*vs/base/common/lifecycle*/,21/*vs/base/common/platform*/,3/*vs/base/common/event*/,57/*vs/base/common/errorMessage*/]), function (require, exports, instantiation_1, lifecycle_1, platform_1, event_1, errorMessage_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getLogLevel = exports.NullLogService = exports.DelegatedLogService = exports.MultiplexLogService = exports.ConsoleLogInMainService = exports.LogServiceAdapter = exports.ConsoleLogService = exports.ConsoleLogMainService = exports.AbstractLogService = exports.DEFAULT_LOG_LEVEL = exports.LogLevel = exports.ILoggerService = exports.ILogService = void 0;
@@ -24081,7 +24138,7 @@ define(__m[12/*vs/platform/log/common/log*/], __M([0/*require*/,1/*exports*/,4/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[82/*vs/platform/markers/common/markers*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/,117/*vs/nls!vs/platform/markers/common/markers*/,49/*vs/base/common/severity*/]), function (require, exports, instantiation_1, nls_1, severity_1) {
+define(__m[84/*vs/platform/markers/common/markers*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/,118/*vs/nls!vs/platform/markers/common/markers*/,52/*vs/base/common/severity*/]), function (require, exports, instantiation_1, nls_1, severity_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IMarkerService = exports.IMarkerData = exports.MarkerSeverity = exports.MarkerTag = void 0;
@@ -24205,7 +24262,7 @@ define(__m[82/*vs/platform/markers/common/markers*/], __M([0/*require*/,1/*expor
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[140/*vs/platform/notification/common/notification*/], __M([0/*require*/,1/*exports*/,49/*vs/base/common/severity*/,4/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/]), function (require, exports, severity_1, instantiation_1, event_1) {
+define(__m[141/*vs/platform/notification/common/notification*/], __M([0/*require*/,1/*exports*/,52/*vs/base/common/severity*/,4/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/]), function (require, exports, severity_1, instantiation_1, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NoOpProgress = exports.NoOpNotification = exports.NotificationsFilter = exports.NeverShowAgainScope = exports.INotificationService = exports.Severity = void 0;
@@ -24263,7 +24320,7 @@ define(__m[140/*vs/platform/notification/common/notification*/], __M([0/*require
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[141/*vs/platform/progress/common/progress*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/,21/*vs/base/common/cancellation*/,6/*vs/base/common/lifecycle*/]), function (require, exports, instantiation_1, cancellation_1, lifecycle_1) {
+define(__m[142/*vs/platform/progress/common/progress*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/,19/*vs/base/common/cancellation*/,6/*vs/base/common/lifecycle*/]), function (require, exports, instantiation_1, cancellation_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IEditorProgressService = exports.LongRunningOperation = exports.Progress = exports.emptyProgressRunner = exports.ProgressLocation = exports.IProgressService = void 0;
@@ -24339,7 +24396,7 @@ define(__m[141/*vs/platform/progress/common/progress*/], __M([0/*require*/,1/*ex
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[36/*vs/platform/registry/common/platform*/], __M([0/*require*/,1/*exports*/,14/*vs/base/common/types*/,39/*vs/base/common/assert*/]), function (require, exports, Types, Assert) {
+define(__m[37/*vs/platform/registry/common/platform*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/types*/,41/*vs/base/common/assert*/]), function (require, exports, Types, Assert) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Registry = void 0;
@@ -24367,7 +24424,7 @@ define(__m[36/*vs/platform/registry/common/platform*/], __M([0/*require*/,1/*exp
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[142/*vs/platform/jsonschemas/common/jsonContributionRegistry*/], __M([0/*require*/,1/*exports*/,36/*vs/platform/registry/common/platform*/,3/*vs/base/common/event*/]), function (require, exports, platform, event_1) {
+define(__m[143/*vs/platform/jsonschemas/common/jsonContributionRegistry*/], __M([0/*require*/,1/*exports*/,37/*vs/platform/registry/common/platform*/,3/*vs/base/common/event*/]), function (require, exports, platform, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Extensions = void 0;
@@ -24407,7 +24464,7 @@ define(__m[142/*vs/platform/jsonschemas/common/jsonContributionRegistry*/], __M(
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[59/*vs/platform/configuration/common/configurationRegistry*/], __M([0/*require*/,1/*exports*/,115/*vs/nls!vs/platform/configuration/common/configurationRegistry*/,3/*vs/base/common/event*/,36/*vs/platform/registry/common/platform*/,14/*vs/base/common/types*/,142/*vs/platform/jsonschemas/common/jsonContributionRegistry*/]), function (require, exports, nls, event_1, platform_1, types, jsonContributionRegistry_1) {
+define(__m[62/*vs/platform/configuration/common/configurationRegistry*/], __M([0/*require*/,1/*exports*/,116/*vs/nls!vs/platform/configuration/common/configurationRegistry*/,3/*vs/base/common/event*/,37/*vs/platform/registry/common/platform*/,16/*vs/base/common/types*/,143/*vs/platform/jsonschemas/common/jsonContributionRegistry*/]), function (require, exports, nls, event_1, platform_1, types, jsonContributionRegistry_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getScopes = exports.validateProperty = exports.getDefaultValue = exports.overrideIdentifierFromKey = exports.OVERRIDE_PROPERTY_PATTERN = exports.resourceLanguageSettingsSchemaId = exports.resourceSettings = exports.windowSettings = exports.machineOverridableSettings = exports.machineSettings = exports.applicationSettings = exports.allSettings = exports.ConfigurationScope = exports.Extensions = void 0;
@@ -24768,7 +24825,7 @@ define(__m[59/*vs/platform/configuration/common/configurationRegistry*/], __M([0
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[83/*vs/platform/configuration/common/configuration*/], __M([0/*require*/,1/*exports*/,24/*vs/base/common/objects*/,14/*vs/base/common/types*/,2/*vs/base/common/uri*/,36/*vs/platform/registry/common/platform*/,4/*vs/platform/instantiation/common/instantiation*/,59/*vs/platform/configuration/common/configurationRegistry*/]), function (require, exports, objects, types, uri_1, platform_1, instantiation_1, configurationRegistry_1) {
+define(__m[85/*vs/platform/configuration/common/configuration*/], __M([0/*require*/,1/*exports*/,24/*vs/base/common/objects*/,16/*vs/base/common/types*/,2/*vs/base/common/uri*/,37/*vs/platform/registry/common/platform*/,4/*vs/platform/instantiation/common/instantiation*/,62/*vs/platform/configuration/common/configurationRegistry*/]), function (require, exports, objects, types, uri_1, platform_1, instantiation_1, configurationRegistry_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getMigratedSettingValue = exports.keyFromOverrideIdentifier = exports.getDefaultValues = exports.getConfigurationKeys = exports.merge = exports.getConfigurationValue = exports.removeFromValueTree = exports.addToValueTree = exports.toValuesTree = exports.toOverrides = exports.compare = exports.ConfigurationTargetToString = exports.ConfigurationTarget = exports.isConfigurationOverrides = exports.IConfigurationService = void 0;
@@ -24909,7 +24966,7 @@ define(__m[83/*vs/platform/configuration/common/configuration*/], __M([0/*requir
         }
         if (typeof curr === 'object' && curr !== null) {
             try {
-                curr[last] = value; // workaround https://github.com/Microsoft/vscode/issues/13606
+                curr[last] = value; // workaround https://github.com/microsoft/vscode/issues/13606
             }
             catch (e) {
                 conflictReporter(`Ignoring ${key} as ${segments.join('.')} is ${JSON.stringify(curr)}`);
@@ -25018,7 +25075,7 @@ define(__m[83/*vs/platform/configuration/common/configuration*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[143/*vs/platform/configuration/common/configurationModels*/], __M([0/*require*/,1/*exports*/,40/*vs/base/common/json*/,22/*vs/base/common/map*/,10/*vs/base/common/arrays*/,14/*vs/base/common/types*/,24/*vs/base/common/objects*/,2/*vs/base/common/uri*/,59/*vs/platform/configuration/common/configurationRegistry*/,83/*vs/platform/configuration/common/configuration*/,36/*vs/platform/registry/common/platform*/,6/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,23/*vs/base/common/resources*/]), function (require, exports, json, map_1, arrays, types, objects, uri_1, configurationRegistry_1, configuration_1, platform_1, lifecycle_1, event_1, resources_1) {
+define(__m[144/*vs/platform/configuration/common/configurationModels*/], __M([0/*require*/,1/*exports*/,42/*vs/base/common/json*/,22/*vs/base/common/map*/,11/*vs/base/common/arrays*/,16/*vs/base/common/types*/,24/*vs/base/common/objects*/,2/*vs/base/common/uri*/,62/*vs/platform/configuration/common/configurationRegistry*/,85/*vs/platform/configuration/common/configuration*/,37/*vs/platform/registry/common/platform*/,6/*vs/base/common/lifecycle*/,3/*vs/base/common/event*/,23/*vs/base/common/resources*/]), function (require, exports, json, map_1, arrays, types, objects, uri_1, configurationRegistry_1, configuration_1, platform_1, lifecycle_1, event_1, resources_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.AllKeysConfigurationChangeEvent = exports.ConfigurationChangeEvent = exports.mergeChanges = exports.Configuration = exports.UserSettings = exports.ConfigurationModelParser = exports.DefaultConfigurationModel = exports.ConfigurationModel = void 0;
@@ -25719,7 +25776,7 @@ define(__m[143/*vs/platform/configuration/common/configurationModels*/], __M([0/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[84/*vs/platform/remote/common/remoteAuthorityResolver*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[86/*vs/platform/remote/common/remoteAuthorityResolver*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.RemoteAuthorityResolverError = exports.RemoteAuthorityResolverErrorCode = exports.IRemoteAuthorityResolverService = void 0;
@@ -25739,7 +25796,7 @@ define(__m[84/*vs/platform/remote/common/remoteAuthorityResolver*/], __M([0/*req
             this._detail = detail;
             this.isHandled = (code === RemoteAuthorityResolverErrorCode.NotAvailable) && detail === true;
             // workaround when extending builtin objects and when compiling to ES5, see:
-            // https://github.com/Microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
+            // https://github.com/microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
             if (typeof Object.setPrototypeOf === 'function') {
                 Object.setPrototypeOf(this, RemoteAuthorityResolverError.prototype);
             }
@@ -25761,13 +25818,12 @@ define(__m[84/*vs/platform/remote/common/remoteAuthorityResolver*/], __M([0/*req
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[85/*vs/platform/remote/common/remoteHosts*/], __M([0/*require*/,1/*exports*/,18/*vs/base/common/network*/]), function (require, exports, network_1) {
+define(__m[87/*vs/platform/remote/common/remoteHosts*/], __M([0/*require*/,1/*exports*/,12/*vs/base/common/network*/]), function (require, exports, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.getRemoteName = exports.getRemoteAuthority = exports.REMOTE_HOST_SCHEME = void 0;
-    exports.REMOTE_HOST_SCHEME = network_1.Schemas.vscodeRemote;
+    exports.getRemoteName = exports.getRemoteAuthority = void 0;
     function getRemoteAuthority(uri) {
-        return uri.scheme === exports.REMOTE_HOST_SCHEME ? uri.authority : undefined;
+        return uri.scheme === network_1.Schemas.vscodeRemote ? uri.authority : undefined;
     }
     exports.getRemoteAuthority = getRemoteAuthority;
     function getRemoteName(authority) {
@@ -25788,7 +25844,7 @@ define(__m[85/*vs/platform/remote/common/remoteHosts*/], __M([0/*require*/,1/*ex
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[86/*vs/platform/workspaces/common/workspaces*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/,118/*vs/nls!vs/platform/workspaces/common/workspaces*/,2/*vs/base/common/uri*/,20/*vs/base/common/platform*/,9/*vs/base/common/path*/,23/*vs/base/common/resources*/,97/*vs/base/common/jsonEdit*/,40/*vs/base/common/json*/,18/*vs/base/common/network*/,52/*vs/base/common/labels*/,41/*vs/base/common/extpath*/,85/*vs/platform/remote/common/remoteHosts*/]), function (require, exports, instantiation_1, nls_1, uri_1, platform_1, path_1, resources_1, jsonEdit, json, network_1, labels_1, extpath_1, remoteHosts_1) {
+define(__m[88/*vs/platform/workspaces/common/workspaces*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/,119/*vs/nls!vs/platform/workspaces/common/workspaces*/,2/*vs/base/common/uri*/,21/*vs/base/common/platform*/,9/*vs/base/common/path*/,23/*vs/base/common/resources*/,99/*vs/base/common/jsonEdit*/,42/*vs/base/common/json*/,12/*vs/base/common/network*/,55/*vs/base/common/labels*/,43/*vs/base/common/extpath*/,87/*vs/platform/remote/common/remoteHosts*/]), function (require, exports, instantiation_1, nls_1, uri_1, platform_1, path_1, resources_1, jsonEdit, json, network_1, labels_1, extpath_1, remoteHosts_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toStoreData = exports.restoreRecentlyOpened = exports.useSlashForPath = exports.rewriteWorkspaceFileForNewLocation = exports.getStoredWorkspaceFolder = exports.hasWorkspaceFileExtension = exports.isSingleFolderWorkspaceInitializationPayload = exports.isUntitledWorkspace = exports.toWorkspaceIdentifier = exports.isWorkspaceIdentifier = exports.isSingleFolderWorkspaceIdentifier = exports.isRawUriWorkspaceFolder = exports.isRawFileWorkspaceFolder = exports.isStoredWorkspaceFolder = exports.reviveWorkspaceIdentifier = exports.isRecentFile = exports.isRecentFolder = exports.isRecentWorkspace = exports.IWorkspacesService = exports.UNTITLED_WORKSPACE_NAME = exports.WORKSPACE_FILTER = exports.WORKSPACE_EXTENSION = void 0;
@@ -26046,7 +26102,7 @@ define(__m[86/*vs/platform/workspaces/common/workspaces*/], __M([0/*require*/,1/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[60/*vs/platform/workspace/common/workspace*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,23/*vs/base/common/resources*/,4/*vs/platform/instantiation/common/instantiation*/,22/*vs/base/common/map*/,86/*vs/platform/workspaces/common/workspaces*/]), function (require, exports, uri_1, resources, instantiation_1, map_1, workspaces_1) {
+define(__m[63/*vs/platform/workspace/common/workspace*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,23/*vs/base/common/resources*/,4/*vs/platform/instantiation/common/instantiation*/,22/*vs/base/common/map*/,88/*vs/platform/workspaces/common/workspaces*/]), function (require, exports, uri_1, resources, instantiation_1, map_1, workspaces_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toWorkspaceFolders = exports.toWorkspaceFolder = exports.WorkspaceFolder = exports.Workspace = exports.IWorkspaceFolder = exports.IWorkspace = exports.WorkbenchState = exports.IWorkspaceContextService = void 0;
@@ -26187,7 +26243,7 @@ define(__m[60/*vs/platform/workspace/common/workspace*/], __M([0/*require*/,1/*e
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[61/*vs/workbench/api/common/cache*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[64/*vs/workbench/api/common/cache*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Cache = void 0;
@@ -26225,6 +26281,38 @@ define(__m[61/*vs/workbench/api/common/cache*/], __M([0/*require*/,1/*exports*/]
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
+define(__m[65/*vs/workbench/api/common/extHostFileSystemInfo*/], __M([0/*require*/,1/*exports*/,12/*vs/base/common/network*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, network_1, instantiation_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.IExtHostFileSystemInfo = exports.ExtHostFileSystemInfo = void 0;
+    class ExtHostFileSystemInfo {
+        constructor() {
+            this._systemSchemes = new Set(Object.keys(network_1.Schemas));
+            this._providerInfo = new Map();
+        }
+        $acceptProviderInfos(scheme, capabilities) {
+            if (capabilities === null) {
+                this._providerInfo.delete(scheme);
+            }
+            else {
+                this._providerInfo.set(scheme, capabilities);
+            }
+        }
+        isFreeScheme(scheme) {
+            return !this._providerInfo.has(scheme) && !this._systemSchemes.has(scheme);
+        }
+        getCapabilities(scheme) {
+            return this._providerInfo.get(scheme);
+        }
+    }
+    exports.ExtHostFileSystemInfo = ExtHostFileSystemInfo;
+    exports.IExtHostFileSystemInfo = instantiation_1.createDecorator('IExtHostFileSystemInfo');
+});
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 define(__m[28/*vs/workbench/api/common/extHostInitDataService*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -26236,7 +26324,7 @@ define(__m[28/*vs/workbench/api/common/extHostInitDataService*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[144/*vs/workbench/api/common/extHostMemento*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[145/*vs/workbench/api/common/extHostMemento*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtensionMemento = void 0;
@@ -26280,7 +26368,7 @@ define(__m[144/*vs/workbench/api/common/extHostMemento*/], __M([0/*require*/,1/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[13/*vs/workbench/api/common/extHostRpcService*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[14/*vs/workbench/api/common/extHostRpcService*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostRpcService = exports.IExtHostRpcService = void 0;
@@ -26300,7 +26388,7 @@ define(__m[13/*vs/workbench/api/common/extHostRpcService*/], __M([0/*require*/,1
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[62/*vs/workbench/api/common/extHostUriTransformerService*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[66/*vs/workbench/api/common/extHostUriTransformerService*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.URITransformerService = exports.IURITransformerService = void 0;
@@ -26328,7 +26416,7 @@ define(__m[62/*vs/workbench/api/common/extHostUriTransformerService*/], __M([0/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[145/*vs/workbench/api/common/shared/semanticTokensDto*/], __M([0/*require*/,1/*exports*/,26/*vs/base/common/buffer*/,20/*vs/base/common/platform*/]), function (require, exports, buffer_1, platform) {
+define(__m[146/*vs/workbench/api/common/shared/semanticTokensDto*/], __M([0/*require*/,1/*exports*/,26/*vs/base/common/buffer*/,21/*vs/base/common/platform*/]), function (require, exports, buffer_1, platform) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.decodeSemanticTokensDto = exports.encodeSemanticTokensDto = void 0;
@@ -26468,7 +26556,7 @@ define(__m[145/*vs/workbench/api/common/shared/semanticTokensDto*/], __M([0/*req
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[63/*vs/workbench/api/common/shared/webview*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/]), function (require, exports, uri_1) {
+define(__m[67/*vs/workbench/api/common/shared/webview*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/]), function (require, exports, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.asWebviewUri = void 0;
@@ -26490,7 +26578,7 @@ define(__m[63/*vs/workbench/api/common/shared/webview*/], __M([0/*require*/,1/*e
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[146/*vs/workbench/api/common/extHostCodeInsets*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,63/*vs/workbench/api/common/shared/webview*/,29/*vs/base/common/uuid*/]), function (require, exports, event_1, lifecycle_1, webview_1, uuid_1) {
+define(__m[147/*vs/workbench/api/common/extHostCodeInsets*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,67/*vs/workbench/api/common/shared/webview*/,29/*vs/base/common/uuid*/]), function (require, exports, event_1, lifecycle_1, webview_1, uuid_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostEditorInsets = void 0;
@@ -26607,10 +26695,10 @@ define(__m[146/*vs/workbench/api/common/extHostCodeInsets*/], __M([0/*require*/,
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[147/*vs/workbench/common/views*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,42/*vs/platform/contextkey/common/contextkey*/,128/*vs/nls!vs/workbench/common/views*/,4/*vs/platform/instantiation/common/instantiation*/,6/*vs/base/common/lifecycle*/,22/*vs/base/common/map*/,36/*vs/platform/registry/common/platform*/,10/*vs/base/common/arrays*/,45/*vs/base/common/collections*/,24/*vs/base/common/objects*/]), function (require, exports, event_1, contextkey_1, nls_1, instantiation_1, lifecycle_1, map_1, platform_1, arrays_1, collections_1, objects_1) {
+define(__m[148/*vs/workbench/common/views*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,44/*vs/platform/contextkey/common/contextkey*/,129/*vs/nls!vs/workbench/common/views*/,4/*vs/platform/instantiation/common/instantiation*/,6/*vs/base/common/lifecycle*/,22/*vs/base/common/map*/,37/*vs/platform/registry/common/platform*/,11/*vs/base/common/arrays*/,46/*vs/base/common/collections*/,24/*vs/base/common/objects*/]), function (require, exports, event_1, contextkey_1, nls_1, instantiation_1, lifecycle_1, map_1, platform_1, arrays_1, collections_1, objects_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.ResolvableTreeItem = exports.TreeItemCollapsibleState = exports.IViewDescriptorService = exports.getVisbileViewContextKey = exports.FocusedViewContext = exports.IViewsService = exports.ViewContentPriority = exports.ViewContainerLocation = exports.Extensions = exports.TEST_VIEW_CONTAINER_ID = void 0;
+    exports.ResolvableTreeItem = exports.TreeItemCollapsibleState = exports.ViewVisibilityState = exports.IViewDescriptorService = exports.getVisbileViewContextKey = exports.FocusedViewContext = exports.IViewsService = exports.ViewContentGroups = exports.ViewContainerLocation = exports.Extensions = exports.TEST_VIEW_CONTAINER_ID = void 0;
     exports.TEST_VIEW_CONTAINER_ID = 'workbench.view.extension.test';
     var Extensions;
     (function (Extensions) {
@@ -26677,21 +26765,21 @@ define(__m[147/*vs/workbench/common/views*/], __M([0/*require*/,1/*exports*/,3/*
         }
     }
     platform_1.Registry.add(Extensions.ViewContainersRegistry, new ViewContainersRegistryImpl());
-    var ViewContentPriority;
-    (function (ViewContentPriority) {
-        ViewContentPriority[ViewContentPriority["Normal"] = 0] = "Normal";
-        ViewContentPriority[ViewContentPriority["Low"] = 1] = "Low";
-        ViewContentPriority[ViewContentPriority["Lowest"] = 2] = "Lowest";
-    })(ViewContentPriority = exports.ViewContentPriority || (exports.ViewContentPriority = {}));
+    var ViewContentGroups;
+    (function (ViewContentGroups) {
+        ViewContentGroups["Open"] = "2_open";
+        ViewContentGroups["Debug"] = "4_debug";
+        ViewContentGroups["SCM"] = "5_scm";
+        ViewContentGroups["More"] = "9_more";
+    })(ViewContentGroups = exports.ViewContentGroups || (exports.ViewContentGroups = {}));
     function compareViewContentDescriptors(a, b) {
-        var _a, _b;
-        const aPriority = (_a = a.priority) !== null && _a !== void 0 ? _a : ViewContentPriority.Normal;
-        const bPriority = (_b = b.priority) !== null && _b !== void 0 ? _b : ViewContentPriority.Normal;
-        if (aPriority !== bPriority) {
-            return aPriority - bPriority;
+        var _a, _b, _c, _d;
+        const aGroup = (_a = a.group) !== null && _a !== void 0 ? _a : ViewContentGroups.More;
+        const bGroup = (_b = b.group) !== null && _b !== void 0 ? _b : ViewContentGroups.More;
+        if (aGroup !== bGroup) {
+            return aGroup.localeCompare(bGroup);
         }
-        // No priroity, keep views sorted in the order they got registered
-        return 0;
+        return ((_c = a.order) !== null && _c !== void 0 ? _c : 5) - ((_d = b.order) !== null && _d !== void 0 ? _d : 5);
     }
     class ViewsRegistry extends lifecycle_1.Disposable {
         constructor() {
@@ -26817,6 +26905,11 @@ define(__m[147/*vs/workbench/common/views*/], __M([0/*require*/,1/*exports*/,3/*
     function getVisbileViewContextKey(viewId) { return `${viewId}.visible`; }
     exports.getVisbileViewContextKey = getVisbileViewContextKey;
     exports.IViewDescriptorService = instantiation_1.createDecorator('viewDescriptorService');
+    var ViewVisibilityState;
+    (function (ViewVisibilityState) {
+        ViewVisibilityState[ViewVisibilityState["Default"] = 0] = "Default";
+        ViewVisibilityState[ViewVisibilityState["Expand"] = 1] = "Expand";
+    })(ViewVisibilityState = exports.ViewVisibilityState || (exports.ViewVisibilityState = {}));
     var TreeItemCollapsibleState;
     (function (TreeItemCollapsibleState) {
         TreeItemCollapsibleState[TreeItemCollapsibleState["None"] = 0] = "None";
@@ -26851,7 +26944,7 @@ define(__m[147/*vs/workbench/common/views*/], __M([0/*require*/,1/*exports*/,3/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[148/*vs/workbench/contrib/debug/common/abstractDebugAdapter*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,19/*vs/base/common/async*/,129/*vs/nls!vs/workbench/contrib/debug/common/abstractDebugAdapter*/]), function (require, exports, event_1, async_1, nls_1) {
+define(__m[149/*vs/workbench/contrib/debug/common/abstractDebugAdapter*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,20/*vs/base/common/async*/,130/*vs/nls!vs/workbench/contrib/debug/common/abstractDebugAdapter*/]), function (require, exports, event_1, async_1, nls_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.AbstractDebugAdapter = void 0;
@@ -27039,7 +27132,7 @@ define(__m[148/*vs/workbench/contrib/debug/common/abstractDebugAdapter*/], __M([
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[149/*vs/workbench/contrib/debug/common/debugUtils*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/strings*/,2/*vs/base/common/uri*/,9/*vs/base/common/path*/,24/*vs/base/common/objects*/]), function (require, exports, strings_1, uri_1, path_1, objects_1) {
+define(__m[150/*vs/workbench/contrib/debug/common/debugUtils*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/strings*/,2/*vs/base/common/uri*/,9/*vs/base/common/path*/,24/*vs/base/common/objects*/,12/*vs/base/common/network*/]), function (require, exports, strings_1, uri_1, path_1, objects_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getVisibleAndSorted = exports.convertToVSCPaths = exports.convertToDAPaths = exports.isUri = exports.getExactExpressionStartAndEnd = exports.isDebuggerMainContribution = exports.getExtensionHostDebugSession = exports.isSessionAttach = exports.filterExceptionsFromTelemetry = exports.formatPII = void 0;
@@ -27167,7 +27260,7 @@ define(__m[149/*vs/workbench/contrib/debug/common/debugUtils*/], __M([0/*require
         if (typeof source.path === 'object') {
             const u = uri_1.URI.revive(source.path);
             if (u) {
-                if (u.scheme === 'file') {
+                if (u.scheme === network_1.Schemas.file) {
                     return u.fsPath;
                 }
                 else {
@@ -27312,10 +27405,10 @@ define(__m[149/*vs/workbench/contrib/debug/common/debugUtils*/], __M([0/*require
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[64/*vs/workbench/contrib/notebook/common/notebookCommon*/], __M([0/*require*/,1/*exports*/,27/*vs/base/common/glob*/,29/*vs/base/common/uuid*/,18/*vs/base/common/network*/,9/*vs/base/common/path*/,20/*vs/base/common/platform*/,42/*vs/platform/contextkey/common/contextkey*/]), function (require, exports, glob, UUID, network_1, path_1, platform_1, contextkey_1) {
+define(__m[31/*vs/workbench/contrib/notebook/common/notebookCommon*/], __M([0/*require*/,1/*exports*/,27/*vs/base/common/glob*/,29/*vs/base/common/uuid*/,12/*vs/base/common/network*/,9/*vs/base/common/path*/,21/*vs/base/common/platform*/,44/*vs/platform/contextkey/common/contextkey*/]), function (require, exports, glob, UUID, network_1, path_1, platform_1, contextkey_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.CellStatusbarAlignment = exports.NotebookTextDiffEditorPreview = exports.ShowCellStatusBarKey = exports.CellToolbarLocKey = exports.DisplayOrderKey = exports.CellSequence = exports.notebookDocumentFilterMatch = exports.NotebookEditorPriority = exports.NOTEBOOK_EDITOR_CURSOR_BOUNDARY = exports.diff = exports.sortMimeTypes = exports.mimeTypeSupportedByCore = exports.CellUri = exports.getCellUndoRedoComparisonKey = exports.CellEditType = exports.NotebookCellsChangeType = exports.outputHasDynamicHeight = exports.RenderOutputType = exports.addIdToOutput = exports.isTransformedDisplayOutput = exports.MimeTypeRendererResolver = exports.NotebookCellRunState = exports.notebookDocumentMetadataDefaults = exports.NotebookRunState = exports.BUILTIN_RENDERER_ID = exports.ACCESSIBLE_NOTEBOOK_DISPLAY_ORDER = exports.NOTEBOOK_DISPLAY_ORDER = exports.CellOutputKind = exports.CellKind = void 0;
+    exports.CellStatusbarAlignment = exports.NotebookTextDiffEditorPreview = exports.ShowCellStatusBarKey = exports.CellToolbarLocKey = exports.DisplayOrderKey = exports.CellSequence = exports.notebookDocumentFilterMatch = exports.isDocumentExcludePattern = exports.NotebookEditorPriority = exports.NOTEBOOK_EDITOR_CURSOR_BOUNDARY = exports.diff = exports.sortMimeTypes = exports.mimeTypeSupportedByCore = exports.CellUri = exports.getCellUndoRedoComparisonKey = exports.CellEditType = exports.NotebookCellsChangeType = exports.outputHasDynamicHeight = exports.RenderOutputType = exports.addIdToOutput = exports.isTransformedDisplayOutput = exports.MimeTypeRendererResolver = exports.NotebookCellRunState = exports.notebookDocumentMetadataDefaults = exports.NotebookRunState = exports.BUILTIN_RENDERER_ID = exports.ACCESSIBLE_NOTEBOOK_DISPLAY_ORDER = exports.NOTEBOOK_DISPLAY_ORDER = exports.CellOutputKind = exports.CellKind = void 0;
     var CellKind;
     (function (CellKind) {
         CellKind[CellKind["Markdown"] = 1] = "Markdown";
@@ -27398,14 +27491,23 @@ define(__m[64/*vs/workbench/contrib/notebook/common/notebookCommon*/], __M([0/*r
         NotebookCellsChangeType[NotebookCellsChangeType["CellsClearOutput"] = 4] = "CellsClearOutput";
         NotebookCellsChangeType[NotebookCellsChangeType["ChangeLanguage"] = 5] = "ChangeLanguage";
         NotebookCellsChangeType[NotebookCellsChangeType["Initialize"] = 6] = "Initialize";
-        NotebookCellsChangeType[NotebookCellsChangeType["ChangeMetadata"] = 7] = "ChangeMetadata";
+        NotebookCellsChangeType[NotebookCellsChangeType["ChangeCellMetadata"] = 7] = "ChangeCellMetadata";
         NotebookCellsChangeType[NotebookCellsChangeType["Output"] = 8] = "Output";
+        NotebookCellsChangeType[NotebookCellsChangeType["ChangeCellContent"] = 9] = "ChangeCellContent";
+        NotebookCellsChangeType[NotebookCellsChangeType["ChangeDocumentMetadata"] = 10] = "ChangeDocumentMetadata";
+        NotebookCellsChangeType[NotebookCellsChangeType["Unknown"] = 11] = "Unknown";
     })(NotebookCellsChangeType = exports.NotebookCellsChangeType || (exports.NotebookCellsChangeType = {}));
     var CellEditType;
     (function (CellEditType) {
         CellEditType[CellEditType["Replace"] = 1] = "Replace";
         CellEditType[CellEditType["Output"] = 2] = "Output";
         CellEditType[CellEditType["Metadata"] = 3] = "Metadata";
+        CellEditType[CellEditType["CellLanguage"] = 4] = "CellLanguage";
+        CellEditType[CellEditType["DocumentMetadata"] = 5] = "DocumentMetadata";
+        CellEditType[CellEditType["OutputsSplice"] = 6] = "OutputsSplice";
+        CellEditType[CellEditType["Move"] = 7] = "Move";
+        CellEditType[CellEditType["Unknown"] = 8] = "Unknown";
+        CellEditType[CellEditType["CellContent"] = 9] = "CellContent";
     })(CellEditType = exports.CellEditType || (exports.CellEditType = {}));
     function getCellUndoRedoComparisonKey(uri) {
         const data = CellUri.parse(uri);
@@ -27572,6 +27674,7 @@ define(__m[64/*vs/workbench/contrib/notebook/common/notebookCommon*/], __M([0/*r
         }
         return false;
     }
+    exports.isDocumentExcludePattern = isDocumentExcludePattern;
     function notebookDocumentFilterMatch(filter, viewType, resource) {
         if (Array.isArray(filter.viewType) && filter.viewType.indexOf(viewType) >= 0) {
             return true;
@@ -27623,6 +27726,427 @@ define(__m[64/*vs/workbench/contrib/notebook/common/notebookCommon*/], __M([0/*r
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
+define(__m[151/*vs/workbench/api/common/extHostNotebookDocument*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,51/*vs/base/common/hash*/,6/*vs/base/common/lifecycle*/,12/*vs/base/common/network*/,23/*vs/base/common/resources*/,2/*vs/base/common/uri*/,29/*vs/base/common/uuid*/,31/*vs/workbench/contrib/notebook/common/notebookCommon*/,64/*vs/workbench/api/common/cache*/]), function (require, exports, event_1, hash_1, lifecycle_1, network_1, resources_1, uri_1, UUID, notebookCommon_1, cache_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ExtHostNotebookDocument = exports.ExtHostCell = void 0;
+    function getObservable(obj) {
+        const onDidChange = new event_1.Emitter();
+        const proxy = new Proxy(obj, {
+            set(target, p, value, _receiver) {
+                target[p] = value;
+                onDidChange.fire();
+                return true;
+            }
+        });
+        return {
+            proxy,
+            onDidChange: onDidChange.event
+        };
+    }
+    class RawContentChangeEvent {
+        constructor(start, deletedCount, deletedItems, items) {
+            this.start = start;
+            this.deletedCount = deletedCount;
+            this.deletedItems = deletedItems;
+            this.items = items;
+        }
+        static asApiEvent(event) {
+            return Object.freeze({
+                start: event.start,
+                deletedCount: event.deletedCount,
+                deletedItems: event.deletedItems.map(data => data.cell),
+                items: event.items.map(data => data.cell)
+            });
+        }
+    }
+    class ExtHostCell extends lifecycle_1.Disposable {
+        constructor(_mainThreadBulkEdits, _notebook, _extHostDocument, _cellData) {
+            var _a;
+            super();
+            this._mainThreadBulkEdits = _mainThreadBulkEdits;
+            this._notebook = _notebook;
+            this._extHostDocument = _extHostDocument;
+            this._cellData = _cellData;
+            this._onDidDispose = new event_1.Emitter();
+            this.onDidDispose = this._onDidDispose.event;
+            this._onDidChangeOutputs = new event_1.Emitter();
+            this.onDidChangeOutputs = this._onDidChangeOutputs.event;
+            this._outputMapping = new WeakMap();
+            this.handle = _cellData.handle;
+            this.uri = uri_1.URI.revive(_cellData.uri);
+            this.cellKind = _cellData.cellKind;
+            this._outputs = _cellData.outputs;
+            for (const output of this._outputs) {
+                this._outputMapping.set(output, output.outputId);
+                delete output.outputId;
+            }
+            const observableMetadata = getObservable((_a = _cellData.metadata) !== null && _a !== void 0 ? _a : {});
+            this._metadata = observableMetadata.proxy;
+            this._metadataChangeListener = this._register(observableMetadata.onDidChange(() => {
+                this._updateMetadata();
+            }));
+        }
+        static asModelAddData(notebook, cell) {
+            return {
+                EOL: cell.eol,
+                lines: cell.source,
+                modeId: cell.language,
+                uri: cell.uri,
+                isDirty: false,
+                versionId: 1,
+                notebook
+            };
+        }
+        get cell() {
+            if (!this._cell) {
+                const that = this;
+                const document = this._extHostDocument.getDocument(this.uri).document;
+                this._cell = Object.freeze({
+                    get index() { return that._notebook.getCellIndex(that); },
+                    notebook: that._notebook.notebookDocument,
+                    uri: that.uri,
+                    cellKind: this._cellData.cellKind,
+                    document,
+                    get language() { return document.languageId; },
+                    get outputs() { return that._outputs; },
+                    set outputs(value) { that._updateOutputs(value); },
+                    get metadata() { return that._metadata; },
+                    set metadata(value) {
+                        that.setMetadata(value);
+                        that._updateMetadata();
+                    },
+                });
+            }
+            return this._cell;
+        }
+        dispose() {
+            super.dispose();
+            this._onDidDispose.fire();
+        }
+        setOutputs(newOutputs) {
+            this._outputs = newOutputs;
+        }
+        _updateOutputs(newOutputs) {
+            const rawDiffs = notebookCommon_1.diff(this._outputs || [], newOutputs || [], (a) => {
+                return this._outputMapping.has(a);
+            });
+            const transformedDiffs = rawDiffs.map(diff => {
+                for (let i = diff.start; i < diff.start + diff.deleteCount; i++) {
+                    this._outputMapping.delete(this._outputs[i]);
+                }
+                return {
+                    deleteCount: diff.deleteCount,
+                    start: diff.start,
+                    toInsert: diff.toInsert.map((output) => {
+                        if (output.outputKind === notebookCommon_1.CellOutputKind.Rich) {
+                            const uuid = UUID.generateUuid();
+                            this._outputMapping.set(output, uuid);
+                            return Object.assign(Object.assign({}, output), { outputId: uuid });
+                        }
+                        this._outputMapping.set(output, undefined);
+                        return output;
+                    })
+                };
+            });
+            this._outputs = newOutputs;
+            this._onDidChangeOutputs.fire(transformedDiffs);
+        }
+        setMetadata(newMetadata) {
+            // Don't apply metadata defaults here, 'undefined' means 'inherit from document metadata'
+            this._metadataChangeListener.dispose();
+            const observableMetadata = getObservable(newMetadata);
+            this._metadata = observableMetadata.proxy;
+            this._metadataChangeListener = this._register(observableMetadata.onDidChange(() => {
+                this._updateMetadata();
+            }));
+        }
+        _updateMetadata() {
+            const index = this._notebook.notebookDocument.cells.indexOf(this.cell);
+            const edit = {
+                _type: 3 /* Cell */,
+                metadata: undefined,
+                resource: this._notebook.uri,
+                notebookVersionId: this._notebook.notebookDocument.version,
+                edit: { editType: 3 /* Metadata */, index, metadata: this._metadata }
+            };
+            return this._mainThreadBulkEdits.$tryApplyWorkspaceEdit({ edits: [edit] });
+        }
+    }
+    exports.ExtHostCell = ExtHostCell;
+    function hashPath(resource) {
+        const str = resource.scheme === network_1.Schemas.file || resource.scheme === network_1.Schemas.untitled ? resource.fsPath : resource.toString();
+        return hash_1.hash(str) + '';
+    }
+    class ExtHostNotebookDocument extends lifecycle_1.Disposable {
+        constructor(_proxy, _documentsAndEditors, _mainThreadBulkEdits, _emitter, _viewType, _contentOptions, metadata, uri, _storagePath) {
+            super();
+            this._proxy = _proxy;
+            this._documentsAndEditors = _documentsAndEditors;
+            this._mainThreadBulkEdits = _mainThreadBulkEdits;
+            this._emitter = _emitter;
+            this._viewType = _viewType;
+            this._contentOptions = _contentOptions;
+            this.uri = uri;
+            this._storagePath = _storagePath;
+            this.handle = ExtHostNotebookDocument._handlePool++;
+            this._cells = [];
+            this._cellDisposableMapping = new Map();
+            this._versionId = 0;
+            this._isDirty = false;
+            this._backupCounter = 1;
+            this._disposed = false;
+            this._languages = [];
+            this._edits = new cache_1.Cache('notebook documents');
+            const observableMetadata = getObservable(metadata);
+            this._metadata = observableMetadata.proxy;
+            this._metadataChangeListener = this._register(observableMetadata.onDidChange(() => {
+                this._tryUpdateMetadata();
+            }));
+        }
+        dispose() {
+            this._disposed = true;
+            super.dispose();
+            lifecycle_1.dispose(this._cellDisposableMapping.values());
+        }
+        _updateMetadata(newMetadata) {
+            this._metadataChangeListener.dispose();
+            newMetadata = Object.assign(Object.assign({}, notebookCommon_1.notebookDocumentMetadataDefaults), newMetadata);
+            if (this._metadataChangeListener) {
+                this._metadataChangeListener.dispose();
+            }
+            const observableMetadata = getObservable(newMetadata);
+            this._metadata = observableMetadata.proxy;
+            this._metadataChangeListener = this._register(observableMetadata.onDidChange(() => {
+                this._tryUpdateMetadata();
+            }));
+            this._tryUpdateMetadata();
+        }
+        _tryUpdateMetadata() {
+            const edit = {
+                _type: 3 /* Cell */,
+                metadata: undefined,
+                edit: { editType: 5 /* DocumentMetadata */, metadata: this._metadata },
+                resource: this.uri,
+                notebookVersionId: this.notebookDocument.version,
+            };
+            return this._mainThreadBulkEdits.$tryApplyWorkspaceEdit({ edits: [edit] });
+        }
+        get notebookDocument() {
+            if (!this._notebook) {
+                const that = this;
+                this._notebook = Object.freeze({
+                    get uri() { return that.uri; },
+                    get version() { return that._versionId; },
+                    get fileName() { return that.uri.fsPath; },
+                    get viewType() { return that._viewType; },
+                    get isDirty() { return that._isDirty; },
+                    get isUntitled() { return that.uri.scheme === network_1.Schemas.untitled; },
+                    get cells() { return that._cells.map(cell => cell.cell); },
+                    get languages() { return that._languages; },
+                    set languages(value) { that._trySetLanguages(value); },
+                    get metadata() { return that._metadata; },
+                    set metadata(value) { that._updateMetadata(value); },
+                    get contentOptions() { return that._contentOptions; }
+                });
+            }
+            return this._notebook;
+        }
+        _trySetLanguages(newLanguages) {
+            this._languages = newLanguages;
+            this._proxy.$updateNotebookLanguages(this._viewType, this.uri, this._languages);
+        }
+        getNewBackupUri() {
+            if (!this._storagePath) {
+                throw new Error('Backup requires a valid storage path');
+            }
+            const fileName = hashPath(this.uri) + (this._backupCounter++);
+            return resources_1.joinPath(this._storagePath, fileName);
+        }
+        updateBackup(backup) {
+            var _a;
+            (_a = this._backup) === null || _a === void 0 ? void 0 : _a.delete();
+            this._backup = backup;
+        }
+        disposeBackup() {
+            var _a;
+            (_a = this._backup) === null || _a === void 0 ? void 0 : _a.delete();
+            this._backup = undefined;
+        }
+        acceptDocumentPropertiesChanged(data) {
+            const newMetadata = Object.assign(Object.assign({}, notebookCommon_1.notebookDocumentMetadataDefaults), data.metadata);
+            if (this._metadataChangeListener) {
+                this._metadataChangeListener.dispose();
+            }
+            const observableMetadata = getObservable(newMetadata);
+            this._metadata = observableMetadata.proxy;
+            this._metadataChangeListener = this._register(observableMetadata.onDidChange(() => {
+                this._tryUpdateMetadata();
+            }));
+            this._emitter.emitDocumentMetadataChange({ document: this.notebookDocument });
+        }
+        acceptModelChanged(event, isDirty) {
+            this._versionId = event.versionId;
+            this._isDirty = isDirty;
+            event.rawEvents.forEach(e => {
+                if (e.kind === notebookCommon_1.NotebookCellsChangeType.Initialize) {
+                    this._spliceNotebookCells(e.changes, true);
+                }
+                if (e.kind === notebookCommon_1.NotebookCellsChangeType.ModelChange) {
+                    this._spliceNotebookCells(e.changes, false);
+                }
+                else if (e.kind === notebookCommon_1.NotebookCellsChangeType.Move) {
+                    this._moveCell(e.index, e.newIdx);
+                }
+                else if (e.kind === notebookCommon_1.NotebookCellsChangeType.Output) {
+                    this._setCellOutputs(e.index, e.outputs);
+                }
+                else if (e.kind === notebookCommon_1.NotebookCellsChangeType.ChangeLanguage) {
+                    this._changeCellLanguage(e.index, e.language);
+                }
+                else if (e.kind === notebookCommon_1.NotebookCellsChangeType.ChangeCellMetadata) {
+                    this._changeCellMetadata(e.index, e.metadata);
+                }
+            });
+        }
+        _spliceNotebookCells(splices, initialization) {
+            if (this._disposed) {
+                return;
+            }
+            const contentChangeEvents = [];
+            const addedCellDocuments = [];
+            const removedCellDocuments = [];
+            splices.reverse().forEach(splice => {
+                var _a;
+                const cellDtos = splice[2];
+                const newCells = cellDtos.map(cell => {
+                    const extCell = new ExtHostCell(this._mainThreadBulkEdits, this, this._documentsAndEditors, cell);
+                    if (!initialization) {
+                        addedCellDocuments.push(ExtHostCell.asModelAddData(this.notebookDocument, cell));
+                    }
+                    if (!this._cellDisposableMapping.has(extCell.handle)) {
+                        const store = new lifecycle_1.DisposableStore();
+                        store.add(extCell);
+                        this._cellDisposableMapping.set(extCell.handle, store);
+                    }
+                    const store = this._cellDisposableMapping.get(extCell.handle);
+                    store.add(extCell.onDidChangeOutputs((diffs) => {
+                        this.eventuallyUpdateCellOutputs(extCell, diffs);
+                    }));
+                    return extCell;
+                });
+                for (let j = splice[0]; j < splice[0] + splice[1]; j++) {
+                    (_a = this._cellDisposableMapping.get(this._cells[j].handle)) === null || _a === void 0 ? void 0 : _a.dispose();
+                    this._cellDisposableMapping.delete(this._cells[j].handle);
+                }
+                const deletedItems = this._cells.splice(splice[0], splice[1], ...newCells);
+                for (let cell of deletedItems) {
+                    removedCellDocuments.push(cell.uri);
+                }
+                contentChangeEvents.push(new RawContentChangeEvent(splice[0], splice[1], deletedItems, newCells));
+            });
+            this._documentsAndEditors.acceptDocumentsAndEditorsDelta({
+                addedDocuments: addedCellDocuments,
+                removedDocuments: removedCellDocuments
+            });
+            if (!initialization) {
+                this._emitter.emitModelChange({
+                    document: this.notebookDocument,
+                    changes: contentChangeEvents.map(RawContentChangeEvent.asApiEvent)
+                });
+            }
+        }
+        _moveCell(index, newIdx) {
+            const cells = this._cells.splice(index, 1);
+            this._cells.splice(newIdx, 0, ...cells);
+            const changes = [{
+                    start: index,
+                    deletedCount: 1,
+                    deletedItems: cells.map(data => data.cell),
+                    items: []
+                }, {
+                    start: newIdx,
+                    deletedCount: 0,
+                    deletedItems: [],
+                    items: cells.map(data => data.cell)
+                }];
+            this._emitter.emitModelChange({
+                document: this.notebookDocument,
+                changes
+            });
+        }
+        _setCellOutputs(index, outputs) {
+            const cell = this._cells[index];
+            cell.setOutputs(outputs);
+            this._emitter.emitCellOutputsChange({ document: this.notebookDocument, cells: [cell.cell] });
+        }
+        _changeCellLanguage(index, language) {
+            const cell = this._cells[index];
+            const event = { document: this.notebookDocument, cell: cell.cell, language };
+            this._emitter.emitCellLanguageChange(event);
+        }
+        _changeCellMetadata(index, newMetadata) {
+            const cell = this._cells[index];
+            cell.setMetadata(newMetadata || {});
+            const event = { document: this.notebookDocument, cell: cell.cell };
+            this._emitter.emitCellMetadataChange(event);
+        }
+        async eventuallyUpdateCellOutputs(cell, diffs) {
+            const outputDtos = diffs.map(diff => {
+                const outputs = diff.toInsert;
+                return [diff.start, diff.deleteCount, outputs];
+            });
+            if (!outputDtos.length) {
+                return;
+            }
+            await this._proxy.$spliceNotebookCellOutputs(this._viewType, this.uri, cell.handle, outputDtos);
+            this._emitter.emitCellOutputsChange({
+                document: this.notebookDocument,
+                cells: [cell.cell]
+            });
+        }
+        getCell(cellHandle) {
+            return this._cells.find(cell => cell.handle === cellHandle);
+        }
+        getCellIndex(cell) {
+            return this._cells.indexOf(cell);
+        }
+        addEdit(item) {
+            return this._edits.add([item]);
+        }
+        async undo(editId, isDirty) {
+            await this.getEdit(editId).undo();
+            // if (!isDirty) {
+            // 	this.disposeBackup();
+            // }
+        }
+        async redo(editId, isDirty) {
+            await this.getEdit(editId).redo();
+            // if (!isDirty) {
+            // 	this.disposeBackup();
+            // }
+        }
+        getEdit(editId) {
+            const edit = this._edits.get(editId, 0);
+            if (!edit) {
+                throw new Error('No edit found');
+            }
+            return edit;
+        }
+        disposeEdits(editIds) {
+            for (const id of editIds) {
+                this._edits.delete(id);
+            }
+        }
+    }
+    exports.ExtHostNotebookDocument = ExtHostNotebookDocument;
+    ExtHostNotebookDocument._handlePool = 0;
+});
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -27642,12 +28166,12 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     }
     return privateMap.get(receiver);
 };
-define(__m[7/*vs/workbench/api/common/extHostTypes*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/arrays*/,51/*vs/base/common/codicons*/,11/*vs/base/common/errors*/,76/*vs/base/common/htmlContent*/,22/*vs/base/common/map*/,8/*vs/base/common/strings*/,14/*vs/base/common/types*/,2/*vs/base/common/uri*/,29/*vs/base/common/uuid*/,57/*vs/platform/files/common/files*/,84/*vs/platform/remote/common/remoteAuthorityResolver*/,64/*vs/workbench/contrib/notebook/common/notebookCommon*/]), function (require, exports, arrays_1, codicons_1, errors_1, htmlContent_1, map_1, strings_1, types_1, uri_1, uuid_1, files_1, remoteAuthorityResolver_1, notebookCommon_1) {
+define(__m[7/*vs/workbench/api/common/extHostTypes*/], __M([0/*require*/,1/*exports*/,11/*vs/base/common/arrays*/,54/*vs/base/common/codicons*/,10/*vs/base/common/errors*/,78/*vs/base/common/htmlContent*/,22/*vs/base/common/map*/,16/*vs/base/common/types*/,2/*vs/base/common/uri*/,29/*vs/base/common/uuid*/,60/*vs/platform/files/common/files*/,86/*vs/platform/remote/common/remoteAuthorityResolver*/,31/*vs/workbench/contrib/notebook/common/notebookCommon*/]), function (require, exports, arrays_1, codicons_1, errors_1, htmlContent_1, map_1, types_1, uri_1, uuid_1, files_1, remoteAuthorityResolver_1, notebookCommon_1) {
     "use strict";
     var _callOnDispose;
     var Disposable_1, Position_1, Range_1, Selection_1, TextEdit_1, SnippetString_1, Location_1, SymbolInformation_1, DocumentSymbol_1, CodeActionKind_1, MarkdownString_1, TaskGroup_1, Task_1, FileSystemError_1;
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.StandardTokenType = exports.ExtensionRuntime = exports.ExtensionMode = exports.TimelineItem = exports.NotebookEditorRevealType = exports.NotebookCellStatusBarAlignment = exports.NotebookRunState = exports.NotebookCellRunState = exports.CellOutputKind = exports.CellKind = exports.ColorThemeKind = exports.ColorTheme = exports.Decoration = exports.ExtensionKind = exports.QuickInputButtons = exports.DebugConfigurationProviderTriggerKind = exports.DebugConsoleMode = exports.SemanticTokensEdits = exports.SemanticTokensEdit = exports.SemanticTokens = exports.SemanticTokensBuilder = exports.SemanticTokensLegend = exports.CommentMode = exports.CommentThreadCollapsibleState = exports.FoldingRangeKind = exports.FoldingRange = exports.FileSystemError = exports.FileChangeType = exports.LogLevel = exports.EvaluatableExpression = exports.DebugAdapterInlineImplementation = exports.DebugAdapterNamedPipeServer = exports.DebugAdapterServer = exports.DebugAdapterExecutable = exports.DataBreakpoint = exports.FunctionBreakpoint = exports.SourceBreakpoint = exports.Breakpoint = exports.RelativePattern = exports.ConfigurationTarget = exports.ThemeColor = exports.ThemeIcon = exports.TreeItemCollapsibleState = exports.TreeItem = exports.ProgressLocation = exports.Task = exports.CustomExecution = exports.TaskScope = exports.ShellQuoting = exports.ShellExecution = exports.ProcessExecution = exports.TaskGroup = exports.TaskPanelKind = exports.TaskRevealKind = exports.SourceControlInputBoxValidationType = exports.ColorFormat = exports.ColorPresentation = exports.ColorInformation = exports.Color = exports.DocumentLink = exports.DecorationRangeBehavior = exports.TextEditorSelectionChangeKind = exports.TextEditorRevealType = exports.TextDocumentSaveReason = exports.TextEditorLineNumbersStyle = exports.StatusBarAlignment = exports.ViewColumn = exports.CompletionList = exports.CompletionItem = exports.CompletionItemTag = exports.CompletionItemKind = exports.CompletionTriggerKind = exports.SignatureHelpTriggerKind = exports.SignatureHelp = exports.SignatureInformation = exports.ParameterInformation = exports.MarkdownString = exports.CodeInset = exports.CodeLens = exports.CallHierarchyOutgoingCall = exports.CallHierarchyIncomingCall = exports.CallHierarchyItem = exports.SelectionRange = exports.CodeActionKind = exports.CodeAction = exports.CodeActionTrigger = exports.DocumentSymbol = exports.SymbolInformation = exports.SymbolTag = exports.SymbolKind = exports.DocumentHighlight = exports.DocumentHighlightKind = exports.Hover = exports.Diagnostic = exports.DiagnosticRelatedInformation = exports.Location = exports.DiagnosticSeverity = exports.DiagnosticTag = exports.SnippetString = exports.WorkspaceEdit = exports.FileEditType = exports.TextEdit = exports.EnvironmentVariableMutatorType = exports.EndOfLine = exports.RemoteAuthorityResolverError = exports.ResolvedAuthority = exports.Selection = exports.Range = exports.Position = exports.Disposable = void 0;
+    exports.StandardTokenType = exports.ExtensionRuntime = exports.ExtensionMode = exports.TimelineItem = exports.NotebookEditorRevealType = exports.NotebookCellStatusBarAlignment = exports.NotebookRunState = exports.NotebookCellRunState = exports.CellOutputKind = exports.CellKind = exports.NotebookCellOutput = exports.NotebookCellOutputItem = exports.ColorThemeKind = exports.ColorTheme = exports.FileDecoration = exports.ExtensionKind = exports.QuickInputButtons = exports.DebugConfigurationProviderTriggerKind = exports.DebugConsoleMode = exports.SemanticTokensEdits = exports.SemanticTokensEdit = exports.SemanticTokens = exports.SemanticTokensBuilder = exports.SemanticTokensLegend = exports.CommentMode = exports.CommentThreadCollapsibleState = exports.FoldingRangeKind = exports.FoldingRange = exports.FileSystemError = exports.FileChangeType = exports.LogLevel = exports.EvaluatableExpression = exports.DebugAdapterInlineImplementation = exports.DebugAdapterNamedPipeServer = exports.DebugAdapterServer = exports.DebugAdapterExecutable = exports.DataBreakpoint = exports.FunctionBreakpoint = exports.SourceBreakpoint = exports.Breakpoint = exports.RelativePattern = exports.ConfigurationTarget = exports.ThemeColor = exports.ThemeIcon = exports.TreeItemCollapsibleState = exports.TreeItem = exports.ProgressLocation = exports.Task = exports.CustomExecution = exports.TaskScope = exports.ShellQuoting = exports.ShellExecution = exports.ProcessExecution = exports.TaskGroup = exports.TaskPanelKind = exports.TaskRevealKind = exports.SourceControlInputBoxValidationType = exports.ColorFormat = exports.ColorPresentation = exports.ColorInformation = exports.Color = exports.DocumentLink = exports.DecorationRangeBehavior = exports.TextEditorSelectionChangeKind = exports.TextEditorRevealType = exports.TextDocumentSaveReason = exports.TextEditorLineNumbersStyle = exports.StatusBarAlignment = exports.ViewColumn = exports.CompletionList = exports.CompletionItem = exports.CompletionItemTag = exports.CompletionItemKind = exports.CompletionTriggerKind = exports.SignatureHelpTriggerKind = exports.SignatureHelp = exports.SignatureInformation = exports.ParameterInformation = exports.MarkdownString = exports.CodeInset = exports.CodeLens = exports.CallHierarchyOutgoingCall = exports.CallHierarchyIncomingCall = exports.CallHierarchyItem = exports.SelectionRange = exports.CodeActionKind = exports.CodeAction = exports.CodeActionTrigger = exports.DocumentSymbol = exports.SymbolInformation = exports.SymbolTag = exports.SymbolKind = exports.DocumentHighlight = exports.DocumentHighlightKind = exports.Hover = exports.Diagnostic = exports.DiagnosticRelatedInformation = exports.Location = exports.DiagnosticSeverity = exports.DiagnosticTag = exports.SnippetString = exports.WorkspaceEdit = exports.FileEditType = exports.TextEdit = exports.EnvironmentVariableMutatorType = exports.EndOfLine = exports.RemoteAuthorityResolverError = exports.ResolvedAuthority = exports.Selection = exports.Range = exports.Position = exports.Disposable = void 0;
     function es5ClassCompat(target) {
         ///@ts-expect-error
         function _() { return Reflect.construct(target, arguments, this.constructor); }
@@ -28026,7 +28550,7 @@ define(__m[7/*vs/workbench/api/common/extHostTypes*/], __M([0/*require*/,1/*expo
             this._code = code;
             this._detail = detail;
             // workaround when extending builtin objects and when compiling to ES5, see:
-            // https://github.com/Microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
+            // https://github.com/microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
             if (typeof Object.setPrototypeOf === 'function') {
                 Object.setPrototypeOf(this, RemoteAuthorityResolverError.prototype);
             }
@@ -28141,14 +28665,30 @@ define(__m[7/*vs/workbench/api/common/extHostTypes*/], __M([0/*require*/,1/*expo
         deleteFile(uri, options, metadata) {
             this._edits.push({ _type: 1 /* File */, from: uri, to: undefined, options, metadata });
         }
-        // --- cell
-        replaceCells(uri, start, end, cells, metadata) {
-            this._edits.push({ _type: 3 /* Cell */, metadata, uri, edit: { editType: 1 /* Replace */, index: start, count: end - start, cells: cells.map(cell => (Object.assign(Object.assign({}, cell), { outputs: cell.outputs.map(output => notebookCommon_1.addIdToOutput(output)) }))) } });
+        // --- notebook
+        replaceNotebookMetadata(uri, value, metadata) {
+            this._edits.push({ _type: 3 /* Cell */, metadata, uri, notebookMetadata: value });
         }
-        replaceCellOutput(uri, index, outputs, metadata) {
-            this._edits.push({ _type: 3 /* Cell */, metadata, uri, edit: { editType: 2 /* Output */, index, outputs: outputs.map(output => notebookCommon_1.addIdToOutput(output)) } });
+        replaceNotebookCells(uri, start, end, cells, metadata) {
+            if (start !== end || cells.length > 0) {
+                this._edits.push({ _type: 3 /* Cell */, metadata, uri, edit: { editType: 1 /* Replace */, index: start, count: end - start, cells: cells.map(cell => (Object.assign(Object.assign({}, cell), { outputs: cell.outputs.map(output => notebookCommon_1.addIdToOutput(output)) }))) } });
+            }
         }
-        replaceCellMetadata(uri, index, cellMetadata, metadata) {
+        replaceNotebookCellOutput(uri, index, outputs, metadata) {
+            this._edits.push({
+                _type: 3 /* Cell */, metadata, uri, edit: {
+                    editType: 2 /* Output */, index, outputs: outputs.map(output => {
+                        if (NotebookCellOutput.isNotebookCellOutput(output)) {
+                            return notebookCommon_1.addIdToOutput(output.toJSON());
+                        }
+                        else {
+                            return notebookCommon_1.addIdToOutput(output);
+                        }
+                    })
+                }
+            });
+        }
+        replaceNotebookCellMetadata(uri, index, cellMetadata, metadata) {
             this._edits.push({ _type: 3 /* Cell */, metadata, uri, edit: { editType: 3 /* Metadata */, index, metadata: cellMetadata } });
         }
         // --- text
@@ -28264,7 +28804,7 @@ define(__m[7/*vs/workbench/api/common/extHostTypes*/], __M([0/*require*/,1/*expo
             return this;
         }
         appendChoice(values, number = this._tabstop++) {
-            const value = SnippetString_1._escape(values.toString());
+            const value = values.map(s => s.replace(/\$|}|\\|,/g, '\\$&')).join(',');
             this.value += '${';
             this.value += number;
             this.value += '|';
@@ -28580,7 +29120,7 @@ define(__m[7/*vs/workbench/api/common/extHostTypes*/], __M([0/*require*/,1/*expo
             return this.contains(other) || other.contains(this);
         }
         contains(other) {
-            return this.value === other.value || strings_1.startsWith(other.value, this.value + CodeActionKind_1.sep);
+            return this.value === other.value || other.value.startsWith(this.value + CodeActionKind_1.sep);
         }
     };
     CodeActionKind.sep = '.';
@@ -29401,8 +29941,9 @@ define(__m[7/*vs/workbench/api/common/extHostTypes*/], __M([0/*require*/,1/*expo
         TreeItemCollapsibleState[TreeItemCollapsibleState["Expanded"] = 2] = "Expanded";
     })(TreeItemCollapsibleState = exports.TreeItemCollapsibleState || (exports.TreeItemCollapsibleState = {}));
     let ThemeIcon = class ThemeIcon {
-        constructor(id) {
+        constructor(id, color) {
             this.id = id;
+            this.themeColor = color;
         }
     };
     ThemeIcon = __decorate([
@@ -29590,7 +30131,7 @@ define(__m[7/*vs/workbench/api/common/extHostTypes*/], __M([0/*require*/,1/*expo
             // we can extract the error code on the receiving side
             files_1.markAsFileSystemProviderError(this, code);
             // workaround when extending builtin objects and when compiling to ES5, see:
-            // https://github.com/Microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
+            // https://github.com/microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
             if (typeof Object.setPrototypeOf === 'function') {
                 Object.setPrototypeOf(this, FileSystemError_1.prototype);
             }
@@ -29881,17 +30422,22 @@ define(__m[7/*vs/workbench/api/common/extHostTypes*/], __M([0/*require*/,1/*expo
         ExtensionKind[ExtensionKind["UI"] = 1] = "UI";
         ExtensionKind[ExtensionKind["Workspace"] = 2] = "Workspace";
     })(ExtensionKind = exports.ExtensionKind || (exports.ExtensionKind = {}));
-    class Decoration {
+    class FileDecoration {
+        constructor(badge, tooltip, color) {
+            this.badge = badge;
+            this.tooltip = tooltip;
+            this.color = color;
+        }
         static validate(d) {
-            if (d.letter && d.letter.length !== 1) {
+            if (d.badge && d.badge.length !== 1) {
                 throw new Error(`The 'letter'-property must be undefined or a single character`);
             }
-            if (!d.bubble && !d.color && !d.letter && !d.priority && !d.title) {
+            if (!d.color && !d.badge && !d.tooltip) {
                 throw new Error(`The decoration is empty`);
             }
         }
     }
-    exports.Decoration = Decoration;
+    exports.FileDecoration = FileDecoration;
     //#region Theming
     let ColorTheme = class ColorTheme {
         constructor(kind) {
@@ -29910,6 +30456,45 @@ define(__m[7/*vs/workbench/api/common/extHostTypes*/], __M([0/*require*/,1/*expo
     })(ColorThemeKind = exports.ColorThemeKind || (exports.ColorThemeKind = {}));
     //#endregion Theming
     //#region Notebook
+    class NotebookCellOutputItem {
+        constructor(mime, value, // JSON'able
+        metadata) {
+            this.mime = mime;
+            this.value = value;
+            this.metadata = metadata;
+        }
+        static isNotebookCellOutputItem(obj) {
+            return obj instanceof NotebookCellOutputItem;
+        }
+    }
+    exports.NotebookCellOutputItem = NotebookCellOutputItem;
+    class NotebookCellOutput {
+        constructor(outputs, metadata) {
+            this.outputs = outputs;
+            this.metadata = metadata;
+        }
+        static isNotebookCellOutput(obj) {
+            return obj instanceof NotebookCellOutput;
+        }
+        toJSON() {
+            let data = {};
+            let custom = {};
+            let hasMetadata = false;
+            for (let item of this.outputs) {
+                data[item.mime] = item.value;
+                if (item.metadata) {
+                    custom[item.mime] = item.metadata;
+                    hasMetadata = true;
+                }
+            }
+            return {
+                outputKind: CellOutputKind.Rich,
+                data,
+                metadata: hasMetadata ? { custom } : undefined
+            };
+        }
+    }
+    exports.NotebookCellOutput = NotebookCellOutput;
     var CellKind;
     (function (CellKind) {
         CellKind[CellKind["Markdown"] = 1] = "Markdown";
@@ -30001,7 +30586,7 @@ define(__m[7/*vs/workbench/api/common/extHostTypes*/], __M([0/*require*/,1/*expo
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[87/*vs/workbench/api/common/extHostDocumentData*/], __M([0/*require*/,1/*exports*/,39/*vs/base/common/assert*/,18/*vs/base/common/network*/,8/*vs/base/common/strings*/,111/*vs/editor/common/model/mirrorTextModel*/,79/*vs/editor/common/model/wordHelper*/,7/*vs/workbench/api/common/extHostTypes*/,10/*vs/base/common/arrays*/]), function (require, exports, assert_1, network_1, strings_1, mirrorTextModel_1, wordHelper_1, extHostTypes_1, arrays_1) {
+define(__m[89/*vs/workbench/api/common/extHostDocumentData*/], __M([0/*require*/,1/*exports*/,41/*vs/base/common/assert*/,12/*vs/base/common/network*/,8/*vs/base/common/strings*/,112/*vs/editor/common/model/mirrorTextModel*/,81/*vs/editor/common/model/wordHelper*/,7/*vs/workbench/api/common/extHostTypes*/,11/*vs/base/common/arrays*/]), function (require, exports, assert_1, network_1, strings_1, mirrorTextModel_1, wordHelper_1, extHostTypes_1, arrays_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostDocumentLine = exports.ExtHostDocumentData = exports.getWordDefinitionFor = exports.setWordDefinitionFor = void 0;
@@ -30223,7 +30808,7 @@ define(__m[87/*vs/workbench/api/common/extHostDocumentData*/], __M([0/*require*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[150/*vs/workbench/api/common/extHostNotebookConcatDocument*/], __M([0/*require*/,1/*exports*/,7/*vs/workbench/api/common/extHostTypes*/,3/*vs/base/common/event*/,80/*vs/editor/common/viewModel/prefixSumComputer*/,6/*vs/base/common/lifecycle*/,53/*vs/editor/common/modes/languageSelector*/,64/*vs/workbench/contrib/notebook/common/notebookCommon*/,22/*vs/base/common/map*/,2/*vs/base/common/uri*/,29/*vs/base/common/uuid*/]), function (require, exports, types, event_1, prefixSumComputer_1, lifecycle_1, languageSelector_1, notebookCommon_1, map_1, uri_1, uuid_1) {
+define(__m[152/*vs/workbench/api/common/extHostNotebookConcatDocument*/], __M([0/*require*/,1/*exports*/,7/*vs/workbench/api/common/extHostTypes*/,3/*vs/base/common/event*/,82/*vs/editor/common/viewModel/prefixSumComputer*/,6/*vs/base/common/lifecycle*/,56/*vs/editor/common/modes/languageSelector*/,31/*vs/workbench/contrib/notebook/common/notebookCommon*/,22/*vs/base/common/map*/,2/*vs/base/common/uri*/,29/*vs/base/common/uuid*/]), function (require, exports, types, event_1, prefixSumComputer_1, lifecycle_1, languageSelector_1, notebookCommon_1, map_1, uri_1, uuid_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostNotebookConcatDocument = void 0;
@@ -30373,6 +30958,206 @@ define(__m[150/*vs/workbench/api/common/extHostNotebookConcatDocument*/], __M([0
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
+define(__m[153/*vs/workbench/api/common/extHostNotebookEditor*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/errors*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,7/*vs/workbench/api/common/extHostTypes*/,31/*vs/workbench/contrib/notebook/common/notebookCommon*/]), function (require, exports, errors_1, event_1, lifecycle_1, extHostTypes, notebookCommon_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ExtHostNotebookEditor = void 0;
+    class NotebookEditorCellEditBuilder {
+        constructor(documentVersionId) {
+            this._finalized = false;
+            this._collectedEdits = [];
+            this._documentVersionId = documentVersionId;
+        }
+        finalize() {
+            this._finalized = true;
+            return {
+                documentVersionId: this._documentVersionId,
+                cellEdits: this._collectedEdits
+            };
+        }
+        _throwIfFinalized() {
+            if (this._finalized) {
+                throw new Error('Edit is only valid while callback runs');
+            }
+        }
+        replaceMetadata(value) {
+            this._throwIfFinalized();
+            this._collectedEdits.push({
+                editType: 5 /* DocumentMetadata */,
+                metadata: Object.assign(Object.assign({}, notebookCommon_1.notebookDocumentMetadataDefaults), value)
+            });
+        }
+        replaceCellMetadata(index, metadata) {
+            this._throwIfFinalized();
+            this._collectedEdits.push({
+                editType: 3 /* Metadata */,
+                index,
+                metadata
+            });
+        }
+        replaceCellOutput(index, outputs) {
+            this._throwIfFinalized();
+            this._collectedEdits.push({
+                editType: 2 /* Output */,
+                index,
+                outputs: outputs.map(output => {
+                    if (extHostTypes.NotebookCellOutput.isNotebookCellOutput(output)) {
+                        return notebookCommon_1.addIdToOutput(output.toJSON());
+                    }
+                    else {
+                        return notebookCommon_1.addIdToOutput(output);
+                    }
+                })
+            });
+        }
+        replaceCells(from, to, cells) {
+            this._throwIfFinalized();
+            if (from === to && cells.length === 0) {
+                return;
+            }
+            this._collectedEdits.push({
+                editType: 1 /* Replace */,
+                index: from,
+                count: to - from,
+                cells: cells.map(data => {
+                    return Object.assign(Object.assign({}, data), { outputs: data.outputs.map(output => notebookCommon_1.addIdToOutput(output)) });
+                })
+            });
+        }
+    }
+    class ExtHostNotebookEditor extends lifecycle_1.Disposable {
+        constructor(id, _viewType, _proxy, _webComm, notebookData) {
+            super();
+            this.id = id;
+            this._viewType = _viewType;
+            this._proxy = _proxy;
+            this._webComm = _webComm;
+            this.notebookData = notebookData;
+            this._visibleRanges = [];
+            this._active = false;
+            this._visible = false;
+            this._onDidDispose = new event_1.Emitter();
+            this._onDidReceiveMessage = new event_1.Emitter();
+            this.onDidDispose = this._onDidDispose.event;
+            this.onDidReceiveMessage = this._onDidReceiveMessage.event;
+            this._hasDecorationsForKey = Object.create(null);
+            this._register(this._webComm.onDidReceiveMessage(e => {
+                this._onDidReceiveMessage.fire(e);
+            }));
+        }
+        get viewColumn() {
+            return this._viewColumn;
+        }
+        set viewColumn(_value) {
+            throw errors_1.readonly('viewColumn');
+        }
+        get kernel() {
+            return this._kernel;
+        }
+        set kernel(_kernel) {
+            throw errors_1.readonly('kernel');
+        }
+        _acceptKernel(kernel) {
+            this._kernel = kernel;
+        }
+        get visible() {
+            return this._visible;
+        }
+        set visible(_state) {
+            throw errors_1.readonly('visible');
+        }
+        _acceptVisibility(value) {
+            this._visible = value;
+        }
+        get visibleRanges() {
+            return this._visibleRanges;
+        }
+        set visibleRanges(_range) {
+            throw errors_1.readonly('visibleRanges');
+        }
+        _acceptVisibleRanges(value) {
+            this._visibleRanges = value;
+        }
+        get active() {
+            return this._active;
+        }
+        set active(_state) {
+            throw errors_1.readonly('active');
+        }
+        _acceptActive(value) {
+            this._active = value;
+        }
+        get document() {
+            return this.notebookData.notebookDocument;
+        }
+        edit(callback) {
+            const edit = new NotebookEditorCellEditBuilder(this.document.version);
+            callback(edit);
+            return this._applyEdit(edit.finalize());
+        }
+        _applyEdit(editData) {
+            // return when there is nothing to do
+            if (editData.cellEdits.length === 0) {
+                return Promise.resolve(true);
+            }
+            const compressedEdits = [];
+            let compressedEditsIndex = -1;
+            for (let i = 0; i < editData.cellEdits.length; i++) {
+                if (compressedEditsIndex < 0) {
+                    compressedEdits.push(editData.cellEdits[i]);
+                    compressedEditsIndex++;
+                    continue;
+                }
+                const prevIndex = compressedEditsIndex;
+                const prev = compressedEdits[prevIndex];
+                if (prev.editType === 1 /* Replace */ && editData.cellEdits[i].editType === 1 /* Replace */) {
+                    const edit = editData.cellEdits[i];
+                    if ((edit.editType !== 5 /* DocumentMetadata */ && edit.editType !== 8 /* Unknown */) && prev.index === edit.index) {
+                        prev.cells.push(...editData.cellEdits[i].cells);
+                        prev.count += editData.cellEdits[i].count;
+                        continue;
+                    }
+                }
+                compressedEdits.push(editData.cellEdits[i]);
+                compressedEditsIndex++;
+            }
+            return this._proxy.$tryApplyEdits(this._viewType, this.document.uri, editData.documentVersionId, compressedEdits);
+        }
+        setDecorations(decorationType, range) {
+            const willBeEmpty = (range.start === range.end);
+            if (willBeEmpty && !this._hasDecorationsForKey[decorationType.key]) {
+                // avoid no-op call to the renderer
+                return;
+            }
+            if (willBeEmpty) {
+                delete this._hasDecorationsForKey[decorationType.key];
+            }
+            else {
+                this._hasDecorationsForKey[decorationType.key] = true;
+            }
+            return this._proxy.$trySetDecorations(this.id, range, decorationType.key);
+        }
+        revealRange(range, revealType) {
+            this._proxy.$tryRevealRange(this.id, range, revealType || extHostTypes.NotebookEditorRevealType.Default);
+        }
+        async postMessage(message) {
+            return this._webComm.postMessage(message);
+        }
+        asWebviewUri(localResource) {
+            return this._webComm.asWebviewUri(localResource);
+        }
+        dispose() {
+            this._onDidDispose.fire();
+            super.dispose();
+        }
+    }
+    exports.ExtHostNotebookEditor = ExtHostNotebookEditor;
+});
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 
 
 
@@ -30382,7 +31167,7 @@ define(__m[150/*vs/workbench/api/common/extHostNotebookConcatDocument*/], __M([0
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-define(__m[151/*vs/workbench/api/common/extHostTheming*/], __M([0/*require*/,1/*exports*/,7/*vs/workbench/api/common/extHostTypes*/,13/*vs/workbench/api/common/extHostRpcService*/,3/*vs/base/common/event*/]), function (require, exports, extHostTypes_1, extHostRpcService_1, event_1) {
+define(__m[154/*vs/workbench/api/common/extHostTheming*/], __M([0/*require*/,1/*exports*/,7/*vs/workbench/api/common/extHostTypes*/,14/*vs/workbench/api/common/extHostRpcService*/,3/*vs/base/common/event*/]), function (require, exports, extHostTypes_1, extHostRpcService_1, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostTheming = void 0;
@@ -30413,7 +31198,7 @@ define(__m[151/*vs/workbench/api/common/extHostTheming*/], __M([0/*require*/,1/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[152/*vs/workbench/contrib/tasks/common/taskService*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/,42/*vs/platform/contextkey/common/contextkey*/]), function (require, exports, instantiation_1, contextkey_1) {
+define(__m[155/*vs/workbench/contrib/tasks/common/taskService*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/,44/*vs/platform/contextkey/common/contextkey*/]), function (require, exports, instantiation_1, contextkey_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.USER_TASKS_GROUP_KEY = exports.ITaskService = exports.ProcessExecutionSupportedContext = exports.ShellExecutionSupportedContext = exports.CustomExecutionSupportedContext = void 0;
@@ -30428,7 +31213,7 @@ define(__m[152/*vs/workbench/contrib/tasks/common/taskService*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[153/*vs/workbench/contrib/terminal/common/environmentVariableShared*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[156/*vs/workbench/contrib/terminal/common/environmentVariableShared*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.deserializeEnvironmentVariableCollection = exports.serializeEnvironmentVariableCollection = void 0;
@@ -30447,10 +31232,10 @@ define(__m[153/*vs/workbench/contrib/terminal/common/environmentVariableShared*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[154/*vs/workbench/contrib/terminal/common/terminal*/], __M([0/*require*/,1/*exports*/,131/*vs/nls!vs/workbench/contrib/terminal/common/terminal*/,42/*vs/platform/contextkey/common/contextkey*/]), function (require, exports, nls, contextkey_1) {
+define(__m[157/*vs/workbench/contrib/terminal/common/terminal*/], __M([0/*require*/,1/*exports*/,132/*vs/nls!vs/workbench/contrib/terminal/common/terminal*/,44/*vs/platform/contextkey/common/contextkey*/]), function (require, exports, nls, contextkey_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.terminalContributionsDescriptor = exports.DEFAULT_COMMANDS_TO_SKIP_SHELL = exports.TERMINAL_COMMAND_ID = exports.TitleEventSource = exports.LinuxDistro = exports.ProcessState = exports.DEFAULT_LINE_HEIGHT = exports.MINIMUM_LETTER_SPACING = exports.DEFAULT_LETTER_SPACING = exports.TERMINAL_ACTION_CATEGORY = exports.TERMINAL_CONFIG_SECTION = exports.TerminalCursorStyle = exports.EXT_HOST_CREATION_DELAY = exports.NEVER_MEASURE_RENDER_TIME_STORAGE_KEY = exports.IS_WORKSPACE_SHELL_ALLOWED_STORAGE_KEY = exports.KEYBINDING_CONTEXT_TERMINAL_PROCESS_SUPPORTED = exports.KEYBINDING_CONTEXT_TERMINAL_FIND_INPUT_NOT_FOCUSED = exports.KEYBINDING_CONTEXT_TERMINAL_FIND_FOCUSED = exports.KEYBINDING_CONTEXT_TERMINAL_FIND_INPUT_FOCUSED = exports.KEYBINDING_CONTEXT_TERMINAL_FIND_NOT_VISIBLE = exports.KEYBINDING_CONTEXT_TERMINAL_FIND_VISIBLE = exports.KEYBINDING_CONTEXT_TERMINAL_TEXT_NOT_SELECTED = exports.KEYBINDING_CONTEXT_TERMINAL_TEXT_SELECTED = exports.KEYBINDING_CONTEXT_TERMINAL_A11Y_TREE_FOCUS = exports.KEYBINDING_CONTEXT_TERMINAL_NOT_FOCUSED = exports.KEYBINDING_CONTEXT_TERMINAL_SHELL_TYPE = exports.KEYBINDING_CONTEXT_TERMINAL_SHELL_TYPE_KEY = exports.KEYBINDING_CONTEXT_TERMINAL_FOCUS = exports.KEYBINDING_CONTEXT_TERMINAL_IS_OPEN = exports.TERMINAL_VIEW_ID = void 0;
+    exports.terminalContributionsDescriptor = exports.DEFAULT_COMMANDS_TO_SKIP_SHELL = exports.TERMINAL_COMMAND_ID = exports.TitleEventSource = exports.LinuxDistro = exports.ProcessState = exports.SUGGESTIONS_FONT_WEIGHT = exports.DEFAULT_BOLD_FONT_WEIGHT = exports.DEFAULT_FONT_WEIGHT = exports.MAXIMUM_FONT_WEIGHT = exports.MINIMUM_FONT_WEIGHT = exports.DEFAULT_LINE_HEIGHT = exports.MINIMUM_LETTER_SPACING = exports.DEFAULT_LETTER_SPACING = exports.TERMINAL_ACTION_CATEGORY = exports.TERMINAL_CONFIG_SECTION = exports.TerminalCursorStyle = exports.EXT_HOST_CREATION_DELAY = exports.NEVER_MEASURE_RENDER_TIME_STORAGE_KEY = exports.IS_WORKSPACE_SHELL_ALLOWED_STORAGE_KEY = exports.KEYBINDING_CONTEXT_TERMINAL_PROCESS_SUPPORTED = exports.KEYBINDING_CONTEXT_TERMINAL_FIND_INPUT_NOT_FOCUSED = exports.KEYBINDING_CONTEXT_TERMINAL_FIND_FOCUSED = exports.KEYBINDING_CONTEXT_TERMINAL_FIND_INPUT_FOCUSED = exports.KEYBINDING_CONTEXT_TERMINAL_FIND_NOT_VISIBLE = exports.KEYBINDING_CONTEXT_TERMINAL_FIND_VISIBLE = exports.KEYBINDING_CONTEXT_TERMINAL_TEXT_NOT_SELECTED = exports.KEYBINDING_CONTEXT_TERMINAL_TEXT_SELECTED = exports.KEYBINDING_CONTEXT_TERMINAL_A11Y_TREE_FOCUS = exports.KEYBINDING_CONTEXT_TERMINAL_NOT_FOCUSED = exports.KEYBINDING_CONTEXT_TERMINAL_SHELL_TYPE = exports.KEYBINDING_CONTEXT_TERMINAL_SHELL_TYPE_KEY = exports.KEYBINDING_CONTEXT_TERMINAL_FOCUS = exports.KEYBINDING_CONTEXT_TERMINAL_IS_OPEN = exports.TERMINAL_VIEW_ID = void 0;
     exports.TERMINAL_VIEW_ID = 'terminal';
     /** A context key that is set when there is at least one opened integrated terminal. */
     exports.KEYBINDING_CONTEXT_TERMINAL_IS_OPEN = new contextkey_1.RawContextKey('terminalIsOpen', false);
@@ -30494,6 +31279,11 @@ define(__m[154/*vs/workbench/contrib/terminal/common/terminal*/], __M([0/*requir
     exports.DEFAULT_LETTER_SPACING = 0;
     exports.MINIMUM_LETTER_SPACING = -5;
     exports.DEFAULT_LINE_HEIGHT = 1;
+    exports.MINIMUM_FONT_WEIGHT = 1;
+    exports.MAXIMUM_FONT_WEIGHT = 1000;
+    exports.DEFAULT_FONT_WEIGHT = 'normal';
+    exports.DEFAULT_BOLD_FONT_WEIGHT = 'bold';
+    exports.SUGGESTIONS_FONT_WEIGHT = ['normal', 'bold', '100', '200', '300', '400', '500', '600', '700', '800', '900'];
     var ProcessState;
     (function (ProcessState) {
         // The process has not been initialized yet.
@@ -30592,6 +31382,7 @@ define(__m[154/*vs/workbench/contrib/terminal/common/terminal*/], __M([0/*requir
         TERMINAL_COMMAND_ID["NAVIGATION_MODE_FOCUS_NEXT"] = "workbench.action.terminal.navigationModeFocusNext";
         TERMINAL_COMMAND_ID["NAVIGATION_MODE_FOCUS_PREVIOUS"] = "workbench.action.terminal.navigationModeFocusPrevious";
         TERMINAL_COMMAND_ID["SHOW_ENVIRONMENT_INFORMATION"] = "workbench.action.terminal.showEnvironmentInformation";
+        TERMINAL_COMMAND_ID["SEARCH_WORKSPACE"] = "workbench.action.terminal.searchWorkspace";
     })(TERMINAL_COMMAND_ID = exports.TERMINAL_COMMAND_ID || (exports.TERMINAL_COMMAND_ID = {}));
     exports.DEFAULT_COMMANDS_TO_SKIP_SHELL = [
         "workbench.action.terminal.clearSelection" /* CLEAR_SELECTION */,
@@ -30747,7 +31538,7 @@ define(__m[154/*vs/workbench/contrib/terminal/common/terminal*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[155/*vs/workbench/contrib/terminal/common/terminalDataBuffering*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[158/*vs/workbench/contrib/terminal/common/terminalDataBuffering*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.TerminalDataBufferer = void 0;
@@ -30804,15 +31595,16 @@ define(__m[155/*vs/workbench/contrib/terminal/common/terminalDataBuffering*/], _
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[156/*vs/workbench/services/configurationResolver/common/variableResolver*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/path*/,34/*vs/base/common/process*/,14/*vs/base/common/types*/,24/*vs/base/common/objects*/,20/*vs/base/common/platform*/,52/*vs/base/common/labels*/,132/*vs/nls!vs/workbench/services/configurationResolver/common/variableResolver*/]), function (require, exports, paths, process, types, objects, platform_1, labels_1, nls_1) {
+define(__m[159/*vs/workbench/services/configurationResolver/common/variableResolver*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/path*/,35/*vs/base/common/process*/,16/*vs/base/common/types*/,24/*vs/base/common/objects*/,21/*vs/base/common/platform*/,55/*vs/base/common/labels*/,133/*vs/nls!vs/workbench/services/configurationResolver/common/variableResolver*/]), function (require, exports, paths, process, types, objects, platform_1, labels_1, nls_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.AbstractVariableResolverService = void 0;
     class AbstractVariableResolverService {
-        constructor(_context, _envVariables, _ignoreEditorVariables = false) {
+        constructor(_context, _labelService, _envVariables, _ignoreEditorVariables = false) {
             this._ignoreEditorVariables = _ignoreEditorVariables;
             this._contributedVariables = new Map();
             this._context = _context;
+            this._labelService = _labelService;
             if (_envVariables) {
                 if (platform_1.isWindows) {
                     // windows env variables are case insensitive
@@ -30899,6 +31691,9 @@ define(__m[156/*vs/workbench/services/configurationResolver/common/variableResol
             });
             return replaced;
         }
+        fsPath(displayUri) {
+            return this._labelService ? this._labelService.getUriLabel(displayUri, { noPrefix: true }) : displayUri.fsPath;
+        }
         evaluateSingleVariable(match, variable, folderUri, commandValueMapping) {
             // try to separate variable arguments from variable name
             let argument;
@@ -30965,12 +31760,12 @@ define(__m[156/*vs/workbench/services/configurationResolver/common/variableResol
                     switch (variable) {
                         case 'workspaceRoot':
                         case 'workspaceFolder':
-                            return labels_1.normalizeDriveLetter(getFolderUri().fsPath);
+                            return labels_1.normalizeDriveLetter(this.fsPath(getFolderUri()));
                         case 'cwd':
-                            return ((folderUri || argument) ? labels_1.normalizeDriveLetter(getFolderUri().fsPath) : process.cwd());
+                            return ((folderUri || argument) ? labels_1.normalizeDriveLetter(this.fsPath(getFolderUri())) : process.cwd());
                         case 'workspaceRootFolderName':
                         case 'workspaceFolderBasename':
-                            return paths.basename(getFolderUri().fsPath);
+                            return paths.basename(this.fsPath(getFolderUri()));
                         case 'lineNumber':
                             if (this._ignoreEditorVariables) {
                                 return match;
@@ -30999,7 +31794,7 @@ define(__m[156/*vs/workbench/services/configurationResolver/common/variableResol
                                 return match;
                             }
                             if (folderUri || argument) {
-                                return paths.normalize(paths.relative(getFolderUri().fsPath, getFilePath()));
+                                return paths.relative(this.fsPath(getFolderUri()), getFilePath());
                             }
                             return getFilePath();
                         case 'relativeFileDirname':
@@ -31008,7 +31803,7 @@ define(__m[156/*vs/workbench/services/configurationResolver/common/variableResol
                             }
                             const dirname = paths.dirname(getFilePath());
                             if (folderUri || argument) {
-                                return paths.normalize(paths.relative(getFolderUri().fsPath, dirname));
+                                return paths.relative(this.fsPath(getFolderUri()), dirname);
                             }
                             return dirname;
                         case 'fileDirname':
@@ -31068,7 +31863,7 @@ define(__m[156/*vs/workbench/services/configurationResolver/common/variableResol
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[157/*vs/workbench/services/editor/common/editorService*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[160/*vs/workbench/services/editor/common/editorService*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SIDE_GROUP = exports.ACTIVE_GROUP = exports.IEditorService = void 0;
@@ -31081,10 +31876,10 @@ define(__m[157/*vs/workbench/services/editor/common/editorService*/], __M([0/*re
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[17/*vs/workbench/api/common/extHostTypeConverters*/], __M([0/*require*/,1/*exports*/,56/*vs/editor/common/modes*/,7/*vs/workbench/api/common/extHostTypes*/,2/*vs/base/common/uri*/,30/*vs/editor/common/core/range*/,76/*vs/base/common/htmlContent*/,82/*vs/platform/markers/common/markers*/,157/*vs/workbench/services/editor/common/editorService*/,14/*vs/base/common/types*/,204/*vs/base/common/marked/marked*/,50/*vs/base/common/marshalling*/,24/*vs/base/common/objects*/,12/*vs/platform/log/common/log*/,10/*vs/base/common/arrays*/]), function (require, exports, modes, types, uri_1, editorRange, htmlContent, markers_1, editorService_1, types_1, marked, marshalling_1, objects_1, log_1, arrays_1) {
+define(__m[15/*vs/workbench/api/common/extHostTypeConverters*/], __M([0/*require*/,1/*exports*/,59/*vs/editor/common/modes*/,7/*vs/workbench/api/common/extHostTypes*/,2/*vs/base/common/uri*/,30/*vs/editor/common/core/range*/,78/*vs/base/common/htmlContent*/,84/*vs/platform/markers/common/markers*/,160/*vs/workbench/services/editor/common/editorService*/,16/*vs/base/common/types*/,208/*vs/base/common/marked/marked*/,53/*vs/base/common/marshalling*/,24/*vs/base/common/objects*/,13/*vs/platform/log/common/log*/,11/*vs/base/common/arrays*/,31/*vs/workbench/contrib/notebook/common/notebookCommon*/]), function (require, exports, modes, types, uri_1, editorRange, htmlContent, markers_1, editorService_1, types_1, marked, marshalling_1, objects_1, log_1, arrays_1, notebookCommon_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.NotebookExclusiveDocumentPattern = exports.LogLevel = exports.LanguageSelector = exports.GlobPattern = exports.TextEditorOpenOptions = exports.FoldingRangeKind = exports.FoldingRange = exports.ProgressLocation = exports.EndOfLine = exports.TextEditorLineNumbersStyle = exports.TextDocumentSaveReason = exports.SelectionRange = exports.Color = exports.ColorPresentation = exports.DocumentLink = exports.SignatureHelp = exports.SignatureInformation = exports.ParameterInformation = exports.CompletionItem = exports.CompletionItemKind = exports.CompletionItemTag = exports.CompletionContext = exports.CompletionTriggerKind = exports.DocumentHighlight = exports.EvaluatableExpression = exports.Hover = exports.DefinitionLink = exports.location = exports.CallHierarchyOutgoingCall = exports.CallHierarchyIncomingCall = exports.CallHierarchyItem = exports.DocumentSymbol = exports.WorkspaceSymbol = exports.SymbolTag = exports.SymbolKind = exports.WorkspaceEdit = exports.TextEdit = exports.DecorationRenderOptions = exports.DecorationRangeBehavior = exports.ThemableDecorationRenderOptions = exports.ThemableDecorationAttachmentRenderOptions = exports.pathOrURIToURI = exports.fromRangeOrRangeWithMessage = exports.MarkdownString = exports.isDecorationOptionsArr = exports.ViewColumn = exports.DiagnosticSeverity = exports.DiagnosticRelatedInformation = exports.Diagnostic = exports.DiagnosticTag = exports.Position = exports.TokenType = exports.Range = exports.Selection = void 0;
+    exports.NotebookDecorationRenderOptions = exports.NotebookExclusiveDocumentPattern = exports.NotebookCellOutputItem = exports.NotebookCellOutput = exports.LogLevel = exports.LanguageSelector = exports.GlobPattern = exports.TextEditorOpenOptions = exports.FoldingRangeKind = exports.FoldingRange = exports.ProgressLocation = exports.EndOfLine = exports.TextEditorLineNumbersStyle = exports.TextDocumentSaveReason = exports.SelectionRange = exports.Color = exports.ColorPresentation = exports.DocumentLink = exports.SignatureHelp = exports.SignatureInformation = exports.ParameterInformation = exports.CompletionItem = exports.CompletionItemKind = exports.CompletionItemTag = exports.CompletionContext = exports.CompletionTriggerKind = exports.DocumentHighlight = exports.EvaluatableExpression = exports.Hover = exports.DefinitionLink = exports.location = exports.CallHierarchyOutgoingCall = exports.CallHierarchyIncomingCall = exports.CallHierarchyItem = exports.DocumentSymbol = exports.WorkspaceSymbol = exports.SymbolTag = exports.SymbolKind = exports.WorkspaceEdit = exports.TextEdit = exports.DecorationRenderOptions = exports.DecorationRangeBehavior = exports.ThemableDecorationRenderOptions = exports.ThemableDecorationAttachmentRenderOptions = exports.pathOrURIToURI = exports.fromRangeOrRangeWithMessage = exports.MarkdownString = exports.isDecorationOptionsArr = exports.ViewColumn = exports.DiagnosticSeverity = exports.DiagnosticRelatedInformation = exports.Diagnostic = exports.DiagnosticTag = exports.Position = exports.TokenType = exports.Range = exports.Selection = void 0;
     var Selection;
     (function (Selection) {
         function to(selection) {
@@ -31357,7 +32152,9 @@ define(__m[17/*vs/workbench/api/common/extHostTypeConverters*/], __M([0/*require
             return JSON.stringify(data);
         }
         function to(value) {
-            return new htmlContent.MarkdownString(value.value, { isTrusted: value.isTrusted, supportThemeIcons: value.supportThemeIcons });
+            const result = new types.MarkdownString(value.value, value.supportThemeIcons);
+            result.isTrusted = value.isTrusted;
+            return result;
         }
         MarkdownString.to = to;
         function fromStrict(value) {
@@ -31563,10 +32360,11 @@ define(__m[17/*vs/workbench/api/common/extHostTypeConverters*/], __M([0/*require
                     else if (entry._type === 3 /* Cell */) {
                         result.edits.push({
                             _type: 3 /* Cell */,
+                            metadata: entry.metadata,
                             resource: entry.uri,
                             edit: entry.edit,
-                            metadata: entry.metadata,
-                            modelVersionId: (_a = notebooks === null || notebooks === void 0 ? void 0 : notebooks.lookupNotebookDocument(entry.uri)) === null || _a === void 0 ? void 0 : _a.notebookDocument.version
+                            notebookMetadata: entry.notebookMetadata,
+                            notebookVersionId: (_a = notebooks === null || notebooks === void 0 ? void 0 : notebooks.lookupNotebookDocument(entry.uri)) === null || _a === void 0 ? void 0 : _a.notebookDocument.version
                         });
                     }
                 }
@@ -32294,6 +33092,24 @@ define(__m[17/*vs/workbench/api/common/extHostTypeConverters*/], __M([0/*require
         }
         LogLevel.to = to;
     })(LogLevel = exports.LogLevel || (exports.LogLevel = {}));
+    var NotebookCellOutput;
+    (function (NotebookCellOutput) {
+        function from(output) {
+            return output.toJSON();
+        }
+        NotebookCellOutput.from = from;
+    })(NotebookCellOutput = exports.NotebookCellOutput || (exports.NotebookCellOutput = {}));
+    var NotebookCellOutputItem;
+    (function (NotebookCellOutputItem) {
+        function from(output) {
+            return {
+                outputKind: notebookCommon_1.CellOutputKind.Rich,
+                data: { [output.mime]: output.value },
+                metadata: output.metadata && { custom: output.metadata }
+            };
+        }
+        NotebookCellOutputItem.from = from;
+    })(NotebookCellOutputItem = exports.NotebookCellOutputItem || (exports.NotebookCellOutputItem = {}));
     var NotebookExclusiveDocumentPattern;
     (function (NotebookExclusiveDocumentPattern) {
         function from(pattern) {
@@ -32318,6 +33134,22 @@ define(__m[17/*vs/workbench/api/common/extHostTypeConverters*/], __M([0/*require
             return undefined; // preserve `undefined`
         }
         NotebookExclusiveDocumentPattern.from = from;
+        function to(pattern) {
+            if (typeof pattern === 'string') {
+                return pattern;
+            }
+            if (isRelativePattern(pattern)) {
+                return {
+                    base: pattern.base,
+                    pattern: pattern.pattern
+                };
+            }
+            return {
+                include: pattern.include,
+                exclude: pattern.exclude
+            };
+        }
+        NotebookExclusiveDocumentPattern.to = to;
         function isExclusivePattern(obj) {
             const ep = obj;
             const include = GlobPattern.from(ep.include);
@@ -32335,13 +33167,24 @@ define(__m[17/*vs/workbench/api/common/extHostTypeConverters*/], __M([0/*require
             return rp && typeof rp.base === 'string' && typeof rp.pattern === 'string';
         }
     })(NotebookExclusiveDocumentPattern = exports.NotebookExclusiveDocumentPattern || (exports.NotebookExclusiveDocumentPattern = {}));
+    var NotebookDecorationRenderOptions;
+    (function (NotebookDecorationRenderOptions) {
+        function from(options) {
+            return {
+                backgroundColor: options.backgroundColor,
+                borderColor: options.borderColor,
+                top: options.top ? ThemableDecorationAttachmentRenderOptions.from(options.top) : undefined
+            };
+        }
+        NotebookDecorationRenderOptions.from = from;
+    })(NotebookDecorationRenderOptions = exports.NotebookDecorationRenderOptions || (exports.NotebookDecorationRenderOptions = {}));
 });
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[158/*vs/workbench/api/common/apiCommands*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,17/*vs/workbench/api/common/extHostTypeConverters*/,136/*vs/platform/commands/common/commands*/,86/*vs/platform/workspaces/common/workspaces*/,18/*vs/base/common/network*/,12/*vs/platform/log/common/log*/,137/*vs/platform/environment/common/environment*/,147/*vs/workbench/common/views*/]), function (require, exports, uri_1, typeConverters, commands_1, workspaces_1, network_1, log_1, environment_1, views_1) {
+define(__m[161/*vs/workbench/api/common/apiCommands*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,15/*vs/workbench/api/common/extHostTypeConverters*/,137/*vs/platform/commands/common/commands*/,88/*vs/platform/workspaces/common/workspaces*/,12/*vs/base/common/network*/,13/*vs/platform/log/common/log*/,138/*vs/platform/environment/common/environment*/,148/*vs/workbench/common/views*/]), function (require, exports, uri_1, typeConverters, commands_1, workspaces_1, network_1, log_1, environment_1, views_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.MoveViewsAPICommand = exports.SetEditorLayoutAPICommand = exports.OpenIssueReporter = exports.RemoveFromRecentlyOpenedAPICommand = exports.OpenWithAPICommand = exports.OpenAPICommand = exports.DiffAPICommand = exports.NewWindowAPICommand = exports.OpenFolderAPICommand = void 0;
@@ -32557,7 +33400,7 @@ define(__m[158/*vs/workbench/api/common/apiCommands*/], __M([0/*require*/,1/*exp
         for (const viewId of options.viewIds) {
             const viewDescriptor = viewDescriptorService.getViewDescriptorById(viewId);
             if (viewDescriptor === null || viewDescriptor === void 0 ? void 0 : viewDescriptor.canMoveView) {
-                viewDescriptorService.moveViewsToContainer([viewDescriptor], destination);
+                viewDescriptorService.moveViewsToContainer([viewDescriptor], destination, views_1.ViewVisibilityState.Default);
             }
         }
         await accessor.get(views_1.IViewsService).openViewContainer(destination.id, true);
@@ -32586,7 +33429,7 @@ define(__m[158/*vs/workbench/api/common/apiCommands*/], __M([0/*require*/,1/*exp
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[159/*vs/workbench/api/common/extHostApiCommands*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,6/*vs/base/common/lifecycle*/,17/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/,56/*vs/editor/common/modes*/,158/*vs/workbench/api/common/apiCommands*/,10/*vs/base/common/arrays*/]), function (require, exports, uri_1, lifecycle_1, typeConverters, types, modes, apiCommands_1, arrays_1) {
+define(__m[162/*vs/workbench/api/common/extHostApiCommands*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,6/*vs/base/common/lifecycle*/,15/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/,59/*vs/editor/common/modes*/,161/*vs/workbench/api/common/apiCommands*/,11/*vs/base/common/arrays*/]), function (require, exports, uri_1, lifecycle_1, typeConverters, types, modes, apiCommands_1, arrays_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostApiCommands = exports.ApiCommand = exports.ApiCommandResult = exports.ApiCommandArgument = void 0;
@@ -32705,7 +33548,9 @@ define(__m[159/*vs/workbench/api/common/extHostApiCommands*/], __M([0/*require*/
                 throw new Error(value.rejectReason);
             }
             return typeConverters.WorkspaceEdit.to(value);
-        }))
+        })),
+        // --- links
+        new ApiCommand('vscode.executeLinkProvider', '_executeLinkProvider', 'Execute document link provider.', [ApiCommandArgument.Uri, new ApiCommandArgument('linkResolveCount', '(optional) Number of links that should be resolved, only when links are unresolved.', v => typeof v === 'number' || typeof v === 'undefined', v => v)], new ApiCommandResult('A promise that resolves to an array of DocumentLink-instances.', value => value.map(typeConverters.DocumentLink.to)))
     ];
     //#endregion
     //#region OLD world
@@ -32744,6 +33589,7 @@ define(__m[159/*vs/workbench/api/common/extHostApiCommands*/], __M([0/*require*/
                     { name: 'uri', description: 'Uri of a text document', constraint: uri_1.URI },
                     { name: 'rangeOrSelection', description: 'Range in a text document. Some refactoring provider requires Selection object.', constraint: types.Range },
                     { name: 'kind', description: '(optional) Code action kind to return code actions for', constraint: (value) => !value || typeof value.value === 'string' },
+                    { name: 'itemResolveCount', description: '(optional) Number of code actions to resolve (too large numbers slow down code actions)', constraint: (value) => value === undefined || typeof value === 'number' }
                 ],
                 returns: 'A promise that resolves to an array of Command-instances.'
             });
@@ -32754,13 +33600,6 @@ define(__m[159/*vs/workbench/api/common/extHostApiCommands*/], __M([0/*require*/
                     { name: 'itemResolveCount', description: '(optional) Number of lenses that should be resolved and returned. Will only return resolved lenses, will impact performance)', constraint: (value) => value === undefined || typeof value === 'number' }
                 ],
                 returns: 'A promise that resolves to an array of CodeLens-instances.'
-            });
-            this._register('vscode.executeLinkProvider', this._executeDocumentLinkProvider, {
-                description: 'Execute document link provider.',
-                args: [
-                    { name: 'uri', description: 'Uri of a text document', constraint: uri_1.URI }
-                ],
-                returns: 'A promise that resolves to an array of DocumentLink-instances.'
             });
             this._register('vscode.executeDocumentColorProvider', this._executeDocumentColorProvider, {
                 description: 'Execute document color provider.',
@@ -32776,6 +33615,11 @@ define(__m[159/*vs/workbench/api/common/extHostApiCommands*/], __M([0/*require*/
                     { name: 'context', description: 'Context object with uri and range' }
                 ],
                 returns: 'A promise that resolves to an array of ColorPresentation objects.'
+            });
+            this._register('vscode.resolveNotebookContentProviders', this._resolveNotebookContentProviders, {
+                description: 'Resolve Notebook Content Providers',
+                args: [],
+                returns: 'A promise that resolves to an array of NotebookContentProvider static info objects.'
             });
             const adjustHandler = (handler) => {
                 return (...args) => {
@@ -32881,13 +33725,14 @@ define(__m[159/*vs/workbench/api/common/extHostApiCommands*/], __M([0/*require*/
                 return [];
             });
         }
-        _executeCodeActionProvider(resource, rangeOrSelection, kind) {
+        _executeCodeActionProvider(resource, rangeOrSelection, kind, itemResolveCount) {
             const args = {
                 resource,
                 rangeOrSelection: types.Selection.isSelection(rangeOrSelection)
                     ? typeConverters.Selection.from(rangeOrSelection)
                     : typeConverters.Range.from(rangeOrSelection),
-                kind
+                kind,
+                itemResolveCount,
             };
             return this._commands.executeCommand('_executeCodeActionProvider', args)
                 .then(tryMapWith(codeAction => {
@@ -32917,9 +33762,16 @@ define(__m[159/*vs/workbench/api/common/extHostApiCommands*/], __M([0/*require*/
                 return new types.CodeLens(typeConverters.Range.to(item.range), item.command ? this._commands.converter.fromInternal(item.command) : undefined);
             }));
         }
-        _executeDocumentLinkProvider(resource) {
-            return this._commands.executeCommand('_executeLinkProvider', resource)
-                .then(tryMapWith(typeConverters.DocumentLink.to));
+        _resolveNotebookContentProviders() {
+            return this._commands.executeCommand('_resolveNotebookContentProvider')
+                .then(tryMapWith(item => {
+                return {
+                    viewType: item.viewType,
+                    displayName: item.displayName,
+                    options: { transientOutputs: item.options.transientOutputs, transientMetadata: item.options.transientMetadata },
+                    filenamePattern: item.filenamePattern.map(pattern => typeConverters.NotebookExclusiveDocumentPattern.to(pattern))
+                };
+            }));
         }
     }
     exports.ExtHostApiCommands = ExtHostApiCommands;
@@ -32952,15 +33804,15 @@ define(__m[159/*vs/workbench/api/common/extHostApiCommands*/], __M([0/*require*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[160/*vs/workbench/api/common/extHostDocumentSaveParticipant*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,11/*vs/base/common/errors*/,7/*vs/workbench/api/common/extHostTypes*/,17/*vs/workbench/api/common/extHostTypeConverters*/,48/*vs/base/common/linkedList*/]), function (require, exports, uri_1, errors_1, extHostTypes_1, extHostTypeConverters_1, linkedList_1) {
+define(__m[163/*vs/workbench/api/common/extHostDocumentSaveParticipant*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,10/*vs/base/common/errors*/,7/*vs/workbench/api/common/extHostTypes*/,15/*vs/workbench/api/common/extHostTypeConverters*/,50/*vs/base/common/linkedList*/]), function (require, exports, uri_1, errors_1, extHostTypes_1, extHostTypeConverters_1, linkedList_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostDocumentSaveParticipant = void 0;
     class ExtHostDocumentSaveParticipant {
-        constructor(_logService, _documents, _mainThreadEditors, _thresholds = { timeout: 1500, errors: 3 }) {
+        constructor(_logService, _documents, _mainThreadBulkEdits, _thresholds = { timeout: 1500, errors: 3 }) {
             this._logService = _logService;
             this._documents = _documents;
-            this._mainThreadEditors = _mainThreadEditors;
+            this._mainThreadBulkEdits = _mainThreadBulkEdits;
             this._thresholds = _thresholds;
             this._callbacks = new linkedList_1.LinkedList();
             this._badListeners = new WeakMap();
@@ -33080,7 +33932,7 @@ define(__m[160/*vs/workbench/api/common/extHostDocumentSaveParticipant*/], __M([
                     return undefined;
                 }
                 if (version === document.version) {
-                    return this._mainThreadEditors.$tryApplyWorkspaceEdit(dto);
+                    return this._mainThreadBulkEdits.$tryApplyWorkspaceEdit(dto);
                 }
                 return Promise.reject(new Error('concurrent_edits'));
             });
@@ -33099,7 +33951,7 @@ define(__m[160/*vs/workbench/api/common/extHostDocumentSaveParticipant*/], __M([
 
 
 
-define(__m[161/*vs/workbench/api/common/extHostProgress*/], __M([0/*require*/,1/*exports*/,17/*vs/workbench/api/common/extHostTypeConverters*/,141/*vs/platform/progress/common/progress*/,123/*vs/nls!vs/workbench/api/common/extHostProgress*/,21/*vs/base/common/cancellation*/,46/*vs/base/common/decorators*/]), function (require, exports, extHostTypeConverters_1, progress_1, nls_1, cancellation_1, decorators_1) {
+define(__m[164/*vs/workbench/api/common/extHostProgress*/], __M([0/*require*/,1/*exports*/,15/*vs/workbench/api/common/extHostTypeConverters*/,142/*vs/platform/progress/common/progress*/,124/*vs/nls!vs/workbench/api/common/extHostProgress*/,19/*vs/base/common/cancellation*/,47/*vs/base/common/decorators*/]), function (require, exports, extHostTypeConverters_1, progress_1, nls_1, cancellation_1, decorators_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostProgress = void 0;
@@ -33180,7 +34032,7 @@ define(__m[161/*vs/workbench/api/common/extHostProgress*/], __M([0/*require*/,1/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[88/*vs/workbench/api/common/extHostTextEditor*/], __M([0/*require*/,1/*exports*/,39/*vs/base/common/assert*/,11/*vs/base/common/errors*/,73/*vs/base/common/idGenerator*/,17/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, assert_1, errors_1, idGenerator_1, TypeConverters, extHostTypes_1) {
+define(__m[90/*vs/workbench/api/common/extHostTextEditor*/], __M([0/*require*/,1/*exports*/,41/*vs/base/common/assert*/,10/*vs/base/common/errors*/,48/*vs/base/common/idGenerator*/,15/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, assert_1, errors_1, idGenerator_1, TypeConverters, extHostTypes_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostTextEditor = exports.ExtHostTextEditorOptions = exports.TextEditorEdit = exports.TextEditorDecorationType = void 0;
@@ -33699,7 +34551,7 @@ define(__m[88/*vs/workbench/api/common/extHostTextEditor*/], __M([0/*require*/,1
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[162/*vs/workbench/services/extensions/common/extensionDescriptionRegistry*/], __M([0/*require*/,1/*exports*/,25/*vs/platform/extensions/common/extensions*/,3/*vs/base/common/event*/,9/*vs/base/common/path*/]), function (require, exports, extensions_1, event_1, path) {
+define(__m[165/*vs/workbench/services/extensions/common/extensionDescriptionRegistry*/], __M([0/*require*/,1/*exports*/,25/*vs/platform/extensions/common/extensions*/,3/*vs/base/common/event*/,9/*vs/base/common/path*/]), function (require, exports, extensions_1, event_1, path) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtensionDescriptionRegistry = exports.DeltaExtensionsResult = void 0;
@@ -33897,7 +34749,7 @@ define(__m[162/*vs/workbench/services/extensions/common/extensionDescriptionRegi
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[163/*vs/workbench/services/extensions/common/extensionHostProtocol*/], __M([0/*require*/,1/*exports*/,26/*vs/base/common/buffer*/]), function (require, exports, buffer_1) {
+define(__m[166/*vs/workbench/services/extensions/common/extensionHostProtocol*/], __M([0/*require*/,1/*exports*/,26/*vs/base/common/buffer*/]), function (require, exports, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isMessageOfType = exports.createMessageOfType = exports.MessageType = void 0;
@@ -33941,7 +34793,7 @@ define(__m[163/*vs/workbench/services/extensions/common/extensionHostProtocol*/]
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[37/*vs/workbench/services/extensions/common/extensions*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/uri*/,4/*vs/platform/instantiation/common/instantiation*/,25/*vs/platform/extensions/common/extensions*/,138/*vs/platform/extensionManagement/common/extensionManagementUtil*/]), function (require, exports, event_1, uri_1, instantiation_1, extensions_1, extensionManagementUtil_1) {
+define(__m[38/*vs/workbench/services/extensions/common/extensions*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/uri*/,4/*vs/platform/instantiation/common/instantiation*/,25/*vs/platform/extensions/common/extensions*/,139/*vs/platform/extensionManagement/common/extensionManagementUtil*/]), function (require, exports, event_1, uri_1, instantiation_1, extensions_1, extensionManagementUtil_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NullExtensionService = exports.toExtensionDescription = exports.toExtension = exports.throwProposedApiError = exports.checkProposedApiEnabled = exports.ActivationKind = exports.ExtensionHostLogFileName = exports.ExtensionPointContribution = exports.ActivationTimes = exports.ExtensionHostKind = exports.MissingDependencyError = exports.IExtensionService = exports.webWorkerExtHostConfig = exports.nullExtensionDescription = void 0;
@@ -34056,7 +34908,7 @@ define(__m[37/*vs/workbench/services/extensions/common/extensions*/], __M([0/*re
 
 
 
-define(__m[164/*vs/workbench/api/common/extHostExtensionActivator*/], __M([0/*require*/,1/*exports*/,121/*vs/nls!vs/workbench/api/common/extHostExtensionActivator*/,25/*vs/platform/extensions/common/extensions*/,37/*vs/workbench/services/extensions/common/extensions*/,12/*vs/platform/log/common/log*/]), function (require, exports, nls, extensions_1, extensions_2, log_1) {
+define(__m[167/*vs/workbench/api/common/extHostExtensionActivator*/], __M([0/*require*/,1/*exports*/,122/*vs/nls!vs/workbench/api/common/extHostExtensionActivator*/,25/*vs/platform/extensions/common/extensions*/,38/*vs/workbench/services/extensions/common/extensions*/,13/*vs/platform/log/common/log*/]), function (require, exports, nls, extensions_1, extensions_2, log_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtensionsActivator = exports.FailedExtension = exports.HostExtension = exports.EmptyExtension = exports.ActivatedExtension = exports.ExtensionActivationTimesBuilder = exports.ExtensionActivationTimes = void 0;
@@ -34317,7 +35169,7 @@ define(__m[164/*vs/workbench/api/common/extHostExtensionActivator*/], __M([0/*re
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[165/*vs/workbench/api/common/extHostTreeViews*/], __M([0/*require*/,1/*exports*/,126/*vs/nls!vs/workbench/api/common/extHostTreeViews*/,23/*vs/base/common/resources*/,2/*vs/base/common/uri*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,19/*vs/base/common/async*/,7/*vs/workbench/api/common/extHostTypes*/,14/*vs/base/common/types*/,10/*vs/base/common/arrays*/,37/*vs/workbench/services/extensions/common/extensions*/,17/*vs/workbench/api/common/extHostTypeConverters*/]), function (require, exports, nls_1, resources_1, uri_1, event_1, lifecycle_1, async_1, extHostTypes_1, types_1, arrays_1, extensions_1, extHostTypeConverters_1) {
+define(__m[168/*vs/workbench/api/common/extHostTreeViews*/], __M([0/*require*/,1/*exports*/,127/*vs/nls!vs/workbench/api/common/extHostTreeViews*/,23/*vs/base/common/resources*/,2/*vs/base/common/uri*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,20/*vs/base/common/async*/,7/*vs/workbench/api/common/extHostTypes*/,16/*vs/base/common/types*/,11/*vs/base/common/arrays*/,38/*vs/workbench/services/extensions/common/extensions*/,15/*vs/workbench/api/common/extHostTypeConverters*/,19/*vs/base/common/cancellation*/]), function (require, exports, nls_1, resources_1, uri_1, event_1, lifecycle_1, async_1, extHostTypes_1, types_1, arrays_1, extensions_1, extHostTypeConverters_1, cancellation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostTreeViews = void 0;
@@ -34387,6 +35239,12 @@ define(__m[165/*vs/workbench/api/common/extHostTreeViews*/], __M([0/*require*/,1
                 get title() { return treeView.title; },
                 set title(title) {
                     treeView.title = title;
+                },
+                get description() {
+                    return treeView.description;
+                },
+                set description(description) {
+                    treeView.description = description;
                 },
                 reveal: (element, options) => {
                     return treeView.reveal(element, options);
@@ -34476,6 +35334,7 @@ define(__m[165/*vs/workbench/api/common/extHostTreeViews*/], __M([0/*require*/,1
             this.refreshQueue = Promise.resolve();
             this._message = '';
             this._title = '';
+            this._refreshCancellationSource = new cancellation_1.CancellationTokenSource();
             if (extension.contributes && extension.contributes.views) {
                 for (const location in extension.contributes.views) {
                     for (const view of extension.contributes.views[location]) {
@@ -34561,7 +35420,14 @@ define(__m[165/*vs/workbench/api/common/extHostTreeViews*/], __M([0/*require*/,1
         }
         set title(title) {
             this._title = title;
-            this.proxy.$setTitle(this.viewId, title);
+            this.proxy.$setTitle(this.viewId, title, this._description);
+        }
+        get description() {
+            return this._description;
+        }
+        set description(description) {
+            this._description = description;
+            this.proxy.$setTitle(this.viewId, this._title, description);
         }
         setExpanded(treeItemHandle, expanded) {
             const element = this.getExtensionElement(treeItemHandle);
@@ -34659,19 +35525,35 @@ define(__m[165/*vs/workbench/api/common/extHostTreeViews*/], __M([0/*require*/,1
             }
             return this.roots;
         }
-        fetchChildrenNodes(parentElement) {
+        async fetchChildrenNodes(parentElement) {
             // clear children cache
             this.clearChildren(parentElement);
-            const parentNode = parentElement ? this.nodes.get(parentElement) : undefined;
-            return async_1.asPromise(() => this.dataProvider.getChildren(parentElement))
-                .then(elements => Promise.all(arrays_1.coalesce(elements || [])
-                .map(element => async_1.asPromise(() => this.dataProvider.getTreeItem(element))
-                .then(extTreeItem => extTreeItem ? this.createAndRegisterTreeNode(element, extTreeItem, parentNode) : null))))
-                .then(arrays_1.coalesce);
+            const cts = new cancellation_1.CancellationTokenSource(this._refreshCancellationSource.token);
+            try {
+                const parentNode = parentElement ? this.nodes.get(parentElement) : undefined;
+                const elements = await this.dataProvider.getChildren(parentElement);
+                if (cts.token.isCancellationRequested) {
+                    return [];
+                }
+                const items = await Promise.all(arrays_1.coalesce(elements || []).map(async (element) => {
+                    const item = await this.dataProvider.getTreeItem(element);
+                    return item && !cts.token.isCancellationRequested ? this.createAndRegisterTreeNode(element, item, parentNode) : null;
+                }));
+                if (cts.token.isCancellationRequested) {
+                    return [];
+                }
+                return arrays_1.coalesce(items);
+            }
+            finally {
+                cts.dispose();
+            }
         }
         refresh(elements) {
             const hasRoot = elements.some(element => !element);
             if (hasRoot) {
+                // Cancel any pending children fetches
+                this._refreshCancellationSource.dispose(true);
+                this._refreshCancellationSource = new cancellation_1.CancellationTokenSource();
                 this.clearAll(); // clear cache
                 return this.proxy.$refresh(this.viewId);
             }
@@ -34773,7 +35655,7 @@ define(__m[165/*vs/workbench/api/common/extHostTreeViews*/], __M([0/*require*/,1
                 contextValue: extensionTreeItem.contextValue,
                 icon,
                 iconDark: this.getDarkIconPath(extensionTreeItem) || icon,
-                themeIcon: extensionTreeItem.iconPath instanceof extHostTypes_1.ThemeIcon ? { id: extensionTreeItem.iconPath.id } : undefined,
+                themeIcon: this.getThemeIcon(extensionTreeItem),
                 collapsibleState: types_1.isUndefinedOrNull(extensionTreeItem.collapsibleState) ? extHostTypes_1.TreeItemCollapsibleState.None : extensionTreeItem.collapsibleState,
                 accessibilityInformation: extensionTreeItem.accessibilityInformation
             };
@@ -34784,6 +35666,12 @@ define(__m[165/*vs/workbench/api/common/extHostTreeViews*/], __M([0/*require*/,1
                 children: undefined,
                 dispose() { disposable.dispose(); }
             };
+        }
+        getThemeIcon(extensionTreeItem) {
+            if ((extensionTreeItem.iconPath instanceof extHostTypes_1.ThemeIcon) && extensionTreeItem.iconPath.themeColor) {
+                extensions_1.checkProposedApiEnabled(this.extension);
+            }
+            return extensionTreeItem.iconPath instanceof extHostTypes_1.ThemeIcon ? extensionTreeItem.iconPath : undefined;
         }
         createHandle(element, { id, label, resourceUri }, parent, returnFirst) {
             if (id) {
@@ -34907,6 +35795,7 @@ define(__m[165/*vs/workbench/api/common/extHostTreeViews*/], __M([0/*require*/,1
             this.nodes.clear();
         }
         dispose() {
+            this._refreshCancellationSource.dispose();
             this.clearAll();
         }
     }
@@ -34918,7 +35807,7 @@ define(__m[165/*vs/workbench/api/common/extHostTreeViews*/], __M([0/*require*/,1
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[166/*vs/workbench/services/extensions/common/lazyPromise*/], __M([0/*require*/,1/*exports*/,11/*vs/base/common/errors*/]), function (require, exports, errors_1) {
+define(__m[169/*vs/workbench/services/extensions/common/lazyPromise*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/errors*/]), function (require, exports, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LazyPromise = void 0;
@@ -34992,7 +35881,7 @@ define(__m[166/*vs/workbench/services/extensions/common/lazyPromise*/], __M([0/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[89/*vs/workbench/services/extensions/common/proxyIdentifier*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[91/*vs/workbench/services/extensions/common/proxyIdentifier*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getStringIdentifierForProxy = exports.createExtHostContextProxyIdentifier = exports.createMainContextProxyIdentifier = exports.ProxyIdentifier = void 0;
@@ -35028,7 +35917,7 @@ define(__m[89/*vs/workbench/services/extensions/common/proxyIdentifier*/], __M([
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[5/*vs/workbench/api/common/extHost.protocol*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,89/*vs/workbench/services/extensions/common/proxyIdentifier*/,50/*vs/base/common/marshalling*/]), function (require, exports, uri_1, proxyIdentifier_1, marshalling_1) {
+define(__m[5/*vs/workbench/api/common/extHost.protocol*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,91/*vs/workbench/services/extensions/common/proxyIdentifier*/,53/*vs/base/common/marshalling*/]), function (require, exports, uri_1, proxyIdentifier_1, marshalling_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostContext = exports.MainContext = exports.reviveWorkspaceEditDto = exports.WorkspaceEditType = exports.ISuggestResultDtoField = exports.ISuggestDataDtoField = exports.IdObject = exports.ObjectIdentifier = exports.NotebookEditorRevealType = exports.CellOutputKind = exports.CellKind = exports.WebviewEditorCapabilities = exports.TextEditorRevealType = exports.UIKind = void 0;
@@ -35139,6 +36028,7 @@ define(__m[5/*vs/workbench/api/common/extHost.protocol*/], __M([0/*require*/,1/*
     // --- proxy identifiers
     exports.MainContext = {
         MainThreadAuthentication: proxyIdentifier_1.createMainContextProxyIdentifier('MainThreadAuthentication'),
+        MainThreadBulkEdits: proxyIdentifier_1.createMainContextProxyIdentifier('MainThreadBulkEdits'),
         MainThreadClipboard: proxyIdentifier_1.createMainContextProxyIdentifier('MainThreadClipboard'),
         MainThreadCommands: proxyIdentifier_1.createMainContextProxyIdentifier('MainThreadCommands'),
         MainThreadComments: proxyIdentifier_1.createMainContextProxyIdentifier('MainThreadComments'),
@@ -35198,6 +36088,7 @@ define(__m[5/*vs/workbench/api/common/extHost.protocol*/], __M([0/*require*/,1/*
         ExtHostEditors: proxyIdentifier_1.createExtHostContextProxyIdentifier('ExtHostEditors'),
         ExtHostTreeViews: proxyIdentifier_1.createExtHostContextProxyIdentifier('ExtHostTreeViews'),
         ExtHostFileSystem: proxyIdentifier_1.createExtHostContextProxyIdentifier('ExtHostFileSystem'),
+        ExtHostFileSystemInfo: proxyIdentifier_1.createExtHostContextProxyIdentifier('ExtHostFileSystemInfo'),
         ExtHostFileSystemEventService: proxyIdentifier_1.createExtHostContextProxyIdentifier('ExtHostFileSystemEventService'),
         ExtHostLanguageFeatures: proxyIdentifier_1.createExtHostContextProxyIdentifier('ExtHostLanguageFeatures'),
         ExtHostQuickOpen: proxyIdentifier_1.createExtHostContextProxyIdentifier('ExtHostQuickOpen'),
@@ -35241,7 +36132,7 @@ define(__m[5/*vs/workbench/api/common/extHost.protocol*/], __M([0/*require*/,1/*
 
 
 
-define(__m[65/*vs/workbench/api/common/extHostApiDeprecationService*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/,12/*vs/platform/log/common/log*/,5/*vs/workbench/api/common/extHost.protocol*/,13/*vs/workbench/api/common/extHostRpcService*/]), function (require, exports, instantiation_1, log_1, extHostProtocol, extHostRpcService_1) {
+define(__m[68/*vs/workbench/api/common/extHostApiDeprecationService*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/,13/*vs/platform/log/common/log*/,5/*vs/workbench/api/common/extHost.protocol*/,14/*vs/workbench/api/common/extHostRpcService*/]), function (require, exports, instantiation_1, log_1, extHostProtocol, extHostRpcService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NullApiDeprecationService = exports.ExtHostApiDeprecationService = exports.IExtHostApiDeprecationService = void 0;
@@ -35286,7 +36177,7 @@ define(__m[65/*vs/workbench/api/common/extHostApiDeprecationService*/], __M([0/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[167/*vs/workbench/api/common/extHostAuthentication*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/,25/*vs/platform/extensions/common/extensions*/]), function (require, exports, event_1, extHost_protocol_1, extHostTypes_1, extensions_1) {
+define(__m[170/*vs/workbench/api/common/extHostAuthentication*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/,25/*vs/platform/extensions/common/extensions*/]), function (require, exports, event_1, extHost_protocol_1, extHostTypes_1, extensions_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostAuthentication = void 0;
@@ -35454,7 +36345,41 @@ define(__m[167/*vs/workbench/api/common/extHostAuthentication*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[168/*vs/workbench/api/common/extHostClipboard*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/]), function (require, exports, extHost_protocol_1) {
+
+
+
+
+
+
+
+
+
+define(__m[171/*vs/workbench/api/common/extHostBulkEdits*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/,14/*vs/workbench/api/common/extHostRpcService*/,15/*vs/workbench/api/common/extHostTypeConverters*/]), function (require, exports, extHost_protocol_1, extHostRpcService_1, extHostTypeConverters_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ExtHostBulkEdits = void 0;
+    let ExtHostBulkEdits = class ExtHostBulkEdits {
+        constructor(extHostRpc, _extHostDocumentsAndEditors, _extHostNotebooks) {
+            this._extHostDocumentsAndEditors = _extHostDocumentsAndEditors;
+            this._extHostNotebooks = _extHostNotebooks;
+            this._proxy = extHostRpc.getProxy(extHost_protocol_1.MainContext.MainThreadBulkEdits);
+        }
+        applyWorkspaceEdit(edit) {
+            const dto = extHostTypeConverters_1.WorkspaceEdit.from(edit, this._extHostDocumentsAndEditors, this._extHostNotebooks);
+            return this._proxy.$tryApplyWorkspaceEdit(dto);
+        }
+    };
+    ExtHostBulkEdits = __decorate([
+        __param(0, extHostRpcService_1.IExtHostRpcService)
+    ], ExtHostBulkEdits);
+    exports.ExtHostBulkEdits = ExtHostBulkEdits;
+});
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+define(__m[172/*vs/workbench/api/common/extHostClipboard*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/]), function (require, exports, extHost_protocol_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostClipboard = void 0;
@@ -35485,7 +36410,7 @@ define(__m[168/*vs/workbench/api/common/extHostClipboard*/], __M([0/*require*/,1
 
 
 
-define(__m[66/*vs/workbench/api/common/extHostCommands*/], __M([0/*require*/,1/*exports*/,14/*vs/base/common/types*/,7/*vs/workbench/api/common/extHostTypes*/,17/*vs/workbench/api/common/extHostTypeConverters*/,24/*vs/base/common/objects*/,5/*vs/workbench/api/common/extHost.protocol*/,10/*vs/base/common/arrays*/,12/*vs/platform/log/common/log*/,50/*vs/base/common/marshalling*/,30/*vs/editor/common/core/range*/,35/*vs/editor/common/core/position*/,2/*vs/base/common/uri*/,6/*vs/base/common/lifecycle*/,4/*vs/platform/instantiation/common/instantiation*/,13/*vs/workbench/api/common/extHostRpcService*/]), function (require, exports, types_1, extHostTypes, extHostTypeConverter, objects_1, extHost_protocol_1, arrays_1, log_1, marshalling_1, range_1, position_1, uri_1, lifecycle_1, instantiation_1, extHostRpcService_1) {
+define(__m[69/*vs/workbench/api/common/extHostCommands*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/types*/,7/*vs/workbench/api/common/extHostTypes*/,15/*vs/workbench/api/common/extHostTypeConverters*/,24/*vs/base/common/objects*/,5/*vs/workbench/api/common/extHost.protocol*/,11/*vs/base/common/arrays*/,13/*vs/platform/log/common/log*/,53/*vs/base/common/marshalling*/,30/*vs/editor/common/core/range*/,36/*vs/editor/common/core/position*/,2/*vs/base/common/uri*/,6/*vs/base/common/lifecycle*/,4/*vs/platform/instantiation/common/instantiation*/,14/*vs/workbench/api/common/extHostRpcService*/]), function (require, exports, types_1, extHostTypes, extHostTypeConverter, objects_1, extHost_protocol_1, arrays_1, log_1, marshalling_1, range_1, position_1, uri_1, lifecycle_1, instantiation_1, extHostRpcService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IExtHostCommands = exports.CommandsConverter = exports.ExtHostCommands = void 0;
@@ -35505,7 +36430,7 @@ define(__m[66/*vs/workbench/api/common/extHostCommands*/], __M([0/*require*/,1/*
                 {
                     processArgument(arg) {
                         return objects_1.cloneAndChange(arg, function (obj) {
-                            // Reverse of https://github.com/Microsoft/vscode/blob/1f28c5fc681f4c01226460b6d1c7e91b8acb4a5b/src/vs/workbench/api/node/extHostCommands.ts#L112-L127
+                            // Reverse of https://github.com/microsoft/vscode/blob/1f28c5fc681f4c01226460b6d1c7e91b8acb4a5b/src/vs/workbench/api/node/extHostCommands.ts#L112-L127
                             if (range_1.Range.isIRange(obj)) {
                                 return extHostTypeConverter.Range.to(obj);
                             }
@@ -35724,7 +36649,7 @@ define(__m[66/*vs/workbench/api/common/extHostCommands*/], __M([0/*require*/,1/*
 
 
 
-define(__m[169/*vs/workbench/api/common/extHostComments*/], __M([0/*require*/,1/*exports*/,19/*vs/base/common/async*/,46/*vs/base/common/decorators*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,2/*vs/base/common/uri*/,56/*vs/editor/common/modes*/,25/*vs/platform/extensions/common/extensions*/,17/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/,5/*vs/workbench/api/common/extHost.protocol*/]), function (require, exports, async_1, decorators_1, event_1, lifecycle_1, uri_1, modes, extensions_1, extHostTypeConverter, types, extHost_protocol_1) {
+define(__m[173/*vs/workbench/api/common/extHostComments*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/async*/,47/*vs/base/common/decorators*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,2/*vs/base/common/uri*/,59/*vs/editor/common/modes*/,25/*vs/platform/extensions/common/extensions*/,15/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/,5/*vs/workbench/api/common/extHost.protocol*/]), function (require, exports, async_1, decorators_1, event_1, lifecycle_1, uri_1, modes, extensions_1, extHostTypeConverter, types, extHost_protocol_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostCommentThread = exports.ExtHostComments = void 0;
@@ -35881,6 +36806,7 @@ define(__m[169/*vs/workbench/api/common/extHostComments*/], __M([0/*require*/,1/
             this.modifications = Object.create(null);
             this._onDidUpdateCommentThread = new event_1.Emitter();
             this.onDidUpdateCommentThread = this._onDidUpdateCommentThread.event;
+            this._readonly = false;
             this._commentsMap = new Map();
             this._acceptInputDisposables = new lifecycle_1.MutableDisposable();
             this._acceptInputDisposables.value = new lifecycle_1.DisposableStore();
@@ -35920,6 +36846,16 @@ define(__m[169/*vs/workbench/api/common/extHostComments*/], __M([0/*require*/,1/
         }
         get range() {
             return this._range;
+        }
+        set readOnly(state) {
+            if (this._readonly !== state) {
+                this._readonly = state;
+                this.modifications.readOnly = state;
+                this._onDidUpdateCommentThread.fire();
+            }
+        }
+        get readOnly() {
+            return this._readonly;
         }
         get label() {
             return this._label;
@@ -35980,6 +36916,9 @@ define(__m[169/*vs/workbench/api/common/extHostComments*/], __M([0/*require*/,1/
             }
             if (modified('collapsibleState')) {
                 formattedModifications.collapseState = convertToCollapsibleState(this._collapseState);
+            }
+            if (modified('readOnly')) {
+                formattedModifications.readOnly = this.readOnly;
             }
             this.modifications = {};
             this._proxy.$updateCommentThread(this._commentController.handle, this.handle, this._id, this._uri, formattedModifications);
@@ -36140,7 +37079,7 @@ define(__m[169/*vs/workbench/api/common/extHostComments*/], __M([0/*require*/,1/
 
 
 
-define(__m[90/*vs/workbench/api/common/extHostDecorations*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/,4/*vs/platform/instantiation/common/instantiation*/,13/*vs/workbench/api/common/extHostRpcService*/,12/*vs/platform/log/common/log*/,10/*vs/base/common/arrays*/]), function (require, exports, uri_1, extHost_protocol_1, extHostTypes_1, instantiation_1, extHostRpcService_1, log_1, arrays_1) {
+define(__m[92/*vs/workbench/api/common/extHostDecorations*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/,4/*vs/platform/instantiation/common/instantiation*/,14/*vs/workbench/api/common/extHostRpcService*/,13/*vs/platform/log/common/log*/,11/*vs/base/common/arrays*/]), function (require, exports, uri_1, extHost_protocol_1, extHostTypes_1, instantiation_1, extHostRpcService_1, log_1, arrays_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IExtHostDecorations = exports.ExtHostDecorations = void 0;
@@ -36154,7 +37093,7 @@ define(__m[90/*vs/workbench/api/common/extHostDecorations*/], __M([0/*require*/,
             const handle = ExtHostDecorations._handlePool++;
             this._provider.set(handle, { provider, extensionId });
             this._proxy.$registerDecorationProvider(handle, extensionId.value);
-            const listener = provider.onDidChangeDecorations(e => {
+            const listener = provider.onDidChange(e => {
                 this._proxy.$onDidChange(handle, !e || (Array.isArray(e) && e.length > 250)
                     ? null
                     : arrays_1.asArray(e));
@@ -36175,13 +37114,13 @@ define(__m[90/*vs/workbench/api/common/extHostDecorations*/], __M([0/*require*/,
             await Promise.all(requests.map(async (request) => {
                 try {
                     const { uri, id } = request;
-                    const data = await Promise.resolve(provider.provideDecoration(uri_1.URI.revive(uri), token));
+                    const data = await Promise.resolve(provider.provideFileDecoration(uri_1.URI.revive(uri), token));
                     if (!data) {
                         return;
                     }
                     try {
-                        extHostTypes_1.Decoration.validate(data);
-                        result[id] = [data.priority, data.bubble, data.title, data.letter, data.color];
+                        extHostTypes_1.FileDecoration.validate(data);
+                        result[id] = [data.propagate, data.tooltip, data.badge, data.color];
                     }
                     catch (e) {
                         this._logService.warn(`INVALID decoration from extension '${extensionId.value}': ${e}`);
@@ -36216,7 +37155,7 @@ define(__m[90/*vs/workbench/api/common/extHostDecorations*/], __M([0/*require*/,
 
 
 
-define(__m[170/*vs/workbench/api/common/extHostDiagnostics*/], __M([0/*require*/,1/*exports*/,120/*vs/nls!vs/workbench/api/common/extHostDiagnostics*/,82/*vs/platform/markers/common/markers*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/,17/*vs/workbench/api/common/extHostTypeConverters*/,10/*vs/base/common/arrays*/,3/*vs/base/common/event*/,12/*vs/platform/log/common/log*/,22/*vs/base/common/map*/]), function (require, exports, nls_1, markers_1, uri_1, extHost_protocol_1, extHostTypes_1, converter, arrays_1, event_1, log_1, map_1) {
+define(__m[174/*vs/workbench/api/common/extHostDiagnostics*/], __M([0/*require*/,1/*exports*/,121/*vs/nls!vs/workbench/api/common/extHostDiagnostics*/,84/*vs/platform/markers/common/markers*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/,15/*vs/workbench/api/common/extHostTypeConverters*/,11/*vs/base/common/arrays*/,3/*vs/base/common/event*/,13/*vs/platform/log/common/log*/,22/*vs/base/common/map*/]), function (require, exports, nls_1, markers_1, uri_1, extHost_protocol_1, extHostTypes_1, converter, arrays_1, event_1, log_1, map_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostDiagnostics = exports.DiagnosticCollection = void 0;
@@ -36268,7 +37207,7 @@ define(__m[170/*vs/workbench/api/common/extHostDiagnostics*/], __M([0/*require*/
                 toSync = [];
                 let lastUri;
                 // ensure stable-sort
-                arrays_1.mergeSort(first, DiagnosticCollection._compareIndexedTuplesByUri);
+                first = arrays_1.mergeSort([...first], DiagnosticCollection._compareIndexedTuplesByUri);
                 for (const tuple of first) {
                     const [uri, diagnostics] = tuple;
                     if (!lastUri || uri.toString() !== lastUri.toString()) {
@@ -36277,17 +37216,17 @@ define(__m[170/*vs/workbench/api/common/extHostDiagnostics*/], __M([0/*require*/
                         }
                         lastUri = uri;
                         toSync.push(uri);
-                        this._data.set(uri.toString(), []);
+                        this._data.set(uri, []);
                     }
                     if (!diagnostics) {
                         // [Uri, undefined] means clear this
-                        const currentDiagnostics = this._data.get(uri.toString());
+                        const currentDiagnostics = this._data.get(uri);
                         if (currentDiagnostics) {
                             currentDiagnostics.length = 0;
                         }
                     }
                     else {
-                        const currentDiagnostics = this._data.get(uri.toString());
+                        const currentDiagnostics = this._data.get(uri);
                         if (currentDiagnostics) {
                             currentDiagnostics.push(...diagnostics);
                         }
@@ -36520,7 +37459,7 @@ define(__m[170/*vs/workbench/api/common/extHostDiagnostics*/], __M([0/*require*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[171/*vs/workbench/api/common/extHostDialogs*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/]), function (require, exports, uri_1, extHost_protocol_1) {
+define(__m[175/*vs/workbench/api/common/extHostDialogs*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/]), function (require, exports, uri_1, extHost_protocol_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostDialogs = void 0;
@@ -36546,7 +37485,7 @@ define(__m[171/*vs/workbench/api/common/extHostDialogs*/], __M([0/*require*/,1/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[172/*vs/workbench/api/common/extHostDocumentContentProviders*/], __M([0/*require*/,1/*exports*/,11/*vs/base/common/errors*/,2/*vs/base/common/uri*/,7/*vs/workbench/api/common/extHostTypes*/,5/*vs/workbench/api/common/extHost.protocol*/,18/*vs/base/common/network*/,21/*vs/base/common/cancellation*/]), function (require, exports, errors_1, uri_1, extHostTypes_1, extHost_protocol_1, network_1, cancellation_1) {
+define(__m[176/*vs/workbench/api/common/extHostDocumentContentProviders*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/errors*/,2/*vs/base/common/uri*/,7/*vs/workbench/api/common/extHostTypes*/,5/*vs/workbench/api/common/extHost.protocol*/,12/*vs/base/common/network*/,19/*vs/base/common/cancellation*/]), function (require, exports, errors_1, uri_1, extHostTypes_1, extHost_protocol_1, network_1, cancellation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostDocumentContentProvider = void 0;
@@ -36619,7 +37558,7 @@ define(__m[172/*vs/workbench/api/common/extHostDocumentContentProviders*/], __M(
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[173/*vs/workbench/api/common/extHostDocuments*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/,87/*vs/workbench/api/common/extHostDocumentData*/,17/*vs/workbench/api/common/extHostTypeConverters*/,14/*vs/base/common/types*/,24/*vs/base/common/objects*/]), function (require, exports, event_1, lifecycle_1, uri_1, extHost_protocol_1, extHostDocumentData_1, TypeConverters, types_1, objects_1) {
+define(__m[177/*vs/workbench/api/common/extHostDocuments*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/,89/*vs/workbench/api/common/extHostDocumentData*/,15/*vs/workbench/api/common/extHostTypeConverters*/,16/*vs/base/common/types*/,24/*vs/base/common/objects*/]), function (require, exports, event_1, lifecycle_1, uri_1, extHost_protocol_1, extHostDocumentData_1, TypeConverters, types_1, objects_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostDocuments = void 0;
@@ -36765,7 +37704,7 @@ define(__m[173/*vs/workbench/api/common/extHostDocuments*/], __M([0/*require*/,1
 
 
 
-define(__m[43/*vs/workbench/api/common/extHostDocumentsAndEditors*/], __M([0/*require*/,1/*exports*/,39/*vs/base/common/assert*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,2/*vs/base/common/uri*/,4/*vs/platform/instantiation/common/instantiation*/,5/*vs/workbench/api/common/extHost.protocol*/,87/*vs/workbench/api/common/extHostDocumentData*/,13/*vs/workbench/api/common/extHostRpcService*/,88/*vs/workbench/api/common/extHostTextEditor*/,17/*vs/workbench/api/common/extHostTypeConverters*/,12/*vs/platform/log/common/log*/,22/*vs/base/common/map*/,18/*vs/base/common/network*/,47/*vs/base/common/iterator*/]), function (require, exports, assert, event_1, lifecycle_1, uri_1, instantiation_1, extHost_protocol_1, extHostDocumentData_1, extHostRpcService_1, extHostTextEditor_1, typeConverters, log_1, map_1, network_1, iterator_1) {
+define(__m[45/*vs/workbench/api/common/extHostDocumentsAndEditors*/], __M([0/*require*/,1/*exports*/,41/*vs/base/common/assert*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,2/*vs/base/common/uri*/,4/*vs/platform/instantiation/common/instantiation*/,5/*vs/workbench/api/common/extHost.protocol*/,89/*vs/workbench/api/common/extHostDocumentData*/,14/*vs/workbench/api/common/extHostRpcService*/,90/*vs/workbench/api/common/extHostTextEditor*/,15/*vs/workbench/api/common/extHostTypeConverters*/,13/*vs/platform/log/common/log*/,22/*vs/base/common/map*/,12/*vs/base/common/network*/,49/*vs/base/common/iterator*/]), function (require, exports, assert, event_1, lifecycle_1, uri_1, instantiation_1, extHost_protocol_1, extHostDocumentData_1, extHostRpcService_1, extHostTextEditor_1, typeConverters, log_1, map_1, network_1, iterator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IExtHostDocumentsAndEditors = exports.ExtHostDocumentsAndEditors = void 0;
@@ -36906,7 +37845,7 @@ define(__m[43/*vs/workbench/api/common/extHostDocumentsAndEditors*/], __M([0/*re
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[174/*vs/workbench/api/common/extHostFileSystem*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/,6/*vs/base/common/lifecycle*/,7/*vs/workbench/api/common/extHostTypes*/,17/*vs/workbench/api/common/extHostTypeConverters*/,18/*vs/base/common/network*/,109/*vs/editor/common/modes/linkComputer*/,8/*vs/base/common/strings*/,26/*vs/base/common/buffer*/]), function (require, exports, uri_1, extHost_protocol_1, lifecycle_1, extHostTypes_1, typeConverter, network_1, linkComputer_1, strings_1, buffer_1) {
+define(__m[178/*vs/workbench/api/common/extHostFileSystem*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/,6/*vs/base/common/lifecycle*/,7/*vs/workbench/api/common/extHostTypes*/,15/*vs/workbench/api/common/extHostTypeConverters*/,110/*vs/editor/common/modes/linkComputer*/,8/*vs/base/common/strings*/,26/*vs/base/common/buffer*/]), function (require, exports, uri_1, extHost_protocol_1, lifecycle_1, extHostTypes_1, typeConverter, linkComputer_1, strings_1, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostFileSystem = void 0;
@@ -36995,30 +37934,29 @@ define(__m[174/*vs/workbench/api/common/extHostFileSystem*/], __M([0/*require*/,
             this._extHostLanguageFeatures = _extHostLanguageFeatures;
             this._linkProvider = new FsLinkProvider();
             this._fsProvider = new Map();
-            this._usedSchemes = new Set();
+            this._registeredSchemes = new Set();
             this._watches = new Map();
             this._handlePool = 0;
             this._proxy = mainContext.getProxy(extHost_protocol_1.MainContext.MainThreadFileSystem);
-            // register used schemes
-            Object.keys(network_1.Schemas).forEach(scheme => this._usedSchemes.add(scheme));
         }
         dispose() {
-            lifecycle_1.dispose(this._linkProviderRegistration);
+            var _a;
+            (_a = this._linkProviderRegistration) === null || _a === void 0 ? void 0 : _a.dispose();
         }
         _registerLinkProviderIfNotYetRegistered() {
             if (!this._linkProviderRegistration) {
                 this._linkProviderRegistration = this._extHostLanguageFeatures.registerDocumentLinkProvider(undefined, '*', this._linkProvider);
             }
         }
-        registerFileSystemProvider(scheme, provider, options = {}) {
-            if (this._usedSchemes.has(scheme)) {
+        registerFileSystemProvider(extension, scheme, provider, options = {}) {
+            if (this._registeredSchemes.has(scheme)) {
                 throw new Error(`a provider for the scheme '${scheme}' is already registered`);
             }
             //
             this._registerLinkProviderIfNotYetRegistered();
             const handle = this._handlePool++;
             this._linkProvider.add(scheme);
-            this._usedSchemes.add(scheme);
+            this._registeredSchemes.add(scheme);
             this._fsProvider.set(handle, provider);
             let capabilities = 2 /* FileReadWrite */;
             if (options.isCaseSensitive) {
@@ -37034,7 +37972,10 @@ define(__m[174/*vs/workbench/api/common/extHostFileSystem*/], __M([0/*require*/,
                 && typeof provider.read === 'function' && typeof provider.write === 'function') {
                 capabilities += 4 /* FileOpenReadWriteClose */;
             }
-            this._proxy.$registerFileSystemProvider(handle, scheme, capabilities);
+            this._proxy.$registerFileSystemProvider(handle, scheme, capabilities).catch(err => {
+                console.error(`FAILED to register filesystem provider of ${extension.value}-extension for the scheme ${scheme}`);
+                console.error(err);
+            });
             const subscription = provider.onDidChangeFile(event => {
                 const mapped = [];
                 for (const e of event) {
@@ -37064,7 +38005,7 @@ define(__m[174/*vs/workbench/api/common/extHostFileSystem*/], __M([0/*require*/,
             return lifecycle_1.toDisposable(() => {
                 subscription.dispose();
                 this._linkProvider.delete(scheme);
-                this._usedSchemes.delete(scheme);
+                this._registeredSchemes.delete(scheme);
                 this._fsProvider.delete(handle);
                 this._proxy.$unregisterProvider(handle);
             });
@@ -37170,12 +38111,13 @@ define(__m[174/*vs/workbench/api/common/extHostFileSystem*/], __M([0/*require*/,
 
 
 
-define(__m[67/*vs/workbench/api/common/extHostFileSystemConsumer*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/,57/*vs/platform/files/common/files*/,7/*vs/workbench/api/common/extHostTypes*/,26/*vs/base/common/buffer*/,4/*vs/platform/instantiation/common/instantiation*/,13/*vs/workbench/api/common/extHostRpcService*/]), function (require, exports, extHost_protocol_1, files, extHostTypes_1, buffer_1, instantiation_1, extHostRpcService_1) {
+define(__m[70/*vs/workbench/api/common/extHostFileSystemConsumer*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/,60/*vs/platform/files/common/files*/,7/*vs/workbench/api/common/extHostTypes*/,26/*vs/base/common/buffer*/,4/*vs/platform/instantiation/common/instantiation*/,14/*vs/workbench/api/common/extHostRpcService*/,65/*vs/workbench/api/common/extHostFileSystemInfo*/]), function (require, exports, extHost_protocol_1, files, extHostTypes_1, buffer_1, instantiation_1, extHostRpcService_1, extHostFileSystemInfo_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IExtHostConsumerFileSystem = exports.ExtHostConsumerFileSystem = void 0;
     let ExtHostConsumerFileSystem = class ExtHostConsumerFileSystem {
-        constructor(extHostRpc) {
+        constructor(extHostRpc, _fileSystemInfo) {
+            this._fileSystemInfo = _fileSystemInfo;
             this._proxy = extHostRpc.getProxy(extHost_protocol_1.MainContext.MainThreadFileSystem);
         }
         stat(uri) {
@@ -37202,6 +38144,13 @@ define(__m[67/*vs/workbench/api/common/extHostFileSystemConsumer*/], __M([0/*req
         copy(source, destination, options) {
             return this._proxy.$copy(source, destination, Object.assign({ overwrite: false }, options)).catch(ExtHostConsumerFileSystem._handleError);
         }
+        isWritableFileSystem(scheme) {
+            const capabilities = this._fileSystemInfo.getCapabilities(scheme);
+            if (typeof capabilities === 'number') {
+                return !(capabilities & 2048 /* Readonly */);
+            }
+            return undefined;
+        }
         static _handleError(err) {
             // generic error
             if (!(err instanceof Error)) {
@@ -37224,7 +38173,8 @@ define(__m[67/*vs/workbench/api/common/extHostFileSystemConsumer*/], __M([0/*req
         }
     };
     ExtHostConsumerFileSystem = __decorate([
-        __param(0, extHostRpcService_1.IExtHostRpcService)
+        __param(0, extHostRpcService_1.IExtHostRpcService),
+        __param(1, extHostFileSystemInfo_1.IExtHostFileSystemInfo)
     ], ExtHostConsumerFileSystem);
     exports.ExtHostConsumerFileSystem = ExtHostConsumerFileSystem;
     exports.IExtHostConsumerFileSystem = instantiation_1.createDecorator('IExtHostConsumerFileSystem');
@@ -37234,7 +38184,7 @@ define(__m[67/*vs/workbench/api/common/extHostFileSystemConsumer*/], __M([0/*req
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[175/*vs/workbench/api/common/extHostFileSystemEventService*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,27/*vs/base/common/glob*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/,17/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, event_1, glob_1, uri_1, extHost_protocol_1, typeConverter, extHostTypes_1) {
+define(__m[179/*vs/workbench/api/common/extHostFileSystemEventService*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,27/*vs/base/common/glob*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/,15/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, event_1, glob_1, uri_1, extHost_protocol_1, typeConverter, extHostTypes_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostFileSystemEventService = void 0;
@@ -37305,10 +38255,10 @@ define(__m[175/*vs/workbench/api/common/extHostFileSystemEventService*/], __M([0
         }
     }
     class ExtHostFileSystemEventService {
-        constructor(mainContext, _logService, _extHostDocumentsAndEditors, _mainThreadTextEditors = mainContext.getProxy(extHost_protocol_1.MainContext.MainThreadTextEditors)) {
+        constructor(mainContext, _logService, _extHostDocumentsAndEditors, _mainThreadBulkEdits = mainContext.getProxy(extHost_protocol_1.MainContext.MainThreadBulkEdits)) {
             this._logService = _logService;
             this._extHostDocumentsAndEditors = _extHostDocumentsAndEditors;
-            this._mainThreadTextEditors = _mainThreadTextEditors;
+            this._mainThreadBulkEdits = _mainThreadBulkEdits;
             this._onFileSystemEvent = new event_1.Emitter();
             this._onDidRenameFile = new event_1.Emitter();
             this._onDidCreateFile = new event_1.Emitter();
@@ -37399,7 +38349,7 @@ define(__m[175/*vs/workbench/api/common/extHostFileSystemEventService*/], __M([0
                     let { edits } = typeConverter.WorkspaceEdit.from(edit, this._extHostDocumentsAndEditors);
                     dto.edits = dto.edits.concat(edits);
                 }
-                return this._mainThreadTextEditors.$tryApplyWorkspaceEdit(dto);
+                return this._mainThreadBulkEdits.$tryApplyWorkspaceEdit(dto);
             }
         }
     }
@@ -37410,7 +38360,7 @@ define(__m[175/*vs/workbench/api/common/extHostFileSystemEventService*/], __M([0
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[176/*vs/workbench/api/common/extHostLabelService*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/lifecycle*/,5/*vs/workbench/api/common/extHost.protocol*/]), function (require, exports, lifecycle_1, extHost_protocol_1) {
+define(__m[180/*vs/workbench/api/common/extHostLabelService*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/lifecycle*/,5/*vs/workbench/api/common/extHost.protocol*/]), function (require, exports, lifecycle_1, extHost_protocol_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostLabelService = void 0;
@@ -37434,7 +38384,7 @@ define(__m[176/*vs/workbench/api/common/extHostLabelService*/], __M([0/*require*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[177/*vs/workbench/api/common/extHostLanguageFeatures*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,24/*vs/base/common/objects*/,17/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/,19/*vs/base/common/async*/,5/*vs/workbench/api/common/extHost.protocol*/,8/*vs/base/common/strings*/,30/*vs/editor/common/core/range*/,10/*vs/base/common/arrays*/,14/*vs/base/common/types*/,106/*vs/editor/common/core/selection*/,6/*vs/base/common/lifecycle*/,145/*vs/workbench/api/common/shared/semanticTokensDto*/,73/*vs/base/common/idGenerator*/,61/*vs/workbench/api/common/cache*/]), function (require, exports, uri_1, objects_1, typeConvert, extHostTypes_1, async_1, extHostProtocol, strings_1, range_1, arrays_1, types_1, selection_1, lifecycle_1, semanticTokensDto_1, idGenerator_1, cache_1) {
+define(__m[181/*vs/workbench/api/common/extHostLanguageFeatures*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,24/*vs/base/common/objects*/,15/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/,20/*vs/base/common/async*/,5/*vs/workbench/api/common/extHost.protocol*/,8/*vs/base/common/strings*/,30/*vs/editor/common/core/range*/,11/*vs/base/common/arrays*/,16/*vs/base/common/types*/,107/*vs/editor/common/core/selection*/,6/*vs/base/common/lifecycle*/,146/*vs/workbench/api/common/shared/semanticTokensDto*/,48/*vs/base/common/idGenerator*/,64/*vs/workbench/api/common/cache*/]), function (require, exports, uri_1, objects_1, typeConvert, extHostTypes_1, async_1, extHostProtocol, strings_1, range_1, arrays_1, types_1, selection_1, lifecycle_1, semanticTokensDto_1, idGenerator_1, cache_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostLanguageFeatures = exports.DocumentRangeSemanticTokensAdapter = exports.DocumentSemanticTokensAdapter = void 0;
@@ -37560,7 +38510,8 @@ define(__m[177/*vs/workbench/api/common/extHostLanguageFeatures*/], __M([0/*requ
             });
         }
         releaseCodeLenses(cachedId) {
-            lifecycle_1.dispose(this._disposables.get(cachedId));
+            var _a;
+            (_a = this._disposables.get(cachedId)) === null || _a === void 0 ? void 0 : _a.dispose();
             this._disposables.delete(cachedId);
             this._cache.delete(cachedId);
         }
@@ -37747,7 +38698,8 @@ define(__m[177/*vs/workbench/api/common/extHostLanguageFeatures*/], __M([0/*requ
                 const disposables = new lifecycle_1.DisposableStore();
                 this._disposables.set(cacheId, disposables);
                 const actions = [];
-                for (const candidate of commandsOrActions) {
+                for (let i = 0; i < commandsOrActions.length; i++) {
+                    const candidate = commandsOrActions[i];
                     if (!candidate) {
                         continue;
                     }
@@ -37771,6 +38723,7 @@ define(__m[177/*vs/workbench/api/common/extHostLanguageFeatures*/], __M([0/*requ
                         }
                         // new school: convert code action
                         actions.push({
+                            cacheId: [cacheId, i],
                             title: candidate.title,
                             command: candidate.command && this._commands.toInternal(candidate.command, disposables),
                             diagnostics: candidate.diagnostics && candidate.diagnostics.map(typeConvert.Diagnostic.from),
@@ -37784,8 +38737,23 @@ define(__m[177/*vs/workbench/api/common/extHostLanguageFeatures*/], __M([0/*requ
                 return { cacheId, actions };
             });
         }
+        async resolveCodeAction(id, token) {
+            var _a;
+            const [sessionId, itemId] = id;
+            const item = this._cache.get(sessionId, itemId);
+            if (!item || CodeActionAdapter._isCommand(item)) {
+                return undefined; // code actions only!
+            }
+            if (!this._provider.resolveCodeAction) {
+                return; // this should not happen...
+            }
+            const resolvedItem = (_a = (await this._provider.resolveCodeAction(item, token))) !== null && _a !== void 0 ? _a : item;
+            return (resolvedItem === null || resolvedItem === void 0 ? void 0 : resolvedItem.edit) ? typeConvert.WorkspaceEdit.from(resolvedItem.edit)
+                : undefined;
+        }
         releaseCodeActions(cachedId) {
-            lifecycle_1.dispose(this._disposables.get(cachedId));
+            var _a;
+            (_a = this._disposables.get(cachedId)) === null || _a === void 0 ? void 0 : _a.dispose();
             this._disposables.delete(cachedId);
             this._cache.delete(cachedId);
         }
@@ -38186,7 +39154,8 @@ define(__m[177/*vs/workbench/api/common/extHostLanguageFeatures*/], __M([0/*requ
             return this._convertCompletionItem(resolvedItem, id);
         }
         releaseCompletionItems(id) {
-            lifecycle_1.dispose(this._disposables.get(id));
+            var _a;
+            (_a = this._disposables.get(id)) === null || _a === void 0 ? void 0 : _a.dispose();
             this._disposables.delete(id);
             this._cache.delete(id);
         }
@@ -38718,12 +39687,15 @@ define(__m[177/*vs/workbench/api/common/extHostLanguageFeatures*/], __M([0/*requ
                     kind: x.kind.value,
                     command: this._commands.converter.toInternal(x.command, store),
                 }))
-            }, ExtHostLanguageFeatures._extLabel(extension));
+            }, ExtHostLanguageFeatures._extLabel(extension), Boolean(provider.resolveCodeAction));
             store.add(this._createDisposable(handle));
             return store;
         }
         $provideCodeActions(handle, resource, rangeOrSelection, context, token) {
             return this._withAdapter(handle, CodeActionAdapter, adapter => adapter.provideCodeActions(uri_1.URI.revive(resource), rangeOrSelection, context, token), undefined);
+        }
+        $resolveCodeAction(handle, id, token) {
+            return this._withAdapter(handle, CodeActionAdapter, adapter => adapter.resolveCodeAction(id, token), undefined);
         }
         $releaseCodeActions(handle, cacheId) {
             this._withAdapter(handle, CodeActionAdapter, adapter => Promise.resolve(adapter.releaseCodeActions(cacheId)), undefined);
@@ -38971,7 +39943,7 @@ define(__m[177/*vs/workbench/api/common/extHostLanguageFeatures*/], __M([0/*requ
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[178/*vs/workbench/api/common/extHostLanguages*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/,17/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, extHost_protocol_1, typeConvert, extHostTypes_1) {
+define(__m[182/*vs/workbench/api/common/extHostLanguages*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/,15/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, extHost_protocol_1, typeConvert, extHostTypes_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostLanguages = void 0;
@@ -39035,7 +40007,7 @@ define(__m[178/*vs/workbench/api/common/extHostLanguages*/], __M([0/*require*/,1
 
 
 
-define(__m[179/*vs/workbench/api/common/extHostMessageService*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/,12/*vs/platform/log/common/log*/]), function (require, exports, extHost_protocol_1, log_1) {
+define(__m[183/*vs/workbench/api/common/extHostMessageService*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/,13/*vs/platform/log/common/log*/]), function (require, exports, extHost_protocol_1, log_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostMessageService = void 0;
@@ -39089,470 +40061,10 @@ define(__m[179/*vs/workbench/api/common/extHostMessageService*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/*exports*/,21/*vs/base/common/cancellation*/,11/*vs/base/common/errors*/,3/*vs/base/common/event*/,74/*vs/base/common/hash*/,6/*vs/base/common/lifecycle*/,18/*vs/base/common/network*/,23/*vs/base/common/resources*/,2/*vs/base/common/uri*/,29/*vs/base/common/uuid*/,5/*vs/workbench/api/common/extHost.protocol*/,17/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/,63/*vs/workbench/api/common/shared/webview*/,64/*vs/workbench/contrib/notebook/common/notebookCommon*/,61/*vs/workbench/api/common/cache*/,22/*vs/base/common/map*/]), function (require, exports, cancellation_1, errors_1, event_1, hash_1, lifecycle_1, network_1, resources_1, uri_1, UUID, extHost_protocol_1, typeConverters, extHostTypes, webview_1, notebookCommon_1, cache_1, map_1) {
+define(__m[184/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/*exports*/,19/*vs/base/common/cancellation*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,2/*vs/base/common/uri*/,29/*vs/base/common/uuid*/,5/*vs/workbench/api/common/extHost.protocol*/,15/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/,67/*vs/workbench/api/common/shared/webview*/,31/*vs/workbench/contrib/notebook/common/notebookCommon*/,22/*vs/base/common/map*/,151/*vs/workbench/api/common/extHostNotebookDocument*/,153/*vs/workbench/api/common/extHostNotebookEditor*/,48/*vs/base/common/idGenerator*/]), function (require, exports, cancellation_1, event_1, lifecycle_1, uri_1, UUID, extHost_protocol_1, typeConverters, extHostTypes, webview_1, notebookCommon_1, map_1, extHostNotebookDocument_1, extHostNotebookEditor_1, idGenerator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.NotebookCellStatusBarItemInternal = exports.ExtHostNotebookController = exports.ExtHostNotebookKernelProviderAdapter = exports.ExtHostNotebookEditor = exports.NotebookEditorCellEditBuilder = exports.ExtHostNotebookDocument = exports.ExtHostCell = void 0;
-    function getObservable(obj) {
-        const onDidChange = new event_1.Emitter();
-        const proxy = new Proxy(obj, {
-            set(target, p, value, _receiver) {
-                target[p] = value;
-                onDidChange.fire();
-                return true;
-            }
-        });
-        return {
-            proxy,
-            onDidChange: onDidChange.event
-        };
-    }
-    class ExtHostCell extends lifecycle_1.Disposable {
-        constructor(_proxy, _notebook, _extHostDocument, _cellData) {
-            var _a;
-            super();
-            this._proxy = _proxy;
-            this._notebook = _notebook;
-            this._extHostDocument = _extHostDocument;
-            this._cellData = _cellData;
-            this._onDidDispose = new event_1.Emitter();
-            this.onDidDispose = this._onDidDispose.event;
-            this._onDidChangeOutputs = new event_1.Emitter();
-            this.onDidChangeOutputs = this._onDidChangeOutputs.event;
-            this._outputMapping = new WeakMap();
-            this.handle = _cellData.handle;
-            this.uri = uri_1.URI.revive(_cellData.uri);
-            this.cellKind = _cellData.cellKind;
-            this._outputs = _cellData.outputs;
-            for (const output of this._outputs) {
-                this._outputMapping.set(output, output.outputId);
-                delete output.outputId;
-            }
-            const observableMetadata = getObservable((_a = _cellData.metadata) !== null && _a !== void 0 ? _a : {});
-            this._metadata = observableMetadata.proxy;
-            this._metadataChangeListener = this._register(observableMetadata.onDidChange(() => {
-                this._updateMetadata();
-            }));
-        }
-        static asModelAddData(notebook, cell) {
-            return {
-                EOL: cell.eol,
-                lines: cell.source,
-                modeId: cell.language,
-                uri: cell.uri,
-                isDirty: false,
-                versionId: 1,
-                notebook
-            };
-        }
-        get cell() {
-            if (!this._cell) {
-                const that = this;
-                const document = this._extHostDocument.getDocument(this.uri).document;
-                this._cell = Object.freeze({
-                    notebook: that._notebook.notebookDocument,
-                    uri: that.uri,
-                    cellKind: this._cellData.cellKind,
-                    document,
-                    language: document.languageId,
-                    get outputs() { return that._outputs; },
-                    set outputs(value) { that._updateOutputs(value); },
-                    get metadata() { return that._metadata; },
-                    set metadata(value) {
-                        that.setMetadata(value);
-                        that._updateMetadata();
-                    },
-                });
-            }
-            return this._cell;
-        }
-        dispose() {
-            super.dispose();
-            this._onDidDispose.fire();
-        }
-        setOutputs(newOutputs) {
-            this._outputs = newOutputs;
-        }
-        _updateOutputs(newOutputs) {
-            const rawDiffs = notebookCommon_1.diff(this._outputs || [], newOutputs || [], (a) => {
-                return this._outputMapping.has(a);
-            });
-            const transformedDiffs = rawDiffs.map(diff => {
-                for (let i = diff.start; i < diff.start + diff.deleteCount; i++) {
-                    this._outputMapping.delete(this._outputs[i]);
-                }
-                return {
-                    deleteCount: diff.deleteCount,
-                    start: diff.start,
-                    toInsert: diff.toInsert.map((output) => {
-                        if (output.outputKind === notebookCommon_1.CellOutputKind.Rich) {
-                            const uuid = UUID.generateUuid();
-                            this._outputMapping.set(output, uuid);
-                            return Object.assign(Object.assign({}, output), { outputId: uuid });
-                        }
-                        this._outputMapping.set(output, undefined);
-                        return output;
-                    })
-                };
-            });
-            this._outputs = newOutputs;
-            this._onDidChangeOutputs.fire(transformedDiffs);
-        }
-        setMetadata(newMetadata) {
-            // Don't apply metadata defaults here, 'undefined' means 'inherit from document metadata'
-            this._metadataChangeListener.dispose();
-            const observableMetadata = getObservable(newMetadata);
-            this._metadata = observableMetadata.proxy;
-            this._metadataChangeListener = this._register(observableMetadata.onDidChange(() => {
-                this._updateMetadata();
-            }));
-        }
-        _updateMetadata() {
-            return this._proxy.$updateNotebookCellMetadata(this._notebook.notebookDocument.viewType, this._notebook.uri, this.handle, this._metadata);
-        }
-    }
-    exports.ExtHostCell = ExtHostCell;
-    class RawContentChangeEvent {
-        constructor(start, deletedCount, deletedItems, items) {
-            this.start = start;
-            this.deletedCount = deletedCount;
-            this.deletedItems = deletedItems;
-            this.items = items;
-        }
-        static asApiEvent(event) {
-            return Object.freeze({
-                start: event.start,
-                deletedCount: event.deletedCount,
-                deletedItems: event.deletedItems.map(data => data.cell),
-                items: event.items.map(data => data.cell)
-            });
-        }
-    }
-    class ExtHostNotebookDocument extends lifecycle_1.Disposable {
-        constructor(_proxy, _documentsAndEditors, _emitter, _viewType, uri, renderingHandler, _storagePath) {
-            super();
-            this._proxy = _proxy;
-            this._documentsAndEditors = _documentsAndEditors;
-            this._emitter = _emitter;
-            this._viewType = _viewType;
-            this.uri = uri;
-            this.renderingHandler = renderingHandler;
-            this._storagePath = _storagePath;
-            this.handle = ExtHostNotebookDocument._handlePool++;
-            this._cells = [];
-            this._cellDisposableMapping = new Map();
-            this._metadata = notebookCommon_1.notebookDocumentMetadataDefaults;
-            this._displayOrder = [];
-            this._versionId = 0;
-            this._isDirty = false;
-            this._backupCounter = 1;
-            this._disposed = false;
-            this._languages = [];
-            this._edits = new cache_1.Cache('notebook documents');
-            const observableMetadata = getObservable(notebookCommon_1.notebookDocumentMetadataDefaults);
-            this._metadata = observableMetadata.proxy;
-            this._metadataChangeListener = this._register(observableMetadata.onDidChange(() => {
-                this._tryUpdateMetadata();
-            }));
-        }
-        dispose() {
-            this._disposed = true;
-            super.dispose();
-            lifecycle_1.dispose(this._cellDisposableMapping.values());
-        }
-        _updateMetadata(newMetadata) {
-            this._metadataChangeListener.dispose();
-            newMetadata = Object.assign(Object.assign({}, notebookCommon_1.notebookDocumentMetadataDefaults), newMetadata);
-            if (this._metadataChangeListener) {
-                this._metadataChangeListener.dispose();
-            }
-            const observableMetadata = getObservable(newMetadata);
-            this._metadata = observableMetadata.proxy;
-            this._metadataChangeListener = this._register(observableMetadata.onDidChange(() => {
-                this._tryUpdateMetadata();
-            }));
-            this._tryUpdateMetadata();
-        }
-        _tryUpdateMetadata() {
-            this._proxy.$updateNotebookMetadata(this._viewType, this.uri, this._metadata);
-        }
-        get notebookDocument() {
-            if (!this._notebook) {
-                const that = this;
-                this._notebook = Object.freeze({
-                    get uri() { return that.uri; },
-                    get version() { return that._versionId; },
-                    get fileName() { return that.uri.fsPath; },
-                    get viewType() { return that._viewType; },
-                    get isDirty() { return that._isDirty; },
-                    get isUntitled() { return that.uri.scheme === network_1.Schemas.untitled; },
-                    get cells() { return that._cells.map(cell => cell.cell); },
-                    get languages() { return that._languages; },
-                    set languages(value) { that._trySetLanguages(value); },
-                    get displayOrder() { return that._displayOrder; },
-                    set displayOrder(value) { that._displayOrder = value; },
-                    get metadata() { return that._metadata; },
-                    set metadata(value) { that._updateMetadata(value); },
-                });
-            }
-            return this._notebook;
-        }
-        _trySetLanguages(newLanguages) {
-            this._languages = newLanguages;
-            this._proxy.$updateNotebookLanguages(this._viewType, this.uri, this._languages);
-        }
-        getNewBackupUri() {
-            if (!this._storagePath) {
-                throw new Error('Backup requires a valid storage path');
-            }
-            const fileName = hashPath(this.uri) + (this._backupCounter++);
-            return resources_1.joinPath(this._storagePath, fileName);
-        }
-        updateBackup(backup) {
-            var _a;
-            (_a = this._backup) === null || _a === void 0 ? void 0 : _a.delete();
-            this._backup = backup;
-        }
-        disposeBackup() {
-            var _a;
-            (_a = this._backup) === null || _a === void 0 ? void 0 : _a.delete();
-            this._backup = undefined;
-        }
-        acceptModelChanged(event, isDirty) {
-            this._versionId = event.versionId;
-            this._isDirty = isDirty;
-            if (event.kind === notebookCommon_1.NotebookCellsChangeType.Initialize) {
-                this._spliceNotebookCells(event.changes, true);
-            }
-            if (event.kind === notebookCommon_1.NotebookCellsChangeType.ModelChange) {
-                this._spliceNotebookCells(event.changes, false);
-            }
-            else if (event.kind === notebookCommon_1.NotebookCellsChangeType.Move) {
-                this._moveCell(event.index, event.newIdx);
-            }
-            else if (event.kind === notebookCommon_1.NotebookCellsChangeType.Output) {
-                this._setCellOutputs(event.index, event.outputs);
-            }
-            else if (event.kind === notebookCommon_1.NotebookCellsChangeType.CellClearOutput) {
-                this._clearCellOutputs(event.index);
-            }
-            else if (event.kind === notebookCommon_1.NotebookCellsChangeType.CellsClearOutput) {
-                this._clearAllCellOutputs();
-            }
-            else if (event.kind === notebookCommon_1.NotebookCellsChangeType.ChangeLanguage) {
-                this._changeCellLanguage(event.index, event.language);
-            }
-            else if (event.kind === notebookCommon_1.NotebookCellsChangeType.ChangeMetadata) {
-                this._changeCellMetadata(event.index, event.metadata);
-            }
-        }
-        _spliceNotebookCells(splices, initialization) {
-            if (this._disposed) {
-                return;
-            }
-            const contentChangeEvents = [];
-            const addedCellDocuments = [];
-            const removedCellDocuments = [];
-            splices.reverse().forEach(splice => {
-                var _a;
-                const cellDtos = splice[2];
-                const newCells = cellDtos.map(cell => {
-                    const extCell = new ExtHostCell(this._proxy, this, this._documentsAndEditors, cell);
-                    if (!initialization) {
-                        addedCellDocuments.push(ExtHostCell.asModelAddData(this.notebookDocument, cell));
-                    }
-                    if (!this._cellDisposableMapping.has(extCell.handle)) {
-                        const store = new lifecycle_1.DisposableStore();
-                        store.add(extCell);
-                        this._cellDisposableMapping.set(extCell.handle, store);
-                    }
-                    const store = this._cellDisposableMapping.get(extCell.handle);
-                    store.add(extCell.onDidChangeOutputs((diffs) => {
-                        this.eventuallyUpdateCellOutputs(extCell, diffs);
-                    }));
-                    return extCell;
-                });
-                for (let j = splice[0]; j < splice[0] + splice[1]; j++) {
-                    (_a = this._cellDisposableMapping.get(this._cells[j].handle)) === null || _a === void 0 ? void 0 : _a.dispose();
-                    this._cellDisposableMapping.delete(this._cells[j].handle);
-                }
-                const deletedItems = this._cells.splice(splice[0], splice[1], ...newCells);
-                for (let cell of deletedItems) {
-                    removedCellDocuments.push(cell.uri);
-                }
-                contentChangeEvents.push(new RawContentChangeEvent(splice[0], splice[1], deletedItems, newCells));
-            });
-            this._documentsAndEditors.acceptDocumentsAndEditorsDelta({
-                addedDocuments: addedCellDocuments,
-                removedDocuments: removedCellDocuments
-            });
-            if (!initialization) {
-                this._emitter.emitModelChange({
-                    document: this.notebookDocument,
-                    changes: contentChangeEvents.map(RawContentChangeEvent.asApiEvent)
-                });
-            }
-        }
-        _moveCell(index, newIdx) {
-            const cells = this._cells.splice(index, 1);
-            this._cells.splice(newIdx, 0, ...cells);
-            const changes = [{
-                    start: index,
-                    deletedCount: 1,
-                    deletedItems: cells.map(data => data.cell),
-                    items: []
-                }, {
-                    start: newIdx,
-                    deletedCount: 0,
-                    deletedItems: [],
-                    items: cells.map(data => data.cell)
-                }];
-            this._emitter.emitModelChange({
-                document: this.notebookDocument,
-                changes
-            });
-        }
-        _setCellOutputs(index, outputs) {
-            const cell = this._cells[index];
-            cell.setOutputs(outputs);
-            this._emitter.emitCellOutputsChange({ document: this.notebookDocument, cells: [cell.cell] });
-        }
-        _clearCellOutputs(index) {
-            const cell = this._cells[index].cell;
-            cell.outputs = [];
-            const event = { document: this.notebookDocument, cells: [cell] };
-            this._emitter.emitCellOutputsChange(event);
-        }
-        _clearAllCellOutputs() {
-            const modifedCells = [];
-            this._cells.forEach(({ cell }) => {
-                if (cell.outputs.length !== 0) {
-                    cell.outputs = [];
-                    modifedCells.push(cell);
-                }
-            });
-            const event = { document: this.notebookDocument, cells: modifedCells };
-            this._emitter.emitCellOutputsChange(event);
-        }
-        _changeCellLanguage(index, language) {
-            const cell = this._cells[index];
-            const event = { document: this.notebookDocument, cell: cell.cell, language };
-            this._emitter.emitCellLanguageChange(event);
-        }
-        _changeCellMetadata(index, newMetadata) {
-            const cell = this._cells[index];
-            cell.setMetadata(newMetadata || {});
-            const event = { document: this.notebookDocument, cell: cell.cell };
-            this._emitter.emitCellMetadataChange(event);
-        }
-        async eventuallyUpdateCellOutputs(cell, diffs) {
-            const outputDtos = diffs.map(diff => {
-                const outputs = diff.toInsert;
-                return [diff.start, diff.deleteCount, outputs];
-            });
-            if (!outputDtos.length) {
-                return;
-            }
-            await this._proxy.$spliceNotebookCellOutputs(this._viewType, this.uri, cell.handle, outputDtos);
-            this._emitter.emitCellOutputsChange({
-                document: this.notebookDocument,
-                cells: [cell.cell]
-            });
-        }
-        getCell(cellHandle) {
-            return this._cells.find(cell => cell.handle === cellHandle);
-        }
-        addEdit(item) {
-            return this._edits.add([item]);
-        }
-        async undo(editId, isDirty) {
-            await this.getEdit(editId).undo();
-            // if (!isDirty) {
-            // 	this.disposeBackup();
-            // }
-        }
-        async redo(editId, isDirty) {
-            await this.getEdit(editId).redo();
-            // if (!isDirty) {
-            // 	this.disposeBackup();
-            // }
-        }
-        getEdit(editId) {
-            const edit = this._edits.get(editId, 0);
-            if (!edit) {
-                throw new Error('No edit found');
-            }
-            return edit;
-        }
-        disposeEdits(editIds) {
-            for (const id of editIds) {
-                this._edits.delete(id);
-            }
-        }
-    }
-    exports.ExtHostNotebookDocument = ExtHostNotebookDocument;
-    ExtHostNotebookDocument._handlePool = 0;
-    class NotebookEditorCellEditBuilder {
-        constructor(documentVersionId) {
-            this._collectedEdits = [];
-            this._finalized = false;
-            this._documentVersionId = documentVersionId;
-        }
-        finalize() {
-            this._finalized = true;
-            return {
-                documentVersionId: this._documentVersionId,
-                edits: this._collectedEdits,
-            };
-        }
-        _throwIfFinalized() {
-            if (this._finalized) {
-                throw new Error('Edit is only valid while callback runs');
-            }
-        }
-        replaceMetadata(index, metadata) {
-            this._throwIfFinalized();
-            this._collectedEdits.push({
-                editType: 3 /* Metadata */,
-                index,
-                metadata
-            });
-        }
-        replaceOutput(index, outputs) {
-            this._throwIfFinalized();
-            this._collectedEdits.push({
-                editType: 2 /* Output */,
-                index,
-                outputs: outputs.map(output => notebookCommon_1.addIdToOutput(output))
-            });
-        }
-        replaceCells(from, to, cells) {
-            this._throwIfFinalized();
-            this._collectedEdits.push({
-                editType: 1 /* Replace */,
-                index: from,
-                count: to - from,
-                cells: cells.map(data => {
-                    return Object.assign(Object.assign({}, data), { outputs: data.outputs.map(output => notebookCommon_1.addIdToOutput(output)) });
-                })
-            });
-        }
-        insert(index, content, language, type, outputs, metadata) {
-            this._throwIfFinalized();
-            this.replaceCells(index, index, [{
-                    language,
-                    outputs,
-                    metadata,
-                    cellKind: type,
-                    source: Array.isArray(content) ? content.join('\n') : content,
-                }]);
-        }
-        delete(index) {
-            this._throwIfFinalized();
-            this.replaceCells(index, 1, []);
-        }
-    }
-    exports.NotebookEditorCellEditBuilder = NotebookEditorCellEditBuilder;
+    exports.NotebookCellStatusBarItemInternal = exports.ExtHostNotebookController = exports.NotebookEditorDecorationType = exports.ExtHostNotebookKernelProviderAdapter = void 0;
     class ExtHostWebviewCommWrapper extends lifecycle_1.Disposable {
         constructor(_editorId, uri, _proxy, _webviewInitData, document) {
             super();
@@ -39591,118 +40103,6 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
             return webview_1.asWebviewUri(this._webviewInitData, this._editorId, localResource);
         }
     }
-    class ExtHostNotebookEditor extends lifecycle_1.Disposable {
-        constructor(viewType, id, uri, _proxy, _webComm, notebookData) {
-            super();
-            this.viewType = viewType;
-            this.id = id;
-            this.uri = uri;
-            this._proxy = _proxy;
-            this._webComm = _webComm;
-            this.notebookData = notebookData;
-            this._visibleRanges = [];
-            this._active = false;
-            this._visible = false;
-            this._onDidDispose = new event_1.Emitter();
-            this.onDidDispose = this._onDidDispose.event;
-            this._onDidReceiveMessage = new event_1.Emitter();
-            this.onDidReceiveMessage = this._onDidReceiveMessage.event;
-            this._register(this._webComm.onDidReceiveMessage(e => {
-                this._onDidReceiveMessage.fire(e);
-            }));
-        }
-        get visibleRanges() {
-            return this._visibleRanges;
-        }
-        set visibleRanges(_range) {
-            throw errors_1.readonly('visibleRanges');
-        }
-        _acceptVisibleRanges(value) {
-            this._visibleRanges = value;
-        }
-        get active() {
-            return this._active;
-        }
-        set active(_state) {
-            throw errors_1.readonly('active');
-        }
-        get visible() {
-            return this._visible;
-        }
-        set visible(_state) {
-            throw errors_1.readonly('visible');
-        }
-        _acceptVisibility(value) {
-            this._visible = value;
-        }
-        _acceptActive(value) {
-            this._active = value;
-        }
-        get kernel() {
-            return this._kernel;
-        }
-        set kernel(_kernel) {
-            throw errors_1.readonly('kernel');
-        }
-        get document() {
-            return this.notebookData.notebookDocument;
-        }
-        edit(callback) {
-            const edit = new NotebookEditorCellEditBuilder(this.document.version);
-            callback(edit);
-            return this._applyEdit(edit.finalize());
-        }
-        _applyEdit(editData) {
-            // return when there is nothing to do
-            if (editData.edits.length === 0) {
-                return Promise.resolve(true);
-            }
-            const compressedEdits = [];
-            let compressedEditsIndex = -1;
-            for (let i = 0; i < editData.edits.length; i++) {
-                if (compressedEditsIndex < 0) {
-                    compressedEdits.push(editData.edits[i]);
-                    compressedEditsIndex++;
-                    continue;
-                }
-                const prevIndex = compressedEditsIndex;
-                const prev = compressedEdits[prevIndex];
-                if (prev.editType === 1 /* Replace */ && editData.edits[i].editType === 1 /* Replace */) {
-                    if (prev.index === editData.edits[i].index) {
-                        prev.cells.push(...editData.edits[i].cells);
-                        prev.count += editData.edits[i].count;
-                        continue;
-                    }
-                }
-                compressedEdits.push(editData.edits[i]);
-                compressedEditsIndex++;
-            }
-            return this._proxy.$tryApplyEdits(this.viewType, this.uri, editData.documentVersionId, compressedEdits);
-        }
-        revealRange(range, revealType) {
-            this._proxy.$tryRevealRange(this.id, range, revealType || extHostTypes.NotebookEditorRevealType.Default);
-        }
-        get viewColumn() {
-            return this._viewColumn;
-        }
-        set viewColumn(value) {
-            throw errors_1.readonly('viewColumn');
-        }
-        updateActiveKernel(kernel) {
-            this._kernel = kernel;
-        }
-        async postMessage(message) {
-            return this._webComm.postMessage(message);
-        }
-        asWebviewUri(localResource) {
-            return this._webComm.asWebviewUri(localResource);
-        }
-        dispose() {
-            this._onDidDispose.fire();
-            super.dispose();
-        }
-    }
-    exports.ExtHostNotebookEditor = ExtHostNotebookEditor;
     class ExtHostNotebookKernelProviderAdapter extends lifecycle_1.Disposable {
         constructor(_proxy, _handle, _extension, _provider) {
             super();
@@ -39799,6 +40199,18 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
             source.dispose();
         }
     }
+    class NotebookEditorDecorationType {
+        constructor(proxy, options) {
+            this.key = NotebookEditorDecorationType._Keys.nextId();
+            this._proxy = proxy;
+            this._proxy.$registerNotebookEditorDecorationType(this.key, typeConverters.NotebookDecorationRenderOptions.from(options));
+        }
+        dispose() {
+            this._proxy.$removeNotebookEditorDecorationType(this.key);
+        }
+    }
+    exports.NotebookEditorDecorationType = NotebookEditorDecorationType;
+    NotebookEditorDecorationType._Keys = new idGenerator_1.IdGenerator('NotebookEditorDecorationType');
     class ExtHostNotebookController {
         constructor(mainContext, commands, _documentsAndEditors, _webviewInitData, logService, _extensionStoragePaths) {
             this._documentsAndEditors = _documentsAndEditors;
@@ -39809,13 +40221,14 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
             this._notebookKernels = new Map();
             this._notebookKernelProviders = new Map();
             this._documents = new map_1.ResourceMap();
-            this._unInitializedDocuments = new map_1.ResourceMap();
             this._editors = new Map();
             this._webviewComm = new Map();
             this._onDidChangeNotebookEditorSelection = new event_1.Emitter();
             this.onDidChangeNotebookEditorSelection = this._onDidChangeNotebookEditorSelection.event;
             this._onDidChangeNotebookEditorVisibleRanges = new event_1.Emitter();
             this.onDidChangeNotebookEditorVisibleRanges = this._onDidChangeNotebookEditorVisibleRanges.event;
+            this._onDidChangeNotebookDocumentMetadata = new event_1.Emitter();
+            this.onDidChangeNotebookDocumentMetadata = this._onDidChangeNotebookDocumentMetadata.event;
             this._onDidChangeNotebookCells = new event_1.Emitter();
             this.onDidChangeNotebookCells = this._onDidChangeNotebookCells.event;
             this._onDidChangeCellOutputs = new event_1.Emitter();
@@ -39838,21 +40251,19 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
             this._onDidChangeVisibleNotebookEditors = new event_1.Emitter();
             this.onDidChangeVisibleNotebookEditors = this._onDidChangeVisibleNotebookEditors.event;
             this._proxy = mainContext.getProxy(extHost_protocol_1.MainContext.MainThreadNotebook);
+            this._mainThreadBulkEdits = mainContext.getProxy(extHost_protocol_1.MainContext.MainThreadBulkEdits);
             this._commandsConverter = commands.converter;
             commands.registerArgumentProcessor({
                 // Serialized INotebookCellActionContext
                 processArgument: (arg) => {
                     var _a;
                     if (arg && arg.$mid === 12) {
-                        const documentHandle = (_a = arg.notebookEditor) === null || _a === void 0 ? void 0 : _a.notebookHandle;
+                        const notebookUri = (_a = arg.notebookEditor) === null || _a === void 0 ? void 0 : _a.notebookUri;
                         const cellHandle = arg.cell.handle;
-                        for (const value of this._editors) {
-                            if (value[1].editor.notebookData.handle === documentHandle) {
-                                const cell = value[1].editor.notebookData.getCell(cellHandle);
-                                if (cell) {
-                                    return cell.cell;
-                                }
-                            }
+                        const data = this._documents.get(notebookUri);
+                        const cell = data === null || data === void 0 ? void 0 : data.getCell(cellHandle);
+                        if (cell) {
+                            return cell.cell;
                         }
                     }
                     return arg;
@@ -39872,11 +40283,13 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
             return this._documents.get(uri);
         }
         registerNotebookContentProvider(extension, viewType, provider, options) {
+            var _a, _b, _c;
             if (this._notebookContentProviders.has(viewType)) {
                 throw new Error(`Notebook provider for '${viewType}' already registered`);
             }
             this._notebookContentProviders.set(viewType, { extension, provider });
-            const listener = provider.onDidChangeNotebook
+            const listeners = [];
+            listeners.push(provider.onDidChangeNotebook
                 ? provider.onDidChangeNotebook(e => {
                     const document = this._documents.get(uri_1.URI.revive(e.document.uri));
                     if (!document) {
@@ -39884,17 +40297,30 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
                     }
                     if (isEditEvent(e)) {
                         const editId = document.addEdit(e);
-                        this._proxy.$onDidEdit(e.document.uri, viewType, editId, e.label);
+                        this._proxy.$onUndoableContentChange(e.document.uri, viewType, editId, e.label);
                     }
                     else {
                         this._proxy.$onContentChange(e.document.uri, viewType);
                     }
                 })
-                : lifecycle_1.Disposable.None;
+                : lifecycle_1.Disposable.None);
+            listeners.push(provider.onDidChangeNotebookContentOptions
+                ? provider.onDidChangeNotebookContentOptions(() => {
+                    this._proxy.$updateNotebookProviderOptions(viewType, provider.options);
+                })
+                : lifecycle_1.Disposable.None);
             const supportBackup = !!provider.backupNotebook;
-            this._proxy.$registerNotebookProvider({ id: extension.identifier, location: extension.extensionLocation, description: extension.description }, viewType, supportBackup, { transientOutputs: (options === null || options === void 0 ? void 0 : options.transientOutputs) || false, transientMetadata: (options === null || options === void 0 ? void 0 : options.transientMetadata) || {} });
+            const viewOptionsFilenamePattern = (_a = options === null || options === void 0 ? void 0 : options.viewOptions) === null || _a === void 0 ? void 0 : _a.filenamePattern.map(pattern => typeConverters.NotebookExclusiveDocumentPattern.from(pattern)).filter(pattern => pattern !== undefined);
+            if (((_b = options === null || options === void 0 ? void 0 : options.viewOptions) === null || _b === void 0 ? void 0 : _b.filenamePattern) && !viewOptionsFilenamePattern) {
+                console.warn(`Notebook content provider view options file name pattern is invalid ${(_c = options === null || options === void 0 ? void 0 : options.viewOptions) === null || _c === void 0 ? void 0 : _c.filenamePattern}`);
+            }
+            this._proxy.$registerNotebookProvider({ id: extension.identifier, location: extension.extensionLocation, description: extension.description }, viewType, supportBackup, {
+                transientOutputs: (options === null || options === void 0 ? void 0 : options.transientOutputs) || false,
+                transientMetadata: (options === null || options === void 0 ? void 0 : options.transientMetadata) || {},
+                viewOptions: (options === null || options === void 0 ? void 0 : options.viewOptions) && viewOptionsFilenamePattern ? { displayName: options.viewOptions.displayName, filenamePattern: viewOptionsFilenamePattern, exclusive: options.viewOptions.exclusive || false } : undefined
+            });
             return new extHostTypes.Disposable(() => {
-                listener.dispose();
+                listeners.forEach(d => d.dispose());
                 this._notebookContentProviders.delete(viewType);
                 this._proxy.$unregisterNotebookProvider(viewType);
             });
@@ -39912,6 +40338,9 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
                 this._notebookKernelProviders.delete(handle);
                 this._proxy.$unregisterNotebookKernelProvider(handle);
             });
+        }
+        createNotebookEditorDecorationType(options) {
+            return new NotebookEditorDecorationType(this._proxy, options);
         }
         _withAdapter(handle, uri, callback) {
             const document = this._documents.get(uri_1.URI.revive(uri));
@@ -39938,39 +40367,16 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
             });
         }
         async $resolveNotebookData(viewType, uri, backupId) {
-            var _a, _b;
             const provider = this._notebookContentProviders.get(viewType);
-            const revivedUri = uri_1.URI.revive(uri);
             if (!provider) {
-                return;
+                throw new Error(`NO provider for '${viewType}'`);
             }
-            const storageRoot = (_a = this._extensionStoragePaths.workspaceValue(provider.extension)) !== null && _a !== void 0 ? _a : this._extensionStoragePaths.globalValue(provider.extension);
-            let document = this._documents.get(revivedUri);
-            if (!document) {
-                const that = this;
-                document = (_b = this._unInitializedDocuments.get(revivedUri)) !== null && _b !== void 0 ? _b : new ExtHostNotebookDocument(this._proxy, this._documentsAndEditors, {
-                    emitModelChange(event) {
-                        that._onDidChangeNotebookCells.fire(event);
-                    },
-                    emitCellOutputsChange(event) {
-                        that._onDidChangeCellOutputs.fire(event);
-                    },
-                    emitCellLanguageChange(event) {
-                        that._onDidChangeCellLanguage.fire(event);
-                    },
-                    emitCellMetadataChange(event) {
-                        that._onDidChangeCellMetadata.fire(event);
-                    },
-                }, viewType, revivedUri, this, storageRoot);
-                this._unInitializedDocuments.set(revivedUri, document);
-            }
-            const rawCells = await provider.provider.openNotebook(uri_1.URI.revive(uri), { backupId });
-            const dto = {
-                metadata: Object.assign(Object.assign({}, notebookCommon_1.notebookDocumentMetadataDefaults), rawCells.metadata),
-                languages: rawCells.languages,
-                cells: rawCells.cells.map(cell => (Object.assign(Object.assign({}, cell), { outputs: cell.outputs.map(o => notebookCommon_1.addIdToOutput(o)) }))),
+            const data = await provider.provider.openNotebook(uri_1.URI.revive(uri), { backupId });
+            return {
+                metadata: Object.assign(Object.assign({}, notebookCommon_1.notebookDocumentMetadataDefaults), data.metadata),
+                languages: data.languages,
+                cells: data.cells.map(cell => (Object.assign(Object.assign({}, cell), { outputs: cell.outputs.map(o => notebookCommon_1.addIdToOutput(o)) }))),
             };
-            return dto;
         }
         async $resolveNotebookEditor(viewType, uri, editorId) {
             const provider = this._notebookContentProviders.get(viewType);
@@ -40073,19 +40479,19 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
                     const kernel = event.kernelId ? adapter.getKernel(event.kernelId) : undefined;
                     this._editors.forEach(editor => {
                         if (editor.editor.notebookData === document) {
-                            editor.editor.updateActiveKernel(kernel);
+                            editor.editor._acceptKernel(kernel);
                         }
                     });
                     this._onDidChangeActiveNotebookKernel.fire({ document: document.notebookDocument, kernel });
                 });
             }
         }
-        // TODO: remove document - editor one on one mapping
+        // TODO@rebornix: remove document - editor one on one mapping
         _getEditorFromURI(uriComponents) {
             const uriStr = uri_1.URI.revive(uriComponents).toString();
             let editor;
             this._editors.forEach(e => {
-                if (e.editor.uri.toString() === uriStr) {
+                if (e.editor.document.uri.toString() === uriStr) {
                     editor = e;
                 }
             });
@@ -40109,6 +40515,7 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
             }
         }
         $acceptEditorPropertiesChanged(id, data) {
+            var _a;
             this.logService.debug('ExtHostNotebook#$acceptEditorPropertiesChanged', id, data);
             let editor;
             this._editors.forEach(e => {
@@ -40126,14 +40533,6 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
                     visibleRanges: editor.editor.visibleRanges
                 });
             }
-        }
-        $acceptDocumentPropertiesChanged(uriComponents, data) {
-            var _a;
-            this.logService.debug('ExtHostNotebook#$acceptDocumentPropertiesChanged', uriComponents.path, data);
-            const editor = this._getEditorFromURI(uriComponents);
-            if (!editor) {
-                return;
-            }
             if (data.selections) {
                 if (data.selections.selections.length) {
                     const firstCell = data.selections.selections[0];
@@ -40147,8 +40546,15 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
                     selection: editor.editor.selection
                 });
             }
+        }
+        $acceptDocumentPropertiesChanged(uriComponents, data) {
+            this.logService.debug('ExtHostNotebook#$acceptDocumentPropertiesChanged', uriComponents.path, data);
+            const editor = this._getEditorFromURI(uriComponents);
+            if (!editor) {
+                return;
+            }
             if (data.metadata) {
-                editor.editor.notebookData.notebookDocument.metadata = Object.assign(Object.assign({}, notebookCommon_1.notebookDocumentMetadataDefaults), data.metadata);
+                editor.editor.notebookData.acceptDocumentPropertiesChanged(data);
             }
         }
         _createExtHostEditor(document, editorId, selections, visibleRanges) {
@@ -40159,7 +40565,7 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
                 webComm = new ExtHostWebviewCommWrapper(editorId, revivedUri, this._proxy, this._webviewInitData, document);
                 this._webviewComm.set(editorId, webComm);
             }
-            const editor = new ExtHostNotebookEditor(document.notebookDocument.viewType, editorId, revivedUri, this._proxy, webComm.contentProviderComm, document);
+            const editor = new extHostNotebookEditor_1.ExtHostNotebookEditor(editorId, document.notebookDocument.viewType, this._proxy, webComm.contentProviderComm, document);
             if (selections.length) {
                 const firstCell = selections[0];
                 editor.selection = (_a = editor.notebookData.getCell(firstCell)) === null || _a === void 0 ? void 0 : _a.cell;
@@ -40172,7 +40578,7 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
             this._editors.set(editorId, { editor });
         }
         $acceptDocumentAndEditorsDelta(delta) {
-            var _a, _b, _c, _d, _e, _f;
+            var _a, _b, _c, _d, _e;
             let editorChanged = false;
             if (delta.removedDocuments) {
                 for (const uri of delta.removedDocuments) {
@@ -40185,7 +40591,7 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
                         this._onDidCloseNotebookDocument.fire(document.notebookDocument);
                     }
                     for (const e of this._editors.values()) {
-                        if (e.editor.uri.toString() === revivedUri.toString()) {
+                        if (e.editor.document.uri.toString() === revivedUri.toString()) {
                             e.editor.dispose();
                             this._editors.delete(e.editor.id);
                             editorChanged = true;
@@ -40196,51 +40602,54 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
             if (delta.addedDocuments) {
                 const addedCellDocuments = [];
                 for (const modelData of delta.addedDocuments) {
-                    const revivedUri = uri_1.URI.revive(modelData.uri);
+                    const uri = uri_1.URI.revive(modelData.uri);
                     const viewType = modelData.viewType;
                     const entry = this._notebookContentProviders.get(viewType);
                     const storageRoot = entry && ((_a = this._extensionStoragePaths.workspaceValue(entry.extension)) !== null && _a !== void 0 ? _a : this._extensionStoragePaths.globalValue(entry.extension));
-                    if (!this._documents.has(revivedUri)) {
-                        const that = this;
-                        const document = (_b = this._unInitializedDocuments.get(revivedUri)) !== null && _b !== void 0 ? _b : new ExtHostNotebookDocument(this._proxy, this._documentsAndEditors, {
-                            emitModelChange(event) {
-                                that._onDidChangeNotebookCells.fire(event);
-                            },
-                            emitCellOutputsChange(event) {
-                                that._onDidChangeCellOutputs.fire(event);
-                            },
-                            emitCellLanguageChange(event) {
-                                that._onDidChangeCellLanguage.fire(event);
-                            },
-                            emitCellMetadataChange(event) {
-                                that._onDidChangeCellMetadata.fire(event);
+                    if (this._documents.has(uri)) {
+                        throw new Error(`adding EXISTING notebook ${uri}`);
+                    }
+                    const that = this;
+                    const document = new extHostNotebookDocument_1.ExtHostNotebookDocument(this._proxy, this._documentsAndEditors, this._mainThreadBulkEdits, {
+                        emitModelChange(event) {
+                            that._onDidChangeNotebookCells.fire(event);
+                        },
+                        emitCellOutputsChange(event) {
+                            that._onDidChangeCellOutputs.fire(event);
+                        },
+                        emitCellLanguageChange(event) {
+                            that._onDidChangeCellLanguage.fire(event);
+                        },
+                        emitCellMetadataChange(event) {
+                            that._onDidChangeCellMetadata.fire(event);
+                        },
+                        emitDocumentMetadataChange(event) {
+                            that._onDidChangeNotebookDocumentMetadata.fire(event);
+                        }
+                    }, viewType, modelData.contentOptions, Object.assign(Object.assign({}, notebookCommon_1.notebookDocumentMetadataDefaults), modelData.metadata), uri, storageRoot);
+                    document.acceptModelChanged({
+                        versionId: modelData.versionId,
+                        rawEvents: [
+                            {
+                                kind: notebookCommon_1.NotebookCellsChangeType.Initialize,
+                                changes: [[
+                                        0,
+                                        0,
+                                        modelData.cells
+                                    ]]
                             }
-                        }, viewType, revivedUri, this, storageRoot);
-                        this._unInitializedDocuments.delete(revivedUri);
-                        if (modelData.metadata) {
-                            document.notebookDocument.metadata = Object.assign(Object.assign({}, notebookCommon_1.notebookDocumentMetadataDefaults), modelData.metadata);
-                        }
-                        document.acceptModelChanged({
-                            kind: notebookCommon_1.NotebookCellsChangeType.Initialize,
-                            versionId: modelData.versionId,
-                            changes: [[
-                                    0,
-                                    0,
-                                    modelData.cells
-                                ]]
-                        }, false);
-                        // add cell document as vscode.TextDocument
-                        addedCellDocuments.push(...modelData.cells.map(cell => ExtHostCell.asModelAddData(document.notebookDocument, cell)));
-                        (_c = this._documents.get(revivedUri)) === null || _c === void 0 ? void 0 : _c.dispose();
-                        this._documents.set(revivedUri, document);
-                        // create editor if populated
-                        if (modelData.attachedEditor) {
-                            this._createExtHostEditor(document, modelData.attachedEditor.id, modelData.attachedEditor.selections, modelData.attachedEditor.visibleRanges);
-                            editorChanged = true;
-                        }
+                        ]
+                    }, false);
+                    // add cell document as vscode.TextDocument
+                    addedCellDocuments.push(...modelData.cells.map(cell => extHostNotebookDocument_1.ExtHostCell.asModelAddData(document.notebookDocument, cell)));
+                    (_b = this._documents.get(uri)) === null || _b === void 0 ? void 0 : _b.dispose();
+                    this._documents.set(uri, document);
+                    // create editor if populated
+                    if (modelData.attachedEditor) {
+                        this._createExtHostEditor(document, modelData.attachedEditor.id, modelData.attachedEditor.selections, modelData.attachedEditor.visibleRanges);
+                        editorChanged = true;
                     }
                     this._documentsAndEditors.$acceptDocumentsAndEditorsDelta({ addedDocuments: addedCellDocuments });
-                    const document = this._documents.get(revivedUri);
                     this._onDidOpenNotebookDocument.fire(document.notebookDocument);
                 }
             }
@@ -40264,7 +40673,7 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
                     if (editor) {
                         editorChanged = true;
                         this._editors.delete(editorid);
-                        if (((_d = this.activeNotebookEditor) === null || _d === void 0 ? void 0 : _d.id) === editor.editor.id) {
+                        if (((_c = this.activeNotebookEditor) === null || _c === void 0 ? void 0 : _c.id) === editor.editor.id) {
                             this._activeNotebookEditor = undefined;
                         }
                         removedEditors.push(editor);
@@ -40289,8 +40698,8 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
             }
             if (delta.newActiveEditor !== undefined) {
                 if (delta.newActiveEditor) {
-                    this._activeNotebookEditor = (_e = this._editors.get(delta.newActiveEditor)) === null || _e === void 0 ? void 0 : _e.editor;
-                    (_f = this._activeNotebookEditor) === null || _f === void 0 ? void 0 : _f._acceptActive(true);
+                    this._activeNotebookEditor = (_d = this._editors.get(delta.newActiveEditor)) === null || _d === void 0 ? void 0 : _d.editor;
+                    (_e = this._activeNotebookEditor) === null || _e === void 0 ? void 0 : _e._acceptActive(true);
                     for (const e of this._editors.values()) {
                         if (e.editor !== this.activeNotebookEditor) {
                             e.editor._acceptActive(false);
@@ -40325,10 +40734,6 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
     }
     exports.ExtHostNotebookController = ExtHostNotebookController;
     ExtHostNotebookController._notebookKernelProviderHandlePool = 0;
-    function hashPath(resource) {
-        const str = resource.scheme === network_1.Schemas.file || resource.scheme === network_1.Schemas.untitled ? resource.fsPath : resource.toString();
-        return hash_1.hash(str) + '';
-    }
     function isEditEvent(e) {
         return typeof e.undo === 'function'
             && typeof e.redo === 'function';
@@ -40486,7 +40891,7 @@ define(__m[180/*vs/workbench/api/common/extHostNotebook*/], __M([0/*require*/,1/
 
 
 
-define(__m[91/*vs/workbench/api/common/extHostOutput*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,26/*vs/base/common/buffer*/,4/*vs/platform/instantiation/common/instantiation*/,13/*vs/workbench/api/common/extHostRpcService*/]), function (require, exports, extHost_protocol_1, event_1, lifecycle_1, buffer_1, instantiation_1, extHostRpcService_1) {
+define(__m[93/*vs/workbench/api/common/extHostOutput*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,26/*vs/base/common/buffer*/,4/*vs/platform/instantiation/common/instantiation*/,14/*vs/workbench/api/common/extHostRpcService*/]), function (require, exports, extHost_protocol_1, event_1, lifecycle_1, buffer_1, instantiation_1, extHostRpcService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IExtHostOutputService = exports.ExtHostOutputService = exports.LazyOutputChannel = exports.ExtHostPushOutputChannel = exports.AbstractExtHostOutputChannel = void 0;
@@ -40622,7 +41027,7 @@ define(__m[91/*vs/workbench/api/common/extHostOutput*/], __M([0/*require*/,1/*ex
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[181/*vs/workbench/api/common/extHostQuickOpen*/], __M([0/*require*/,1/*exports*/,19/*vs/base/common/async*/,21/*vs/base/common/cancellation*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,5/*vs/workbench/api/common/extHost.protocol*/,2/*vs/base/common/uri*/,7/*vs/workbench/api/common/extHostTypes*/,11/*vs/base/common/errors*/,10/*vs/base/common/arrays*/]), function (require, exports, async_1, cancellation_1, event_1, lifecycle_1, extHost_protocol_1, uri_1, extHostTypes_1, errors_1, arrays_1) {
+define(__m[185/*vs/workbench/api/common/extHostQuickOpen*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/async*/,19/*vs/base/common/cancellation*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,5/*vs/workbench/api/common/extHost.protocol*/,2/*vs/base/common/uri*/,7/*vs/workbench/api/common/extHostTypes*/,10/*vs/base/common/errors*/,11/*vs/base/common/arrays*/]), function (require, exports, async_1, cancellation_1, event_1, lifecycle_1, extHost_protocol_1, uri_1, extHostTypes_1, errors_1, arrays_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostQuickOpen = void 0;
@@ -41123,7 +41528,7 @@ define(__m[181/*vs/workbench/api/common/extHostQuickOpen*/], __M([0/*require*/,1
 
 
 
-define(__m[182/*vs/workbench/api/common/extHostSCM*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,3/*vs/base/common/event*/,46/*vs/base/common/decorators*/,6/*vs/base/common/lifecycle*/,19/*vs/base/common/async*/,5/*vs/workbench/api/common/extHost.protocol*/,10/*vs/base/common/arrays*/,99/*vs/base/common/comparers*/,12/*vs/platform/log/common/log*/,25/*vs/platform/extensions/common/extensions*/]), function (require, exports, uri_1, event_1, decorators_1, lifecycle_1, async_1, extHost_protocol_1, arrays_1, comparers_1, log_1, extensions_1) {
+define(__m[186/*vs/workbench/api/common/extHostSCM*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,3/*vs/base/common/event*/,47/*vs/base/common/decorators*/,6/*vs/base/common/lifecycle*/,20/*vs/base/common/async*/,5/*vs/workbench/api/common/extHost.protocol*/,11/*vs/base/common/arrays*/,100/*vs/base/common/comparers*/,13/*vs/platform/log/common/log*/,25/*vs/platform/extensions/common/extensions*/]), function (require, exports, uri_1, event_1, decorators_1, lifecycle_1, async_1, extHost_protocol_1, arrays_1, comparers_1, log_1, extensions_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostSCM = exports.ExtHostSCMInputBox = void 0;
@@ -41674,7 +42079,7 @@ define(__m[182/*vs/workbench/api/common/extHostSCM*/], __M([0/*require*/,1/*expo
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[183/*vs/workbench/api/common/extHostStatusBar*/], __M([0/*require*/,1/*exports*/,7/*vs/workbench/api/common/extHostTypes*/,5/*vs/workbench/api/common/extHost.protocol*/,124/*vs/nls!vs/workbench/api/common/extHostStatusBar*/,6/*vs/base/common/lifecycle*/]), function (require, exports, extHostTypes_1, extHost_protocol_1, nls_1, lifecycle_1) {
+define(__m[187/*vs/workbench/api/common/extHostStatusBar*/], __M([0/*require*/,1/*exports*/,7/*vs/workbench/api/common/extHostTypes*/,5/*vs/workbench/api/common/extHost.protocol*/,125/*vs/nls!vs/workbench/api/common/extHostStatusBar*/,6/*vs/base/common/lifecycle*/]), function (require, exports, extHostTypes_1, extHost_protocol_1, nls_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostStatusBar = exports.ExtHostStatusBarEntry = void 0;
@@ -41848,7 +42253,7 @@ define(__m[183/*vs/workbench/api/common/extHostStatusBar*/], __M([0/*require*/,1
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[68/*vs/workbench/api/common/extHostStorage*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/,3/*vs/base/common/event*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, extHost_protocol_1, event_1, instantiation_1) {
+define(__m[71/*vs/workbench/api/common/extHostStorage*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/,3/*vs/base/common/event*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, extHost_protocol_1, event_1, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IExtHostStorage = exports.ExtHostStorage = void 0;
@@ -41885,7 +42290,7 @@ define(__m[68/*vs/workbench/api/common/extHostStorage*/], __M([0/*require*/,1/*e
 
 
 
-define(__m[69/*vs/workbench/api/common/extHostStoragePaths*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/,28/*vs/workbench/api/common/extHostInitDataService*/,12/*vs/platform/log/common/log*/,67/*vs/workbench/api/common/extHostFileSystemConsumer*/,2/*vs/base/common/uri*/]), function (require, exports, instantiation_1, extHostInitDataService_1, log_1, extHostFileSystemConsumer_1, uri_1) {
+define(__m[72/*vs/workbench/api/common/extHostStoragePaths*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/,28/*vs/workbench/api/common/extHostInitDataService*/,13/*vs/platform/log/common/log*/,70/*vs/workbench/api/common/extHostFileSystemConsumer*/,2/*vs/base/common/uri*/]), function (require, exports, instantiation_1, extHostInitDataService_1, log_1, extHostFileSystemConsumer_1, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtensionStoragePaths = exports.IExtensionStoragePaths = void 0;
@@ -41960,7 +42365,7 @@ define(__m[69/*vs/workbench/api/common/extHostStoragePaths*/], __M([0/*require*/
 
 
 
-define(__m[44/*vs/workbench/api/common/extHostTerminalService*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,5/*vs/workbench/api/common/extHost.protocol*/,4/*vs/platform/instantiation/common/instantiation*/,2/*vs/base/common/uri*/,154/*vs/workbench/contrib/terminal/common/terminal*/,19/*vs/base/common/async*/,13/*vs/workbench/api/common/extHostRpcService*/,155/*vs/workbench/contrib/terminal/common/terminalDataBuffering*/,6/*vs/base/common/lifecycle*/,7/*vs/workbench/api/common/extHostTypes*/,125/*vs/nls!vs/workbench/api/common/extHostTerminalService*/,11/*vs/base/common/errors*/,153/*vs/workbench/contrib/terminal/common/environmentVariableShared*/,21/*vs/base/common/cancellation*/]), function (require, exports, event_1, extHost_protocol_1, instantiation_1, uri_1, terminal_1, async_1, extHostRpcService_1, terminalDataBuffering_1, lifecycle_1, extHostTypes_1, nls_1, errors_1, environmentVariableShared_1, cancellation_1) {
+define(__m[39/*vs/workbench/api/common/extHostTerminalService*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,5/*vs/workbench/api/common/extHost.protocol*/,4/*vs/platform/instantiation/common/instantiation*/,2/*vs/base/common/uri*/,157/*vs/workbench/contrib/terminal/common/terminal*/,20/*vs/base/common/async*/,14/*vs/workbench/api/common/extHostRpcService*/,158/*vs/workbench/contrib/terminal/common/terminalDataBuffering*/,6/*vs/base/common/lifecycle*/,7/*vs/workbench/api/common/extHostTypes*/,126/*vs/nls!vs/workbench/api/common/extHostTerminalService*/,10/*vs/base/common/errors*/,156/*vs/workbench/contrib/terminal/common/environmentVariableShared*/,19/*vs/base/common/cancellation*/]), function (require, exports, event_1, extHost_protocol_1, instantiation_1, uri_1, terminal_1, async_1, extHostRpcService_1, terminalDataBuffering_1, lifecycle_1, extHostTypes_1, nls_1, errors_1, environmentVariableShared_1, cancellation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.WorkerExtHostTerminalService = exports.EnvironmentVariableCollection = exports.BaseExtHostTerminalService = exports.ExtHostPseudoterminal = exports.ExtHostTerminal = exports.BaseExtHostTerminal = exports.IExtHostTerminalService = void 0;
@@ -42165,10 +42570,11 @@ define(__m[44/*vs/workbench/api/common/extHostTerminalService*/], __M([0/*requir
     }
     exports.ExtHostPseudoterminal = ExtHostPseudoterminal;
     let nextLinkId = 1;
-    let BaseExtHostTerminalService = class BaseExtHostTerminalService {
+    let BaseExtHostTerminalService = class BaseExtHostTerminalService extends lifecycle_1.Disposable {
         constructor(supportsProcesses, extHostRpc) {
+            super();
             this._terminals = [];
-            this._terminalProcesses = {};
+            this._terminalProcesses = new Map();
             this._terminalProcessDisposables = {};
             this._extensionTerminalAwaitingStart = {};
             this._getTerminalPromises = {};
@@ -42187,6 +42593,13 @@ define(__m[44/*vs/workbench/api/common/extHostTerminalService*/], __M([0/*requir
                 onLastListenerRemove: () => this._proxy.$stopSendingDataEvents()
             });
             this._proxy.$registerProcessSupport(supportsProcesses);
+            this._register({
+                dispose: () => {
+                    for (const [_, terminalProcess] of this._terminalProcesses) {
+                        terminalProcess.shutdown(true);
+                    }
+                }
+            });
         }
         get activeTerminal() { return this._activeTerminal; }
         get terminals() { return this._terminals; }
@@ -42251,11 +42664,9 @@ define(__m[44/*vs/workbench/api/common/extHostTerminalService*/], __M([0/*requir
         async $acceptTerminalMaximumDimensions(id, cols, rows) {
             var _a;
             await this._getTerminalByIdEventually(id);
-            if (this._terminalProcesses[id]) {
-                // Extension pty terminal only - when virtual process resize fires it means that the
-                // terminal's maximum dimensions changed
-                (_a = this._terminalProcesses[id]) === null || _a === void 0 ? void 0 : _a.resize(cols, rows);
-            }
+            // Extension pty terminal only - when virtual process resize fires it means that the
+            // terminal's maximum dimensions changed
+            (_a = this._terminalProcesses.get(id)) === null || _a === void 0 ? void 0 : _a.resize(cols, rows);
         }
         async $acceptTerminalTitleChange(id, name) {
             await this._getTerminalByIdEventually(id);
@@ -42319,8 +42730,9 @@ define(__m[44/*vs/workbench/api/common/extHostTerminalService*/], __M([0/*requir
                     });
                 });
             }
-            if (this._terminalProcesses[id]) {
-                this._terminalProcesses[id].startSendingEvents(initialDimensions);
+            const terminalProcess = this._terminalProcesses.get(id);
+            if (terminalProcess) {
+                terminalProcess.startSendingEvents(initialDimensions);
             }
             else {
                 // Defer startSendingEvents call to when _setupExtHostProcessListeners is called
@@ -42338,7 +42750,7 @@ define(__m[44/*vs/workbench/api/common/extHostTerminalService*/], __M([0/*requir
             if (p.onProcessOverrideDimensions) {
                 disposables.add(p.onProcessOverrideDimensions(e => this._proxy.$sendOverrideDimensions(id, e)));
             }
-            this._terminalProcesses[id] = p;
+            this._terminalProcesses.set(id, p);
             const awaitingStart = this._extensionTerminalAwaitingStart[id];
             if (awaitingStart && p instanceof ExtHostPseudoterminal) {
                 p.startSendingEvents(awaitingStart.initialDimensions);
@@ -42348,12 +42760,12 @@ define(__m[44/*vs/workbench/api/common/extHostTerminalService*/], __M([0/*requir
         }
         $acceptProcessInput(id, data) {
             var _a;
-            (_a = this._terminalProcesses[id]) === null || _a === void 0 ? void 0 : _a.input(data);
+            (_a = this._terminalProcesses.get(id)) === null || _a === void 0 ? void 0 : _a.input(data);
         }
         $acceptProcessResize(id, cols, rows) {
             var _a;
             try {
-                (_a = this._terminalProcesses[id]) === null || _a === void 0 ? void 0 : _a.resize(cols, rows);
+                (_a = this._terminalProcesses.get(id)) === null || _a === void 0 ? void 0 : _a.resize(cols, rows);
             }
             catch (error) {
                 // We tried to write to a closed pipe / channel.
@@ -42364,15 +42776,15 @@ define(__m[44/*vs/workbench/api/common/extHostTerminalService*/], __M([0/*requir
         }
         $acceptProcessShutdown(id, immediate) {
             var _a;
-            (_a = this._terminalProcesses[id]) === null || _a === void 0 ? void 0 : _a.shutdown(immediate);
+            (_a = this._terminalProcesses.get(id)) === null || _a === void 0 ? void 0 : _a.shutdown(immediate);
         }
         $acceptProcessRequestInitialCwd(id) {
             var _a;
-            (_a = this._terminalProcesses[id]) === null || _a === void 0 ? void 0 : _a.getInitialCwd().then(initialCwd => this._proxy.$sendProcessInitialCwd(id, initialCwd));
+            (_a = this._terminalProcesses.get(id)) === null || _a === void 0 ? void 0 : _a.getInitialCwd().then(initialCwd => this._proxy.$sendProcessInitialCwd(id, initialCwd));
         }
         $acceptProcessRequestCwd(id) {
             var _a;
-            (_a = this._terminalProcesses[id]) === null || _a === void 0 ? void 0 : _a.getCwd().then(cwd => this._proxy.$sendProcessCwd(id, cwd));
+            (_a = this._terminalProcesses.get(id)) === null || _a === void 0 ? void 0 : _a.getCwd().then(cwd => this._proxy.$sendProcessCwd(id, cwd));
         }
         $acceptProcessRequestLatency(id) {
             return id;
@@ -42451,7 +42863,7 @@ define(__m[44/*vs/workbench/api/common/extHostTerminalService*/], __M([0/*requir
         _onProcessExit(id, exitCode) {
             this._bufferer.stopBuffering(id);
             // Remove process reference
-            delete this._terminalProcesses[id];
+            this._terminalProcesses.delete(id);
             delete this._extensionTerminalAwaitingStart[id];
             // Clean up process disposables
             const processDiposable = this._terminalProcessDisposables[id];
@@ -42627,14 +43039,13 @@ define(__m[44/*vs/workbench/api/common/extHostTerminalService*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[184/*vs/workbench/api/common/extHostTextEditors*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,10/*vs/base/common/arrays*/,5/*vs/workbench/api/common/extHost.protocol*/,88/*vs/workbench/api/common/extHostTextEditor*/,17/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, event_1, arrays, extHost_protocol_1, extHostTextEditor_1, TypeConverters, extHostTypes_1) {
+define(__m[188/*vs/workbench/api/common/extHostTextEditors*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,11/*vs/base/common/arrays*/,5/*vs/workbench/api/common/extHost.protocol*/,90/*vs/workbench/api/common/extHostTextEditor*/,15/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, event_1, arrays, extHost_protocol_1, extHostTextEditor_1, TypeConverters, extHostTypes_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostEditors = void 0;
     class ExtHostEditors {
-        constructor(mainContext, _extHostDocumentsAndEditors, _extHostNotebooks) {
+        constructor(mainContext, _extHostDocumentsAndEditors) {
             this._extHostDocumentsAndEditors = _extHostDocumentsAndEditors;
-            this._extHostNotebooks = _extHostNotebooks;
             this._onDidChangeTextEditorSelection = new event_1.Emitter();
             this._onDidChangeTextEditorOptions = new event_1.Emitter();
             this._onDidChangeTextEditorVisibleRanges = new event_1.Emitter();
@@ -42694,10 +43105,6 @@ define(__m[184/*vs/workbench/api/common/extHostTextEditors*/], __M([0/*require*/
         }
         createTextEditorDecorationType(options) {
             return new extHostTextEditor_1.TextEditorDecorationType(this._proxy, options);
-        }
-        applyWorkspaceEdit(edit) {
-            const dto = TypeConverters.WorkspaceEdit.from(edit, this._extHostDocumentsAndEditors, this._extHostNotebooks);
-            return this._proxy.$tryApplyWorkspaceEdit(dto);
         }
         // --- called from main thread
         $acceptEditorPropertiesChanged(id, data) {
@@ -42776,7 +43183,7 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-define(__m[185/*vs/workbench/api/common/extHostTimeline*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,4/*vs/platform/instantiation/common/instantiation*/,5/*vs/workbench/api/common/extHost.protocol*/,6/*vs/base/common/lifecycle*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, uri_1, instantiation_1, extHost_protocol_1, lifecycle_1, extHostTypes_1) {
+define(__m[189/*vs/workbench/api/common/extHostTimeline*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,4/*vs/platform/instantiation/common/instantiation*/,5/*vs/workbench/api/common/extHost.protocol*/,6/*vs/base/common/lifecycle*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, uri_1, instantiation_1, extHost_protocol_1, lifecycle_1, extHostTypes_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostTimeline = exports.IExtHostTimeline = void 0;
@@ -42916,7 +43323,7 @@ define(__m[185/*vs/workbench/api/common/extHostTimeline*/], __M([0/*require*/,1/
 
 
 
-define(__m[70/*vs/workbench/api/common/extHostTunnelService*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/,4/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/,13/*vs/workbench/api/common/extHostRpcService*/]), function (require, exports, extHost_protocol_1, instantiation_1, event_1, extHostRpcService_1) {
+define(__m[73/*vs/workbench/api/common/extHostTunnelService*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/,4/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/event*/,14/*vs/workbench/api/common/extHostRpcService*/]), function (require, exports, extHost_protocol_1, instantiation_1, event_1, extHostRpcService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostTunnelService = exports.IExtHostTunnelService = exports.TunnelDto = void 0;
@@ -42967,7 +43374,7 @@ define(__m[70/*vs/workbench/api/common/extHostTunnelService*/], __M([0/*require*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[186/*vs/workbench/api/common/extHostUrls*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/,2/*vs/base/common/uri*/,6/*vs/base/common/lifecycle*/,11/*vs/base/common/errors*/,25/*vs/platform/extensions/common/extensions*/]), function (require, exports, extHost_protocol_1, uri_1, lifecycle_1, errors_1, extensions_1) {
+define(__m[190/*vs/workbench/api/common/extHostUrls*/], __M([0/*require*/,1/*exports*/,5/*vs/workbench/api/common/extHost.protocol*/,2/*vs/base/common/uri*/,6/*vs/base/common/lifecycle*/,10/*vs/base/common/errors*/,25/*vs/platform/extensions/common/extensions*/]), function (require, exports, extHost_protocol_1, uri_1, lifecycle_1, errors_1, extensions_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostUrls = void 0;
@@ -43029,7 +43436,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     }
     return privateMap.get(receiver);
 };
-define(__m[71/*vs/workbench/api/common/extHostWebview*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/uri*/,63/*vs/workbench/api/common/shared/webview*/,5/*vs/workbench/api/common/extHost.protocol*/]), function (require, exports, event_1, uri_1, webview_1, extHostProtocol) {
+define(__m[74/*vs/workbench/api/common/extHostWebview*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,2/*vs/base/common/uri*/,67/*vs/workbench/api/common/shared/webview*/,5/*vs/workbench/api/common/extHost.protocol*/]), function (require, exports, event_1, uri_1, webview_1, extHostProtocol) {
     "use strict";
     var _handle_1, _proxy, _deprecationService_1, _initData, _workspace, _extension, _html, _options, _isDisposed, _hasCalledAsWebviewUri, _onDidDisposeEmitter;
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -43059,6 +43466,7 @@ define(__m[71/*vs/workbench/api/common/extHostWebview*/], __M([0/*require*/,1/*e
             __classPrivateFieldSet(this, _deprecationService_1, deprecationService);
         }
         dispose() {
+            __classPrivateFieldSet(this, _isDisposed, true);
             __classPrivateFieldGet(this, _onDidDisposeEmitter).fire();
             __classPrivateFieldGet(this, _onDidDisposeEmitter).dispose();
             this._onMessageEmitter.dispose();
@@ -43095,8 +43503,10 @@ define(__m[71/*vs/workbench/api/common/extHostWebview*/], __M([0/*require*/,1/*e
             __classPrivateFieldGet(this, _proxy).$setOptions(__classPrivateFieldGet(this, _handle_1), convertWebviewOptions(__classPrivateFieldGet(this, _extension), __classPrivateFieldGet(this, _workspace), newOptions));
             __classPrivateFieldSet(this, _options, newOptions);
         }
-        postMessage(message) {
-            this.assertNotDisposed();
+        async postMessage(message) {
+            if (__classPrivateFieldGet(this, _isDisposed)) {
+                return false;
+            }
             return __classPrivateFieldGet(this, _proxy).$postMessage(__classPrivateFieldGet(this, _handle_1), message);
         }
         assertNotDisposed() {
@@ -43163,7 +43573,7 @@ define(__m[71/*vs/workbench/api/common/extHostWebview*/], __M([0/*require*/,1/*e
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[187/*vs/workbench/api/common/extHostCustomEditors*/], __M([0/*require*/,1/*exports*/,21/*vs/base/common/cancellation*/,74/*vs/base/common/hash*/,6/*vs/base/common/lifecycle*/,18/*vs/base/common/network*/,23/*vs/base/common/resources*/,2/*vs/base/common/uri*/,71/*vs/workbench/api/common/extHostWebview*/,61/*vs/workbench/api/common/cache*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, cancellation_1, hash_1, lifecycle_1, network_1, resources_1, uri_1, extHostWebview_1, cache_1, extHostProtocol, extHostTypes) {
+define(__m[191/*vs/workbench/api/common/extHostCustomEditors*/], __M([0/*require*/,1/*exports*/,19/*vs/base/common/cancellation*/,51/*vs/base/common/hash*/,6/*vs/base/common/lifecycle*/,12/*vs/base/common/network*/,23/*vs/base/common/resources*/,2/*vs/base/common/uri*/,74/*vs/workbench/api/common/extHostWebview*/,64/*vs/workbench/api/common/cache*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, cancellation_1, hash_1, lifecycle_1, network_1, resources_1, uri_1, extHostWebview_1, cache_1, extHostProtocol, extHostTypes) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostCustomEditors = void 0;
@@ -43464,7 +43874,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     }
     return privateMap.get(receiver);
 };
-define(__m[188/*vs/workbench/api/common/extHostWebviewPanels*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,2/*vs/base/common/uri*/,29/*vs/base/common/uuid*/,17/*vs/workbench/api/common/extHostTypeConverters*/,71/*vs/workbench/api/common/extHostWebview*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, event_1, lifecycle_1, uri_1, uuid_1, typeConverters, extHostWebview_1, extHostProtocol, extHostTypes) {
+define(__m[192/*vs/workbench/api/common/extHostWebviewPanels*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,2/*vs/base/common/uri*/,29/*vs/base/common/uuid*/,15/*vs/workbench/api/common/extHostTypeConverters*/,74/*vs/workbench/api/common/extHostWebview*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, event_1, lifecycle_1, uri_1, uuid_1, typeConverters, extHostWebview_1, extHostProtocol, extHostTypes) {
     "use strict";
     var _handle, _proxy_1, _viewType, _webview, _options, _title, _iconPath, _viewColumn, _visible, _active, _isDisposed, _onDidDispose, _onDidChangeViewState;
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -43689,13 +44099,13 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     }
     return privateMap.get(receiver);
 };
-define(__m[189/*vs/workbench/api/common/extHostWebviewView*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, event_1, lifecycle_1, extHostProtocol, extHostTypes) {
+define(__m[193/*vs/workbench/api/common/extHostWebviewView*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, event_1, lifecycle_1, extHostProtocol, extHostTypes) {
     "use strict";
-    var _handle, _proxy_1, _viewType, _webview, _isDisposed, _isVisible, _title, _onDidChangeVisibility, _onDidDispose;
+    var _handle, _proxy_1, _viewType, _webview, _isDisposed, _isVisible, _title, _description, _onDidChangeVisibility, _onDidDispose;
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostWebviewViews = void 0;
     class ExtHostWebviewView extends lifecycle_1.Disposable {
-        constructor(handle, proxy, viewType, webview, isVisible) {
+        constructor(handle, proxy, viewType, title, webview, isVisible) {
             super();
             _handle.set(this, void 0);
             _proxy_1.set(this, void 0);
@@ -43704,11 +44114,13 @@ define(__m[189/*vs/workbench/api/common/extHostWebviewView*/], __M([0/*require*/
             _isDisposed.set(this, false);
             _isVisible.set(this, void 0);
             _title.set(this, void 0);
+            _description.set(this, void 0);
             _onDidChangeVisibility.set(this, this._register(new event_1.Emitter()));
             this.onDidChangeVisibility = __classPrivateFieldGet(this, _onDidChangeVisibility).event;
             _onDidDispose.set(this, this._register(new event_1.Emitter()));
             this.onDidDispose = __classPrivateFieldGet(this, _onDidDispose).event;
             __classPrivateFieldSet(this, _viewType, viewType);
+            __classPrivateFieldSet(this, _title, title);
             __classPrivateFieldSet(this, _handle, handle);
             __classPrivateFieldSet(this, _proxy_1, proxy);
             __classPrivateFieldSet(this, _webview, webview);
@@ -43720,6 +44132,7 @@ define(__m[189/*vs/workbench/api/common/extHostWebviewView*/], __M([0/*require*/
             }
             __classPrivateFieldSet(this, _isDisposed, true);
             __classPrivateFieldGet(this, _onDidDispose).fire();
+            __classPrivateFieldGet(this, _webview).dispose();
             super.dispose();
         }
         get title() {
@@ -43733,15 +44146,30 @@ define(__m[189/*vs/workbench/api/common/extHostWebviewView*/], __M([0/*require*/
                 __classPrivateFieldGet(this, _proxy_1).$setWebviewViewTitle(__classPrivateFieldGet(this, _handle), value);
             }
         }
+        get description() {
+            this.assertNotDisposed();
+            return __classPrivateFieldGet(this, _description);
+        }
+        set description(value) {
+            this.assertNotDisposed();
+            if (__classPrivateFieldGet(this, _description) !== value) {
+                __classPrivateFieldSet(this, _description, value);
+                __classPrivateFieldGet(this, _proxy_1).$setWebviewViewDescription(__classPrivateFieldGet(this, _handle), value);
+            }
+        }
         get visible() { return __classPrivateFieldGet(this, _isVisible); }
         get webview() { return __classPrivateFieldGet(this, _webview); }
         get viewType() { return __classPrivateFieldGet(this, _viewType); }
         /* internal */ _setVisible(visible) {
-            if (visible === __classPrivateFieldGet(this, _isVisible)) {
+            if (visible === __classPrivateFieldGet(this, _isVisible) || __classPrivateFieldGet(this, _isDisposed)) {
                 return;
             }
             __classPrivateFieldSet(this, _isVisible, visible);
             __classPrivateFieldGet(this, _onDidChangeVisibility).fire();
+        }
+        show(preserveFocus) {
+            this.assertNotDisposed();
+            __classPrivateFieldGet(this, _proxy_1).$show(__classPrivateFieldGet(this, _handle), !!preserveFocus);
         }
         assertNotDisposed() {
             if (__classPrivateFieldGet(this, _isDisposed)) {
@@ -43749,7 +44177,7 @@ define(__m[189/*vs/workbench/api/common/extHostWebviewView*/], __M([0/*require*/
             }
         }
     }
-    _handle = new WeakMap(), _proxy_1 = new WeakMap(), _viewType = new WeakMap(), _webview = new WeakMap(), _isDisposed = new WeakMap(), _isVisible = new WeakMap(), _title = new WeakMap(), _onDidChangeVisibility = new WeakMap(), _onDidDispose = new WeakMap();
+    _handle = new WeakMap(), _proxy_1 = new WeakMap(), _viewType = new WeakMap(), _webview = new WeakMap(), _isDisposed = new WeakMap(), _isVisible = new WeakMap(), _title = new WeakMap(), _description = new WeakMap(), _onDidChangeVisibility = new WeakMap(), _onDidDispose = new WeakMap();
     class ExtHostWebviewViews {
         constructor(mainContext, _extHostWebview) {
             this._extHostWebview = _extHostWebview;
@@ -43768,14 +44196,14 @@ define(__m[189/*vs/workbench/api/common/extHostWebviewView*/], __M([0/*require*/
                 this._proxy.$unregisterWebviewViewProvider(viewType);
             });
         }
-        async $resolveWebviewView(webviewHandle, viewType, state, cancellation) {
+        async $resolveWebviewView(webviewHandle, viewType, title, state, cancellation) {
             const entry = this._viewProviders.get(viewType);
             if (!entry) {
                 throw new Error(`No view provider found for '${viewType}'`);
             }
             const { provider, extension } = entry;
             const webview = this._extHostWebview.createNewWebview(webviewHandle, { /* todo */}, extension);
-            const revivedView = new ExtHostWebviewView(webviewHandle, this._proxy, viewType, webview, true);
+            const revivedView = new ExtHostWebviewView(webviewHandle, this._proxy, viewType, title, webview, true);
             this._webviewViews.set(webviewHandle, revivedView);
             await provider.resolveWebviewView(revivedView, { state }, cancellation);
         }
@@ -43787,6 +44215,7 @@ define(__m[189/*vs/workbench/api/common/extHostWebviewView*/], __M([0/*require*/
             const webviewView = this.getWebviewView(webviewHandle);
             this._webviewViews.delete(webviewHandle);
             webviewView.dispose();
+            this._extHostWebview.deleteWebview(webviewHandle);
         }
         getWebviewView(handle) {
             const entry = this._webviewViews.get(handle);
@@ -43812,7 +44241,7 @@ define(__m[189/*vs/workbench/api/common/extHostWebviewView*/], __M([0/*require*/
 
 
 
-define(__m[92/*vs/workbench/api/common/extHostWindow*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,5/*vs/workbench/api/common/extHost.protocol*/,2/*vs/base/common/uri*/,18/*vs/base/common/network*/,8/*vs/base/common/strings*/,4/*vs/platform/instantiation/common/instantiation*/,13/*vs/workbench/api/common/extHostRpcService*/]), function (require, exports, event_1, extHost_protocol_1, uri_1, network_1, strings_1, instantiation_1, extHostRpcService_1) {
+define(__m[94/*vs/workbench/api/common/extHostWindow*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/event*/,5/*vs/workbench/api/common/extHost.protocol*/,2/*vs/base/common/uri*/,12/*vs/base/common/network*/,8/*vs/base/common/strings*/,4/*vs/platform/instantiation/common/instantiation*/,14/*vs/workbench/api/common/extHostRpcService*/]), function (require, exports, event_1, extHost_protocol_1, uri_1, network_1, strings_1, instantiation_1, extHostRpcService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IExtHostWindow = exports.ExtHostWindow = void 0;
@@ -43885,7 +44314,7 @@ define(__m[92/*vs/workbench/api/common/extHostWindow*/], __M([0/*require*/,1/*ex
 
 
 
-define(__m[190/*vs/workbench/api/worker/extHostLogService*/], __M([0/*require*/,1/*exports*/,12/*vs/platform/log/common/log*/,5/*vs/workbench/api/common/extHost.protocol*/,28/*vs/workbench/api/common/extHostInitDataService*/,13/*vs/workbench/api/common/extHostRpcService*/]), function (require, exports, log_1, extHost_protocol_1, extHostInitDataService_1, extHostRpcService_1) {
+define(__m[194/*vs/workbench/api/worker/extHostLogService*/], __M([0/*require*/,1/*exports*/,13/*vs/platform/log/common/log*/,5/*vs/workbench/api/common/extHost.protocol*/,28/*vs/workbench/api/common/extHostInitDataService*/,14/*vs/workbench/api/common/extHostRpcService*/]), function (require, exports, log_1, extHost_protocol_1, extHostInitDataService_1, extHostRpcService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostLogService = void 0;
@@ -43942,7 +44371,7 @@ define(__m[190/*vs/workbench/api/worker/extHostLogService*/], __M([0/*require*/,
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[191/*vs/workbench/services/extensions/common/rpcProtocol*/], __M([0/*require*/,1/*exports*/,19/*vs/base/common/async*/,21/*vs/base/common/cancellation*/,11/*vs/base/common/errors*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,104/*vs/base/common/uriIpc*/,166/*vs/workbench/services/extensions/common/lazyPromise*/,89/*vs/workbench/services/extensions/common/proxyIdentifier*/,26/*vs/base/common/buffer*/]), function (require, exports, async_1, cancellation_1, errors, event_1, lifecycle_1, uriIpc_1, lazyPromise_1, proxyIdentifier_1, buffer_1) {
+define(__m[195/*vs/workbench/services/extensions/common/rpcProtocol*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/async*/,19/*vs/base/common/cancellation*/,10/*vs/base/common/errors*/,3/*vs/base/common/event*/,6/*vs/base/common/lifecycle*/,105/*vs/base/common/uriIpc*/,169/*vs/workbench/services/extensions/common/lazyPromise*/,91/*vs/workbench/services/extensions/common/proxyIdentifier*/,26/*vs/base/common/buffer*/]), function (require, exports, async_1, cancellation_1, errors, event_1, lifecycle_1, uriIpc_1, lazyPromise_1, proxyIdentifier_1, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.RPCProtocol = exports.ResponsiveState = exports.RequestInitiator = void 0;
@@ -44665,7 +45094,7 @@ define(__m[191/*vs/workbench/services/extensions/common/rpcProtocol*/], __M([0/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[192/*vs/workbench/services/remote/common/remoteAgentService*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
+define(__m[196/*vs/workbench/services/remote/common/remoteAgentService*/], __M([0/*require*/,1/*exports*/,4/*vs/platform/instantiation/common/instantiation*/]), function (require, exports, instantiation_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IRemoteAgentService = exports.RemoteExtensionLogFileName = void 0;
@@ -44686,7 +45115,7 @@ define(__m[192/*vs/workbench/services/remote/common/remoteAgentService*/], __M([
 
 
 
-define(__m[193/*vs/workbench/services/path/common/pathService*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/path*/,20/*vs/base/common/platform*/,2/*vs/base/common/uri*/,4/*vs/platform/instantiation/common/instantiation*/,192/*vs/workbench/services/remote/common/remoteAgentService*/]), function (require, exports, path_1, platform_1, uri_1, instantiation_1, remoteAgentService_1) {
+define(__m[197/*vs/workbench/services/path/common/pathService*/], __M([0/*require*/,1/*exports*/,12/*vs/base/common/network*/,9/*vs/base/common/path*/,21/*vs/base/common/platform*/,2/*vs/base/common/uri*/,4/*vs/platform/instantiation/common/instantiation*/,196/*vs/workbench/services/remote/common/remoteAgentService*/]), function (require, exports, network_1, path_1, platform_1, uri_1, instantiation_1, remoteAgentService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.AbstractPathService = exports.IPathService = void 0;
@@ -44742,9 +45171,8 @@ define(__m[193/*vs/workbench/services/path/common/pathService*/], __M([0/*requir
                     _path = _path.substring(idx) || '/';
                 }
             }
-            // return new _URI('file', authority, path, '', '');
             return uri_1.URI.from({
-                scheme: 'file',
+                scheme: network_1.Schemas.file,
                 authority,
                 path: _path,
                 query: '',
@@ -44762,7 +45190,7 @@ define(__m[193/*vs/workbench/services/path/common/pathService*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[38/*vs/workbench/services/search/common/search*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/arrays*/,27/*vs/base/common/glob*/,24/*vs/base/common/objects*/,41/*vs/base/common/extpath*/,8/*vs/base/common/strings*/,4/*vs/platform/instantiation/common/instantiation*/,9/*vs/base/common/path*/,11/*vs/base/common/errors*/]), function (require, exports, arrays_1, glob, objects, extpath, strings_1, instantiation_1, path_1, errors_1) {
+define(__m[40/*vs/workbench/services/search/common/search*/], __M([0/*require*/,1/*exports*/,11/*vs/base/common/arrays*/,27/*vs/base/common/glob*/,24/*vs/base/common/objects*/,43/*vs/base/common/extpath*/,8/*vs/base/common/strings*/,4/*vs/platform/instantiation/common/instantiation*/,9/*vs/base/common/path*/,10/*vs/base/common/errors*/]), function (require, exports, arrays_1, glob, objects, extpath, strings_1, instantiation_1, path_1, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.QueryGlobTester = exports.resolvePatternsForProvider = exports.SerializableFileMatch = exports.isFilePatternMatch = exports.isSerializedFileMatch = exports.isSerializedSearchSuccess = exports.isSerializedSearchComplete = exports.serializeSearchError = exports.deserializeSearchError = exports.SearchError = exports.SearchErrorCode = exports.pathIncludedInQuery = exports.getExcludes = exports.SearchSortOrder = exports.OneLineRange = exports.SearchRange = exports.TextSearchMatch = exports.FileMatch = exports.SearchCompletionExitCode = exports.isProgressMessage = exports.isFileMatch = exports.resultIsMatch = exports.QueryType = exports.SearchProviderType = exports.ISearchService = exports.SEARCH_EXCLUDE_CONFIG = exports.VIEW_ID = exports.PANEL_ID = exports.VIEWLET_ID = void 0;
@@ -45074,7 +45502,7 @@ define(__m[38/*vs/workbench/services/search/common/search*/], __M([0/*require*/,
 
 
 
-define(__m[31/*vs/workbench/api/common/extHostWorkspace*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/arrays*/,19/*vs/base/common/async*/,21/*vs/base/common/cancellation*/,3/*vs/base/common/event*/,22/*vs/base/common/map*/,18/*vs/base/common/network*/,98/*vs/base/common/numbers*/,23/*vs/base/common/resources*/,8/*vs/base/common/strings*/,14/*vs/base/common/types*/,2/*vs/base/common/uri*/,127/*vs/nls!vs/workbench/api/common/extHostWorkspace*/,4/*vs/platform/instantiation/common/instantiation*/,12/*vs/platform/log/common/log*/,140/*vs/platform/notification/common/notification*/,60/*vs/platform/workspace/common/workspace*/,28/*vs/workbench/api/common/extHostInitDataService*/,13/*vs/workbench/api/common/extHostRpcService*/,7/*vs/workbench/api/common/extHostTypes*/,38/*vs/workbench/services/search/common/search*/,5/*vs/workbench/api/common/extHost.protocol*/]), function (require, exports, arrays_1, async_1, cancellation_1, event_1, map_1, network_1, numbers_1, resources_1, strings_1, types_1, uri_1, nls_1, instantiation_1, log_1, notification_1, workspace_1, extHostInitDataService_1, extHostRpcService_1, extHostTypes_1, search_1, extHost_protocol_1) {
+define(__m[32/*vs/workbench/api/common/extHostWorkspace*/], __M([0/*require*/,1/*exports*/,11/*vs/base/common/arrays*/,20/*vs/base/common/async*/,19/*vs/base/common/cancellation*/,3/*vs/base/common/event*/,22/*vs/base/common/map*/,12/*vs/base/common/network*/,76/*vs/base/common/numbers*/,23/*vs/base/common/resources*/,8/*vs/base/common/strings*/,16/*vs/base/common/types*/,2/*vs/base/common/uri*/,128/*vs/nls!vs/workbench/api/common/extHostWorkspace*/,4/*vs/platform/instantiation/common/instantiation*/,13/*vs/platform/log/common/log*/,141/*vs/platform/notification/common/notification*/,63/*vs/platform/workspace/common/workspace*/,28/*vs/workbench/api/common/extHostInitDataService*/,14/*vs/workbench/api/common/extHostRpcService*/,7/*vs/workbench/api/common/extHostTypes*/,40/*vs/workbench/services/search/common/search*/,5/*vs/workbench/api/common/extHost.protocol*/]), function (require, exports, arrays_1, async_1, cancellation_1, event_1, map_1, network_1, numbers_1, resources_1, strings_1, types_1, uri_1, nls_1, instantiation_1, log_1, notification_1, workspace_1, extHostInitDataService_1, extHostRpcService_1, extHostTypes_1, search_1, extHost_protocol_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IExtHostWorkspace = exports.ExtHostWorkspace = void 0;
@@ -45512,7 +45940,7 @@ define(__m[31/*vs/workbench/api/common/extHostWorkspace*/], __M([0/*require*/,1/
 
 
 
-define(__m[32/*vs/workbench/api/common/extHostConfiguration*/], __M([0/*require*/,1/*exports*/,24/*vs/base/common/objects*/,3/*vs/base/common/event*/,31/*vs/workbench/api/common/extHostWorkspace*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/,143/*vs/platform/configuration/common/configurationModels*/,59/*vs/platform/configuration/common/configurationRegistry*/,14/*vs/base/common/types*/,19/*vs/base/common/async*/,4/*vs/platform/instantiation/common/instantiation*/,13/*vs/workbench/api/common/extHostRpcService*/,12/*vs/platform/log/common/log*/,2/*vs/base/common/uri*/]), function (require, exports, objects_1, event_1, extHostWorkspace_1, extHost_protocol_1, extHostTypes_1, configurationModels_1, configurationRegistry_1, types_1, async_1, instantiation_1, extHostRpcService_1, log_1, uri_1) {
+define(__m[33/*vs/workbench/api/common/extHostConfiguration*/], __M([0/*require*/,1/*exports*/,24/*vs/base/common/objects*/,3/*vs/base/common/event*/,32/*vs/workbench/api/common/extHostWorkspace*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/,144/*vs/platform/configuration/common/configurationModels*/,62/*vs/platform/configuration/common/configurationRegistry*/,16/*vs/base/common/types*/,20/*vs/base/common/async*/,4/*vs/platform/instantiation/common/instantiation*/,14/*vs/workbench/api/common/extHostRpcService*/,13/*vs/platform/log/common/log*/,2/*vs/base/common/uri*/]), function (require, exports, objects_1, event_1, extHostWorkspace_1, extHost_protocol_1, extHostTypes_1, configurationModels_1, configurationRegistry_1, types_1, async_1, instantiation_1, extHostRpcService_1, log_1, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IExtHostConfiguration = exports.ExtHostConfigProvider = exports.ExtHostConfiguration = void 0;
@@ -45783,7 +46211,7 @@ define(__m[32/*vs/workbench/api/common/extHostConfiguration*/], __M([0/*require*
 
 
 
-define(__m[93/*vs/workbench/api/common/extHostTask*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,19/*vs/base/common/async*/,3/*vs/base/common/event*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/,31/*vs/workbench/api/common/extHostWorkspace*/,43/*vs/workbench/api/common/extHostDocumentsAndEditors*/,32/*vs/workbench/api/common/extHostConfiguration*/,21/*vs/base/common/cancellation*/,44/*vs/workbench/api/common/extHostTerminalService*/,13/*vs/workbench/api/common/extHostRpcService*/,28/*vs/workbench/api/common/extHostInitDataService*/,4/*vs/platform/instantiation/common/instantiation*/,18/*vs/base/common/network*/,20/*vs/base/common/platform*/,12/*vs/platform/log/common/log*/,65/*vs/workbench/api/common/extHostApiDeprecationService*/,152/*vs/workbench/contrib/tasks/common/taskService*/,11/*vs/base/common/errors*/]), function (require, exports, uri_1, async_1, event_1, extHost_protocol_1, types, extHostWorkspace_1, extHostDocumentsAndEditors_1, extHostConfiguration_1, cancellation_1, extHostTerminalService_1, extHostRpcService_1, extHostInitDataService_1, instantiation_1, network_1, Platform, log_1, extHostApiDeprecationService_1, taskService_1, errors_1) {
+define(__m[95/*vs/workbench/api/common/extHostTask*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,20/*vs/base/common/async*/,3/*vs/base/common/event*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/,32/*vs/workbench/api/common/extHostWorkspace*/,45/*vs/workbench/api/common/extHostDocumentsAndEditors*/,33/*vs/workbench/api/common/extHostConfiguration*/,19/*vs/base/common/cancellation*/,39/*vs/workbench/api/common/extHostTerminalService*/,14/*vs/workbench/api/common/extHostRpcService*/,28/*vs/workbench/api/common/extHostInitDataService*/,4/*vs/platform/instantiation/common/instantiation*/,12/*vs/base/common/network*/,21/*vs/base/common/platform*/,13/*vs/platform/log/common/log*/,68/*vs/workbench/api/common/extHostApiDeprecationService*/,155/*vs/workbench/contrib/tasks/common/taskService*/,10/*vs/base/common/errors*/]), function (require, exports, uri_1, async_1, event_1, extHost_protocol_1, types, extHostWorkspace_1, extHostDocumentsAndEditors_1, extHostConfiguration_1, cancellation_1, extHostTerminalService_1, extHostRpcService_1, extHostInitDataService_1, instantiation_1, network_1, Platform, log_1, extHostApiDeprecationService_1, taskService_1, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IExtHostTask = exports.WorkerExtHostTask = exports.ExtHostTaskBase = exports.TaskExecutionDTO = exports.TaskFilterDTO = exports.TaskDTO = exports.TaskHandleDTO = exports.CustomExecutionDTO = exports.ShellExecutionDTO = exports.ShellExecutionOptionsDTO = exports.ProcessExecutionDTO = exports.ProcessExecutionOptionsDTO = exports.TaskPresentationOptionsDTO = exports.TaskDefinitionDTO = void 0;
@@ -46491,7 +46919,7 @@ define(__m[93/*vs/workbench/api/common/extHostTask*/], __M([0/*require*/,1/*expo
 
 
 
-define(__m[194/*vs/workbench/contrib/search/common/queryBuilder*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/arrays*/,45/*vs/base/common/collections*/,27/*vs/base/common/glob*/,52/*vs/base/common/labels*/,18/*vs/base/common/network*/,9/*vs/base/common/path*/,23/*vs/base/common/resources*/,8/*vs/base/common/strings*/,2/*vs/base/common/uri*/,107/*vs/editor/common/model/textModelSearch*/,130/*vs/nls!vs/workbench/contrib/search/common/queryBuilder*/,83/*vs/platform/configuration/common/configuration*/,60/*vs/platform/workspace/common/workspace*/,193/*vs/workbench/services/path/common/pathService*/,38/*vs/workbench/services/search/common/search*/]), function (require, exports, arrays, collections, glob, labels_1, network_1, path, resources_1, strings, uri_1, textModelSearch_1, nls, configuration_1, workspace_1, pathService_1, search_1) {
+define(__m[198/*vs/workbench/contrib/search/common/queryBuilder*/], __M([0/*require*/,1/*exports*/,11/*vs/base/common/arrays*/,46/*vs/base/common/collections*/,27/*vs/base/common/glob*/,55/*vs/base/common/labels*/,12/*vs/base/common/network*/,9/*vs/base/common/path*/,23/*vs/base/common/resources*/,8/*vs/base/common/strings*/,2/*vs/base/common/uri*/,108/*vs/editor/common/model/textModelSearch*/,131/*vs/nls!vs/workbench/contrib/search/common/queryBuilder*/,85/*vs/platform/configuration/common/configuration*/,63/*vs/platform/workspace/common/workspace*/,197/*vs/workbench/services/path/common/pathService*/,40/*vs/workbench/services/search/common/search*/]), function (require, exports, arrays, collections, glob, labels_1, network_1, path, resources_1, strings, uri_1, textModelSearch_1, nls, configuration_1, workspace_1, pathService_1, search_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.QueryBuilder = void 0;
@@ -46835,7 +47263,7 @@ define(__m[194/*vs/workbench/contrib/search/common/queryBuilder*/], __M([0/*requ
             .filter(s => !!s.length);
     }
     /**
-     * Note - we used {} here previously but ripgrep can't handle nested {} patterns. See https://github.com/Microsoft/vscode/issues/32761
+     * Note - we used {} here previously but ripgrep can't handle nested {} patterns. See https://github.com/microsoft/vscode/issues/32761
      */
     function expandGlobalGlob(pattern) {
         const patterns = [
@@ -46861,7 +47289,7 @@ define(__m[194/*vs/workbench/contrib/search/common/queryBuilder*/], __M([0/*requ
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[195/*vs/workbench/api/common/shared/workspaceContains*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/path*/,2/*vs/base/common/uri*/,21/*vs/base/common/cancellation*/,11/*vs/base/common/errors*/,4/*vs/platform/instantiation/common/instantiation*/,194/*vs/workbench/contrib/search/common/queryBuilder*/,38/*vs/workbench/services/search/common/search*/,60/*vs/platform/workspace/common/workspace*/]), function (require, exports, path, uri_1, cancellation_1, errors, instantiation_1, queryBuilder_1, search_1, workspace_1) {
+define(__m[199/*vs/workbench/api/common/shared/workspaceContains*/], __M([0/*require*/,1/*exports*/,23/*vs/base/common/resources*/,2/*vs/base/common/uri*/,19/*vs/base/common/cancellation*/,10/*vs/base/common/errors*/,4/*vs/platform/instantiation/common/instantiation*/,198/*vs/workbench/contrib/search/common/queryBuilder*/,40/*vs/workbench/services/search/common/search*/,63/*vs/platform/workspace/common/workspace*/]), function (require, exports, resources, uri_1, cancellation_1, errors, instantiation_1, queryBuilder_1, search_1, workspace_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.checkGlobFileExists = exports.checkActivateWorkspaceContainsExtension = void 0;
@@ -46902,7 +47330,7 @@ define(__m[195/*vs/workbench/api/common/shared/workspaceContains*/], __M([0/*req
     async function _activateIfFileName(host, fileName, activate) {
         // find exact path
         for (const uri of host.folders) {
-            if (await host.exists(path.join(uri_1.URI.revive(uri).fsPath, fileName))) {
+            if (await host.exists(resources.joinPath(uri_1.URI.revive(uri), fileName))) {
                 // the file was found
                 activate(`workspaceContains:${fileName}`);
                 return;
@@ -46970,7 +47398,7 @@ define(__m[195/*vs/workbench/api/common/shared/workspaceContains*/], __M([0/*req
 
 
 
-define(__m[33/*vs/workbench/api/common/extHostExtensionService*/], __M([0/*require*/,1/*exports*/,122/*vs/nls!vs/workbench/api/common/extHostExtensionService*/,9/*vs/base/common/path*/,23/*vs/base/common/resources*/,19/*vs/base/common/async*/,6/*vs/base/common/lifecycle*/,22/*vs/base/common/map*/,2/*vs/base/common/uri*/,12/*vs/platform/log/common/log*/,5/*vs/workbench/api/common/extHost.protocol*/,32/*vs/workbench/api/common/extHostConfiguration*/,164/*vs/workbench/api/common/extHostExtensionActivator*/,68/*vs/workbench/api/common/extHostStorage*/,31/*vs/workbench/api/common/extHostWorkspace*/,37/*vs/workbench/services/extensions/common/extensions*/,162/*vs/workbench/services/extensions/common/extensionDescriptionRegistry*/,11/*vs/base/common/errors*/,25/*vs/platform/extensions/common/extensions*/,18/*vs/base/common/network*/,26/*vs/base/common/buffer*/,144/*vs/workbench/api/common/extHostMemento*/,7/*vs/workbench/api/common/extHostTypes*/,84/*vs/platform/remote/common/remoteAuthorityResolver*/,4/*vs/platform/instantiation/common/instantiation*/,28/*vs/workbench/api/common/extHostInitDataService*/,69/*vs/workbench/api/common/extHostStoragePaths*/,13/*vs/workbench/api/common/extHostRpcService*/,58/*vs/platform/instantiation/common/serviceCollection*/,70/*vs/workbench/api/common/extHostTunnelService*/,44/*vs/workbench/api/common/extHostTerminalService*/,3/*vs/base/common/event*/,195/*vs/workbench/api/common/shared/workspaceContains*/]), function (require, exports, nls, path, resources_1, async_1, lifecycle_1, map_1, uri_1, log_1, extHost_protocol_1, extHostConfiguration_1, extHostExtensionActivator_1, extHostStorage_1, extHostWorkspace_1, extensions_1, extensionDescriptionRegistry_1, errors, extensions_2, network_1, buffer_1, extHostMemento_1, extHostTypes_1, remoteAuthorityResolver_1, instantiation_1, extHostInitDataService_1, extHostStoragePaths_1, extHostRpcService_1, serviceCollection_1, extHostTunnelService_1, extHostTerminalService_1, event_1, workspaceContains_1) {
+define(__m[34/*vs/workbench/api/common/extHostExtensionService*/], __M([0/*require*/,1/*exports*/,123/*vs/nls!vs/workbench/api/common/extHostExtensionService*/,9/*vs/base/common/path*/,23/*vs/base/common/resources*/,20/*vs/base/common/async*/,6/*vs/base/common/lifecycle*/,22/*vs/base/common/map*/,2/*vs/base/common/uri*/,13/*vs/platform/log/common/log*/,5/*vs/workbench/api/common/extHost.protocol*/,33/*vs/workbench/api/common/extHostConfiguration*/,167/*vs/workbench/api/common/extHostExtensionActivator*/,71/*vs/workbench/api/common/extHostStorage*/,32/*vs/workbench/api/common/extHostWorkspace*/,38/*vs/workbench/services/extensions/common/extensions*/,165/*vs/workbench/services/extensions/common/extensionDescriptionRegistry*/,10/*vs/base/common/errors*/,25/*vs/platform/extensions/common/extensions*/,12/*vs/base/common/network*/,26/*vs/base/common/buffer*/,145/*vs/workbench/api/common/extHostMemento*/,7/*vs/workbench/api/common/extHostTypes*/,86/*vs/platform/remote/common/remoteAuthorityResolver*/,4/*vs/platform/instantiation/common/instantiation*/,28/*vs/workbench/api/common/extHostInitDataService*/,72/*vs/workbench/api/common/extHostStoragePaths*/,14/*vs/workbench/api/common/extHostRpcService*/,61/*vs/platform/instantiation/common/serviceCollection*/,73/*vs/workbench/api/common/extHostTunnelService*/,39/*vs/workbench/api/common/extHostTerminalService*/,3/*vs/base/common/event*/,199/*vs/workbench/api/common/shared/workspaceContains*/]), function (require, exports, nls, path, resources_1, async_1, lifecycle_1, map_1, uri_1, log_1, extHost_protocol_1, extHostConfiguration_1, extHostExtensionActivator_1, extHostStorage_1, extHostWorkspace_1, extensions_1, extensionDescriptionRegistry_1, errors, extensions_2, network_1, buffer_1, extHostMemento_1, extHostTypes_1, remoteAuthorityResolver_1, instantiation_1, extHostInitDataService_1, extHostStoragePaths_1, extHostRpcService_1, serviceCollection_1, extHostTunnelService_1, extHostTerminalService_1, event_1, workspaceContains_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IExtHostExtensionService = exports.AbstractExtHostExtensionService = exports.IHostUtils = void 0;
@@ -47132,8 +47560,16 @@ define(__m[33/*vs/workbench/api/common/extHostExtensionService*/], __M([0/*requi
             return result;
         }
         // --- impl
-        _activateExtension(extensionDescription, reason) {
-            this._mainThreadExtensionsProxy.$onWillActivateExtension(extensionDescription.identifier);
+        async _activateExtension(extensionDescription, reason) {
+            if (!this._initData.remote.isRemote) {
+                // local extension host process
+                await this._mainThreadExtensionsProxy.$onWillActivateExtension(extensionDescription.identifier);
+            }
+            else {
+                // remote extension host process
+                // do not wait for renderer confirmation
+                this._mainThreadExtensionsProxy.$onWillActivateExtension(extensionDescription.identifier);
+            }
             return this._doActivateExtension(extensionDescription, reason).then((activatedExtension) => {
                 const activationTimes = activatedExtension.activationTimes;
                 this._mainThreadExtensionsProxy.$onDidActivateExtension(extensionDescription.identifier, activationTimes.codeLoadingTime, activationTimes.activateCallTime, activationTimes.activateResolvedTime, reason);
@@ -47285,7 +47721,7 @@ define(__m[33/*vs/workbench/api/common/extHostExtensionService*/], __M([0/*requi
             const host = {
                 folders: folders.map(folder => folder.uri),
                 forceUsingSearch: localWithRemote,
-                exists: (path) => this._hostUtils.exists(path),
+                exists: (uri) => this._hostUtils.exists(uri.fsPath),
                 checkExists: (folders, includes, token) => this._mainThreadWorkspaceProxy.$checkExists(folders, includes, token)
             };
             const result = await workspaceContains_1.checkActivateWorkspaceContainsExtension(host, desc);
@@ -47533,7 +47969,7 @@ define(__m[33/*vs/workbench/api/common/extHostExtensionService*/], __M([0/*requi
 
 
 
-define(__m[94/*vs/workbench/api/common/extHostDebugService*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/path*/,2/*vs/base/common/uri*/,3/*vs/base/common/event*/,19/*vs/base/common/async*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/,148/*vs/workbench/contrib/debug/common/abstractDebugAdapter*/,31/*vs/workbench/api/common/extHostWorkspace*/,33/*vs/workbench/api/common/extHostExtensionService*/,43/*vs/workbench/api/common/extHostDocumentsAndEditors*/,156/*vs/workbench/services/configurationResolver/common/variableResolver*/,32/*vs/workbench/api/common/extHostConfiguration*/,149/*vs/workbench/contrib/debug/common/debugUtils*/,21/*vs/base/common/cancellation*/,66/*vs/workbench/api/common/extHostCommands*/,13/*vs/workbench/api/common/extHostRpcService*/,4/*vs/platform/instantiation/common/instantiation*/,14/*vs/base/common/types*/]), function (require, exports, path, uri_1, event_1, async_1, extHost_protocol_1, extHostTypes_1, abstractDebugAdapter_1, extHostWorkspace_1, extHostExtensionService_1, extHostDocumentsAndEditors_1, variableResolver_1, extHostConfiguration_1, debugUtils_1, cancellation_1, extHostCommands_1, extHostRpcService_1, instantiation_1, types_1) {
+define(__m[96/*vs/workbench/api/common/extHostDebugService*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/path*/,2/*vs/base/common/uri*/,3/*vs/base/common/event*/,20/*vs/base/common/async*/,5/*vs/workbench/api/common/extHost.protocol*/,7/*vs/workbench/api/common/extHostTypes*/,149/*vs/workbench/contrib/debug/common/abstractDebugAdapter*/,32/*vs/workbench/api/common/extHostWorkspace*/,34/*vs/workbench/api/common/extHostExtensionService*/,45/*vs/workbench/api/common/extHostDocumentsAndEditors*/,159/*vs/workbench/services/configurationResolver/common/variableResolver*/,33/*vs/workbench/api/common/extHostConfiguration*/,150/*vs/workbench/contrib/debug/common/debugUtils*/,19/*vs/base/common/cancellation*/,69/*vs/workbench/api/common/extHostCommands*/,14/*vs/workbench/api/common/extHostRpcService*/,4/*vs/platform/instantiation/common/instantiation*/,16/*vs/base/common/types*/]), function (require, exports, path, uri_1, event_1, async_1, extHost_protocol_1, extHostTypes_1, abstractDebugAdapter_1, extHostWorkspace_1, extHostExtensionService_1, extHostDocumentsAndEditors_1, variableResolver_1, extHostConfiguration_1, debugUtils_1, cancellation_1, extHostCommands_1, extHostRpcService_1, instantiation_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.WorkerExtHostDebugService = exports.ExtHostVariableResolverService = exports.ExtHostDebugConsole = exports.ExtHostDebugSession = exports.ExtHostDebugServiceBase = exports.IExtHostDebugService = void 0;
@@ -48346,7 +48782,7 @@ define(__m[94/*vs/workbench/api/common/extHostDebugService*/], __M([0/*require*/
                     }
                     return undefined;
                 }
-            }, env, !editorService);
+            }, undefined, env, !editorService);
         }
     }
     exports.ExtHostVariableResolverService = ExtHostVariableResolverService;
@@ -48427,7 +48863,7 @@ define(__m[94/*vs/workbench/api/common/extHostDebugService*/], __M([0/*require*/
 
 
 
-define(__m[196/*vs/workbench/api/common/extHostRequireInterceptor*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/,32/*vs/workbench/api/common/extHostConfiguration*/,37/*vs/workbench/services/extensions/common/extensions*/,25/*vs/platform/extensions/common/extensions*/,13/*vs/workbench/api/common/extHostRpcService*/,28/*vs/workbench/api/common/extHostInitDataService*/,4/*vs/platform/instantiation/common/instantiation*/,33/*vs/workbench/api/common/extHostExtensionService*/,34/*vs/base/common/process*/,12/*vs/platform/log/common/log*/]), function (require, exports, uri_1, extHost_protocol_1, extHostConfiguration_1, extensions_1, extensions_2, extHostRpcService_1, extHostInitDataService_1, instantiation_1, extHostExtensionService_1, process_1, log_1) {
+define(__m[200/*vs/workbench/api/common/extHostRequireInterceptor*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/,33/*vs/workbench/api/common/extHostConfiguration*/,38/*vs/workbench/services/extensions/common/extensions*/,25/*vs/platform/extensions/common/extensions*/,14/*vs/workbench/api/common/extHostRpcService*/,28/*vs/workbench/api/common/extHostInitDataService*/,4/*vs/platform/instantiation/common/instantiation*/,34/*vs/workbench/api/common/extHostExtensionService*/,35/*vs/base/common/process*/,13/*vs/platform/log/common/log*/]), function (require, exports, uri_1, extHost_protocol_1, extHostConfiguration_1, extensions_1, extensions_2, extHostRpcService_1, extHostInitDataService_1, instantiation_1, extHostExtensionService_1, process_1, log_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.RequireInterceptor = void 0;
@@ -48627,7 +49063,7 @@ define(__m[196/*vs/workbench/api/common/extHostRequireInterceptor*/], __M([0/*re
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[197/*vs/workbench/services/extensions/common/extensionHostMain*/], __M([0/*require*/,1/*exports*/,19/*vs/base/common/async*/,11/*vs/base/common/errors*/,6/*vs/base/common/lifecycle*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/,191/*vs/workbench/services/extensions/common/rpcProtocol*/,12/*vs/platform/log/common/log*/,55/*vs/platform/instantiation/common/extensions*/,58/*vs/platform/instantiation/common/serviceCollection*/,28/*vs/workbench/api/common/extHostInitDataService*/,139/*vs/platform/instantiation/common/instantiationService*/,13/*vs/workbench/api/common/extHostRpcService*/,62/*vs/workbench/api/common/extHostUriTransformerService*/,33/*vs/workbench/api/common/extHostExtensionService*/]), function (require, exports, async_1, errors, lifecycle_1, uri_1, extHost_protocol_1, rpcProtocol_1, log_1, extensions_1, serviceCollection_1, extHostInitDataService_1, instantiationService_1, extHostRpcService_1, extHostUriTransformerService_1, extHostExtensionService_1) {
+define(__m[201/*vs/workbench/services/extensions/common/extensionHostMain*/], __M([0/*require*/,1/*exports*/,20/*vs/base/common/async*/,10/*vs/base/common/errors*/,6/*vs/base/common/lifecycle*/,2/*vs/base/common/uri*/,5/*vs/workbench/api/common/extHost.protocol*/,195/*vs/workbench/services/extensions/common/rpcProtocol*/,13/*vs/platform/log/common/log*/,58/*vs/platform/instantiation/common/extensions*/,61/*vs/platform/instantiation/common/serviceCollection*/,28/*vs/workbench/api/common/extHostInitDataService*/,140/*vs/platform/instantiation/common/instantiationService*/,14/*vs/workbench/api/common/extHostRpcService*/,66/*vs/workbench/api/common/extHostUriTransformerService*/,34/*vs/workbench/api/common/extHostExtensionService*/,39/*vs/workbench/api/common/extHostTerminalService*/]), function (require, exports, async_1, errors, lifecycle_1, uri_1, extHost_protocol_1, rpcProtocol_1, log_1, extensions_1, serviceCollection_1, extHostInitDataService_1, instantiationService_1, extHostRpcService_1, extHostUriTransformerService_1, extHostExtensionService_1, extHostTerminalService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtensionHostMain = void 0;
@@ -48648,6 +49084,8 @@ define(__m[197/*vs/workbench/services/extensions/common/extensionHostMain*/], __
             const instaService = new instantiationService_1.InstantiationService(services, true);
             // todo@joh
             // ugly self - inject
+            const terminalService = instaService.invokeFunction(accessor => accessor.get(extHostTerminalService_1.IExtHostTerminalService));
+            this._disposables.add(terminalService);
             const logService = instaService.invokeFunction(accessor => accessor.get(log_1.ILogService));
             this._disposables.add(logService);
             logService.info('extension host started');
@@ -48729,7 +49167,7 @@ define(__m[197/*vs/workbench/services/extensions/common/extensionHostMain*/], __
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[198/*vs/workbench/services/search/common/fileSearchManager*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/path*/,21/*vs/base/common/cancellation*/,54/*vs/base/common/errorMessage*/,27/*vs/base/common/glob*/,23/*vs/base/common/resources*/,100/*vs/base/common/stopwatch*/,38/*vs/workbench/services/search/common/search*/,34/*vs/base/common/process*/]), function (require, exports, path, cancellation_1, errorMessage_1, glob, resources, stopwatch_1, search_1, process_1) {
+define(__m[202/*vs/workbench/services/search/common/fileSearchManager*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/path*/,19/*vs/base/common/cancellation*/,57/*vs/base/common/errorMessage*/,27/*vs/base/common/glob*/,23/*vs/base/common/resources*/,101/*vs/base/common/stopwatch*/,40/*vs/workbench/services/search/common/search*/,35/*vs/base/common/process*/]), function (require, exports, path, cancellation_1, errorMessage_1, glob, resources, stopwatch_1, search_1, process_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.FileSearchManager = void 0;
@@ -49017,7 +49455,7 @@ define(__m[198/*vs/workbench/services/search/common/fileSearchManager*/], __M([0
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[199/*vs/workbench/services/search/common/textSearchManager*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/path*/,10/*vs/base/common/arrays*/,21/*vs/base/common/cancellation*/,54/*vs/base/common/errorMessage*/,23/*vs/base/common/resources*/,27/*vs/base/common/glob*/,2/*vs/base/common/uri*/,38/*vs/workbench/services/search/common/search*/,34/*vs/base/common/process*/]), function (require, exports, path, arrays_1, cancellation_1, errorMessage_1, resources, glob, uri_1, search_1, process_1) {
+define(__m[203/*vs/workbench/services/search/common/textSearchManager*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/path*/,11/*vs/base/common/arrays*/,19/*vs/base/common/cancellation*/,57/*vs/base/common/errorMessage*/,23/*vs/base/common/resources*/,27/*vs/base/common/glob*/,2/*vs/base/common/uri*/,40/*vs/workbench/services/search/common/search*/,35/*vs/base/common/process*/,12/*vs/base/common/network*/]), function (require, exports, path, arrays_1, cancellation_1, errorMessage_1, resources, glob, uri_1, search_1, process_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.BatchedCollector = exports.extensionResultIsMatch = exports.TextSearchResultsCollector = exports.TextSearchManager = void 0;
@@ -49107,7 +49545,7 @@ define(__m[199/*vs/workbench/services/search/common/textSearchManager*/], __M([0
                     if (!this.validateProviderResult(result)) {
                         return;
                     }
-                    const hasSibling = folderQuery.folder.scheme === 'file' ?
+                    const hasSibling = folderQuery.folder.scheme === network_1.Schemas.file ?
                         glob.hasSiblingPromiseFn(() => {
                             return this.fileUtils.readdir(resources.dirname(result.uri));
                         }) :
@@ -49338,7 +49776,7 @@ define(__m[199/*vs/workbench/services/search/common/textSearchManager*/], __M([0
 
 
 
-define(__m[95/*vs/workbench/api/common/extHostSearch*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/lifecycle*/,5/*vs/workbench/api/common/extHost.protocol*/,4/*vs/platform/instantiation/common/instantiation*/,198/*vs/workbench/services/search/common/fileSearchManager*/,13/*vs/workbench/api/common/extHostRpcService*/,62/*vs/workbench/api/common/extHostUriTransformerService*/,12/*vs/platform/log/common/log*/,2/*vs/base/common/uri*/,199/*vs/workbench/services/search/common/textSearchManager*/]), function (require, exports, lifecycle_1, extHost_protocol_1, instantiation_1, fileSearchManager_1, extHostRpcService_1, extHostUriTransformerService_1, log_1, uri_1, textSearchManager_1) {
+define(__m[97/*vs/workbench/api/common/extHostSearch*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/lifecycle*/,5/*vs/workbench/api/common/extHost.protocol*/,4/*vs/platform/instantiation/common/instantiation*/,202/*vs/workbench/services/search/common/fileSearchManager*/,14/*vs/workbench/api/common/extHostRpcService*/,66/*vs/workbench/api/common/extHostUriTransformerService*/,13/*vs/platform/log/common/log*/,2/*vs/base/common/uri*/,203/*vs/workbench/services/search/common/textSearchManager*/]), function (require, exports, lifecycle_1, extHost_protocol_1, instantiation_1, fileSearchManager_1, extHostRpcService_1, extHostUriTransformerService_1, log_1, uri_1, textSearchManager_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.reviveQuery = exports.ExtHostSearch = exports.IExtHostSearch = void 0;
@@ -49441,7 +49879,7 @@ define(__m[95/*vs/workbench/api/common/extHostSearch*/], __M([0/*require*/,1/*ex
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[200/*vs/workbench/api/common/extHost.api.impl*/], __M([0/*require*/,1/*exports*/,119/*vs/nls!vs/workbench/api/common/extHost.api.impl*/,21/*vs/base/common/cancellation*/,11/*vs/base/common/errors*/,3/*vs/base/common/event*/,9/*vs/base/common/path*/,49/*vs/base/common/severity*/,2/*vs/base/common/uri*/,114/*vs/editor/common/config/editorOptions*/,78/*vs/editor/common/model*/,108/*vs/editor/common/modes/languageConfiguration*/,53/*vs/editor/common/modes/languageSelector*/,57/*vs/platform/files/common/files*/,5/*vs/workbench/api/common/extHost.protocol*/,159/*vs/workbench/api/common/extHostApiCommands*/,168/*vs/workbench/api/common/extHostClipboard*/,66/*vs/workbench/api/common/extHostCommands*/,169/*vs/workbench/api/common/extHostComments*/,32/*vs/workbench/api/common/extHostConfiguration*/,170/*vs/workbench/api/common/extHostDiagnostics*/,171/*vs/workbench/api/common/extHostDialogs*/,172/*vs/workbench/api/common/extHostDocumentContentProviders*/,160/*vs/workbench/api/common/extHostDocumentSaveParticipant*/,173/*vs/workbench/api/common/extHostDocuments*/,43/*vs/workbench/api/common/extHostDocumentsAndEditors*/,33/*vs/workbench/api/common/extHostExtensionService*/,174/*vs/workbench/api/common/extHostFileSystem*/,175/*vs/workbench/api/common/extHostFileSystemEventService*/,177/*vs/workbench/api/common/extHostLanguageFeatures*/,178/*vs/workbench/api/common/extHostLanguages*/,179/*vs/workbench/api/common/extHostMessageService*/,91/*vs/workbench/api/common/extHostOutput*/,161/*vs/workbench/api/common/extHostProgress*/,181/*vs/workbench/api/common/extHostQuickOpen*/,182/*vs/workbench/api/common/extHostSCM*/,183/*vs/workbench/api/common/extHostStatusBar*/,68/*vs/workbench/api/common/extHostStorage*/,44/*vs/workbench/api/common/extHostTerminalService*/,184/*vs/workbench/api/common/extHostTextEditors*/,165/*vs/workbench/api/common/extHostTreeViews*/,17/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/,186/*vs/workbench/api/common/extHostUrls*/,71/*vs/workbench/api/common/extHostWebview*/,92/*vs/workbench/api/common/extHostWindow*/,31/*vs/workbench/api/common/extHostWorkspace*/,37/*vs/workbench/services/extensions/common/extensions*/,23/*vs/base/common/resources*/,45/*vs/base/common/collections*/,146/*vs/workbench/api/common/extHostCodeInsets*/,176/*vs/workbench/api/common/extHostLabelService*/,85/*vs/platform/remote/common/remoteHosts*/,90/*vs/workbench/api/common/extHostDecorations*/,93/*vs/workbench/api/common/extHostTask*/,94/*vs/workbench/api/common/extHostDebugService*/,95/*vs/workbench/api/common/extHostSearch*/,12/*vs/platform/log/common/log*/,62/*vs/workbench/api/common/extHostUriTransformerService*/,13/*vs/workbench/api/common/extHostRpcService*/,28/*vs/workbench/api/common/extHostInitDataService*/,180/*vs/workbench/api/common/extHostNotebook*/,151/*vs/workbench/api/common/extHostTheming*/,70/*vs/workbench/api/common/extHostTunnelService*/,65/*vs/workbench/api/common/extHostApiDeprecationService*/,167/*vs/workbench/api/common/extHostAuthentication*/,185/*vs/workbench/api/common/extHostTimeline*/,150/*vs/workbench/api/common/extHostNotebookConcatDocument*/,69/*vs/workbench/api/common/extHostStoragePaths*/,67/*vs/workbench/api/common/extHostFileSystemConsumer*/,189/*vs/workbench/api/common/extHostWebviewView*/,187/*vs/workbench/api/common/extHostCustomEditors*/,188/*vs/workbench/api/common/extHostWebviewPanels*/]), function (require, exports, nls, cancellation_1, errors, event_1, path, severity_1, uri_1, editorOptions_1, model_1, languageConfiguration, languageSelector_1, files, extHost_protocol_1, extHostApiCommands_1, extHostClipboard_1, extHostCommands_1, extHostComments_1, extHostConfiguration_1, extHostDiagnostics_1, extHostDialogs_1, extHostDocumentContentProviders_1, extHostDocumentSaveParticipant_1, extHostDocuments_1, extHostDocumentsAndEditors_1, extHostExtensionService_1, extHostFileSystem_1, extHostFileSystemEventService_1, extHostLanguageFeatures_1, extHostLanguages_1, extHostMessageService_1, extHostOutput_1, extHostProgress_1, extHostQuickOpen_1, extHostSCM_1, extHostStatusBar_1, extHostStorage_1, extHostTerminalService_1, extHostTextEditors_1, extHostTreeViews_1, typeConverters, extHostTypes, extHostUrls_1, extHostWebview_1, extHostWindow_1, extHostWorkspace_1, extensions_1, resources_1, collections_1, extHostCodeInsets_1, extHostLabelService_1, remoteHosts_1, extHostDecorations_1, extHostTask_1, extHostDebugService_1, extHostSearch_1, log_1, extHostUriTransformerService_1, extHostRpcService_1, extHostInitDataService_1, extHostNotebook_1, extHostTheming_1, extHostTunnelService_1, extHostApiDeprecationService_1, extHostAuthentication_1, extHostTimeline_1, extHostNotebookConcatDocument_1, extHostStoragePaths_1, extHostFileSystemConsumer_1, extHostWebviewView_1, extHostCustomEditors_1, extHostWebviewPanels_1) {
+define(__m[204/*vs/workbench/api/common/extHost.api.impl*/], __M([0/*require*/,1/*exports*/,120/*vs/nls!vs/workbench/api/common/extHost.api.impl*/,19/*vs/base/common/cancellation*/,10/*vs/base/common/errors*/,3/*vs/base/common/event*/,9/*vs/base/common/path*/,52/*vs/base/common/severity*/,2/*vs/base/common/uri*/,115/*vs/editor/common/config/editorOptions*/,80/*vs/editor/common/model*/,109/*vs/editor/common/modes/languageConfiguration*/,56/*vs/editor/common/modes/languageSelector*/,60/*vs/platform/files/common/files*/,5/*vs/workbench/api/common/extHost.protocol*/,162/*vs/workbench/api/common/extHostApiCommands*/,172/*vs/workbench/api/common/extHostClipboard*/,69/*vs/workbench/api/common/extHostCommands*/,173/*vs/workbench/api/common/extHostComments*/,33/*vs/workbench/api/common/extHostConfiguration*/,174/*vs/workbench/api/common/extHostDiagnostics*/,175/*vs/workbench/api/common/extHostDialogs*/,176/*vs/workbench/api/common/extHostDocumentContentProviders*/,163/*vs/workbench/api/common/extHostDocumentSaveParticipant*/,177/*vs/workbench/api/common/extHostDocuments*/,45/*vs/workbench/api/common/extHostDocumentsAndEditors*/,34/*vs/workbench/api/common/extHostExtensionService*/,178/*vs/workbench/api/common/extHostFileSystem*/,179/*vs/workbench/api/common/extHostFileSystemEventService*/,181/*vs/workbench/api/common/extHostLanguageFeatures*/,182/*vs/workbench/api/common/extHostLanguages*/,183/*vs/workbench/api/common/extHostMessageService*/,93/*vs/workbench/api/common/extHostOutput*/,164/*vs/workbench/api/common/extHostProgress*/,185/*vs/workbench/api/common/extHostQuickOpen*/,186/*vs/workbench/api/common/extHostSCM*/,187/*vs/workbench/api/common/extHostStatusBar*/,71/*vs/workbench/api/common/extHostStorage*/,39/*vs/workbench/api/common/extHostTerminalService*/,188/*vs/workbench/api/common/extHostTextEditors*/,168/*vs/workbench/api/common/extHostTreeViews*/,15/*vs/workbench/api/common/extHostTypeConverters*/,7/*vs/workbench/api/common/extHostTypes*/,190/*vs/workbench/api/common/extHostUrls*/,74/*vs/workbench/api/common/extHostWebview*/,94/*vs/workbench/api/common/extHostWindow*/,32/*vs/workbench/api/common/extHostWorkspace*/,38/*vs/workbench/services/extensions/common/extensions*/,23/*vs/base/common/resources*/,46/*vs/base/common/collections*/,147/*vs/workbench/api/common/extHostCodeInsets*/,180/*vs/workbench/api/common/extHostLabelService*/,87/*vs/platform/remote/common/remoteHosts*/,92/*vs/workbench/api/common/extHostDecorations*/,95/*vs/workbench/api/common/extHostTask*/,96/*vs/workbench/api/common/extHostDebugService*/,97/*vs/workbench/api/common/extHostSearch*/,13/*vs/platform/log/common/log*/,66/*vs/workbench/api/common/extHostUriTransformerService*/,14/*vs/workbench/api/common/extHostRpcService*/,28/*vs/workbench/api/common/extHostInitDataService*/,184/*vs/workbench/api/common/extHostNotebook*/,154/*vs/workbench/api/common/extHostTheming*/,73/*vs/workbench/api/common/extHostTunnelService*/,68/*vs/workbench/api/common/extHostApiDeprecationService*/,170/*vs/workbench/api/common/extHostAuthentication*/,189/*vs/workbench/api/common/extHostTimeline*/,152/*vs/workbench/api/common/extHostNotebookConcatDocument*/,72/*vs/workbench/api/common/extHostStoragePaths*/,70/*vs/workbench/api/common/extHostFileSystemConsumer*/,193/*vs/workbench/api/common/extHostWebviewView*/,191/*vs/workbench/api/common/extHostCustomEditors*/,192/*vs/workbench/api/common/extHostWebviewPanels*/,171/*vs/workbench/api/common/extHostBulkEdits*/,65/*vs/workbench/api/common/extHostFileSystemInfo*/]), function (require, exports, nls, cancellation_1, errors, event_1, path, severity_1, uri_1, editorOptions_1, model_1, languageConfiguration, languageSelector_1, files, extHost_protocol_1, extHostApiCommands_1, extHostClipboard_1, extHostCommands_1, extHostComments_1, extHostConfiguration_1, extHostDiagnostics_1, extHostDialogs_1, extHostDocumentContentProviders_1, extHostDocumentSaveParticipant_1, extHostDocuments_1, extHostDocumentsAndEditors_1, extHostExtensionService_1, extHostFileSystem_1, extHostFileSystemEventService_1, extHostLanguageFeatures_1, extHostLanguages_1, extHostMessageService_1, extHostOutput_1, extHostProgress_1, extHostQuickOpen_1, extHostSCM_1, extHostStatusBar_1, extHostStorage_1, extHostTerminalService_1, extHostTextEditors_1, extHostTreeViews_1, typeConverters, extHostTypes, extHostUrls_1, extHostWebview_1, extHostWindow_1, extHostWorkspace_1, extensions_1, resources_1, collections_1, extHostCodeInsets_1, extHostLabelService_1, remoteHosts_1, extHostDecorations_1, extHostTask_1, extHostDebugService_1, extHostSearch_1, log_1, extHostUriTransformerService_1, extHostRpcService_1, extHostInitDataService_1, extHostNotebook_1, extHostTheming_1, extHostTunnelService_1, extHostApiDeprecationService_1, extHostAuthentication_1, extHostTimeline_1, extHostNotebookConcatDocument_1, extHostStoragePaths_1, extHostFileSystemConsumer_1, extHostWebviewView_1, extHostCustomEditors_1, extHostWebviewPanels_1, extHostBulkEdits_1, extHostFileSystemInfo_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.createApiFactoryAndRegisterActors = void 0;
@@ -49451,6 +49889,7 @@ define(__m[200/*vs/workbench/api/common/extHost.api.impl*/], __M([0/*require*/,1
     function createApiFactoryAndRegisterActors(accessor) {
         // services
         const initData = accessor.get(extHostInitDataService_1.IExtHostInitDataService);
+        const extHostFileSystemInfo = accessor.get(extHostFileSystemInfo_1.IExtHostFileSystemInfo);
         const extHostConsumerFileSystem = accessor.get(extHostFileSystemConsumer_1.IExtHostConsumerFileSystem);
         const extensionService = accessor.get(extHostExtensionService_1.IExtHostExtensionService);
         const extHostWorkspace = accessor.get(extHostWorkspace_1.IExtHostWorkspace);
@@ -49464,6 +49903,7 @@ define(__m[200/*vs/workbench/api/common/extHost.api.impl*/], __M([0/*require*/,1
         const extHostApiDeprecation = accessor.get(extHostApiDeprecationService_1.IExtHostApiDeprecationService);
         const extHostWindow = accessor.get(extHostWindow_1.IExtHostWindow);
         // register addressable instances
+        rpcProtocol.set(extHost_protocol_1.ExtHostContext.ExtHostFileSystemInfo, extHostFileSystemInfo);
         rpcProtocol.set(extHost_protocol_1.ExtHostContext.ExtHostLogService, extHostLogService);
         rpcProtocol.set(extHost_protocol_1.ExtHostContext.ExtHostWorkspace, extHostWorkspace);
         rpcProtocol.set(extHost_protocol_1.ExtHostContext.ExtHostConfiguration, extHostConfiguration);
@@ -49484,9 +49924,9 @@ define(__m[200/*vs/workbench/api/common/extHost.api.impl*/], __M([0/*require*/,1
         const extHostUrls = rpcProtocol.set(extHost_protocol_1.ExtHostContext.ExtHostUrls, new extHostUrls_1.ExtHostUrls(rpcProtocol));
         const extHostDocuments = rpcProtocol.set(extHost_protocol_1.ExtHostContext.ExtHostDocuments, new extHostDocuments_1.ExtHostDocuments(rpcProtocol, extHostDocumentsAndEditors));
         const extHostDocumentContentProviders = rpcProtocol.set(extHost_protocol_1.ExtHostContext.ExtHostDocumentContentProviders, new extHostDocumentContentProviders_1.ExtHostDocumentContentProvider(rpcProtocol, extHostDocumentsAndEditors, extHostLogService));
-        const extHostDocumentSaveParticipant = rpcProtocol.set(extHost_protocol_1.ExtHostContext.ExtHostDocumentSaveParticipant, new extHostDocumentSaveParticipant_1.ExtHostDocumentSaveParticipant(extHostLogService, extHostDocuments, rpcProtocol.getProxy(extHost_protocol_1.MainContext.MainThreadTextEditors)));
+        const extHostDocumentSaveParticipant = rpcProtocol.set(extHost_protocol_1.ExtHostContext.ExtHostDocumentSaveParticipant, new extHostDocumentSaveParticipant_1.ExtHostDocumentSaveParticipant(extHostLogService, extHostDocuments, rpcProtocol.getProxy(extHost_protocol_1.MainContext.MainThreadBulkEdits)));
         const extHostNotebook = rpcProtocol.set(extHost_protocol_1.ExtHostContext.ExtHostNotebook, new extHostNotebook_1.ExtHostNotebookController(rpcProtocol, extHostCommands, extHostDocumentsAndEditors, initData.environment, extHostLogService, extensionStoragePaths));
-        const extHostEditors = rpcProtocol.set(extHost_protocol_1.ExtHostContext.ExtHostEditors, new extHostTextEditors_1.ExtHostEditors(rpcProtocol, extHostDocumentsAndEditors, extHostNotebook));
+        const extHostEditors = rpcProtocol.set(extHost_protocol_1.ExtHostContext.ExtHostEditors, new extHostTextEditors_1.ExtHostEditors(rpcProtocol, extHostDocumentsAndEditors));
         const extHostTreeViews = rpcProtocol.set(extHost_protocol_1.ExtHostContext.ExtHostTreeViews, new extHostTreeViews_1.ExtHostTreeViews(rpcProtocol.getProxy(extHost_protocol_1.MainContext.MainThreadTreeViews), extHostCommands, extHostLogService));
         const extHostEditorInsets = rpcProtocol.set(extHost_protocol_1.ExtHostContext.ExtHostEditorInsets, new extHostCodeInsets_1.ExtHostEditorInsets(rpcProtocol.getProxy(extHost_protocol_1.MainContext.MainThreadEditorInsets), extHostEditors, initData.environment));
         const extHostDiagnostics = rpcProtocol.set(extHost_protocol_1.ExtHostContext.ExtHostDiagnostics, new extHostDiagnostics_1.ExtHostDiagnostics(rpcProtocol, extHostLogService));
@@ -49509,6 +49949,7 @@ define(__m[200/*vs/workbench/api/common/extHost.api.impl*/], __M([0/*require*/,1
         const expected = collections_1.values(extHost_protocol_1.ExtHostContext);
         rpcProtocol.assertRegistered(expected);
         // Other instances
+        const extHostBulkEdits = new extHostBulkEdits_1.ExtHostBulkEdits(rpcProtocol, extHostDocumentsAndEditors, extHostNotebook);
         const extHostClipboard = new extHostClipboard_1.ExtHostClipboard(rpcProtocol);
         const extHostMessageService = new extHostMessageService_1.ExtHostMessageService(rpcProtocol, extHostLogService);
         const extHostDialogs = new extHostDialogs_1.ExtHostDialogs(rpcProtocol);
@@ -49959,7 +50400,6 @@ define(__m[200/*vs/workbench/api/common/extHost.api.impl*/], __M([0/*require*/,1
                     return extHostTheming.onDidChangeActiveColorTheme(listener, thisArg, disposables);
                 },
                 registerWebviewViewProvider(viewId, provider, options) {
-                    extensions_1.checkProposedApiEnabled(extension);
                     return extHostWebviewViews.registerWebviewViewProvider(extension, viewId, provider, options === null || options === void 0 ? void 0 : options.webviewOptions);
                 }
             };
@@ -50021,7 +50461,7 @@ define(__m[200/*vs/workbench/api/common/extHost.api.impl*/], __M([0/*require*/,1
                     return extHostWorkspace.saveAll(includeUntitled);
                 },
                 applyEdit(edit) {
-                    return extHostEditors.applyWorkspaceEdit(edit);
+                    return extHostBulkEdits.applyWorkspaceEdit(edit);
                 },
                 createFileSystemWatcher: (pattern, ignoreCreate, ignoreChange, ignoreDelete) => {
                     return extHostFileSystemEvent.createFileSystemWatcher(typeConverters.GlobPattern.from(pattern), ignoreCreate, ignoreChange, ignoreDelete);
@@ -50083,7 +50523,7 @@ define(__m[200/*vs/workbench/api/common/extHost.api.impl*/], __M([0/*require*/,1
                     return extHostTask.registerTaskProvider(extension, type, provider);
                 },
                 registerFileSystemProvider(scheme, provider, options) {
-                    return extHostFileSystem.registerFileSystemProvider(scheme, provider, options);
+                    return extHostFileSystem.registerFileSystemProvider(extension.identifier, scheme, provider, options);
                 },
                 get fs() {
                     return extHostConsumerFileSystem;
@@ -50278,6 +50718,9 @@ define(__m[200/*vs/workbench/api/common/extHost.api.impl*/], __M([0/*require*/,1
                     extensions_1.checkProposedApiEnabled(extension);
                     return extHostNotebook.registerNotebookKernelProvider(extension, selector, provider);
                 },
+                createNotebookEditorDecorationType(options) {
+                    return extHostNotebook.createNotebookEditorDecorationType(options);
+                },
                 get activeNotebookEditor() {
                     extensions_1.checkProposedApiEnabled(extension);
                     return extHostNotebook.activeNotebookEditor;
@@ -50285,6 +50728,10 @@ define(__m[200/*vs/workbench/api/common/extHost.api.impl*/], __M([0/*require*/,1
                 onDidChangeActiveNotebookEditor(listener, thisArgs, disposables) {
                     extensions_1.checkProposedApiEnabled(extension);
                     return extHostNotebook.onDidChangeActiveNotebookEditor(listener, thisArgs, disposables);
+                },
+                onDidChangeNotebookDocumentMetadata(listener, thisArgs, disposables) {
+                    extensions_1.checkProposedApiEnabled(extension);
+                    return extHostNotebook.onDidChangeNotebookDocumentMetadata(listener, thisArgs, disposables);
                 },
                 onDidChangeNotebookCells(listener, thisArgs, disposables) {
                     extensions_1.checkProposedApiEnabled(extension);
@@ -50430,6 +50877,7 @@ define(__m[200/*vs/workbench/api/common/extHost.api.impl*/], __M([0/*require*/,1
                 TextEditorSelectionChangeKind: extHostTypes.TextEditorSelectionChangeKind,
                 ThemeColor: extHostTypes.ThemeColor,
                 ThemeIcon: extHostTypes.ThemeIcon,
+                ThemeIcon2: extHostTypes.ThemeIcon,
                 TreeItem: extHostTypes.TreeItem,
                 TreeItem2: extHostTypes.TreeItem,
                 TreeItemCollapsibleState: extHostTypes.TreeItemCollapsibleState,
@@ -50442,7 +50890,7 @@ define(__m[200/*vs/workbench/api/common/extHost.api.impl*/], __M([0/*require*/,1
                 CallHierarchyItem: extHostTypes.CallHierarchyItem,
                 DebugConsoleMode: extHostTypes.DebugConsoleMode,
                 DebugConfigurationProviderTriggerKind: extHostTypes.DebugConfigurationProviderTriggerKind,
-                Decoration: extHostTypes.Decoration,
+                FileDecoration: extHostTypes.FileDecoration,
                 UIKind: extHost_protocol_1.UIKind,
                 ColorThemeKind: extHostTypes.ColorThemeKind,
                 TimelineItem: extHostTypes.TimelineItem,
@@ -50451,7 +50899,9 @@ define(__m[200/*vs/workbench/api/common/extHost.api.impl*/], __M([0/*require*/,1
                 NotebookCellRunState: extHostTypes.NotebookCellRunState,
                 NotebookRunState: extHostTypes.NotebookRunState,
                 NotebookCellStatusBarAlignment: extHostTypes.NotebookCellStatusBarAlignment,
-                NotebookEditorRevealType: extHostTypes.NotebookEditorRevealType
+                NotebookEditorRevealType: extHostTypes.NotebookEditorRevealType,
+                NotebookCellOutput: extHostTypes.NotebookCellOutput,
+                NotebookCellOutputItem: extHostTypes.NotebookCellOutputItem,
             };
         };
     }
@@ -50486,7 +50936,7 @@ define(__m[200/*vs/workbench/api/common/extHost.api.impl*/], __M([0/*require*/,1
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[201/*vs/workbench/api/common/extHost.common.services*/], __M([0/*require*/,1/*exports*/,55/*vs/platform/instantiation/common/extensions*/,91/*vs/workbench/api/common/extHostOutput*/,31/*vs/workbench/api/common/extHostWorkspace*/,90/*vs/workbench/api/common/extHostDecorations*/,32/*vs/workbench/api/common/extHostConfiguration*/,66/*vs/workbench/api/common/extHostCommands*/,43/*vs/workbench/api/common/extHostDocumentsAndEditors*/,44/*vs/workbench/api/common/extHostTerminalService*/,93/*vs/workbench/api/common/extHostTask*/,94/*vs/workbench/api/common/extHostDebugService*/,95/*vs/workbench/api/common/extHostSearch*/,69/*vs/workbench/api/common/extHostStoragePaths*/,68/*vs/workbench/api/common/extHostStorage*/,70/*vs/workbench/api/common/extHostTunnelService*/,65/*vs/workbench/api/common/extHostApiDeprecationService*/,92/*vs/workbench/api/common/extHostWindow*/,67/*vs/workbench/api/common/extHostFileSystemConsumer*/]), function (require, exports, extensions_1, extHostOutput_1, extHostWorkspace_1, extHostDecorations_1, extHostConfiguration_1, extHostCommands_1, extHostDocumentsAndEditors_1, extHostTerminalService_1, extHostTask_1, extHostDebugService_1, extHostSearch_1, extHostStoragePaths_1, extHostStorage_1, extHostTunnelService_1, extHostApiDeprecationService_1, extHostWindow_1, extHostFileSystemConsumer_1) {
+define(__m[205/*vs/workbench/api/common/extHost.common.services*/], __M([0/*require*/,1/*exports*/,58/*vs/platform/instantiation/common/extensions*/,93/*vs/workbench/api/common/extHostOutput*/,32/*vs/workbench/api/common/extHostWorkspace*/,92/*vs/workbench/api/common/extHostDecorations*/,33/*vs/workbench/api/common/extHostConfiguration*/,69/*vs/workbench/api/common/extHostCommands*/,45/*vs/workbench/api/common/extHostDocumentsAndEditors*/,39/*vs/workbench/api/common/extHostTerminalService*/,95/*vs/workbench/api/common/extHostTask*/,96/*vs/workbench/api/common/extHostDebugService*/,97/*vs/workbench/api/common/extHostSearch*/,72/*vs/workbench/api/common/extHostStoragePaths*/,71/*vs/workbench/api/common/extHostStorage*/,73/*vs/workbench/api/common/extHostTunnelService*/,68/*vs/workbench/api/common/extHostApiDeprecationService*/,94/*vs/workbench/api/common/extHostWindow*/,70/*vs/workbench/api/common/extHostFileSystemConsumer*/,65/*vs/workbench/api/common/extHostFileSystemInfo*/]), function (require, exports, extensions_1, extHostOutput_1, extHostWorkspace_1, extHostDecorations_1, extHostConfiguration_1, extHostCommands_1, extHostDocumentsAndEditors_1, extHostTerminalService_1, extHostTask_1, extHostDebugService_1, extHostSearch_1, extHostStoragePaths_1, extHostStorage_1, extHostTunnelService_1, extHostApiDeprecationService_1, extHostWindow_1, extHostFileSystemConsumer_1, extHostFileSystemInfo_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     extensions_1.registerSingleton(extHostStoragePaths_1.IExtensionStoragePaths, extHostStoragePaths_1.ExtensionStoragePaths);
@@ -50497,6 +50947,7 @@ define(__m[201/*vs/workbench/api/common/extHost.common.services*/], __M([0/*requ
     extensions_1.registerSingleton(extHostDebugService_1.IExtHostDebugService, extHostDebugService_1.WorkerExtHostDebugService);
     extensions_1.registerSingleton(extHostDecorations_1.IExtHostDecorations, extHostDecorations_1.ExtHostDecorations);
     extensions_1.registerSingleton(extHostDocumentsAndEditors_1.IExtHostDocumentsAndEditors, extHostDocumentsAndEditors_1.ExtHostDocumentsAndEditors);
+    extensions_1.registerSingleton(extHostFileSystemInfo_1.IExtHostFileSystemInfo, extHostFileSystemInfo_1.ExtHostFileSystemInfo);
     extensions_1.registerSingleton(extHostOutput_1.IExtHostOutputService, extHostOutput_1.ExtHostOutputService);
     extensions_1.registerSingleton(extHostSearch_1.IExtHostSearch, extHostSearch_1.ExtHostSearch);
     extensions_1.registerSingleton(extHostStorage_1.IExtHostStorage, extHostStorage_1.ExtHostStorage);
@@ -50511,7 +50962,7 @@ define(__m[201/*vs/workbench/api/common/extHost.common.services*/], __M([0/*requ
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[202/*vs/workbench/api/worker/extHostExtensionService*/], __M([0/*require*/,1/*exports*/,200/*vs/workbench/api/common/extHost.api.impl*/,33/*vs/workbench/api/common/extHostExtensionService*/,196/*vs/workbench/api/common/extHostRequireInterceptor*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, extHost_api_impl_1, extHostExtensionService_1, extHostRequireInterceptor_1, extHostTypes_1) {
+define(__m[206/*vs/workbench/api/worker/extHostExtensionService*/], __M([0/*require*/,1/*exports*/,204/*vs/workbench/api/common/extHost.api.impl*/,34/*vs/workbench/api/common/extHostExtensionService*/,200/*vs/workbench/api/common/extHostRequireInterceptor*/,7/*vs/workbench/api/common/extHostTypes*/]), function (require, exports, extHost_api_impl_1, extHostExtensionService_1, extHostRequireInterceptor_1, extHostTypes_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExtHostExtensionService = void 0;
@@ -50590,7 +51041,7 @@ define(__m[202/*vs/workbench/api/worker/extHostExtensionService*/], __M([0/*requ
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[203/*vs/workbench/api/worker/extHost.worker.services*/], __M([0/*require*/,1/*exports*/,55/*vs/platform/instantiation/common/extensions*/,12/*vs/platform/log/common/log*/,33/*vs/workbench/api/common/extHostExtensionService*/,202/*vs/workbench/api/worker/extHostExtensionService*/,190/*vs/workbench/api/worker/extHostLogService*/]), function (require, exports, extensions_1, log_1, extHostExtensionService_1, extHostExtensionService_2, extHostLogService_1) {
+define(__m[207/*vs/workbench/api/worker/extHost.worker.services*/], __M([0/*require*/,1/*exports*/,58/*vs/platform/instantiation/common/extensions*/,13/*vs/platform/log/common/log*/,34/*vs/workbench/api/common/extHostExtensionService*/,206/*vs/workbench/api/worker/extHostExtensionService*/,194/*vs/workbench/api/worker/extHostLogService*/]), function (require, exports, extensions_1, log_1, extHostExtensionService_1, extHostExtensionService_2, extHostLogService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     // #########################################################################
@@ -50606,14 +51057,14 @@ define(__m[203/*vs/workbench/api/worker/extHost.worker.services*/], __M([0/*requ
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[205/*vs/workbench/services/extensions/worker/extensionHostWorker*/], __M([0/*require*/,1/*exports*/,26/*vs/base/common/buffer*/,3/*vs/base/common/event*/,163/*vs/workbench/services/extensions/common/extensionHostProtocol*/,197/*vs/workbench/services/extensions/common/extensionHostMain*/,9/*vs/base/common/path*/,201/*vs/workbench/api/common/extHost.common.services*/,203/*vs/workbench/api/worker/extHost.worker.services*/]), function (require, exports, buffer_1, event_1, extensionHostProtocol_1, extensionHostMain_1, path) {
+define(__m[209/*vs/workbench/services/extensions/worker/extensionHostWorker*/], __M([0/*require*/,1/*exports*/,26/*vs/base/common/buffer*/,3/*vs/base/common/event*/,166/*vs/workbench/services/extensions/common/extensionHostProtocol*/,201/*vs/workbench/services/extensions/common/extensionHostMain*/,9/*vs/base/common/path*/,205/*vs/workbench/api/common/extHost.common.services*/,207/*vs/workbench/api/worker/extHost.worker.services*/]), function (require, exports, buffer_1, event_1, extensionHostProtocol_1, extensionHostMain_1, path) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const nativeClose = self.close.bind(self);
     self.close = () => console.trace(`'close' has been blocked`);
     const nativePostMessage = postMessage.bind(self);
     self.postMessage = () => console.trace(`'postMessage' has been blocked`);
-    const nativeAddEventLister = addEventListener.bind(self);
+    // const nativeAddEventLister = addEventListener.bind(self);
     self.addEventLister = () => console.trace(`'addEventListener' has been blocked`);
     self['AMDLoader'] = undefined;
     self['NLSLoaderPlugin'] = undefined;
@@ -50647,9 +51098,12 @@ define(__m[205/*vs/workbench/services/extensions/worker/extensionHostWorker*/], 
     };
     class ExtensionWorker {
         constructor() {
-            let emitter = new event_1.Emitter();
+            const channel = new MessageChannel();
+            const emitter = new event_1.Emitter();
             let terminating = false;
-            nativeAddEventLister('message', event => {
+            // send over port2, keep port1
+            nativePostMessage(channel.port2, [channel.port2]);
+            channel.port1.onmessage = event => {
                 const { data } = event;
                 if (!(data instanceof ArrayBuffer)) {
                     console.warn('UNKNOWN data received', data);
@@ -50664,13 +51118,13 @@ define(__m[205/*vs/workbench/services/extensions/worker/extensionHostWorker*/], 
                 }
                 // emit non-terminate messages to the outside
                 emitter.fire(msg);
-            });
+            };
             this.protocol = {
                 onMessage: emitter.event,
                 send: vsbuf => {
                     if (!terminating) {
                         const data = vsbuf.buffer.buffer.slice(vsbuf.buffer.byteOffset, vsbuf.buffer.byteOffset + vsbuf.buffer.byteLength);
-                        nativePostMessage(data, [data]);
+                        channel.port1.postMessage(data, [data]);
                     }
                 }
             };

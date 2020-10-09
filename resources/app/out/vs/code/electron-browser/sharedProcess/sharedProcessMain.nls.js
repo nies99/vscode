@@ -65,6 +65,9 @@ define("vs/code/electron-browser/sharedProcess/sharedProcessMain.nls", {
 		"Extensions",
 		"Preferences"
 	],
+	"vs/platform/extensionManagement/electron-sandbox/extensionTipsService": [
+		"You have {0} installed on your system. Do you want to install the recommended extensions for it?"
+	],
 	"vs/platform/extensionManagement/node/extensionManagementService": [
 		"Unable to install extension '{0}' as it is not compatible with VS Code '{1}'.",
 		"Please restart VS Code before reinstalling {0}.",
@@ -73,8 +76,8 @@ define("vs/code/electron-browser/sharedProcess/sharedProcessMain.nls", {
 		"Can't install extension since it was reported to be problematic.",
 		"Unable to install '{0}' extension because it is not compatible with the current version of VS Code (version {1}).",
 		"Marketplace is not enabled",
-		"Error while removing the extension: {0}. Please Quit and Start VS Code before trying again.",
 		"Only Marketplace Extensions can be reinstalled",
+		"Error while removing the extension: {0}. Please Quit and Start VS Code before trying again.",
 		"Unable to install the extension. Please Quit and Start VS Code before reinstalling.",
 		"Unable to install the extension. Please Exit and Start VS Code before reinstalling.",
 		"Extension '{0}' is not installed.",

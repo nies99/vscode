@@ -17,7 +17,6 @@ define("vs/code/electron-sandbox/issue/issueReporterMain.nls", {
 		"Open",
 		"Closed",
 		"No similar issues found",
-		"Settings Search Issue",
 		"Bug Report",
 		"Feature Request",
 		"Performance Issue",
@@ -34,8 +33,6 @@ define("vs/code/electron-sandbox/issue/issueReporterMain.nls", {
 		"When did this performance issue happen? Does it occur on startup or after a specific series of actions? We support GitHub-flavored Markdown. You will be able to edit your issue and add screenshots when we preview it on GitHub.",
 		"Description",
 		"Please describe the feature you would like to see. We support GitHub-flavored Markdown. You will be able to edit your issue and add screenshots when we preview it on GitHub.",
-		"Expected Results",
-		"Please list the results that you were expecting to see when you searched with this query. We support GitHub-flavored Markdown. You will be able to edit your issue and add screenshots when we preview it on GitHub.",
 		"We have written the needed data into your clipboard because it was too large to send. Please paste.",
 		"Extensions are disabled"
 	],

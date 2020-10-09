@@ -2,7 +2,7 @@
  * Copyright (C) Microsoft Corporation. All rights reserved.
  *--------------------------------------------------------*/
 (function() {
-var __m = ["require","exports","vs/base/common/path","vs/base/common/platform","vs/base/common/strings","vs/base/common/arrays","vs/base/common/uri","vs/base/common/errors","vs/base/common/event","vs/base/common/extpath","vs/base/common/lifecycle","vs/base/common/async","vs/base/common/types","vs/base/common/objects","vs/base/common/glob","vs/workbench/services/search/common/search","vs/base/common/cancellation","vs/base/common/buffer","vs/base/common/map","vs/base/node/pfs","child_process","vs/base/common/normalization","fs","vs/base/common/errorMessage","vs/base/common/functional","vs/base/common/process","vs/base/common/stopwatch","vs/base/common/stream","vs/base/common/network","vs/base/common/fuzzyScorer","string_decoder","vs/platform/instantiation/common/instantiation","vs/workbench/services/search/common/searchExtTypes","vs/workbench/services/search/node/ripgrepSearchUtils","vs/base/common/collections","vs/base/common/iterator","vs/base/common/linkedList","vs/base/common/comparers","vs/base/common/amd","vs/base/common/console","vs/base/common/marshalling","vs/base/common/filters","vs/base/common/resources","vs/base/common/uuid","vs/base/node/decoder","util","vs/base/parts/ipc/common/ipc","vs/nls!vs/base/common/errorMessage","vs/nls","vs/nls!vs/workbench/services/search/node/searchApp","vs/nls!vs/base/node/processes","vs/base/node/processes","vs/base/parts/ipc/node/ipc.cp","vs/platform/log/common/log","vs/workbench/services/search/common/textSearchManager","vs/workbench/services/search/node/searchIpc","vs/workbench/services/textfile/common/encoding","vs/workbench/services/search/node/textSearchManager","vs/workbench/services/search/node/ripgrepFileSearch","vscode-ripgrep","vs/workbench/services/search/node/fileSearch","vs/workbench/services/search/node/ripgrepTextSearchEngine","vs/workbench/services/search/node/textSearchAdapter","vs/workbench/services/search/node/rawSearchService","os","events","graceful-fs","vs/workbench/services/search/node/searchApp"];
+var __m = ["require","exports","vs/base/common/platform","vs/base/common/path","vs/base/common/strings","vs/base/common/arrays","vs/base/common/uri","vs/base/common/errors","vs/base/common/event","vs/base/common/extpath","vs/base/common/lifecycle","vs/base/common/async","vs/base/common/types","vs/base/common/glob","vs/workbench/services/search/common/search","vs/base/common/cancellation","vs/base/common/buffer","vs/base/common/network","vs/base/common/map","vs/base/node/pfs","child_process","vs/base/common/objects","vs/base/common/normalization","fs","vs/base/common/errorMessage","vs/base/common/functional","vs/base/common/process","vs/base/common/stopwatch","vs/base/common/stream","vs/base/common/fuzzyScorer","string_decoder","vs/platform/instantiation/common/instantiation","vs/workbench/services/search/common/searchExtTypes","vs/workbench/services/search/node/ripgrepSearchUtils","vs/base/common/collections","vs/base/common/iterator","vs/base/common/linkedList","vs/base/common/comparers","vs/base/common/console","vs/base/common/marshalling","vs/base/common/filters","vs/base/common/resources","vs/base/common/uuid","vs/base/node/decoder","util","vs/base/parts/ipc/common/ipc","vs/nls!vs/base/common/errorMessage","vs/nls","vs/nls!vs/workbench/services/search/node/searchApp","vs/nls!vs/base/node/processes","vs/base/node/processes","vs/base/parts/ipc/node/ipc.cp","vs/platform/log/common/log","vs/workbench/services/search/common/textSearchManager","vs/workbench/services/search/node/searchIpc","vs/workbench/services/textfile/common/encoding","vs/workbench/services/search/node/textSearchManager","vs/workbench/services/search/node/ripgrepFileSearch","vscode-ripgrep","vs/workbench/services/search/node/fileSearch","vs/workbench/services/search/node/ripgrepTextSearchEngine","vs/workbench/services/search/node/textSearchAdapter","vs/workbench/services/search/node/rawSearchService","os","events","graceful-fs","vs/workbench/services/search/node/searchApp"];
 var __M = function(deps) {
   var result = [];
   for (var i = 0, len = deps.length; i < len; i++) {
@@ -284,7 +284,7 @@ define(__m[7/*vs/base/common/errors*/], __M([0/*require*/,1/*exports*/]), functi
 define(__m[5/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/errors*/]), function (require, exports, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.getRandomElement = exports.asArray = exports.mapArrayOrNot = exports.find = exports.pushToEnd = exports.pushToStart = exports.shuffle = exports.arrayInsert = exports.remove = exports.insert = exports.index = exports.range = exports.flatten = exports.commonPrefixLength = exports.firstOrDefault = exports.first = exports.firstIndex = exports.lastIndex = exports.uniqueFilter = exports.distinctES6 = exports.distinct = exports.isNonEmptyArray = exports.isFalsyOrEmpty = exports.move = exports.coalesceInPlace = exports.coalesce = exports.topAsync = exports.top = exports.delta = exports.sortedDiff = exports.groupBy = exports.mergeSort = exports.findFirstInSorted = exports.binarySearch = exports.equals = exports.tail2 = exports.tail = void 0;
+    exports.getRandomElement = exports.asArray = exports.mapArrayOrNot = exports.pushToEnd = exports.pushToStart = exports.shuffle = exports.arrayInsert = exports.remove = exports.insert = exports.index = exports.range = exports.flatten = exports.commonPrefixLength = exports.firstOrDefault = exports.lastIndex = exports.uniqueFilter = exports.distinctES6 = exports.distinct = exports.isNonEmptyArray = exports.isFalsyOrEmpty = exports.move = exports.coalesceInPlace = exports.coalesce = exports.topAsync = exports.top = exports.delta = exports.sortedDiff = exports.groupBy = exports.mergeSort = exports.findFirstInSorted = exports.binarySearch = exports.equals = exports.tail2 = exports.tail = void 0;
     /**
      * Returns the last element of an array.
      * @param array The array.
@@ -646,24 +646,6 @@ define(__m[5/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,7/*vs/bas
         return -1;
     }
     exports.lastIndex = lastIndex;
-    /**
-     * @deprecated ES6: use `Array.findIndex`
-     */
-    function firstIndex(array, fn) {
-        for (let i = 0; i < array.length; i++) {
-            const element = array[i];
-            if (fn(element)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-    exports.firstIndex = firstIndex;
-    function first(array, fn, notFoundValue = undefined) {
-        const index = firstIndex(array, fn);
-        return index < 0 ? notFoundValue : array[index];
-    }
-    exports.first = first;
     function firstOrDefault(array, notFoundValue) {
         return array.length > 0 ? array[0] : notFoundValue;
     }
@@ -788,19 +770,6 @@ define(__m[5/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,7/*vs/bas
         }
     }
     exports.pushToEnd = pushToEnd;
-    /**
-     * @deprecated ES6: use `Array.find`
-     */
-    function find(arr, predicate) {
-        for (let i = 0; i < arr.length; i++) {
-            const element = arr[i];
-            if (predicate(element, i, arr)) {
-                return element;
-            }
-        }
-        return undefined;
-    }
-    exports.find = find;
     function mapArrayOrNot(items, fn) {
         return Array.isArray(items) ?
             items.map(fn) :
@@ -821,7 +790,7 @@ define(__m[5/*vs/base/common/arrays*/], __M([0/*require*/,1/*exports*/,7/*vs/bas
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[24/*vs/base/common/functional*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[25/*vs/base/common/functional*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.once = void 0;
@@ -930,7 +899,7 @@ define(__m[35/*vs/base/common/iterator*/], __M([0/*require*/,1/*exports*/]), fun
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[10/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,24/*vs/base/common/functional*/,35/*vs/base/common/iterator*/]), function (require, exports, functional_1, iterator_1) {
+define(__m[10/*vs/base/common/lifecycle*/], __M([0/*require*/,1/*exports*/,25/*vs/base/common/functional*/,35/*vs/base/common/iterator*/]), function (require, exports, functional_1, iterator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ImmortalReference = exports.ReferenceCollection = exports.MutableDisposable = exports.Disposable = exports.DisposableStore = exports.toDisposable = exports.combinedDisposable = exports.dispose = exports.isDisposable = exports.MultiDisposeError = void 0;
@@ -1296,7 +1265,7 @@ define(__m[36/*vs/base/common/linkedList*/], __M([0/*require*/,1/*exports*/]), f
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[8/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/errors*/,24/*vs/base/common/functional*/,10/*vs/base/common/lifecycle*/,36/*vs/base/common/linkedList*/]), function (require, exports, errors_1, functional_1, lifecycle_1, linkedList_1) {
+define(__m[8/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,7/*vs/base/common/errors*/,25/*vs/base/common/functional*/,10/*vs/base/common/lifecycle*/,36/*vs/base/common/linkedList*/]), function (require, exports, errors_1, functional_1, lifecycle_1, linkedList_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Relay = exports.EventBufferer = exports.EventMultiplexer = exports.AsyncEmitter = exports.PauseableEmitter = exports.Emitter = exports.setGlobalLeakWarningThreshold = exports.Event = void 0;
@@ -1995,7 +1964,7 @@ define(__m[8/*vs/base/common/event*/], __M([0/*require*/,1/*exports*/,7/*vs/base
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[16/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/event*/]), function (require, exports, event_1) {
+define(__m[15/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/event*/]), function (require, exports, event_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CancellationTokenSource = exports.CancellationToken = void 0;
@@ -2111,10 +2080,10 @@ define(__m[16/*vs/base/common/cancellation*/], __M([0/*require*/,1/*exports*/,8/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[11/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/cancellation*/,7/*vs/base/common/errors*/,8/*vs/base/common/event*/,10/*vs/base/common/lifecycle*/]), function (require, exports, cancellation_1, errors, event_1, lifecycle_1) {
+define(__m[11/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,15/*vs/base/common/cancellation*/,7/*vs/base/common/errors*/,8/*vs/base/common/event*/,10/*vs/base/common/lifecycle*/]), function (require, exports, cancellation_1, errors, event_1, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
+    exports.TaskSequentializer = exports.retry = exports.IdleValue = exports.runWhenIdle = exports.RunOnceWorker = exports.RunOnceScheduler = exports.IntervalTimer = exports.TimeoutTimer = exports.ResourceQueue = exports.Queue = exports.Limiter = exports.first = exports.sequence = exports.ignoreErrors = exports.disposableTimeout = exports.timeout = exports.Barrier = exports.ThrottledDelayer = exports.Delayer = exports.SequencerByKey = exports.Sequencer = exports.Throttler = exports.asPromise = exports.raceTimeout = exports.raceCancellablePromises = exports.raceCancellation = exports.createCancelablePromise = exports.isThenable = void 0;
     function isThenable(obj) {
         return obj && typeof obj.then === 'function';
     }
@@ -2154,10 +2123,25 @@ define(__m[11/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,16/*vs/ba
         return Promise.race([promise, new Promise(resolve => token.onCancellationRequested(() => resolve(defaultValue)))]);
     }
     exports.raceCancellation = raceCancellation;
+    /**
+     * Returns as soon as one of the promises is resolved and cancels remaining promises
+     */
+    async function raceCancellablePromises(cancellablePromises) {
+        let resolvedPromiseIndex = -1;
+        const promises = cancellablePromises.map((promise, index) => promise.then(result => { resolvedPromiseIndex = index; return result; }));
+        const result = await Promise.race(promises);
+        cancellablePromises.forEach((cancellablePromise, index) => {
+            if (index !== resolvedPromiseIndex) {
+                cancellablePromise.cancel();
+            }
+        });
+        return result;
+    }
+    exports.raceCancellablePromises = raceCancellablePromises;
     function raceTimeout(promise, timeout, onTimeout) {
         let promiseResolve = undefined;
         const timer = setTimeout(() => {
-            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve();
+            promiseResolve === null || promiseResolve === void 0 ? void 0 : promiseResolve(undefined);
             onTimeout === null || onTimeout === void 0 ? void 0 : onTimeout();
         }, timeout);
         return Promise.race([
@@ -2608,10 +2592,10 @@ define(__m[11/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,16/*vs/ba
     }
     exports.IntervalTimer = IntervalTimer;
     class RunOnceScheduler {
-        constructor(runner, timeout) {
+        constructor(runner, delay) {
             this.timeoutToken = -1;
             this.runner = runner;
-            this.timeout = timeout;
+            this.timeout = delay;
             this.timeoutHandler = this.onTimeout.bind(this);
         }
         /**
@@ -2636,6 +2620,12 @@ define(__m[11/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,16/*vs/ba
         schedule(delay = this.timeout) {
             this.cancel();
             this.timeoutToken = setTimeout(this.timeoutHandler, delay);
+        }
+        get delay() {
+            return this.timeout;
+        }
+        set delay(value) {
+            this.timeout = value;
         }
         /**
          * Returns true if scheduled.
@@ -2837,8 +2827,9 @@ define(__m[11/*vs/base/common/async*/], __M([0/*require*/,1/*exports*/,16/*vs/ba
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[3/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[2/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
+    var _a;
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isLittleEndian = exports.OS = exports.OperatingSystem = exports.setImmediate = exports.globals = exports.translationsConfigFile = exports.locale = exports.Language = exports.language = exports.isRootUser = exports.userAgent = exports.platform = exports.isIOS = exports.isWeb = exports.isNative = exports.isLinux = exports.isMacintosh = exports.isWindows = exports.PlatformToString = exports.Platform = void 0;
     const LANGUAGE_DEFAULT = 'en';
@@ -2852,8 +2843,18 @@ define(__m[3/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
     let _language = LANGUAGE_DEFAULT;
     let _translationsConfigFile = undefined;
     let _userAgent = undefined;
-    const isElectronRenderer = (typeof process !== 'undefined' && typeof process.versions !== 'undefined' && typeof process.versions.electron !== 'undefined' && process.type === 'renderer');
-    // OS detection
+    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
+    let nodeProcess = undefined;
+    if (typeof process !== 'undefined') {
+        // Native environment (non-sandboxed)
+        nodeProcess = process;
+    }
+    else if (typeof _globals.vscode !== 'undefined') {
+        // Native envionment (sandboxed)
+        nodeProcess = _globals.vscode.process;
+    }
+    const isElectronRenderer = typeof ((_a = nodeProcess === null || nodeProcess === void 0 ? void 0 : nodeProcess.versions) === null || _a === void 0 ? void 0 : _a.electron) === 'string' && nodeProcess.type === 'renderer';
+    // Web environment
     if (typeof navigator === 'object' && !isElectronRenderer) {
         _userAgent = navigator.userAgent;
         _isWindows = _userAgent.indexOf('Windows') >= 0;
@@ -2864,13 +2865,14 @@ define(__m[3/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
         _locale = navigator.language;
         _language = _locale;
     }
-    else if (typeof process === 'object') {
-        _isWindows = (process.platform === 'win32');
-        _isMacintosh = (process.platform === 'darwin');
-        _isLinux = (process.platform === 'linux');
+    // Native environment
+    else if (typeof nodeProcess === 'object') {
+        _isWindows = (nodeProcess.platform === 'win32');
+        _isMacintosh = (nodeProcess.platform === 'darwin');
+        _isLinux = (nodeProcess.platform === 'linux');
         _locale = LANGUAGE_DEFAULT;
         _language = LANGUAGE_DEFAULT;
-        const rawNlsConfig = process.env['VSCODE_NLS_CONFIG'];
+        const rawNlsConfig = nodeProcess.env['VSCODE_NLS_CONFIG'];
         if (rawNlsConfig) {
             try {
                 const nlsConfig = JSON.parse(rawNlsConfig);
@@ -2884,6 +2886,10 @@ define(__m[3/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
             }
         }
         _isNative = true;
+    }
+    // Unknown environment
+    else {
+        console.error('Unable to resolve platform.');
     }
     var Platform;
     (function (Platform) {
@@ -2920,7 +2926,7 @@ define(__m[3/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
     exports.platform = _platform;
     exports.userAgent = _userAgent;
     function isRootUser() {
-        return _isNative && !_isWindows && (process.getuid() === 0);
+        return !!nodeProcess && !_isWindows && (nodeProcess.getuid() === 0);
     }
     exports.isRootUser = isRootUser;
     /**
@@ -2962,7 +2968,6 @@ define(__m[3/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
      * The translatios that are available through language packs.
      */
     exports.translationsConfigFile = _translationsConfigFile;
-    const _globals = (typeof self === 'object' ? self : typeof global === 'object' ? global : {});
     exports.globals = _globals;
     exports.setImmediate = (function defineSetImmediate() {
         if (exports.globals.setImmediate) {
@@ -2992,8 +2997,8 @@ define(__m[3/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
                 exports.globals.postMessage({ vscodeSetImmediateId: myId }, '*');
             };
         }
-        if (typeof process !== 'undefined' && typeof process.nextTick === 'function') {
-            return process.nextTick.bind(process);
+        if (nodeProcess) {
+            return nodeProcess.nextTick.bind(nodeProcess);
         }
         const _promise = Promise.resolve();
         return (callback) => _promise.then(callback);
@@ -3025,16 +3030,31 @@ define(__m[3/*vs/base/common/platform*/], __M([0/*require*/,1/*exports*/]), func
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[25/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/platform*/]), function (require, exports, platform_1) {
+define(__m[26/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/]), function (require, exports, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.nextTick = exports.platform = exports.env = exports.cwd = void 0;
-    const safeProcess = (typeof process === 'undefined') ? {
-        cwd() { return '/'; },
-        env: Object.create(null),
-        get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
-        nextTick(callback) { return platform_1.setImmediate(callback); }
-    } : process;
+    let safeProcess;
+    // Native node.js environment
+    if (typeof process !== 'undefined') {
+        safeProcess = process;
+    }
+    // Native sandbox environment
+    else if (typeof platform_1.globals.vscode !== 'undefined') {
+        safeProcess = platform_1.globals.vscode.process;
+    }
+    // Web environment
+    else {
+        safeProcess = {
+            // Supported
+            get platform() { return platform_1.isWindows ? 'win32' : platform_1.isMacintosh ? 'darwin' : 'linux'; },
+            nextTick(callback) { return platform_1.setImmediate(callback); },
+            // Unsupported
+            get env() { return Object.create(null); },
+            cwd() { return '/'; },
+            getuid() { return -1; }
+        };
+    }
     exports.cwd = safeProcess.cwd;
     exports.env = safeProcess.env;
     exports.platform = safeProcess.platform;
@@ -3045,7 +3065,7 @@ define(__m[25/*vs/base/common/process*/], __M([0/*require*/,1/*exports*/,3/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[2/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,25/*vs/base/common/process*/]), function (require, exports, process) {
+define(__m[3/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,26/*vs/base/common/process*/]), function (require, exports, process) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.delimiter = exports.sep = exports.toNamespacedPath = exports.parse = exports.format = exports.extname = exports.basename = exports.dirname = exports.relative = exports.resolve = exports.join = exports.isAbsolute = exports.normalize = exports.posix = exports.win32 = void 0;
@@ -4411,7 +4431,7 @@ define(__m[2/*vs/base/common/path*/], __M([0/*require*/,1/*exports*/,25/*vs/base
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[37/*vs/base/common/comparers*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/path*/,11/*vs/base/common/async*/]), function (require, exports, path_1, async_1) {
+define(__m[37/*vs/base/common/comparers*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/path*/,11/*vs/base/common/async*/]), function (require, exports, path_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.compareByPrefix = exports.compareAnything = exports.comparePaths = exports.compareFileExtensionsDefault = exports.compareFileExtensions = exports.noIntlCompareFileNames = exports.compareFileNamesDefault = exports.compareFileNames = void 0;
@@ -4629,7 +4649,7 @@ define(__m[37/*vs/base/common/comparers*/], __M([0/*require*/,1/*exports*/,2/*vs
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[26/*vs/base/common/stopwatch*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/platform*/]), function (require, exports, platform_1) {
+define(__m[27/*vs/base/common/stopwatch*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/]), function (require, exports, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.StopWatch = void 0;
@@ -4663,7 +4683,7 @@ define(__m[26/*vs/base/common/stopwatch*/], __M([0/*require*/,1/*exports*/,3/*vs
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[27/*vs/base/common/stream*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/lifecycle*/]), function (require, exports, lifecycle_1) {
+define(__m[28/*vs/base/common/stream*/], __M([0/*require*/,1/*exports*/,10/*vs/base/common/lifecycle*/]), function (require, exports, lifecycle_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.transform = exports.toReadable = exports.toStream = exports.peekStream = exports.consumeStream = exports.peekReadable = exports.consumeReadable = exports.newWriteableStream = exports.isReadableBufferedStream = exports.isReadableStream = void 0;
@@ -5011,7 +5031,7 @@ define(__m[27/*vs/base/common/stream*/], __M([0/*require*/,1/*exports*/,10/*vs/b
 define(__m[4/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.repeat = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.endsWith = exports.startsWith = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
+    exports.GraphemeBreakType = exports.breakBetweenGraphemeBreakType = exports.getGraphemeBreakType = exports.singleLetterHash = exports.getNLines = exports.uppercaseFirstLetter = exports.containsUppercaseCharacter = exports.fuzzyContains = exports.stripUTF8BOM = exports.startsWithUTF8BOM = exports.UTF8_BOM_CHARACTER = exports.removeAnsiEscapeCodes = exports.lcut = exports.isEmojiImprecise = exports.isFullWidthCharacter = exports.containsFullWidthCharacter = exports.containsUnusualLineTerminators = exports.UNUSUAL_LINE_TERMINATORS = exports.isBasicASCII = exports.containsEmoji = exports.containsRTL = exports.decodeUTF8 = exports.encodeUTF8 = exports.getCharContainingOffset = exports.prevCharLength = exports.nextCharLength = exports.getNextCodePoint = exports.computeCodePoint = exports.isLowSurrogate = exports.isHighSurrogate = exports.commonSuffixLength = exports.commonPrefixLength = exports.startsWithIgnoreCase = exports.equalsIgnoreCase = exports.isUpperAsciiLetter = exports.isLowerAsciiLetter = exports.compareSubstringIgnoreCase = exports.compareIgnoreCase = exports.compareSubstring = exports.compare = exports.lastNonWhitespaceIndex = exports.getLeadingWhitespace = exports.firstNonWhitespaceIndex = exports.regExpFlags = exports.regExpContainsBackreference = exports.regExpLeadsToEndlessLoop = exports.createRegExp = exports.stripWildcards = exports.convertSimple2RegExpPattern = exports.rtrim = exports.ltrim = exports.trim = exports.escapeRegExpCharacters = exports.escape = exports.format = exports.pad = exports.isFalsyOrWhitespace = void 0;
     function isFalsyOrWhitespace(str) {
         if (!str || typeof str !== 'string') {
             return true;
@@ -5137,40 +5157,6 @@ define(__m[4/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
         return pattern.replace(/\*/g, '');
     }
     exports.stripWildcards = stripWildcards;
-    /**
-     * @deprecated ES6: use `String.startsWith`
-     */
-    function startsWith(haystack, needle) {
-        if (haystack.length < needle.length) {
-            return false;
-        }
-        if (haystack === needle) {
-            return true;
-        }
-        for (let i = 0; i < needle.length; i++) {
-            if (haystack[i] !== needle[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
-    exports.startsWith = startsWith;
-    /**
-     * @deprecated ES6: use `String.endsWith`
-     */
-    function endsWith(haystack, needle) {
-        const diff = haystack.length - needle.length;
-        if (diff > 0) {
-            return haystack.indexOf(needle, diff) === diff;
-        }
-        else if (diff === 0) {
-            return haystack === needle;
-        }
-        else {
-            return false;
-        }
-    }
-    exports.endsWith = endsWith;
     function createRegExp(searchString, isRegex, options = {}) {
         if (!searchString) {
             throw new Error('Cannot create regex from empty string');
@@ -5791,17 +5777,6 @@ define(__m[4/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
     }
     exports.stripUTF8BOM = stripUTF8BOM;
     /**
-     * @deprecated ES6
-     */
-    function repeat(s, count) {
-        let result = '';
-        for (let i = 0; i < count; i++) {
-            result += s;
-        }
-        return result;
-    }
-    exports.repeat = repeat;
-    /**
      * Checks if the characters of the provided query string are included in the
      * target string. The characters do not have to be contiguous within the string.
      */
@@ -6020,7 +5995,7 @@ define(__m[4/*vs/base/common/strings*/], __M([0/*require*/,1/*exports*/]), funct
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[17/*vs/base/common/buffer*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/strings*/,27/*vs/base/common/stream*/]), function (require, exports, strings, streams) {
+define(__m[16/*vs/base/common/buffer*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/strings*/,28/*vs/base/common/stream*/]), function (require, exports, strings, streams) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.newWriteableBufferStream = exports.streamToBufferReadableStream = exports.bufferToStream = exports.bufferedStreamToBuffer = exports.streamToBuffer = exports.bufferToReadable = exports.readableToBuffer = exports.writeUInt8 = exports.readUInt8 = exports.writeUInt32LE = exports.readUInt32LE = exports.writeUInt32BE = exports.readUInt32BE = exports.writeUInt16LE = exports.readUInt16LE = exports.VSBuffer = void 0;
@@ -6459,7 +6434,7 @@ define(__m[12/*vs/base/common/types*/], __M([0/*require*/,1/*exports*/]), functi
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[9/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/platform*/,4/*vs/base/common/strings*/,2/*vs/base/common/path*/,12/*vs/base/common/types*/]), function (require, exports, platform_1, strings_1, path_1, types_1) {
+define(__m[9/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/,4/*vs/base/common/strings*/,3/*vs/base/common/path*/,12/*vs/base/common/types*/]), function (require, exports, platform_1, strings_1, path_1, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.parseLineAndColumnAware = exports.indexOfPath = exports.isRootOrDriveLetter = exports.sanitizeFilePath = exports.isWindowsDriveLetter = exports.isEqualOrParent = exports.isEqual = exports.isValidBasename = exports.isUNC = exports.getRoot = exports.toSlashes = exports.isPathSeparator = void 0;
@@ -6628,34 +6603,34 @@ define(__m[9/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,3/*vs/ba
         return strings_1.equalsIgnoreCase(pathA, pathB);
     }
     exports.isEqual = isEqual;
-    function isEqualOrParent(path, candidate, ignoreCase, separator = path_1.sep) {
-        if (path === candidate) {
+    function isEqualOrParent(base, parentCandidate, ignoreCase, separator = path_1.sep) {
+        if (base === parentCandidate) {
             return true;
         }
-        if (!path || !candidate) {
+        if (!base || !parentCandidate) {
             return false;
         }
-        if (candidate.length > path.length) {
+        if (parentCandidate.length > base.length) {
             return false;
         }
         if (ignoreCase) {
-            const beginsWith = strings_1.startsWithIgnoreCase(path, candidate);
+            const beginsWith = strings_1.startsWithIgnoreCase(base, parentCandidate);
             if (!beginsWith) {
                 return false;
             }
-            if (candidate.length === path.length) {
+            if (parentCandidate.length === base.length) {
                 return true; // same path, different casing
             }
-            let sepOffset = candidate.length;
-            if (candidate.charAt(candidate.length - 1) === separator) {
+            let sepOffset = parentCandidate.length;
+            if (parentCandidate.charAt(parentCandidate.length - 1) === separator) {
                 sepOffset--; // adjust the expected sep offset in case our candidate already ends in separator character
             }
-            return path.charAt(sepOffset) === separator;
+            return base.charAt(sepOffset) === separator;
         }
-        if (candidate.charAt(candidate.length - 1) !== separator) {
-            candidate += separator;
+        if (parentCandidate.charAt(parentCandidate.length - 1) !== separator) {
+            parentCandidate += separator;
         }
-        return path.indexOf(candidate) === 0;
+        return base.indexOf(parentCandidate) === 0;
     }
     exports.isEqualOrParent = isEqualOrParent;
     function isWindowsDriveLetter(char0) {
@@ -6751,16 +6726,16 @@ define(__m[9/*vs/base/common/extpath*/], __M([0/*require*/,1/*exports*/,3/*vs/ba
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[13/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,12/*vs/base/common/types*/]), function (require, exports, types_1) {
+define(__m[21/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,12/*vs/base/common/types*/]), function (require, exports, types_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.distinct = exports.getOrDefault = exports.safeStringify = exports.equals = exports.assign = exports.mixin = exports.cloneAndChange = exports.deepFreeze = exports.deepClone = void 0;
+    exports.distinct = exports.getOrDefault = exports.safeStringify = exports.equals = exports.mixin = exports.cloneAndChange = exports.deepFreeze = exports.deepClone = void 0;
     function deepClone(obj) {
         if (!obj || typeof obj !== 'object') {
             return obj;
         }
         if (obj instanceof RegExp) {
-            // See https://github.com/Microsoft/TypeScript/issues/10990
+            // See https://github.com/microsoft/TypeScript/issues/10990
             return obj;
         }
         const result = Array.isArray(obj) ? [] : {};
@@ -6859,11 +6834,6 @@ define(__m[13/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,12/*vs/
         return destination;
     }
     exports.mixin = mixin;
-    function assign(destination, ...sources) {
-        sources.forEach(source => Object.keys(source).forEach(key => destination[key] = source[key]));
-        return destination;
-    }
-    exports.assign = assign;
     function equals(one, other) {
         if (one === other) {
             return true;
@@ -6916,19 +6886,19 @@ define(__m[13/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,12/*vs/
     }
     exports.equals = equals;
     /**
-     * Calls JSON.Stringify with a replacer to break apart any circular references.
-     * This prevents JSON.stringify from throwing the exception
+     * Calls `JSON.Stringify` with a replacer to break apart any circular references.
+     * This prevents `JSON`.stringify` from throwing the exception
      *  "Uncaught TypeError: Converting circular structure to JSON"
      */
     function safeStringify(obj) {
-        const seen = [];
+        const seen = new Set();
         return JSON.stringify(obj, (key, value) => {
             if (types_1.isObject(value) || Array.isArray(value)) {
-                if (seen.indexOf(value) !== -1) {
+                if (seen.has(value)) {
                     return '[Circular]';
                 }
                 else {
-                    seen.push(value);
+                    seen.add(value);
                 }
             }
             return value;
@@ -6972,7 +6942,7 @@ define(__m[13/*vs/base/common/objects*/], __M([0/*require*/,1/*exports*/,12/*vs/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[6/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/platform*/,2/*vs/base/common/path*/]), function (require, exports, platform_1, paths) {
+define(__m[6/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/platform*/,3/*vs/base/common/path*/]), function (require, exports, platform_1, paths) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.uriToFsPath = exports.URI = void 0;
@@ -7565,25 +7535,7 @@ define(__m[6/*vs/base/common/uri*/], __M([0/*require*/,1/*exports*/,3/*vs/base/c
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[38/*vs/base/common/amd*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/]), function (require, exports, uri_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.getUriFromAmdModule = exports.getPathFromAmdModule = void 0;
-    function getPathFromAmdModule(requirefn, relativePath) {
-        return getUriFromAmdModule(requirefn, relativePath).fsPath;
-    }
-    exports.getPathFromAmdModule = getPathFromAmdModule;
-    function getUriFromAmdModule(requirefn, relativePath) {
-        return uri_1.URI.parse(requirefn.toUrl(relativePath));
-    }
-    exports.getUriFromAmdModule = getUriFromAmdModule;
-});
-
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-define(__m[39/*vs/base/common/console*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/]), function (require, exports, uri_1) {
+define(__m[38/*vs/base/common/console*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/]), function (require, exports, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.log = exports.getFirstFrame = exports.parse = exports.isRemoteConsoleLog = void 0;
@@ -7694,7 +7646,7 @@ define(__m[39/*vs/base/common/console*/], __M([0/*require*/,1/*exports*/,6/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[40/*vs/base/common/marshalling*/], __M([0/*require*/,1/*exports*/,17/*vs/base/common/buffer*/,4/*vs/base/common/strings*/,6/*vs/base/common/uri*/]), function (require, exports, buffer_1, strings_1, uri_1) {
+define(__m[39/*vs/base/common/marshalling*/], __M([0/*require*/,1/*exports*/,16/*vs/base/common/buffer*/,4/*vs/base/common/strings*/,6/*vs/base/common/uri*/]), function (require, exports, buffer_1, strings_1, uri_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.revive = exports.parse = exports.stringify = void 0;
@@ -7755,10 +7707,10 @@ define(__m[40/*vs/base/common/marshalling*/], __M([0/*require*/,1/*exports*/,17/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[28/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,3/*vs/base/common/platform*/]), function (require, exports, uri_1, platform) {
+define(__m[17/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,2/*vs/base/common/platform*/]), function (require, exports, uri_1, platform) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.RemoteAuthorities = exports.Schemas = void 0;
+    exports.FileAccess = exports.RemoteAuthorities = exports.Schemas = void 0;
     var Schemas;
     (function (Schemas) {
         /**
@@ -7855,13 +7807,33 @@ define(__m[28/*vs/base/common/network*/], __M([0/*require*/,1/*exports*/,6/*vs/b
         }
     }
     exports.RemoteAuthorities = new RemoteAuthoritiesImpl();
+    class FileAccessImpl {
+        asBrowserUri(uriOrModule, moduleIdToUrl) {
+            const uri = this.toUri(uriOrModule, moduleIdToUrl);
+            if (uri.scheme === Schemas.vscodeRemote) {
+                return exports.RemoteAuthorities.rewrite(uri);
+            }
+            return uri;
+        }
+        asFileUri(uriOrModule, moduleIdToUrl) {
+            const uri = this.toUri(uriOrModule, moduleIdToUrl);
+            return uri;
+        }
+        toUri(uriOrModule, moduleIdToUrl) {
+            if (uri_1.URI.isUri(uriOrModule)) {
+                return uriOrModule;
+            }
+            return uri_1.URI.parse(moduleIdToUrl.toUrl(uriOrModule));
+        }
+    }
+    exports.FileAccess = new FileAccessImpl();
 });
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[18/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,4/*vs/base/common/strings*/,28/*vs/base/common/network*/,3/*vs/base/common/platform*/]), function (require, exports, uri_1, strings_1, network_1, platform_1) {
+define(__m[18/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,6/*vs/base/common/uri*/,4/*vs/base/common/strings*/,17/*vs/base/common/network*/,2/*vs/base/common/platform*/]), function (require, exports, uri_1, strings_1, network_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LRUCache = exports.LinkedMap = exports.Touch = exports.ResourceMap = exports.TernarySearchTree = exports.UriIterator = exports.PathIterator = exports.StringIterator = exports.setToString = exports.mapToString = exports.getOrSet = void 0;
@@ -7984,7 +7956,7 @@ define(__m[18/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,6/*vs/base/
                 this._states.push(2 /* Authority */);
             }
             if (this._value.path) {
-                //todo@jrieken the case-sensitive logic is copied form `resources.ts#hasToIgnoreCase`
+                //todo@jrieken #107886 the case-sensitive logic is copied form `resources.ts#hasToIgnoreCase`
                 // which cannot be used because it depends on this
                 const caseSensitive = key.scheme === network_1.Schemas.file && platform_1.isLinux;
                 this._pathIterator = new PathIterator(false, caseSensitive);
@@ -8747,7 +8719,7 @@ define(__m[18/*vs/base/common/map*/], __M([0/*require*/,1/*exports*/,6/*vs/base/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[41/*vs/base/common/filters*/], __M([0/*require*/,1/*exports*/,18/*vs/base/common/map*/,4/*vs/base/common/strings*/]), function (require, exports, map_1, strings) {
+define(__m[40/*vs/base/common/filters*/], __M([0/*require*/,1/*exports*/,18/*vs/base/common/map*/,4/*vs/base/common/strings*/]), function (require, exports, map_1, strings) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.fuzzyScoreGraceful = exports.fuzzyScoreGracefulAggressive = exports.fuzzyScore = exports.FuzzyScore = exports.isPatternInWord = exports.createMatches = exports.anyScore = exports.matchesFuzzy2 = exports.matchesFuzzy = exports.matchesWords = exports.matchesCamelCase = exports.isUpper = exports.matchesSubString = exports.matchesContiguousSubString = exports.matchesPrefix = exports.matchesStrictPrefix = exports.or = void 0;
@@ -9461,7 +9433,7 @@ define(__m[41/*vs/base/common/filters*/], __M([0/*require*/,1/*exports*/,18/*vs/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[29/*vs/base/common/fuzzyScorer*/], __M([0/*require*/,1/*exports*/,37/*vs/base/common/comparers*/,41/*vs/base/common/filters*/,2/*vs/base/common/path*/,3/*vs/base/common/platform*/,4/*vs/base/common/strings*/]), function (require, exports, comparers_1, filters_1, path_1, platform_1, strings_1) {
+define(__m[29/*vs/base/common/fuzzyScorer*/], __M([0/*require*/,1/*exports*/,37/*vs/base/common/comparers*/,40/*vs/base/common/filters*/,3/*vs/base/common/path*/,2/*vs/base/common/platform*/,4/*vs/base/common/strings*/]), function (require, exports, comparers_1, filters_1, path_1, platform_1, strings_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.pieceToQuery = exports.prepareQuery = exports.compareItemsByFuzzyScore = exports.scoreItemFuzzy = exports.scoreFuzzy2 = exports.scoreFuzzy = void 0;
@@ -10087,7 +10059,7 @@ define(__m[29/*vs/base/common/fuzzyScorer*/], __M([0/*require*/,1/*exports*/,37/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[14/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/arrays*/,4/*vs/base/common/strings*/,9/*vs/base/common/extpath*/,2/*vs/base/common/path*/,18/*vs/base/common/map*/,11/*vs/base/common/async*/]), function (require, exports, arrays, strings, extpath, paths, map_1, async_1) {
+define(__m[13/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,4/*vs/base/common/strings*/,9/*vs/base/common/extpath*/,3/*vs/base/common/path*/,18/*vs/base/common/map*/,11/*vs/base/common/async*/]), function (require, exports, strings, extpath, paths, map_1, async_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getPathTerms = exports.getBasenameTerms = exports.isRelativePattern = exports.hasSiblingFn = exports.hasSiblingPromiseFn = exports.parse = exports.match = exports.splitGlobAware = exports.getEmptyExpression = void 0;
@@ -10369,7 +10341,7 @@ define(__m[14/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,5/*vs/base
             }
             return null;
         };
-        const withBasenames = arrays.first(parsedPatterns, pattern => !!pattern.allBasenames);
+        const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
         if (withBasenames) {
             parsedPattern.allBasenames = withBasenames.allBasenames;
         }
@@ -10505,7 +10477,7 @@ define(__m[14/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,5/*vs/base
                 }
                 return null;
             };
-            const withBasenames = arrays.first(parsedPatterns, pattern => !!pattern.allBasenames);
+            const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
             if (withBasenames) {
                 resultExpression.allBasenames = withBasenames.allBasenames;
             }
@@ -10535,7 +10507,7 @@ define(__m[14/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,5/*vs/base
             }
             return null;
         };
-        const withBasenames = arrays.first(parsedPatterns, pattern => !!pattern.allBasenames);
+        const withBasenames = parsedPatterns.find(pattern => !!pattern.allBasenames);
         if (withBasenames) {
             resultExpression.allBasenames = withBasenames.allBasenames;
         }
@@ -10630,7 +10602,7 @@ define(__m[14/*vs/base/common/glob*/], __M([0/*require*/,1/*exports*/,5/*vs/base
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[21/*vs/base/common/normalization*/], __M([0/*require*/,1/*exports*/,18/*vs/base/common/map*/]), function (require, exports, map_1) {
+define(__m[22/*vs/base/common/normalization*/], __M([0/*require*/,1/*exports*/,18/*vs/base/common/map*/]), function (require, exports, map_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.removeAccents = exports.normalizeNFD = exports.normalizeNFC = exports.canNormalize = void 0;
@@ -10691,7 +10663,7 @@ define(__m[21/*vs/base/common/normalization*/], __M([0/*require*/,1/*exports*/,1
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[42/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/extpath*/,2/*vs/base/common/path*/,6/*vs/base/common/uri*/,4/*vs/base/common/strings*/,28/*vs/base/common/network*/,3/*vs/base/common/platform*/,14/*vs/base/common/glob*/,18/*vs/base/common/map*/]), function (require, exports, extpath, paths, uri_1, strings_1, network_1, platform_1, glob_1, map_1) {
+define(__m[41/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,9/*vs/base/common/extpath*/,3/*vs/base/common/path*/,6/*vs/base/common/uri*/,4/*vs/base/common/strings*/,17/*vs/base/common/network*/,2/*vs/base/common/platform*/,13/*vs/base/common/glob*/,18/*vs/base/common/map*/]), function (require, exports, extpath, paths, uri_1, strings_1, network_1, platform_1, glob_1, map_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toLocalResource = exports.ResourceGlobMatcher = exports.DataUri = exports.distinctParents = exports.addTrailingPathSeparator = exports.removeTrailingPathSeparator = exports.hasTrailingPathSeparator = exports.isEqualAuthority = exports.isAbsolutePath = exports.resolvePath = exports.relativePath = exports.normalizePath = exports.joinPath = exports.dirname = exports.extname = exports.basename = exports.basenameOrAuthority = exports.getComparisonKey = exports.isEqualOrParent = exports.isEqual = exports.extUriIgnorePathCase = exports.extUriBiasedIgnorePathCase = exports.extUri = exports.ExtUri = exports.originalFSPath = void 0;
@@ -10985,15 +10957,15 @@ define(__m[42/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,9/*vs
         }
     }
     exports.ResourceGlobMatcher = ResourceGlobMatcher;
-    function toLocalResource(resource, authority) {
+    function toLocalResource(resource, authority, localScheme) {
         if (authority) {
             let path = resource.path;
             if (path && path[0] !== paths.posix.sep) {
                 path = paths.posix.sep + path;
             }
-            return resource.with({ scheme: network_1.Schemas.vscodeRemote, authority, path });
+            return resource.with({ scheme: localScheme, authority, path });
         }
-        return resource.with({ scheme: network_1.Schemas.file });
+        return resource.with({ scheme: localScheme });
     }
     exports.toLocalResource = toLocalResource;
 });
@@ -11002,7 +10974,7 @@ define(__m[42/*vs/base/common/resources*/], __M([0/*require*/,1/*exports*/,9/*vs
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[43/*vs/base/common/uuid*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[42/*vs/base/common/uuid*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.generateUuid = exports.isUUID = void 0;
@@ -11063,7 +11035,7 @@ define(__m[43/*vs/base/common/uuid*/], __M([0/*require*/,1/*exports*/]), functio
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[44/*vs/base/node/decoder*/], __M([0/*require*/,1/*exports*/,30/*string_decoder*/]), function (require, exports, sd) {
+define(__m[43/*vs/base/node/decoder*/], __M([0/*require*/,1/*exports*/,30/*string_decoder*/]), function (require, exports, sd) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LineDecoder = void 0;
@@ -11123,11 +11095,11 @@ define(__m[44/*vs/base/node/decoder*/], __M([0/*require*/,1/*exports*/,30/*strin
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[19/*vs/base/node/pfs*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/path*/,11/*vs/base/common/async*/,22/*fs*/,64/*os*/,3/*vs/base/common/platform*/,8/*vs/base/common/event*/,45/*util*/,9/*vs/base/common/extpath*/,43/*vs/base/common/uuid*/,21/*vs/base/common/normalization*/]), function (require, exports, path_1, async_1, fs, os, platform, event_1, util_1, extpath_1, uuid_1, normalization_1) {
+define(__m[19/*vs/base/node/pfs*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/path*/,11/*vs/base/common/async*/,23/*fs*/,63/*os*/,2/*vs/base/common/platform*/,8/*vs/base/common/event*/,44/*util*/,9/*vs/base/common/extpath*/,42/*vs/base/common/uuid*/,22/*vs/base/common/normalization*/]), function (require, exports, path_1, async_1, fs, os, platform, event_1, util_1, extpath_1, uuid_1, normalization_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.copy = exports.move = exports.whenDeleted = exports.fileExists = exports.dirExists = exports.readDirsInDir = exports.writeFileSync = exports.writeFile = exports.mkdirp = exports.readFile = exports.truncate = exports.symlink = exports.unlink = exports.renameIgnoreError = exports.rename = exports.lstat = exports.statLink = exports.stat = exports.chmod = exports.exists = exports.readdirSync = exports.readdirWithFileTypes = exports.readdir = exports.rimrafSync = exports.rimraf = exports.RimRafMode = exports.MAX_HEAP_SIZE = exports.MAX_FILE_SIZE = void 0;
-    // See https://github.com/Microsoft/vscode/issues/30180
+    // See https://github.com/microsoft/vscode/issues/30180
     const WIN32_MAX_FILE_SIZE = 300 * 1024 * 1024; // 300 MB
     const GENERAL_MAX_FILE_SIZE = 16 * 1024 * 1024 * 1024; // 16 GB
     // See https://github.com/v8/v8/blob/5918a23a3d571b9625e5cce246bdd5b46ff7cd8b/src/heap/heap.cc#L149
@@ -11579,7 +11551,7 @@ define(__m[19/*vs/base/node/pfs*/], __M([0/*require*/,1/*exports*/,2/*vs/base/co
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[46/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/event*/,10/*vs/base/common/lifecycle*/,11/*vs/base/common/async*/,16/*vs/base/common/cancellation*/,7/*vs/base/common/errors*/,17/*vs/base/common/buffer*/,5/*vs/base/common/arrays*/,12/*vs/base/common/types*/,40/*vs/base/common/marshalling*/,4/*vs/base/common/strings*/]), function (require, exports, event_1, lifecycle_1, async_1, cancellation_1, errors, buffer_1, arrays_1, types_1, marshalling_1, strings) {
+define(__m[45/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,8/*vs/base/common/event*/,10/*vs/base/common/lifecycle*/,11/*vs/base/common/async*/,15/*vs/base/common/cancellation*/,7/*vs/base/common/errors*/,16/*vs/base/common/buffer*/,5/*vs/base/common/arrays*/,12/*vs/base/common/types*/,39/*vs/base/common/marshalling*/,4/*vs/base/common/strings*/]), function (require, exports, event_1, lifecycle_1, async_1, cancellation_1, errors, buffer_1, arrays_1, types_1, marshalling_1, strings) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IPCLogger = exports.logWithColors = exports.createChannelSender = exports.createChannelReceiver = exports.StaticRouter = exports.getNextTickChannel = exports.getDelayedChannel = exports.IPCClient = exports.IPCServer = exports.ChannelClient = exports.RequestInitiator = exports.ChannelServer = exports.ResponseType = exports.RequestType = void 0;
@@ -12439,7 +12411,7 @@ define(__m[46/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,8
         data = pretty(data);
         const colorTable = colorTables[initiator];
         const color = colorTable[req % colorTable.length];
-        let args = [`%c[${direction}]%c[${strings.pad(totalLength, 7, ' ')}]%c[len: ${strings.pad(msgLength, 5, ' ')}]%c${strings.pad(req, 5, ' ')} - ${str}`, 'color: darkgreen', 'color: grey', 'color: grey', `color: ${color}`];
+        let args = [`%c[${direction}]%c[${String(totalLength).padStart(7, ' ')}]%c[len: ${String(msgLength).padStart(5, ' ')}]%c${String(req).padStart(5, ' ')} - ${str}`, 'color: darkgreen', 'color: grey', 'color: grey', `color: ${color}`];
         if (/\($/.test(str)) {
             args = args.concat(data);
             args.push(')');
@@ -12469,12 +12441,12 @@ define(__m[46/*vs/base/parts/ipc/common/ipc*/], __M([0/*require*/,1/*exports*/,8
     exports.IPCLogger = IPCLogger;
 });
 
-define(__m[47/*vs/nls!vs/base/common/errorMessage*/], __M([48/*vs/nls*/,49/*vs/nls!vs/workbench/services/search/node/searchApp*/]), function(nls, data) { return nls.create("vs/base/common/errorMessage", data); });
+define(__m[46/*vs/nls!vs/base/common/errorMessage*/], __M([47/*vs/nls*/,48/*vs/nls!vs/workbench/services/search/node/searchApp*/]), function(nls, data) { return nls.create("vs/base/common/errorMessage", data); });
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[23/*vs/base/common/errorMessage*/], __M([0/*require*/,1/*exports*/,47/*vs/nls!vs/base/common/errorMessage*/,12/*vs/base/common/types*/,5/*vs/base/common/arrays*/]), function (require, exports, nls, types, arrays) {
+define(__m[24/*vs/base/common/errorMessage*/], __M([0/*require*/,1/*exports*/,46/*vs/nls!vs/base/common/errorMessage*/,12/*vs/base/common/types*/,5/*vs/base/common/arrays*/]), function (require, exports, nls, types, arrays) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toErrorMessage = void 0;
@@ -12538,12 +12510,12 @@ define(__m[23/*vs/base/common/errorMessage*/], __M([0/*require*/,1/*exports*/,47
     exports.toErrorMessage = toErrorMessage;
 });
 
-define(__m[50/*vs/nls!vs/base/node/processes*/], __M([48/*vs/nls*/,49/*vs/nls!vs/workbench/services/search/node/searchApp*/]), function(nls, data) { return nls.create("vs/base/node/processes", data); });
+define(__m[49/*vs/nls!vs/base/node/processes*/], __M([47/*vs/nls*/,48/*vs/nls!vs/workbench/services/search/node/searchApp*/]), function(nls, data) { return nls.create("vs/base/node/processes", data); });
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[51/*vs/base/node/processes*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/path*/,22/*fs*/,45/*util*/,20/*child_process*/,50/*vs/nls!vs/base/node/processes*/,12/*vs/base/common/types*/,13/*vs/base/common/objects*/,9/*vs/base/common/extpath*/,3/*vs/base/common/platform*/,44/*vs/base/node/decoder*/,38/*vs/base/common/amd*/]), function (require, exports, path, fs, util_1, cp, nls, Types, Objects, extpath, Platform, decoder_1, amd_1) {
+define(__m[50/*vs/base/node/processes*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/path*/,23/*fs*/,44/*util*/,20/*child_process*/,49/*vs/nls!vs/base/node/processes*/,12/*vs/base/common/types*/,21/*vs/base/common/objects*/,9/*vs/base/common/extpath*/,2/*vs/base/common/platform*/,43/*vs/base/node/decoder*/,17/*vs/base/common/network*/]), function (require, exports, path, fs, util_1, cp, nls, Types, Objects, extpath, Platform, decoder_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.win32 = exports.createQueuedSender = exports.LineProcess = exports.AbstractProcess = exports.getWindowsShell = exports.TerminateResponseCode = exports.Source = void 0;
@@ -12589,7 +12561,7 @@ define(__m[51/*vs/base/node/processes*/], __M([0/*require*/,1/*exports*/,2/*vs/b
         }
         else if (Platform.isLinux || Platform.isMacintosh) {
             try {
-                const cmd = amd_1.getPathFromAmdModule(require, 'vs/base/node/terminateProcess.sh');
+                const cmd = network_1.FileAccess.asFileUri('vs/base/node/terminateProcess.sh', require).fsPath;
                 return new Promise((resolve, reject) => {
                     cp.execFile(cmd, [process.pid.toString()], { encoding: 'utf8', shell: true }, (err, stdout, stderr) => {
                         if (err) {
@@ -12980,7 +12952,7 @@ define(__m[51/*vs/base/node/processes*/], __M([0/*require*/,1/*exports*/,2/*vs/b
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[52/*vs/base/parts/ipc/node/ipc.cp*/], __M([0/*require*/,1/*exports*/,20/*child_process*/,10/*vs/base/common/lifecycle*/,11/*vs/base/common/async*/,13/*vs/base/common/objects*/,8/*vs/base/common/event*/,51/*vs/base/node/processes*/,46/*vs/base/parts/ipc/common/ipc*/,39/*vs/base/common/console*/,16/*vs/base/common/cancellation*/,7/*vs/base/common/errors*/,17/*vs/base/common/buffer*/]), function (require, exports, child_process_1, lifecycle_1, async_1, objects_1, event_1, processes_1, ipc_1, console_1, cancellation_1, errors, buffer_1) {
+define(__m[51/*vs/base/parts/ipc/node/ipc.cp*/], __M([0/*require*/,1/*exports*/,20/*child_process*/,10/*vs/base/common/lifecycle*/,11/*vs/base/common/async*/,21/*vs/base/common/objects*/,8/*vs/base/common/event*/,50/*vs/base/node/processes*/,45/*vs/base/parts/ipc/common/ipc*/,38/*vs/base/common/console*/,15/*vs/base/common/cancellation*/,7/*vs/base/common/errors*/,16/*vs/base/common/buffer*/,2/*vs/base/common/platform*/]), function (require, exports, child_process_1, lifecycle_1, async_1, objects_1, event_1, processes_1, ipc_1, console_1, cancellation_1, errors, buffer_1, platform_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Client = exports.Server = void 0;
@@ -13078,9 +13050,9 @@ define(__m[52/*vs/base/parts/ipc/node/ipc.cp*/], __M([0/*require*/,1/*exports*/,
             if (!this._client) {
                 const args = this.options && this.options.args ? this.options.args : [];
                 const forkOpts = Object.create(null);
-                forkOpts.env = objects_1.assign(objects_1.deepClone(process.env), { 'VSCODE_PARENT_PID': String(process.pid) });
+                forkOpts.env = Object.assign(Object.assign({}, objects_1.deepClone(process.env)), { 'VSCODE_PARENT_PID': String(process.pid) });
                 if (this.options && this.options.env) {
-                    forkOpts.env = objects_1.assign(forkOpts.env, this.options.env);
+                    forkOpts.env = Object.assign(Object.assign({}, forkOpts.env), this.options.env);
                 }
                 if (this.options && this.options.freshExecArgv) {
                     forkOpts.execArgv = [];
@@ -13090,6 +13062,11 @@ define(__m[52/*vs/base/parts/ipc/node/ipc.cp*/], __M([0/*require*/,1/*exports*/,
                 }
                 if (this.options && typeof this.options.debugBrk === 'number') {
                     forkOpts.execArgv = ['--nolazy', '--inspect-brk=' + this.options.debugBrk];
+                }
+                if (platform_1.isMacintosh && forkOpts.env) {
+                    // Unset `DYLD_LIBRARY_PATH`, as it leads to process crashes
+                    // See https://github.com/microsoft/vscode/issues/105848
+                    delete forkOpts.env['DYLD_LIBRARY_PATH'];
                 }
                 this.child = child_process_1.fork(this.modulePath, args, forkOpts);
                 const onMessageEmitter = new event_1.Emitter();
@@ -13223,7 +13200,7 @@ define(__m[31/*vs/platform/instantiation/common/instantiation*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[53/*vs/platform/log/common/log*/], __M([0/*require*/,1/*exports*/,31/*vs/platform/instantiation/common/instantiation*/,10/*vs/base/common/lifecycle*/,3/*vs/base/common/platform*/,8/*vs/base/common/event*/,23/*vs/base/common/errorMessage*/]), function (require, exports, instantiation_1, lifecycle_1, platform_1, event_1, errorMessage_1) {
+define(__m[52/*vs/platform/log/common/log*/], __M([0/*require*/,1/*exports*/,31/*vs/platform/instantiation/common/instantiation*/,10/*vs/base/common/lifecycle*/,2/*vs/base/common/platform*/,8/*vs/base/common/event*/,24/*vs/base/common/errorMessage*/]), function (require, exports, instantiation_1, lifecycle_1, platform_1, event_1, errorMessage_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getLogLevel = exports.NullLogService = exports.DelegatedLogService = exports.MultiplexLogService = exports.ConsoleLogInMainService = exports.LogServiceAdapter = exports.ConsoleLogService = exports.ConsoleLogMainService = exports.AbstractLogService = exports.DEFAULT_LOG_LEVEL = exports.LogLevel = exports.ILoggerService = exports.ILogService = void 0;
@@ -13576,7 +13553,7 @@ define(__m[53/*vs/platform/log/common/log*/], __M([0/*require*/,1/*exports*/,31/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[15/*vs/workbench/services/search/common/search*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/arrays*/,14/*vs/base/common/glob*/,13/*vs/base/common/objects*/,9/*vs/base/common/extpath*/,4/*vs/base/common/strings*/,31/*vs/platform/instantiation/common/instantiation*/,2/*vs/base/common/path*/,7/*vs/base/common/errors*/]), function (require, exports, arrays_1, glob, objects, extpath, strings_1, instantiation_1, path_1, errors_1) {
+define(__m[14/*vs/workbench/services/search/common/search*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/arrays*/,13/*vs/base/common/glob*/,21/*vs/base/common/objects*/,9/*vs/base/common/extpath*/,4/*vs/base/common/strings*/,31/*vs/platform/instantiation/common/instantiation*/,3/*vs/base/common/path*/,7/*vs/base/common/errors*/]), function (require, exports, arrays_1, glob, objects, extpath, strings_1, instantiation_1, path_1, errors_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.QueryGlobTester = exports.resolvePatternsForProvider = exports.SerializableFileMatch = exports.isFilePatternMatch = exports.isSerializedFileMatch = exports.isSerializedSearchSuccess = exports.isSerializedSearchComplete = exports.serializeSearchError = exports.deserializeSearchError = exports.SearchError = exports.SearchErrorCode = exports.pathIncludedInQuery = exports.getExcludes = exports.SearchSortOrder = exports.OneLineRange = exports.SearchRange = exports.TextSearchMatch = exports.FileMatch = exports.SearchCompletionExitCode = exports.isProgressMessage = exports.isFileMatch = exports.resultIsMatch = exports.QueryType = exports.SearchProviderType = exports.ISearchService = exports.SEARCH_EXCLUDE_CONFIG = exports.VIEW_ID = exports.PANEL_ID = exports.VIEWLET_ID = void 0;
@@ -13918,7 +13895,7 @@ define(__m[32/*vs/workbench/services/search/common/searchExtTypes*/], __M([0/*re
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[54/*vs/workbench/services/search/common/textSearchManager*/], __M([0/*require*/,1/*exports*/,2/*vs/base/common/path*/,5/*vs/base/common/arrays*/,16/*vs/base/common/cancellation*/,23/*vs/base/common/errorMessage*/,42/*vs/base/common/resources*/,14/*vs/base/common/glob*/,6/*vs/base/common/uri*/,15/*vs/workbench/services/search/common/search*/,25/*vs/base/common/process*/]), function (require, exports, path, arrays_1, cancellation_1, errorMessage_1, resources, glob, uri_1, search_1, process_1) {
+define(__m[53/*vs/workbench/services/search/common/textSearchManager*/], __M([0/*require*/,1/*exports*/,3/*vs/base/common/path*/,5/*vs/base/common/arrays*/,15/*vs/base/common/cancellation*/,24/*vs/base/common/errorMessage*/,41/*vs/base/common/resources*/,13/*vs/base/common/glob*/,6/*vs/base/common/uri*/,14/*vs/workbench/services/search/common/search*/,26/*vs/base/common/process*/,17/*vs/base/common/network*/]), function (require, exports, path, arrays_1, cancellation_1, errorMessage_1, resources, glob, uri_1, search_1, process_1, network_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.BatchedCollector = exports.extensionResultIsMatch = exports.TextSearchResultsCollector = exports.TextSearchManager = void 0;
@@ -14008,7 +13985,7 @@ define(__m[54/*vs/workbench/services/search/common/textSearchManager*/], __M([0/
                     if (!this.validateProviderResult(result)) {
                         return;
                     }
-                    const hasSibling = folderQuery.folder.scheme === 'file' ?
+                    const hasSibling = folderQuery.folder.scheme === network_1.Schemas.file ?
                         glob.hasSiblingPromiseFn(() => {
                             return this.fileUtils.readdir(resources.dirname(result.uri));
                         }) :
@@ -14239,7 +14216,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-define(__m[33/*vs/workbench/services/search/node/ripgrepSearchUtils*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/arrays*/,53/*vs/platform/log/common/log*/,15/*vs/workbench/services/search/common/search*/,32/*vs/workbench/services/search/common/searchExtTypes*/]), function (require, exports, arrays_1, log_1, search_1, searchExtTypes) {
+define(__m[33/*vs/workbench/services/search/node/ripgrepSearchUtils*/], __M([0/*require*/,1/*exports*/,5/*vs/base/common/arrays*/,52/*vs/platform/log/common/log*/,14/*vs/workbench/services/search/common/search*/,32/*vs/workbench/services/search/common/searchExtTypes*/]), function (require, exports, arrays_1, log_1, search_1, searchExtTypes) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.OutputChannel = exports.createTextSearchResult = exports.anchorGlob = void 0;
@@ -14288,7 +14265,7 @@ define(__m[33/*vs/workbench/services/search/node/ripgrepSearchUtils*/], __M([0/*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[55/*vs/workbench/services/search/node/searchIpc*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
+define(__m[54/*vs/workbench/services/search/node/searchIpc*/], __M([0/*require*/,1/*exports*/]), function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SearchChannelClient = exports.SearchChannel = void 0;
@@ -14332,7 +14309,7 @@ define(__m[55/*vs/workbench/services/search/node/searchIpc*/], __M([0/*require*/
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[56/*vs/workbench/services/textfile/common/encoding*/], __M([0/*require*/,1/*exports*/,27/*vs/base/common/stream*/,17/*vs/base/common/buffer*/]), function (require, exports, stream_1, buffer_1) {
+define(__m[55/*vs/workbench/services/textfile/common/encoding*/], __M([0/*require*/,1/*exports*/,28/*vs/base/common/stream*/,16/*vs/base/common/buffer*/]), function (require, exports, stream_1, buffer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SUPPORTED_ENCODINGS = exports.detectEncodingFromBuffer = exports.toCanonicalName = exports.detectEncodingByBOMFromBuffer = exports.toNodeEncoding = exports.encodingExists = exports.toEncodeReadable = exports.toDecodeStream = exports.UTF8_BOM = exports.UTF16le_BOM = exports.UTF16be_BOM = exports.isUTFEncoding = exports.UTF16le = exports.UTF16be = exports.UTF8_with_bom = exports.UTF8 = void 0;
@@ -14928,7 +14905,7 @@ define(__m[56/*vs/workbench/services/textfile/common/encoding*/], __M([0/*requir
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[57/*vs/workbench/services/search/node/textSearchManager*/], __M([0/*require*/,1/*exports*/,56/*vs/workbench/services/textfile/common/encoding*/,19/*vs/base/node/pfs*/,54/*vs/workbench/services/search/common/textSearchManager*/]), function (require, exports, encoding_1, pfs, textSearchManager_1) {
+define(__m[56/*vs/workbench/services/search/node/textSearchManager*/], __M([0/*require*/,1/*exports*/,55/*vs/workbench/services/textfile/common/encoding*/,19/*vs/base/node/pfs*/,53/*vs/workbench/services/search/common/textSearchManager*/]), function (require, exports, encoding_1, pfs, textSearchManager_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NativeTextSearchManager = void 0;
@@ -14947,7 +14924,7 @@ define(__m[57/*vs/workbench/services/search/node/textSearchManager*/], __M([0/*r
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[58/*vs/workbench/services/search/node/ripgrepFileSearch*/], __M([0/*require*/,1/*exports*/,20/*child_process*/,2/*vs/base/common/path*/,21/*vs/base/common/normalization*/,13/*vs/base/common/objects*/,9/*vs/base/common/extpath*/,3/*vs/base/common/platform*/,4/*vs/base/common/strings*/,33/*vs/workbench/services/search/node/ripgrepSearchUtils*/,59/*vscode-ripgrep*/]), function (require, exports, cp, path, normalization_1, objects, extpath, platform_1, strings, ripgrepSearchUtils_1, vscode_ripgrep_1) {
+define(__m[57/*vs/workbench/services/search/node/ripgrepFileSearch*/], __M([0/*require*/,1/*exports*/,20/*child_process*/,3/*vs/base/common/path*/,22/*vs/base/common/normalization*/,9/*vs/base/common/extpath*/,2/*vs/base/common/platform*/,4/*vs/base/common/strings*/,33/*vs/workbench/services/search/node/ripgrepSearchUtils*/,58/*vscode-ripgrep*/]), function (require, exports, cp, path, normalization_1, extpath, platform_1, strings, ripgrepSearchUtils_1, vscode_ripgrep_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.fixDriveC = exports.getAbsoluteGlob = exports.foldersToIncludeGlobs = exports.foldersToRgExcludeGlobs = exports.spawnRipgrepCmd = void 0;
@@ -15016,11 +14993,11 @@ define(__m[58/*vs/workbench/services/search/node/ripgrepFileSearch*/], __M([0/*r
         const globArgs = [];
         let siblingClauses = {};
         folderQueries.forEach(folderQuery => {
-            const totalExcludePattern = objects.assign({}, folderQuery.excludePattern || {}, globalExclude || {});
+            const totalExcludePattern = Object.assign({}, folderQuery.excludePattern || {}, globalExclude || {});
             const result = globExprsToRgGlobs(totalExcludePattern, absoluteGlobs ? folderQuery.folder.fsPath : undefined, excludesToSkip);
             globArgs.push(...result.globArgs);
             if (result.siblingClauses) {
-                siblingClauses = objects.assign(siblingClauses, result.siblingClauses);
+                siblingClauses = Object.assign(siblingClauses, result.siblingClauses);
             }
         });
         return { globArgs, siblingClauses };
@@ -15029,7 +15006,7 @@ define(__m[58/*vs/workbench/services/search/node/ripgrepFileSearch*/], __M([0/*r
     function foldersToIncludeGlobs(folderQueries, globalInclude, absoluteGlobs = true) {
         const globArgs = [];
         folderQueries.forEach(folderQuery => {
-            const totalIncludePattern = objects.assign({}, globalInclude || {}, folderQuery.includePattern || {});
+            const totalIncludePattern = Object.assign({}, globalInclude || {}, folderQuery.includePattern || {});
             const result = globExprsToRgGlobs(totalIncludePattern, absoluteGlobs ? folderQuery.folder.fsPath : undefined);
             globArgs.push(...result.globArgs);
         });
@@ -15099,7 +15076,7 @@ define(__m[58/*vs/workbench/services/search/node/ripgrepFileSearch*/], __M([0/*r
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[60/*vs/workbench/services/search/node/fileSearch*/], __M([0/*require*/,1/*exports*/,20/*child_process*/,22/*fs*/,2/*vs/base/common/path*/,30/*string_decoder*/,5/*vs/base/common/arrays*/,23/*vs/base/common/errorMessage*/,14/*vs/base/common/glob*/,21/*vs/base/common/normalization*/,13/*vs/base/common/objects*/,9/*vs/base/common/extpath*/,3/*vs/base/common/platform*/,26/*vs/base/common/stopwatch*/,4/*vs/base/common/strings*/,12/*vs/base/common/types*/,19/*vs/base/node/pfs*/,15/*vs/workbench/services/search/common/search*/,58/*vs/workbench/services/search/node/ripgrepFileSearch*/,29/*vs/base/common/fuzzyScorer*/]), function (require, exports, childProcess, fs, path, string_decoder_1, arrays, errorMessage_1, glob, normalization, objects, extpath_1, platform, stopwatch_1, strings, types, pfs_1, search_1, ripgrepFileSearch_1, fuzzyScorer_1) {
+define(__m[59/*vs/workbench/services/search/node/fileSearch*/], __M([0/*require*/,1/*exports*/,20/*child_process*/,23/*fs*/,3/*vs/base/common/path*/,30/*string_decoder*/,5/*vs/base/common/arrays*/,24/*vs/base/common/errorMessage*/,13/*vs/base/common/glob*/,22/*vs/base/common/normalization*/,9/*vs/base/common/extpath*/,2/*vs/base/common/platform*/,27/*vs/base/common/stopwatch*/,4/*vs/base/common/strings*/,12/*vs/base/common/types*/,19/*vs/base/node/pfs*/,14/*vs/workbench/services/search/common/search*/,57/*vs/workbench/services/search/node/ripgrepFileSearch*/,29/*vs/base/common/fuzzyScorer*/]), function (require, exports, childProcess, fs, path, string_decoder_1, arrays, errorMessage_1, glob, normalization, extpath_1, platform, stopwatch_1, strings, types, pfs_1, search_1, ripgrepFileSearch_1, fuzzyScorer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.rgErrorMsgForDisplay = exports.Engine = exports.FileWalker = void 0;
@@ -15132,7 +15109,7 @@ define(__m[60/*vs/workbench/services/search/node/fileSearch*/], __M([0/*require*
             this.globalExcludePattern = config.excludePattern && glob.parse(config.excludePattern);
             this.folderExcludePatterns = new Map();
             config.folderQueries.forEach(folderQuery => {
-                const folderExcludeExpression = objects.assign({}, folderQuery.excludePattern || {}, this.config.excludePattern || {});
+                const folderExcludeExpression = Object.assign({}, folderQuery.excludePattern || {}, this.config.excludePattern || {});
                 // Add excludes for other root folders
                 const fqPath = folderQuery.folder.fsPath;
                 config.folderQueries
@@ -15712,7 +15689,7 @@ define(__m[60/*vs/workbench/services/search/node/fileSearch*/], __M([0/*require*
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[61/*vs/workbench/services/search/node/ripgrepTextSearchEngine*/], __M([0/*require*/,1/*exports*/,20/*child_process*/,65/*events*/,30/*string_decoder*/,5/*vs/base/common/arrays*/,34/*vs/base/common/collections*/,14/*vs/base/common/glob*/,2/*vs/base/common/path*/,4/*vs/base/common/strings*/,6/*vs/base/common/uri*/,15/*vs/workbench/services/search/common/search*/,32/*vs/workbench/services/search/common/searchExtTypes*/,59/*vscode-ripgrep*/,33/*vs/workbench/services/search/node/ripgrepSearchUtils*/]), function (require, exports, cp, events_1, string_decoder_1, arrays_1, collections_1, glob_1, path, strings_1, uri_1, search_1, searchExtTypes_1, vscode_ripgrep_1, ripgrepSearchUtils_1) {
+define(__m[60/*vs/workbench/services/search/node/ripgrepTextSearchEngine*/], __M([0/*require*/,1/*exports*/,20/*child_process*/,64/*events*/,30/*string_decoder*/,5/*vs/base/common/arrays*/,34/*vs/base/common/collections*/,13/*vs/base/common/glob*/,3/*vs/base/common/path*/,4/*vs/base/common/strings*/,6/*vs/base/common/uri*/,14/*vs/workbench/services/search/common/search*/,32/*vs/workbench/services/search/common/searchExtTypes*/,58/*vscode-ripgrep*/,33/*vs/workbench/services/search/node/ripgrepSearchUtils*/]), function (require, exports, cp, events_1, string_decoder_1, arrays_1, collections_1, glob_1, path, strings_1, uri_1, search_1, searchExtTypes_1, vscode_ripgrep_1, ripgrepSearchUtils_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.fixNewline = exports.fixRegexNewline = exports.unicodeEscapesToPCRE2 = exports.spreadGlobComponents = exports.RipgrepParser = exports.buildRegexParseError = exports.rgErrorMsgForDisplay = exports.RipgrepTextSearchEngine = void 0;
@@ -16150,7 +16127,7 @@ define(__m[61/*vs/workbench/services/search/node/ripgrepTextSearchEngine*/], __M
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[62/*vs/workbench/services/search/node/textSearchAdapter*/], __M([0/*require*/,1/*exports*/,19/*vs/base/node/pfs*/,61/*vs/workbench/services/search/node/ripgrepTextSearchEngine*/,57/*vs/workbench/services/search/node/textSearchManager*/]), function (require, exports, pfs, ripgrepTextSearchEngine_1, textSearchManager_1) {
+define(__m[61/*vs/workbench/services/search/node/textSearchAdapter*/], __M([0/*require*/,1/*exports*/,19/*vs/base/node/pfs*/,60/*vs/workbench/services/search/node/ripgrepTextSearchEngine*/,56/*vs/workbench/services/search/node/textSearchManager*/]), function (require, exports, pfs, ripgrepTextSearchEngine_1, textSearchManager_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.TextSearchEngineAdapter = void 0;
@@ -16205,7 +16182,7 @@ define(__m[62/*vs/workbench/services/search/node/textSearchAdapter*/], __M([0/*r
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[63/*vs/workbench/services/search/node/rawSearchService*/], __M([0/*require*/,1/*exports*/,22/*fs*/,66/*graceful-fs*/,5/*vs/base/common/arrays*/,11/*vs/base/common/async*/,7/*vs/base/common/errors*/,8/*vs/base/common/event*/,29/*vs/base/common/fuzzyScorer*/,13/*vs/base/common/objects*/,2/*vs/base/common/path*/,26/*vs/base/common/stopwatch*/,6/*vs/base/common/uri*/,19/*vs/base/node/pfs*/,15/*vs/workbench/services/search/common/search*/,60/*vs/workbench/services/search/node/fileSearch*/,62/*vs/workbench/services/search/node/textSearchAdapter*/]), function (require, exports, fs, gracefulFs, arrays, async_1, errors_1, event_1, fuzzyScorer_1, objects, path_1, stopwatch_1, uri_1, pfs_1, search_1, fileSearch_1, textSearchAdapter_1) {
+define(__m[62/*vs/workbench/services/search/node/rawSearchService*/], __M([0/*require*/,1/*exports*/,23/*fs*/,65/*graceful-fs*/,5/*vs/base/common/arrays*/,11/*vs/base/common/async*/,7/*vs/base/common/errors*/,8/*vs/base/common/event*/,29/*vs/base/common/fuzzyScorer*/,3/*vs/base/common/path*/,27/*vs/base/common/stopwatch*/,6/*vs/base/common/uri*/,19/*vs/base/node/pfs*/,14/*vs/workbench/services/search/common/search*/,59/*vs/workbench/services/search/node/fileSearch*/,61/*vs/workbench/services/search/node/textSearchAdapter*/]), function (require, exports, fs, gracefulFs, arrays, async_1, errors_1, event_1, fuzzyScorer_1, path_1, stopwatch_1, uri_1, pfs_1, search_1, fileSearch_1, textSearchAdapter_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SearchService = void 0;
@@ -16272,7 +16249,7 @@ define(__m[63/*vs/workbench/services/search/node/rawSearchService*/], __M([0/*re
             if (config.sortByScore) {
                 let sortedSearch = this.trySortedSearchFromCache(config, fileProgressCallback, token);
                 if (!sortedSearch) {
-                    const walkerConfig = config.maxResults ? objects.assign({}, config, { maxResults: null }) : config;
+                    const walkerConfig = config.maxResults ? Object.assign({}, config, { maxResults: null }) : config;
                     const engine = new EngineClass(walkerConfig);
                     sortedSearch = this.doSortedSearch(engine, config, progressCallback, fileProgressCallback, token);
                 }
@@ -16565,7 +16542,7 @@ define(__m[63/*vs/workbench/services/search/node/rawSearchService*/], __M([0/*re
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-define(__m[67/*vs/workbench/services/search/node/searchApp*/], __M([0/*require*/,1/*exports*/,52/*vs/base/parts/ipc/node/ipc.cp*/,55/*vs/workbench/services/search/node/searchIpc*/,63/*vs/workbench/services/search/node/rawSearchService*/]), function (require, exports, ipc_cp_1, searchIpc_1, rawSearchService_1) {
+define(__m[66/*vs/workbench/services/search/node/searchApp*/], __M([0/*require*/,1/*exports*/,51/*vs/base/parts/ipc/node/ipc.cp*/,54/*vs/workbench/services/search/node/searchIpc*/,62/*vs/workbench/services/search/node/rawSearchService*/]), function (require, exports, ipc_cp_1, searchIpc_1, rawSearchService_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const server = new ipc_cp_1.Server('search');
